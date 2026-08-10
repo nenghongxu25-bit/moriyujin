@@ -1,0 +1,47 @@
+{
+  "_$ver": 1,
+  "_$id": "byyw4jqx",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 192,
+  "height": 320,
+  "_$comp": [
+    {
+      "_$id": "oak_sensor",
+      "_$type": "RigidBody",
+      "applyOwnerColliderComponent": false,
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 192,
+          "height": 320
+        }
+      ],
+      "gravityScale": 0
+    },
+    {
+      "_$type": "2736c8a8-d5f3-47ee-9618-6679033b3be9",
+      "scriptPath": "../../../../src/harvestable/pine.ts",
+      "resourceId": "pine",
+      "instanceId": "pine_001"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "pr9xki9g",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 192,
+      "height": 320,
+      "src": "res://e79d6418-f895-40b9-903c-a6c1f6f7d52f",
+      "autoSize": false
+    }
+  ]
+}

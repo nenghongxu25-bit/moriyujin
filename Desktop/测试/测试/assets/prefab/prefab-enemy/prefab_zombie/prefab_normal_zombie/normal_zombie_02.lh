@@ -1,0 +1,92 @@
+{
+  "_$ver": 1,
+  "_$id": "g7jlit35",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 300,
+  "height": 400,
+  "_$child": [
+    {
+      "_$id": "l3kcs2w0",
+      "_$type": "Sprite",
+      "name": "viewspine",
+      "x": 10,
+      "y": -1,
+      "width": 100,
+      "height": 100,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "source": "res://5a9b12ca-521c-402b-a79a-692c4fca047e",
+          "animationName": "revival_knockdown",
+          "preview": true,
+          "physicsUpdate": 2,
+          "premultipliedAlpha": true
+        }
+      ]
+    },
+    {
+      "_$id": "c9r5eezm",
+      "_$type": "Sprite",
+      "name": "detectarea",
+      "x": 23,
+      "y": 13,
+      "width": 100,
+      "height": 100,
+      "_$comp": [
+        {
+          "_$id": "v1qe",
+          "_$type": "RigidBody",
+          "type": "kinematic",
+          "applyOwnerColliderComponent": false,
+          "shapes": [
+            {
+              "_$type": "BoxShape2D",
+              "x": 0,
+              "y": 0,
+              "density": 10,
+              "restitution": 0,
+              "restitutionThreshold": 1,
+              "friction": 0.2,
+              "isSensor": true,
+              "width": 75,
+              "height": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "q9vm5q64",
+      "_$type": "Sprite",
+      "name": "attackarea",
+      "width": 100,
+      "height": 100,
+      "_$comp": [
+        {
+          "_$id": "ne0c",
+          "_$type": "RigidBody",
+          "applyOwnerColliderComponent": false,
+          "shapes": [
+            {
+              "_$type": "BoxShape2D",
+              "x": 0,
+              "y": 0,
+              "density": 10,
+              "restitution": 0,
+              "restitutionThreshold": 1,
+              "friction": 0.2,
+              "isSensor": true,
+              "width": 50,
+              "height": 75
+            }
+          ],
+          "gravityScale": 0
+        }
+      ]
+    }
+  ]
+}

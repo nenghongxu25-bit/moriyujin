@@ -1,0 +1,45 @@
+﻿{
+  "_$ver": 1,
+  "_$id": "b3rre05d",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 128,
+  "height": 128,
+  "_$comp": [
+    {
+      "_$id": "zsq2",
+      "_$type": "RigidBody",
+      "applyOwnerColliderComponent": false,
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 128,
+          "height": 128
+        }
+      ],
+      "gravityScale": 0
+    },
+    {
+      "_$type": "3a5a9258-ae48-4a4b-bdb4-7dc7b956f9dc",
+      "scriptPath": "../../../../src/harvestable/stones.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "g3hft2za",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 128,
+      "height": 128,
+      "src": "res://2840a0f2-2e66-4df6-a473-95c22f89d3c8",
+      "autoSize": false
+    }
+  ]
+}

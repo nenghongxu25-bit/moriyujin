@@ -1,0 +1,715 @@
+{
+  "nodeData": {
+    "id": "f7f9faa97b83ce7e",
+    "topic": "ceshi",
+    "children": [
+      {
+        "topic": "assets",
+        "id": "f7fadc4d1478dbd5",
+        "children": [
+          {
+            "topic": "menu",
+            "id": "f7fa059b32765808",
+            "children": [
+              {
+                "topic": "start game",
+                "id": "f7fa12c839dab1f0"
+              }
+            ]
+          },
+          {
+            "topic": "main",
+            "id": "f7fa2a2e35e295ff",
+            "children": [
+              {
+                "topic": "signin/button",
+                "id": "f7fbdcefd665c5fe"
+              },
+              {
+                "topic": "shop/button",
+                "id": "f7fbe8f26ee447c0"
+              },
+              {
+                "topic": "mapchoose/button",
+                "id": "f7fbf67fe0b89de1"
+              }
+            ]
+          },
+          {
+            "topic": "mapscene",
+            "id": "f7fc16c78fda5150",
+            "children": [
+              {
+                "topic": "musiforest",
+                "id": "f7fa2c1dae4353fe"
+              }
+            ]
+          },
+          {
+            "topic": "prefab",
+            "id": "f7fc235c7ac60d11",
+            "children": [
+              {
+                "topic": "enemyprefab",
+                "id": "f7fc278d8236db94",
+                "children": [
+                  {
+                    "topic": "zombieprefab",
+                    "id": "f7fc683dcc2e462f",
+                    "children": [
+                      {
+                        "topic": "zombie-1",
+                        "id": "f7fc70176fcbabe5"
+                      },
+                      {
+                        "topic": "zombie-2",
+                        "id": "f7fc730ad414a9a1"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "humanoidprefab",
+                    "id": "f7fc6c03eb38835d",
+                    "children": [
+                      {
+                        "topic": "humanoid-1",
+                        "id": "f7fc750f39d69a27"
+                      },
+                      {
+                        "topic": "humanoid-2",
+                        "id": "f7fc7880150cd6df"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "animalprefab",
+                    "id": "f7fc83cc96d3ebef",
+                    "children": [
+                      {
+                        "topic": "animal-1",
+                        "id": "f7fc862e10ea3c29"
+                      },
+                      {
+                        "topic": "animal-2",
+                        "id": "f7fc880897b320a7"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "npcprefab",
+                    "id": "f7fc7bb3f4af76df",
+                    "children": [
+                      {
+                        "topic": "npc-1",
+                        "id": "f7fc7deb1611a92b"
+                      },
+                      {
+                        "topic": "npc-2",
+                        "id": "f7fc7fc5b2ba5129"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "itemprefab",
+                "id": "f7fc2b6f6cddd21f",
+                "children": [
+                  {
+                    "topic": "food",
+                    "id": "f7fca63cdc01a1f7"
+                  },
+                  {
+                    "topic": "medicine",
+                    "id": "f7fcab2f3ed39121"
+                  },
+                  {
+                    "topic": "weapon",
+                    "id": "f7fcb7c9e6656624"
+                  },
+                  {
+                    "topic": "armor",
+                    "id": "f7fcbc3a73036c43"
+                  },
+                  {
+                    "topic": "key",
+                    "id": "f7fccb683f971e20"
+                  },
+                  {
+                    "topic": "misc",
+                    "id": "f7fccd5d6e1b3b2e",
+                    "children": []
+                  },
+                  {
+                    "topic": "material",
+                    "id": "f7fcd33b3e2a6194"
+                  }
+                ]
+              },
+              {
+                "topic": "interactprefab",
+                "id": "f7fc2f3b99e8cfbc",
+                "children": [
+                  {
+                    "topic": "container",
+                    "id": "f7fc4d64e9143090"
+                  },
+                  {
+                    "topic": "harvestable",
+                    "id": "f7fc4fc25fbd3605"
+                  },
+                  {
+                    "topic": "interactdevice",
+                    "id": "f7fc560919649506"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "direction": 0
+      },
+      {
+        "topic": "src",
+        "id": "f7fad83fa371c502",
+        "children": [
+          {
+            "topic": "core",
+            "id": "core-0001",
+            "children": [
+              {
+                "topic": "EventManager.ts",
+                "id": "core-0002"
+              },
+              {
+                "topic": "Singleton.ts",
+                "id": "core-0003"
+              },
+              {
+                "topic": "StateMachine.ts",
+                "id": "core-0004"
+              },
+              {
+                "topic": "ObjectPool.ts",
+                "id": "core-0005"
+              }
+            ]
+          },
+          {
+            "topic": "data",
+            "id": "data-0001",
+            "children": [
+              {
+                "topic": "enums",
+                "id": "data-0002",
+                "children": [
+                  {
+                    "topic": "GamePhase",
+                    "id": "data-0003"
+                  },
+                  {
+                    "topic": "ItemType",
+                    "id": "data-0004"
+                  },
+                  {
+                    "topic": "MonsterFaction",
+                    "id": "data-0005"
+                  },
+                  {
+                    "topic": "BuildingType",
+                    "id": "data-0006"
+                  },
+                  {
+                    "topic": "UIPanelType",
+                    "id": "data-0007"
+                  }
+                ]
+              },
+              {
+                "topic": "interfaces",
+                "id": "data-0008",
+                "children": [
+                  {
+                    "topic": "IItemData",
+                    "id": "data-0009"
+                  },
+                  {
+                    "topic": "IBuildingData",
+                    "id": "data-0010"
+                  },
+                  {
+                    "topic": "IMonsterData",
+                    "id": "data-0011"
+                  },
+                  {
+                    "topic": "IMapData",
+                    "id": "data-0012"
+                  },
+                  {
+                    "topic": "IRecipeData",
+                    "id": "data-0013"
+                  },
+                  {
+                    "topic": "IPlayerStats",
+                    "id": "data-0014"
+                  }
+                ]
+              },
+              {
+                "topic": "configs",
+                "id": "data-0015",
+                "children": [
+                  {
+                    "topic": "items",
+                    "id": "data-0016",
+                    "children": [
+                      {
+                        "topic": "food",
+                        "id": "data-0017"
+                      },
+                      {
+                        "topic": "medicine",
+                        "id": "data-0018"
+                      },
+                      {
+                        "topic": "weapon",
+                        "id": "data-0019"
+                      },
+                      {
+                        "topic": "armor",
+                        "id": "data-0020"
+                      },
+                      {
+                        "topic": "key",
+                        "id": "data-0021"
+                      },
+                      {
+                        "topic": "material",
+                        "id": "data-0022"
+                      },
+                      {
+                        "topic": "misc",
+                        "id": "data-0023"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "monsters",
+                    "id": "data-0024",
+                    "children": [
+                      {
+                        "topic": "enemyType",
+                        "id": "data-0025"
+                      },
+                      {
+                        "topic": "zombie",
+                        "id": "data-0026",
+                        "children": [
+                          {
+                            "topic": "zombie.interface",
+                            "id": "data-0027"
+                          },
+                          {
+                            "topic": "zombie-1",
+                            "id": "data-0028"
+                          },
+                          {
+                            "topic": "zombie-2",
+                            "id": "data-0029"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "humanoid",
+                        "id": "data-0030",
+                        "children": [
+                          {
+                            "topic": "humanoid.interface",
+                            "id": "data-0031"
+                          },
+                          {
+                            "topic": "humanoid-1",
+                            "id": "data-0032"
+                          },
+                          {
+                            "topic": "humanoid-2",
+                            "id": "data-0033"
+                          }
+                        ]
+                      },
+                      {
+                        "topic": "animal",
+                        "id": "data-0034",
+                        "children": [
+                          {
+                            "topic": "animal.interface",
+                            "id": "data-0035"
+                          },
+                          {
+                            "topic": "animal-1",
+                            "id": "data-0036"
+                          },
+                          {
+                            "topic": "animal-2",
+                            "id": "data-0037"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "buildings",
+                    "id": "data-0038",
+                    "children": [
+                      {
+                        "topic": "storage",
+                        "id": "data-0039"
+                      },
+                      {
+                        "topic": "production",
+                        "id": "data-0040"
+                      },
+                      {
+                        "topic": "decor",
+                        "id": "data-0041"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "maps",
+                    "id": "data-0042",
+                    "children": [
+                      {
+                        "topic": "base",
+                        "id": "data-0043"
+                      },
+                      {
+                        "topic": "raid",
+                        "id": "data-0044"
+                      },
+                      {
+                        "topic": "forest",
+                        "id": "data-0045"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "recipes",
+                    "id": "data-0046",
+                    "children": [
+                      {
+                        "topic": "crafting",
+                        "id": "data-0047"
+                      },
+                      {
+                        "topic": "building",
+                        "id": "data-0048"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "models",
+                "id": "data-0049",
+                "children": [
+                  {
+                    "topic": "PlayerModel",
+                    "id": "data-0050"
+                  },
+                  {
+                    "topic": "InventoryModel",
+                    "id": "data-0051"
+                  },
+                  {
+                    "topic": "BaseModel",
+                    "id": "data-0052"
+                  },
+                  {
+                    "topic": "RaidModel",
+                    "id": "data-0053"
+                  },
+                  {
+                    "topic": "ContainerModel",
+                    "id": "data-0054"
+                  }
+                ]
+              },
+              {
+                "topic": "saves",
+                "id": "data-0055",
+                "children": [
+                  {
+                    "topic": "SaveData",
+                    "id": "data-0056"
+                  },
+                  {
+                    "topic": "PlayerSaveData",
+                    "id": "data-0057"
+                  },
+                  {
+                    "topic": "BaseSaveData",
+                    "id": "data-0058"
+                  },
+                  {
+                    "topic": "RaidSaveData",
+                    "id": "data-0059"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "entities",
+            "id": "ent-0001",
+            "children": [
+              {
+                "topic": "actor",
+                "id": "ent-0002",
+                "children": [
+                  {
+                    "topic": "BaseActor.ts",
+                    "id": "ent-0003"
+                  },
+                  {
+                    "topic": "player",
+                    "id": "ent-0004",
+                    "children": [
+                      {
+                        "topic": "PlayerController.ts",
+                        "id": "ent-0005"
+                      },
+                      {
+                        "topic": "PlayerCombat.ts",
+                        "id": "ent-0006"
+                      },
+                      {
+                        "topic": "PlayerAnim.ts",
+                        "id": "ent-0007"
+                      }
+                    ]
+                  },
+                  {
+                    "topic": "monster",
+                    "id": "ent-0008",
+                    "children": [
+                      {
+                        "topic": "ZombieController.ts",
+                        "id": "ent-0009"
+                      },
+                      {
+                        "topic": "BanditController.ts",
+                        "id": "ent-0010"
+                      },
+                      {
+                        "topic": "MonsterSensor.ts",
+                        "id": "ent-0011"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "topic": "item",
+                "id": "ent-0012",
+                "children": [
+                  {
+                    "topic": "PickupItem.ts",
+                    "id": "ent-0013"
+                  },
+                  {
+                    "topic": "Container.ts",
+                    "id": "ent-0014"
+                  },
+                  {
+                    "topic": "DropItem.ts",
+                    "id": "ent-0015"
+                  }
+                ]
+              },
+              {
+                "topic": "building",
+                "id": "ent-0016",
+                "children": [
+                  {
+                    "topic": "BaseBuilding.ts",
+                    "id": "ent-0017"
+                  },
+                  {
+                    "topic": "Warehouse.ts",
+                    "id": "ent-0018"
+                  },
+                  {
+                    "topic": "ProductionBuilding.ts",
+                    "id": "ent-0019"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "topic": "systems",
+            "id": "sys-0001",
+            "children": [
+              {
+                "topic": "DataManager.ts",
+                "id": "sys-0002"
+              },
+              {
+                "topic": "SaveManager.ts",
+                "id": "sys-0003"
+              },
+              {
+                "topic": "UIManager.ts",
+                "id": "sys-0004"
+              },
+              {
+                "topic": "AudioManager.ts",
+                "id": "sys-0005"
+              },
+              {
+                "topic": "CombatManager.ts",
+                "id": "sys-0006"
+              }
+            ]
+          },
+          {
+            "topic": "game",
+            "id": "game-0001",
+            "children": [
+              {
+                "topic": "GameManager.ts",
+                "id": "game-0002"
+              },
+              {
+                "topic": "GamePhase.ts",
+                "id": "game-0003"
+              },
+              {
+                "topic": "BaseSession.ts",
+                "id": "game-0004"
+              },
+              {
+                "topic": "RaidSession.ts",
+                "id": "game-0005"
+              }
+            ]
+          },
+          {
+            "topic": "scenes",
+            "id": "scene-0001",
+            "children": [
+              {
+                "topic": "BaseScene.ts",
+                "id": "scene-0002"
+              },
+              {
+                "topic": "HomeScene.ts",
+                "id": "scene-0003"
+              },
+              {
+                "topic": "RaidScene.ts",
+                "id": "scene-0004"
+              }
+            ]
+          },
+          {
+            "topic": "ui",
+            "id": "ui-0001",
+            "children": [
+              {
+                "topic": "BaseUI.ts",
+                "id": "ui-0002"
+              },
+              {
+                "topic": "UIMainHUD.ts",
+                "id": "ui-0003"
+              },
+              {
+                "topic": "UIInventory.ts",
+                "id": "ui-0004"
+              },
+              {
+                "topic": "UIContainer.ts",
+                "id": "ui-0005"
+              },
+              {
+                "topic": "UICrafting.ts",
+                "id": "ui-0006"
+              },
+              {
+                "topic": "UIBuildingSelect.ts",
+                "id": "ui-0007"
+              },
+              {
+                "topic": "UIRaidResult.ts",
+                "id": "ui-0008"
+              }
+            ]
+          },
+          {
+            "topic": "utils",
+            "id": "util-0001",
+            "children": [
+              {
+                "topic": "MathUtils.ts",
+                "id": "util-0002"
+              },
+              {
+                "topic": "GridUtils.ts",
+                "id": "util-0003"
+              },
+              {
+                "topic": "SaveUtils.ts",
+                "id": "util-0004"
+              }
+            ]
+          }
+        ],
+        "direction": 1
+      }
+    ]
+  },
+  "arrows": [],
+  "summaries": [],
+  "direction": 1,
+  "theme": {
+    "name": "Latte",
+    "type": "light",
+    "palette": [
+      "#dd7878",
+      "#ea76cb",
+      "#8839ef",
+      "#e64553",
+      "#fe640b",
+      "#df8e1d",
+      "#40a02b",
+      "#209fb5",
+      "#1e66f5",
+      "#7287fd"
+    ],
+    "cssVar": {
+      "--node-gap-x": "30px",
+      "--node-gap-y": "10px",
+      "--main-gap-x": "65px",
+      "--main-gap-y": "45px",
+      "--root-radius": "30px",
+      "--main-radius": "20px",
+      "--root-color": "#ffffff",
+      "--root-bgcolor": "#4c4f69",
+      "--root-border-color": "rgba(0, 0, 0, 0)",
+      "--main-color": "#444446",
+      "--main-bgcolor": "#ffffff",
+      "--main-bgcolor-transparent": "rgba(255, 255, 255, 0.8)",
+      "--topic-padding": "3px",
+      "--color": "#777777",
+      "--bgcolor": "#f6f6f6",
+      "--selected": "#4dc4ff",
+      "--accent-color": "#e64553",
+      "--panel-color": "#444446",
+      "--panel-bgcolor": "#ffffff",
+      "--panel-border-color": "#eaeaea",
+      "--map-padding": "50px 80px"
+    }
+  }
+}

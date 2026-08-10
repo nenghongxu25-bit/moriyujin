@@ -1,0 +1,11 @@
+{
+    "name": "com.layabox.layamcp",
+    "displayName": "LayaAir MCP Plugin",
+    "version": "1.1.1",
+    "description": "A plugin for MCP(Model Context Protocol) integration.",
+    "icon": "editorResources/mcp-plugin/logo.png",
+    "main": "index.ts",
+    "types": "public.d.ts",
+    "author": "guzhu@fairygui.com",
+    "license": "MIT"
+}

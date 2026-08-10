@@ -1,0 +1,34 @@
+{
+  "_$ver": 1,
+  "_$id": "wu06cv2e",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 100,
+  "height": 100,
+  "_$child": [
+    {
+      "_$id": "krgsvuwv",
+      "_$type": "GImage",
+      "name": "img",
+      "x": -24,
+      "y": 1,
+      "width": 150,
+      "height": 100,
+      "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+    },
+    {
+      "_$id": "tz6yo96j",
+      "_$type": "Text",
+      "name": "Text",
+      "width": 100,
+      "height": 100,
+      "text": "Text",
+      "fontSize": 20,
+      "color": "#000000",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

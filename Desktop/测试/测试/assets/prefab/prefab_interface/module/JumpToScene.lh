@@ -1,0 +1,40 @@
+{
+  "_$ver": 1,
+  "_$id": "vghnt0o4",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 200,
+  "height": 100,
+  "_$comp": [
+    {
+      "_$type": "efc1b234-4347-4332-bdef-e97122381b78",
+      "scriptPath": "../src/JumpToScene.ts",
+      "sceneUrl": ""
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "h7z68is0",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 200,
+      "height": 100,
+      "src": "res://590292af-12f7-4f03-a21b-0655c9c2353d",
+      "autoSize": false
+    },
+    {
+      "_$id": "2kur2vy4",
+      "_$type": "Text",
+      "name": "Text",
+      "width": 200,
+      "height": 100,
+      "text": "开始",
+      "fontSize": 20,
+      "color": "#000000",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

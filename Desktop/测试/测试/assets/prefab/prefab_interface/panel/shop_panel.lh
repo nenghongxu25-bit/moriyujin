@@ -1,0 +1,691 @@
+{
+  "_$ver": 1,
+  "_$id": "shop_root",
+  "_$type": "GWidget",
+  "name": "shop_panel",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "shop_bg",
+      "_$type": "GImage",
+      "name": "bg",
+      "width": 1334,
+      "height": 750,
+      "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+      "autoSize": false
+    },
+    {
+      "_$id": "shop_title",
+      "_$type": "Text",
+      "name": "title",
+      "x": 52,
+      "y": 24,
+      "width": 360,
+      "height": 44,
+      "text": "Shop",
+      "fontSize": 30,
+      "color": "#1f1f1f",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "currencyText",
+      "_$type": "Text",
+      "name": "currencyText",
+      "x": 1010,
+      "y": 28,
+      "width": 260,
+      "height": 32,
+      "text": "Coins: 0",
+      "fontSize": 20,
+      "color": "#4d4d4d",
+      "align": "right",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "tab_featured",
+      "_$type": "GButton",
+      "name": "tab_featured",
+      "x": 52,
+      "y": 82,
+      "width": 120,
+      "height": 38,
+      "_$child": [
+        {
+          "_$id": "tab_featured_bg",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 120,
+          "height": 38,
+          "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+          "autoSize": false
+        },
+        {
+          "_$id": "tab_featured_text",
+          "_$type": "Text",
+          "name": "text",
+          "y": 6,
+          "width": 120,
+          "height": 24,
+          "text": "Featured",
+          "fontSize": 16,
+          "color": "#1f1f1f",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "tab_materials",
+      "_$type": "GButton",
+      "name": "tab_materials",
+      "x": 184,
+      "y": 82,
+      "width": 120,
+      "height": 38,
+      "_$child": [
+        {
+          "_$id": "tab_materials_bg",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 120,
+          "height": 38,
+          "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+          "autoSize": false
+        },
+        {
+          "_$id": "tab_materials_text",
+          "_$type": "Text",
+          "name": "text",
+          "y": 6,
+          "width": 120,
+          "height": 24,
+          "text": "Materials",
+          "fontSize": 16,
+          "color": "#1f1f1f",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "tab_consumables",
+      "_$type": "GButton",
+      "name": "tab_consumables",
+      "x": 316,
+      "y": 82,
+      "width": 120,
+      "height": 38,
+      "_$child": [
+        {
+          "_$id": "tab_consumables_bg",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 120,
+          "height": 38,
+          "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+          "autoSize": false
+        },
+        {
+          "_$id": "tab_consumables_text",
+          "_$type": "Text",
+          "name": "text",
+          "y": 6,
+          "width": 120,
+          "height": 24,
+          "text": "Consumables",
+          "fontSize": 16,
+          "color": "#1f1f1f",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "closeButton",
+      "_$type": "GButton",
+      "name": "closeButton",
+      "x": 1240,
+      "y": 24,
+      "width": 70,
+      "height": 34,
+      "_$child": [
+        {
+          "_$id": "shop_close_bg",
+          "_$type": "GImage",
+          "name": "bg",
+          "width": 70,
+          "height": 34,
+          "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+          "autoSize": false
+        },
+        {
+          "_$id": "shop_close_text",
+          "_$type": "Text",
+          "name": "text",
+          "y": 5,
+          "width": 70,
+          "height": 24,
+          "text": "Close",
+          "fontSize": 16,
+          "color": "#1f1f1f",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "slotsPanel",
+      "_$type": "GPanel",
+      "name": "slotsPanel",
+      "x": 44,
+      "y": 140,
+      "width": 380,
+      "height": 560,
+      "_$child": [
+        {
+          "_$id": "slot1",
+          "_$type": "GButton",
+          "name": "slot1",
+          "width": 180,
+          "height": 120,
+          "_$child": [
+            {
+              "_$id": "slot1_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 180,
+              "height": 120,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "slot1_name",
+              "_$type": "Text",
+              "name": "slotName",
+              "y": 12,
+              "width": 180,
+              "height": 28,
+              "text": "Item",
+              "fontSize": 18,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot1_price",
+              "_$type": "Text",
+              "name": "slotPrice",
+              "y": 50,
+              "width": 180,
+              "height": 22,
+              "text": "Price",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot1_stock",
+              "_$type": "Text",
+              "name": "slotStock",
+              "y": 76,
+              "width": 180,
+              "height": 22,
+              "text": "Stock",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "slot2",
+          "_$type": "GButton",
+          "name": "slot2",
+          "x": 200,
+          "width": 180,
+          "height": 120,
+          "_$child": [
+            {
+              "_$id": "slot2_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 180,
+              "height": 120,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "slot2_name",
+              "_$type": "Text",
+              "name": "slotName",
+              "y": 12,
+              "width": 180,
+              "height": 28,
+              "text": "Item",
+              "fontSize": 18,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot2_price",
+              "_$type": "Text",
+              "name": "slotPrice",
+              "y": 50,
+              "width": 180,
+              "height": 22,
+              "text": "Price",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot2_stock",
+              "_$type": "Text",
+              "name": "slotStock",
+              "y": 76,
+              "width": 180,
+              "height": 22,
+              "text": "Stock",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "slot3",
+          "_$type": "GButton",
+          "name": "slot3",
+          "y": 138,
+          "width": 180,
+          "height": 120,
+          "_$child": [
+            {
+              "_$id": "slot3_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 180,
+              "height": 120,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "slot3_name",
+              "_$type": "Text",
+              "name": "slotName",
+              "y": 12,
+              "width": 180,
+              "height": 28,
+              "text": "Item",
+              "fontSize": 18,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot3_price",
+              "_$type": "Text",
+              "name": "slotPrice",
+              "y": 50,
+              "width": 180,
+              "height": 22,
+              "text": "Price",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot3_stock",
+              "_$type": "Text",
+              "name": "slotStock",
+              "y": 76,
+              "width": 180,
+              "height": 22,
+              "text": "Stock",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "slot4",
+          "_$type": "GButton",
+          "name": "slot4",
+          "x": 200,
+          "y": 138,
+          "width": 180,
+          "height": 120,
+          "_$child": [
+            {
+              "_$id": "slot4_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 180,
+              "height": 120,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "slot4_name",
+              "_$type": "Text",
+              "name": "slotName",
+              "y": 12,
+              "width": 180,
+              "height": 28,
+              "text": "Item",
+              "fontSize": 18,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot4_price",
+              "_$type": "Text",
+              "name": "slotPrice",
+              "y": 50,
+              "width": 180,
+              "height": 22,
+              "text": "Price",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot4_stock",
+              "_$type": "Text",
+              "name": "slotStock",
+              "y": 76,
+              "width": 180,
+              "height": 22,
+              "text": "Stock",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "slot5",
+          "_$type": "GButton",
+          "name": "slot5",
+          "y": 276,
+          "width": 180,
+          "height": 120,
+          "_$child": [
+            {
+              "_$id": "slot5_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 180,
+              "height": 120,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "slot5_name",
+              "_$type": "Text",
+              "name": "slotName",
+              "y": 12,
+              "width": 180,
+              "height": 28,
+              "text": "Item",
+              "fontSize": 18,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot5_price",
+              "_$type": "Text",
+              "name": "slotPrice",
+              "y": 50,
+              "width": 180,
+              "height": 22,
+              "text": "Price",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot5_stock",
+              "_$type": "Text",
+              "name": "slotStock",
+              "y": 76,
+              "width": 180,
+              "height": 22,
+              "text": "Stock",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "slot6",
+          "_$type": "GButton",
+          "name": "slot6",
+          "x": 200,
+          "y": 276,
+          "width": 180,
+          "height": 120,
+          "_$child": [
+            {
+              "_$id": "slot6_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 180,
+              "height": 120,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "slot6_name",
+              "_$type": "Text",
+              "name": "slotName",
+              "y": 12,
+              "width": 180,
+              "height": 28,
+              "text": "Item",
+              "fontSize": 18,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot6_price",
+              "_$type": "Text",
+              "name": "slotPrice",
+              "y": 50,
+              "width": 180,
+              "height": 22,
+              "text": "Price",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "slot6_stock",
+              "_$type": "Text",
+              "name": "slotStock",
+              "y": 76,
+              "width": 180,
+              "height": 22,
+              "text": "Stock",
+              "fontSize": 14,
+              "color": "#4d4d4d",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "detailPanel",
+      "_$type": "GPanel",
+      "name": "detailPanel",
+      "x": 454,
+      "y": 140,
+      "width": 830,
+      "height": 560,
+      "_$child": [
+        {
+          "_$id": "itemName",
+          "_$type": "Text",
+          "name": "itemName",
+          "x": 24,
+          "y": 18,
+          "width": 500,
+          "height": 42,
+          "text": "Selected Item",
+          "fontSize": 28,
+          "color": "#1f1f1f",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "itemPrice",
+          "_$type": "Text",
+          "name": "itemPrice",
+          "x": 24,
+          "y": 70,
+          "width": 250,
+          "height": 30,
+          "text": "Price: 0",
+          "fontSize": 18,
+          "color": "#4d4d4d",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "itemStock",
+          "_$type": "Text",
+          "name": "itemStock",
+          "x": 24,
+          "y": 106,
+          "width": 250,
+          "height": 30,
+          "text": "Stock: 0",
+          "fontSize": 18,
+          "color": "#4d4d4d",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "itemDesc",
+          "_$type": "Text",
+          "name": "itemDesc",
+          "x": 24,
+          "y": 156,
+          "width": 760,
+          "height": 180,
+          "text": "Item description",
+          "fontSize": 18,
+          "color": "#4d4d4d",
+          "leading": 8,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "buyButton",
+          "_$type": "GButton",
+          "name": "buyButton",
+          "x": 24,
+          "y": 470,
+          "width": 220,
+          "height": 52,
+          "_$child": [
+            {
+              "_$id": "buyButton_bg",
+              "_$type": "GImage",
+              "name": "bg",
+              "width": 220,
+              "height": 52,
+              "src": "res://6a66a5a6-7388-4f5c-831d-d4b5c9964f2c",
+              "autoSize": false
+            },
+            {
+              "_$id": "buyButton_text",
+              "_$type": "Text",
+              "name": "text",
+              "y": 10,
+              "width": 220,
+              "height": 28,
+              "text": "Buy Selected",
+              "fontSize": 22,
+              "color": "#1f1f1f",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

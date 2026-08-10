@@ -1,0 +1,45 @@
+﻿{
+  "_$ver": 1,
+  "_$id": "c79fcw7u",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 192,
+  "height": 192,
+  "_$comp": [
+    {
+      "_$id": "zqtb",
+      "_$type": "RigidBody",
+      "applyOwnerColliderComponent": false,
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 192,
+          "height": 192
+        }
+      ],
+      "gravityScale": 0
+    },
+    {
+      "_$type": "52449e7d-e786-42d6-b694-4aec22306a71",
+      "scriptPath": "../../../../src/harvestable/bush.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "ktci3626",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 192,
+      "height": 192,
+      "src": "res://6ff03e8e-7caa-4802-aebb-3d9a467cd5aa",
+      "autoSize": false
+    }
+  ]
+}

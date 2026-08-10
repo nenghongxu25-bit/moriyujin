@@ -1,0 +1,123 @@
+{
+  "_$ver": 1,
+  "_$id": "lgxgrw6r",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "5p6li2ob",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 1334,
+      "height": 750,
+      "src": "res://a8299b9b-070f-41a4-9feb-14a7e6ae6924",
+      "autoSize": false
+    },
+    {
+      "_$id": "0jf5nn6f",
+      "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
+      "name": "OpenSprite_3",
+      "active": true,
+      "x": 626,
+      "y": 78,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "6k3sv098",
+          "text": "城区"
+        }
+      ]
+    },
+    {
+      "_$id": "67mv2tav",
+      "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
+      "name": "OpenSprite_4",
+      "active": true,
+      "x": 105,
+      "y": 180,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "6k3sv098",
+          "text": "油田"
+        }
+      ]
+    },
+    {
+      "_$id": "i32zwvve",
+      "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
+      "name": "OpenSprite_5",
+      "active": true,
+      "x": 368,
+      "y": 186,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "6k3sv098",
+          "text": "医院"
+        }
+      ]
+    },
+    {
+      "_$id": "01nu257i",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 1133,
+      "y": 340,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "lgxgrw6r"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "rakvbas9",
+      "_$prefab": "23b9adb8-6418-49ed-a4d7-98cf6c7624b8",
+      "name": "JumpToScene",
+      "active": true,
+      "x": 112,
+      "y": 76,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "efc1b234-4347-4332-bdef-e97122381b78",
+          "sceneUrl": "scenes/main.ls"
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "2kur2vy4",
+          "text": "森林"
+        }
+      ]
+    },
+    {
+      "_$id": "xs2cv5mf",
+      "_$prefab": "23b9adb8-6418-49ed-a4d7-98cf6c7624b8",
+      "name": "JumpToScene_1",
+      "active": true,
+      "x": 366,
+      "y": 73,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "efc1b234-4347-4332-bdef-e97122381b78",
+          "sceneUrl": "scenes/mine.ls"
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "2kur2vy4",
+          "text": "矿区"
+        }
+      ]
+    }
+  ]
+}

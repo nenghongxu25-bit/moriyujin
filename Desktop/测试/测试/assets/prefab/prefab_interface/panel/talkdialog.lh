@@ -1,0 +1,205 @@
+{
+  "_$ver": 1,
+  "_$id": "bshvx403",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 800,
+  "height": 460,
+  "background": {
+    "_$type": "DrawRectCmd",
+    "fillColor": "#786060"
+  },
+  "_$child": [
+    {
+      "_$id": "01ljwcs9",
+      "_$type": "GPanel",
+      "name": "panel",
+      "width": 800,
+      "height": 450,
+      "_$child": [
+        {
+          "_$id": "jblecnoc",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 400,
+          "y": 225,
+          "width": 800,
+          "height": 450,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+          "autoSize": false
+        },
+        {
+          "_$id": "942qk8tn",
+          "_$prefab": "c434237d-2159-4897-9bdc-69d00a657ba7",
+          "name": "close",
+          "active": true,
+          "x": 601,
+          "y": 353,
+          "width": 123,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "dnmmwmen",
+              "width": 120
+            },
+            {
+              "_$override": "6k3sv098",
+              "x": 0,
+              "y": 36,
+              "text": "关闭",
+              "name": "close"
+            }
+          ]
+        },
+        {
+          "_$id": "9yfk9gcg",
+          "_$prefab": "c434237d-2159-4897-9bdc-69d00a657ba7",
+          "name": "task",
+          "active": true,
+          "x": 68,
+          "y": 28,
+          "width": 131,
+          "height": 91,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "dnmmwmen",
+              "width": 120
+            },
+            {
+              "_$override": "6k3sv098",
+              "x": 0,
+              "y": 37,
+              "text": "任务",
+              "name": "task"
+            }
+          ]
+        },
+        {
+          "_$id": "zkln9dxn",
+          "_$prefab": "c434237d-2159-4897-9bdc-69d00a657ba7",
+          "name": "trade",
+          "active": true,
+          "x": 201,
+          "y": 28,
+          "width": 126,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "dnmmwmen",
+              "width": 126
+            },
+            {
+              "_$override": "6k3sv098",
+              "x": 2,
+              "y": 36,
+              "text": "交易"
+            }
+          ]
+        },
+        {
+          "_$id": "dialog_entry_list",
+          "_$type": "GList",
+          "name": "dialogEntryList",
+          "x": 69,
+          "y": 120,
+          "width": 244,
+          "height": 260,
+          "layout": {
+            "type": 1
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "barDisplay": 1
+          },
+          "_templateNode": {
+            "_$ref": "otekcacp",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 10,
+          "_$child": [
+            {
+              "_$id": "otekcacp",
+              "_$prefab": "c434237d-2159-4897-9bdc-69d00a657ba7",
+              "name": "buttonmodule_1",
+              "active": true,
+              "x": 3,
+              "y": 19,
+              "height": 50,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "dnmmwmen",
+                  "y": -24,
+                  "x": 1
+                },
+                {
+                  "_$override": "6k3sv098",
+                  "y": 10,
+                  "x": 43
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "dialog_detail_panel",
+          "_$type": "GPanel",
+          "name": "detailPanel",
+          "x": 332,
+          "y": 120,
+          "width": 400,
+          "height": 260,
+          "_$child": [
+            {
+              "_$id": "dialog_detail_title",
+              "_$type": "Text",
+              "name": "detailTitle",
+              "x": 25,
+              "y": 20,
+              "width": 350,
+              "height": 35,
+              "text": "暂无任务",
+              "fontSize": 22,
+              "color": "#ffffff",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "inqzl004",
+          "_$type": "Text",
+          "name": "contentText",
+          "x": 380,
+          "y": 175,
+          "width": 350,
+          "height": 180,
+          "text": "暂无任务内容",
+          "fontSize": 22,
+          "color": "#ffffff",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "talk_title",
+          "_$type": "Text",
+          "name": "title",
+          "x": 43,
+          "y": 19,
+          "width": 701,
+          "height": 40,
+          "text": "对话",
+          "fontSize": 26,
+          "color": "#000000",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

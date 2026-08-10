@@ -1,0 +1,173 @@
+{
+  "_$ver": 1,
+  "_$id": "7at4ccy0",
+  "_$type": "Sprite",
+  "name": "play_ui",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "la1qodvj",
+      "_$type": "Sprite",
+      "name": "quick_box",
+      "x": 642,
+      "y": 350,
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "i17z1swu",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "boxmodule_01",
+          "active": true,
+          "x": -243,
+          "y": 243,
+          "visible": true,
+          "alpha": 0.819
+        },
+        {
+          "_$id": "q0zy0yfu",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "boxmodule_04",
+          "active": true,
+          "x": 132,
+          "y": 243,
+          "visible": true,
+          "alpha": 0.819
+        },
+        {
+          "_$id": "wz73alta",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "boxmodule_03",
+          "active": true,
+          "x": 7,
+          "y": 243,
+          "visible": true,
+          "alpha": 0.819
+        },
+        {
+          "_$id": "jwr6iiy8",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "boxmodule_02",
+          "active": true,
+          "x": -118,
+          "y": 243,
+          "visible": true,
+          "alpha": 0.819
+        }
+      ]
+    },
+    {
+      "_$id": "i3rmmb8s",
+      "_$type": "Sprite",
+      "name": "play",
+      "x": 642,
+      "y": 350,
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "9xqe96ru",
+          "_$prefab": "da0ae4df-3d2a-4c55-9057-101aad31f057",
+          "name": "pre-joystick",
+          "active": true,
+          "x": -499,
+          "y": 173,
+          "width": 128,
+          "height": 128,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "0jvaucmc",
+              "x": 0,
+              "y": 0,
+              "width": 128,
+              "height": 128
+            }
+          ]
+        },
+        {
+          "_$id": "run_ui",
+          "_$prefab": "597bdad8-a08e-42dc-a52f-f2c9cf13272d",
+          "name": "pre_ui_run",
+          "active": true,
+          "x": 407,
+          "y": -48,
+          "visible": true
+        },
+        {
+          "_$id": "bag_ui",
+          "_$prefab": "3dfda96a-e94e-48ec-bf05-3c296043bfe0",
+          "name": "pre_ui_bag",
+          "active": true,
+          "x": 276,
+          "y": 237,
+          "visible": true
+        },
+        {
+          "_$id": "attack_ui",
+          "_$prefab": "5ff33faa-4bb0-4a8f-83c2-dbf7851a98a9",
+          "name": "attack",
+          "active": true,
+          "x": 226,
+          "y": 104,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "rk8t267l",
+      "_$type": "Sprite",
+      "name": "button",
+      "x": 642,
+      "y": 350,
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "ibud8gfq",
+          "_$prefab": "5861da4e-ae9f-4a1f-a0c1-54f4111b0619",
+          "name": "get",
+          "active": true,
+          "x": 99,
+          "y": -46,
+          "visible": false,
+          "alpha": 1
+        },
+        {
+          "_$id": "mokveb9e",
+          "_$prefab": "4bdfc261-d92a-47c7-8200-f10fc4946293",
+          "name": "chop",
+          "active": true,
+          "x": 89,
+          "y": -44,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$type": "f29af7cf-09c7-4141-901d-e18b0064f813",
+              "scriptPath": "../src/PlayUI/chop.ts"
+            }
+          ]
+        },
+        {
+          "_$id": "alf07qsz",
+          "_$prefab": "7bd582da-1482-4e4f-91e3-772a7c947dc4",
+          "name": "pre_ui_talk",
+          "active": true,
+          "x": 91,
+          "y": -37,
+          "visible": false
+        },
+        {
+          "_$id": "ej1msfiy",
+          "_$prefab": "ae4738c7-aa19-4fd6-a972-021a2e00cf9f",
+          "name": "pre_ui_make",
+          "active": true,
+          "x": 475,
+          "y": 185,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

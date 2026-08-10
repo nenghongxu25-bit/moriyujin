@@ -1,0 +1,54 @@
+{
+  "_$ver": 1,
+  "_$id": "x80jjy3s",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 200,
+  "height": 100,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "2938a217-4272-4f6d-aaf2-984b61320b26",
+      "scriptPath": "../src/OpenSprite.ts",
+      "targetNode": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "dnmmwmen",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 200,
+      "height": 100,
+      "src": "res://590292af-12f7-4f03-a21b-0655c9c2353d",
+      "autoSize": false
+    },
+    {
+      "_$id": "6k3sv098",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 42,
+      "y": 34,
+      "width": 120,
+      "height": 28,
+      "text": "开始",
+      "fontSize": 20,
+      "color": "#000000",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

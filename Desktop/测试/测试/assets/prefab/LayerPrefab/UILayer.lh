@@ -1,0 +1,19 @@
+{
+  "_$ver": 1,
+  "_$id": "7s7zbz2r",
+  "_$type": "Sprite",
+  "name": "UILayer",
+  "width": 100,
+  "height": 100,
+  "_$child": [
+    {
+      "_$id": "drk6pui3",
+      "_$prefab": "b9fd7fbe-c4d3-44d0-a73f-1a5164bc2ff6",
+      "name": "play_ui",
+      "active": true,
+      "x": 0,
+      "y": 0,
+      "visible": true
+    }
+  ]
+}

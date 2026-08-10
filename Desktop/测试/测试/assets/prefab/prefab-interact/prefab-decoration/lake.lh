@@ -1,0 +1,38 @@
+{
+  "_$ver": 1,
+  "_$id": "xw61odtj",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 448,
+  "height": 448,
+  "_$comp": [
+    {
+      "_$id": "plou",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 448,
+          "height": 448
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "mxw01h57",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 448,
+      "height": 448,
+      "src": "res://1bba2658-4866-4621-8e40-3553e218040c"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "_$ver": 1,
+  "_$id": "kavrdbj6",
+  "_$type": "GWidget",
+  "name": "warehouse_list",
+  "x": 549,
+  "y": 101,
+  "width": 676,
+  "height": 500,
+  "_$child": [
+    {
+      "_$id": "g96x3opi",
+      "_$type": "GPanel",
+      "name": "panel",
+      "x": -164,
+      "y": -67,
+      "width": 937,
+      "height": 567,
+      "_$child": [
+        {
+          "_$id": "ex9g98dk",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 500,
+          "y": 299,
+          "width": 450,
+          "height": 624,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "rotation": 90,
+          "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+          "autoSize": false
+        },
+        {
+          "_$id": "7fpks0da",
+          "_$type": "GList",
+          "name": "list",
+          "x": 208,
+          "y": 103,
+          "width": 551,
+          "height": 372,
+          "background": {
+            "_$type": "DrawTextureCmd"
+          },
+          "layout": {
+            "type": 3
+          },
+          "scroller": {
+            "_$type": "Scroller"
+          },
+          "_templateNode": {
+            "_$ref": "myzvhd4c",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 50,
+          "_$child": [
+            {
+              "_$id": "myzvhd4c",
+              "_$type": "GWidget",
+              "name": "boxmodule",
+              "x": 64,
+              "y": 64,
+              "width": 128,
+              "height": 128,
+              "anchorX": 0.5,
+              "anchorY": 0.5,
+              "_$child": [
+                {
+                  "_$id": "zfgejdrd",
+                  "_$type": "GImage",
+                  "name": "item",
+                  "x": 64,
+                  "y": 64,
+                  "width": 160,
+                  "height": 160,
+                  "anchorX": 0.5,
+                  "anchorY": 0.5,
+                  "scaleX": 0.8,
+                  "scaleY": 0.8,
+                  "src": "res://ae353081-1a25-4961-a3c9-2e876ce467f0",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "jdhjlgub",
+                  "_$type": "GImage",
+                  "name": "icon",
+                  "x": 64,
+                  "y": 64,
+                  "width": 100,
+                  "height": 100,
+                  "anchorX": 0.5,
+                  "anchorY": 0.5,
+                  "src": ""
+                },
+                {
+                  "_$id": "5zg64bdz",
+                  "_$type": "Text",
+                  "name": "name",
+                  "x": 4,
+                  "y": 80,
+                  "width": 120,
+                  "height": 28,
+                  "fontSize": 10,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "gj3qvj55",
+                  "_$type": "Text",
+                  "name": "amount",
+                  "x": 83,
+                  "y": 83,
+                  "width": 23,
+                  "height": 28,
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "nol5d9im",
+      "_$type": "Sprite",
+      "name": "button",
+      "x": 248,
+      "y": 30,
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "19vswdcg",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "1",
+          "active": true,
+          "x": -234,
+          "y": -113,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "_$id": "7aeyxkeh",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "2",
+          "active": true,
+          "x": -153,
+          "y": -113,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "_$id": "p7584gbj",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "3",
+          "active": true,
+          "x": -71,
+          "y": -113,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "_$id": "76wdggq5",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "4",
+          "active": true,
+          "x": 10,
+          "y": -115,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "4"
+            }
+          ]
+        },
+        {
+          "_$id": "kr0mximb",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "5",
+          "active": true,
+          "x": 92,
+          "y": -113,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "5"
+            }
+          ]
+        },
+        {
+          "_$id": "g928awhb",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "6",
+          "active": true,
+          "x": 175,
+          "y": -113,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "6"
+            }
+          ]
+        },
+        {
+          "_$id": "0o5kwgjx",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "7",
+          "active": true,
+          "x": 257,
+          "y": -113,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

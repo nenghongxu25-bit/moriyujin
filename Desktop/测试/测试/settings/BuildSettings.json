@@ -1,0 +1,17 @@
+{
+  "name": "LayaProject1",
+  "startupScene": "res://eedf3803-6a31-4570-b7d3-82ede19c5969",
+  "android": {
+    "targetArchitectures": {
+      "ARMv7": false,
+      "ARM64": true,
+      "x86": false,
+      "x86-64": false
+    },
+    "exportFormat": "APK"
+  },
+  "bytedancegame": {
+    "compressWasm": true,
+    "appid": "tt0483723e9af98aaf02"
+  }
+}

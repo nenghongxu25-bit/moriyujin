@@ -1,0 +1,82 @@
+{
+  "_$ver": 1,
+  "_$id": "rw86gepk",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 400,
+  "height": 400,
+  "_$child": [
+    {
+      "_$id": "0jvaucmc",
+      "_$type": "Sprite",
+      "name": "joystickroot",
+      "x": 156,
+      "y": 156,
+      "width": 100,
+      "height": 100,
+      "alpha": 0.953,
+      "_$comp": [
+        {
+          "_$type": "d1227def-b3f9-48f0-b349-c5abb8c4d03d",
+          "scriptPath": "../src/PlayUI/Joystick.ts",
+          "radius": 80,
+          "joystickBase": {
+            "_$ref": "sunnmstt"
+          },
+          "handle": {
+            "_$ref": "97atdkiz"
+          }
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "sunnmstt",
+          "_$type": "Sprite",
+          "name": "joystickbase",
+          "x": 60,
+          "y": 60,
+          "width": 120,
+          "height": 120,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "alpha": 0.22,
+          "_gcmds": [
+            {
+              "_$type": "DrawCircleCmd",
+              "x": 0.5,
+              "y": 0.5,
+              "radius": 0.5,
+              "percent": true,
+              "lineWidth": 1,
+              "lineColor": "#000000",
+              "fillColor": "#ffffff"
+            }
+          ]
+        },
+        {
+          "_$id": "97atdkiz",
+          "_$type": "Sprite",
+          "name": "joystickhandle",
+          "x": 60,
+          "y": 60,
+          "width": 80,
+          "height": 80,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "_gcmds": [
+            {
+              "_$type": "DrawCircleCmd",
+              "x": 0.5,
+              "y": 0.5,
+              "radius": 0.5,
+              "percent": true,
+              "lineWidth": 1,
+              "lineColor": "#000000",
+              "fillColor": "#7d2121"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

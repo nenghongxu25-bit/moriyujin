@@ -1,0 +1,46 @@
+{
+  "_$ver": 1,
+  "_$id": "byyw4jqx",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 320,
+  "height": 320,
+  "_$comp": [
+    {
+      "_$id": "oak_sensor",
+      "_$type": "RigidBody",
+      "applyOwnerColliderComponent": false,
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 320,
+          "height": 320
+        }
+      ],
+      "gravityScale": 0
+    },
+    {
+      "_$type": "02505adb-0d3a-4cde-a150-7c95fa6c937a",
+      "scriptPath": "../../../../src/harvestable/oak.ts",
+      "resourceId": "oak",
+      "instanceId": "oak_001"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "q1fqqqve",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 320,
+      "height": 320,
+      "src": "res://787b5167-4f40-4def-83bb-2b55887fc824"
+    }
+  ]
+}

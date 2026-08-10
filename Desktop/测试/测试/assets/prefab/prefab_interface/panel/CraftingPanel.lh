@@ -1,0 +1,464 @@
+{
+  "_$ver": 1,
+  "_$id": "89w7gnf0",
+  "_$type": "GWidget",
+  "width": 800,
+  "height": 520,
+  "_$child": [
+    {
+      "_$id": "oq4zruwo",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 400,
+      "y": 260,
+      "width": 520,
+      "height": 800,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "rotation": 90,
+      "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+      "autoSize": false
+    },
+    {
+      "_$id": "craft_title",
+      "_$type": "Text",
+      "name": "title",
+      "x": 30,
+      "y": 11,
+      "width": 740,
+      "height": 40,
+      "text": "工作间",
+      "fontSize": 28,
+      "color": "#000000",
+      "align": "center",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "57r39bvn",
+      "_$type": "GList",
+      "name": "list",
+      "x": 42,
+      "y": 128,
+      "width": 129,
+      "height": 317,
+      "layout": {
+        "type": 1
+      },
+      "scroller": {
+        "_$type": "Scroller"
+      },
+      "_templateNode": {
+        "_$ref": "vit4s7np",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": 8,
+      "_$child": [
+        {
+          "_$id": "vit4s7np",
+          "_$type": "GWidget",
+          "name": "buttonmodule_2",
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "Text",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "craft_detail",
+      "_$type": "GPanel",
+      "name": "detailPanel",
+      "x": 179,
+      "y": 130,
+      "width": 581,
+      "height": 315,
+      "_$child": [
+        {
+          "_$id": "recipe_name",
+          "_$type": "Text",
+          "name": "recipeName",
+          "x": 20,
+          "y": 20,
+          "width": 360,
+          "height": 35,
+          "text": "请选择配方",
+          "fontSize": 22,
+          "color": "#000000",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "recipe_inputs",
+          "_$type": "Text",
+          "name": "inputsText",
+          "x": 20,
+          "y": 75,
+          "width": 360,
+          "height": 120,
+          "text": "材料：",
+          "fontSize": 18,
+          "color": "#000000",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "recipe_output",
+          "_$type": "Text",
+          "name": "outputText",
+          "x": 20,
+          "y": 215,
+          "width": 360,
+          "height": 50,
+          "text": "产物：",
+          "fontSize": 18,
+          "color": "#000000",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "wn2b0lcp",
+      "_$type": "GPanel",
+      "name": "panel",
+      "x": 31,
+      "y": 18,
+      "width": 963,
+      "height": 581,
+      "_$child": [
+        {
+          "_$id": "zcvc1xj9",
+          "_$type": "Sprite",
+          "name": "close",
+          "x": 575,
+          "y": 389,
+          "width": 143,
+          "height": 75
+        },
+        {
+          "_$id": "7rfglzlg",
+          "_$type": "Sprite",
+          "name": "crafting",
+          "x": 430,
+          "y": 390,
+          "width": 143,
+          "height": 75
+        },
+        {
+          "_$id": "5dkdmbeh",
+          "_$type": "GWidget",
+          "name": "campfire",
+          "x": 22,
+          "y": 10,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "篝火",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "d1llbzpk",
+          "_$type": "GWidget",
+          "name": "campfire_1",
+          "x": 118,
+          "y": 10,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "烹饪机",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "okl86u3m",
+          "_$type": "GWidget",
+          "name": "processing",
+          "x": 216,
+          "y": 11,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "加工台",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "w9imh9rs",
+          "_$type": "GWidget",
+          "name": "equipment",
+          "x": 314,
+          "y": 12,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "装备台",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "2ifxqi9q",
+          "_$type": "GWidget",
+          "name": "medicine",
+          "x": 509,
+          "y": 12,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "实验台",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "deyul414",
+          "_$type": "GWidget",
+          "name": "manufacture",
+          "x": 411,
+          "y": 13,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "制造台",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "ddn3jo0t",
+          "_$type": "GWidget",
+          "name": "advance",
+          "x": 607,
+          "y": 12,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "krgsvuwv",
+              "_$type": "GImage",
+              "name": "img",
+              "x": -24,
+              "y": 1,
+              "width": 150,
+              "height": 100,
+              "src": "res://f583951a-2644-41fe-af88-d3b6855baf4d"
+            },
+            {
+              "_$id": "tz6yo96j",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 100,
+              "height": 100,
+              "text": "高级台",
+              "fontSize": 20,
+              "color": "#000000",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "joiii0ex",
+      "_$type": "GWidget",
+      "name": "CloseSprite",
+      "x": 335,
+      "y": 425,
+      "width": 128,
+      "height": 73,
+      "_$comp": [
+        {
+          "_$type": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "scriptPath": "../src/CloseSprite.ts",
+          "targetNode": {
+            "_$ref": "89w7gnf0"
+          }
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "rfkfthtc",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 128,
+          "height": 73,
+          "src": "res://590292af-12f7-4f03-a21b-0655c9c2353d"
+        },
+        {
+          "_$id": "feo6uqqp",
+          "_$type": "Text",
+          "name": "Text",
+          "x": 3,
+          "y": 22,
+          "width": 120,
+          "height": 28,
+          "text": "关闭",
+          "fontSize": 20,
+          "color": "#000000",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+	"formatVersion": 2,
+	"appVersion": "0.103.0",
+	"files": [
+		{
+			"isClone": false,
+			"noteId": "az3s9rxBocvH",
+			"notePath": [
+				"az3s9rxBocvH"
+			],
+			"title": "新建笔记",
+			"notePosition": 90,
+			"prefix": null,
+			"isExpanded": false,
+			"type": "mindMap",
+			"mime": "application/json",
+			"attributes": [],
+			"dataFileName": "新建笔记.json",
+			"attachments": [
+				{
+					"attachmentId": "SsRaXG30TYuL",
+					"title": "mindmap-export.svg",
+					"role": "image",
+					"mime": "image/svg+xml",
+					"position": 0,
+					"dataFileName": "新建笔记_mindmap-export.svg"
+				}
+			]
+		},
+		{
+			"noImport": true,
+			"dataFileName": "navigation.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "index.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "style.css"
+		}
+	]
+}

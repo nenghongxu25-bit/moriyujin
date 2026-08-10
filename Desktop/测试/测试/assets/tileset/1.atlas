@@ -1,0 +1,58 @@
+{
+  "frames": {
+    "ChatGPT Image 2026年8月10日 10_47_26 (1) (1).png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 66,
+        "w": 64,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "ChatGPT Image 2026年8月9日 22_46_57 (1) (1).png": {
+      "frame": {
+        "idx": 0,
+        "x": 66,
+        "y": 66,
+        "w": 64,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "zaoze.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 512,
+        "h": 64
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "meta": {
+    "trimImage": true
+  }
+}

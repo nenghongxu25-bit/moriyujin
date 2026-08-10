@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "itugov65",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 128,
+  "height": 128,
+  "_$comp": [
+    {
+      "_$id": "81i1",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "width": 128,
+          "height": 128
+        }
+      ]
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "3g09uwo4",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 128,
+      "height": 128,
+      "src": "res://0a7041bf-1805-4e93-b005-1a0df8ca95c4"
+    }
+  ]
+}

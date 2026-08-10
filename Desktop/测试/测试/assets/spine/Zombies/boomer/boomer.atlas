@@ -1,0 +1,166 @@
+﻿boomer.png
+size: 508,508
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chan_1
+  rotate: false
+  xy: 173, 71
+  size: 110, 69
+  orig: 136, 88
+  offset: 2, 0
+  index: -1
+chan_2
+  rotate: false
+  xy: 285, 22
+  size: 106, 66
+  orig: 107, 66
+  offset: 0, 0
+  index: -1
+cnp
+  rotate: true
+  xy: 319, 178
+  size: 13, 15
+  orig: 15, 17
+  offset: 1, 1
+  index: -1
+cnt
+  rotate: false
+  xy: 319, 193
+  size: 15, 15
+  orig: 17, 17
+  offset: 1, 1
+  index: -1
+dau
+  rotate: true
+  xy: 339, 280
+  size: 225, 133
+  orig: 225, 136
+  offset: 0, 3
+  index: -1
+n_1
+  rotate: true
+  xy: 173, 2
+  size: 67, 70
+  orig: 69, 70
+  offset: 1, 0
+  index: -1
+n_2
+  rotate: false
+  xy: 2, 3
+  size: 56, 59
+  orig: 57, 60
+  offset: 0, 0
+  index: -1
+n_3
+  rotate: false
+  xy: 393, 16
+  size: 57, 72
+  orig: 57, 72
+  offset: 0, 0
+  index: -1
+n_4
+  rotate: false
+  xy: 452, 25
+  size: 52, 63
+  orig: 54, 65
+  offset: 1, 1
+  index: -1
+n_5
+  rotate: false
+  xy: 60, 4
+  size: 55, 58
+  orig: 57, 60
+  offset: 1, 1
+  index: -1
+ntp_1
+  rotate: false
+  xy: 309, 119
+  size: 21, 25
+  orig: 24, 27
+  offset: 1, 1
+  index: -1
+ntp_2
+  rotate: true
+  xy: 288, 186
+  size: 22, 29
+  orig: 24, 31
+  offset: 1, 1
+  index: -1
+ntp_3
+  rotate: false
+  xy: 311, 146
+  size: 20, 30
+  orig: 23, 32
+  offset: 2, 1
+  index: -1
+ntt_1
+  rotate: true
+  xy: 463, 137
+  size: 19, 25
+  orig: 22, 28
+  offset: 2, 1
+  index: -1
+ntt_2
+  rotate: false
+  xy: 288, 154
+  size: 21, 30
+  orig: 23, 32
+  offset: 1, 1
+  index: -1
+ntt_3
+  rotate: false
+  xy: 288, 124
+  size: 19, 28
+  orig: 21, 30
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: true
+  xy: 474, 158
+  size: 347, 29
+  orig: 357, 33
+  offset: 4, 2
+  index: -1
+than
+  rotate: false
+  xy: 2, 210
+  size: 335, 295
+  orig: 335, 295
+  offset: 0, 0
+  index: -1
+than_2
+  rotate: false
+  xy: 2, 142
+  size: 284, 66
+  orig: 285, 66
+  offset: 0, 0
+  index: -1
+than_3
+  rotate: false
+  xy: 2, 64
+  size: 169, 58
+  orig: 169, 58
+  offset: 0, 0
+  index: -1
+tp
+  rotate: true
+  xy: 333, 90
+  size: 82, 128
+  orig: 87, 128
+  offset: 1, 0
+  index: -1
+tt_1
+  rotate: false
+  xy: 117, 8
+  size: 54, 54
+  orig: 57, 56
+  offset: 1, 1
+  index: -1
+tt_2
+  rotate: true
+  xy: 339, 174
+  size: 104, 121
+  orig: 104, 121
+  offset: 0, 0
+  index: -1

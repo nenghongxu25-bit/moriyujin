@@ -1,0 +1,31 @@
+{
+  "resolution": {
+    "scaleMode": "showall",
+    "screenMode": "horizontal"
+  },
+  "physics2D": {
+    "defaultConfig": {
+      "debugDraw": true,
+      "drawAABB": true,
+      "drawCenterOfMass": true
+    }
+  },
+  "modules": {
+    "laya.ui": true,
+    "laya.physics2D": true,
+    "laya.spine": true,
+    "laya.bridge": true,
+    "laya.tilemap": true,
+    "laya.blueprint": true,
+    "laya.particle": true,
+    "laya.light2D": true,
+    "laya.trail2D": true
+  },
+  "addons": {
+    "laya.ui": "ui2"
+  },
+  "spineVersion": "4.1",
+  "splash": {
+    "fit": "center"
+  }
+}

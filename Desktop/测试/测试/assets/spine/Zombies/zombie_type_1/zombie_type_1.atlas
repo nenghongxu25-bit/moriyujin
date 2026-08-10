@@ -1,0 +1,341 @@
+﻿zombie_type_1.png
+size: 412,412
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1/dc_1
+  rotate: true
+  xy: 263, 162
+  size: 22, 60
+  orig: 22, 60
+  offset: 0, 0
+  index: -1
+2/dc_1
+  rotate: true
+  xy: 263, 162
+  size: 22, 60
+  orig: 22, 60
+  offset: 0, 0
+  index: -1
+1/dc_2
+  rotate: false
+  xy: 373, 113
+  size: 20, 38
+  orig: 20, 39
+  offset: 0, 1
+  index: -1
+2/dc_2
+  rotate: false
+  xy: 373, 113
+  size: 20, 38
+  orig: 20, 39
+  offset: 0, 1
+  index: -1
+1/shadow
+  rotate: true
+  xy: 2, 60
+  size: 178, 29
+  orig: 182, 31
+  offset: 2, 1
+  index: -1
+2/shadow
+  rotate: true
+  xy: 2, 60
+  size: 178, 29
+  orig: 182, 31
+  offset: 2, 1
+  index: -1
+1/t_1
+  rotate: false
+  xy: 145, 134
+  size: 67, 27
+  orig: 70, 29
+  offset: 0, 2
+  index: -1
+2/t_1
+  rotate: false
+  xy: 145, 134
+  size: 67, 27
+  orig: 70, 29
+  offset: 0, 2
+  index: -1
+1/t_2
+  rotate: true
+  xy: 381, 193
+  size: 47, 29
+  orig: 47, 29
+  offset: 0, 0
+  index: -1
+2/t_2
+  rotate: true
+  xy: 381, 193
+  size: 47, 29
+  orig: 47, 29
+  offset: 0, 0
+  index: -1
+1/t_3
+  rotate: false
+  xy: 325, 153
+  size: 67, 34
+  orig: 69, 35
+  offset: 0, 1
+  index: -1
+2/t_3
+  rotate: false
+  xy: 325, 153
+  size: 67, 34
+  orig: 69, 35
+  offset: 0, 1
+  index: -1
+1/z_cn_t
+  rotate: false
+  xy: 219, 125
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+2/z_cn_t
+  rotate: false
+  xy: 219, 125
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+1/z_cp_2
+  rotate: false
+  xy: 303, 22
+  size: 40, 49
+  orig: 43, 49
+  offset: 1, 0
+  index: -1
+2/z_cp_2
+  rotate: false
+  xy: 303, 22
+  size: 40, 49
+  orig: 43, 49
+  offset: 1, 0
+  index: -1
+1/z_cp_3
+  rotate: false
+  xy: 215, 12
+  size: 45, 61
+  orig: 45, 61
+  offset: 0, 0
+  index: -1
+2/z_cp_3
+  rotate: false
+  xy: 215, 12
+  size: 45, 61
+  orig: 45, 61
+  offset: 0, 0
+  index: -1
+1/z_ct_1
+  rotate: true
+  xy: 242, 244
+  size: 53, 94
+  orig: 54, 94
+  offset: 0, 0
+  index: -1
+2/z_ct_1
+  rotate: true
+  xy: 242, 244
+  size: 53, 94
+  orig: 54, 94
+  offset: 0, 0
+  index: -1
+1/z_dau
+  rotate: false
+  xy: 110, 271
+  size: 130, 139
+  orig: 130, 139
+  offset: 0, 0
+  index: -1
+2/z_dau
+  rotate: false
+  xy: 110, 271
+  size: 130, 139
+  orig: 130, 139
+  offset: 0, 0
+  index: -1
+1/z_mat
+  rotate: true
+  xy: 338, 242
+  size: 55, 52
+  orig: 56, 52
+  offset: 1, 0
+  index: -1
+1/z_mieng
+  rotate: false
+  xy: 215, 140
+  size: 34, 32
+  orig: 34, 32
+  offset: 0, 0
+  index: -1
+2/z_mieng
+  rotate: false
+  xy: 215, 140
+  size: 34, 32
+  orig: 34, 32
+  offset: 0, 0
+  index: -1
+1/z_mieng_2
+  rotate: true
+  xy: 391, 378
+  size: 32, 19
+  orig: 32, 19
+  offset: 0, 0
+  index: -1
+1/z_than_1
+  rotate: true
+  xy: 242, 299
+  size: 111, 147
+  orig: 111, 147
+  offset: 0, 0
+  index: -1
+2/z_than_1
+  rotate: true
+  xy: 242, 299
+  size: 111, 147
+  orig: 111, 147
+  offset: 0, 0
+  index: -1
+1/z_than_2
+  rotate: false
+  xy: 2, 2
+  size: 87, 56
+  orig: 87, 56
+  offset: 0, 0
+  index: -1
+2/z_than_2
+  rotate: false
+  xy: 2, 2
+  size: 87, 56
+  orig: 87, 56
+  offset: 0, 0
+  index: -1
+1/z_tp_1
+  rotate: false
+  xy: 324, 94
+  size: 47, 57
+  orig: 47, 57
+  offset: 0, 0
+  index: -1
+1/z_tp_2
+  rotate: false
+  xy: 219, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+1/z_tp_3
+  rotate: false
+  xy: 162, 75
+  size: 55, 57
+  orig: 55, 57
+  offset: 0, 0
+  index: -1
+2/z_tp_3
+  rotate: false
+  xy: 162, 75
+  size: 55, 57
+  orig: 55, 57
+  offset: 0, 0
+  index: -1
+1/z_tt_1
+  rotate: true
+  xy: 262, 125
+  size: 35, 60
+  orig: 35, 60
+  offset: 0, 0
+  index: -1
+1/z_tt_2
+  rotate: false
+  xy: 262, 15
+  size: 39, 56
+  orig: 39, 56
+  offset: 0, 0
+  index: -1
+1/z_tt_3
+  rotate: false
+  xy: 263, 186
+  size: 55, 56
+  orig: 55, 56
+  offset: 0, 0
+  index: -1
+2/z_tt_3
+  rotate: false
+  xy: 263, 186
+  size: 55, 56
+  orig: 55, 56
+  offset: 0, 0
+  index: -1
+2/ao_1
+  rotate: false
+  xy: 2, 240
+  size: 106, 170
+  orig: 106, 170
+  offset: 0, 0
+  index: -1
+2/ao_2
+  rotate: false
+  xy: 33, 76
+  size: 40, 162
+  orig: 40, 162
+  offset: 0, 0
+  index: -1
+2/co_1
+  rotate: true
+  xy: 145, 163
+  size: 106, 68
+  orig: 106, 68
+  offset: 0, 0
+  index: -1
+2/co_1_1
+  rotate: true
+  xy: 75, 129
+  size: 109, 68
+  orig: 109, 68
+  offset: 0, 0
+  index: -1
+2/co_2
+  rotate: true
+  xy: 320, 189
+  size: 51, 59
+  orig: 51, 59
+  offset: 0, 0
+  index: -1
+2/co_2_1
+  rotate: false
+  xy: 75, 75
+  size: 85, 52
+  orig: 85, 52
+  offset: 0, 0
+  index: -1
+2/z_tp_1
+  rotate: true
+  xy: 151, 20
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+2/z_tp_2
+  rotate: false
+  xy: 269, 73
+  size: 53, 50
+  orig: 53, 50
+  offset: 0, 0
+  index: -1
+2/z_tt_1
+  rotate: false
+  xy: 215, 174
+  size: 46, 68
+  orig: 46, 68
+  offset: 0, 0
+  index: -1
+2/z_tt_2
+  rotate: false
+  xy: 91, 12
+  size: 58, 61
+  orig: 58, 61
+  offset: 0, 0
+  index: -1
