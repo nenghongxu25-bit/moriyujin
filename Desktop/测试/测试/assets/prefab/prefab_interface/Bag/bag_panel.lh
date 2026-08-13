@@ -101,6 +101,38 @@
                   "slotCount": 0
                 }
               ]
+            },
+            {
+              "_$override": "02b5n7vf",
+              "_$comp": [
+                {
+                  "_$override": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                  "templateSlot": {
+                    "_$ref": [
+                      "a4i1vm6g",
+                      "zfgejdrd"
+                    ]
+                  },
+                  "gimg": {
+                    "_$ref": [
+                      "a4i1vm6g",
+                      "jdhjlgub"
+                    ]
+                  },
+                  "nameText": {
+                    "_$ref": [
+                      "a4i1vm6g",
+                      "5zg64bdz"
+                    ]
+                  },
+                  "countText": {
+                    "_$ref": [
+                      "a4i1vm6g",
+                      "gj3qvj55"
+                    ]
+                  }
+                }
+              ]
             }
           ]
         },

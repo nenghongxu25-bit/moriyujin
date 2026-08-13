@@ -95,10 +95,18 @@
                 {
                   "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
                   "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
-                  "templateSlot": null,
-                  "gimg": null,
-                  "nameText": null,
-                  "countText": null
+                  "templateSlot": {
+                    "_$ref": "zfgejdrd"
+                  },
+                  "gimg": {
+                    "_$ref": "jdhjlgub"
+                  },
+                  "nameText": {
+                    "_$ref": "5zg64bdz"
+                  },
+                  "countText": {
+                    "_$ref": "gj3qvj55"
+                  }
                 }
               ],
               "_$child": [

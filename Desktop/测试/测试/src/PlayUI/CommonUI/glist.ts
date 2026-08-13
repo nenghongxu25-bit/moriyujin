@@ -1,34 +1,14 @@
-﻿const { regClass, property } = Laya;
+const { regClass, property } = Laya;
 
-import {
-    listTemplate,
-    type ListTemplateData,
-} from "./listTemplate";
+import { listTemplate, type ListTemplateData } from "./listTemplate";
 
-export type GListItemBinder<T> = (
-    slotNode: Laya.Node,
-    item: T,
-    index: number
-) => void;
-
-export type GListItemClickHandler = (
-    item: unknown,
-    index: number
-) => void;
-
-export type GListSlotClickHandler = (
-    item: ListTemplateData | null,
-    listKey: string,
-    slotIndex: number
-) => void;
+export type GListSlotClickHandler = (item: ListTemplateData | null, listKey: string, slotIndex: number) => void;
 
 @regClass()
 export class glist extends Laya.Script {
     @property(Laya.Node)
     public listNode: Laya.Node | null = null;
-    
-    private generatedNodes: Laya.Node[] = [];
-    
+
     @property(Laya.Node)
     public templateNode: Laya.Node | null = null;
 
@@ -36,70 +16,36 @@ export class glist extends Laya.Script {
     public slotCount: number = 0;
 
     public listKey: string = "";
-
     public onSlotClick: GListSlotClickHandler | null = null;
-    public onItemClick: GListItemClickHandler | null = null;
 
-    private clearGeneratedNodes(): void {
-    for (const node of this.generatedNodes) {
-        node.removeSelf();
-        node.destroy();
-    }
-
-    this.generatedNodes = [];
-}
-    private items: unknown[] = [];
-    private customBinder: GListItemBinder<unknown> | null = null;
+    private items: ListTemplateData[] = [];
+    private appliedSlotCount: number = -1;
     private selectedItemId: string = "";
 
-    public onAwake(): void {
-        this.rebuild();
-    }
-
-    public onEnable(): void {
+    onAwake(): void {
+        this.applySlotCount(true);
         this.refresh();
     }
 
-    public setItems(items: ListTemplateData[] | null | undefined): void;
-    public setItems<T>(items: T[] | null | undefined, binder: GListItemBinder<T>): void;
-    public setItems<T>(items: T[] | null | undefined, binder?: GListItemBinder<T>): void {
+    onEnable(): void {
+        this.applySlotCount();
+        this.refresh();
+    }
+
+    public setItems(items: ListTemplateData[] | null | undefined): void {
         this.items = Array.isArray(items) ? items.slice() : [];
-
-        if (binder) {
-            this.customBinder = (
-                slotNode: Laya.Node,
-                item: unknown,
-                index: number
-            ): void => {
-                binder(slotNode, item as T, index);
-            };
-
-            this.rebuild(this.items.length);
-            return;
-        }
-
-        this.customBinder = null;
-        this.rebuild(this.slotCount);
+        this.refresh();
     }
 
     public clearItems(): void {
         this.items = [];
-
-        if (this.customBinder) {
-            this.rebuild(0);
-        } else {
-            this.rebuild(this.slotCount);
-        }
+        this.refresh();
     }
 
     public setSlotCount(count: number): void {
-        this.slotCount = Number.isFinite(count)
-            ? Math.max(0, Math.floor(count))
-            : 0;
-
-        if (!this.customBinder) {
-            this.rebuild(this.slotCount);
-        }
+        this.slotCount = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : 0;
+        this.applySlotCount(true);
+        this.refresh();
     }
 
     public setSelectedItemId(itemId: string | null): void {
@@ -107,176 +53,102 @@ export class glist extends Laya.Script {
         this.refresh();
     }
 
-    public rebuild(count?: number): void {
-    const root = this.getListRoot();
+    public refresh(): void {
+        this.applySlotCount();
+        this.hideTemplateNode();
 
-    if (!root) {
-        console.error("[glist] listNode未绑定");
-        return;
-    }
-
-    const template = this.getTemplateNode();
-
-    if (!template) {
-        console.error("[glist] templateNode未绑定");
-        return;
-    }
-
-    const targetCount = count === undefined
-        ? Math.max(0, Math.floor(this.slotCount))
-        : Math.max(0, Math.floor(count));
-
-    this.clearGeneratedNodes();
-    this.setVisible(template, false);
-
-    for (let i = 0; i < targetCount; i++) {
-    const templateObject = template as any;
-
-    if (typeof templateObject.clone !== "function") {
-        console.error("[glist] templateNode不支持clone()");
-        break;
-    }
-
-    const slotNode =
-        templateObject.clone() as Laya.Node;
-
-    slotNode.name = `slot_${i}`;
-    this.setVisible(slotNode, true);
-
-    root.addChild(slotNode);
-    this.generatedNodes.push(slotNode);
-    this.bindClick(slotNode, i);
-}
-
-    this.refresh();
-}
-
-   public refresh(): void {
-    for (let i = 0; i < this.generatedNodes.length; i++) {
-        const slotNode = this.generatedNodes[i];
-        const item = this.items[i] ?? null;
-
-        if (this.customBinder) {
-            this.setVisible(slotNode, item !== null);
-
-            if (item !== null) {
-                this.customBinder(slotNode, item, i);
-            }
-
-            continue;
-        }
-
-        const slot = slotNode.getComponent(
-            listTemplate
-        ) as listTemplate | null;
-
-        if (!slot) {
-            console.error(
-                `[glist] 第${i}个格子缺少listTemplate脚本`
-            );
-            continue;
-        }
-
-        const data = item as ListTemplateData | null;
-
-        this.setVisible(slotNode, true);
-        slot.bindData(data);
-        slot.setSelected(
-            !!data?.itemId &&
-            data.itemId === this.selectedItemId
-        );
-    }
-
-    this.refreshListLayout();
-}
-
-    public getGeneratedNodes(): Laya.Node[] {
-    return this.generatedNodes.slice();
-}
-
-    private getTemplateNode(): Laya.Node | null {
-        if (this.templateNode) {
-            return this.templateNode;
-        }
-
-        const children = this.listNode?.children || [];
-        for (const child of children) {
-            if (child) {
-                return child;
-            }
-        }
-
-        return null;
-    }
-
-    private getListRoot(): Laya.Node | null {
-        return this.listNode || this.owner || null;
-    }
-
-    private bindGeneratedSlots(): void {
-        const root = this.getListRoot();
-        if (!root) {
+        const listRoot = this.getListRoot();
+        if (!listRoot) {
             return;
         }
 
-        const children = root.children || [];
-        let slotIndex = 0;
+        const children = listRoot.children || [];
+        const maxSlots = Math.max(0, Math.floor(this.slotCount));
+        const bindLimit = maxSlots > 0 ? Math.min(maxSlots, children.length) : children.length;
+        let dataIndex = 0;
 
-        for (const child of children) {
-            if (!child || child === this.templateNode) {
+        for (let i = 0; i < bindLimit; i++) {
+            const slotNode = children[i] as Laya.Node;
+            if (!slotNode || slotNode === this.templateNode) {
                 continue;
             }
 
-            this.bindClick(child, slotIndex);
-            slotIndex++;
+            const slot = slotNode.getComponent(listTemplate);
+            if (!slot) {
+                continue;
+            }
+
+            const item = this.items[dataIndex] || null;
+            slot.bindData(item);
+            slot.setSelected(!!item && !!item.itemId && item.itemId === this.selectedItemId);
+            this.bindSlotClick(slotNode, i);
+            dataIndex++;
         }
     }
 
-    private bindClick(slotNode: Laya.Node, index: number): void {
+    private bindSlotClick(slotNode: Laya.Node, slotIndex: number): void {
         const target = slotNode as any;
         if (!target || typeof target.on !== "function" || typeof target.off !== "function") {
             return;
         }
 
-        target.off(Laya.Event.CLICK, this, this.handleClick);
-        target.on(Laya.Event.CLICK, this, this.handleClick, [index]);
+        target.off(Laya.Event.CLICK, this, this.onSlotNodeClick);
+        target.on(Laya.Event.CLICK, this, this.onSlotNodeClick, [slotIndex]);
     }
 
-    private handleClick(index: number): void {
-        const item = this.items[index] ?? null;
-
-        if (this.onItemClick) {
-            this.onItemClick(item, index);
+    private onSlotNodeClick(slotIndex: number, event: any): void {
+        const listRoot = this.getListRoot();
+        if (!listRoot) {
             return;
         }
 
-        if (this.onSlotClick) {
-            this.onSlotClick(item as ListTemplateData | null, this.listKey, index);
+        const children = listRoot.children || [];
+        const slotNode = children[slotIndex] as Laya.Node;
+        if (!slotNode) {
+            return;
         }
+
+        const slot = slotNode.getComponent(listTemplate);
+        if (!slot) {
+            return;
+        }
+
+        const data = slot.getBoundData();
+        if (this.onSlotClick) {
+            this.onSlotClick(data, this.listKey, slotIndex);
+        }
+    }
+
+    private applySlotCount(force: boolean = false): void {
+        const listRoot = this.getListRoot() as any;
+        if (!listRoot) {
+            return;
+        }
+
+        const nextCount = Math.max(0, Math.floor(this.slotCount));
+        if (!force && this.appliedSlotCount === nextCount) {
+            return;
+        }
+
+        this.appliedSlotCount = nextCount;
+
+        if ("numItems" in listRoot) {
+            listRoot.numItems = nextCount;
+        }
+
+        if (typeof listRoot.refresh === "function") {
+            listRoot.refresh(true);
+        }
+    }
+
+    private getListRoot(): Laya.Node | null {
+        return this.listNode || (this.owner as Laya.Node) || null;
     }
 
     private hideTemplateNode(): void {
         const template = this.templateNode as any;
         if (template && "visible" in template) {
-            template.visible = false;
+            (template as any).visible = false;
         }
     }
-
-    private setVisible(node: Laya.Node, visible: boolean): void {
-        const target = node as any;
-        if (target && "visible" in target) {
-            target.visible = visible;
-        }
-    }
-
-    private refreshListLayout(): void {
-        const list = this.listNode as any;
-        if (list && typeof list.refresh === "function") {
-            list.refresh(true);
-        }
-    }
-
-    public onDestroy(): void {
-    this.clearGeneratedNodes();
-}
 }
