@@ -5,22 +5,13 @@
   "name": "Root",
   "width": 100,
   "height": 50,
+  "background": {
+    "_$type": "DrawRectCmd",
+    "lineWidth": 2,
+    "lineColor": "#000000",
+    "fillColor": "#ccad31"
+  },
   "_$child": [
-    {
-      "_$id": "3oei1uz6",
-      "_$type": "Sprite",
-      "name": "Sprite",
-      "width": 100,
-      "height": 50,
-      "_gcmds": [
-        {
-          "_$type": "DrawRectCmd",
-          "lineWidth": 1,
-          "lineColor": "#000000",
-          "fillColor": "#b98f08"
-        }
-      ]
-    },
     {
       "_$id": "qwk816k0",
       "_$type": "Text",

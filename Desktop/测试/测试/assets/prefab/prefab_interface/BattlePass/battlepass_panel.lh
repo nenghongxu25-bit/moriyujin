@@ -5,6 +5,24 @@
   "name": "battlepass_panel",
   "width": 1334,
   "height": 750,
+  "_$comp": [
+    {
+      "_$type": "1ec210a1-d23c-449d-9a78-ad05f5fc4dc0",
+      "scriptPath": "../src/PlayUI/BattlePass/BattlePassPanel.ts",
+      "timeListNode": {
+        "_$ref": "nlzz5pbb"
+      },
+      "taskListNode": {
+        "_$ref": "a7oaawzk"
+      },
+      "gradeListNode": {
+        "_$ref": "0h22jncl"
+      },
+      "rewardListNode": {
+        "_$ref": "datwihsf"
+      }
+    }
+  ],
   "_$child": [
     {
       "_$id": "78ixqw11",
@@ -86,7 +104,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                   "listNode": {
                     "_$ref": "nlzz5pbb"
                   },
@@ -138,7 +156,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                   "listNode": {
                     "_$ref": "a7oaawzk"
                   },
@@ -161,12 +179,27 @@
                     "lineColor": "#000000",
                     "fillColor": "#bb9300"
                   },
+                  "_$comp": [
+                    {
+                      "_$type": "18ba9d11-9bc0-4199-ad7a-cdc4cfcaa965",
+                      "scriptPath": "../src/PlayUI/BattlePass/TaskNode.ts",
+                      "taskTextNode": {
+                        "_$ref": "bx9kyfsn"
+                      },
+                      "progressTextNode": {
+                        "_$ref": "cm8i4u75"
+                      },
+                      "completeNode": {
+                        "_$ref": "j4m59zoo"
+                      }
+                    }
+                  ],
                   "_$child": [
                     {
                       "_$id": "bx9kyfsn",
                       "_$type": "Text",
-                      "name": "Text",
-                      "width": 700,
+                      "name": "TaskText",
+                      "width": 500,
                       "height": 100,
                       "text": "击杀20个敌人",
                       "fontSize": 40,
@@ -176,9 +209,24 @@
                       "letterSpacing": 0
                     },
                     {
+                      "_$id": "cm8i4u75",
+                      "_$type": "Text",
+                      "name": "ProgressText",
+                      "x": 500,
+                      "width": 200,
+                      "height": 100,
+                      "text": "Text",
+                      "fontSize": 40,
+                      "color": "#000000",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
                       "_$id": "j4m59zoo",
                       "_$type": "Sprite",
-                      "name": "mask_1",
+                      "name": "CompleteNode",
                       "width": 700,
                       "height": 100,
                       "visible": false,
@@ -193,7 +241,7 @@
                         {
                           "_$id": "fgsw9pw1",
                           "_$type": "Text",
-                          "name": "Text",
+                          "name": "CompleteNode",
                           "width": 700,
                           "height": 100,
                           "text": "已完成",
@@ -236,15 +284,11 @@
                 "_$type": "Scroller",
                 "barDisplay": 1
               },
-              "_templateNode": {
-                "_$ref": "59xfwb2s",
-                "_$tmpl": "itemTemplate"
-              },
               "_initItemNum": 20,
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                   "listNode": {
                     "_$ref": "0h22jncl"
                   },
@@ -256,38 +300,35 @@
               ],
               "_$child": [
                 {
-                  "_$id": "59xfwb2s",
-                  "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
-                  "name": "bt",
+                  "_$id": "1xdrjq2q",
+                  "_$prefab": "5a6b1799-ea55-4e19-bb7d-6c914cdfbc54",
+                  "name": "GradeNode",
                   "active": true,
                   "x": 0,
                   "y": 0,
-                  "width": 80,
                   "visible": true,
+                  "_$comp": [
+                    {
+                      "_$type": "c234814d-98c9-4bef-9589-f88fa35a29af",
+                      "scriptPath": "../src/PlayUI/BattlePass/BattlePassGradeItem.ts",
+                      "gradeTextNode": {
+                        "_$ref": [
+                          "1xdrjq2q",
+                          "qwk816k0"
+                        ]
+                      },
+                      "maskNode": {
+                        "_$ref": [
+                          "1xdrjq2q",
+                          "12fl4464"
+                        ]
+                      }
+                    }
+                  ],
                   "_$child": [
                     {
-                      "_$override": "3oei1uz6",
-                      "width": 80
-                    },
-                    {
                       "_$override": "qwk816k0",
-                      "width": 80
-                    },
-                    {
-                      "_$id": "12fl4464",
-                      "_$type": "Sprite",
-                      "name": "Sprite_1",
-                      "width": 80,
-                      "height": 50,
-                      "alpha": 0.6,
-                      "_gcmds": [
-                        {
-                          "_$type": "DrawRectCmd",
-                          "lineWidth": 1,
-                          "lineColor": "#000000",
-                          "fillColor": "#000000"
-                        }
-                      ]
+                      "name": "GradeText"
                     }
                   ]
                 }
@@ -315,15 +356,11 @@
                 "_$type": "Scroller",
                 "barDisplay": 1
               },
-              "_templateNode": {
-                "_$ref": "t5mwj9w0",
-                "_$tmpl": "itemTemplate"
-              },
               "_initItemNum": 20,
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                   "listNode": {
                     "_$ref": "datwihsf"
                   },
@@ -335,80 +372,21 @@
               ],
               "_$child": [
                 {
-                  "_$id": "t5mwj9w0",
-                  "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-                  "name": "boxmodule",
+                  "_$id": "le3hscar",
+                  "_$prefab": "8a4a1541-ce3d-4a29-a4f7-4408f3ddca01",
+                  "name": "RewardNode",
                   "active": true,
-                  "x": 0,
+                  "x": 10,
                   "y": 0,
                   "visible": true,
                   "_$child": [
                     {
-                      "_$id": "xu1xzcfz",
-                      "_$index": 4,
-                      "_$type": "Sprite",
-                      "name": "mask_1",
-                      "x": 13,
-                      "y": 13,
-                      "width": 100,
-                      "height": 100,
-                      "visible": false,
-                      "alpha": 0.4,
-                      "_gcmds": [
-                        {
-                          "_$type": "DrawRectCmd",
-                          "fillColor": "#ffffff"
-                        }
-                      ],
-                      "_$child": [
-                        {
-                          "_$id": "jq1367ln",
-                          "_$type": "Text",
-                          "name": "Text",
-                          "width": 100,
-                          "height": 100,
-                          "text": "已领取",
-                          "fontSize": 30,
-                          "color": "#000000",
-                          "align": "center",
-                          "valign": "middle",
-                          "leading": 2,
-                          "letterSpacing": 0
-                        }
-                      ]
+                      "_$override": "xu1xzcfz",
+                      "visible": false
                     },
                     {
-                      "_$id": "dizqxair",
-                      "_$type": "Sprite",
-                      "name": "mask_0",
-                      "x": 13,
-                      "y": 13,
-                      "width": 100,
-                      "height": 100,
-                      "alpha": 0.5,
-                      "_gcmds": [
-                        {
-                          "_$type": "DrawRectCmd",
-                          "fillColor": "#000000"
-                        }
-                      ],
-                      "_$child": [
-                        {
-                          "_$id": "lpzr007u",
-                          "_$type": "Text",
-                          "name": "Text",
-                          "width": 100,
-                          "height": 100,
-                          "alpha": 0.6,
-                          "text": "未解锁",
-                          "fontSize": 30,
-                          "color": "#ffff00",
-                          "align": "center",
-                          "valign": "middle",
-                          "leading": 2,
-                          "letterSpacing": 0
-                        }
-                      ]
+                      "_$override": "dizqxair",
+                      "visible": false
                     }
                   ]
                 }
@@ -424,10 +402,6 @@
               "width": 110,
               "visible": true,
               "_$child": [
-                {
-                  "_$override": "3oei1uz6",
-                  "width": 110
-                },
                 {
                   "_$override": "qwk816k0",
                   "width": 110,
@@ -445,10 +419,6 @@
               "width": 180,
               "visible": true,
               "_$child": [
-                {
-                  "_$override": "3oei1uz6",
-                  "width": 180
-                },
                 {
                   "_$override": "qwk816k0",
                   "width": 180,
