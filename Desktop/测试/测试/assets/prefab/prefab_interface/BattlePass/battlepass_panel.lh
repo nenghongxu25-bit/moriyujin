@@ -107,7 +107,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                  "scriptPath": "../src/PlayUI/BattlePass/TimeList.ts",
                   "listNode": {
                     "_$ref": "nlzz5pbb"
                   },
@@ -171,7 +171,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                  "scriptPath": "../src/PlayUI/BattlePass/TimeList.ts",
                   "listNode": {
                     "_$ref": "a7oaawzk"
                   },
@@ -303,7 +303,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                  "scriptPath": "../src/PlayUI/BattlePass/TimeList.ts",
                   "listNode": {
                     "_$ref": "0h22jncl"
                   },
@@ -373,7 +373,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                  "scriptPath": "../src/PlayUI/BattlePass/TimeList.ts",
                   "listNode": {
                     "_$ref": "datwihsf"
                   },

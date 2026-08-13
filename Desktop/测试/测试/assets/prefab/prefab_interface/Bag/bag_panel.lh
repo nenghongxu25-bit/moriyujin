@@ -85,7 +85,7 @@
               "_$comp": [
                 {
                   "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                  "scriptPath": "../src/PlayUI/Bag/BagList.ts",
                   "listNode": {
                     "_$ref": [
                       "a4i1vm6g",

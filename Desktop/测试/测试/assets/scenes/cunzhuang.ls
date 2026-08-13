@@ -987,7 +987,7 @@
                   "_$comp": [
                     {
                       "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                      "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                      "scriptPath": "../src/PlayUI/Bag/BagList.ts",
                       "listNode": {
                         "_$ref": [
                           "vit9oqss",
@@ -1014,7 +1014,7 @@
                   "_$comp": [
                     {
                       "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                      "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
+                      "scriptPath": "../src/PlayUI/Bag/listTemplate.ts",
                       "templateSlot": {
                         "_$ref": [
                           "vit9oqss",
