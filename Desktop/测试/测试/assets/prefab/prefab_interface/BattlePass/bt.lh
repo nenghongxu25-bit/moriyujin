@@ -1,0 +1,46 @@
+{
+  "_$ver": 1,
+  "_$id": "0e83vtid",
+  "_$type": "GWidget",
+  "name": "bt",
+  "width": 80,
+  "height": 50,
+  "background": {
+    "_$type": "DrawRectCmd",
+    "lineWidth": 2,
+    "lineColor": "#000000",
+    "fillColor": "#ccad31"
+  },
+  "_$child": [
+    {
+      "_$id": "qwk816k0",
+      "_$type": "Text",
+      "name": "Text",
+      "width": 80,
+      "height": 50,
+      "text": "Text",
+      "fontSize": 30,
+      "color": "#000000",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "12fl4464",
+      "_$type": "Sprite",
+      "name": "mask",
+      "width": 80,
+      "height": 50,
+      "alpha": 0.6,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#000000"
+        }
+      ]
+    }
+  ]
+}
