@@ -8,22 +8,31 @@
   "_$comp": [
     {
       "_$type": "cccc26aa-5d81-479b-9e05-9dc1ee8b8c83",
-      "scriptPath": "../src/PlayUI/module/BagPanel.ts",
-      "containerNode": null,
-      "bagNode": {
-        "_$ref": "yhjq0cvz"
+      "scriptPath": "../src/PlayUI/Bag/BagPanel.ts",
+      "containerNode": {
+        "_$ref": "a4i1vm6g"
       },
-      "containerGlistNode": null,
+      "bagNode": {
+        "_$ref": "ybrtsioi"
+      },
+      "containerGlistNode": {
+        "_$ref": [
+          "a4i1vm6g",
+          "5ao6050k"
+        ]
+      },
       "bagGlistNode": {
         "_$ref": [
-          "yhjq0cvz",
+          "ybrtsioi",
           "7fpks0da"
         ]
       },
       "personPageNode": {
         "_$ref": "tags6qmg"
       },
-      "quickEquipNode": null,
+      "quickEquipNode": {
+        "_$ref": "eavb30xg"
+      },
       "defaultState": 0
     }
   ],
@@ -69,7 +78,31 @@
           "active": true,
           "x": 229,
           "y": 176,
-          "visible": true
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "5ao6050k",
+              "_$comp": [
+                {
+                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+                  "listNode": {
+                    "_$ref": [
+                      "a4i1vm6g",
+                      "5ao6050k"
+                    ]
+                  },
+                  "templateNode": {
+                    "_$ref": [
+                      "a4i1vm6g",
+                      "02b5n7vf"
+                    ]
+                  },
+                  "slotCount": 0
+                }
+              ]
+            }
+          ]
         },
         {
           "_$id": "ybrtsioi",
@@ -382,7 +415,9 @@
       "_$comp": [
         {
           "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
-          "targetNode": null
+          "targetNode": {
+            "_$ref": "r0itm6j1"
+          }
         }
       ]
     }

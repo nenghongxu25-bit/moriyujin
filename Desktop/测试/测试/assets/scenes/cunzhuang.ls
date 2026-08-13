@@ -863,6 +863,14 @@
               "x": 309,
               "y": 0,
               "visible": true,
+              "_$comp": [
+                {
+                  "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "targetNode": {
+                    "_$ref": "5voabxsh"
+                  }
+                }
+              ],
               "_$child": [
                 {
                   "_$override": "6k3sv098",
@@ -968,33 +976,6 @@
               "visible": false,
               "_$child": [
                 {
-                  "_$override": [
-                    "v4x5csnr",
-                    "7fpks0da"
-                  ],
-                  "_$comp": [
-                    {
-                      "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                      "scriptPath": "../src/PlayUI/module/glist.ts",
-                      "listNode": {
-                        "_$ref": [
-                          "vit9oqss",
-                          "v4x5csnr",
-                          "7fpks0da"
-                        ]
-                      },
-                      "templateNode": {
-                        "_$ref": [
-                          "vit9oqss",
-                          "v4x5csnr",
-                          "myzvhd4c"
-                        ]
-                      },
-                      "slotCount": 5
-                    }
-                  ]
-                },
-                {
                   "_$override": "bxppbfbw",
                   "visible": true
                 },
@@ -1006,7 +987,7 @@
                   "_$comp": [
                     {
                       "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                      "scriptPath": "../src/PlayUI/module/glist.ts",
+                      "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                       "listNode": {
                         "_$ref": [
                           "vit9oqss",
@@ -1033,7 +1014,7 @@
                   "_$comp": [
                     {
                       "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                      "scriptPath": "../src/PlayUI/module/listTemplate.ts",
+                      "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
                       "templateSlot": {
                         "_$ref": [
                           "vit9oqss",
@@ -1099,12 +1080,82 @@
               "visible": false,
               "_$child": [
                 {
-                  "_$override": "rz2srgmu",
-                  "visible": false
+                  "_$override": [
+                    "a4i1vm6g",
+                    "02b5n7vf"
+                  ],
+                  "_$comp": [
+                    {
+                      "_$override": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                      "templateSlot": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "a4i1vm6g",
+                          "zfgejdrd"
+                        ]
+                      },
+                      "gimg": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "a4i1vm6g",
+                          "jdhjlgub"
+                        ]
+                      },
+                      "nameText": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "a4i1vm6g",
+                          "5zg64bdz"
+                        ]
+                      },
+                      "countText": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "a4i1vm6g",
+                          "gj3qvj55"
+                        ]
+                      }
+                    }
+                  ]
                 },
                 {
-                  "_$override": "yhjq0cvz",
-                  "visible": true
+                  "_$override": [
+                    "ybrtsioi",
+                    "myzvhd4c"
+                  ],
+                  "_$comp": [
+                    {
+                      "_$override": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                      "templateSlot": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "ybrtsioi",
+                          "zfgejdrd"
+                        ]
+                      },
+                      "gimg": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "ybrtsioi",
+                          "jdhjlgub"
+                        ]
+                      },
+                      "nameText": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "ybrtsioi",
+                          "5zg64bdz"
+                        ]
+                      },
+                      "countText": {
+                        "_$ref": [
+                          "t6lrfgse",
+                          "ybrtsioi",
+                          "gj3qvj55"
+                        ]
+                      }
+                    }
+                  ]
                 }
               ]
             },
@@ -1162,7 +1213,13 @@
               "active": true,
               "x": 0,
               "y": 0,
-              "visible": true
+              "visible": false,
+              "_$child": [
+                {
+                  "_$override": "4809b8q6",
+                  "visible": true
+                }
+              ]
             }
           ]
         }

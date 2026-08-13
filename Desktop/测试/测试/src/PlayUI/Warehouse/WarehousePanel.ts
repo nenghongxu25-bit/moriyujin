@@ -2,6 +2,7 @@ const { regClass, property } = Laya;
 
 import { DataManager, type InventoryViewItem, type InventoryBucket } from "../../systems/datamanager";
 import { glist } from "../CommonUI/glist";
+import { bag } from "../playerui/bag";
 import type { ListTemplateData } from "./listTemplate";
 
 interface SelectedSlotState {
@@ -50,8 +51,23 @@ export class WarehousePanel extends Laya.Script {
     }
 
     private bindControllers(): void {
-        this.bagGlist = this.bagGlistNode ? this.bagGlistNode.getComponent(glist) : null;
+        this.bagGlist = this.resolveGlist(this.bagGlistNode);
         this.warehouseGlist = this.warehouseGlistNode ? this.warehouseGlistNode.getComponent(glist) : null;
+    }
+
+    private resolveGlist(node: Laya.Node | null): glist | null {
+        if (!node) {
+            return null;
+        }
+
+        const direct = node.getComponent(glist);
+        if (direct) {
+            return direct;
+        }
+
+        const bagController = node.getComponent(bag);
+        const listNode = bagController?.glistNode || null;
+        return listNode ? listNode.getComponent(glist) : null;
     }
 
     private bindBagList(items: InventoryViewItem[]): void {

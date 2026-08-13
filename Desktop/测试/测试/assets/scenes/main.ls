@@ -2518,6 +2518,20 @@
         {
           "_$override": [
             "drk6pui3",
+            "run_ui"
+          ],
+          "_$comp": [
+            {
+              "_$override": "3e46d646-50d0-4380-9afa-0544eff22c4e",
+              "playerNode": {
+                "_$ref": "eojseri5"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
             "bag_ui"
           ],
           "_$comp": [
@@ -2528,6 +2542,20 @@
                   "u0e892gj",
                   "p8xgvne7"
                 ]
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "asq102c8"
+          ],
+          "_$comp": [
+            {
+              "_$override": "3db5f4f4-1d50-4b5c-a876-7bc6f7a7eb10",
+              "playerNode": {
+                "_$ref": "eojseri5"
               }
             }
           ]
@@ -2584,22 +2612,6 @@
               }
             }
           ]
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "rz2srgmu",
-            "5ao6050k"
-          ],
-          "name": "contianer_glist"
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "yhjq0cvz",
-            "7fpks0da"
-          ],
-          "name": "bag_glist"
         }
       ]
     }

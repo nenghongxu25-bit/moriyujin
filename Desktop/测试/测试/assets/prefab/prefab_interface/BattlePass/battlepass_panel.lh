@@ -20,6 +20,9 @@
       },
       "rewardListNode": {
         "_$ref": "datwihsf"
+      },
+      "experienceTextNode": {
+        "_$ref": "4809b8q6"
       }
     }
   ],
@@ -123,6 +126,18 @@
                   "x": 0,
                   "y": 0,
                   "visible": true,
+                  "_$comp": [
+                    {
+                      "_$type": "a85d1ed5-db74-4520-bab0-76959c45ab1e",
+                      "scriptPath": "../src/PlayUI/BattlePass/TimeNode.ts",
+                      "weekTextNode": {
+                        "_$ref": [
+                          "3h7yfid0",
+                          "qwk816k0"
+                        ]
+                      }
+                    }
+                  ],
                   "_$child": [
                     {
                       "_$override": "qwk816k0",
@@ -292,9 +307,7 @@
                   "listNode": {
                     "_$ref": "0h22jncl"
                   },
-                  "templateNode": {
-                    "_$ref": "59xfwb2s"
-                  },
+                  "templateNode": null,
                   "slotCount": 0
                 }
               ],
@@ -364,9 +377,7 @@
                   "listNode": {
                     "_$ref": "datwihsf"
                   },
-                  "templateNode": {
-                    "_$ref": "t5mwj9w0"
-                  },
+                  "templateNode": null,
                   "slotCount": 0
                 }
               ],
@@ -450,7 +461,7 @@
     {
       "_$id": "4809b8q6",
       "_$type": "Text",
-      "name": "Text",
+      "name": "jingyan",
       "x": 679,
       "y": 145,
       "width": 151,
