@@ -1,8 +1,8 @@
 const { regClass, property } = Laya;
 
 import { DataManager, type InventoryViewItem } from "../../systems/datamanager";
-import { glist } from "../CommonUI/glist";
-import { listTemplate } from "../CommonUI/listTemplate";
+import { glist } from "../Bag/BagList";
+import { listTemplate } from "../Bag/listTemplate";
 
 @regClass()
 export class bag extends Laya.Script {

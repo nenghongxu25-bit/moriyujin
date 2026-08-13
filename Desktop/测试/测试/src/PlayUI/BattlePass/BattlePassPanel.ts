@@ -9,7 +9,7 @@ import {
     BATTLE_PASS_TOTAL_WEEKS,
 } from "./BattlePassConfig";
 
-import { glist } from "../CommonUI/glist";
+import { glist } from "../Bag/BagList";
 import { TimeNode } from "./TimeNode";
 import { BattlePassTaskItem as TaskNode } from "./TaskNode";
 import { BattlePassGradeItem } from "./BattlePassGradeItem";

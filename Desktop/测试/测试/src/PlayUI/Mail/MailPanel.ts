@@ -1,8 +1,8 @@
 const { regClass, property } = Laya;
 
-import { glist } from "../CommonUI/glist";
-import { listTemplate } from "../CommonUI/listTemplate";
-import type { ListTemplateData } from "../CommonUI/listTemplate";
+import { glist } from "../Bag/BagList";
+import { listTemplate } from "../Bag/listTemplate";
+import type { ListTemplateData } from "../Bag/listTemplate";
 
 import { MailList } from "./MailList";
 import type { MailListItemData } from "./MailTemplate";

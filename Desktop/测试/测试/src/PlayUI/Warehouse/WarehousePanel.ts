@@ -1,9 +1,9 @@
 const { regClass, property } = Laya;
 
 import { DataManager, type InventoryViewItem, type InventoryBucket } from "../../systems/datamanager";
-import { glist } from "../CommonUI/glist";
+import { glist } from "../Bag/BagList";
 import { bag } from "../playerui/bag";
-import type { ListTemplateData } from "./listTemplate";
+import type { ListTemplateData } from "../Bag/listTemplate";
 
 interface SelectedSlotState {
     bucket: InventoryBucket;

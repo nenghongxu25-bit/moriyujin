@@ -1,7 +1,7 @@
 const { regClass, property } = Laya;
 
 import { bag } from "../playerui/bag";
-import { glist } from "../CommonUI/glist";
+import { glist } from "./BagList";
 
 @regClass()
 export class BagPanel extends Laya.Script {
