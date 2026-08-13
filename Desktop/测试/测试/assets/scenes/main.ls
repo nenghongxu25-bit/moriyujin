@@ -1719,6 +1719,33 @@
                   "x": 360,
                   "y": 90,
                   "visible": true
+                },
+                {
+                  "_$id": "18r1cmcy",
+                  "_$prefab": "7f72840a-eaf6-4fe0-bc7f-d7c1eff0855e",
+                  "name": "bush",
+                  "active": true,
+                  "x": -295,
+                  "y": 23,
+                  "visible": true
+                },
+                {
+                  "_$id": "4y6j910r",
+                  "_$prefab": "116de3cb-3e77-4eb8-86d5-3cdb13cd19bf",
+                  "name": "stones",
+                  "active": true,
+                  "x": 700,
+                  "y": -35,
+                  "visible": true
+                },
+                {
+                  "_$id": "b24u7zur",
+                  "_$prefab": "2aba04d5-f51b-4f7b-87a8-af84c6e26002",
+                  "name": "branches",
+                  "active": true,
+                  "x": 431,
+                  "y": -73,
+                  "visible": true
                 }
               ]
             },
@@ -1737,6 +1764,12 @@
                   "x": 585,
                   "y": -246,
                   "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "c803dca4-3833-4ccf-ae56-54ed9e6001d5",
+                      "sceneUrl": "scenes/cunzhuang.ls"
+                    }
+                  ],
                   "_$child": [
                     {
                       "_$override": "kh344dvv",
@@ -1795,7 +1828,14 @@
               "_$comp": [
                 {
                   "_$override": "76db1d2e-7130-4636-8470-c6615ed7950b",
-                  "joystickNode": null,
+                  "joystickNode": {
+                    "_$ref": [
+                      "u0e892gj",
+                      "drk6pui3",
+                      "9xqe96ru",
+                      "0jvaucmc"
+                    ]
+                  },
                   "isRunning": false,
                   "attackAnimation": "attack_swing",
                   "initialFacingSign": -1
@@ -1808,7 +1848,8 @@
                     {
                       "_$override": "Spine2DRenderNode",
                       "animationName": "idle",
-                      "skinName": "player_normal"
+                      "skinName": "player_normal",
+                      "loop": true
                     }
                   ]
                 },
@@ -1816,8 +1857,8 @@
                   "_$id": "lh500v0q",
                   "_$type": "Sprite",
                   "name": "Sprite",
-                  "x": 130,
-                  "y": 53,
+                  "x": 320,
+                  "y": -280,
                   "width": 1334,
                   "height": 750,
                   "_$comp": [
@@ -2241,9 +2282,8 @@
                           "shape": {
                             "_$type": "FanShape",
                             "angle": 0,
-                            "radius": 17,
-                            "emitType": 1,
-                            "length": 8
+                            "radius": 18,
+                            "length": 0
                           }
                         },
                         "colorOverLifetime": {
@@ -2457,7 +2497,111 @@
       "active": true,
       "x": 0,
       "y": 0,
-      "visible": true
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": [
+            "drk6pui3",
+            "la1qodvj"
+          ],
+          "x": 642,
+          "y": 350
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "i3rmmb8s"
+          ],
+          "x": 642,
+          "y": 350
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "bag_ui"
+          ],
+          "_$comp": [
+            {
+              "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
+              "targetNode": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "rk8t267l"
+          ],
+          "x": 642,
+          "y": 350
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "mokveb9e"
+          ],
+          "_$comp": [
+            {
+              "_$override": "f29af7cf-09c7-4141-901d-e18b0064f813",
+              "playerNode": {
+                "_$ref": "eojseri5"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "tdloqyfr"
+          ],
+          "_$comp": [
+            {
+              "_$override": "8f0c1a2b-5d7e-4c6f-9a8b-1f2e3d4c5b6a",
+              "playerNode": {
+                "_$ref": "eojseri5"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "g39wgkh6"
+          ],
+          "x": 60,
+          "y": -92,
+          "visible": false,
+          "_$comp": [
+            {
+              "_$override": "10034fdc-629a-4e30-8bc7-32dc80a0683f",
+              "playerNode": {
+                "_$ref": "eojseri5"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "rz2srgmu",
+            "5ao6050k"
+          ],
+          "name": "contianer_glist"
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "yhjq0cvz",
+            "7fpks0da"
+          ],
+          "name": "bag_glist"
+        }
+      ]
     }
   ]
 }

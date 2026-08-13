@@ -1,0 +1,347 @@
+{
+    "category":  "harvest_drops",
+    "items":  [
+                  {
+                      "id":  "harvestable_bush",
+                      "name":  "bush",
+                      "displayName":  "灌木",
+                      "action":  "search",
+                      "drops":  [
+                                    {
+                                        "itemId":  "common_material_04",
+                                        "label":  "草",
+                                        "minCount":  2,
+                                        "maxCount":  3,
+                                        "probability":  0.9,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  3,
+                                                                 "probability":  0.5
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "xiaoshuzhi",
+                                        "label":  "小树枝",
+                                        "minCount":  1,
+                                        "maxCount":  2,
+                                        "probability":  0.8,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.4
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.2
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "food_material_01",
+                                        "label":  "浆果",
+                                        "minCount":  1,
+                                        "maxCount":  2,
+                                        "probability":  0.8,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.3
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "yaocao",
+                                        "label":  "药草",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.3
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_branches",
+                      "name":  "branches",
+                      "displayName":  "树枝堆",
+                      "action":  "search",
+                      "drops":  [
+                                    {
+                                        "itemId":  "xiaoshuzhi",
+                                        "label":  "小树枝",
+                                        "minCount":  1,
+                                        "maxCount":  3,
+                                        "probability":  1
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_oak",
+                      "name":  "oak",
+                      "displayName":  "橘树",
+                      "action":  "chop",
+                      "drops":  [
+                                    {
+                                        "itemId":  "xiaoshuzhi",
+                                        "label":  "小树枝",
+                                        "minCount":  2,
+                                        "maxCount":  4,
+                                        "probability":  1
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_pine",
+                      "name":  "pine",
+                      "displayName":  "松树",
+                      "action":  "chop",
+                      "drops":  [
+                                    {
+                                        "itemId":  "wood",
+                                        "label":  "木头",
+                                        "minCount":  2,
+                                        "maxCount":  3,
+                                        "probability":  1,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  3,
+                                                                 "probability":  0.5
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "shupi",
+                                        "label":  "树皮",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.2
+                                    },
+                                    {
+                                        "itemId":  "xiaoshuzhi",
+                                        "label":  "小树枝",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.2
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_stones",
+                      "name":  "stones",
+                      "displayName":  "石堆",
+                      "action":  "search",
+                      "drops":  [
+                                    {
+                                        "itemId":  "common_material_02",
+                                        "label":  "石头",
+                                        "minCount":  2,
+                                        "maxCount":  4,
+                                        "probability":  1
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_l1_kuang",
+                      "name":  "l1-kuang",
+                      "displayName":  "L1矿",
+                      "action":  "search",
+                      "drops":  [
+                                    {
+                                        "itemId":  "common_material_02",
+                                        "label":  "石头",
+                                        "minCount":  2,
+                                        "maxCount":  4,
+                                        "probability":  1,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.4
+                                                             },
+                                                             {
+                                                                 "count":  3,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  4,
+                                                                 "probability":  0.1
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "iron",
+                                        "label":  "铁",
+                                        "minCount":  1,
+                                        "maxCount":  3,
+                                        "probability":  1,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.2
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  3,
+                                                                 "probability":  0.3
+                                                             }
+                                                         ]
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_l2_kuang",
+                      "name":  "l2-kuang",
+                      "displayName":  "L2矿",
+                      "action":  "search",
+                      "drops":  [
+                                    {
+                                        "itemId":  "iron",
+                                        "label":  "铁",
+                                        "minCount":  1,
+                                        "maxCount":  3,
+                                        "probability":  1,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.2
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  3,
+                                                                 "probability":  0.3
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "copper",
+                                        "label":  "铜",
+                                        "minCount":  1,
+                                        "maxCount":  3,
+                                        "probability":  0.5,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.5
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.3
+                                                             },
+                                                             {
+                                                                 "count":  3,
+                                                                 "probability":  0.2
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "xiyoujinshu",
+                                        "label":  "稀有金属",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.1
+                                    },
+                                    {
+                                        "itemId":  "liuhuang",
+                                        "label":  "硫磷",
+                                        "minCount":  1,
+                                        "maxCount":  2,
+                                        "probability":  0.2,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.7
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.3
+                                                             }
+                                                         ]
+                                    },
+                                    {
+                                        "itemId":  "mutan",
+                                        "label":  "煤",
+                                        "minCount":  1,
+                                        "maxCount":  2,
+                                        "probability":  0.3,
+                                        "countWeights":  [
+                                                             {
+                                                                 "count":  1,
+                                                                 "probability":  0.7
+                                                             },
+                                                             {
+                                                                 "count":  2,
+                                                                 "probability":  0.3
+                                                             }
+                                                         ]
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_mound",
+                      "name":  "mound",
+                      "displayName":  "土堆",
+                      "action":  "search",
+                      "drops":  [
+                                    {
+                                        "itemId":  "food_material_04",
+                                        "label":  "泥土",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.25
+                                    },
+                                    {
+                                        "itemId":  "base_material_10",
+                                        "label":  "矿渣",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.25
+                                    },
+                                    {
+                                        "itemId":  "xiaoshuzhi",
+                                        "label":  "小树枝",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.25
+                                    },
+                                    {
+                                        "itemId":  "common_material_02",
+                                        "label":  "石头",
+                                        "minCount":  1,
+                                        "maxCount":  1,
+                                        "probability":  0.25
+                                    }
+                                ]
+                  },
+                  {
+                      "id":  "harvestable_dig",
+                      "name":  "dig",
+                      "displayName":  "矿点",
+                      "action":  "dig",
+                      "drops":  [
+                                    {
+                                        "itemId":  "food_material_04",
+                                        "label":  "泥土",
+                                        "minCount":  1,
+                                        "maxCount":  2,
+                                        "probability":  1
+                                    }
+                                ]
+                  }
+              ]
+}

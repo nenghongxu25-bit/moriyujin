@@ -13,7 +13,29 @@
       "active": true,
       "x": 0,
       "y": 0,
-      "visible": true
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "bag_ui",
+          "_$comp": [
+            {
+              "_$override": "ace19175-f28f-4ca8-a7b9-61b0cd9c13f2",
+              "targetNode": {
+                "_$ref": "p8xgvne7"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "p8xgvne7",
+      "_$prefab": "8ae45e30-f989-4f5e-b586-6e6c4cdbaaee",
+      "name": "bag_panel",
+      "active": true,
+      "x": 0,
+      "y": 0,
+      "visible": false
     }
   ]
 }

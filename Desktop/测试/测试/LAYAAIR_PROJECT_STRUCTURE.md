@@ -24,101 +24,87 @@ assets/
 
 src/
 ├── core/                       # Framework-level code
-│   ├── EventManager.ts
-│   ├── Singleton.ts
-│   ├── StateMachine.ts
-│   └── ObjectPool.ts
-│
-├── game/                       # Overall game flow
-│   ├── GameManager.ts          # Base -> Raid -> Base
-│   ├── GamePhase.ts            # Game phase enum
-│   ├── BaseSession.ts          # Base-side session logic
-│   └── RaidSession.ts          # Raid-side session logic
-│
-├── systems/                    # Global systems / singletons
-│   ├── DataManager.ts          # Loads config and provides query APIs
-│   ├── SaveManager.ts          # Save/load
-│   ├── UIManager.ts            # Open/close panels
-│   ├── AudioManager.ts         # Sound effects / music
-│   └── CombatManager.ts        # Damage calculation and combat result
-│
-├── domain/                     # Gameplay domain logic
-│   ├── inventory/
-│   │   ├── InventoryModel.ts
-│   │   ├── InventoryManager.ts
-│   │   └── StorageService.ts
-│   │
-│   ├── crafting/
-│   │   ├── CraftingModel.ts
-│   │   ├── CraftingManager.ts
-│   │   └── RecipeService.ts
-│   │
-│   ├── base/
-│   │   ├── BaseModel.ts
-│   │   ├── BuildingManager.ts
-│   │   └── BaseConstructionService.ts
-│   │
-│   ├── raid/
-│   │   ├── RaidModel.ts
-│   │   ├── RaidManager.ts
-│   │   ├── SpawnManager.ts
-│   │   └── ExtractionService.ts
-│   │
-│   └── combat/
-│       ├── HitResult.ts
-│       ├── DamageCalculator.ts
-│       └── CombatRules.ts
-│
-├── entities/                   # Scripts mounted on nodes
-│   ├── actor/
-│   │   ├── BaseActor.ts
-│   │   ├── player/
-│   │   │   ├── PlayerController.ts
-│   │   │   ├── PlayerCombat.ts
-│   │   │   └── PlayerAnim.ts
-│   │   └── monster/
-│   │       ├── ZombieController.ts
-│   │       ├── BanditController.ts
-│   │       └── MonsterSensor.ts
-│   │
-│   ├── item/
-│   │   ├── PickupItem.ts
-│   │   ├── Container.ts
-│   │   └── DropItem.ts
-│   │
-│   └── building/
-│       ├── BaseBuilding.ts
-│       ├── Warehouse.ts
-│       └── ProductionBuilding.ts
-│
-├── ui/                         # UI behavior scripts only
-│   ├── BaseUI.ts
-│   ├── UIMainHUD.ts
-│   ├── UIInventory.ts
-│   ├── UIContainer.ts
-│   ├── UICrafting.ts
-│   ├── UIBuildingSelect.ts
-│   └── UIRaidResult.ts
-│
-├── scenes/                     # Scene lifecycle scripts
-│   ├── BaseScene.ts
-│   ├── HomeScene.ts
-│   └── RaidScene.ts
-│
-├── data/                       # Type definitions and runtime data helpers
-│   ├── interfaces/
-│   │   ├── IItemData.ts
-│   │   ├── IBuildingData.ts
-│   │   ├── IMonsterData.ts
-│   │   ├── IMapData.ts
-│   │   └── IPlayerStats.ts
-│   └── configs/
-│       ├── items.json
-│       ├── buildings.json
-│       ├── monsters.json
-│       └── maps.json
-│
-└── utils/
+�?  ├── EventManager.ts
+�?  ├── Singleton.ts
+�?  ├── StateMachine.ts
+�?  └── ObjectPool.ts
+�?├── game/                       # Overall game flow
+�?  ├── GameManager.ts          # Base -> Raid -> Base
+�?  ├── GamePhase.ts            # Game phase enum
+�?  ├── BaseSession.ts          # Base-side session logic
+�?  └── RaidSession.ts          # Raid-side session logic
+�?├── systems/                    # Global systems / singletons
+�?  ├── DataManager.ts          # Loads config and provides query APIs
+�?  ├── SaveManager.ts          # Save/load
+�?  ├── UIManager.ts            # Open/close panels
+�?  ├── AudioManager.ts         # Sound effects / music
+�?  └── CombatManager.ts        # Damage calculation and combat result
+�?├── domain/                     # Gameplay domain logic
+�?  ├── inventory/
+�?  �?  ├── InventoryModel.ts
+�?  �?  ├── InventoryManager.ts
+�?  �?  └── StorageService.ts
+�?  �?�?  ├── crafting/
+�?  �?  ├── CraftingModel.ts
+�?  �?  ├── CraftingManager.ts
+�?  �?  └── RecipeService.ts
+�?  �?�?  ├── base/
+�?  �?  ├── BaseModel.ts
+�?  �?  ├── BuildingManager.ts
+�?  �?  └── BaseConstructionService.ts
+�?  �?�?  ├── raid/
+�?  �?  ├── RaidModel.ts
+�?  �?  ├── RaidManager.ts
+�?  �?  ├── SpawnManager.ts
+�?  �?  └── ExtractionService.ts
+�?  �?�?  └── combat/
+�?      ├── HitResult.ts
+�?      ├── DamageCalculator.ts
+�?      └── CombatRules.ts
+�?├── entities/                   # Scripts mounted on nodes
+�?  ├── actor/
+�?  �?  ├── BaseActor.ts
+�?  �?  ├── player/
+�?  �?  �?  ├── PlayerController.ts
+�?  �?  �?  ├── PlayerCombat.ts
+�?  �?  �?  └── PlayerAnim.ts
+�?  �?  └── monster/
+�?  �?      ├── ZombieController.ts
+�?  �?      ├── BanditController.ts
+�?  �?      └── MonsterSensor.ts
+�?  �?�?  ├── item/
+�?  �?  ├── PickupItem.ts
+�?  �?  ├── Container.ts
+�?  �?  └── DropItem.ts
+�?  �?�?  └── building/
+�?      ├── BaseBuilding.ts
+�?      ├── Warehouse.ts
+�?      └── ProductionBuilding.ts
+�?├── ui/                         # UI behavior scripts only
+�?  ├── BaseUI.ts
+�?  ├── UIMainHUD.ts
+�?  ├── UIInventory.ts
+�?  ├── UIContainer.ts
+�?  ├── UICrafting.ts
+�?  ├── UIBuildingSelect.ts
+�?  └── UIRaidResult.ts
+�?├── scenes/                     # Scene lifecycle scripts
+�?  ├── BaseScene.ts
+�?  ├── HomeScene.ts
+�?  └── RaidScene.ts
+�?├── data/                       # Type definitions and runtime data helpers
+�?  ├── interfaces/
+�?  �?  ├── IItemData.ts
+�?  �?  ├── IBuildingData.ts
+�?  �?  ├── IMonsterData.ts
+�?  �?  ├── IMapData.ts
+�?  �?  └── IPlayerStats.ts
+�?  └── configs/
+�?      ├── items.json
+�?      ├── buildings.json
+�?      ├── monsters.json
+�?      └── maps.json
+�?└── utils/
     ├── MathUtils.ts
     ├── GridUtils.ts
     └── SaveUtils.ts
@@ -158,7 +144,7 @@ src/
 - `.lh` prefabs stay in `assets/prefabs/`
 - UI prefabs or UI scenes stay in `assets/ui/`
 - Spine files stay in `assets/spine/`
-- Atlases stay in `assets/atlas/`
+- Atlases are stored under `assets/atlas/`, but runtime resource references should usually drop the `assets/` prefix and start from `atlas/`
 
 ## Folder Responsibilities
 
@@ -208,3 +194,4 @@ If you already have working code in `src/zombie-1/`, migrate in this order:
 
 If something is created or positioned in the LayaAir editor, it should usually stay in `assets/`.
 If something decides what happens in the game, it should live in `src/`.
+For image/resource paths used by runtime UI code, prefer `atlas/...` over `assets/atlas/...` unless the engine API explicitly requires the full editor path.

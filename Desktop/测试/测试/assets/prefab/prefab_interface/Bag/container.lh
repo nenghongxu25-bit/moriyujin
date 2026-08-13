@@ -1,0 +1,135 @@
+{
+  "_$ver": 1,
+  "_$id": "9pchpvjz",
+  "_$type": "GWidget",
+  "name": "container",
+  "x": 229,
+  "y": 176,
+  "width": 400,
+  "height": 400,
+  "scaleX": 0.8,
+  "scaleY": 0.8,
+  "_$child": [
+    {
+      "_$id": "6na0r0f9",
+      "_$type": "GPanel",
+      "name": "panel",
+      "x": -210,
+      "y": -129,
+      "width": 769,
+      "height": 518,
+      "anchorX": -0.0763582966226138,
+      "anchorY": -0.0630841121495327,
+      "_$child": [
+        {
+          "_$id": "wjeikpyb",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 322,
+          "y": 280,
+          "width": 450,
+          "height": 450,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "rotation": 90,
+          "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+          "autoSize": false
+        },
+        {
+          "_$id": "5ao6050k",
+          "_$type": "GList",
+          "name": "list",
+          "x": 129,
+          "y": 90,
+          "width": 391,
+          "height": 379,
+          "layout": {
+            "type": 3
+          },
+          "_templateNode": {
+            "_$ref": "02b5n7vf",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 9,
+          "_$child": [
+            {
+              "_$id": "02b5n7vf",
+              "_$type": "GWidget",
+              "name": "boxmodule",
+              "width": 128,
+              "height": 128,
+              "_$comp": [
+                {
+                  "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                  "scriptPath": "../src/PlayUI/module/listTemplate.ts",
+                  "templateSlot": null,
+                  "gimg": null,
+                  "nameText": null,
+                  "countText": null
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "zfgejdrd",
+                  "_$type": "GImage",
+                  "name": "item",
+                  "x": 64,
+                  "y": 64,
+                  "width": 160,
+                  "height": 160,
+                  "anchorX": 0.5,
+                  "anchorY": 0.5,
+                  "scaleX": 0.8,
+                  "scaleY": 0.8,
+                  "src": "res://ae353081-1a25-4961-a3c9-2e876ce467f0",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "jdhjlgub",
+                  "_$type": "GImage",
+                  "name": "icon",
+                  "x": 64,
+                  "y": 64,
+                  "width": 100,
+                  "height": 100,
+                  "anchorX": 0.5,
+                  "anchorY": 0.5,
+                  "src": ""
+                },
+                {
+                  "_$id": "5zg64bdz",
+                  "_$type": "Text",
+                  "name": "name",
+                  "y": 80,
+                  "width": 120,
+                  "height": 28,
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "gj3qvj55",
+                  "_$type": "Text",
+                  "name": "amount",
+                  "x": 83,
+                  "y": 83,
+                  "width": 23,
+                  "height": 28,
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -27,8 +27,11 @@
       "gravityScale": 0
     },
     {
-      "_$type": "f8822b1b-733c-43fd-b449-f8d36740a13a",
-      "scriptPath": "../../../../src/harvestable/branches.ts"
+      "_$type": "e5ddcc78-f8a4-4896-b76a-a2652f821513",
+      "scriptPath": "../src/harvestable/branches.ts",
+      "resourceId": "",
+      "instanceId": "",
+      "text": ""
     }
   ],
   "_$child": [

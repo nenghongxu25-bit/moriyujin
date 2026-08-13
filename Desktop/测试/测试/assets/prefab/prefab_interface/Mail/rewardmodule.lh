@@ -1,0 +1,121 @@
+{
+  "_$ver": 1,
+  "_$id": "7vqk11db",
+  "_$type": "GWidget",
+  "name": "boxmodule",
+  "width": 128,
+  "height": 128,
+  "scaleX": 0.4,
+  "scaleY": 0.4,
+  "_$comp": [
+    {
+      "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+      "scriptPath": "../src/PlayUI/module/listTemplate.ts",
+      "templateSlot": {
+        "_$ref": "zfgejdrd"
+      },
+      "gimg": {
+        "_$ref": "jdhjlgub"
+      },
+      "nameText": {
+        "_$ref": "5zg64bdz"
+      },
+      "countText": {
+        "_$ref": "gj3qvj55"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "zfgejdrd",
+      "_$type": "GImage",
+      "name": "item",
+      "x": 64,
+      "y": 64,
+      "width": 160,
+      "height": 160,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "src": "res://ae353081-1a25-4961-a3c9-2e876ce467f0",
+      "autoSize": false
+    },
+    {
+      "_$id": "jdhjlgub",
+      "_$type": "GImage",
+      "name": "icon",
+      "x": 64,
+      "y": 64,
+      "width": 100,
+      "height": 100,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "src": ""
+    },
+    {
+      "_$id": "5zg64bdz",
+      "_$type": "Text",
+      "name": "name",
+      "y": 80,
+      "width": 120,
+      "height": 28,
+      "fontSize": 20,
+      "color": "#ffffff",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "gj3qvj55",
+      "_$type": "Text",
+      "name": "amount",
+      "x": 83,
+      "y": 83,
+      "width": 23,
+      "height": 28,
+      "fontSize": 20,
+      "color": "#ffffff",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "sbsnrylr",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 64,
+      "y": 64,
+      "width": 80,
+      "height": 80,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "visible": false,
+      "alpha": 0.3,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "fillColor": "#ffffff"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "hm82mmdt",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 80,
+          "height": 80,
+          "text": "已领取",
+          "fontSize": 20,
+          "color": "#000000",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

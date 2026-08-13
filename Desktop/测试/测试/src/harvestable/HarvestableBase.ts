@@ -1,4 +1,5 @@
-import type { PlayerController } from "../Player/PlayerController";
+import { PlayerController } from "../Player/PlayerController";
+import { DataManager } from "../systems/datamanager";
 
 const { regClass, property } = Laya;
 
@@ -10,6 +11,10 @@ export interface HarvestDrop {
     minCount: number;
     maxCount: number;
     probability: number;
+    countWeights?: {
+        count: number;
+        probability: number;
+    }[];
 }
 
 export interface HarvestSequenceStep {
@@ -42,7 +47,11 @@ export abstract class HarvestableBase extends Laya.Script {
     public text: string = "";
 
     private static readonly instanceRegistry: Map<string, HarvestableBase> = new Map();
-    private static focusedChopInstanceId: string | null = null;
+    private static readonly focusedTargets: Record<HarvestAction, HarvestableBase | null> = {
+        chop: null,
+        search: null,
+        dig: null,
+    };
 
     private harvested: boolean = false;
     private busy: boolean = false;
@@ -85,26 +94,47 @@ export abstract class HarvestableBase extends Laya.Script {
         return true;
     }
 
-    public static getFocusedChopTarget(): HarvestableBase | null {
-        if (!HarvestableBase.focusedChopInstanceId) {
-            return null;
-        }
-
-        return HarvestableBase.resolveByInstanceId(HarvestableBase.focusedChopInstanceId);
+    public static getFocusedTarget(action: HarvestAction): HarvestableBase | null {
+        return HarvestableBase.focusedTargets[action];
     }
 
-    public static setFocusedChopTarget(target: HarvestableBase | null): void {
-        HarvestableBase.focusedChopInstanceId = target && target.instanceId ? target.instanceId : null;
+    public static setFocusedTarget(action: HarvestAction, target: HarvestableBase | null): void {
+        HarvestableBase.focusedTargets[action] = target;
     }
 
-    public static clearFocusedChopTarget(target?: HarvestableBase | null): void {
-        if (!HarvestableBase.focusedChopInstanceId) {
+    public static clearFocusedTarget(action: HarvestAction, target?: HarvestableBase | null): void {
+        const currentTarget = HarvestableBase.focusedTargets[action];
+        if (!currentTarget) {
             return;
         }
 
-        if (!target || target.instanceId === HarvestableBase.focusedChopInstanceId) {
-            HarvestableBase.focusedChopInstanceId = null;
+        if (!target || target === currentTarget) {
+            HarvestableBase.focusedTargets[action] = null;
         }
+    }
+
+    public static getFocusedChopTarget(): HarvestableBase | null {
+        return HarvestableBase.getFocusedTarget("chop");
+    }
+
+    public static getFocusedDigTarget(): HarvestableBase | null {
+        return HarvestableBase.getFocusedTarget("dig");
+    }
+
+    public static setFocusedChopTarget(target: HarvestableBase | null): void {
+        HarvestableBase.setFocusedTarget("chop", target);
+    }
+
+    public static setFocusedDigTarget(target: HarvestableBase | null): void {
+        HarvestableBase.setFocusedTarget("dig", target);
+    }
+
+    public static clearFocusedChopTarget(target?: HarvestableBase | null): void {
+        HarvestableBase.clearFocusedTarget("chop", target);
+    }
+
+    public static clearFocusedDigTarget(target?: HarvestableBase | null): void {
+        HarvestableBase.clearFocusedTarget("dig", target);
     }
 
     public getAction(): HarvestAction {
@@ -157,9 +187,16 @@ export abstract class HarvestableBase extends Laya.Script {
         const finishHarvest = (): void => {
             this.busy = false;
 
+            const drops = DataManager.getInstance().grantHarvestDrops(config.id, config.drops);
+            const dropText = DataManager.getInstance().formatHarvestResults(drops);
+
             if (config.once) {
                 this.harvested = true;
                 this.destroySelf();
+            }
+
+            if (player) {
+                player.showItem(dropText);
             }
         };
 
@@ -173,7 +210,8 @@ export abstract class HarvestableBase extends Laya.Script {
     }
 
     public onTriggerEnter(other: any): void {
-        if (this.getAction() !== "chop") {
+        const action = this.getAction();
+        if (!this.isInteractionAction(action)) {
             return;
         }
 
@@ -181,11 +219,12 @@ export abstract class HarvestableBase extends Laya.Script {
             return;
         }
 
-        HarvestableBase.setFocusedChopTarget(this);
+        HarvestableBase.setFocusedTarget(action, this);
     }
 
     public onTriggerExit(other: any): void {
-        if (this.getAction() !== "chop") {
+        const action = this.getAction();
+        if (!this.isInteractionAction(action)) {
             return;
         }
 
@@ -193,29 +232,11 @@ export abstract class HarvestableBase extends Laya.Script {
             return;
         }
 
-        HarvestableBase.clearFocusedChopTarget(this);
+        HarvestableBase.clearFocusedTarget(action, this);
     }
 
-    protected rollLoot(config: HarvestConfig): string {
-        const drops: string[] = [];
-
-        for (let i = 0; i < config.drops.length; i++) {
-            const drop = config.drops[i];
-            if (Math.random() > drop.probability) {
-                continue;
-            }
-
-            const minCount = Math.min(drop.minCount, drop.maxCount);
-            const maxCount = Math.max(drop.minCount, drop.maxCount);
-            const count = Math.floor(minCount + Math.random() * (maxCount - minCount + 1));
-            drops.push(`${drop.label} x${count}`);
-        }
-
-        if (drops.length === 0) {
-            return `${config.displayName} collected nothing`;
-        }
-
-        return drops.join(", ");
+    private isInteractionAction(action: HarvestAction): boolean {
+        return action === "chop" || action === "search" || action === "dig";
     }
 
     private getSequenceDuration(sequence: HarvestSequenceStep[]): number {
@@ -231,19 +252,16 @@ export abstract class HarvestableBase extends Laya.Script {
         if (!this.resourceId) {
             this.resourceId = config.name;
         }
-
-        if (!this.instanceId) {
-            const owner = this.owner as Laya.Sprite;
-            this.instanceId = owner && owner.name ? owner.name : `${config.name}_${Date.now()}`;
-        }
     }
 
     private registerSelf(): void {
         this.ensureIdentifiers();
 
-        if (this.instanceId) {
-            HarvestableBase.instanceRegistry.set(this.instanceId, this);
+        if (!this.instanceId) {
+            return;
         }
+
+        HarvestableBase.instanceRegistry.set(this.instanceId, this);
     }
 
     private unregisterSelf(): void {
@@ -251,8 +269,10 @@ export abstract class HarvestableBase extends Laya.Script {
             HarvestableBase.instanceRegistry.delete(this.instanceId);
         }
 
-        if (HarvestableBase.focusedChopInstanceId === this.instanceId) {
-            HarvestableBase.focusedChopInstanceId = null;
+        for (const action of ["chop", "search", "dig"] as HarvestAction[]) {
+            if (HarvestableBase.focusedTargets[action] === this) {
+                HarvestableBase.focusedTargets[action] = null;
+            }
         }
     }
 
@@ -289,11 +309,14 @@ export abstract class HarvestableBase extends Laya.Script {
             return;
         }
 
-        owner.visible = false;
+        this.busy = false;
+        this.harvested = true;
+        this.unregisterSelf();
+        Laya.timer.clearAll(this);
+
+        (owner as any).visible = false;
         owner.mouseEnabled = false;
         owner.active = false;
-        Laya.timer.once(50, this, () => {
-            owner.destroy();
-        });
+        owner.destroy();
     }
 }

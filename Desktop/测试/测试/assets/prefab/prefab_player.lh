@@ -37,7 +37,7 @@
       "walkAnimation": "walk",
       "runAnimation": "run",
       "attackAnimation": "attack_swing",
-      "attackAnimationDuration": 550
+      "attackAnimationDuration": 1067
     }
   ],
   "_$child": [
@@ -56,7 +56,8 @@
           "useFastRender": false,
           "source": "res://f87ec402-9dd0-4a49-90f0-2352581455dc",
           "skinName": "player_normal",
-          "animationName": "idle",
+          "animationName": "search/search_end",
+          "loop": false,
           "preview": true,
           "offset": {
             "_$type": "Vector2",

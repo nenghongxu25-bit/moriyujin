@@ -17,13 +17,13 @@
       "alpha": 0.953,
       "_$comp": [
         {
-          "_$type": "d1227def-b3f9-48f0-b349-c5abb8c4d03d",
-          "scriptPath": "../src/PlayUI/Joystick.ts",
+          "_$type": "86ea2fa4-fb96-4e24-a36e-36cc0c2d5253",
+          "scriptPath": "../src/PlayUI/button/Joystick.ts",
           "radius": 80,
           "joystickBase": {
             "_$ref": "sunnmstt"
           },
-          "handle": {
+          "joystickHandle": {
             "_$ref": "97atdkiz"
           }
         }

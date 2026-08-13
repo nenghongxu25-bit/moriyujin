@@ -1,0 +1,175 @@
+{
+    "category":  "foods",
+    "items":  [
+                  {
+                      "id":  "bread",
+                      "displayName":  "面包",
+                      "nameZh":  "面包",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/bread.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础食物"
+                  },
+                  {
+                      "id":  "can",
+                      "displayName":  "罐头",
+                      "nameZh":  "罐头",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/can.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "省存食物"
+                  },
+                  {
+                      "id":  "chocolate",
+                      "displayName":  "巧克�?,
+                      "nameZh":  "巧克�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/chocolate.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "甜味零食"
+                  },
+                  {
+                      "id":  "cookie",
+                      "displayName":  "饼干",
+                      "nameZh":  "饼干",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/cookie.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "然后固化的点�?
+                  },
+                  {
+                      "id":  "fried_chips",
+                      "displayName":  "薯片",
+                      "nameZh":  "薯片",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/fried_chips.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "脏脏品味休闲零食"
+                  },
+                  {
+                      "id":  "grilled_corn",
+                      "displayName":  "烤玉�?,
+                      "nameZh":  "烤玉�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/grilled_corn.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "烧烤后的玉米"
+                  },
+                  {
+                      "id":  "grilled_fish",
+                      "displayName":  "烤鱼",
+                      "nameZh":  "烤鱼",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/grilled_fish.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "烧烤的鱼�?
+                  },
+                  {
+                      "id":  "grilled_mushroom",
+                      "displayName":  "烤蘑�?,
+                      "nameZh":  "烤蘑�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/grilled_mushroom.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "烤烤的蘑�?
+                  },
+                  {
+                      "id":  "grilled_potato",
+                      "displayName":  "烤土�?,
+                      "nameZh":  "烤土�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/grilled_potato.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "烧烤的土�?
+                  },
+                  {
+                      "id":  "mushroom_soup",
+                      "displayName":  "蘑菇�?,
+                      "nameZh":  "蘑菇�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/mushroom_soup.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "蘑菇�?
+                  },
+                  {
+                      "id":  "rice",
+                      "displayName":  "米饭",
+                      "nameZh":  "米饭",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/rice.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "主食"
+                  },
+                  {
+                      "id":  "roast",
+                      "displayName":  "烤肉",
+                      "nameZh":  "烤肉",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/roast.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "烧烤能量饮食"
+                  },
+                  {
+                      "id":  "soda",
+                      "displayName":  "汽水",
+                      "nameZh":  "汽水",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/drinks/soda.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "气泡饮料"
+                  },
+                  {
+                      "id":  "juice",
+                      "displayName":  "果汁",
+                      "nameZh":  "果汁",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/drinks/juice.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "水果饮料"
+                  },
+                  {
+                      "id":  "beer",
+                      "displayName":  "啤酒",
+                      "nameZh":  "啤酒",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/drinks/beer.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "酒类饮料"
+                  },
+                  {
+                      "id":  "water",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/drinks/water.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "纯净饮用�?
+                  },
+                  {
+                      "id":  "vtamin",
+                      "displayName":  "维生�?,
+                      "nameZh":  "维生�?,
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/drinks/vtamin.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "营养补充�?
+                  }
+              ]
+}

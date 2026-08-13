@@ -1,4 +1,5 @@
-import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+﻿import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
 
@@ -18,7 +19,7 @@ export class dig extends HarvestableBase {
                 { animation: "attack_swing", duration: 1067, loop: false },
                 { animation: "attack_swing", duration: 1067, loop: false },
             ],
-            drops: [
+            drops: DataManager.getInstance().getHarvestDrops("harvestable_dig", [
                 {
                     itemId: "food_material_04",
                     label: "泥土",
@@ -26,7 +27,7 @@ export class dig extends HarvestableBase {
                     maxCount: 2,
                     probability: 1
                 }
-            ]
+            ]),
         };
     }
 }

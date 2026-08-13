@@ -28,7 +28,9 @@
     },
     {
       "_$type": "f8822b1b-733c-43fd-b449-f8d36740a13a",
-      "scriptPath": "../../../../src/harvestable/dig.ts"
+      "scriptPath": "../../../../src/harvestable/dig.ts",
+      "resourceId": "l1-kuang",
+      "instanceId": ""
     }
   ],
   "_$child": [

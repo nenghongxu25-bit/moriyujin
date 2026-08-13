@@ -61,10 +61,10 @@ export class PlayerController extends Laya.Script {
     public runAnimation: string = "run";
 
     @property(String)
-    public attackAnimation: string = "attack_stab";
+    public attackAnimation: string = "attack_swing";
 
     @property(Number)
-    public attackAnimationDuration: number = 550;
+    public attackAnimationDuration: number = 1067;
 
     public movement!: PlayerMovementController;
     public ui!: PlayerUIHints;
@@ -79,6 +79,8 @@ export class PlayerController extends Laya.Script {
         this.animation = new PlayerAnimationController(this);
         this.movement.onAwake();
         this.ui.onAwake();
+        this.setRunningState(this.isRunning);
+        this.combat.setAttackNodeVisible(false);
         this.animation.onAwake();
     }
 
@@ -86,6 +88,8 @@ export class PlayerController extends Laya.Script {
         PlayerController.activeInstance = this;
         this.movement.onStart();
         this.ui.onStart();
+        this.setRunningState(this.isRunning);
+        this.combat.setAttackNodeVisible(false);
         this.animation.onStart();
     }
 
@@ -108,16 +112,17 @@ export class PlayerController extends Laya.Script {
         this.combat.playAttack();
     }
 
-    public setRunning(value: boolean): void {
-        if (this.isRunning === value) {
-            return;
-        }
-
+    public setRunningState(value: boolean): void {
         this.isRunning = value;
+        this.moveSpeed = value ? this.runSpeed : 0;
+    }
+
+    public setRunning(value: boolean): void {
+        this.setRunningState(value);
     }
 
     public toggleRunning(): void {
-        this.setRunning(!this.isRunning);
+        this.setRunningState(!this.isRunning);
     }
 
     public showState(text: string, duration: number = 1200): void {

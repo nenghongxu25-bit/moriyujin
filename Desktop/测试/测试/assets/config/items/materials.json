@@ -1,0 +1,435 @@
+{
+    "category":  "materials",
+    "items":  [
+                  {
+                      "id":  "chenshuimu",
+                      "displayName":  "陈水�?,
+                      "nameZh":  "陈水�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/chenshuimu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础材料"
+                  },
+                  {
+                      "id":  "copper",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/copper.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "金属材料"
+                  },
+                  {
+                      "id":  "cotton",
+                      "displayName":  "棉花",
+                      "nameZh":  "棉花",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/cotton.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "柔软纤维材料"
+                  },
+                  {
+                      "id":  "feather",
+                      "displayName":  "羽毛",
+                      "nameZh":  "羽毛",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/feather.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "轻质羽毛材料"
+                  },
+                  {
+                      "id":  "grass",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/grass.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "常见草料"
+                  },
+                  {
+                      "id":  "hide",
+                      "displayName":  "皮革",
+                      "nameZh":  "皮革",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/hide.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "动物皮革材料"
+                  },
+                  {
+                      "id":  "hua",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/hua.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "植物材料"
+                  },
+                  {
+                      "id":  "iron",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/iron.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "金属材料"
+                  },
+                  {
+                      "id":  "liuhuang",
+                      "displayName":  "硫矿",
+                      "nameZh":  "硫矿",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/liuhuang.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础化工材料"
+                  },
+                  {
+                      "id":  "mutan",
+                      "displayName":  "木炭",
+                      "nameZh":  "木炭",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/mutan.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础燃料材料"
+                  },
+                  {
+                      "id":  "nail",
+                      "displayName":  "钉子",
+                      "nameZh":  "钉子",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/nail.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "金属紧固�?
+                  },
+                  {
+                      "id":  "renshen",
+                      "displayName":  "人参",
+                      "nameZh":  "人参",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/renshen.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "药草材料"
+                  },
+                  {
+                      "id":  "shougu",
+                      "displayName":  "兽骨",
+                      "nameZh":  "兽骨",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/shougu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础骨材"
+                  },
+                  {
+                      "id":  "shucai",
+                      "displayName":  "蔬菜",
+                      "nameZh":  "蔬菜",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/shucai.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "植物食材"
+                  },
+                  {
+                      "id":  "shupi",
+                      "displayName":  "树皮",
+                      "nameZh":  "树皮",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/shupi.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "树皮"
+                  },
+                  {
+                      "id":  "shuzhi",
+                      "displayName":  "树脂",
+                      "nameZh":  "树脂",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/shuzhi.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "粘性树脂材�?
+                  },
+                  {
+                      "id":  "tiaoliao",
+                      "displayName":  "饲料",
+                      "nameZh":  "饲料",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/tiaoliao.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础喀养材�?
+                  },
+                  {
+                      "id":  "wood",
+                      "displayName":  "木材",
+                      "nameZh":  "木材",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/wood.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础木料"
+                  },
+                  {
+                      "id":  "xiaoshi",
+                      "displayName":  "小石�?,
+                      "nameZh":  "小石�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/xiaoshi.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "基础石材"
+                  },
+                  {
+                      "id":  "xiaoshuzhi",
+                      "displayName":  "小树�?,
+                      "nameZh":  "小树�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/xiaoshuzhi.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "少量树脂"
+                  },
+                  {
+                      "id":  "xiyoujinshu",
+                      "displayName":  "稀有金�?,
+                      "nameZh":  "稀有金�?,
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/xiyoujinshu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "稀有金属材�?
+                  },
+                  {
+                      "id":  "yaocao",
+                      "displayName":  "药草",
+                      "nameZh":  "药草",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/yaocao.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "药用草本"
+                  },
+                  {
+                      "id":  "corn",
+                      "displayName":  "玉米",
+                      "nameZh":  "玉米",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/corn.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "谷物作物"
+                  },
+                  {
+                      "id":  "egg",
+                      "displayName":  "鸡蛋",
+                      "nameZh":  "鸡蛋",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/egg.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "植物食材"
+                  },
+                  {
+                      "id":  "fish",
+                      "displayName":  "鱼类",
+                      "nameZh":  "鱼类",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/fish.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "鱼类食材"
+                  },
+                  {
+                      "id":  "fruit",
+                      "displayName":  "果实",
+                      "nameZh":  "果实",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/fruit.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "水果食材"
+                  },
+                  {
+                      "id":  "meat",
+                      "displayName":  "肉类",
+                      "nameZh":  "肉类",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/meat.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "肉类食材"
+                  },
+                  {
+                      "id":  "mushroom",
+                      "displayName":  "菌类",
+                      "nameZh":  "菌类",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/mushroom.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "菌类食材"
+                  },
+                  {
+                      "id":  "potato",
+                      "displayName":  "土豆",
+                      "nameZh":  "土豆",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/potato.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "土豆食材"
+                  },
+                  {
+                      "id":  "rice_grain",
+                      "displayName":  "米粒",
+                      "nameZh":  "米粒",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/rice grain.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "米原�?
+                  },
+                  {
+                      "id":  "seasoning",
+                      "displayName":  "调料",
+                      "nameZh":  "调料",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/seasoning.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "调味材料"
+                  },
+                  {
+                      "id":  "wheat",
+                      "displayName":  "小麦",
+                      "nameZh":  "小麦",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/wheat.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "谷类食物"
+                  },
+                  {
+                      "id":  "gongyejiao",
+                      "displayName":  "工业�?,
+                      "nameZh":  "工业�?,
+                      "subCategory":  "advanced_materials",
+                      "icon":  "atlas/picture/items/materials/advanced_materials/gongyejiao.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "工业�?
+                  },
+                  {
+                      "id":  "gujiao",
+                      "displayName":  "骨胶",
+                      "nameZh":  "骨胶",
+                      "subCategory":  "advanced_materials",
+                      "icon":  "atlas/picture/items/materials/advanced_materials/gujiao.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "骨胶"
+                  },
+                  {
+                      "id":  "leather",
+                      "displayName":  "皮革",
+                      "nameZh":  "皮革",
+                      "subCategory":  "advanced_materials",
+                      "icon":  "atlas/picture/items/materials/advanced_materials/leather.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "动物皮革材料"
+                  },
+                  {
+                      "id":  "Ti",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "advanced_materials",
+                      "icon":  "atlas/picture/items/materials/advanced_materials/Ti.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "钛材�?
+                  },
+                  {
+                      "id":  "Wu",
+                      "displayName":  "�?,
+                      "nameZh":  "�?,
+                      "subCategory":  "advanced_materials",
+                      "icon":  "atlas/picture/items/materials/advanced_materials/Wu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "钘材�?
+                  },
+                  {
+                      "id":  "yingmu",
+                      "displayName":  "硬木",
+                      "nameZh":  "硬木",
+                      "subCategory":  "advanced_materials",
+                      "icon":  "atlas/picture/items/materials/advanced_materials/yingmu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "高强度木�?
+                  }
+                  },
+                  {
+                      "id":  "common_material_02",
+                      "displayName":  "\u77f3\u5934",
+                      "nameZh":  "\u77f3\u5934",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/shitou.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "\u57fa\u7840\u77ff\u7269"
+                  },                  {
+                      "id":  "common_material_04",
+                      "displayName":  "\u8349",
+                      "nameZh":  "\u8349",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/grass.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "\u57fa\u7840\u77ff\u7269"
+                  },
+                  {
+                      "id":  "food_material_01",
+                      "displayName":  "\u6d46\u679c",
+                      "nameZh":  "\u6d46\u679c",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/food_materials/fruit.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "\u91c7\u96c6\u751f\u7269"
+                  },
+                  {
+                      "id":  "food_material_04",
+                      "displayName":  "\u6ce5\u571f",
+                      "nameZh":  "\u6ce5\u571f",
+                      "subCategory":  "food_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/chenshuimu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "\u91c7\u96c6\u571f\u58e4"
+                  },
+                  {
+                      "id":  "base_material_10",
+                      "displayName":  "\u77ff\u6e23",
+                      "nameZh":  "\u77ff\u6e23",
+                      "subCategory":  "basic_materials",
+                      "icon":  "atlas/picture/items/materials/basic_materials/chenshuimu.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "\u57fa\u7840\u9644\u5c5e\u7269"
+                  }
+              ]
+}

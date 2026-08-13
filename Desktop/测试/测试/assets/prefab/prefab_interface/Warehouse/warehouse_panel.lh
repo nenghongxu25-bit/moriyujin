@@ -1,0 +1,106 @@
+{
+  "_$ver": 1,
+  "_$id": "warehouse_root",
+  "_$type": "GWidget",
+  "name": "warehouse_panel",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "2d7d1f64-9d2a-4b5c-a2ed-3e6a1e0f4cf0",
+      "scriptPath": "../src/PlayUI/module/WarehousePanel.ts",
+      "bagGlistNode": {
+        "_$ref": [
+          "v4x5csnr",
+          "7fpks0da"
+        ]
+      },
+      "warehouseGlistNode": {
+        "_$ref": [
+          "bxppbfbw",
+          "7fpks0da"
+        ]
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "4xlta50g",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 667,
+      "y": 375,
+      "width": 750,
+      "height": 1334,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "rotation": 90,
+      "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+      "autoSize": false
+    },
+    {
+      "_$id": "wh_title",
+      "_$type": "Text",
+      "name": "titleText",
+      "x": 52,
+      "y": 28,
+      "width": 260,
+      "height": 48,
+      "text": "仓库",
+      "fontSize": 30,
+      "color": "#1f1f1f",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "v4x5csnr",
+      "_$prefab": "f8aa25a8-2fb8-4ef1-bc05-43fa01e770a7",
+      "name": "bag_list",
+      "active": true,
+      "x": 36,
+      "y": 130,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "7fpks0da",
+          "_initItemNum": 20,
+          "name": "baglist"
+        }
+      ]
+    },
+    {
+      "_$id": "bxppbfbw",
+      "_$prefab": "941c861a-11d5-440c-90e1-57eac5414741",
+      "name": "warehouse_list",
+      "active": true,
+      "x": 568,
+      "y": 130,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "7fpks0da",
+          "name": "warehouselist"
+        }
+      ]
+    },
+    {
+      "_$id": "4xfu3qll",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 542,
+      "y": 599,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "warehouse_root"
+          }
+        }
+      ]
+    }
+  ]
+}

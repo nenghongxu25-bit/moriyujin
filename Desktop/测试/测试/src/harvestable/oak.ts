@@ -1,4 +1,5 @@
 import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
 
@@ -18,15 +19,15 @@ export class oak extends HarvestableBase {
                 { animation: "attack_swing", duration: 1067, loop: false },
                 { animation: "attack_swing", duration: 1067, loop: false },
             ],
-            drops: [
+            drops: DataManager.getInstance().getHarvestDrops("harvestable_oak", [
                 {
-                    itemId: "common_material_03",
-                    label: "木材",
+                    itemId: "xiaoshuzhi",
+                    label: "小树枝",
                     minCount: 2,
                     maxCount: 4,
-                    probability: 1,
-                },
-            ],
+                    probability: 1
+                }
+            ]),
         };
     }
 }

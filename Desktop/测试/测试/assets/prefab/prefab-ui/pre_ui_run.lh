@@ -5,6 +5,16 @@
   "name": "Root",
   "width": 128,
   "height": 128,
+  "_$comp": [
+    {
+      "_$type": "3e46d646-50d0-4380-9afa-0544eff22c4e",
+      "scriptPath": "../src/PlayUI/run.ts",
+      "playerNode": null,
+      "targetNode": {
+        "_$ref": "tl26yvds"
+      }
+    }
+  ],
   "_$child": [
     {
       "_$id": "img_run",
@@ -13,6 +23,27 @@
       "width": 128,
       "height": 128,
       "src": "res://3ea05bfb-cdb3-4d1f-babf-918001fba920"
+    },
+    {
+      "_$id": "tl26yvds",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "y": -1,
+      "width": 128,
+      "height": 128,
+      "alpha": 0.492,
+      "_gcmds": [
+        {
+          "_$type": "DrawCircleCmd",
+          "x": 0.5,
+          "y": 0.5,
+          "radius": 0.5,
+          "percent": true,
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#000000"
+        }
+      ]
     }
   ]
 }

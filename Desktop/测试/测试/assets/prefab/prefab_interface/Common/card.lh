@@ -1,0 +1,82 @@
+{
+  "_$ver": 1,
+  "_$id": "x8a5dsa0",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 0,
+  "height": 0,
+  "anchorX": 0.5,
+  "anchorY": 0.5,
+  "rotation": 90,
+  "_$child": [
+    {
+      "_$id": "x8lsou2t",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 200,
+      "height": 300,
+      "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363"
+    },
+    {
+      "_$id": "0lne47fa",
+      "_$prefab": "bd58ee71-7841-47e3-8f9f-4989d03732bb",
+      "name": "buttonmodule",
+      "active": true,
+      "x": 43,
+      "y": 149,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": -90,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "fqr4xd66",
+          "text": "抖音账号一键登录",
+          "fontSize": 10,
+          "x": 0,
+          "y": 0,
+          "bold": true
+        },
+        {
+          "_$id": "nlpaqek9",
+          "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+          "name": "CloseSprite",
+          "active": true,
+          "x": -1,
+          "y": 85,
+          "scaleX": 0.5,
+          "scaleY": 0.5,
+          "visible": true,
+          "_$comp": [
+            {
+              "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+              "targetNode": {
+                "_$ref": "x8a5dsa0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "52kupw0e",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 82,
+      "y": 178,
+      "width": 120,
+      "height": 28,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "rotation": -90,
+      "text": "查看隐私政策",
+      "fontSize": 20,
+      "color": "#002263",
+      "underline": true,
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

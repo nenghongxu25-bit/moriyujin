@@ -1,5 +1,5 @@
 import type { PlayerController } from "./PlayerController";
-import { Joystick } from "../PlayUI/Joystick";
+import { Joystick } from "../PlayUI/playerui/Joystick";
 
 export class PlayerMovementController {
     private joystick: Joystick | null = null;

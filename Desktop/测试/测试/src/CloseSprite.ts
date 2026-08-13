@@ -61,7 +61,7 @@ export class CloseSprite extends Laya.Script {
 
     private onCloseClick(): void {
         if (this.targetNode) {
-            this.targetNode.visible = false;
+            (this.targetNode as any).visible = false;
         }
     }
 }

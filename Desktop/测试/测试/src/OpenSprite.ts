@@ -61,7 +61,7 @@ export class OpenSprite extends Laya.Script {
 
     private onOpenClick(): void {
         if (this.targetNode) {
-            this.targetNode.visible = true;
+            (this.targetNode as any).visible = true;
         }
     }
 }

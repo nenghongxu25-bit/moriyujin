@@ -6,6 +6,16 @@
   "width": 1334,
   "height": 750,
   "scaleY": -1,
+  "_$comp": [
+    {
+      "_$type": "c803dca4-3833-4ccf-ae56-54ed9e6001d5",
+      "scriptPath": "../src/SceneJumpTrigger.ts",
+      "triggerNode": {
+        "_$ref": "kh344dvv"
+      },
+      "sceneUrl": ""
+    }
+  ],
   "_$child": [
     {
       "_$id": "kh344dvv",

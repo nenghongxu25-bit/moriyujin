@@ -1,0 +1,511 @@
+{
+  "_$ver": 1,
+  "_$id": "battlepass_root",
+  "_$type": "GWidget",
+  "name": "battlepass_panel",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "78ixqw11",
+      "_$type": "GPanel",
+      "name": "panel",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "o1eqhd6s",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 471,
+          "y": 407,
+          "width": 750,
+          "height": 1334,
+          "anchorX": 0.5426666596642661,
+          "anchorY": 0.6469265373743902,
+          "rotation": 90,
+          "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+          "autoSize": false
+        },
+        {
+          "_$id": "bp_title",
+          "_$type": "Text",
+          "name": "title",
+          "x": 470,
+          "y": 69,
+          "width": 400,
+          "height": 44,
+          "text": "战令",
+          "fontSize": 45,
+          "color": "#1f1f1f",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "seasonTitle",
+          "_$type": "Text",
+          "name": "seasonTitle",
+          "x": 114,
+          "y": 135,
+          "width": 420,
+          "height": 32,
+          "text": "第一赛季",
+          "fontSize": 20,
+          "color": "#000000",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "hac81pls",
+          "_$type": "GPanel",
+          "name": "task",
+          "x": 98,
+          "y": 190,
+          "width": 756,
+          "height": 421,
+          "_$child": [
+            {
+              "_$id": "nlzz5pbb",
+              "_$type": "GList",
+              "name": "timelist",
+              "x": 33,
+              "y": 18,
+              "width": 700,
+              "height": 50,
+              "layout": {
+                "type": 2
+              },
+              "_templateNode": {
+                "_$ref": "3h7yfid0",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 7,
+              "_$comp": [
+                {
+                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "listNode": {
+                    "_$ref": "nlzz5pbb"
+                  },
+                  "templateNode": {
+                    "_$ref": "3h7yfid0"
+                  },
+                  "slotCount": 0
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "3h7yfid0",
+                  "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+                  "name": "bt",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true,
+                  "_$child": [
+                    {
+                      "_$override": "qwk816k0",
+                      "text": "第一周",
+                      "visible": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "a7oaawzk",
+              "_$type": "GList",
+              "name": "tasklist",
+              "x": 32,
+              "y": 71,
+              "width": 703,
+              "height": 330,
+              "layout": {
+                "type": 1
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1
+              },
+              "_templateNode": {
+                "_$ref": "qxy28zlk",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 5,
+              "_$comp": [
+                {
+                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "listNode": {
+                    "_$ref": "a7oaawzk"
+                  },
+                  "templateNode": {
+                    "_$ref": "qxy28zlk"
+                  },
+                  "slotCount": 0
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "qxy28zlk",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 700,
+                  "height": 100,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 3,
+                    "lineColor": "#000000",
+                    "fillColor": "#bb9300"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "bx9kyfsn",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 700,
+                      "height": 100,
+                      "text": "击杀20个敌人",
+                      "fontSize": 40,
+                      "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "j4m59zoo",
+                      "_$type": "Sprite",
+                      "name": "mask_1",
+                      "width": 700,
+                      "height": 100,
+                      "visible": false,
+                      "alpha": 0.6,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#ffffff"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "fgsw9pw1",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 700,
+                          "height": 100,
+                          "text": "已完成",
+                          "fontSize": 40,
+                          "color": "#000000",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "d1lrl5p2",
+          "_$type": "GPanel",
+          "name": "reward",
+          "x": 869,
+          "y": 124,
+          "width": 385,
+          "height": 542,
+          "_$child": [
+            {
+              "_$id": "0h22jncl",
+              "_$type": "GList",
+              "name": "grade",
+              "x": 30,
+              "y": 92,
+              "width": 110,
+              "height": 400,
+              "layout": {
+                "type": 1
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1
+              },
+              "_templateNode": {
+                "_$ref": "59xfwb2s",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 20,
+              "_$comp": [
+                {
+                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "listNode": {
+                    "_$ref": "0h22jncl"
+                  },
+                  "templateNode": {
+                    "_$ref": "59xfwb2s"
+                  },
+                  "slotCount": 0
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "59xfwb2s",
+                  "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+                  "name": "bt",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "width": 80,
+                  "visible": true,
+                  "_$child": [
+                    {
+                      "_$override": "3oei1uz6",
+                      "width": 80
+                    },
+                    {
+                      "_$override": "qwk816k0",
+                      "width": 80
+                    },
+                    {
+                      "_$id": "12fl4464",
+                      "_$type": "Sprite",
+                      "name": "Sprite_1",
+                      "width": 80,
+                      "height": 50,
+                      "alpha": 0.6,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "lineWidth": 1,
+                          "lineColor": "#000000",
+                          "fillColor": "#000000"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "datwihsf",
+              "_$type": "GList",
+              "name": "reward",
+              "x": 145,
+              "y": 90,
+              "width": 180,
+              "height": 400,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#593d1b"
+              },
+              "layout": {
+                "type": 1,
+                "rowGap": -35,
+                "align": 1,
+                "valign": 3
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1
+              },
+              "_templateNode": {
+                "_$ref": "t5mwj9w0",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 20,
+              "_$comp": [
+                {
+                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                  "scriptPath": "../src/PlayUI/module/glist.ts",
+                  "listNode": {
+                    "_$ref": "datwihsf"
+                  },
+                  "templateNode": {
+                    "_$ref": "t5mwj9w0"
+                  },
+                  "slotCount": 0
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "t5mwj9w0",
+                  "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+                  "name": "boxmodule",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true,
+                  "_$child": [
+                    {
+                      "_$id": "xu1xzcfz",
+                      "_$index": 4,
+                      "_$type": "Sprite",
+                      "name": "mask_1",
+                      "x": 13,
+                      "y": 13,
+                      "width": 100,
+                      "height": 100,
+                      "visible": false,
+                      "alpha": 0.4,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#ffffff"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "jq1367ln",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 100,
+                          "height": 100,
+                          "text": "已领取",
+                          "fontSize": 30,
+                          "color": "#000000",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "dizqxair",
+                      "_$type": "Sprite",
+                      "name": "mask_0",
+                      "x": 13,
+                      "y": 13,
+                      "width": 100,
+                      "height": 100,
+                      "alpha": 0.5,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#000000"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "lpzr007u",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 100,
+                          "height": 100,
+                          "alpha": 0.6,
+                          "text": "未解锁",
+                          "fontSize": 30,
+                          "color": "#ffff00",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "fzos1cjw",
+              "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+              "name": "grade",
+              "active": true,
+              "x": 31,
+              "y": 36,
+              "width": 110,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3oei1uz6",
+                  "width": 110
+                },
+                {
+                  "_$override": "qwk816k0",
+                  "width": 110,
+                  "text": "等级"
+                }
+              ]
+            },
+            {
+              "_$id": "zh5l65le",
+              "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+              "name": "reward",
+              "active": true,
+              "x": 145,
+              "y": 36,
+              "width": 180,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3oei1uz6",
+                  "width": 180
+                },
+                {
+                  "_$override": "qwk816k0",
+                  "width": 180,
+                  "text": "奖励"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "h3r2x1ju",
+          "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+          "name": "CloseSprite",
+          "active": true,
+          "x": 571,
+          "y": 607,
+          "visible": true,
+          "_$comp": [
+            {
+              "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+              "targetNode": {
+                "_$ref": "battlepass_root"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "4809b8q6",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 679,
+      "y": 145,
+      "width": 151,
+      "height": 33,
+      "text": "0/200",
+      "fontSize": 30,
+      "color": "#000000",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "evbx2bo5",
+      "_$type": "Text",
+      "name": "Text_1",
+      "x": 494,
+      "y": 145,
+      "width": 215,
+      "height": 28,
+      "text": "下一级所需经验：",
+      "fontSize": 30,
+      "color": "#000000",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "_$ver": 1,
+  "_$id": "dig_root_001",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 128,
+  "height": 128,
+  "_$comp": [
+    {
+      "_$type": "10034fdc-629a-4e30-8bc7-32dc80a0683f",
+      "scriptPath": "../src/PlayUI/dig.ts",
+      "playerNode": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "img_dig",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 128,
+      "height": 128,
+      "src": "res://187de785-cf79-4fc4-86c8-976a16638e87"
+    }
+  ]
+}

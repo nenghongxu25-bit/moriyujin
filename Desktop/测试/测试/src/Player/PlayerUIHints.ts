@@ -29,7 +29,7 @@ export class PlayerUIHints {
             return;
         }
 
-        this.stateText.visible = true;
+        (this.stateText as any).visible = true;
         this.stateText.text = text;
         Laya.timer.clear(this, this.hideStateText);
         Laya.timer.once(duration, this, this.hideStateText);
@@ -44,7 +44,7 @@ export class PlayerUIHints {
             return;
         }
 
-        this.itemText.visible = true;
+        (this.itemText as any).visible = true;
         this.itemText.text = text;
         Laya.timer.clear(this, this.hideItemText);
         Laya.timer.once(duration, this, this.hideItemText);
@@ -56,7 +56,7 @@ export class PlayerUIHints {
         }
 
         this.stateText.text = "";
-        this.stateText.visible = false;
+        (this.stateText as any).visible = false;
     }
 
     public hideItemText(): void {
@@ -65,7 +65,7 @@ export class PlayerUIHints {
         }
 
         this.itemText.text = "";
-        this.itemText.visible = false;
+        (this.itemText as any).visible = false;
     }
 
     public snapshot(): Record<string, any> {

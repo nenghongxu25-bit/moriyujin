@@ -13,6 +13,7 @@ export class PlayerCombatController {
 
         const lockDuration = Math.max(this.controller.attackCooldown, this.controller.attackAnimationDuration);
         this.attackLocked = true;
+        this.setAttackNodeVisible(true);
         this.controller.animation.playActionAnimation(
             this.controller.attackAnimation,
             lockDuration,
@@ -23,8 +24,21 @@ export class PlayerCombatController {
         Laya.timer.once(lockDuration, this.controller, this.finishAttack);
     }
 
+    public setAttackNodeVisible(visible: boolean): void {
+        const attackNode = this.controller.attackNode as any;
+        if (!attackNode) {
+            return;
+        }
+
+        (attackNode as any).visible = visible;
+        if ("active" in attackNode) {
+            attackNode.active = visible;
+        }
+    }
+
     public onDestroy(): void {
         Laya.timer.clear(this.controller, this.finishAttack);
+        this.setAttackNodeVisible(false);
     }
 
     public snapshot(): Record<string, any> {
@@ -35,5 +49,6 @@ export class PlayerCombatController {
 
     private finishAttack = (): void => {
         this.attackLocked = false;
+        this.setAttackNodeVisible(false);
     };
 }

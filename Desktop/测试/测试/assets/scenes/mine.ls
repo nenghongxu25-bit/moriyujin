@@ -1731,7 +1731,13 @@
                   "x": 581,
                   "y": 298,
                   "width": 128,
-                  "visible": true
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "f8822b1b-733c-43fd-b449-f8d36740a13a",
+                      "instanceId": ""
+                    }
+                  ]
                 },
                 {
                   "_$id": "th5hxz7a",
@@ -1740,7 +1746,13 @@
                   "active": true,
                   "x": 2,
                   "y": -144,
-                  "visible": true
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "f8822b1b-733c-43fd-b449-f8d36740a13a",
+                      "instanceId": ""
+                    }
+                  ]
                 },
                 {
                   "_$id": "6pmh6cjh",
@@ -1749,7 +1761,13 @@
                   "active": true,
                   "x": 358,
                   "y": -141,
-                  "visible": true
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "f8822b1b-733c-43fd-b449-f8d36740a13a",
+                      "instanceId": ""
+                    }
+                  ]
                 },
                 {
                   "_$id": "5py26xyh",
@@ -1758,7 +1776,13 @@
                   "active": true,
                   "x": -171,
                   "y": 320,
-                  "visible": true
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "f8822b1b-733c-43fd-b449-f8d36740a13a",
+                      "instanceId": ""
+                    }
+                  ]
                 },
                 {
                   "_$id": "ws4t5lob",
@@ -1767,7 +1791,13 @@
                   "active": true,
                   "x": -506,
                   "y": 116,
-                  "visible": true
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "f8822b1b-733c-43fd-b449-f8d36740a13a",
+                      "instanceId": ""
+                    }
+                  ]
                 },
                 {
                   "_$id": "37fws1y2",
@@ -1785,7 +1815,13 @@
                   "active": true,
                   "x": 159,
                   "y": -402,
-                  "visible": true
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "f8822b1b-733c-43fd-b449-f8d36740a13a",
+                      "instanceId": ""
+                    }
+                  ]
                 },
                 {
                   "_$id": "lrpk78db",
@@ -1830,8 +1866,8 @@
               "_$prefab": "5ea8d755-d42c-43c2-b0e6-04787ff545f0",
               "name": "prefab_player",
               "active": true,
-              "x": -628,
-              "y": 333,
+              "x": 117,
+              "y": -159,
               "visible": true,
               "_$comp": [
                 {
@@ -1863,6 +1899,18 @@
                     ]
                   }
                 }
+              ],
+              "_$child": [
+                {
+                  "_$override": "b1t7v9q2",
+                  "_$comp": [
+                    {
+                      "_$override": "Spine2DRenderNode",
+                      "animationName": "idle",
+                      "loop": true
+                    }
+                  ]
+                }
               ]
             }
           ]
@@ -1876,7 +1924,82 @@
       "active": true,
       "x": 0,
       "y": 0,
-      "visible": true
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": [
+            "drk6pui3",
+            "run_ui"
+          ],
+          "_$comp": [
+            {
+              "_$override": "3e46d646-50d0-4380-9afa-0544eff22c4e",
+              "playerNode": {
+                "_$ref": "58k1cgbi"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "g39wgkh6"
+          ],
+          "visible": false,
+          "x": 89,
+          "y": -83,
+          "_$comp": [
+            {
+              "_$override": "10034fdc-629a-4e30-8bc7-32dc80a0683f",
+              "playerNode": {
+                "_$ref": "58k1cgbi"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": "p8xgvne7",
+          "name": "BagPanel"
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "rz2srgmu"
+          ],
+          "name": "Contianer"
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "rz2srgmu",
+            "5ao6050k"
+          ],
+          "name": "ContianerList"
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "yhjq0cvz"
+          ],
+          "name": "Bag"
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "yhjq0cvz",
+            "g96x3opi"
+          ],
+          "name": "panel"
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "yhjq0cvz",
+            "7fpks0da"
+          ],
+          "name": "BagList"
+        }
+      ]
     },
     {
       "_$id": "pq8ey4ld",
@@ -1886,6 +2009,12 @@
       "x": 1015,
       "y": -469,
       "visible": true,
+      "_$comp": [
+        {
+          "_$override": "c803dca4-3833-4ccf-ae56-54ed9e6001d5",
+          "sceneUrl": "scenes/cunzhuang.ls"
+        }
+      ],
       "_$child": [
         {
           "_$override": "kh344dvv",

@@ -1,0 +1,169 @@
+{
+  "_$ver": 1,
+  "_$id": "9d8hoy0m",
+  "_$type": "GWidget",
+  "name": "bag_list",
+  "x": 712,
+  "y": 204,
+  "width": 550,
+  "height": 329,
+  "scaleX": 0.8,
+  "scaleY": 0.8,
+  "_$comp": [
+    {
+      "_$type": "0e604480-23d0-4be0-a650-5b34dbba5808",
+      "scriptPath": "../src/PlayUI/button/bag.ts",
+      "glistNode": {
+        "_$ref": "7fpks0da"
+      },
+      "templateSlot": {
+        "_$ref": "myzvhd4c"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "g96x3opi",
+      "_$type": "GPanel",
+      "name": "panel",
+      "x": -26,
+      "y": -56,
+      "width": 677,
+      "height": 534,
+      "_$child": [
+        {
+          "_$id": "ex9g98dk",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 308,
+          "y": 269,
+          "width": 450,
+          "height": 520,
+          "anchorX": 0.5,
+          "anchorY": 0.5,
+          "rotation": 90,
+          "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363",
+          "autoSize": false
+        },
+        {
+          "_$id": "7fpks0da",
+          "_$type": "GList",
+          "name": "list",
+          "x": 84,
+          "y": 76,
+          "width": 422,
+          "height": 372,
+          "background": {
+            "_$type": "DrawTextureCmd"
+          },
+          "layout": {
+            "type": 3
+          },
+          "scroller": {
+            "_$type": "Scroller"
+          },
+          "_templateNode": {
+            "_$ref": "myzvhd4c",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 32,
+          "_$comp": [
+            {
+              "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "scriptPath": "../src/PlayUI/module/glist.ts",
+              "listNode": {
+                "_$ref": "7fpks0da"
+              },
+              "templateNode": {
+                "_$ref": "myzvhd4c"
+              },
+              "slotCount": 30
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "myzvhd4c",
+              "_$type": "GWidget",
+              "name": "boxmodule",
+              "x": 64,
+              "y": 64,
+              "width": 128,
+              "height": 128,
+              "anchorX": 0.5,
+              "anchorY": 0.5,
+              "_$comp": [
+                {
+                  "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                  "scriptPath": "../src/PlayUI/module/listTemplate.ts",
+                  "templateSlot": null,
+                  "gimg": null,
+                  "nameText": null,
+                  "countText": null
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "zfgejdrd",
+                  "_$type": "GImage",
+                  "name": "item",
+                  "x": 64,
+                  "y": 64,
+                  "width": 160,
+                  "height": 160,
+                  "anchorX": 0.5,
+                  "anchorY": 0.5,
+                  "scaleX": 0.8,
+                  "scaleY": 0.8,
+                  "src": "res://ae353081-1a25-4961-a3c9-2e876ce467f0",
+                  "autoSize": false
+                },
+                {
+                  "_$id": "jdhjlgub",
+                  "_$type": "GImage",
+                  "name": "icon",
+                  "x": 64,
+                  "y": 64,
+                  "width": 100,
+                  "height": 100,
+                  "anchorX": 0.5,
+                  "anchorY": 0.5,
+                  "src": ""
+                },
+                {
+                  "_$id": "5zg64bdz",
+                  "_$type": "Text",
+                  "name": "name",
+                  "x": 4,
+                  "y": 80,
+                  "width": 120,
+                  "height": 28,
+                  "fontSize": 10,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "gj3qvj55",
+                  "_$type": "Text",
+                  "name": "amount",
+                  "x": 83,
+                  "y": 83,
+                  "width": 23,
+                  "height": 28,
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,13 +1,32 @@
 {
   "_$ver": 1,
-  "_$id": "attack_root_001",
+  "_$id": "43fkf2d3",
   "_$type": "GWidget",
   "name": "Root",
   "width": 128,
   "height": 128,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "8f0c1a2b-5d7e-4c6f-9a8b-1f2e3d4c5b6a",
+      "scriptPath": "../src/PlayUI/search.ts",
+      "playerNode": null
+    }
+  ],
   "_$child": [
     {
-      "_$id": "img_attack",
+      "_$id": "phowp7fo",
       "_$type": "GImage",
       "name": "img",
       "width": 128,

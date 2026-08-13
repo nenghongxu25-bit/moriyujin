@@ -5,6 +5,13 @@
   "name": "Root",
   "width": 128,
   "height": 128,
+  "_$comp": [
+    {
+      "_$type": "2938a217-4272-4f6d-aaf2-984b61320b26",
+      "scriptPath": "../src/OpenSprite.ts",
+      "targetNode": null
+    }
+  ],
   "_$child": [
     {
       "_$id": "img_bag",

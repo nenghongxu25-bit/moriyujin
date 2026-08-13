@@ -1,5 +1,7 @@
 const { regClass, property } = Laya;
 
+import { DataManager } from "./systems/datamanager";
+
 @regClass()
 export class JumpToScene extends Laya.Script {
     @property(String)
@@ -65,6 +67,7 @@ export class JumpToScene extends Laya.Script {
             return;
         }
 
+        DataManager.getInstance().enterScene(url);
         Laya.Scene.open(url);
     }
 }

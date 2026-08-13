@@ -5,6 +5,25 @@
   "name": "Root",
   "width": 128,
   "height": 128,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "3db5f4f4-1d50-4b5c-a876-7bc6f7a7eb10",
+      "scriptPath": "../src/PlayUI/attack.ts",
+      "playerNode": null
+    }
+  ],
   "_$child": [
     {
       "_$id": "img_attack",

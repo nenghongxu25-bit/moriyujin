@@ -705,7 +705,8 @@
               "_$comp": [
                 {
                   "_$override": "Spine2DRenderNode",
-                  "animationName": "idle"
+                  "animationName": "idle",
+                  "loop": true
                 }
               ]
             }
@@ -725,34 +726,35 @@
           "_$prefab": "b9fd7fbe-c4d3-44d0-a73f-1a5164bc2ff6",
           "name": "play_ui",
           "active": true,
-          "x": 0,
+          "x": 17,
           "y": 0,
           "visible": true,
           "_$child": [
             {
               "_$override": [
-                "olaflj2r",
-                "shadow01"
+                "9xqe96ru",
+                "0jvaucmc"
               ],
-              "src": "",
-              "background": {
-                "_$type": "DrawCircleCmd",
-                "x": 0.5,
-                "y": 0.5,
-                "radius": 0.5,
-                "percent": true,
-                "lineWidth": 1,
-                "lineColor": "#000000",
-                "fillColor": "#ffffff"
-              }
-            },
-            {
-              "_$override": "mz5up70b",
               "_$comp": [
                 {
-                  "_$override": "3d2f7c4f-1a4e-4d7f-b5f7-53d8a2df9a91",
-                  "playerNode": {
-                    "_$ref": "15hzr2ux"
+                  "_$override": "86ea2fa4-fb96-4e24-a36e-36cc0c2d5253",
+                  "joystickHandle": {
+                    "_$ref": [
+                      "3nq38fc1",
+                      "9xqe96ru",
+                      "97atdkiz"
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "_$override": "bag_ui",
+              "_$comp": [
+                {
+                  "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "targetNode": {
+                    "_$ref": "t6lrfgse"
                   }
                 }
               ]
@@ -762,17 +764,6 @@
               "_$comp": [
                 {
                   "_$override": "f29af7cf-09c7-4141-901d-e18b0064f813",
-                  "playerNode": {
-                    "_$ref": "15hzr2ux"
-                  }
-                }
-              ]
-            },
-            {
-              "_$override": "q9w4c7sd",
-              "_$comp": [
-                {
-                  "_$override": "1fec9b64-e54c-472a-8367-e1fdefe7e886",
                   "playerNode": {
                     "_$ref": "15hzr2ux"
                   }
@@ -839,7 +830,7 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite_2",
               "active": true,
-              "x": 0,
+              "x": 65,
               "y": 0,
               "visible": true,
               "_$child": [
@@ -869,13 +860,83 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite_4",
               "active": true,
-              "x": 271,
+              "x": 309,
               "y": 0,
               "visible": true,
               "_$child": [
                 {
                   "_$override": "6k3sv098",
                   "text": "战令"
+                }
+              ]
+            },
+            {
+              "_$id": "5d3fujtq",
+              "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
+              "name": "OpenSprite_5",
+              "active": true,
+              "x": 762,
+              "y": -3,
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "targetNode": {
+                    "_$ref": "vit9oqss"
+                  }
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "6k3sv098",
+                  "text": "仓库"
+                }
+              ]
+            },
+            {
+              "_$id": "gebxfo6v",
+              "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+              "name": "buttonmodule_2",
+              "active": true,
+              "x": 332,
+              "y": 81,
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$type": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "scriptPath": "../src/OpenSprite.ts",
+                  "targetNode": {
+                    "_$ref": "6n0rq07u"
+                  }
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "tz6yo96j",
+                  "text": "侧边栏\n复访"
+                }
+              ]
+            },
+            {
+              "_$id": "lk32kav8",
+              "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
+              "name": "OpenSprite_6",
+              "active": true,
+              "x": 63,
+              "y": 64,
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "targetNode": {
+                    "_$ref": "1cqsy2kf"
+                  }
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "6k3sv098",
+                  "text": "邮箱"
                 }
               ]
             }
@@ -904,7 +965,107 @@
               "active": true,
               "x": 0,
               "y": 0,
-              "visible": false
+              "visible": false,
+              "_$child": [
+                {
+                  "_$override": [
+                    "v4x5csnr",
+                    "7fpks0da"
+                  ],
+                  "_$comp": [
+                    {
+                      "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                      "scriptPath": "../src/PlayUI/module/glist.ts",
+                      "listNode": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "v4x5csnr",
+                          "7fpks0da"
+                        ]
+                      },
+                      "templateNode": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "v4x5csnr",
+                          "myzvhd4c"
+                        ]
+                      },
+                      "slotCount": 5
+                    }
+                  ]
+                },
+                {
+                  "_$override": "bxppbfbw",
+                  "visible": true
+                },
+                {
+                  "_$override": [
+                    "bxppbfbw",
+                    "7fpks0da"
+                  ],
+                  "_$comp": [
+                    {
+                      "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                      "scriptPath": "../src/PlayUI/module/glist.ts",
+                      "listNode": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "bxppbfbw",
+                          "7fpks0da"
+                        ]
+                      },
+                      "templateNode": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "bxppbfbw",
+                          "myzvhd4c"
+                        ]
+                      },
+                      "slotCount": 5
+                    }
+                  ]
+                },
+                {
+                  "_$override": [
+                    "bxppbfbw",
+                    "myzvhd4c"
+                  ],
+                  "_$comp": [
+                    {
+                      "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                      "scriptPath": "../src/PlayUI/module/listTemplate.ts",
+                      "templateSlot": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "bxppbfbw",
+                          "zfgejdrd"
+                        ]
+                      },
+                      "gimg": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "bxppbfbw",
+                          "jdhjlgub"
+                        ]
+                      },
+                      "nameText": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "bxppbfbw",
+                          "5zg64bdz"
+                        ]
+                      },
+                      "countText": {
+                        "_$ref": [
+                          "vit9oqss",
+                          "bxppbfbw",
+                          "gj3qvj55"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
             },
             {
               "_$id": "uqx658op",
@@ -927,6 +1088,81 @@
                   ]
                 }
               ]
+            },
+            {
+              "_$id": "t6lrfgse",
+              "_$prefab": "8ae45e30-f989-4f5e-b586-6e6c4cdbaaee",
+              "name": "bag_panel",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": false,
+              "_$child": [
+                {
+                  "_$override": "rz2srgmu",
+                  "visible": false
+                },
+                {
+                  "_$override": "yhjq0cvz",
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "_$id": "6n0rq07u",
+              "_$prefab": "b26eb433-8357-43fb-8dfb-54e3018200df",
+              "name": "SidePanel",
+              "active": true,
+              "x": 476,
+              "y": 155,
+              "visible": false
+            },
+            {
+              "_$id": "1cqsy2kf",
+              "_$prefab": "a59fd96f-ba7b-4f76-9899-82f97c113bd7",
+              "name": "MailPanel",
+              "active": true,
+              "x": 268,
+              "y": 137,
+              "visible": false,
+              "alpha": 1,
+              "_$comp": [
+                {
+                  "_$override": "7f7b2a1a-0d2d-4f07-8b2d-2df6fef0a4a1",
+                  "rewardTargetNode": {
+                    "_$ref": [
+                      "1cqsy2kf",
+                      "kf7cmfk3",
+                      "sbsnrylr"
+                    ]
+                  }
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "9bryjchh",
+                  "_$comp": [
+                    {
+                      "_$override": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                      "templateNode": {
+                        "_$ref": [
+                          "1cqsy2kf",
+                          "kf7cmfk3"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "5voabxsh",
+              "_$prefab": "f7c68002-452f-476a-8f0b-23cae147ab6c",
+              "name": "battlepass_panel",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true
             }
           ]
         }

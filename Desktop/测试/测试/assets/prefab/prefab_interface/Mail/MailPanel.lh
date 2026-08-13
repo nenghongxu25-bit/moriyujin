@@ -1,0 +1,281 @@
+{
+  "_$ver": 1,
+  "_$id": "bshvx403",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 800,
+  "height": 460,
+  "_$comp": [
+    {
+      "_$type": "7f7b2a1a-0d2d-4f07-8b2d-2df6fef0a4a1",
+      "scriptPath": "../src/PlayUI/module/MailPanel.ts",
+      "mailListNode": {
+        "_$ref": "dialog_entry_list"
+      },
+      "rewardListNode": {
+        "_$ref": "9bryjchh"
+      },
+      "detailText": {
+        "_$ref": "dialog_detail_title"
+      },
+      "getRewardButton": {
+        "_$ref": "jf6o4une"
+      },
+      "rewardTargetNode": {
+        "_$ref": "sbsnrylr"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "01ljwcs9",
+      "_$type": "GPanel",
+      "name": "panel",
+      "width": 800,
+      "height": 450,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "lineWidth": 5,
+        "lineColor": "#000000",
+        "fillColor": "#725e36"
+      },
+      "_$child": [
+        {
+          "_$id": "talk_title",
+          "_$type": "Text",
+          "name": "title",
+          "x": 41,
+          "y": 50,
+          "width": 701,
+          "height": 40,
+          "text": "邮箱",
+          "fontSize": 26,
+          "color": "#000000",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "dialog_entry_list",
+          "_$type": "GList",
+          "name": "MailList",
+          "x": 69,
+          "y": 120,
+          "width": 244,
+          "height": 260,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 3,
+            "lineColor": "#000000",
+            "fillColor": "#664d40"
+          },
+          "layout": {
+            "type": 1
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "barDisplay": 1
+          },
+          "_templateNode": {
+            "_$ref": "hwwbrbgj",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 10,
+          "_$comp": [
+            {
+              "_$type": "080df137-6a67-4706-8c99-3c2ec24808fa",
+              "scriptPath": "../src/PlayUI/module/MailList.ts",
+              "listNode": {
+                "_$ref": "dialog_entry_list"
+              },
+              "templateNode": {
+                "_$ref": "hwwbrbgj"
+              },
+              "slotCount": 10
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "hwwbrbgj",
+              "_$prefab": "76355b89-58ae-4254-8da9-0048c6817d49",
+              "name": "longbox",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$type": "e9b896f7-3773-4c57-9cf1-0e13c09838da",
+                  "scriptPath": "../src/PlayUI/module/MailTemplate.ts",
+                  "titleText": {
+                    "_$ref": [
+                      "hwwbrbgj",
+                      "chrtrl42"
+                    ]
+                  },
+                  "timeText": {
+                    "_$ref": [
+                      "hwwbrbgj",
+                      "18vbvc5c"
+                    ]
+                  },
+                  "targetNode": {
+                    "_$ref": [
+                      "hwwbrbgj",
+                      "6ns76496"
+                    ]
+                  }
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "chrtrl42",
+                  "name": "title"
+                },
+                {
+                  "_$override": "18vbvc5c",
+                  "name": "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "w4mi2r5a",
+          "_$type": "GWidget",
+          "name": "detail",
+          "x": 356,
+          "y": 186,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "dialog_detail_panel",
+              "_$type": "GPanel",
+              "name": "detailPanel",
+              "x": -24,
+              "y": -66,
+              "width": 400,
+              "height": 260,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 3,
+                "lineColor": "#000000",
+                "fillColor": "#79542e"
+              },
+              "_$child": [
+                {
+                  "_$id": "dialog_detail_title",
+                  "_$type": "Text",
+                  "name": "detailtext",
+                  "x": 25,
+                  "y": 20,
+                  "width": 350,
+                  "height": 132,
+                  "text": "内容",
+                  "fontSize": 22,
+                  "color": "#000000",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "nttnubrl",
+                  "_$type": "Text",
+                  "name": "rewardtext",
+                  "x": 9,
+                  "y": 160,
+                  "width": 120,
+                  "height": 28,
+                  "text": "奖励",
+                  "fontSize": 20,
+                  "color": "#000000",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "jf6o4une",
+                  "_$prefab": "bd58ee71-7841-47e3-8f9f-4989d03732bb",
+                  "name": "getreward",
+                  "active": true,
+                  "x": 288,
+                  "y": 150,
+                  "visible": true
+                },
+                {
+                  "_$id": "9bryjchh",
+                  "_$type": "GList",
+                  "name": "RewardList",
+                  "x": 4,
+                  "y": 193,
+                  "width": 391,
+                  "height": 51,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#000000",
+                    "fillColor": "#694320"
+                  },
+                  "layout": {
+                    "type": 2,
+                    "rowGap": 1,
+                    "columnGap": -90
+                  },
+                  "scroller": {
+                    "_$type": "Scroller",
+                    "direction": 1,
+                    "barDisplay": 5
+                  },
+                  "_initItemNum": 5,
+                  "_$comp": [
+                    {
+                      "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+                      "scriptPath": "../src/PlayUI/module/glist.ts",
+                      "listNode": {
+                        "_$ref": "9bryjchh"
+                      },
+                      "templateNode": {
+                        "_$ref": "7vqk11db"
+                      },
+                      "slotCount": 0
+                    }
+                  ],
+                  "_$child": [
+                    {
+                      "_$id": "kf7cmfk3",
+                      "_$prefab": "b0f99f44-1945-4ecb-88b5-4376aa6b6d57",
+                      "name": "boxmodule",
+                      "active": true,
+                      "x": 0,
+                      "y": 0,
+                      "visible": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "sw3c07cs",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 345,
+      "y": 377,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "bshvx403"
+          }
+        }
+      ]
+    }
+  ]
+}

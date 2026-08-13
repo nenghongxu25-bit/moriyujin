@@ -1,4 +1,5 @@
 import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
 
@@ -14,21 +15,19 @@ export class stones extends HarvestableBase {
             once: true,
             range: 160,
             sequence: [
-                { animation: "search_start", duration: 833, loop: false },
-                { animation: "search_loop", duration: 1000, loop: false },
-                { animation: "search_loop", duration: 1000, loop: false },
-                { animation: "search_loop", duration: 1000, loop: false },
-                { animation: "search_end", duration: 833, loop: false },
+                { animation: "search/search_start", duration: 816, loop: false },
+                { animation: "search/search_loop", duration: 2983, loop: true },
+                { animation: "search/search_end", duration: 816, loop: false },
             ],
-            drops: [
+            drops: DataManager.getInstance().getHarvestDrops("harvestable_stones", [
                 {
                     itemId: "common_material_02",
-                    label: "石块",
+                    label: "石头",
                     minCount: 2,
                     maxCount: 4,
-                    probability: 1,
-                },
-            ],
+                    probability: 1
+                }
+            ]),
         };
     }
 }

@@ -1,9 +1,18 @@
-import type { PlayerController } from "./PlayerController";
+﻿import type { PlayerController } from "./PlayerController";
 
 interface ActionSequenceStep {
     animation: string;
     duration: number;
     loop?: boolean;
+}
+
+interface SpineAnimationSnapshot {
+    animation: string | null;
+    currentTime: number | null;
+    playState: number | null;
+    readyState: number | null;
+    source: string | null;
+    templetUrl: string | null;
 }
 
 export class PlayerAnimationController {
@@ -40,6 +49,9 @@ export class PlayerAnimationController {
 
     public onDestroy(): void {
         this.spine = null;
+        this.currentAnimation = "";
+        this.desiredAnimation = "";
+        this.pendingAnimation = "";
         this.actionAnimation = "";
         this.actionFallbackAnimation = "";
         this.actionEndAt = 0;
@@ -108,6 +120,14 @@ export class PlayerAnimationController {
         };
     }
 
+    private playSpineAnimation(animationName: string, loop: boolean): void {
+        if (!this.spine) {
+            return;
+        }
+
+        this.spine.play(animationName, loop, 0);
+    }
+
     private sync(force: boolean): void {
         if (!this.spine) {
             return;
@@ -132,7 +152,7 @@ export class PlayerAnimationController {
             this.spine.playbackRate(1);
         }
 
-        this.spine.play(nextAnimation, true, 0);
+        this.playSpineAnimation(nextAnimation, true);
         this.currentAnimation = nextAnimation;
     }
 
@@ -157,22 +177,33 @@ export class PlayerAnimationController {
             this.spine.playbackRate(1);
         }
 
-        this.spine.play(step.animation, !!step.loop, 0);
-
-        if (duration <= 0) {
-            this.actionSequenceStepIndex += 1;
-            this.runActionSequenceStep(token, onComplete);
-            return;
-        }
-
-        Laya.timer.once(duration, this, () => {
-            if (token !== this.actionSequenceToken) {
+        let advanced = false;
+        const advanceStep = (): void => {
+            if (advanced || token !== this.actionSequenceToken) {
                 return;
             }
 
+            advanced = true;
             this.actionSequenceStepIndex += 1;
             this.runActionSequenceStep(token, onComplete);
-        });
+        };
+
+        if (!step.loop) {
+            const spineNode = this.controller.spineNode;
+            if (spineNode) {
+                spineNode.once(Laya.Event.STOPPED, this, advanceStep);
+            }
+
+            if (duration > 0) {
+                Laya.timer.once(duration + 50, this, advanceStep);
+            }
+        } else if (duration > 0) {
+            Laya.timer.once(duration, this, advanceStep);
+        } else {
+            advanceStep();
+        }
+
+        this.playSpineAnimation(step.animation, !!step.loop);
     }
 
     private finishActionSequence(token: number, onComplete?: () => void): void {
@@ -180,13 +211,26 @@ export class PlayerAnimationController {
             return;
         }
 
+        const fallbackAnimation = this.actionFallbackAnimation || this.pendingAnimation || this.controller.idleAnimation || "idle";
+
         this.actionSequenceActive = false;
         this.actionSequenceStepIndex = 0;
         this.actionSequence = [];
         this.actionAnimation = "";
-        this.actionFallbackAnimation = "";
         this.actionEndAt = 0;
-        this.desiredAnimation = this.pendingAnimation || this.controller.idleAnimation || "idle";
+        this.desiredAnimation = fallbackAnimation;
+        this.actionFallbackAnimation = fallbackAnimation;
+
+        if (this.spine) {
+            if (typeof this.spine.playbackRate === "function") {
+                this.spine.playbackRate(1);
+            }
+
+            this.playSpineAnimation(fallbackAnimation, true);
+            this.currentAnimation = fallbackAnimation;
+        }
+
+        this.actionFallbackAnimation = "";
 
         if (typeof onComplete === "function") {
             onComplete();

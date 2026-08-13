@@ -1,0 +1,124 @@
+{
+  "_$ver": 1,
+  "_$id": "nidch9vk",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 400,
+  "height": 400,
+  "_$child": [
+    {
+      "_$id": "wimvodf3",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 206,
+      "y": 206,
+      "width": 200,
+      "height": 300,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "rotation": 90,
+      "src": "res://2f3f0d78-66f8-4cb0-969a-589aa9e15363"
+    },
+    {
+      "_$id": "qkfq61bq",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 94,
+      "y": 127,
+      "width": 120,
+      "height": 28,
+      "text": "添加到侧边栏，继续游戏不迷路",
+      "fontSize": 15,
+      "color": "#000000",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "37hq7obz",
+      "_$type": "Text",
+      "name": "Text_1",
+      "x": 95,
+      "y": 151,
+      "width": 149,
+      "height": 28,
+      "text": "首次从侧边栏进入可领取",
+      "fontSize": 20,
+      "color": "#eb9b1a",
+      "bold": true,
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "pszuu8wd",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 219,
+      "y": 248,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "nidch9vk"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "6qgyelqo",
+      "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+      "name": "boxmodule",
+      "active": true,
+      "x": 140,
+      "y": 174,
+      "scaleX": 0.4,
+      "scaleY": 0.4,
+      "visible": true
+    },
+    {
+      "_$id": "ivo0tnec",
+      "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+      "name": "boxmodule_1",
+      "active": true,
+      "x": 205,
+      "y": 175,
+      "scaleX": 0.4,
+      "scaleY": 0.4,
+      "visible": true
+    },
+    {
+      "_$id": "e1lqs98g",
+      "_$prefab": "bd58ee71-7841-47e3-8f9f-4989d03732bb",
+      "name": "buttonmodule",
+      "active": true,
+      "x": 111,
+      "y": 249,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$type": "7cc0db92-6e8d-4a9f-9d4f-8f1e3d0f4f21",
+          "scriptPath": "../src/PlayUI/SidebarNavigateButton.ts",
+          "scene": "sidebar"
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "fqr4xd66",
+          "text": "添加侧边栏"
+        }
+      ]
+    },
+    {
+      "_$id": "l365c21g",
+      "_$prefab": "bd58ee71-7841-47e3-8f9f-4989d03732bb",
+      "name": "buttonmodule_1",
+      "active": true,
+      "x": 156,
+      "y": 215,
+      "visible": true
+    }
+  ]
+}
