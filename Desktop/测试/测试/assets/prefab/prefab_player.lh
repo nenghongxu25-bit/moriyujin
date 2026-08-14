@@ -241,20 +241,6 @@
       "letterSpacing": 0
     },
     {
-      "_$id": "sw9ab23z",
-      "_$type": "Text",
-      "name": "Text",
-      "x": -56,
-      "y": -150,
-      "width": 120,
-      "height": 28,
-      "text": "Text",
-      "fontSize": 20,
-      "color": "#ffffff",
-      "leading": 2,
-      "letterSpacing": 0
-    },
-    {
       "_$id": "dwnyw19z",
       "_$type": "Camera2D",
       "name": "Camera2D",

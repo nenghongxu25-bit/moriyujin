@@ -1,4 +1,4 @@
-﻿import { ItemDataManager, type ItemMeta, type ItemTableFile } from "./data/ItemDataManager";
+import { ItemDataManager, type ItemMeta, type ItemTableFile } from "./data/ItemDataManager";
 import { HarvestManager, type HarvestDropConfig, type HarvestResultItem, type HarvestTableFile } from "./data/HarvestManager";
 import { InventoryManager } from "./data/InventoryManager";
 import type { BagView, InventoryBucket, InventoryScope, InventoryViewItem } from "./data/InventoryTypes";

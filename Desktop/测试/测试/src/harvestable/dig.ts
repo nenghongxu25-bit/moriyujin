@@ -25,8 +25,8 @@ export class dig extends HarvestableBase {
                     label: "泥土",
                     minCount: 1,
                     maxCount: 2,
-                    probability: 1
-                }
+                    probability: 1,
+                },
             ]),
         };
     }

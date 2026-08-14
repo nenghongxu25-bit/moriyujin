@@ -28,8 +28,8 @@ export class bush extends HarvestableBase {
                     probability: 0.9,
                     countWeights: [
                         { count: 2, probability: 0.5 },
-                        { count: 3, probability: 0.5 }
-                    ]
+                        { count: 3, probability: 0.5 },
+                    ],
                 },
                 {
                     itemId: "xiaoshuzhi",
@@ -39,8 +39,8 @@ export class bush extends HarvestableBase {
                     probability: 0.8,
                     countWeights: [
                         { count: 1, probability: 0.4 },
-                        { count: 2, probability: 0.2 }
-                    ]
+                        { count: 2, probability: 0.2 },
+                    ],
                 },
                 {
                     itemId: "food_material_01",
@@ -50,16 +50,16 @@ export class bush extends HarvestableBase {
                     probability: 0.8,
                     countWeights: [
                         { count: 1, probability: 0.5 },
-                        { count: 2, probability: 0.3 }
-                    ]
+                        { count: 2, probability: 0.3 },
+                    ],
                 },
                 {
                     itemId: "yaocao",
                     label: "药草",
                     minCount: 1,
                     maxCount: 1,
-                    probability: 0.3
-                }
+                    probability: 0.3,
+                },
             ]),
         };
     }

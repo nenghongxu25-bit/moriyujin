@@ -1,4 +1,4 @@
-import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+﻿import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
 import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
@@ -25,8 +25,8 @@ export class branches extends HarvestableBase {
                     label: "小树枝",
                     minCount: 1,
                     maxCount: 3,
-                    probability: 1
-                }
+                    probability: 1,
+                },
             ]),
         };
     }

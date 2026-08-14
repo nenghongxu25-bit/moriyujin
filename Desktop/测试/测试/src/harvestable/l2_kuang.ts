@@ -29,8 +29,8 @@ export class l2_kuang extends HarvestableBase {
                     countWeights: [
                         { count: 1, probability: 0.2 },
                         { count: 2, probability: 0.5 },
-                        { count: 3, probability: 0.3 }
-                    ]
+                        { count: 3, probability: 0.3 },
+                    ],
                 },
                 {
                     itemId: "copper",
@@ -41,15 +41,15 @@ export class l2_kuang extends HarvestableBase {
                     countWeights: [
                         { count: 1, probability: 0.5 },
                         { count: 2, probability: 0.3 },
-                        { count: 3, probability: 0.2 }
-                    ]
+                        { count: 3, probability: 0.2 },
+                    ],
                 },
                 {
                     itemId: "xiyoujinshu",
                     label: "稀有金属",
                     minCount: 1,
                     maxCount: 1,
-                    probability: 0.1
+                    probability: 0.1,
                 },
                 {
                     itemId: "liuhuang",
@@ -59,8 +59,8 @@ export class l2_kuang extends HarvestableBase {
                     probability: 0.2,
                     countWeights: [
                         { count: 1, probability: 0.7 },
-                        { count: 2, probability: 0.3 }
-                    ]
+                        { count: 2, probability: 0.3 },
+                    ],
                 },
                 {
                     itemId: "mutan",
@@ -70,9 +70,9 @@ export class l2_kuang extends HarvestableBase {
                     probability: 0.3,
                     countWeights: [
                         { count: 1, probability: 0.7 },
-                        { count: 2, probability: 0.3 }
-                    ]
-                }
+                        { count: 2, probability: 0.3 },
+                    ],
+                },
             ]),
         };
     }

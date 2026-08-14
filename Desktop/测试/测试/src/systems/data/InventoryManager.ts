@@ -1,4 +1,4 @@
-﻿import { SaveManager } from "./SaveManager";
+import { SaveManager } from "./SaveManager";
 import type { BagView, InventoryBucket, InventoryScope, InventoryViewItem } from "./InventoryTypes";
 
 export class InventoryManager {

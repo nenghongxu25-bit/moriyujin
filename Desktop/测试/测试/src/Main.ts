@@ -4,13 +4,13 @@ import "./PlayUI/button/dig";
 import "./PlayUI/button/search";
 import "./PlayUI/button/attack";
 import "./PlayUI/button/run";
-import "./PlayUI/SidebarNavigateButton";
+import "./PlayUI/SideBar/SidebarNavigateButton";
 import "./PlayUI/playerui/bag";
-import "./PlayUI/module/BagPanel";
-import "./PlayUI/module/QuickEquipContainer";
+import "./PlayUI/Bag/BagPanel";
+import "./PlayUI/playerui/QuickEquipContainer";
 import "./PlayUI/CommonUI/listTemplate";
-import "./PlayUI/module/WarehousePanel";
-import "./PlayUI/module/MailPanel";
+import "./PlayUI/Warehouse/WarehousePanel";
+import "./PlayUI/Mail/MailPanel";
 import "./SceneJumpTrigger";
 import "./Player/PlayerCamera2D";
 import "./harvestable/oak";
@@ -46,8 +46,7 @@ export class Main {
         try {
             await DataManager.getInstance().loadAll();
         } catch (error) {
-            console.error("[Main] loadAll failed", error);
-            return;
+            throw error;
         }
 
         DataManager.getInstance().enterScene("scenes/menu.ls");

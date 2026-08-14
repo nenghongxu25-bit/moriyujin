@@ -29,8 +29,8 @@ export class l1_kuang extends HarvestableBase {
                     countWeights: [
                         { count: 2, probability: 0.4 },
                         { count: 3, probability: 0.5 },
-                        { count: 4, probability: 0.1 }
-                    ]
+                        { count: 4, probability: 0.1 },
+                    ],
                 },
                 {
                     itemId: "iron",
@@ -41,9 +41,9 @@ export class l1_kuang extends HarvestableBase {
                     countWeights: [
                         { count: 1, probability: 0.2 },
                         { count: 2, probability: 0.5 },
-                        { count: 3, probability: 0.3 }
-                    ]
-                }
+                        { count: 3, probability: 0.3 },
+                    ],
+                },
             ]),
         };
     }

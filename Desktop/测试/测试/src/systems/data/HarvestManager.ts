@@ -1,4 +1,4 @@
-import { ItemDataManager } from "./ItemDataManager";
+﻿import { ItemDataManager } from "./ItemDataManager";
 
 export interface DropCountWeight {
     count: number;

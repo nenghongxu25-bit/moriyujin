@@ -78,63 +78,7 @@
           "active": true,
           "x": 229,
           "y": 176,
-          "visible": true,
-          "_$child": [
-            {
-              "_$override": "5ao6050k",
-              "_$comp": [
-                {
-                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/Bag/BagList.ts",
-                  "listNode": {
-                    "_$ref": [
-                      "a4i1vm6g",
-                      "5ao6050k"
-                    ]
-                  },
-                  "templateNode": {
-                    "_$ref": [
-                      "a4i1vm6g",
-                      "02b5n7vf"
-                    ]
-                  },
-                  "slotCount": 0
-                }
-              ]
-            },
-            {
-              "_$override": "02b5n7vf",
-              "_$comp": [
-                {
-                  "_$override": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                  "templateSlot": {
-                    "_$ref": [
-                      "a4i1vm6g",
-                      "zfgejdrd"
-                    ]
-                  },
-                  "gimg": {
-                    "_$ref": [
-                      "a4i1vm6g",
-                      "jdhjlgub"
-                    ]
-                  },
-                  "nameText": {
-                    "_$ref": [
-                      "a4i1vm6g",
-                      "5zg64bdz"
-                    ]
-                  },
-                  "countText": {
-                    "_$ref": [
-                      "a4i1vm6g",
-                      "gj3qvj55"
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
+          "visible": true
         },
         {
           "_$id": "ybrtsioi",
@@ -355,7 +299,7 @@
                       "y": 6,
                       "width": 120,
                       "height": 28,
-                      "text": "Text",
+                      "text": "血量：",
                       "fontSize": 30,
                       "color": "#000000",
                       "leading": 2,
@@ -369,7 +313,7 @@
                       "y": 48,
                       "width": 120,
                       "height": 28,
-                      "text": "Text",
+                      "text": "经验值：",
                       "fontSize": 30,
                       "color": "#000000",
                       "leading": 2,
@@ -447,9 +391,7 @@
       "_$comp": [
         {
           "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
-          "targetNode": {
-            "_$ref": "r0itm6j1"
-          }
+          "targetNode": null
         }
       ]
     }

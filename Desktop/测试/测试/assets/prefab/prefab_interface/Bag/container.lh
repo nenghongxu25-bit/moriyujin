@@ -51,6 +51,19 @@
             "_$tmpl": "itemTemplate"
           },
           "_initItemNum": 9,
+          "_$comp": [
+            {
+              "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+              "listNode": {
+                "_$ref": "5ao6050k"
+              },
+              "templateNode": {
+                "_$ref": "02b5n7vf"
+              },
+              "slotCount": 9
+            }
+          ],
           "_$child": [
             {
               "_$id": "02b5n7vf",
@@ -61,7 +74,7 @@
               "_$comp": [
                 {
                   "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                  "scriptPath": "../src/PlayUI/Bag/listTemplate.ts",
+                  "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
                   "templateSlot": {
                     "_$ref": "zfgejdrd"
                   },

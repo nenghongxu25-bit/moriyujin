@@ -863,14 +863,6 @@
               "x": 309,
               "y": 0,
               "visible": true,
-              "_$comp": [
-                {
-                  "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
-                  "targetNode": {
-                    "_$ref": "5voabxsh"
-                  }
-                }
-              ],
               "_$child": [
                 {
                   "_$override": "6k3sv098",
@@ -987,7 +979,7 @@
                   "_$comp": [
                     {
                       "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                      "scriptPath": "../src/PlayUI/Bag/BagList.ts",
+                      "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                       "listNode": {
                         "_$ref": [
                           "vit9oqss",
@@ -1014,7 +1006,7 @@
                   "_$comp": [
                     {
                       "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                      "scriptPath": "../src/PlayUI/Bag/listTemplate.ts",
+                      "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
                       "templateSlot": {
                         "_$ref": [
                           "vit9oqss",
@@ -1081,45 +1073,6 @@
               "_$child": [
                 {
                   "_$override": [
-                    "a4i1vm6g",
-                    "02b5n7vf"
-                  ],
-                  "_$comp": [
-                    {
-                      "_$override": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                      "templateSlot": {
-                        "_$ref": [
-                          "t6lrfgse",
-                          "a4i1vm6g",
-                          "zfgejdrd"
-                        ]
-                      },
-                      "gimg": {
-                        "_$ref": [
-                          "t6lrfgse",
-                          "a4i1vm6g",
-                          "jdhjlgub"
-                        ]
-                      },
-                      "nameText": {
-                        "_$ref": [
-                          "t6lrfgse",
-                          "a4i1vm6g",
-                          "5zg64bdz"
-                        ]
-                      },
-                      "countText": {
-                        "_$ref": [
-                          "t6lrfgse",
-                          "a4i1vm6g",
-                          "gj3qvj55"
-                        ]
-                      }
-                    }
-                  ]
-                },
-                {
-                  "_$override": [
                     "ybrtsioi",
                     "myzvhd4c"
                   ],
@@ -1153,6 +1106,17 @@
                           "ybrtsioi",
                           "gj3qvj55"
                         ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "_$override": "vzkfe927",
+                  "_$comp": [
+                    {
+                      "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+                      "targetNode": {
+                        "_$ref": "t6lrfgse"
                       }
                     }
                   ]
@@ -1213,13 +1177,7 @@
               "active": true,
               "x": 0,
               "y": 0,
-              "visible": false,
-              "_$child": [
-                {
-                  "_$override": "4809b8q6",
-                  "visible": true
-                }
-              ]
+              "visible": false
             }
           ]
         }

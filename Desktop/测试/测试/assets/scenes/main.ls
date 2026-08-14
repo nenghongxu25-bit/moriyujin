@@ -2518,20 +2518,6 @@
         {
           "_$override": [
             "drk6pui3",
-            "run_ui"
-          ],
-          "_$comp": [
-            {
-              "_$override": "3e46d646-50d0-4380-9afa-0544eff22c4e",
-              "playerNode": {
-                "_$ref": "eojseri5"
-              }
-            }
-          ]
-        },
-        {
-          "_$override": [
-            "drk6pui3",
             "bag_ui"
           ],
           "_$comp": [
@@ -2542,20 +2528,6 @@
                   "u0e892gj",
                   "p8xgvne7"
                 ]
-              }
-            }
-          ]
-        },
-        {
-          "_$override": [
-            "drk6pui3",
-            "asq102c8"
-          ],
-          "_$comp": [
-            {
-              "_$override": "3db5f4f4-1d50-4b5c-a876-7bc6f7a7eb10",
-              "playerNode": {
-                "_$ref": "eojseri5"
               }
             }
           ]
@@ -2609,6 +2581,87 @@
               "_$override": "10034fdc-629a-4e30-8bc7-32dc80a0683f",
               "playerNode": {
                 "_$ref": "eojseri5"
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "ybrtsioi",
+            "7fpks0da"
+          ],
+          "_$comp": [
+            {
+              "_$override": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "templateNode": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7",
+                  "ybrtsioi",
+                  "myzvhd4c"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "ybrtsioi",
+            "myzvhd4c"
+          ],
+          "_$comp": [
+            {
+              "_$override": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+              "templateSlot": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7",
+                  "ybrtsioi",
+                  "zfgejdrd"
+                ]
+              },
+              "gimg": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7",
+                  "ybrtsioi",
+                  "jdhjlgub"
+                ]
+              },
+              "nameText": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7",
+                  "ybrtsioi",
+                  "5zg64bdz"
+                ]
+              },
+              "countText": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7",
+                  "ybrtsioi",
+                  "gj3qvj55"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "vzkfe927"
+          ],
+          "_$comp": [
+            {
+              "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+              "targetNode": {
+                "_$ref": [
+                  "u0e892gj",
+                  "p8xgvne7"
+                ]
               }
             }
           ]

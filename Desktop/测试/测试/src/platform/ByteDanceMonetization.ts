@@ -125,7 +125,7 @@ export class ByteDanceMonetization {
 
         this.interstitialAd = ad;
         ad.onError?.((error: any) => {
-            console.warn("[ByteDanceMonetization] interstitial error", error);
+            // ignore
         });
         ad.onClose?.(() => {
             this.preloadInterstitialAd();
@@ -133,7 +133,7 @@ export class ByteDanceMonetization {
         try {
             ad.load?.();
         } catch (error) {
-            console.warn("[ByteDanceMonetization] interstitial load failed", error);
+            // ignore
         }
     }
 
@@ -151,7 +151,7 @@ export class ByteDanceMonetization {
 
         this.rewardedVideoAd = ad;
         ad.onError?.((error: any) => {
-            console.warn("[ByteDanceMonetization] rewarded ad error", error);
+            // ignore
         });
         ad.onClose?.((result: { isEnded?: boolean }) => {
             if (!result?.isEnded) {
@@ -162,7 +162,7 @@ export class ByteDanceMonetization {
         try {
             ad.load?.();
         } catch (error) {
-            console.warn("[ByteDanceMonetization] rewarded ad load failed", error);
+            // ignore
         }
     }
 

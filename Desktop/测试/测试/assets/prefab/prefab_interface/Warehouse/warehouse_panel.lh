@@ -11,7 +11,7 @@
       "scriptPath": "../src/PlayUI/Warehouse/WarehousePanel.ts",
       "bagGlistNode": {
         "_$ref": [
-          "r00u0v58",
+          "v4x5csnr",
           "7fpks0da"
         ]
       },
@@ -55,13 +55,20 @@
       "letterSpacing": 0
     },
     {
-      "_$id": "r00u0v58",
-      "_$prefab": "a5b5f3d5-5b0e-41c3-bd07-0e1ea5fea981",
+      "_$id": "v4x5csnr",
+      "_$prefab": "c90a477a-edd9-4563-9260-209a89c08b2e",
       "name": "bag_list",
       "active": true,
-      "x": 83,
-      "y": 159,
-      "visible": true
+      "x": 36,
+      "y": 130,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "7fpks0da",
+          "_initItemNum": 20,
+          "name": "baglist"
+        }
+      ]
     },
     {
       "_$id": "bxppbfbw",

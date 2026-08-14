@@ -9,18 +9,6 @@
   "height": 329,
   "scaleX": 0.8,
   "scaleY": 0.8,
-  "_$comp": [
-    {
-      "_$type": "0e604480-23d0-4be0-a650-5b34dbba5808",
-      "scriptPath": "../src/PlayUI/playerui/bag.ts",
-      "glistNode": {
-        "_$ref": "7fpks0da"
-      },
-      "templateSlot": {
-        "_$ref": "myzvhd4c"
-      }
-    }
-  ],
   "_$child": [
     {
       "_$id": "g96x3opi",
@@ -70,7 +58,7 @@
           "_$comp": [
             {
               "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-              "scriptPath": "../src/PlayUI/Bag/BagList.ts",
+              "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
               "listNode": {
                 "_$ref": "7fpks0da"
               },
@@ -94,7 +82,7 @@
               "_$comp": [
                 {
                   "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
-                  "scriptPath": "../src/PlayUI/Bag/listTemplate.ts",
+                  "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
                   "templateSlot": {
                     "_$ref": "zfgejdrd"
                   },

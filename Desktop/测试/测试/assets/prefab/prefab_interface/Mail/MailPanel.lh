@@ -8,7 +8,7 @@
   "_$comp": [
     {
       "_$type": "7f7b2a1a-0d2d-4f07-8b2d-2df6fef0a4a1",
-      "scriptPath": "../src/PlayUI/Mail/MailPanel.ts",
+      "scriptPath": "../src/PlayUI/module/MailPanel.ts",
       "mailListNode": {
         "_$ref": "dialog_entry_list"
       },
@@ -22,10 +22,7 @@
         "_$ref": "jf6o4une"
       },
       "rewardTargetNode": {
-        "_$ref": [
-          "kf7cmfk3",
-          "sbsnrylr"
-        ]
+        "_$ref": "sbsnrylr"
       }
     }
   ],
@@ -88,7 +85,7 @@
           "_$comp": [
             {
               "_$type": "080df137-6a67-4706-8c99-3c2ec24808fa",
-              "scriptPath": "../src/PlayUI/Mail/MailList.ts",
+              "scriptPath": "../src/PlayUI/module/MailList.ts",
               "listNode": {
                 "_$ref": "dialog_entry_list"
               },
@@ -110,7 +107,7 @@
               "_$comp": [
                 {
                   "_$type": "e9b896f7-3773-4c57-9cf1-0e13c09838da",
-                  "scriptPath": "../src/PlayUI/Mail/MailTemplate.ts",
+                  "scriptPath": "../src/PlayUI/module/MailTemplate.ts",
                   "titleText": {
                     "_$ref": [
                       "hwwbrbgj",
@@ -233,11 +230,13 @@
                   "_$comp": [
                     {
                       "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                      "scriptPath": "../src/PlayUI/Bag/BagList.ts",
+                      "scriptPath": "../src/PlayUI/module/glist.ts",
                       "listNode": {
                         "_$ref": "9bryjchh"
                       },
-                      "templateNode": null,
+                      "templateNode": {
+                        "_$ref": "7vqk11db"
+                      },
                       "slotCount": 0
                     }
                   ],

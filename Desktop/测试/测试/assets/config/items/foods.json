@@ -19,12 +19,12 @@
                       "icon":  "atlas/picture/items/foods/eats/can.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "省存食物"
+                      "description":  "储存食物"
                   },
                   {
                       "id":  "chocolate",
-                      "displayName":  "巧克�?,
-                      "nameZh":  "巧克�?,
+                      "displayName":  "巧克力",
+                      "nameZh":  "巧克力",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/eats/chocolate.png",
                       "stackMax":  20,
@@ -39,7 +39,7 @@
                       "icon":  "atlas/picture/items/foods/eats/cookie.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "然后固化的点�?
+                      "description":  "烘焙点心"
                   },
                   {
                       "id":  "fried_chips",
@@ -49,12 +49,12 @@
                       "icon":  "atlas/picture/items/foods/eats/fried_chips.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "脏脏品味休闲零食"
+                      "description":  "酥脆休闲零食"
                   },
                   {
                       "id":  "grilled_corn",
-                      "displayName":  "烤玉�?,
-                      "nameZh":  "烤玉�?,
+                      "displayName":  "烤玉米",
+                      "nameZh":  "烤玉米",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/eats/grilled_corn.png",
                       "stackMax":  20,
@@ -69,37 +69,37 @@
                       "icon":  "atlas/picture/items/foods/eats/grilled_fish.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤的鱼�?
+                      "description":  "烧烤的鱼"
                   },
                   {
                       "id":  "grilled_mushroom",
-                      "displayName":  "烤蘑�?,
-                      "nameZh":  "烤蘑�?,
+                      "displayName":  "烤蘑菇",
+                      "nameZh":  "烤蘑菇",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/eats/grilled_mushroom.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烤烤的蘑�?
+                      "description":  "烧烤的蘑菇"
                   },
                   {
                       "id":  "grilled_potato",
-                      "displayName":  "烤土�?,
-                      "nameZh":  "烤土�?,
+                      "displayName":  "烤土豆",
+                      "nameZh":  "烤土豆",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/eats/grilled_potato.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤的土�?
+                      "description":  "烧烤的土豆"
                   },
                   {
                       "id":  "mushroom_soup",
-                      "displayName":  "蘑菇�?,
-                      "nameZh":  "蘑菇�?,
+                      "displayName":  "蘑菇汤",
+                      "nameZh":  "蘑菇汤",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/eats/mushroom_soup.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "蘑菇�?
+                      "description":  "蘑菇汤"
                   },
                   {
                       "id":  "rice",
@@ -119,7 +119,7 @@
                       "icon":  "atlas/picture/items/foods/eats/roast.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤能量饮食"
+                      "description":  "烧烤能量食物"
                   },
                   {
                       "id":  "soda",
@@ -153,23 +153,23 @@
                   },
                   {
                       "id":  "water",
-                      "displayName":  "�?,
-                      "nameZh":  "�?,
+                      "displayName":  "水",
+                      "nameZh":  "水",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/drinks/water.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "纯净饮用�?
+                      "description":  "纯净饮用水"
                   },
                   {
                       "id":  "vtamin",
-                      "displayName":  "维生�?,
-                      "nameZh":  "维生�?,
+                      "displayName":  "维生素",
+                      "nameZh":  "维生素",
                       "subCategory":  "foods",
                       "icon":  "atlas/picture/items/foods/drinks/vtamin.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "营养补充�?
+                      "description":  "营养补充品"
                   }
               ]
 }

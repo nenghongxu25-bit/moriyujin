@@ -1,4 +1,4 @@
-import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+ï»¿import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
 import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
@@ -9,7 +9,7 @@ export class pine extends HarvestableBase {
         return {
             id: "harvestable_pine",
             name: "pine",
-            displayName: "ËÉÊ÷",
+            displayName: "æ¾æ ‘",
             action: "chop",
             interactTime: 1000,
             once: true,
@@ -22,7 +22,7 @@ export class pine extends HarvestableBase {
             drops: DataManager.getInstance().getHarvestDrops("harvestable_pine", [
                 {
                     itemId: "wood",
-                    label: "Ä¾Í·",
+                    label: "æœ¨å¤´",
                     minCount: 2,
                     maxCount: 3,
                     probability: 1,
@@ -33,14 +33,14 @@ export class pine extends HarvestableBase {
                 },
                 {
                     itemId: "shupi",
-                    label: "Ê÷Æ¤",
+                    label: "æ ‘çš®",
                     minCount: 1,
                     maxCount: 1,
                     probability: 0.2,
                 },
                 {
                     itemId: "xiaoshuzhi",
-                    label: "Ğ¡Ê÷Ö¦",
+                    label: "å°æ ‘æ",
                     minCount: 1,
                     maxCount: 1,
                     probability: 0.2,

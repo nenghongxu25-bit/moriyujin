@@ -1,4 +1,4 @@
-﻿export interface DouyinLoginConfig {
+export interface DouyinLoginConfig {
     loginEndpoint: string;
     privacyText?: string;
     tokenStorageKey?: string;
@@ -379,7 +379,7 @@ export class DouyinLogin {
 
         api.openPrivacyContract({
             fail: (err) => {
-                console.warn("[DouyinLogin] openPrivacyContract failed", err);
+                // ignore
             },
         });
     }

@@ -1,7 +1,8 @@
 const { regClass, property } = Laya;
 
-import { bag } from "../playerui/bag";
+import { DataManager, type InventoryViewItem } from "../../systems/datamanager";
 import { glist } from "../CommonUI/glist";
+import type { ListTemplateData } from "../CommonUI/listTemplate";
 
 @regClass()
 export class BagPanel extends Laya.Script {
@@ -27,13 +28,32 @@ export class BagPanel extends Laya.Script {
     public defaultState: number = 0;
 
     private currentState: number = -1;
+    private bagGlist: glist | null = null;
+    private containerGlist: glist | null = null;
 
     onAwake(): void {
+        this.bindControllers();
+        DataManager.getInstance().registerBagView(this);
         this.openDefault();
     }
 
     onEnable(): void {
+        this.bindControllers();
+        DataManager.getInstance().registerBagView(this);
         this.syncVisibleState();
+    }
+
+    onDisable(): void {
+        DataManager.getInstance().unregisterBagView(this);
+    }
+
+    onDestroy(): void {
+        DataManager.getInstance().unregisterBagView(this);
+    }
+
+    public setItems(items: InventoryViewItem[]): void {
+        this.bindControllers();
+        this.bindBagList(items);
     }
 
     public openDefault(): void {
@@ -69,7 +89,24 @@ export class BagPanel extends Laya.Script {
     }
 
     public refresh(): void {
+        this.bindControllers();
         this.syncVisibleState();
+    }
+
+    private bindControllers(): void {
+        this.bagGlist = this.resolveGlistController(this.bagGlistNode, "bagGlistNode");
+        this.containerGlist = this.resolveGlistController(this.containerGlistNode, "containerGlistNode");
+    }
+
+    private bindBagList(items: InventoryViewItem[]): void {
+        if (!this.bagGlist) {
+            return;
+        }
+
+        this.bagGlist.listKey = "bag";
+        this.bagGlist.setSlotCount(DataManager.getInstance().getPlayerBagSlotCount());
+        this.bagGlist.setItems(this.toListData(items));
+        this.bagGlist.setSelectedItemId("");
     }
 
     private syncVisibleState(): void {
@@ -84,35 +121,6 @@ export class BagPanel extends Laya.Script {
         this.setNodeVisible(this.bagGlistNode, true);
     }
 
-    private dumpState(): Record<string, any> {
-        return {
-            currentState: this.currentState,
-            defaultState: this.defaultState,
-            containerNode: this.nodeInfo(this.containerNode),
-            bagNode: this.nodeInfo(this.bagNode),
-            containerGlistNode: this.nodeInfo(this.containerGlistNode),
-            bagGlistNode: this.nodeInfo(this.bagGlistNode),
-            personPageNode: this.nodeInfo(this.personPageNode),
-            quickEquipNode: this.nodeInfo(this.quickEquipNode),
-            bagScriptAttached: this.bagNode ? !!this.bagNode.getComponent(bag) : false,
-            bagGlistScriptAttached: this.bagGlistNode ? !!this.bagGlistNode.getComponent(glist) : false,
-        };
-    }
-
-    private nodeInfo(node: Laya.Node | null): Record<string, any> {
-        const target = node as any;
-        if (!target) {
-            return { present: false };
-        }
-
-        return {
-            present: true,
-            name: target.name || "",
-            visible: "visible" in target ? target.visible : undefined,
-            active: "active" in target ? target.active : undefined,
-        };
-    }
-
     private setNodeVisible(node: Laya.Node | null, visible: boolean): void {
         const target = node as any;
         if (!target) {
@@ -120,12 +128,21 @@ export class BagPanel extends Laya.Script {
         }
 
         if ("visible" in target) {
-            (target as any).visible = visible;
+            target.visible = visible;
         }
 
         if ("active" in target) {
             target.active = visible;
         }
+    }
+
+    private toListData(items: InventoryViewItem[]): ListTemplateData[] {
+        return (Array.isArray(items) ? items : []).map((item) => ({
+            itemId: item.itemId,
+            name: item.name,
+            count: item.count,
+            icon: item.icon,
+        }));
     }
 
     private normalizeState(stateIndex: number): number {
@@ -134,5 +151,36 @@ export class BagPanel extends Laya.Script {
             return 1;
         }
         return 0;
+    }
+
+    private resolveGlistController(node: Laya.Node | null, label: string): glist | null {
+        const controller = this.findGlistController(node);
+        return controller;
+    }
+
+    private findGlistController(node: Laya.Node | null): glist | null {
+        if (!node) {
+            return null;
+        }
+
+        const direct = node.getComponent(glist);
+        if (direct) {
+            return direct;
+        }
+
+        const children = (node as any).children as Laya.Node[] | undefined;
+        if (!children || children.length === 0) {
+            return null;
+        }
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            const nested = this.findGlistController(child);
+            if (nested) {
+                return nested;
+            }
+        }
+
+        return null;
     }
 }
