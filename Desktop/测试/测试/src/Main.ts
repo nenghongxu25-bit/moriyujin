@@ -8,7 +8,7 @@ import "./PlayUI/SidebarNavigateButton";
 import "./PlayUI/playerui/bag";
 import "./PlayUI/module/BagPanel";
 import "./PlayUI/module/QuickEquipContainer";
-import "./PlayUI/Bag/BagList";
+import "./PlayUI/CommonUI/listTemplate";
 import "./PlayUI/module/WarehousePanel";
 import "./PlayUI/module/MailPanel";
 import "./SceneJumpTrigger";

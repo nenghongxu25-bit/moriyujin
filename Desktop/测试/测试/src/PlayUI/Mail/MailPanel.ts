@@ -1,8 +1,7 @@
 const { regClass, property } = Laya;
 
-import { glist } from "../Bag/BagList";
-import { listTemplate } from "../Bag/listTemplate";
-import type { ListTemplateData } from "../Bag/listTemplate";
+import { glist } from "../CommonUI/glist";
+import type { ListTemplateData } from "./listTemplate";
 
 import { MailList } from "./MailList";
 import type { MailListItemData } from "./MailTemplate";
@@ -47,8 +46,8 @@ export class MailPanel extends Laya.Script {
         this.bindButtons();
 
 
-        // 闁诲孩顔栭崰鎺楀磻閹剧粯鐓曟繛鍡樺姇閻忓瓨淇婇娆戭槮闁崇粯鎸鹃崰濠冨緞瀹€鈧悰?
-        // 闂備胶鍘ч〃搴㈢濠婂嫭鍙忛柍鍝勬噹缁€澶愭煟濡绲荤€殿喛娅曠换娑㈠幢閹邦剛浼囩紓浣筋嚙椤戝寮婚崶顒夋晩缂備焦锕╅崑?+ 婵犵數鍋炲娆擃敄閸儲鍎婃い鏍ㄧ〒闂勫嫰鏌″畵顔煎敪閿熺姵鈷戞い鎾楀啯鐏嗗┑?
+        // 开发阶段：
+        // 自动加入欢迎邮件 + 测试奖励邮件
         MailManager
             .getInstance()
             .ensureDefaultMails();
@@ -105,7 +104,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 闂備胶鎳撻悘姘跺磿閹惰棄鏄ラ悘鐐插⒔閳绘棃鏌曢崼婵嗩伃闁?List
+    // 找到两个 List
     // =========================
 
     private bindControllers(): void {
@@ -135,7 +134,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 缂傚倸鍊烽悞锕傚垂閻㈠憡鍋╅柣鎰靛墾缁憋綁鏌涢埄鍐炬當缂佹彃娼￠弻鐔虹矙濞嗙偓鈻堥梺?
+    // 绑定领取按钮
     // =========================
 
     private bindButtons(): void {
@@ -176,7 +175,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 闂備礁鎲＄敮锟犲绩闁秴钃熷┑鐘插亞閸熷懘鏌ㄩ弴姘冲厡闁绘繂鐖煎娲敇瑜嶉弸娆愮箾閸℃劕鐏茬€规洘鑹捐灃闁告洍鏂侀崑?
+    // 刷新左边邮件列表
     // =========================
 
     public refreshMailList(): void {
@@ -242,7 +241,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 闂備胶绮崝妤呭箠閹捐鍚规い鏃傗拡閸熷懘鏌ㄩ弴姘冲厡闁绘繂鐖奸弻锛勪沪閹冾潓闂佹眹鍔嶇换鍫ュ蓟閸ヮ剦鏁婄紓浣癸供閸?
+    // 点击左边某封邮件
     // =========================
 
     private onMailClick =
@@ -263,7 +262,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 闂備胶鎳撻悘姘跺箰閸濄儲顫曢柟杈鹃檮閻掕姤銇勯弮鍌滃笡妞?
+    // 打开邮件
     // =========================
 
     private openMail(
@@ -288,39 +287,43 @@ export class MailPanel extends Laya.Script {
         }
 
 
+        // 当前正在看这封邮件
         this.currentMailId =
             mail.id;
 
 
-        // 闂備焦妞挎禍鐐哄窗閹伴偊鏁嗘繝濠傜墕缁犮儵鏌熼幆褏锛嶇痪鎹愵嚙闇夐柣姗嗗枛閸旀岸鏌熼绛嬫疁鐎殿喕绮欏畷鍫曨敂瀹ュ懏鏆柣搴ゎ潐閻℃洜浜搁鍫晪?
+        // 真正打开以后标记已读
         manager.markRead(
             mail.id
         );
 
 
-        // 婵犳鍠楃换鎰緤妤ｅ啫鍑?
+        // 正文
         this.showDetailText(
             mail.content
         );
 
 
-        // 濠电娀娼ч崐褰掓偋閺囩喐鍙忛柟鎯板Г閳锋棃鏌涢弴銊ょ凹妞?
+        // 奖励附件
         this.showRewards(
             mail.attachments
         );
 
 
+        // 右侧按钮状态
         this.renderMailState(
             mail
         );
 
 
+        // 左边已读状态同步
         this.refreshMailList();
     }
 
 
     // =========================
-    // 闂備礁鎲＄敮鍥磹閺嶎厼钃熼柛銉墮閻鎮楅崷顓炐ラ柣婵嗙埣閺岋絽螣閸喚鍘梺?    // =========================
+    // 判断右边状态
+    // =========================
 
     private renderMailState(
         mail:
@@ -336,7 +339,8 @@ export class MailPanel extends Laya.Script {
 
 
         // -------------------------
-        // 婵犵數鍋涙径鍥焵椤掍礁澧繛鍫灦閺?        // -------------------------
+        // 没奖励
+        // -------------------------
 
         if (!hasReward) {
 
@@ -359,7 +363,8 @@ export class MailPanel extends Laya.Script {
 
 
         // -------------------------
-        // 闂備礁鎼悧鍡浰囬鐐偓鍐ㄢ槈閵忕姷顦梺瑙勫絻椤戝洨绮堟径灞稿亾閻熺増鍟為柣鎿勭節閵嗗倿顢曢敃鈧惌?        // -------------------------
+        // 有奖励，已领取
+        // -------------------------
 
         if (mail.isClaimed) {
 
@@ -382,7 +387,8 @@ export class MailPanel extends Laya.Script {
 
 
         // -------------------------
-        // 闂備礁鎼悧鍡浰囬鐐偓鍐ㄢ槈閵忕姷顦梺瑙勫絻椤戝洨绮堟径鎰厸闁割偒鍋傞柇顖涖亜閿濆骸浜扮€?        // -------------------------
+        // 有奖励，未领取
+        // -------------------------
 
         if (this.getRewardButton) {
 
@@ -400,7 +406,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 闂備胶绮崝妤呭箠閹捐鍚规い鏃€鏋荤槐锝夋煕閳╁喚娈旂紒鎻掔仢閳规垿宕掑☉姘吂婵?
+    // 点击领取奖励
     // =========================
 
     private onGetRewardClick(): void {
@@ -440,9 +446,9 @@ export class MailPanel extends Laya.Script {
 
 
         // =====================================
-        // 闂備礁鎲￠懝楣冩煀閿濆拋鐒介柣妤€鐗婃禍銈嗙箾閸℃ɑ灏繛鍜冪節閺屾盯骞囬鍌傦綁鎮?InventoryManager
+        // 后面这里再接 InventoryManager
         //
-        // 闂?attachments 闂備焦妞挎禍鐐哄窗閹伴偊鏁嗘繝濠傜墕缁€澶愭煟濡绲荤€殿喗濞婇弻锝呪攦閻愵剚鐝斿銈嗘煥缁夊綊骞婂Δ鍐ф勃闁芥ê顦卞Ο?
+        // 把 attachments 真正加入玩家背包
         // =====================================
 
 
@@ -468,17 +474,19 @@ export class MailPanel extends Laya.Script {
         }
 
 
+        // 重新显示右边状态
         this.renderMailState(
-            mail
+            updatedMail
         );
 
 
+        // 刷新左边已处理状态
         this.refreshMailList();
     }
 
 
     // =========================
-    // 闂備礁鎼€氼剚鏅舵禒瀣︽慨妯垮煐閻掕姤銇勯弮鍌滃笡妞ゆ劘濮ら幈銊モ攽閹惧墎蓱闂?
+    // 显示邮件正文
     // =========================
 
     private showDetailText(
@@ -498,7 +506,7 @@ export class MailPanel extends Laya.Script {
 
 
     // =========================
-    // 闂備礁鎼€氼剚鏅舵禒瀣︽慨姗嗗幘闂勫嫰鏌″畵顔煎敪閿熺姵鐓熸俊鐐电帛濞呭懘鏌?
+    // 显示奖励物品
     // =========================
 
     private showRewards(
@@ -536,28 +544,15 @@ export class MailPanel extends Laya.Script {
             5
         );
 
+
         this.rewardList.setItems(
-            listData,
-            (
-                slotNode: Laya.Node,
-                item: ListTemplateData
-            ): void => {
-                const slot =
-                    slotNode.getComponent(listTemplate) as listTemplate | null;
-
-                if (!slot) {
-                    console.error("[MailPanel] reward list missing listTemplate script");
-                    return;
-                }
-
-                slot.bindData(item);
-            }
+            listData
         );
     }
 
 
     // =========================
-    // 婵犵數鍋涢惌澶屾崲濠靛鐒垫い鎺嗗亾妞わ富鍣ｉ幊娆撳箣閿旂晫鍔峰銈嗘⒒缁垶顢?
+    // 没选中邮件
     // =========================
 
     private clearDetail(): void {
@@ -573,7 +568,9 @@ export class MailPanel extends Laya.Script {
 
         if (this.rewardList) {
 
-            this.rewardList.clearItems();
+            this.rewardList.setItems(
+                []
+            );
         }
 
 
