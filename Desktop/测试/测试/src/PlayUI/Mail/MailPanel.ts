@@ -1,7 +1,7 @@
 const { regClass, property } = Laya;
 
 import { glist } from "../CommonUI/glist";
-import type { ListTemplateData } from "./listTemplate";
+import { listTemplate, type ListTemplateData } from "../CommonUI/listTemplate";
 
 import { MailList } from "./MailList";
 import type { MailListItemData } from "./MailTemplate";
@@ -11,6 +11,7 @@ import {
     type PlayerMail,
     type MailAttachment
 } from "../../systems/data/MailManager";
+import { DataManager } from "../../systems/datamanager";
 
 
 @regClass()
@@ -346,16 +347,25 @@ export class MailPanel extends Laya.Script {
 
             if (this.getRewardButton) {
 
-                this.getRewardButton.active =
-                    false;
+                this.setNodeShown(
+                    this.getRewardButton,
+                    false
+                );
             }
 
 
             if (this.rewardTargetNode) {
 
-                this.rewardTargetNode.active =
-                    false;
+                this.setNodeShown(
+                    this.rewardTargetNode,
+                    false
+                );
             }
+
+
+            this.setRewardClaimedShown(
+                false
+            );
 
 
             return;
@@ -370,16 +380,25 @@ export class MailPanel extends Laya.Script {
 
             if (this.getRewardButton) {
 
-                this.getRewardButton.active =
-                    false;
+                this.setNodeShown(
+                    this.getRewardButton,
+                    false
+                );
             }
 
 
             if (this.rewardTargetNode) {
 
-                this.rewardTargetNode.active =
-                    true;
+                this.setNodeShown(
+                    this.rewardTargetNode,
+                    true
+                );
             }
+
+
+            this.setRewardClaimedShown(
+                true
+            );
 
 
             return;
@@ -392,16 +411,25 @@ export class MailPanel extends Laya.Script {
 
         if (this.getRewardButton) {
 
-            this.getRewardButton.active =
-                true;
+            this.setNodeShown(
+                this.getRewardButton,
+                true
+            );
         }
 
 
         if (this.rewardTargetNode) {
 
-            this.rewardTargetNode.active =
-                false;
+            this.setNodeShown(
+                this.rewardTargetNode,
+                false
+            );
         }
+
+
+        this.setRewardClaimedShown(
+            false
+        );
     }
 
 
@@ -461,6 +489,13 @@ export class MailPanel extends Laya.Script {
         if (!success) {
             return;
         }
+
+
+        DataManager
+            .getInstance()
+            .grantItemsToWarehouse(
+                mail.attachments
+            );
 
 
         const updatedMail =
@@ -541,13 +576,14 @@ export class MailPanel extends Laya.Script {
 
 
         this.rewardList.setSlotCount(
-            5
+            listData.length
         );
 
 
         this.rewardList.setItems(
             listData
         );
+
     }
 
 
@@ -576,15 +612,151 @@ export class MailPanel extends Laya.Script {
 
         if (this.getRewardButton) {
 
-            this.getRewardButton.active =
-                false;
+            this.setNodeShown(
+                this.getRewardButton,
+                false
+            );
         }
 
 
         if (this.rewardTargetNode) {
 
-            this.rewardTargetNode.active =
-                false;
+            this.setNodeShown(
+                this.rewardTargetNode,
+                false
+            );
+        }
+
+
+        this.setRewardClaimedShown(
+            false
+        );
+    }
+
+
+    private setRewardClaimedShown(
+        shown: boolean
+    ): void {
+
+        this.applyRewardClaimedShown(
+            shown
+        );
+
+
+        Laya.timer.callLater(
+            this,
+            () => this.applyRewardClaimedShown(
+                shown
+            )
+        );
+    }
+
+
+    private applyRewardClaimedShown(
+        shown: boolean
+    ): void {
+
+        const rewardRoot =
+            this.rewardListNode ||
+            ((this.rewardList as any)?.listNode as Laya.Node | null) ||
+            ((this.rewardList as any)?.owner as Laya.Node | null) ||
+            null;
+
+        const children =
+            rewardRoot && Array.isArray((rewardRoot as any).children)
+                ? ((rewardRoot as any).children as Laya.Node[])
+                : [];
+
+        const templateNode =
+            (this.rewardList as any)?.templateNode as Laya.Node | null;
+
+        for (let i = 0; i < children.length; i++) {
+
+            const slotNode =
+                children[i];
+
+            if (
+                !slotNode ||
+                slotNode === templateNode
+            ) {
+                continue;
+            }
+
+
+            const template =
+                slotNode.getComponent(
+                    listTemplate
+                );
+
+            const data =
+                template ? template.getBoundData() : null;
+
+            const claimedNode =
+                this.findDirectChildByName(
+                    slotNode,
+                    "Sprite"
+                );
+
+            this.setNodeShown(
+                claimedNode,
+                shown && !!data
+            );
+        }
+    }
+
+
+    private findDirectChildByName(
+        node: Laya.Node | null,
+        name: string
+    ): Laya.Node | null {
+
+        const children =
+            node && Array.isArray((node as any).children)
+                ? ((node as any).children as Laya.Node[])
+                : [];
+
+        for (let i = 0; i < children.length; i++) {
+
+            const child =
+                children[i] as any;
+
+            if (
+                child &&
+                child.name === name
+            ) {
+                return child as Laya.Node;
+            }
+        }
+
+
+        return null;
+    }
+
+
+    private setNodeShown(
+        node: Laya.Node | null,
+        shown: boolean
+    ): void {
+
+        const target =
+            node as any;
+
+        if (!target) {
+            return;
+        }
+
+
+        if ("active" in target) {
+
+            target.active =
+                shown;
+        }
+
+
+        if ("visible" in target) {
+
+            target.visible =
+                shown;
         }
     }
 }

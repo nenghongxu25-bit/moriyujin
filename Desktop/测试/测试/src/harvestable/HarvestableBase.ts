@@ -317,6 +317,15 @@ export abstract class HarvestableBase extends Laya.Script {
         (owner as any).visible = false;
         owner.mouseEnabled = false;
         owner.active = false;
-        owner.destroy();
+
+        // Delay destruction until the interaction callback finishes.
+        Laya.timer.once(0, null, () => {
+            if (!owner.destroyed) {
+                if (owner.parent) {
+                    owner.removeSelf();
+                }
+                owner.destroy();
+            }
+        });
     }
 }

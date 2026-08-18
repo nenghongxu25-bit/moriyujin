@@ -77,7 +77,10 @@ export class SceneJumpTrigger extends Laya.Script {
         }
 
         this.jumped = true;
-        DataManager.getInstance().enterScene(url);
-        Laya.Scene.open(url);
+        // Defer scene switching until the trigger callback unwinds.
+        Laya.timer.once(0, null, () => {
+            DataManager.getInstance().enterScene(url);
+            Laya.Scene.open(url);
+        });
     }
 }

@@ -18,9 +18,10 @@ export class glist extends Laya.Script {
     public listKey: string = "";
     public onSlotClick: GListSlotClickHandler | null = null;
 
-    private items: ListTemplateData[] = [];
+    private items: Array<ListTemplateData | null> = [];
     private appliedSlotCount: number = -1;
     private selectedItemId: string = "";
+    private selectedSlotIndex: number = -1;
 
     onAwake(): void {
         this.applySlotCount(true);
@@ -32,7 +33,7 @@ export class glist extends Laya.Script {
         this.refresh();
     }
 
-    public setItems(items: ListTemplateData[] | null | undefined): void {
+    public setItems(items: Array<ListTemplateData | null> | null | undefined): void {
         this.items = Array.isArray(items) ? items.slice() : [];
         this.refresh();
     }
@@ -50,17 +51,25 @@ export class glist extends Laya.Script {
 
     public setSelectedItemId(itemId: string | null): void {
         this.selectedItemId = itemId ? String(itemId) : "";
+        this.selectedSlotIndex = -1;
+        this.refresh();
+    }
+
+    public setSelectedSlotIndex(slotIndex: number | null): void {
+        this.selectedSlotIndex = Number.isFinite(slotIndex) ? Math.floor(slotIndex as number) : -1;
+        this.selectedItemId = "";
         this.refresh();
     }
 
     public refresh(): void {
         this.applySlotCount();
-        this.hideTemplateNode();
 
         const listRoot = this.getListRoot();
         if (!listRoot) {
             return;
         }
+
+        this.hideTemplateNode();
 
         const children = listRoot.children || [];
         const maxSlots = Math.max(0, Math.floor(this.slotCount));
@@ -80,7 +89,11 @@ export class glist extends Laya.Script {
 
             const item = this.items[dataIndex] || null;
             slot.bindData(item);
-            slot.setSelected(!!item && !!item.itemId && item.itemId === this.selectedItemId);
+            const selected =
+                this.selectedSlotIndex >= 0
+                    ? i === this.selectedSlotIndex && !!item
+                    : !!item && !!item.itemId && item.itemId === this.selectedItemId;
+            slot.setSelected(selected);
             this.bindSlotClick(slotNode, i);
             dataIndex++;
         }

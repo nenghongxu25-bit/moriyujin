@@ -1,8 +1,13 @@
 export interface ItemMeta {
     id: string;
+    category?: string;
     displayName: string;
     nameZh?: string;
+    subCategory?: string;
     icon?: string;
+    attackPower?: number;
+    attackSpeed?: number;
+    durability?: number;
 }
 
 export interface ItemTableFile {
@@ -11,7 +16,11 @@ export interface ItemTableFile {
         id: string;
         displayName: string;
         nameZh?: string;
+        subCategory?: string;
         icon?: string;
+        attackPower?: number;
+        attackSpeed?: number;
+        durability?: number;
     }>;
 }
 
@@ -20,7 +29,9 @@ export class ItemDataManager {
 
     public registerItemTable(table: ItemTableFile): void {
         if (!table || !Array.isArray(table.items)) {
-            throw new Error("Item table is invalid.");
+            const type = typeof table;
+            const keys = table && type === "object" ? Object.keys(table as any).join(",") : "";
+            throw new Error(`Item table is invalid. type=${type} keys=${keys}`);
         }
 
         const items = table.items;
@@ -32,9 +43,14 @@ export class ItemDataManager {
 
             this.itemMetaById.set(item.id, {
                 id: item.id,
+                category: table.category,
                 displayName: item.displayName || item.nameZh || item.id,
                 nameZh: item.nameZh,
+                subCategory: item.subCategory,
                 icon: this.normalizeIconPath(item.icon),
+                attackPower: this.normalizeOptionalNumber(item.attackPower),
+                attackSpeed: this.normalizeOptionalNumber(item.attackSpeed),
+                durability: this.normalizeOptionalNumber(item.durability),
             });
         }
     }
@@ -59,9 +75,22 @@ export class ItemDataManager {
             food_material_01: "atlas/picture/items/materials/food_materials/fruit.png",
             food_material_04: "atlas/picture/items/materials/basic_materials/chenshuimu.png",
             base_material_10: "atlas/picture/items/materials/basic_materials/chenshuimu.png",
+            mutant_blood_1: "atlas/picture/items/misc/flood_1.png",
+            mutant_blood_2: "atlas/picture/items/misc/flood_2.png",
+            mutant_blood_3: "atlas/picture/items/misc/flood_3.png",
         };
 
         return fallbackIconMap[itemId] || undefined;
+    }
+
+    public resolveFallbackName(itemId: string): string | undefined {
+        const fallbackNameMap: Record<string, string> = {
+            mutant_blood_1: "一阶变异血",
+            mutant_blood_2: "二阶变异血",
+            mutant_blood_3: "三阶变异血",
+        };
+
+        return fallbackNameMap[itemId] || undefined;
     }
 
     private normalizeIconPath(icon?: string): string | undefined {
@@ -71,5 +100,10 @@ export class ItemDataManager {
         }
 
         return raw.replace(/^assets\//, "");
+    }
+
+    private normalizeOptionalNumber(value: unknown): number | undefined {
+        const numeric = Number(value);
+        return Number.isFinite(numeric) ? numeric : undefined;
     }
 }

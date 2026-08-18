@@ -1,0 +1,35 @@
+{
+    "category": "misc",
+    "items": [
+        {
+            "id": "mutant_blood_1",
+            "displayName": "一阶变异血",
+            "nameZh": "一阶变异血",
+            "subCategory": "mutant_blood",
+            "icon": "atlas/picture/items/misc/flood_1.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "变异生物材料"
+        },
+        {
+            "id": "mutant_blood_2",
+            "displayName": "二阶变异血",
+            "nameZh": "二阶变异血",
+            "subCategory": "mutant_blood",
+            "icon": "atlas/picture/items/misc/flood_2.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "变异生物材料"
+        },
+        {
+            "id": "mutant_blood_3",
+            "displayName": "三阶变异血",
+            "nameZh": "三阶变异血",
+            "subCategory": "mutant_blood",
+            "icon": "atlas/picture/items/misc/flood_3.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "变异生物材料"
+        }
+    ]
+}

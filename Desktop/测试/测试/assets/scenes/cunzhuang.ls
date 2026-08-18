@@ -907,7 +907,8 @@
                   "scriptPath": "../src/OpenSprite.ts",
                   "targetNode": {
                     "_$ref": "6n0rq07u"
-                  }
+                  },
+                  "actionId": ""
                 }
               ],
               "_$child": [

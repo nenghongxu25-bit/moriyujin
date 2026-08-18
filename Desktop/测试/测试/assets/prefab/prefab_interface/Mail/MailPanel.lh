@@ -226,6 +226,10 @@
                     "direction": 1,
                     "barDisplay": 5
                   },
+                  "_templateNode": {
+                    "_$ref": "kf7cmfk3",
+                    "_$tmpl": "itemTemplate"
+                  },
                   "_initItemNum": 5,
                   "_$comp": [
                     {
@@ -235,7 +239,7 @@
                         "_$ref": "9bryjchh"
                       },
                       "templateNode": {
-                        "_$ref": "7vqk11db"
+                        "_$ref": "kf7cmfk3"
                       },
                       "slotCount": 0
                     }

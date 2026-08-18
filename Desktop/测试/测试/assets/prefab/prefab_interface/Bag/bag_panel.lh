@@ -33,6 +33,46 @@
       "quickEquipNode": {
         "_$ref": "eavb30xg"
       },
+      "insertPlateSlotNode": {
+        "_$ref": [
+          "tags6qmg",
+          "zat3d9l8",
+          "1er2gj8h",
+          "dj55mras"
+        ]
+      },
+      "helmetSlotNode": {
+        "_$ref": [
+          "tags6qmg",
+          "zat3d9l8",
+          "1er2gj8h",
+          "9dhqjj54"
+        ]
+      },
+      "weaponSlotNode": {
+        "_$ref": [
+          "tags6qmg",
+          "zat3d9l8",
+          "1er2gj8h",
+          "14cgu7sm"
+        ]
+      },
+      "armorSlotNode": {
+        "_$ref": [
+          "tags6qmg",
+          "zat3d9l8",
+          "1er2gj8h",
+          "gz2ztl6o"
+        ]
+      },
+      "previewSpineNode": {
+        "_$ref": [
+          "tags6qmg",
+          "zat3d9l8",
+          "zifhz0hm"
+        ]
+      },
+      "previewWeaponSpineSlotName": "weapon_slot",
       "defaultState": 0
     }
   ],

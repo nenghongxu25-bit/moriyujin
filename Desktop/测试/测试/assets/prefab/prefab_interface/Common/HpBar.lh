@@ -1,0 +1,57 @@
+{
+  "_$ver": 1,
+  "_$id": "zombie01_hpbar",
+  "_$type": "Sprite",
+  "name": "HpBar",
+  "x": -35,
+  "y": -130,
+  "width": 70,
+  "height": 8,
+  "_$comp": [
+    {
+      "_$type": "86bfbc2d-ef6a-4258-a8f7-45cc2548f891",
+      "scriptPath": "../src/Enemy/HpBar.ts",
+      "fill": {
+        "_$ref": "zombie01_hpbar_fill"
+      },
+      "maxHp": 100,
+      "hp": 100
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "zombie01_hpbar_bg",
+      "_$type": "Sprite",
+      "name": "Bg",
+      "width": 70,
+      "height": 8,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "width": 70,
+          "height": 10,
+          "percent": false,
+          "lineWidth": 1,
+          "lineColor": "#1f160f",
+          "fillColor": "#3b1f1f"
+        }
+      ]
+    },
+    {
+      "_$id": "zombie01_hpbar_fill",
+      "_$type": "Sprite",
+      "name": "Fill",
+      "width": 68,
+      "height": 6,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "width": 70,
+          "height": 10,
+          "percent": false,
+          "fillColor": "#c93826"
+        }
+      ]
+    }
+  ]
+}

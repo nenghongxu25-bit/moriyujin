@@ -1,0 +1,109 @@
+{
+    "category": "weapons",
+    "items": [
+        {
+            "id": "wood_club",
+            "displayName": "简易木棒",
+            "nameZh": "简易木棒",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/wood_club.png",
+            "stackMax": 1,
+            "attackPower": 8,
+            "attackSpeed": 1,
+            "durability": 40,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "qiaogun",
+            "displayName": "撬棍",
+            "nameZh": "撬棍",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/qiaogun.png",
+            "stackMax": 1,
+            "attackPower": 25,
+            "attackSpeed": 0.8,
+            "durability": 60,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "baseket_bat",
+            "displayName": "棒球棍",
+            "nameZh": "棒球棍",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/baseket_bat.png",
+            "stackMax": 1,
+            "attackPower": 16,
+            "attackSpeed": 1.3,
+            "durability": 60,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "cleaver",
+            "displayName": "菜刀",
+            "nameZh": "菜刀",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/cleaver.png",
+            "stackMax": 1,
+            "attackPower": 13,
+            "attackSpeed": 1.3,
+            "durability": 50,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "knife",
+            "displayName": "小刀",
+            "nameZh": "小刀",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/knife.png",
+            "stackMax": 1,
+            "attackPower": 10,
+            "attackSpeed": 1.5,
+            "durability": 45,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "langyabang",
+            "displayName": "狼牙棒",
+            "nameZh": "狼牙棒",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/langyabang.png",
+            "stackMax": 1,
+            "attackPower": 22,
+            "attackSpeed": 0.9,
+            "durability": 55,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "long_knife",
+            "displayName": "长刀",
+            "nameZh": "长刀",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/long_knife.png",
+            "stackMax": 1,
+            "attackPower": 30,
+            "attackSpeed": 1.2,
+            "durability": 75,
+            "consumable": false,
+            "description": "基础近战武器"
+        },
+        {
+            "id": "machete",
+            "displayName": "开山刀",
+            "nameZh": "开山刀",
+            "subCategory": "melees",
+            "icon": "atlas/picture/items/weapons/melees/machete.png",
+            "stackMax": 1,
+            "attackPower": 25,
+            "attackSpeed": 1.1,
+            "durability": 65,
+            "consumable": false,
+            "description": "基础近战武器"
+        }
+    ]
+}

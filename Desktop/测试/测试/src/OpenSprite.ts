@@ -1,9 +1,14 @@
-const { regClass, property } = Laya;
+﻿const { regClass, property } = Laya;
+
+import { DouyinLogin } from "./auth/DouyinLogin";
 
 @regClass()
 export class OpenSprite extends Laya.Script {
     @property({ type: Laya.Node })
     public targetNode: Laya.Node | null = null;
+
+    @property(String)
+    public actionId: string = "";
 
     private boundOwner: Laya.Node | null = null;
 
@@ -60,8 +65,29 @@ export class OpenSprite extends Laya.Script {
     }
 
     private onOpenClick(): void {
+        const actionId = String(this.actionId || "").trim();
+        if (actionId === "douyin-login") {
+            DouyinLogin.openLoginPanel();
+            return;
+        }
+
         if (this.targetNode) {
             (this.targetNode as any).visible = true;
+            this.refreshTargetNode(this.targetNode);
+        }
+    }
+
+    private refreshTargetNode(node: Laya.Node): void {
+        const components = (node as any)._components as any[] | undefined;
+        if (!Array.isArray(components)) {
+            return;
+        }
+
+        for (let i = 0; i < components.length; i++) {
+            const component = components[i];
+            if (component && typeof component.refresh === "function") {
+                component.refresh();
+            }
         }
     }
 }

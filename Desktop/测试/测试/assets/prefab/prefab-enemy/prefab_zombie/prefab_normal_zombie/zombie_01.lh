@@ -1,0 +1,159 @@
+{
+  "_$ver": 1,
+  "_$id": "g7jlit35",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 0,
+  "height": 0,
+  "_$comp": [
+    {
+      "_$type": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
+      "scriptPath": "../src/Enemy/ZombieController.ts",
+      "spineNode": {
+        "_$ref": "l3kcs2w0"
+      },
+      "playerNode": null,
+      "detectNode": {
+        "_$ref": "c9r5eezm"
+      },
+      "attackNode": {
+        "_$ref": "q9vm5q64"
+      },
+      "hpBarNode": null,
+      "hpFillNode": {
+        "_$ref": [
+          "3i7rjkm8",
+          "zombie01_hpbar_fill"
+        ]
+      },
+      "walkSpeed": 30,
+      "runSpeed": 60,
+      "attackDistance": 60,
+      "aggroDistance": 400,
+      "spawnIdleDuration": 1000,
+      "attackNodeShowDelay": 250,
+      "attackPower": 8,
+      "attackLeftX": -70,
+      "attackRightX": -20,
+      "detectLeftX": -38,
+      "detectRightX": 38,
+      "hpBarRightX": -35,
+      "hpBarLeftX": 35,
+      "currentHp": 100,
+      "maxHp": 100,
+      "hpFillFullWidth": 70,
+      "idleAnimation": "idle2",
+      "walkAnimation": "walk_2",
+      "runAnimation": "run",
+      "attackAnimation": "attack",
+      "deathAnimation": "dead_2",
+      "deathRecycleDelay": 1500,
+      "dropItemId": "mutant_blood_1",
+      "dropCount": 1
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "l3kcs2w0",
+      "_$type": "Sprite",
+      "name": "viewspine",
+      "x": -35,
+      "y": -100,
+      "width": 0,
+      "height": 0,
+      "scaleX": 0.5,
+      "scaleY": 0.5,
+      "_$comp": [
+        {
+          "_$type": "Spine2DRenderNode",
+          "layer": 0,
+          "source": "res://4ca9c34d-0c70-4f44-99d0-628d16cde0df",
+          "animationName": "idle2",
+          "preview": true,
+          "physicsUpdate": 2,
+          "premultipliedAlpha": true
+        }
+      ]
+    },
+    {
+      "_$id": "c9r5eezm",
+      "_$type": "Sprite",
+      "name": "detectarea",
+      "x": -38,
+      "y": -75,
+      "width": 0,
+      "height": 0,
+      "_$comp": [
+        {
+          "_$id": "v1qe",
+          "_$type": "RigidBody",
+          "type": "kinematic",
+          "applyOwnerColliderComponent": false,
+          "shapes": [
+            {
+              "_$type": "BoxShape2D",
+              "x": 0,
+              "y": 0,
+              "density": 10,
+              "restitution": 0,
+              "restitutionThreshold": 1,
+              "friction": 0.2,
+              "isSensor": true,
+              "width": 76,
+              "height": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "q9vm5q64",
+      "_$type": "Sprite",
+      "name": "attackarea",
+      "x": -70,
+      "y": -50,
+      "width": 0,
+      "height": 0,
+      "visible": false,
+      "_$comp": [
+        {
+          "_$id": "ne0c",
+          "_$type": "RigidBody",
+          "applyOwnerColliderComponent": false,
+          "shapes": [
+            {
+              "_$type": "BoxShape2D",
+              "x": 0,
+              "y": 0,
+              "density": 10,
+              "restitution": 0,
+              "restitutionThreshold": 1,
+              "friction": 0.2,
+              "isSensor": true,
+              "width": 70,
+              "height": 75
+            }
+          ],
+          "gravityScale": 0
+        },
+        {
+          "_$type": "85c8cc94-c77e-4333-b4cb-83803c909a33",
+          "scriptPath": "../src/combat/AttackHitbox.ts",
+          "attackerNode": {
+            "_$ref": "g7jlit35"
+          },
+          "targetKind": "player"
+        }
+      ]
+    },
+    {
+      "_$id": "3i7rjkm8",
+      "_$prefab": "3ef2d142-748f-45a0-9bc0-1e596ac9935b",
+      "name": "HpBar",
+      "active": true,
+      "x": -35,
+      "y": -130,
+      "visible": true
+    }
+  ]
+}

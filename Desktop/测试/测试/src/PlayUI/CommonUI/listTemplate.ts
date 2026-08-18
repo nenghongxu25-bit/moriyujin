@@ -22,7 +22,6 @@ export class listTemplate extends Laya.Script {
     public countText: Laya.Node | null = null;
 
     private boundData: ListTemplateData | null = null;
-    private lastRenderSignature: string = "";
     private bindingsResolved: boolean = false;
 
     public bindData(data: ListTemplateData | null): void {
@@ -48,12 +47,12 @@ export class listTemplate extends Laya.Script {
         }
 
         const itemId = String(data?.itemId || "");
-        const itemName = String(data?.name || "");
+        const itemName = this.resolveDisplayName(itemId, data?.name);
         const countTextValue = String(data?.count ?? 0);
-        const iconInput = data?.icon ? String(data.icon) : "";
+        const iconInput = data?.icon ? String(data.icon) : this.resolveFallbackIcon(itemId);
         const resolvedIconPath = this.resolveIconPath(iconInput, data);
 
-        if (!data?.icon) {
+        if (!iconInput) {
             throw new Error(`[listTemplate] missing icon path for item: ${String(data?.itemId || data?.name || "unknown")}`);
         }
 
@@ -91,27 +90,6 @@ export class listTemplate extends Laya.Script {
             countNode.text = countTextValue;
         }
 
-        const actualIconSrc = icon && "src" in icon ? String(icon.src || "") : "";
-        const actualIconSkin = icon && "skin" in icon ? String(icon.skin || "") : "";
-        const actualNameText = nameNode && "text" in nameNode ? String(nameNode.text || "") : "";
-        const actualCountText = countNode && "text" in countNode ? String(countNode.text || "") : "";
-        const signature = [
-            itemId,
-            itemName,
-            countTextValue,
-            resolvedIconPath,
-            actualIconSrc,
-            actualIconSkin,
-            actualNameText,
-            actualCountText,
-        ].join("|");
-
-        if (this.lastRenderSignature !== signature) {
-            this.lastRenderSignature = signature;
-            console.info(
-                `[listTemplate] render owner=${this.ownerName()} itemId=${itemId} expectedIcon=${resolvedIconPath} actualSrc=${actualIconSrc} actualSkin=${actualIconSkin} nameText=${actualNameText} countText=${actualCountText}`,
-            );
-        }
     }
 
     public getBoundData(): ListTemplateData | null {
@@ -174,8 +152,24 @@ export class listTemplate extends Laya.Script {
         throw new Error(`[listTemplate] icon path unavailable for item: ${String(data?.itemId || data?.name || "unknown")}, path: ${normalized}`);
     }
 
-    private ownerName(): string {
-        const owner = this.owner as any;
-        return owner && owner.name ? String(owner.name) : "";
+    private resolveFallbackIcon(itemId: string): string {
+        const fallbackIconMap: Record<string, string> = {
+            mutant_blood_1: "atlas/picture/items/misc/flood_1.png",
+            mutant_blood_2: "atlas/picture/items/misc/flood_2.png",
+            mutant_blood_3: "atlas/picture/items/misc/flood_3.png",
+        };
+
+        return fallbackIconMap[itemId] || "";
+    }
+
+    private resolveDisplayName(itemId: string, name?: string): string {
+        const rawName = String(name || "").trim();
+        const fallbackNameMap: Record<string, string> = {
+            mutant_blood_1: "一阶变异血",
+            mutant_blood_2: "二阶变异血",
+            mutant_blood_3: "三阶变异血",
+        };
+
+        return rawName && rawName !== itemId ? rawName : (fallbackNameMap[itemId] || rawName);
     }
 }

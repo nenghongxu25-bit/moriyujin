@@ -1,12 +1,23 @@
-export interface InventoryViewItem {
+﻿export interface InventoryViewItem {
     itemId?: string;
     name: string;
     count: number;
     icon?: string;
 }
 
+export type InventorySlotItem = InventoryViewItem | null;
+export type EquipmentSlotType = "insertPlate" | "helmet" | "weapon" | "armor";
+
+export interface EquippedItem extends InventoryViewItem {
+    itemId: string;
+}
+
 export interface BagView {
-    setItems(items: InventoryViewItem[]): void;
+    setItems(items: InventorySlotItem[]): void;
+}
+
+export interface WarehouseView {
+    refresh(): void;
 }
 
 export type InventoryScope = "base" | "instance";

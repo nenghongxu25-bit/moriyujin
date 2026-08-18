@@ -1,4 +1,4 @@
-export interface MailAttachment {
+﻿export interface MailAttachment {
     itemId: string;
     name: string;
     count: number;
@@ -8,35 +8,31 @@ export interface MailAttachment {
 export interface PlayerMail {
     id: string;
 
-    // 左边信封标题
+    // Left-side mail title
     title: string;
 
-    // 右边邮件正文
+    // Right-side mail content
     content: string;
 
-    // 发送时间
+    // Sent time
     createdAt: number;
 
-    // 是否看过
+    // Whether it has been read
     isRead: boolean;
 
-    // 奖励是否已经领取
+    // Whether the reward has been claimed
     isClaimed: boolean;
 
-    // 奖励附件
+    // Reward attachments
     attachments: MailAttachment[];
 }
 
-
 export class MailManager {
-
     private static instance: MailManager | null = null;
 
     private mails: PlayerMail[] = [];
 
-
     public static getInstance(): MailManager {
-
         if (!MailManager.instance) {
             MailManager.instance = new MailManager();
         }
@@ -44,97 +40,60 @@ export class MailManager {
         return MailManager.instance;
     }
 
-
     // =========================
-    // 获取全部邮件
+    // Get all mails
     // =========================
 
     public getMails(): PlayerMail[] {
-
         return this.mails.map((mail) => ({
             ...mail,
-
-            attachments: mail.attachments.map(
-                (item) => ({
-                    ...item
-                })
-            )
+            attachments: mail.attachments.map((item) => ({
+                ...item
+            }))
         }));
     }
 
-
     // =========================
-    // 获取某一封邮件
+    // Get one mail
     // =========================
 
-    public getMail(
-        mailId: string
-    ): PlayerMail | null {
-
-        return this.mails.find(
-            (mail) =>
-                mail.id === mailId
-        ) || null;
+    public getMail(mailId: string): PlayerMail | null {
+        return this.mails.find((mail) => mail.id === mailId) || null;
     }
 
-
     // =========================
-    // 添加邮件
+    // Add mail
     // =========================
 
-    public addMail(
-        mail: PlayerMail
-    ): boolean {
-
+    public addMail(mail: PlayerMail): boolean {
         if (!mail || !mail.id) {
             return false;
         }
 
-
-        // 同 ID 邮件不能重复
         if (this.getMail(mail.id)) {
             return false;
         }
 
-
         this.mails.push({
-
             ...mail,
-
-            attachments:
-                Array.isArray(mail.attachments)
-                    ? mail.attachments.map(
-                        (item) => ({
-                            ...item
-                        })
-                    )
-                    : []
+            attachments: Array.isArray(mail.attachments)
+                ? mail.attachments.map((item) => ({
+                    ...item
+                }))
+                : []
         });
 
-
-        // 新邮件排最前面
-        this.mails.sort(
-            (a, b) =>
-                b.createdAt -
-                a.createdAt
-        );
-
+        this.mails.sort((a, b) => b.createdAt - a.createdAt);
 
         return true;
     }
 
-
     // =========================
-    // 标记已读
+    // Mark read
     // =========================
 
-    public markRead(
-        mailId: string
-    ): void {
-
-        const mail =
-            this.getMail(mailId);
-
+    public markRead(mailId: string): void {
+        const mail = this.getMail(mailId);
         if (!mail) {
             return;
         }
@@ -142,18 +101,12 @@ export class MailManager {
         mail.isRead = true;
     }
 
-
     // =========================
-    // 标记奖励已领取
+    // Mark claimed
     // =========================
 
-    public markClaimed(
-        mailId: string
-    ): boolean {
-
-        const mail =
-            this.getMail(mailId);
-
+    public markClaimed(mailId: string): boolean {
+        const mail = this.getMail(mailId);
         if (!mail) {
             return false;
         }
@@ -163,131 +116,85 @@ export class MailManager {
         }
 
         mail.isClaimed = true;
-
         return true;
     }
 
-
     // =========================
-    // 删除邮件
+    // Remove mail
     // =========================
 
-    public removeMail(
-        mailId: string
-    ): void {
-
-        this.mails =
-            this.mails.filter(
-                (mail) =>
-                    mail.id !== mailId
-            );
+    public removeMail(mailId: string): void {
+        this.mails = this.mails.filter((mail) => mail.id !== mailId);
     }
 
-
     // =========================
-    // 默认欢迎邮件
-    // 无奖励
+    // Default welcome mail
     // =========================
 
     public addWelcomeMail(): void {
-
         this.addMail({
-
-            id:
-                "welcome_mail",
-
-            title:
-                "欢迎来到废土摸金录",
-
+            id: "welcome_mail",
+            title: "欢迎来到废土摸金录",
             content:
                 "欢迎来到废土摸金录！\n\n" +
-                "在这片危机四伏的废土中，探索未知区域、搜集物资，并努力生存下去。\n\n" +
+                "在这片危险四伏的废土中，探索未知区域、搜集物资，并努力生存下去。\n\n" +
                 "祝你好运，幸存者！",
-
-            createdAt:
-                Date.now(),
-
-            isRead:
-                false,
-
-            isClaimed:
-                false,
-
-            attachments:
-                []
-        });
-    }
-
-
-    // =========================
-    // 测试奖励邮件
-    // 后面可以删掉
-    // =========================
-
-    public addTestRewardMail(): void {
-
-        this.addMail({
-
-            id:
-                "test_reward_mail",
-
-            title:
-                "测试奖励邮件",
-
-            content:
-                "这是一封用于测试奖励领取功能的邮件。",
-
-            createdAt:
-                Date.now() - 1000,
-
-            isRead:
-                false,
-
-            isClaimed:
-                false,
-
+            createdAt: Date.now(),
+            isRead: false,
+            isClaimed: false,
             attachments: [
-
                 {
-                    itemId:
-                        "wood",
-
-                    name:
-                        "木头",
-
-                    count:
-                        10,
-
-                    icon:
-                        "atlas/picture/items/materials/basic_materials/wood.png"
+                    itemId: "grass",
+                    name: "草",
+                    count: 10,
+                    icon: "atlas/picture/items/materials/basic_materials/grass.png"
                 },
-
                 {
-                    itemId:
-                        "common_material_02",
-
-                    name:
-                        "石头",
-
-                    count:
-                        5,
-
-                    icon:
-                        "atlas/picture/items/materials/basic_materials/shitou.png"
+                    itemId: "common_material_02",
+                    name: "石头",
+                    count: 10,
+                    icon: "atlas/picture/items/materials/basic_materials/shitou.png"
                 }
             ]
         });
     }
 
+    // =========================
+    // Test reward mail
+    // Can be removed later
+    // =========================
+
+    public addTestRewardMail(): void {
+        this.addMail({
+            id: "test_reward_mail",
+            title: "测试奖励邮件",
+            content: "这是一封用于测试奖励领取功能的邮件。",
+            createdAt: Date.now() - 1000,
+            isRead: false,
+            isClaimed: false,
+            attachments: [
+                {
+                    itemId: "wood",
+                    name: "木头",
+                    count: 10,
+                    icon: "atlas/picture/items/materials/basic_materials/wood.png"
+                },
+                {
+                    itemId: "common_material_02",
+                    name: "石头",
+                    count: 5,
+                    icon: "atlas/picture/items/materials/basic_materials/shitou.png"
+                }
+            ]
+        });
+    }
 
     // =========================
-    // 开发阶段默认邮件
+    // Ensure default mails
     // =========================
 
     public ensureDefaultMails(): void {
-
         this.addWelcomeMail();
-
         this.addTestRewardMail();
     }
 }

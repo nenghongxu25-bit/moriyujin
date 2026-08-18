@@ -29,10 +29,29 @@
         "_$ref": "4c1ajmpu"
       },
       "itemText": null,
+      "hpFillNode": {
+        "_$ref": [
+          "iy88bpgl",
+          "zombie01_hpbar_fill"
+        ]
+      },
+      "weaponSlotNode": null,
+      "weaponIconNode": null,
+      "weaponSpineSlotName": "weapon_slot",
+      "insertPlateSpineSlotName": "",
+      "helmetSpineSlotName": "",
+      "armorSpineSlotName": "cloth",
+      "currentHp": 100,
+      "maxHp": 100,
+      "hpFillFullWidth": 70,
       "initialFacingSign": -1,
       "attackAreaRightX": -100,
       "attackAreaLeftX": 0,
       "attackCooldown": 300,
+      "attackPower": 10,
+      "baseAttackPower": 10,
+      "attackSpeed": 1,
+      "attackDamageRange": 120,
       "idleAnimation": "idle",
       "walkAnimation": "walk",
       "runAnimation": "run",
@@ -56,7 +75,7 @@
           "useFastRender": false,
           "source": "res://f87ec402-9dd0-4a49-90f0-2352581455dc",
           "skinName": "player_normal",
-          "animationName": "search/search_end",
+          "animationName": "idle",
           "loop": false,
           "preview": true,
           "offset": {
@@ -96,6 +115,14 @@
             }
           ],
           "gravityScale": 0
+        },
+        {
+          "_$type": "85c8cc94-c77e-4333-b4cb-83803c909a33",
+          "scriptPath": "../src/combat/AttackHitbox.ts",
+          "attackerNode": {
+            "_$ref": "6u72gdol"
+          },
+          "targetKind": "enemy"
         }
       ],
       "_$child": [
@@ -209,38 +236,6 @@
       "letterSpacing": 0
     },
     {
-      "_$id": "hptext01",
-      "_$type": "Text",
-      "name": "hp",
-      "x": -59,
-      "y": -185,
-      "width": 120,
-      "height": 28,
-      "text": "100",
-      "fontSize": 20,
-      "color": "#ffffff",
-      "align": "center",
-      "valign": "middle",
-      "leading": 2,
-      "letterSpacing": 0
-    },
-    {
-      "_$id": "0zx5u4sj",
-      "_$type": "Text",
-      "name": "tili",
-      "x": -57,
-      "y": -223,
-      "width": 120,
-      "height": 28,
-      "text": "100",
-      "fontSize": 20,
-      "color": "#ffffff",
-      "align": "center",
-      "valign": "middle",
-      "leading": 2,
-      "letterSpacing": 0
-    },
-    {
       "_$id": "dwnyw19z",
       "_$type": "Camera2D",
       "name": "Camera2D",
@@ -252,6 +247,43 @@
         {
           "_$type": "6adc1bb5-9800-4111-9786-29ef2b1a31aa",
           "scriptPath": "../src/Player/PlayerCamera2D.ts"
+        }
+      ]
+    },
+    {
+      "_$id": "iy88bpgl",
+      "_$prefab": "3ef2d142-748f-45a0-9bc0-1e596ac9935b",
+      "name": "HpBar",
+      "active": true,
+      "x": -35,
+      "y": -150,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "zombie01_hpbar_bg",
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "width": 70,
+              "height": 10,
+              "percent": false,
+              "lineWidth": 1,
+              "lineColor": "#1f160f",
+              "fillColor": "#3b1f1f"
+            }
+          ]
+        },
+        {
+          "_$override": "zombie01_hpbar_fill",
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "width": 70,
+              "height": 10,
+              "percent": false,
+              "fillColor": "#c93826"
+            }
+          ]
         }
       ]
     },

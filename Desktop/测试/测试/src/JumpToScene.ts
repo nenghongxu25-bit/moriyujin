@@ -67,7 +67,10 @@ export class JumpToScene extends Laya.Script {
             return;
         }
 
-        DataManager.getInstance().enterScene(url);
-        Laya.Scene.open(url);
+        // Defer scene switching until the click callback unwinds.
+        Laya.timer.once(0, null, () => {
+            DataManager.getInstance().enterScene(url);
+            Laya.Scene.open(url);
+        });
     }
 }

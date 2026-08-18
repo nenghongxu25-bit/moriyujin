@@ -4,6 +4,7 @@ interface ActionSequenceStep {
     animation: string;
     duration: number;
     loop?: boolean;
+    playbackRate?: number;
 }
 
 interface SpineAnimationSnapshot {
@@ -65,12 +66,13 @@ export class PlayerAnimationController {
         this.pendingAnimation = animationName || this.controller.idleAnimation || "idle";
     }
 
-    public playActionAnimation(animationName: string, durationMs: number, fallbackAnimation?: string): void {
+    public playActionAnimation(animationName: string, durationMs: number, fallbackAnimation?: string, playbackRate: number = 1): void {
         this.playActionSequence([
             {
                 animation: animationName || this.controller.attackAnimation || this.controller.idleAnimation || "idle",
                 duration: Math.max(0, durationMs || 0),
                 loop: false,
+                playbackRate,
             },
         ], fallbackAnimation || this.pendingAnimation || this.controller.idleAnimation || "idle");
     }
@@ -174,7 +176,7 @@ export class PlayerAnimationController {
         this.currentAnimation = step.animation;
 
         if (typeof this.spine.playbackRate === "function") {
-            this.spine.playbackRate(1);
+            this.spine.playbackRate(Math.max(0.1, step.playbackRate || 1));
         }
 
         let advanced = false;

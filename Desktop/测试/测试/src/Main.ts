@@ -12,7 +12,10 @@ import "./PlayUI/CommonUI/listTemplate";
 import "./PlayUI/Warehouse/WarehousePanel";
 import "./PlayUI/Mail/MailPanel";
 import "./SceneJumpTrigger";
+import './OpenSprite';
 import "./Player/PlayerCamera2D";
+import "./Enemy/HpBar";
+import "./combat/AttackHitbox";
 import "./harvestable/oak";
 import "./harvestable/pine";
 import "./harvestable/bush";
@@ -28,7 +31,6 @@ import { DouyinLogin } from "./auth/DouyinLogin";
 
 declare const Laya: any;
 
-
 export class Main {
     constructor() {
         this.init();
@@ -38,10 +40,9 @@ export class Main {
         ByteDanceMonetization.bootstrap();
         DouyinLogin.configure({
             loginEndpoint: "",
-            privacyText: "鐢ㄦ埛闅愮鏀跨瓥",
+            privacyText: "抖音隐私政策",
+            postLoginSceneUrl: "scenes/cunzhuang.ls",
         });
-
-        await DouyinLogin.ensureLogin();
 
         try {
             await DataManager.getInstance().loadAll();

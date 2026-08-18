@@ -1754,31 +1754,7 @@
               "_$type": "Sprite",
               "name": "Device",
               "width": 100,
-              "height": 100,
-              "_$child": [
-                {
-                  "_$id": "wli610ia",
-                  "_$prefab": "2ae6d8be-52e9-4517-9411-2c733fafabed",
-                  "name": "LaevePoint",
-                  "active": true,
-                  "x": 585,
-                  "y": -246,
-                  "visible": true,
-                  "_$comp": [
-                    {
-                      "_$override": "c803dca4-3833-4ccf-ae56-54ed9e6001d5",
-                      "sceneUrl": "scenes/cunzhuang.ls"
-                    }
-                  ],
-                  "_$child": [
-                    {
-                      "_$override": "kh344dvv",
-                      "x": 0,
-                      "y": 0
-                    }
-                  ]
-                }
-              ]
+              "height": 100
             },
             {
               "_$id": "uhufdh2t",
@@ -1801,7 +1777,95 @@
               "_$type": "Sprite",
               "name": "Zombie",
               "width": 100,
-              "height": 100
+              "height": 100,
+              "_$child": [
+                {
+                  "_$id": "pej16cyj",
+                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
+                  "name": "zombie_1",
+                  "active": true,
+                  "x": -291,
+                  "y": 186,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
+                      "playerNode": {
+                        "_$ref": "eojseri5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "_$id": "b0cr7xou",
+                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
+                  "name": "zombie_2",
+                  "active": true,
+                  "x": 708,
+                  "y": -186,
+                  "rotation": 0,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
+                      "playerNode": {
+                        "_$ref": "eojseri5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "_$id": "zjbfwf0u",
+                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
+                  "name": "zombie_3",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
+                      "playerNode": {
+                        "_$ref": "eojseri5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "_$id": "xxouvzeq",
+                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
+                  "name": "zombie_4",
+                  "active": true,
+                  "x": 569,
+                  "y": 96,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
+                      "playerNode": {
+                        "_$ref": "eojseri5"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "_$id": "toc35yj9",
+                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
+                  "name": "zombie_5",
+                  "active": true,
+                  "x": 316,
+                  "y": -131,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
+                      "playerNode": {
+                        "_$ref": "eojseri5"
+                      }
+                    }
+                  ]
+                }
+              ]
             },
             {
               "_$id": "9zvg64qv",

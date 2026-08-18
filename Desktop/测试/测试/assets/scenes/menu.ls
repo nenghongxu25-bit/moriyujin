@@ -64,7 +64,8 @@
           "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
           "targetNode": {
             "_$ref": "xka3q9s3"
-          }
+          },
+          "actionId": "douyin-login"
         }
       ],
       "_$child": [

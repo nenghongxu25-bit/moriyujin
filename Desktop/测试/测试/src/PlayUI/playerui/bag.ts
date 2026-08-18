@@ -1,6 +1,6 @@
-const { regClass, property } = Laya;
+﻿const { regClass, property } = Laya;
 
-import { DataManager, type InventoryViewItem } from "../../systems/datamanager";
+import { DataManager, type InventorySlotItem } from "../../systems/datamanager";
 import { glist } from "../CommonUI/glist";
 import { listTemplate } from "../CommonUI/listTemplate";
 
@@ -12,7 +12,7 @@ export class bag extends Laya.Script {
     @property(Laya.Node)
     public templateSlot: Laya.Node | null = null;
 
-    public items: InventoryViewItem[] = [];
+    public items: InventorySlotItem[] = [];
 
     private glistController: glist | null = null;
 
@@ -36,7 +36,7 @@ export class bag extends Laya.Script {
         DataManager.getInstance().unregisterBagView(this);
     }
 
-    public setItems(items: InventoryViewItem[]): void {
+    public setItems(items: InventorySlotItem[]): void {
         this.items = Array.isArray(items) ? items.slice() : [];
         this.refresh();
     }

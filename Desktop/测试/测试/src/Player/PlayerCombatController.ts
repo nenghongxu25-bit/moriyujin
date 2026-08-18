@@ -11,13 +11,19 @@ export class PlayerCombatController {
             return;
         }
 
-        const lockDuration = Math.max(this.controller.attackCooldown, this.controller.attackAnimationDuration);
+        const attackSpeed = Math.max(0.1, this.controller.attackSpeed || 1);
+        const lockDuration = Math.max(
+            Math.floor(this.controller.attackCooldown / attackSpeed),
+            Math.floor(this.controller.attackAnimationDuration / attackSpeed),
+        );
         this.attackLocked = true;
+        this.controller.beginAttackHit();
         this.setAttackNodeVisible(true);
         this.controller.animation.playActionAnimation(
             this.controller.attackAnimation,
             lockDuration,
             this.controller.idleAnimation,
+            attackSpeed,
         );
         this.controller.ui.showState("attack", lockDuration);
         Laya.timer.clear(this.controller, this.finishAttack);
@@ -38,6 +44,7 @@ export class PlayerCombatController {
 
     public onDestroy(): void {
         Laya.timer.clear(this.controller, this.finishAttack);
+        this.controller.endAttackHit();
         this.setAttackNodeVisible(false);
     }
 
@@ -49,6 +56,7 @@ export class PlayerCombatController {
 
     private finishAttack = (): void => {
         this.attackLocked = false;
+        this.controller.endAttackHit();
         this.setAttackNodeVisible(false);
     };
 }
