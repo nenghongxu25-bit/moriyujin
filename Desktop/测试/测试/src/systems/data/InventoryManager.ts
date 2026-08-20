@@ -89,6 +89,10 @@ export class InventoryManager {
         this.bagViews.delete(view);
     }
 
+    public refreshBagViews(): void {
+        this.syncBagViews();
+    }
+
     public addItemToActive(itemId: string, name: string, count: number, icon?: string): void {
         const inventory = this.getActiveInventory();
         const payload: InventoryViewItem = {
@@ -186,6 +190,9 @@ export class InventoryManager {
         const snapshot = this.getInventorySnapshot();
         for (const view of this.bagViews) {
             view.setItems(snapshot);
+            if (typeof view.refreshPlayerStats === "function") {
+                view.refreshPlayerStats();
+            }
         }
     }
 

@@ -5,408 +5,157 @@
   "name": "sign_in_panel",
   "width": 1334,
   "height": 750,
+  "_$comp": [
+    {
+      "_$type": "3e222049-733b-4ee2-a4d1-0a3ded8326da",
+      "scriptPath": "../src/PlayUI/SignIn/SignInPanel.ts",
+      "listNode": {
+        "_$ref": "k8v6t44v"
+      },
+      "templateNode": {
+        "_$ref": "a9azeaba"
+      },
+      "dayCount": 31
+    }
+  ],
   "_$child": [
     {
-      "_$id": "sign_title",
+      "_$id": "xj93j7g4",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 1334,
+      "height": 750,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 5,
+          "lineColor": "#119696",
+          "fillColor": "#258080"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "zc59zs9r",
+          "_$type": "Area2D",
+          "name": "Area2D",
+          "width": 1334,
+          "height": 750,
+          "_$child": [
+            {
+              "_$id": "k8v6t44v",
+              "_$type": "GList",
+              "name": "list",
+              "x": 81,
+              "y": 115,
+              "width": 600,
+              "height": 400,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1abcb1"
+              },
+              "layout": {
+                "type": 3,
+                "columns": 7
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1
+              },
+              "_templateNode": {
+                "_$ref": "a9azeaba",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 31,
+              "_$child": [
+                {
+                  "_$id": "a9azeaba",
+                  "_$prefab": "beae0efa-4589-4740-aecb-5704c61d02a1",
+                  "name": "bt_nojs",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$type": "253fef41-3bfb-4528-b0e7-2709ee13721f",
+                      "scriptPath": "../src/PlayUI/SignIn/SignInDayItem.ts",
+                      "iconNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "jdhjlgub"
+                        ]
+                      },
+                      "nameTextNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "5zg64bdz"
+                        ]
+                      },
+                      "amountTextNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "gj3qvj55"
+                        ]
+                      },
+                      "claimedMaskNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "v2tjsckl"
+                        ]
+                      },
+                      "lockedMaskNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "me62y2qp"
+                        ]
+                      },
+                      "dayButtonNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "e5bji9mh",
+                          "qwk816k0"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "ale854qg",
       "_$type": "Text",
       "name": "title",
-      "x": 52,
-      "y": 24,
-      "width": 360,
-      "height": 44,
-      "text": "Daily Sign-In",
-      "fontSize": 30,
-      "color": "#1f1f1f",
+      "x": 440,
+      "y": 16,
+      "width": 399,
+      "height": 92,
+      "text": "每日签到",
+      "fontSize": 50,
+      "color": "#132424",
+      "bold": true,
+      "align": "center",
       "valign": "middle",
       "leading": 2,
       "letterSpacing": 0
     },
     {
-      "_$id": "progressText",
-      "_$type": "Text",
-      "name": "progressText",
-      "x": 1040,
-      "y": 28,
-      "width": 240,
-      "height": 32,
-      "text": "Claimed: 0/7",
-      "fontSize": 20,
-      "color": "#4d4d4d",
-      "align": "right",
-      "valign": "middle",
-      "leading": 2,
-      "letterSpacing": 0
-    },
-    {
-      "_$id": "rewardTitle",
-      "_$type": "Text",
-      "name": "rewardTitle",
-      "x": 760,
-      "y": 110,
-      "width": 480,
-      "height": 42,
-      "text": "Day 1",
-      "fontSize": 26,
-      "color": "#1f1f1f",
-      "valign": "middle",
-      "leading": 2,
-      "letterSpacing": 0
-    },
-    {
-      "_$id": "rewardDesc",
-      "_$type": "Text",
-      "name": "rewardDesc",
-      "x": 760,
-      "y": 160,
-      "width": 470,
-      "height": 150,
-      "text": "Reward description",
-      "fontSize": 18,
-      "color": "#4d4d4d",
-      "leading": 8,
-      "letterSpacing": 0
-    },
-    {
-      "_$id": "claimButton",
-      "_$type": "GButton",
-      "name": "claimButton",
-      "x": 968,
-      "y": 640,
-      "width": 240,
-      "height": 56,
-      "_$child": [
+      "_$id": "lgf653rx",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 584,
+      "y": 580,
+      "visible": true,
+      "_$comp": [
         {
-          "_$id": "claimButton_text",
-          "_$type": "Text",
-          "name": "text",
-          "y": 10,
-          "width": 240,
-          "height": 32,
-          "text": "Claim Reward",
-          "fontSize": 22,
-          "color": "#1f1f1f",
-          "align": "center",
-          "valign": "middle",
-          "leading": 2,
-          "letterSpacing": 0
-        }
-      ]
-    },
-    {
-      "_$id": "closeButton",
-      "_$type": "GButton",
-      "name": "closeButton",
-      "x": 1240,
-      "y": 24,
-      "width": 70,
-      "height": 34,
-      "_$child": [
-        {
-          "_$id": "closeButton_text",
-          "_$type": "Text",
-          "name": "text",
-          "y": 5,
-          "width": 70,
-          "height": 24,
-          "text": "Close",
-          "fontSize": 16,
-          "color": "#1f1f1f",
-          "align": "center",
-          "valign": "middle",
-          "leading": 2,
-          "letterSpacing": 0
-        }
-      ]
-    },
-    {
-      "_$id": "rewardGrid",
-      "_$type": "GPanel",
-      "name": "rewardGrid",
-      "x": 48,
-      "y": 110,
-      "width": 680,
-      "height": 560,
-      "_$child": [
-        {
-          "_$id": "day1",
-          "_$type": "GButton",
-          "name": "day1",
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day1_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 1",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day1_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "CLAIMED",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
-        },
-        {
-          "_$id": "day2",
-          "_$type": "GButton",
-          "name": "day2",
-          "x": 170,
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day2_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 2",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day2_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "CLAIMED",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
-        },
-        {
-          "_$id": "day3",
-          "_$type": "GButton",
-          "name": "day3",
-          "x": 340,
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day3_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 3",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day3_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "AVAILABLE",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
-        },
-        {
-          "_$id": "day4",
-          "_$type": "GButton",
-          "name": "day4",
-          "x": 510,
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day4_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 4",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day4_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "LOCKED",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
-        },
-        {
-          "_$id": "day5",
-          "_$type": "GButton",
-          "name": "day5",
-          "y": 150,
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day5_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 5",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day5_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "LOCKED",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
-        },
-        {
-          "_$id": "day6",
-          "_$type": "GButton",
-          "name": "day6",
-          "x": 170,
-          "y": 150,
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day6_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 6",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day6_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "LOCKED",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
-        },
-        {
-          "_$id": "day7",
-          "_$type": "GButton",
-          "name": "day7",
-          "x": 340,
-          "y": 150,
-          "width": 150,
-          "height": 118,
-          "_$child": [
-            {
-              "_$id": "day7_title",
-              "_$type": "Text",
-              "name": "dayTitle",
-              "y": 12,
-              "width": 150,
-              "height": 28,
-              "text": "Day 7",
-              "fontSize": 20,
-              "color": "#1f1f1f",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            },
-            {
-              "_$id": "day7_state",
-              "_$type": "Text",
-              "name": "dayState",
-              "y": 68,
-              "width": 150,
-              "height": 24,
-              "text": "LOCKED",
-              "fontSize": 14,
-              "color": "#4d4d4d",
-              "align": "center",
-              "valign": "middle",
-              "leading": 2,
-              "letterSpacing": 0
-            }
-          ]
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "sign_in_root"
+          }
         }
       ]
     }

@@ -1,14 +1,28 @@
+import { CraftingManager, type CraftingIngredient, type CraftingOutput, type CraftingRecipeDefinition, type CraftingStationId } from "./data/CraftingManager";
 import { ItemDataManager, type ItemMeta, type ItemTableFile } from "./data/ItemDataManager";
 import { HarvestManager, type HarvestDropConfig, type HarvestResultItem, type HarvestTableFile } from "./data/HarvestManager";
 import { InventoryManager } from "./data/InventoryManager";
 import type { BagView, EquippedItem, EquipmentSlotType, InventoryBucket, InventoryScope, InventorySlotItem, InventoryViewItem, WarehouseView } from "./data/InventoryTypes";
+import { MailManager } from "./data/MailManager";
 import { SaveManager } from "./data/SaveManager";
+import { SignInManager, type SignInRewardDefinition, type SignInRewardView } from "./data/SignInManager";
 import { WarehouseManager } from "./data/WarehouseManager";
 
-export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType };
+export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, CraftingRecipeDefinition, CraftingStationId };
+
+export interface PlayerStatsSnapshot {
+    level: number;
+    currentHp: number;
+    maxHp: number;
+    experience: number;
+    nextLevelExperience: number;
+}
 
 export class DataManager {
+    private static readonly RESET_SAVE_ON_STARTUP = true;
     private static readonly EQUIPMENT_STORAGE_KEY = "laya_test_equipment_v1";
+    private static readonly PLAYER_STATS_STORAGE_KEY = "laya_test_player_stats_v1";
+    private static saveResetApplied: boolean = false;
     private static instance: DataManager | null = null;
 
     private readonly items = new ItemDataManager();
@@ -16,12 +30,21 @@ export class DataManager {
     private readonly inventory = new InventoryManager(this.save);
     private readonly warehouse = new WarehouseManager(this.save);
     private readonly harvest = new HarvestManager(this.items);
+    private readonly crafting = new CraftingManager();
+    private readonly signIn = new SignInManager(this.save);
     private readonly warehouseViews: Set<WarehouseView> = new Set();
     private readonly equippedItems: Record<EquipmentSlotType, EquippedItem | null> = {
         insertPlate: null,
         helmet: null,
         weapon: null,
         armor: null,
+    };
+    private playerStats: PlayerStatsSnapshot = {
+        level: 1,
+        currentHp: 100,
+        maxHp: 100,
+        experience: 0,
+        nextLevelExperience: 200,
     };
     private loaded: boolean = false;
     private loading: boolean = false;
@@ -35,10 +58,13 @@ export class DataManager {
     }
 
     public async loadAll(): Promise<void> {
+        this.resetDevelopmentSaveOnStartup();
+
         if (this.loaded) {
             this.inventory.loadPersistedInventories();
             this.warehouse.load();
             this.loadEquipment();
+            this.loadPlayerStats();
             this.ensureStarterItems();
             return;
         }
@@ -66,6 +92,7 @@ export class DataManager {
             this.inventory.loadPersistedInventories();
             this.warehouse.load();
             this.loadEquipment();
+            this.loadPlayerStats();
             this.loaded = true;
             this.ensureStarterItems();
         } finally {
@@ -156,12 +183,72 @@ export class DataManager {
         return this.harvest.formatHarvestResults(results);
     }
 
+    public getPlayerStats(): PlayerStatsSnapshot {
+        return { ...this.playerStats };
+    }
+
+    public grantGatherExperience(): void {
+        this.grantPlayerExperience(1);
+    }
+
+    public grantEnemyDefeatExperience(): void {
+        this.grantPlayerExperience(1);
+    }
+
+    public grantPlayerExperience(amount: number): void {
+        const value = Number.isFinite(amount) ? Math.floor(amount) : 0;
+        if (value <= 0) {
+            return;
+        }
+
+        this.playerStats.experience += value;
+        while (this.playerStats.experience >= this.playerStats.nextLevelExperience) {
+            this.playerStats.experience -= this.playerStats.nextLevelExperience;
+            this.playerStats.level += 1;
+            this.playerStats.nextLevelExperience += 50;
+        }
+
+        this.savePlayerStats();
+        this.inventory.refreshBagViews();
+    }
+
     public getInventorySnapshot(bucket: InventoryBucket = "active"): InventorySlotItem[] {
         return bucket === "warehouse" ? this.warehouse.getSnapshot() : this.inventory.getInventorySnapshot();
     }
 
     public getWarehouseSnapshot(): InventorySlotItem[] {
         return this.warehouse.getSnapshot();
+    }
+
+    public getSignInRewards(): SignInRewardView[] {
+        return this.signIn.getRewardViews((reward) => this.resolveSignInRewardView(reward));
+    }
+
+    public getCraftingRecipes(station: CraftingStationId): CraftingRecipeDefinition[] {
+        return this.crafting.getRecipesByStation(station).map((recipe) => this.resolveCraftingRecipe(recipe));
+    }
+
+    public getCraftingRecipe(recipeId: string): CraftingRecipeDefinition | null {
+        const recipe = this.crafting.getRecipe(recipeId);
+        return recipe ? this.resolveCraftingRecipe(recipe) : null;
+    }
+
+    public claimSignInReward(day: number): boolean {
+        const reward = this.signIn.claim(day);
+        if (!reward) {
+            return false;
+        }
+
+        const resolved = this.resolveSignInRewardView(reward);
+        MailManager.getInstance().addSignInRewardMail(resolved.day, [
+            {
+                itemId: resolved.itemId,
+                name: resolved.name,
+                count: resolved.count,
+                icon: resolved.icon,
+            },
+        ]);
+        return true;
     }
 
     public registerBagView(view: BagView): void {
@@ -361,6 +448,22 @@ export class DataManager {
         }
     }
 
+    private resetDevelopmentSaveOnStartup(): void {
+        if (!DataManager.RESET_SAVE_ON_STARTUP || DataManager.saveResetApplied) {
+            return;
+        }
+
+        DataManager.saveResetApplied = true;
+        this.save.removeItems([
+            InventoryManager.BASE_STORAGE_KEY,
+            WarehouseManager.STORAGE_KEY,
+            WarehouseManager.META_STORAGE_KEY,
+            DataManager.EQUIPMENT_STORAGE_KEY,
+            DataManager.PLAYER_STATS_STORAGE_KEY,
+            "laya_test_sign_in_v1",
+        ]);
+    }
+
     private normalizeLoadedJson<T>(raw: unknown, url: string): T {
         if (typeof raw === "string") {
             return JSON.parse(raw) as T;
@@ -397,6 +500,47 @@ export class DataManager {
         return rawName && rawName !== itemId ? rawName : itemId;
     }
 
+    private resolveSignInRewardView(reward: SignInRewardDefinition): SignInRewardView {
+        const meta = this.resolveItemMeta(reward.itemId);
+        const icon = reward.icon || meta?.icon || this.resolveFallbackIcon(reward.itemId);
+        return {
+            day: reward.day,
+            itemId: reward.itemId,
+            name: this.resolveDisplayName(reward.itemId, reward.name),
+            count: reward.count,
+            icon,
+            state: "locked",
+        };
+    }
+
+    private resolveCraftingRecipe(recipe: CraftingRecipeDefinition): CraftingRecipeDefinition {
+        return {
+            ...recipe,
+            inputs: recipe.inputs.map((item) => this.resolveCraftingIngredient(item)),
+            output: this.resolveCraftingOutput(recipe.output),
+        };
+    }
+
+    private resolveCraftingIngredient(item: CraftingIngredient): CraftingIngredient {
+        const meta = this.resolveItemMeta(item.itemId);
+        return {
+            itemId: item.itemId,
+            name: this.resolveDisplayName(item.itemId, item.name),
+            count: item.count,
+            icon: item.icon || meta?.icon || this.resolveFallbackIcon(item.itemId),
+        };
+    }
+
+    private resolveCraftingOutput(item: CraftingOutput): CraftingOutput {
+        const meta = this.resolveItemMeta(item.itemId);
+        return {
+            itemId: item.itemId,
+            name: this.resolveDisplayName(item.itemId, item.name),
+            count: item.count,
+            icon: item.icon || meta?.icon || this.resolveFallbackIcon(item.itemId),
+        };
+    }
+
     private syncWarehouseViews(): void {
         this.warehouseViews.forEach((view) => view.refresh());
     }
@@ -420,6 +564,45 @@ export class DataManager {
 
     private saveEquipment(): void {
         this.save.saveJson(DataManager.EQUIPMENT_STORAGE_KEY, this.equippedItems);
+    }
+
+    private loadPlayerStats(): void {
+        const stored = this.save.loadJson<Partial<PlayerStatsSnapshot>>(DataManager.PLAYER_STATS_STORAGE_KEY);
+        if (!stored) {
+            this.playerStats = {
+                level: 1,
+                currentHp: 100,
+                maxHp: 100,
+                experience: 0,
+                nextLevelExperience: 200,
+            };
+            this.savePlayerStats();
+            return;
+        }
+
+        const level = this.normalizePositiveInt(stored.level, 1);
+        const maxHp = this.normalizePositiveInt(stored.maxHp, 100);
+        this.playerStats = {
+            level,
+            maxHp,
+            currentHp: Math.min(maxHp, this.normalizePositiveInt(stored.currentHp, maxHp)),
+            experience: Math.max(0, this.normalizeInt(stored.experience, 0)),
+            nextLevelExperience: this.normalizePositiveInt(stored.nextLevelExperience, 200 + Math.max(0, level - 1) * 50),
+        };
+    }
+
+    private savePlayerStats(): void {
+        this.save.saveJson(DataManager.PLAYER_STATS_STORAGE_KEY, this.playerStats);
+    }
+
+    private normalizePositiveInt(value: unknown, fallback: number): number {
+        const normalized = this.normalizeInt(value, fallback);
+        return normalized > 0 ? normalized : fallback;
+    }
+
+    private normalizeInt(value: unknown, fallback: number): number {
+        const next = Number(value);
+        return Number.isFinite(next) ? Math.floor(next) : fallback;
     }
 
     private ensureStarterItems(): void {

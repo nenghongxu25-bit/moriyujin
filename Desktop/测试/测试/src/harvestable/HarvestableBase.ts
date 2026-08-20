@@ -188,6 +188,7 @@ export abstract class HarvestableBase extends Laya.Script {
             this.busy = false;
 
             const drops = DataManager.getInstance().grantHarvestDrops(config.id, config.drops);
+            DataManager.getInstance().grantGatherExperience();
             const dropText = DataManager.getInstance().formatHarvestResults(drops);
 
             if (config.once) {

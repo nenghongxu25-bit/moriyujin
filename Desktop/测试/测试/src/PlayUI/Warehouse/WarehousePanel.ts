@@ -42,11 +42,13 @@ export class WarehousePanel extends Laya.Script {
     private bagGlist: glist | null = null;
     private warehouseGlist: glist | null = null;
     private warehousePageButtons: Array<Laya.Node | null> = [];
+    private warehousePageOpenStates: boolean[] = [true, false, false, false, false, false, false];
     private currentWarehousePage: number = 0;
     private selectedSlot: SelectedSlotState | null = null;
 
     onAwake(): void {
         this.bindControllers();
+        this.resetWarehousePageState();
         this.bindPageButtons();
         DataManager.getInstance().registerBagView(this);
         DataManager.getInstance().registerWarehouseView(this);
@@ -55,6 +57,7 @@ export class WarehousePanel extends Laya.Script {
 
     onEnable(): void {
         this.bindControllers();
+        this.resetWarehousePageState();
         this.bindPageButtons();
         DataManager.getInstance().registerBagView(this);
         DataManager.getInstance().registerWarehouseView(this);
@@ -84,6 +87,11 @@ export class WarehousePanel extends Laya.Script {
         this.bindPageButtons();
         this.bindWarehouseList();
         this.applySelectionState();
+    }
+
+    public onPanelOpened(): void {
+        this.resetWarehousePageState();
+        this.refresh();
     }
 
     private bindControllers(): void {
@@ -239,6 +247,8 @@ export class WarehousePanel extends Laya.Script {
     }
 
     private bindPageButtons(): void {
+        this.resolvePageButtonBindings();
+
         const nextButtons: Array<Laya.Node | null> = [
             this.warehousePageButton1,
             this.warehousePageButton2,
@@ -278,7 +288,13 @@ export class WarehousePanel extends Laya.Script {
 
     private onWarehousePageButtonClick(pageIndex: number): void {
         const nextPage = this.clampWarehousePage(pageIndex);
-        if (this.currentWarehousePage === nextPage) {
+        const previousPage = this.clampWarehousePage(this.currentWarehousePage);
+
+        this.closeWarehousePage(previousPage);
+        this.openWarehousePage(nextPage);
+        this.applyWarehousePageButtonMasks();
+
+        if (previousPage === nextPage) {
             return;
         }
 
@@ -294,14 +310,99 @@ export class WarehousePanel extends Laya.Script {
                 continue;
             }
 
-            const selected = i === this.currentWarehousePage;
             if ("alpha" in button) {
-                button.alpha = selected ? 1 : 0.55;
+                button.alpha = 1;
             }
 
             if ("mouseEnabled" in button) {
                 button.mouseEnabled = true;
             }
         }
+
+        this.applyWarehousePageButtonMasks();
+    }
+
+    private resetWarehousePageState(): void {
+        this.currentWarehousePage = 0;
+        this.warehousePageOpenStates = [true, false, false, false, false, false, false];
+        this.applyWarehousePageButtonMasks();
+    }
+
+    private closeWarehousePage(pageIndex: number): void {
+        if (pageIndex >= 0 && pageIndex < this.warehousePageOpenStates.length) {
+            this.warehousePageOpenStates[pageIndex] = false;
+        }
+    }
+
+    private openWarehousePage(pageIndex: number): void {
+        if (pageIndex >= 0 && pageIndex < this.warehousePageOpenStates.length) {
+            this.warehousePageOpenStates[pageIndex] = true;
+        }
+    }
+
+    private applyWarehousePageButtonMasks(): void {
+        for (let i = 0; i < this.warehousePageButtons.length; i++) {
+            const mask = this.findChildByName(this.warehousePageButtons[i], "mask") as any;
+            if (!mask || !("visible" in mask)) {
+                continue;
+            }
+
+            mask.visible = !this.warehousePageOpenStates[i];
+        }
+    }
+
+    private resolvePageButtonBindings(): void {
+        const root = this.owner as Laya.Node;
+        const buttonContainer = this.findChildByName(root, "button");
+        if (!buttonContainer) {
+            return;
+        }
+
+        this.warehousePageButton1 = this.warehousePageButton1 || this.findDirectChildByName(buttonContainer, "1");
+        this.warehousePageButton2 = this.warehousePageButton2 || this.findDirectChildByName(buttonContainer, "2");
+        this.warehousePageButton3 = this.warehousePageButton3 || this.findDirectChildByName(buttonContainer, "3");
+        this.warehousePageButton4 = this.warehousePageButton4 || this.findDirectChildByName(buttonContainer, "4");
+        this.warehousePageButton5 = this.warehousePageButton5 || this.findDirectChildByName(buttonContainer, "5");
+        this.warehousePageButton6 = this.warehousePageButton6 || this.findDirectChildByName(buttonContainer, "6");
+        this.warehousePageButton7 = this.warehousePageButton7 || this.findDirectChildByName(buttonContainer, "7");
+    }
+
+    private findChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        if ((root as any).name === name) {
+            return root;
+        }
+
+        const children = (root as any).children as Laya.Node[] | undefined;
+        if (!children) {
+            return null;
+        }
+
+        for (let i = 0; i < children.length; i++) {
+            const found = this.findChildByName(children[i], name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
+    }
+
+    private findDirectChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        const children = root && Array.isArray((root as any).children)
+            ? ((root as any).children as Laya.Node[])
+            : [];
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            if (child && (child as any).name === name) {
+                return child;
+            }
+        }
+
+        return null;
     }
 }

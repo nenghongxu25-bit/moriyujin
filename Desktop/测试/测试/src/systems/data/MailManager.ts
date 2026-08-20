@@ -27,10 +27,14 @@ export interface PlayerMail {
     attachments: MailAttachment[];
 }
 
+export type MailChangeListener = () => void;
+
 export class MailManager {
     private static instance: MailManager | null = null;
 
     private mails: PlayerMail[] = [];
+
+    private listeners: Set<MailChangeListener> = new Set();
 
     public static getInstance(): MailManager {
         if (!MailManager.instance) {
@@ -85,7 +89,19 @@ export class MailManager {
 
         this.mails.sort((a, b) => b.createdAt - a.createdAt);
 
+        this.notifyChanged();
+
         return true;
+    }
+
+    public addChangeListener(listener: MailChangeListener): void {
+        if (listener) {
+            this.listeners.add(listener);
+        }
+    }
+
+    public removeChangeListener(listener: MailChangeListener): void {
+        this.listeners.delete(listener);
     }
 
     // =========================
@@ -99,6 +115,7 @@ export class MailManager {
         }
 
         mail.isRead = true;
+        this.notifyChanged();
     }
 
     // =========================
@@ -116,6 +133,7 @@ export class MailManager {
         }
 
         mail.isClaimed = true;
+        this.notifyChanged();
         return true;
     }
 
@@ -124,7 +142,13 @@ export class MailManager {
     // =========================
 
     public removeMail(mailId: string): void {
-        this.mails = this.mails.filter((mail) => mail.id !== mailId);
+        const next = this.mails.filter((mail) => mail.id !== mailId);
+        if (next.length === this.mails.length) {
+            return;
+        }
+
+        this.mails = next;
+        this.notifyChanged();
     }
 
     // =========================
@@ -189,6 +213,34 @@ export class MailManager {
         });
     }
 
+    public addSignInRewardMail(day: number, attachments: MailAttachment[]): boolean {
+        const normalizedDay = Number.isFinite(day) ? Math.max(1, Math.floor(day)) : 1;
+        const normalizedAttachments = Array.isArray(attachments)
+            ? attachments
+                .filter((item) => item && item.itemId && Number.isFinite(item.count) && item.count > 0)
+                .map((item) => ({
+                    itemId: item.itemId,
+                    name: item.name,
+                    count: Math.floor(item.count),
+                    icon: item.icon,
+                }))
+            : [];
+
+        if (normalizedAttachments.length === 0) {
+            return false;
+        }
+
+        return this.addMail({
+            id: `sign_in_reward_day_${normalizedDay}`,
+            title: `每日签到 第${normalizedDay}天奖励`,
+            content: `你已完成第${normalizedDay}天签到，奖励已发放到本邮件附件。`,
+            createdAt: Date.now(),
+            isRead: false,
+            isClaimed: false,
+            attachments: normalizedAttachments,
+        });
+    }
+
     // =========================
     // Ensure default mails
     // =========================
@@ -196,5 +248,9 @@ export class MailManager {
     public ensureDefaultMails(): void {
         this.addWelcomeMail();
         this.addTestRewardMail();
+    }
+
+    private notifyChanged(): void {
+        this.listeners.forEach((listener) => listener());
     }
 }

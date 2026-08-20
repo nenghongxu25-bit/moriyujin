@@ -39,12 +39,24 @@ export class MailPanel extends Laya.Script {
 
     private currentMailId: string = "";
 
+    private readonly onMailChanged =
+        (): void => {
+
+            this.refreshMailList();
+        };
+
 
     onAwake(): void {
 
         this.bindControllers();
 
         this.bindButtons();
+
+        MailManager
+            .getInstance()
+            .addChangeListener(
+                this.onMailChanged
+            );
 
 
         // 开发阶段：
@@ -66,6 +78,12 @@ export class MailPanel extends Laya.Script {
 
         this.bindButtons();
 
+        MailManager
+            .getInstance()
+            .addChangeListener(
+                this.onMailChanged
+            );
+
         this.refreshMailList();
 
 
@@ -80,11 +98,23 @@ export class MailPanel extends Laya.Script {
 
     onDisable(): void {
 
+        MailManager
+            .getInstance()
+            .removeChangeListener(
+                this.onMailChanged
+            );
+
         this.unbindButtons();
     }
 
 
     onDestroy(): void {
+
+        MailManager
+            .getInstance()
+            .removeChangeListener(
+                this.onMailChanged
+            );
 
         this.unbindButtons();
 

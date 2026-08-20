@@ -457,6 +457,7 @@ export class ZombieController extends Laya.Script {
 
         this.dead = true;
         this.grantDropsToPlayer();
+        DataManager.getInstance().grantEnemyDefeatExperience();
         this.attackLocked = false;
         this.attackToken = 0;
         this.hasAggro = false;

@@ -122,12 +122,13 @@ export class PlayerAnimationController {
         };
     }
 
-    private playSpineAnimation(animationName: string, loop: boolean): void {
-        if (!this.spine) {
-            return;
+    private playSpineAnimation(animationName: string, loop: boolean): boolean {
+        if (!this.spine || !this.isReady()) {
+            return false;
         }
 
-        this.spine.play(animationName, loop, 0);
+        (this.spine as any).play(animationName, loop, 0);
+        return true;
     }
 
     private sync(force: boolean): void {
@@ -154,12 +155,20 @@ export class PlayerAnimationController {
             this.spine.playbackRate(1);
         }
 
-        this.playSpineAnimation(nextAnimation, true);
-        this.currentAnimation = nextAnimation;
+        if (this.playSpineAnimation(nextAnimation, true)) {
+            this.currentAnimation = nextAnimation;
+        }
     }
 
     private runActionSequenceStep(token: number, onComplete?: () => void): void {
         if (token !== this.actionSequenceToken || !this.spine) {
+            return;
+        }
+
+        if (!this.isReady()) {
+            Laya.timer.callLater(this, () => {
+                this.runActionSequenceStep(token, onComplete);
+            });
             return;
         }
 
@@ -205,7 +214,11 @@ export class PlayerAnimationController {
             advanceStep();
         }
 
-        this.playSpineAnimation(step.animation, !!step.loop);
+        if (!this.playSpineAnimation(step.animation, !!step.loop)) {
+            Laya.timer.callLater(this, () => {
+                this.runActionSequenceStep(token, onComplete);
+            });
+        }
     }
 
     private finishActionSequence(token: number, onComplete?: () => void): void {
@@ -228,8 +241,9 @@ export class PlayerAnimationController {
                 this.spine.playbackRate(1);
             }
 
-            this.playSpineAnimation(fallbackAnimation, true);
-            this.currentAnimation = fallbackAnimation;
+            if (this.playSpineAnimation(fallbackAnimation, true)) {
+                this.currentAnimation = fallbackAnimation;
+            }
         }
 
         this.actionFallbackAnimation = "";

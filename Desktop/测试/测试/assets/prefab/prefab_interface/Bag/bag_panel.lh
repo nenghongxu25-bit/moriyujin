@@ -34,43 +34,24 @@
         "_$ref": "eavb30xg"
       },
       "insertPlateSlotNode": {
-        "_$ref": [
-          "tags6qmg",
-          "zat3d9l8",
-          "1er2gj8h",
-          "dj55mras"
-        ]
+        "_$ref": "dj55mras"
       },
       "helmetSlotNode": {
-        "_$ref": [
-          "tags6qmg",
-          "zat3d9l8",
-          "1er2gj8h",
-          "9dhqjj54"
-        ]
+        "_$ref": "9dhqjj54"
       },
       "weaponSlotNode": {
-        "_$ref": [
-          "tags6qmg",
-          "zat3d9l8",
-          "1er2gj8h",
-          "14cgu7sm"
-        ]
+        "_$ref": "14cgu7sm"
       },
       "armorSlotNode": {
-        "_$ref": [
-          "tags6qmg",
-          "zat3d9l8",
-          "1er2gj8h",
-          "gz2ztl6o"
-        ]
+        "_$ref": "gz2ztl6o"
       },
-      "previewSpineNode": {
-        "_$ref": [
-          "tags6qmg",
-          "zat3d9l8",
-          "zifhz0hm"
-        ]
+      "gradeNode": null,
+      "gradeTextNode": null,
+      "experienceTextNode": {
+        "_$ref": "kp2i20id"
+      },
+      "stateListNode": {
+        "_$ref": "na986ikc"
       },
       "previewWeaponSpineSlotName": "weapon_slot",
       "defaultState": 0
@@ -147,15 +128,15 @@
               "x": -582,
               "y": -282,
               "width": 600,
-              "height": 600,
+              "height": 641,
               "_$child": [
                 {
                   "_$id": "8h8vfsl6",
                   "_$type": "GImage",
                   "name": "img",
-                  "x": 308,
-                  "y": 306,
-                  "width": 500,
+                  "x": 313,
+                  "y": 327,
+                  "width": 548,
                   "height": 500,
                   "anchorX": 0.5,
                   "anchorY": 0.5,
@@ -167,15 +148,15 @@
                   "_$id": "1er2gj8h",
                   "_$type": "Sprite",
                   "name": "equipbox",
-                  "x": 546,
-                  "y": 272,
+                  "x": 551,
+                  "y": 350,
                   "width": 100,
                   "height": 100,
                   "_$child": [
                     {
                       "_$id": "14cgu7sm",
                       "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-                      "name": "boxmodule_5",
+                      "name": "weapon",
                       "active": true,
                       "x": -470,
                       "y": -51,
@@ -183,57 +164,17 @@
                       "_$child": [
                         {
                           "_$override": "5zg64bdz",
-                          "x": 5,
-                          "y": 113,
+                          "x": -7,
+                          "y": 97,
                           "text": "武器",
                           "color": "#000000"
                         }
                       ]
                     },
                     {
-                      "_$id": "l6ax1sbv",
-                      "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-                      "name": "boxmodule_4",
-                      "active": true,
-                      "x": -470,
-                      "y": 81,
-                      "visible": true,
-                      "_$child": [
-                        {
-                          "_$override": "5zg64bdz",
-                          "y": 116,
-                          "x": 2,
-                          "text": "足部",
-                          "color": "#000000"
-                        },
-                        {
-                          "_$override": "gj3qvj55",
-                          "color": "#000000"
-                        }
-                      ]
-                    },
-                    {
-                      "_$id": "67pgwzml",
-                      "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-                      "name": "boxmodule_3",
-                      "active": true,
-                      "x": -136,
-                      "y": 83,
-                      "visible": true,
-                      "_$child": [
-                        {
-                          "_$override": "5zg64bdz",
-                          "x": 6,
-                          "y": 113,
-                          "color": "#000000",
-                          "text": "腿部"
-                        }
-                      ]
-                    },
-                    {
                       "_$id": "gz2ztl6o",
                       "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-                      "name": "boxmodule_2",
+                      "name": "body",
                       "active": true,
                       "x": -137,
                       "y": -47,
@@ -241,8 +182,8 @@
                       "_$child": [
                         {
                           "_$override": "5zg64bdz",
-                          "x": 7,
-                          "y": 112,
+                          "x": -5,
+                          "y": 97,
                           "text": "身体",
                           "color": "#000000"
                         }
@@ -251,7 +192,7 @@
                     {
                       "_$id": "dj55mras",
                       "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-                      "name": "boxmodule_1",
+                      "name": "chaban",
                       "active": true,
                       "x": -138,
                       "y": -176,
@@ -259,8 +200,8 @@
                       "_$child": [
                         {
                           "_$override": "5zg64bdz",
-                          "x": 5,
-                          "y": 111,
+                          "x": -7,
+                          "y": 96,
                           "color": "#000000",
                           "text": "插板"
                         }
@@ -277,8 +218,8 @@
                       "_$child": [
                         {
                           "_$override": "5zg64bdz",
-                          "x": 7,
-                          "y": 112,
+                          "x": -9,
+                          "y": 93,
                           "color": "#000000",
                           "text": "头部"
                         }
@@ -309,7 +250,7 @@
                 {
                   "_$id": "xwblc6b0",
                   "_$type": "Sprite",
-                  "name": "text",
+                  "name": "text_1",
                   "x": 67,
                   "y": 85,
                   "width": 100,
@@ -319,11 +260,11 @@
                       "_$id": "km1k3eu9",
                       "_$type": "Text",
                       "name": "grade",
-                      "x": 183,
-                      "y": 78,
+                      "x": 210,
+                      "y": 79,
                       "width": 120,
                       "height": 28,
-                      "text": "lv:30",
+                      "text": "1",
                       "fontSize": 30,
                       "color": "#000000",
                       "align": "center",
@@ -335,8 +276,8 @@
                       "_$id": "0ck9hb6c",
                       "_$type": "Text",
                       "name": "hp",
-                      "x": 133,
-                      "y": 6,
+                      "x": 110,
+                      "y": 10,
                       "width": 120,
                       "height": 28,
                       "text": "血量：",
@@ -349,7 +290,7 @@
                       "_$id": "u0372oph",
                       "_$type": "Text",
                       "name": "jingyanzhi",
-                      "x": 137,
+                      "x": 110,
                       "y": 48,
                       "width": 120,
                       "height": 28,
@@ -358,6 +299,235 @@
                       "color": "#000000",
                       "leading": 2,
                       "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "521tgjlg",
+                      "_$type": "Text",
+                      "name": "gradetext",
+                      "x": 218,
+                      "y": 13,
+                      "width": 120,
+                      "height": 28,
+                      "text": "100/100",
+                      "fontSize": 30,
+                      "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "kp2i20id",
+                      "_$type": "Text",
+                      "name": "experiencetext",
+                      "x": 218,
+                      "y": 48,
+                      "width": 126,
+                      "height": 29,
+                      "text": "0/200",
+                      "fontSize": 30,
+                      "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "a3tnrvhl",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "x": 165,
+                      "y": 79,
+                      "width": 120,
+                      "height": 28,
+                      "text": "等级：",
+                      "fontSize": 30,
+                      "color": "#000000",
+                      "align": "center",
+                      "valign": "bottom",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "orpay4vn",
+                  "_$type": "Sprite",
+                  "name": "text_2",
+                  "x": 251,
+                  "y": 431,
+                  "width": 100,
+                  "height": 100,
+                  "_$child": [
+                    {
+                      "_$id": "h2cc0uqh",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "x": -123,
+                      "y": 11,
+                      "width": 81,
+                      "height": 28,
+                      "text": "攻击力：",
+                      "fontSize": 20,
+                      "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "ujeknd6u",
+                      "_$type": "Text",
+                      "name": "Text_1",
+                      "x": -123,
+                      "y": 44,
+                      "width": 77,
+                      "height": 28,
+                      "text": "防御力：",
+                      "fontSize": 20,
+                      "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "990qgqd5",
+                      "_$type": "Text",
+                      "name": "attack",
+                      "x": -43,
+                      "y": 12,
+                      "width": 120,
+                      "height": 28,
+                      "text": "1",
+                      "fontSize": 20,
+                      "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "5bip1qjt",
+                      "_$type": "Text",
+                      "name": "defend",
+                      "x": -42,
+                      "y": 45,
+                      "width": 120,
+                      "height": 28,
+                      "text": "1",
+                      "fontSize": 20,
+                      "color": "#000000",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "p0801usn",
+                      "_$type": "Text",
+                      "name": "state",
+                      "x": -32,
+                      "y": 12,
+                      "width": 120,
+                      "height": 28,
+                      "text": "状态栏：",
+                      "fontSize": 20,
+                      "color": "#000000",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "na986ikc",
+                  "_$type": "GList",
+                  "name": "statelist",
+                  "x": 314,
+                  "y": 447,
+                  "width": 220,
+                  "height": 110,
+                  "background": {
+                    "_$type": "DrawRoundRectCmd",
+                    "lt": 15,
+                    "rt": 15,
+                    "lb": 15,
+                    "rb": 15,
+                    "fillColor": "#666218"
+                  },
+                  "layout": {
+                    "type": 3,
+                    "rowGap": 5,
+                    "columnGap": 5
+                  },
+                  "_templateNode": {
+                    "_$ref": "hini11ax",
+                    "_$tmpl": "itemTemplate"
+                  },
+                  "_initItemNum": 8,
+                  "_$child": [
+                    {
+                      "_$id": "hini11ax",
+                      "_$type": "GWidget",
+                      "name": "node",
+                      "width": 50,
+                      "height": 50,
+                      "_$child": [
+                        {
+                          "_$id": "0e985b8x",
+                          "_$type": "Sprite",
+                          "name": "Sprite",
+                          "width": 50,
+                          "height": 50,
+                          "_gcmds": [
+                            {
+                              "_$type": "DrawRoundRectCmd",
+                              "lt": 10,
+                              "rt": 10,
+                              "lb": 10,
+                              "rb": 10,
+                              "lineWidth": 5,
+                              "lineColor": "#000000",
+                              "fillColor": "#a45858"
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "wyloijc7",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "x": 25,
+                          "y": 25,
+                          "width": 50,
+                          "height": 50,
+                          "anchorX": 0.5,
+                          "anchorY": 0.5,
+                          "text": "饱",
+                          "fontSize": 20,
+                          "color": "#ffffff",
+                          "templateVars": true,
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        },
+                        {
+                          "_$id": "dpw4nlow",
+                          "_$type": "Sprite",
+                          "name": "mask",
+                          "x": 50,
+                          "y": 50,
+                          "width": 50,
+                          "height": 50,
+                          "rotation": 180,
+                          "alpha": 0.284,
+                          "_gcmds": [
+                            {
+                              "_$type": "DrawRoundRectCmd",
+                              "lt": 15,
+                              "rt": 15,
+                              "lb": 15,
+                              "rb": 15,
+                              "fillColor": "#000000"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }

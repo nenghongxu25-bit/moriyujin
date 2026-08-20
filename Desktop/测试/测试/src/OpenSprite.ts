@@ -85,7 +85,9 @@ export class OpenSprite extends Laya.Script {
 
         for (let i = 0; i < components.length; i++) {
             const component = components[i];
-            if (component && typeof component.refresh === "function") {
+            if (component && typeof component.onPanelOpened === "function") {
+                component.onPanelOpened();
+            } else if (component && typeof component.refresh === "function") {
                 component.refresh();
             }
         }

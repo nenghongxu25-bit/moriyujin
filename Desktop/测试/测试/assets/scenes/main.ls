@@ -1754,7 +1754,18 @@
               "_$type": "Sprite",
               "name": "Device",
               "width": 100,
-              "height": 100
+              "height": 100,
+              "_$child": [
+                {
+                  "_$id": "c0dqpiut",
+                  "_$prefab": "2ae6d8be-52e9-4517-9411-2c733fafabed",
+                  "name": "LaevePoint",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true
+                }
+              ]
             },
             {
               "_$id": "uhufdh2t",

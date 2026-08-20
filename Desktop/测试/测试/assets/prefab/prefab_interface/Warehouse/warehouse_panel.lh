@@ -20,7 +20,14 @@
           "bxppbfbw",
           "7fpks0da"
         ]
-      }
+      },
+      "warehousePageButton1": null,
+      "warehousePageButton2": null,
+      "warehousePageButton3": null,
+      "warehousePageButton4": null,
+      "warehousePageButton5": null,
+      "warehousePageButton6": null,
+      "warehousePageButton7": null
     }
   ],
   "_$child": [
@@ -81,7 +88,59 @@
       "_$child": [
         {
           "_$override": "7fpks0da",
-          "name": "warehouselist"
+          "name": "warehouselist",
+          "_$comp": [
+            {
+              "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+              "listNode": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "7fpks0da"
+                ]
+              },
+              "templateNode": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "myzvhd4c"
+                ]
+              },
+              "slotCount": 0
+            }
+          ]
+        },
+        {
+          "_$override": "myzvhd4c",
+          "_$comp": [
+            {
+              "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+              "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
+              "templateSlot": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "zfgejdrd"
+                ]
+              },
+              "gimg": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "jdhjlgub"
+                ]
+              },
+              "nameText": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "5zg64bdz"
+                ]
+              },
+              "countText": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "gj3qvj55"
+                ]
+              }
+            }
+          ]
         }
       ]
     },

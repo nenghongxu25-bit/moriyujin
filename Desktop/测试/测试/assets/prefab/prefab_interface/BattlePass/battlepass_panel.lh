@@ -5,6 +5,25 @@
   "name": "battlepass_panel",
   "width": 1334,
   "height": 750,
+  "_$comp": [
+    {
+      "_$type": "81f56768-a9fa-49b5-a965-a5c7d2664a10",
+      "scriptPath": "../src/PlayUI/BattlePass/BattlePassPanel.ts",
+      "timeListNode": {
+        "_$ref": "nlzz5pbb"
+      },
+      "taskListNode": {
+        "_$ref": "a7oaawzk"
+      },
+      "gradeListNode": null,
+      "rewardListNode": {
+        "_$ref": "datwihsf"
+      },
+      "experienceText": {
+        "_$ref": "4809b8q6"
+      }
+    }
+  ],
   "_$child": [
     {
       "_$id": "78ixqw11",
@@ -75,43 +94,27 @@
               "y": 18,
               "width": 700,
               "height": 50,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#757f34"
+              },
               "layout": {
                 "type": 2
               },
               "_templateNode": {
-                "_$ref": "3h7yfid0",
+                "_$ref": "ahsw9che",
                 "_$tmpl": "itemTemplate"
               },
               "_initItemNum": 7,
-              "_$comp": [
-                {
-                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
-                  "listNode": {
-                    "_$ref": "nlzz5pbb"
-                  },
-                  "templateNode": {
-                    "_$ref": "3h7yfid0"
-                  },
-                  "slotCount": 0
-                }
-              ],
               "_$child": [
                 {
-                  "_$id": "3h7yfid0",
-                  "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+                  "_$id": "ahsw9che",
+                  "_$prefab": "97f54c4d-3381-412c-a1c9-3171fdd92cc0",
                   "name": "bt",
                   "active": true,
                   "x": 0,
                   "y": 0,
-                  "visible": true,
-                  "_$child": [
-                    {
-                      "_$override": "qwk816k0",
-                      "text": "第一周",
-                      "visible": true
-                    }
-                  ]
+                  "visible": true
                 }
               ]
             },
@@ -123,6 +126,10 @@
               "y": 71,
               "width": 703,
               "height": 330,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#5e6729"
+              },
               "layout": {
                 "type": 1
               },
@@ -135,19 +142,6 @@
                 "_$tmpl": "itemTemplate"
               },
               "_initItemNum": 5,
-              "_$comp": [
-                {
-                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
-                  "listNode": {
-                    "_$ref": "a7oaawzk"
-                  },
-                  "templateNode": {
-                    "_$ref": "qxy28zlk"
-                  },
-                  "slotCount": 0
-                }
-              ],
               "_$child": [
                 {
                   "_$id": "qxy28zlk",
@@ -166,11 +160,26 @@
                       "_$id": "bx9kyfsn",
                       "_$type": "Text",
                       "name": "Text",
-                      "width": 700,
+                      "width": 520,
                       "height": 100,
                       "text": "击杀20个敌人",
                       "fontSize": 40,
                       "color": "#000000",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "taskprogress1",
+                      "_$type": "Text",
+                      "name": "progresstext",
+                      "x": 540,
+                      "width": 145,
+                      "height": 100,
+                      "text": "0/20",
+                      "fontSize": 32,
+                      "color": "#000000",
+                      "align": "center",
                       "valign": "middle",
                       "leading": 2,
                       "letterSpacing": 0
@@ -222,85 +231,12 @@
           "height": 542,
           "_$child": [
             {
-              "_$id": "0h22jncl",
-              "_$type": "GList",
-              "name": "grade",
-              "x": 30,
-              "y": 92,
-              "width": 110,
-              "height": 400,
-              "layout": {
-                "type": 1
-              },
-              "scroller": {
-                "_$type": "Scroller",
-                "barDisplay": 1
-              },
-              "_templateNode": {
-                "_$ref": "59xfwb2s",
-                "_$tmpl": "itemTemplate"
-              },
-              "_initItemNum": 20,
-              "_$comp": [
-                {
-                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
-                  "listNode": {
-                    "_$ref": "0h22jncl"
-                  },
-                  "templateNode": {
-                    "_$ref": "59xfwb2s"
-                  },
-                  "slotCount": 0
-                }
-              ],
-              "_$child": [
-                {
-                  "_$id": "59xfwb2s",
-                  "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
-                  "name": "bt",
-                  "active": true,
-                  "x": 0,
-                  "y": 0,
-                  "width": 80,
-                  "visible": true,
-                  "_$child": [
-                    {
-                      "_$override": "3oei1uz6",
-                      "width": 80
-                    },
-                    {
-                      "_$override": "qwk816k0",
-                      "width": 80,
-                      "text": ""
-                    },
-                    {
-                      "_$id": "12fl4464",
-                      "_$type": "Sprite",
-                      "name": "Sprite_1",
-                      "width": 80,
-                      "height": 50,
-                      "alpha": 0.6,
-                      "_gcmds": [
-                        {
-                          "_$type": "DrawRectCmd",
-                          "lineWidth": 1,
-                          "lineColor": "#000000",
-                          "fillColor": "#000000"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
               "_$id": "datwihsf",
               "_$type": "GList",
               "name": "reward",
-              "x": 145,
+              "x": 65,
               "y": 90,
-              "width": 180,
+              "width": 252,
               "height": 400,
               "background": {
                 "_$type": "DrawRectCmd",
@@ -308,8 +244,7 @@
               },
               "layout": {
                 "type": 1,
-                "rowGap": -35,
-                "align": 1,
+                "rowGap": -15,
                 "valign": 3
               },
               "scroller": {
@@ -321,19 +256,6 @@
                 "_$tmpl": "itemTemplate"
               },
               "_initItemNum": 20,
-              "_$comp": [
-                {
-                  "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                  "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
-                  "listNode": {
-                    "_$ref": "datwihsf"
-                  },
-                  "templateNode": {
-                    "_$ref": "t5mwj9w0"
-                  },
-                  "slotCount": 0
-                }
-              ],
               "_$child": [
                 {
                   "_$id": "t5mwj9w0",
@@ -342,17 +264,39 @@
                   "active": true,
                   "x": 0,
                   "y": 0,
+                  "width": 167,
                   "visible": true,
                   "_$child": [
+                    {
+                      "_$override": "zfgejdrd",
+                      "x": 134,
+                      "y": 54
+                    },
+                    {
+                      "_$override": "jdhjlgub",
+                      "anchorX": 0.5,
+                      "x": 134,
+                      "y": 54
+                    },
+                    {
+                      "_$override": "5zg64bdz",
+                      "x": 72,
+                      "y": 69
+                    },
+                    {
+                      "_$override": "gj3qvj55",
+                      "x": 153,
+                      "y": 66
+                    },
                     {
                       "_$id": "xu1xzcfz",
                       "_$index": 4,
                       "_$type": "Sprite",
                       "name": "mask_1",
-                      "x": 13,
-                      "y": 13,
-                      "width": 100,
-                      "height": 100,
+                      "x": 94,
+                      "y": 14,
+                      "width": 80,
+                      "height": 80,
                       "visible": false,
                       "alpha": 0.4,
                       "_gcmds": [
@@ -366,10 +310,10 @@
                           "_$id": "jq1367ln",
                           "_$type": "Text",
                           "name": "Text",
-                          "width": 100,
-                          "height": 100,
+                          "width": 80,
+                          "height": 80,
                           "text": "已领取",
-                          "fontSize": 30,
+                          "fontSize": 20,
                           "color": "#000000",
                           "align": "center",
                           "valign": "middle",
@@ -380,12 +324,13 @@
                     },
                     {
                       "_$id": "dizqxair",
+                      "_$index": 5,
                       "_$type": "Sprite",
                       "name": "mask_0",
-                      "x": 13,
-                      "y": 13,
-                      "width": 100,
-                      "height": 100,
+                      "x": 94,
+                      "y": 14,
+                      "width": 80,
+                      "height": 80,
                       "alpha": 0.5,
                       "_gcmds": [
                         {
@@ -398,16 +343,39 @@
                           "_$id": "lpzr007u",
                           "_$type": "Text",
                           "name": "Text",
-                          "width": 100,
-                          "height": 100,
+                          "width": 80,
+                          "height": 80,
                           "alpha": 0.6,
                           "text": "未解锁",
-                          "fontSize": 30,
+                          "fontSize": 20,
                           "color": "#ffff00",
                           "align": "center",
                           "valign": "middle",
                           "leading": 2,
                           "letterSpacing": 0
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "fk6e385r",
+                      "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+                      "name": "bt",
+                      "active": true,
+                      "x": 8,
+                      "y": 13,
+                      "width": 100,
+                      "height": 100,
+                      "scaleX": 0.8,
+                      "scaleY": 0.8,
+                      "visible": true,
+                      "_$child": [
+                        {
+                          "_$override": "3oei1uz6",
+                          "height": 100
+                        },
+                        {
+                          "_$override": "qwk816k0",
+                          "height": 100
                         }
                       ]
                     }
@@ -416,43 +384,22 @@
               ]
             },
             {
-              "_$id": "fzos1cjw",
-              "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
-              "name": "grade",
-              "active": true,
-              "x": 31,
-              "y": 36,
-              "width": 110,
-              "visible": true,
-              "_$child": [
-                {
-                  "_$override": "3oei1uz6",
-                  "width": 110
-                },
-                {
-                  "_$override": "qwk816k0",
-                  "width": 110,
-                  "text": "等级"
-                }
-              ]
-            },
-            {
               "_$id": "zh5l65le",
               "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
               "name": "reward",
               "active": true,
-              "x": 145,
+              "x": 68,
               "y": 36,
-              "width": 180,
+              "width": 250,
               "visible": true,
               "_$child": [
                 {
                   "_$override": "3oei1uz6",
-                  "width": 180
+                  "width": 250
                 },
                 {
                   "_$override": "qwk816k0",
-                  "width": 180,
+                  "width": 250,
                   "text": "奖励"
                 }
               ]
@@ -481,7 +428,7 @@
     {
       "_$id": "4809b8q6",
       "_$type": "Text",
-      "name": "Text",
+      "name": "experience",
       "x": 679,
       "y": 145,
       "width": 151,

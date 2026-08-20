@@ -293,10 +293,11 @@ export class PlayerController extends Laya.Script {
 
         const attachmentName = this.resolveEquippedAttachmentName(slot);
         if (!attachmentName) {
-            if (this.lastEquipmentAttachmentNames[slot]) {
-                this.clearSpineSlotAttachment(slotName);
-                this.lastEquipmentAttachmentNames[slot] = "";
-                this.lastEquipmentIconUrls[slot] = "";
+            if (force || this.lastEquipmentAttachmentNames[slot]) {
+                if (this.clearSpineSlotAttachment(slotName)) {
+                    this.lastEquipmentAttachmentNames[slot] = "";
+                    this.lastEquipmentIconUrls[slot] = "";
+                }
             }
             return;
         }
@@ -309,6 +310,12 @@ export class PlayerController extends Laya.Script {
             this.lastEquipmentAttachmentNames[slot] = attachmentName;
             this.lastEquipmentIconUrls[slot] = this.resolveEquippedItemIconUrl(slot);
         }
+    }
+
+    public refreshEquipmentFromData(): void {
+        this.lastEquipmentSignature = "__force";
+        this.syncEquipmentStats();
+        this.syncEquipmentSpineSlots(true);
     }
 
     private resolveEquippedItemIconUrl(slot: EquipmentSlotType): string {
@@ -378,10 +385,9 @@ export class PlayerController extends Laya.Script {
         return false;
     }
 
-    private clearSpineSlotAttachment(slotName: string): void {
-        this.applySpineSlotAttachment(slotName, null);
+    private clearSpineSlotAttachment(slotName: string): boolean {
+        return this.applySpineSlotAttachment(slotName, null);
     }
-
     private resolveAssetUrl(path: string): string {
         const normalized = String(path || "").trim().replace(/^assets\//, "");
         if (!normalized) {

@@ -155,7 +155,7 @@ export class PlayerMovementController {
             return;
         }
 
-        attackNode.x = this.attackDirection > 0 ? this.controller.attackAreaRightX : this.controller.attackAreaLeftX;
+        (attackNode as Laya.Sprite).x = this.attackDirection > 0 ? this.controller.attackAreaRightX : this.controller.attackAreaLeftX;
     }
 
     private updateFacing(moveX: number): void {

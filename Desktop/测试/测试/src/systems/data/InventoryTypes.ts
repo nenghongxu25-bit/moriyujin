@@ -14,6 +14,7 @@ export interface EquippedItem extends InventoryViewItem {
 
 export interface BagView {
     setItems(items: InventorySlotItem[]): void;
+    refreshPlayerStats?(): void;
 }
 
 export interface WarehouseView {

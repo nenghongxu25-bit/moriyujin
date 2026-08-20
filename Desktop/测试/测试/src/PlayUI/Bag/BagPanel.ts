@@ -3,6 +3,7 @@ const { regClass, property } = Laya;
 import { DataManager, type EquippedItem, type EquipmentSlotType, type InventorySlotItem } from "../../systems/datamanager";
 import { glist } from "../CommonUI/glist";
 import type { ListTemplateData } from "../CommonUI/listTemplate";
+import { PlayerController } from "../../Player/PlayerController";
 
 interface EquipSlotBinding {
     slot: EquipmentSlotType;
@@ -13,6 +14,14 @@ interface EquipSlotBinding {
 interface SelectedBagSlotState {
     item: ListTemplateData;
     slotIndex: number;
+}
+
+interface PlayerBuffView {
+    id: string;
+    shortName: string;
+    color: string;
+    remainingSeconds: number;
+    durationSeconds: number;
 }
 
 @regClass()
@@ -47,8 +56,17 @@ export class BagPanel extends Laya.Script {
     @property(Laya.Node)
     public armorSlotNode: Laya.Node | null = null;
 
+    @property(Laya.Text)
+    public gradeNode: Laya.Text | null = null;
+
+    @property(Laya.Text)
+    public gradeTextNode: Laya.Text | null = null;
+
+    @property(Laya.Text)
+    public experienceTextNode: Laya.Text | null = null;
+
     @property(Laya.Node)
-    public previewSpineNode: Laya.Node | null = null;
+    public stateListNode: Laya.Node | null = null;
 
     @property(String)
     public previewWeaponSpineSlotName: string = "weapon_slot";
@@ -61,6 +79,7 @@ export class BagPanel extends Laya.Script {
     private containerGlist: glist | null = null;
     private selectedBagSlot: SelectedBagSlotState | null = null;
     private lastPreviewWeaponAttachmentName: string = "__init";
+    private previewSpineNode: Laya.Node | null = null;
 
     onAwake(): void {
         this.bindControllers();
@@ -68,6 +87,8 @@ export class BagPanel extends Laya.Script {
         DataManager.getInstance().registerBagView(this);
         this.openDefault();
         this.refreshEquipSlots();
+        this.refreshPlayerStats();
+        this.refreshBuffStates();
         Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
     }
 
@@ -77,6 +98,8 @@ export class BagPanel extends Laya.Script {
         DataManager.getInstance().registerBagView(this);
         this.syncVisibleState();
         this.refreshEquipSlots();
+        this.refreshPlayerStats();
+        this.refreshBuffStates();
         Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
     }
 
@@ -92,6 +115,8 @@ export class BagPanel extends Laya.Script {
         this.bindControllers();
         this.bindBagList(items);
         this.refreshEquipSlots();
+        this.refreshPlayerStats();
+        this.refreshBuffStates();
     }
 
     public openDefault(): void {
@@ -133,6 +158,31 @@ export class BagPanel extends Laya.Script {
         const snapshot = DataManager.getInstance().getInventorySnapshot();
         this.bindBagList(snapshot);
         this.refreshEquipSlots();
+        this.refreshPlayerStats();
+        this.refreshBuffStates();
+    }
+
+    public refreshBuffStates(): void {
+        this.resolveBuffStateNodes();
+        const buffs = this.getPreviewBuffStates();
+        this.renderStateList(buffs);
+    }
+
+    public refreshPlayerStats(): void {
+        this.resolvePlayerStatsNodes();
+        const stats = DataManager.getInstance().getPlayerStats();
+
+        if (this.gradeNode) {
+            this.gradeNode.text = String(stats.level);
+        }
+
+        if (this.gradeTextNode) {
+            this.gradeTextNode.text = `${stats.currentHp}/${stats.maxHp}`;
+        }
+
+        if (this.experienceTextNode) {
+            this.experienceTextNode.text = `${stats.experience}/${stats.nextLevelExperience}`;
+        }
     }
 
     private bindControllers(): void {
@@ -220,12 +270,14 @@ export class BagPanel extends Laya.Script {
             if (dataManager.equipItemFromActive(slot, this.selectedBagSlot.item.itemId)) {
                 this.clearBagSelection();
                 this.refreshEquipSlots();
+                this.notifyPlayerEquipmentChanged();
             }
             return;
         }
 
         if (dataManager.unequipItemToActive(slot)) {
             this.refreshEquipSlots();
+            this.notifyPlayerEquipmentChanged();
         }
     }
 
@@ -356,6 +408,140 @@ export class BagPanel extends Laya.Script {
         }
     }
 
+    private resolvePlayerStatsNodes(): void {
+        const root = this.owner as Laya.Node;
+        if (!this.gradeNode) {
+            this.gradeNode = this.findChildByName(root, "grade") as Laya.Text | null;
+        }
+        if (!this.gradeTextNode) {
+            this.gradeTextNode = this.findChildByName(root, "gradetext") as Laya.Text | null;
+        }
+        if (!this.experienceTextNode) {
+            this.experienceTextNode = this.findChildByName(root, "experiencetext") as Laya.Text | null;
+        }
+    }
+
+    private resolveBuffStateNodes(): void {
+        if (!this.stateListNode) {
+            this.stateListNode = this.findChildByName(this.owner as Laya.Node, "statelist");
+        }
+    }
+
+    private getPreviewBuffStates(): PlayerBuffView[] {
+        return [
+            { id: "fullness", shortName: "饱", color: "#2f80ed", remainingSeconds: 60, durationSeconds: 60 },
+            { id: "bleeding", shortName: "流", color: "#d83333", remainingSeconds: 18, durationSeconds: 20 },
+            { id: "slow", shortName: "减", color: "#808080", remainingSeconds: 10, durationSeconds: 12 },
+            { id: "regen", shortName: "回", color: "#2eb872", remainingSeconds: 8, durationSeconds: 10 },
+            { id: "adrenaline", shortName: "肾", color: "#8e44ad", remainingSeconds: 14, durationSeconds: 15 },
+            { id: "poison", shortName: "毒", color: "#6b8e23", remainingSeconds: 22, durationSeconds: 25 },
+        ];
+    }
+
+    private renderStateList(buffs: PlayerBuffView[]): void {
+        const list = this.stateListNode as any;
+        if (!list) {
+            return;
+        }
+
+        if ("itemRenderer" in list) {
+            list.itemRenderer = (index: number, item: Laya.Node) => {
+                this.renderBuffStateItem(buffs[index] || null, item);
+            };
+        }
+
+        if ("numItems" in list) {
+            list.numItems = buffs.length;
+        }
+
+        if (typeof list.refresh === "function") {
+            list.refresh(true);
+        }
+
+        Laya.timer.callLater(this, () => {
+            this.renderVisibleBuffStateItems(buffs);
+        });
+    }
+
+    private renderVisibleBuffStateItems(buffs: PlayerBuffView[]): void {
+        const list = this.stateListNode as any;
+        const children = list && Array.isArray(list.children) ? (list.children as Laya.Node[]) : [];
+        const templateNode = this.getTemplateNode(this.stateListNode);
+        let dataIndex = 0;
+
+        for (let i = 0; i < children.length && dataIndex < buffs.length; i++) {
+            const child = children[i];
+            if (!child || child === templateNode) {
+                continue;
+            }
+
+            this.renderBuffStateItem(buffs[dataIndex] || null, child);
+            dataIndex++;
+        }
+    }
+
+    private renderBuffStateItem(buff: PlayerBuffView | null, node: Laya.Node): void {
+        this.setNodeVisible(node, !!buff);
+        if (!buff) {
+            return;
+        }
+
+        const backgroundNode = this.findChildByName(node, "Sprite") as any;
+        this.setSpriteFillColor(backgroundNode, buff.color);
+
+        const textNode = this.findChildByName(node, "Text") as Laya.Text | null;
+        if (textNode) {
+            textNode.text = buff.shortName;
+        }
+
+        const maskNode = this.findChildByName(node, "mask") as any;
+        if (maskNode) {
+            const ratio = Math.max(0, Math.min(1, buff.remainingSeconds / Math.max(1, buff.durationSeconds)));
+            const height = Math.round(50 * ratio);
+            maskNode.visible = ratio > 0;
+            this.setNodeDrawHeight(maskNode, height);
+            maskNode.y = 50;
+        }
+    }
+
+    private setSpriteFillColor(node: any, fillColor: string): void {
+        if (!node || !Array.isArray(node._gcmds)) {
+            return;
+        }
+
+        for (let i = 0; i < node._gcmds.length; i++) {
+            const command = node._gcmds[i];
+            if (command && "fillColor" in command) {
+                command.fillColor = fillColor;
+            }
+        }
+    }
+
+    private setNodeDrawHeight(node: any, height: number): void {
+        const nextHeight = Math.max(0, height);
+        if ("height" in node) {
+            node.height = nextHeight;
+        }
+
+        if (!Array.isArray(node._gcmds)) {
+            return;
+        }
+
+        for (let i = 0; i < node._gcmds.length; i++) {
+            const command = node._gcmds[i];
+            if (command && "height" in command) {
+                command.height = nextHeight;
+            }
+        }
+    }
+
+    private getTemplateNode(listNode: Laya.Node | null): Laya.Node | null {
+        const list = listNode as any;
+        return (list?._templateNode as Laya.Node | null)
+            || (list?.templateNode as Laya.Node | null)
+            || null;
+    }
+
     private refreshPreviewSpineWeapon(): void {
         const slotName = String(this.previewWeaponSpineSlotName || "").trim();
         if (!slotName) {
@@ -364,12 +550,33 @@ export class BagPanel extends Laya.Script {
 
         const weapon = DataManager.getInstance().getEquippedItem("weapon");
         const attachmentName = weapon ? this.resolveWeaponAttachmentName(weapon.itemId) : "";
+        if (!attachmentName) {
+            if (this.lastPreviewWeaponAttachmentName) {
+                if (this.applyPreviewSpineAttachment(slotName, null)) {
+                    this.lastPreviewWeaponAttachmentName = "";
+                } else {
+                    Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
+                }
+            }
+            return;
+        }
+
         if (attachmentName === this.lastPreviewWeaponAttachmentName) {
             return;
         }
 
-        this.applyPreviewSpineAttachment(slotName, attachmentName || null);
-        this.lastPreviewWeaponAttachmentName = attachmentName;
+        if (this.applyPreviewSpineAttachment(slotName, attachmentName)) {
+            this.lastPreviewWeaponAttachmentName = attachmentName;
+        } else {
+            Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
+        }
+    }
+
+    private notifyPlayerEquipmentChanged(): void {
+        PlayerController.activeInstance?.refreshEquipmentFromData();
+        Laya.timer.callLater(this, () => {
+            PlayerController.activeInstance?.refreshEquipmentFromData();
+        });
     }
 
     private resolveWeaponAttachmentName(itemId: string): string {

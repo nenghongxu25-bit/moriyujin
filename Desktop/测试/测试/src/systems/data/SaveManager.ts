@@ -78,6 +78,16 @@ export class SaveManager {
         storage.setItem(storageKey, JSON.stringify(value));
     }
 
+    public removeItems(storageKeys: string[]): void {
+        const storage = this.getStorage();
+        for (let i = 0; i < storageKeys.length; i++) {
+            const key = String(storageKeys[i] || "").trim();
+            if (key) {
+                storage.removeItem(key);
+            }
+        }
+    }
+
     private getStorage(): Storage {
         const scope = globalThis as any;
         if (!scope || !scope.localStorage) {

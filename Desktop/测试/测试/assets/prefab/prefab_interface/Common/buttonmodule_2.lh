@@ -29,6 +29,26 @@
       "valign": "middle",
       "leading": 2,
       "letterSpacing": 0
+    },
+    {
+      "_$id": "n392fqkh",
+      "_$type": "Sprite",
+      "name": "mask",
+      "x": 10,
+      "y": 10,
+      "width": 80,
+      "height": 80,
+      "alpha": 0.6,
+      "_gcmds": [
+        {
+          "_$type": "DrawRoundRectCmd",
+          "lt": 10,
+          "rt": 10,
+          "lb": 10,
+          "rb": 10,
+          "fillColor": "#000000"
+        }
+      ]
     }
   ]
 }
