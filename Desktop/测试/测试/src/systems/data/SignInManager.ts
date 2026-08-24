@@ -1,4 +1,5 @@
 import { SaveManager } from "./SaveManager";
+import { GameTimeService } from "../time/GameTimeService";
 
 export type SignInRewardState = "locked" | "claimable" | "claimed";
 
@@ -14,6 +15,12 @@ export interface SignInRewardView extends SignInRewardDefinition {
     name: string;
     icon?: string;
     state: SignInRewardState;
+}
+
+export interface SignInUnlockPreview {
+    startDayKey: string;
+    todayKey: string;
+    unlockedDay: number;
 }
 
 interface SignInSaveData {
@@ -70,6 +77,23 @@ export class SignInManager {
         return { ...reward };
     }
 
+    public previewUnlock(startDayKey: string, now: Date): SignInUnlockPreview {
+        const todayKey = this.getDayKey(now);
+        return {
+            startDayKey,
+            todayKey,
+            unlockedDay: this.getUnlockedDayForTodayKey(startDayKey, todayKey),
+        };
+    }
+
+    public getCurrentDayKey(): string {
+        return this.getTodayKey();
+    }
+
+    public async syncTimeSource(): Promise<void> {
+        await GameTimeService.getInstance().syncServerTime();
+    }
+
     private loadOrCreateSaveData(): SignInSaveData {
         const todayKey = this.getTodayKey();
         const stored = this.save.loadJson<Partial<SignInSaveData>>(SignInManager.STORAGE_KEY);
@@ -91,8 +115,12 @@ export class SignInManager {
     }
 
     private getUnlockedDay(startDayKey: string): number {
+        return this.getUnlockedDayForTodayKey(startDayKey, this.getTodayKey());
+    }
+
+    private getUnlockedDayForTodayKey(startDayKey: string, todayKey: string): number {
         const start = this.parseDayKey(startDayKey);
-        const today = this.parseDayKey(this.getTodayKey());
+        const today = this.parseDayKey(todayKey);
         if (!start || !today) {
             return 1;
         }
@@ -102,7 +130,10 @@ export class SignInManager {
     }
 
     private getTodayKey(): string {
-        const date = new Date();
+        return GameTimeService.getInstance().getTodayKey();
+    }
+
+    private getDayKey(date: Date): string {
         const year = date.getFullYear();
         const month = this.pad2(date.getMonth() + 1);
         const day = this.pad2(date.getDate());

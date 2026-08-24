@@ -19,6 +19,8 @@ interface SpineAnimationSnapshot {
 export class PlayerAnimationController {
     private spine: Laya.Spine2DRenderNode | null = null;
     private currentAnimation: string = "";
+    private currentLowerAnimation: string = "";
+    private currentUpperAnimation: string = "";
     private desiredAnimation: string = "";
     private pendingAnimation: string = "";
     private actionAnimation: string = "";
@@ -51,6 +53,8 @@ export class PlayerAnimationController {
     public onDestroy(): void {
         this.spine = null;
         this.currentAnimation = "";
+        this.currentLowerAnimation = "";
+        this.currentUpperAnimation = "";
         this.desiredAnimation = "";
         this.pendingAnimation = "";
         this.actionAnimation = "";
@@ -66,7 +70,13 @@ export class PlayerAnimationController {
         this.pendingAnimation = animationName || this.controller.idleAnimation || "idle";
     }
 
-    public playActionAnimation(animationName: string, durationMs: number, fallbackAnimation?: string, playbackRate: number = 1): void {
+    public playActionAnimation(
+        animationName: string,
+        durationMs: number,
+        fallbackAnimation?: string,
+        playbackRate: number = 1,
+        onComplete?: () => void
+    ): void {
         this.playActionSequence([
             {
                 animation: animationName || this.controller.attackAnimation || this.controller.idleAnimation || "idle",
@@ -74,7 +84,7 @@ export class PlayerAnimationController {
                 loop: false,
                 playbackRate,
             },
-        ], fallbackAnimation || this.pendingAnimation || this.controller.idleAnimation || "idle");
+        ], fallbackAnimation || this.pendingAnimation || this.controller.idleAnimation || "idle", onComplete);
     }
 
     public playActionSequence(phases: ActionSequenceStep[], fallbackAnimation?: string, onComplete?: () => void): void {
@@ -105,6 +115,8 @@ export class PlayerAnimationController {
     public snapshot(): Record<string, any> {
         return {
             currentAnimation: this.currentAnimation,
+            currentLowerAnimation: this.currentLowerAnimation,
+            currentUpperAnimation: this.currentUpperAnimation,
             desiredAnimation: this.desiredAnimation,
             pendingAnimation: this.pendingAnimation,
             actionAnimation: this.actionAnimation,
@@ -131,6 +143,33 @@ export class PlayerAnimationController {
         return true;
     }
 
+    private playSpineTrack(animationName: string, loop: boolean, trackIndex: number): boolean {
+        if (!this.spine || !this.isReady()) {
+            return false;
+        }
+
+        this.wakeSpineRenderer(animationName, loop);
+
+        const render = (this.spine as any)._spineRender;
+        if (!render || typeof render.play !== "function") {
+            return this.playSpineAnimation(animationName, loop);
+        }
+
+        render.play(animationName, loop, trackIndex);
+        return true;
+    }
+
+    private wakeSpineRenderer(animationName: string, loop: boolean): void {
+        if (!this.spine || this.spine.playState !== 0) {
+            return;
+        }
+
+        try {
+            (this.spine as any).play(animationName, loop, true);
+        } catch (error) {
+        }
+    }
+
     private sync(force: boolean): void {
         if (!this.spine) {
             return;
@@ -140,12 +179,22 @@ export class PlayerAnimationController {
             return;
         }
 
+        const nextAnimation = this.pendingAnimation || this.controller.idleAnimation || "idle";
+        this.desiredAnimation = nextAnimation;
+
+        if (this.actionSequenceActive && this.controller.layeredSpineAnimationEnabled) {
+            this.syncLayeredLowerOnly(nextAnimation, force);
+            return;
+        }
+
         if (this.actionSequenceActive) {
             return;
         }
 
-        const nextAnimation = this.pendingAnimation || this.controller.idleAnimation || "idle";
-        this.desiredAnimation = nextAnimation;
+        if (this.controller.layeredSpineAnimationEnabled) {
+            this.syncLayeredLocomotion(nextAnimation, force);
+            return;
+        }
 
         if (!force && this.currentAnimation === nextAnimation) {
             return;
@@ -201,7 +250,7 @@ export class PlayerAnimationController {
 
         if (!step.loop) {
             const spineNode = this.controller.spineNode;
-            if (spineNode) {
+            if (!this.controller.layeredSpineAnimationEnabled && spineNode) {
                 spineNode.once(Laya.Event.STOPPED, this, advanceStep);
             }
 
@@ -214,10 +263,19 @@ export class PlayerAnimationController {
             advanceStep();
         }
 
-        if (!this.playSpineAnimation(step.animation, !!step.loop)) {
+        const played = this.controller.layeredSpineAnimationEnabled
+            ? this.playSpineTrack(step.animation, true, 1)
+            : this.playSpineAnimation(step.animation, !!step.loop);
+
+        if (!played) {
             Laya.timer.callLater(this, () => {
                 this.runActionSequenceStep(token, onComplete);
             });
+            return;
+        }
+
+        if (this.controller.layeredSpineAnimationEnabled) {
+            this.currentUpperAnimation = step.animation;
         }
     }
 
@@ -226,7 +284,9 @@ export class PlayerAnimationController {
             return;
         }
 
-        const fallbackAnimation = this.actionFallbackAnimation || this.pendingAnimation || this.controller.idleAnimation || "idle";
+        const fallbackAnimation = this.controller.layeredSpineAnimationEnabled
+            ? this.pendingAnimation || this.controller.idleAnimation || "idle"
+            : this.actionFallbackAnimation || this.pendingAnimation || this.controller.idleAnimation || "idle";
 
         this.actionSequenceActive = false;
         this.actionSequenceStepIndex = 0;
@@ -241,7 +301,10 @@ export class PlayerAnimationController {
                 this.spine.playbackRate(1);
             }
 
-            if (this.playSpineAnimation(fallbackAnimation, true)) {
+            if (this.controller.layeredSpineAnimationEnabled) {
+                this.currentUpperAnimation = "";
+                this.syncLayeredLocomotion(fallbackAnimation, true);
+            } else if (this.playSpineAnimation(fallbackAnimation, true)) {
                 this.currentAnimation = fallbackAnimation;
             }
         }
@@ -259,11 +322,19 @@ export class PlayerAnimationController {
         }
 
         const anySpine = this.spine as any;
-        if (anySpine.templet) {
+        if (!anySpine.templet) {
+            return false;
+        }
+
+        if (typeof anySpine.getAnimNum !== "function") {
             return true;
         }
 
-        return typeof anySpine.source === "string" && anySpine.source.length > 0;
+        try {
+            return Number(anySpine.getAnimNum()) > 0;
+        } catch (error) {
+            return false;
+        }
     }
 
     private getReadyState(): number {
@@ -318,4 +389,43 @@ export class PlayerAnimationController {
             this.spine = found;
         }
     }
+
+    private syncLayeredLocomotion(lowerAnimation: string, force: boolean): void {
+        const upperAnimation = this.resolveUpperLocomotionAnimation(lowerAnimation);
+
+        if (typeof this.spine?.playbackRate === "function") {
+            this.spine.playbackRate(1);
+        }
+
+        this.syncLayeredLowerOnly(lowerAnimation, force);
+
+        if ((force || this.currentUpperAnimation !== upperAnimation) && this.playSpineTrack(upperAnimation, true, 1)) {
+            this.currentUpperAnimation = upperAnimation;
+        }
+
+        this.currentAnimation = `${this.currentLowerAnimation} + ${this.currentUpperAnimation}`;
+    }
+
+    private syncLayeredLowerOnly(lowerAnimation: string, force: boolean): void {
+        if (typeof this.spine?.playbackRate === "function") {
+            this.spine.playbackRate(1);
+        }
+
+        if ((force || this.currentLowerAnimation !== lowerAnimation) && this.playSpineTrack(lowerAnimation, true, 0)) {
+            this.currentLowerAnimation = lowerAnimation;
+        }
+    }
+
+    private resolveUpperLocomotionAnimation(lowerAnimation: string): string {
+        if (lowerAnimation === this.controller.runAnimation) {
+            return this.controller.upperRunAnimation || this.controller.upperIdleAnimation || lowerAnimation;
+        }
+
+        if (lowerAnimation === this.controller.walkAnimation) {
+            return this.controller.upperWalkAnimation || this.controller.upperIdleAnimation || lowerAnimation;
+        }
+
+        return this.controller.upperIdleAnimation || lowerAnimation;
+    }
+
 }

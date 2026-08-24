@@ -290,19 +290,60 @@ export class ZombieController extends Laya.Script {
     }
 
     private applyHpFillWidth(fill: any, width: number): void {
-        fill.width = width;
+        const nextWidth = Math.max(0, width);
+        const height = this.resolveHpFillHeight(fill);
+        const color = this.resolveHpFillColor(fill);
+        fill.width = nextWidth;
+        fill.height = height;
 
         const commands = fill._gcmds;
-        if (!Array.isArray(commands)) {
-            return;
-        }
-
-        for (let i = 0; i < commands.length; i++) {
-            const command = commands[i];
-            if (command && "width" in command) {
-                command.width = width;
+        if (Array.isArray(commands)) {
+            for (let i = 0; i < commands.length; i++) {
+                const command = commands[i];
+                if (command && "width" in command) {
+                    command.width = nextWidth;
+                }
             }
         }
+
+        if (fill.graphics && typeof fill.graphics.clear === "function" && typeof fill.graphics.drawRect === "function") {
+            fill.graphics.clear();
+            if (nextWidth > 0) {
+                fill.graphics.drawRect(0, 0, nextWidth, height, color);
+            }
+        }
+    }
+
+    private resolveHpFillHeight(fill: any): number {
+        if (Number.isFinite(fill?.height) && fill.height > 0) {
+            return fill.height;
+        }
+
+        const commands = fill?._gcmds;
+        if (Array.isArray(commands)) {
+            for (let i = 0; i < commands.length; i++) {
+                const command = commands[i];
+                if (command && Number.isFinite(command.height) && command.height > 0) {
+                    return command.height;
+                }
+            }
+        }
+
+        return 10;
+    }
+
+    private resolveHpFillColor(fill: any): string {
+        const commands = fill?._gcmds;
+        if (Array.isArray(commands)) {
+            for (let i = 0; i < commands.length; i++) {
+                const command = commands[i];
+                if (command && typeof command.fillColor === "string" && command.fillColor) {
+                    return command.fillColor;
+                }
+            }
+        }
+
+        return "#c93826";
     }
 
     private resolveTargetNode(): Laya.Node | null {
@@ -443,11 +484,19 @@ export class ZombieController extends Laya.Script {
         }
 
         const anySpine = this.spine as any;
-        if (anySpine.templet) {
+        if (!anySpine.templet) {
+            return false;
+        }
+
+        if (typeof anySpine.getAnimNum !== "function") {
             return true;
         }
 
-        return typeof anySpine.source === "string" && anySpine.source.length > 0;
+        try {
+            return Number(anySpine.getAnimNum()) > 0;
+        } catch (error) {
+            return false;
+        }
     }
 
     private die(): void {
@@ -458,6 +507,7 @@ export class ZombieController extends Laya.Script {
         this.dead = true;
         this.grantDropsToPlayer();
         DataManager.getInstance().grantEnemyDefeatExperience();
+        PlayerController.activeInstance?.syncHpFromData();
         this.attackLocked = false;
         this.attackToken = 0;
         this.hasAggro = false;
@@ -649,14 +699,14 @@ export class ZombieController extends Laya.Script {
     }
 
     private syncHpBarTransform(): void {
-        const hpBarNode = this.hpBarNode as Laya.Sprite | null;
+        const hpBarNode = (this.hpBarNode || this.hpFillNode?.parent || null) as Laya.Sprite | null;
         if (!hpBarNode) {
             return;
         }
 
         const facingRight = this.facingSign < 0;
         hpBarNode.x = facingRight ? this.hpBarRightX : this.hpBarLeftX;
-        hpBarNode.scaleX = facingRight ? 1 : -1;
+        hpBarNode.scaleX = facingRight ? -1 : 1;
     }
 
     private getGlobalPosition(node: Laya.Node): Laya.Point {

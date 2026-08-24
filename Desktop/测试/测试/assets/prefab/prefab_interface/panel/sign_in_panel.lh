@@ -45,8 +45,8 @@
               "_$id": "k8v6t44v",
               "_$type": "GList",
               "name": "list",
-              "x": 81,
-              "y": 115,
+              "x": 333,
+              "y": 131,
               "width": 600,
               "height": 400,
               "background": {
@@ -147,8 +147,9 @@
       "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
       "name": "CloseSprite",
       "active": true,
-      "x": 584,
-      "y": 580,
+      "x": 528,
+      "y": 582,
+      "height": 96,
       "visible": true,
       "_$comp": [
         {

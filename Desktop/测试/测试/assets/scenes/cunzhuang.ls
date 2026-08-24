@@ -9,6 +9,12 @@
   "name": "Scene2D",
   "width": 1334,
   "height": 750,
+  "_$comp": [
+    {
+      "_$type": "74505597-ffcd-42bf-a41c-a619d3876601",
+      "scriptPath": "../src/debug/DebugBootstrap.ts"
+    }
+  ],
   "_$child": [
     {
       "_$id": "qz4djekj",
@@ -1624,32 +1630,7 @@
           "x": 122,
           "y": -15,
           "width": 100,
-          "height": 100,
-          "_$child": [
-            {
-              "_$id": "lkr15yr1",
-              "_$type": "GImage",
-              "name": "img",
-              "x": -232,
-              "y": -129,
-              "width": 200,
-              "height": 220,
-              "scaleX": -1,
-              "src": "res://4a52ae70-08bd-4fb1-8965-0e81db4f31b2",
-              "autoSize": false
-            },
-            {
-              "_$id": "vr6c8dap",
-              "_$type": "GImage",
-              "name": "img_1",
-              "x": 561,
-              "y": -280,
-              "width": 200,
-              "height": 240,
-              "src": "res://e45f0a5b-3cba-40fd-b6f1-f6a9496971d7",
-              "autoSize": false
-            }
-          ]
+          "height": 100
         },
         {
           "_$id": "15hzr2ux",
@@ -1668,7 +1649,14 @@
                   "9xqe96ru",
                   "0jvaucmc"
                 ]
-              }
+              },
+              "staminaBarRightX": -35,
+              "runFootstepInterval": 450
+            },
+            {
+              "_$type": "SoundPlayer",
+              "loop": 20,
+              "autoPlay": true
             }
           ],
           "_$child": [
@@ -1677,10 +1665,14 @@
               "_$comp": [
                 {
                   "_$override": "Spine2DRenderNode",
-                  "animationName": "idle",
+                  "animationName": "idle/idle_melee",
                   "loop": true
                 }
               ]
+            },
+            {
+              "_$override": "iy88bpgl",
+              "scaleX": 1
             }
           ]
         }
@@ -1702,6 +1694,10 @@
           "y": 0,
           "visible": true,
           "_$child": [
+            {
+              "_$override": "la1qodvj",
+              "visible": false
+            },
             {
               "_$override": [
                 "9xqe96ru",
@@ -1732,6 +1728,10 @@
               ]
             },
             {
+              "_$override": "ej1msfiy",
+              "visible": false
+            },
+            {
               "_$override": "mokveb9e",
               "_$comp": [
                 {
@@ -1756,8 +1756,8 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite",
               "active": true,
-              "x": 938,
-              "y": 174,
+              "x": 907,
+              "y": 1,
               "visible": true,
               "_$comp": [
                 {
@@ -1781,7 +1781,7 @@
               "active": true,
               "x": 938,
               "y": 93,
-              "visible": true,
+              "visible": false,
               "_$comp": [
                 {
                   "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
@@ -1804,11 +1804,19 @@
               "active": true,
               "x": 65,
               "y": 0,
-              "visible": true,
+              "visible": false,
+              "_$comp": [
+                {
+                  "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "targetNode": {
+                    "_$ref": "lamtt9s2"
+                  }
+                }
+              ],
               "_$child": [
                 {
                   "_$override": "6k3sv098",
-                  "text": "商店"
+                  "text": "商城"
                 }
               ]
             },
@@ -1817,8 +1825,8 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite_3",
               "active": true,
-              "x": 537,
-              "y": -3,
+              "x": 306,
+              "y": 0,
               "visible": true,
               "_$comp": [
                 {
@@ -1842,7 +1850,7 @@
               "active": true,
               "x": 309,
               "y": 0,
-              "visible": true,
+              "visible": false,
               "_$comp": [
                 {
                   "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
@@ -1863,7 +1871,7 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite_5",
               "active": true,
-              "x": 762,
+              "x": 534,
               "y": -3,
               "visible": true,
               "_$comp": [
@@ -1886,8 +1894,8 @@
               "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
               "name": "buttonmodule_2",
               "active": true,
-              "x": 332,
-              "y": 81,
+              "x": 64,
+              "y": 76,
               "visible": true,
               "_$comp": [
                 {
@@ -1915,8 +1923,8 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite_6",
               "active": true,
-              "x": 63,
-              "y": 64,
+              "x": 64,
+              "y": 0,
               "visible": true,
               "_$comp": [
                 {
@@ -1930,6 +1938,63 @@
                 {
                   "_$override": "6k3sv098",
                   "text": "邮箱"
+                }
+              ]
+            },
+            {
+              "_$id": "ehmqv3fy",
+              "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+              "name": "buttonmodule_3",
+              "active": true,
+              "x": 175,
+              "y": 74,
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$type": "01a5fb0e-cb2e-46ce-aa80-cf85c829b7c6",
+                  "scriptPath": "../src/douyin/AddDesktopButton.ts",
+                  "buttonNode": {
+                    "_$ref": "ehmqv3fy"
+                  }
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "tz6yo96j",
+                  "text": "添加\n桌面"
+                },
+                {
+                  "_$override": "n392fqkh",
+                  "visible": false
+                }
+              ]
+            },
+            {
+              "_$id": "d57e1jd3",
+              "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+              "name": "buttonmodule_4",
+              "active": true,
+              "x": 285,
+              "y": 77,
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$type": "13b8da6b-cda3-4de5-9390-45c2a8752821",
+                  "scriptPath": "../src/douyin/SubscribeButton.ts",
+                  "buttonNode": {
+                    "_$ref": "d57e1jd3"
+                  },
+                  "templateId": "MSG22029227137307674382952511359247"
+                }
+              ],
+              "_$child": [
+                {
+                  "_$override": "tz6yo96j",
+                  "text": "消息\n订阅"
+                },
+                {
+                  "_$override": "n392fqkh",
+                  "visible": false
                 }
               ]
             }
@@ -2085,6 +2150,10 @@
                   ]
                 },
                 {
+                  "_$override": "eavb30xg",
+                  "active": false
+                },
+                {
                   "_$override": "vzkfe927",
                   "_$comp": [
                     {
@@ -2104,6 +2173,8 @@
               "active": true,
               "x": 476,
               "y": 155,
+              "width": 400,
+              "height": 400,
               "visible": false
             },
             {
@@ -2124,6 +2195,9 @@
                       "kf7cmfk3",
                       "sbsnrylr"
                     ]
+                  },
+                  "warehouseFullText": {
+                    "_$ref": "3k3ro5g1"
                   }
                 }
               ],
@@ -2161,8 +2235,34 @@
               "x": 0,
               "y": 0,
               "visible": false
+            },
+            {
+              "_$id": "lamtt9s2",
+              "_$prefab": "12820c93-821e-4387-a85d-a11fec2970ed",
+              "name": "ShopPanel",
+              "active": false,
+              "x": 0,
+              "y": 0,
+              "visible": false
             }
           ]
+        },
+        {
+          "_$id": "3k3ro5g1",
+          "_$type": "Text",
+          "name": "Text",
+          "x": 518,
+          "y": 395,
+          "width": 299,
+          "height": 54,
+          "text": "111",
+          "fontSize": 35,
+          "color": "#000000",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
         }
       ]
     }

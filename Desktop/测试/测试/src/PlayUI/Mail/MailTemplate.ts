@@ -16,7 +16,6 @@ export class MailTemplate extends Laya.Script {
     @property(Laya.Node)
     public timeText: Laya.Node | null = null;
 
-    // 点击这封邮件后显示的节点
     @property(Laya.Node)
     public targetNode: Laya.Node | null = null;
 
@@ -62,6 +61,8 @@ export class MailTemplate extends Laya.Script {
                 time.text = "";
             }
 
+            this.setTargetNodeShown(false);
+
             return;
         }
 
@@ -76,6 +77,11 @@ export class MailTemplate extends Laya.Script {
                 data.createdAt
             );
         }
+
+
+        this.setTargetNodeShown(
+            !!data.isRead
+        );
     }
 
 
@@ -90,25 +96,37 @@ export class MailTemplate extends Laya.Script {
 
     private onClick(): void {
 
-        // 没有邮件数据，不处理
         if (!this.boundData) {
             return;
         }
 
 
-        // 显示目标节点
-        if (this.targetNode) {
+        this.setTargetNodeShown(true);
+    }
 
-            const target =
-                this.targetNode as any;
 
-            if ("visible" in target) {
-                target.visible = true;
-            }
+    private setTargetNodeShown(
+        shown: boolean
+    ): void {
 
-            if ("active" in target) {
-                target.active = true;
-            }
+        if (!this.targetNode) {
+            return;
+        }
+
+
+        const target =
+            this.targetNode as any;
+
+
+        if ("visible" in target) {
+            target.visible =
+                shown;
+        }
+
+
+        if ("active" in target) {
+            target.active =
+                shown;
         }
     }
 

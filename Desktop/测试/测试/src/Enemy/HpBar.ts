@@ -36,6 +36,49 @@ export class HpBar extends Laya.Script {
             this.fullWidth = this.fill.width;
         }
 
-        this.fill.width = this.fullWidth * (this.hp / Math.max(1, this.maxHp));
+        const width = Math.max(0, this.fullWidth * (this.hp / Math.max(1, this.maxHp)));
+        this.fill.width = width;
+
+        const fill = this.fill as any;
+        if (fill.graphics && typeof fill.graphics.clear === "function" && typeof fill.graphics.drawRect === "function") {
+            fill.graphics.clear();
+            if (width > 0) {
+                fill.graphics.drawRect(0, 0, width, this.resolveFillHeight(), this.resolveFillColor());
+            }
+        }
+    }
+
+    private resolveFillHeight(): number {
+        const fill = this.fill as any;
+        if (Number.isFinite(fill?.height) && fill.height > 0) {
+            return fill.height;
+        }
+
+        const commands = fill?._gcmds;
+        if (Array.isArray(commands)) {
+            for (let i = 0; i < commands.length; i++) {
+                const command = commands[i];
+                if (command && Number.isFinite(command.height) && command.height > 0) {
+                    return command.height;
+                }
+            }
+        }
+
+        return 10;
+    }
+
+    private resolveFillColor(): string {
+        const fill = this.fill as any;
+        const commands = fill?._gcmds;
+        if (Array.isArray(commands)) {
+            for (let i = 0; i < commands.length; i++) {
+                const command = commands[i];
+                if (command && typeof command.fillColor === "string" && command.fillColor) {
+                    return command.fillColor;
+                }
+            }
+        }
+
+        return "#c93826";
     }
 }

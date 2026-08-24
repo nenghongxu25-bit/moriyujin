@@ -8,6 +8,7 @@ import type { ListTemplateData } from "../CommonUI/listTemplate";
 interface SelectedSlotState {
     bucket: InventoryBucket;
     itemId: string;
+    slotIndex: number;
 }
 
 @regClass()
@@ -108,7 +109,7 @@ export class WarehousePanel extends Laya.Script {
         this.bagGlist.onSlotClick = this.handleBagSlotClick;
         this.bagGlist.setSlotCount(DataManager.getInstance().getPlayerBagSlotCount());
         this.bagGlist.setItems(this.toListData(items));
-        this.bagGlist.setSelectedItemId(this.getSelectedItemId("active"));
+        this.bagGlist.setSelectedSlotIndex(this.getSelectedSlotIndex("active"));
     }
 
     private bindWarehouseList(): void {
@@ -123,7 +124,7 @@ export class WarehousePanel extends Laya.Script {
         this.warehouseGlist.onSlotClick = this.handleWarehouseSlotClick;
         this.warehouseGlist.setSlotCount(WarehouseManager.PAGE_SIZE);
         this.warehouseGlist.setItems(this.toWarehousePageData(DataManager.getInstance().getWarehouseSnapshot()));
-        this.warehouseGlist.setSelectedItemId(this.getSelectedItemId("warehouse"));
+        this.warehouseGlist.setSelectedSlotIndex(this.getWarehousePageSelectedSlotIndex());
         this.updateWarehousePageButtonState();
     }
 
@@ -142,13 +143,25 @@ export class WarehousePanel extends Laya.Script {
 
         if (!this.selectedSlot) {
             if (itemId) {
-                this.setSelection(sourceBucket, itemId);
+                this.setSelection(sourceBucket, itemId, targetSlotIndex);
             }
             return;
         }
 
-        if (this.selectedSlot.bucket === sourceBucket && this.selectedSlot.itemId === itemId) {
+        if (this.selectedSlot.bucket === targetBucket && this.selectedSlot.slotIndex === targetSlotIndex) {
             this.clearSelection();
+            return;
+        }
+
+        if (this.selectedSlot.bucket === targetBucket) {
+            const moved = targetBucket === "warehouse"
+                ? DataManager.getInstance().moveWarehouseSlot(this.selectedSlot.slotIndex, targetSlotIndex)
+                : DataManager.getInstance().moveActiveInventorySlot(this.selectedSlot.slotIndex, targetSlotIndex);
+
+            this.clearSelection();
+            if (moved) {
+                this.refresh();
+            }
             return;
         }
 
@@ -163,11 +176,6 @@ export class WarehousePanel extends Laya.Script {
             return;
         }
 
-        if (this.selectedSlot.bucket === targetBucket) {
-            this.clearSelection();
-            return;
-        }
-
         if (DataManager.getInstance().transferItem(this.selectedSlot.bucket, targetBucket, this.selectedSlot.itemId, targetSlotIndex)) {
             this.clearSelection();
             this.refresh();
@@ -177,8 +185,8 @@ export class WarehousePanel extends Laya.Script {
         this.clearSelection();
     }
 
-    private setSelection(bucket: InventoryBucket, itemId: string): void {
-        this.selectedSlot = { bucket, itemId };
+    private setSelection(bucket: InventoryBucket, itemId: string, slotIndex: number): void {
+        this.selectedSlot = { bucket, itemId, slotIndex };
         this.applySelectionState();
     }
 
@@ -188,22 +196,30 @@ export class WarehousePanel extends Laya.Script {
     }
 
     private applySelectionState(): void {
-        const activeSelected = this.getSelectedItemId("active");
-        const warehouseSelected = this.getSelectedItemId("warehouse");
-
         if (this.bagGlist) {
-            this.bagGlist.setSelectedItemId(activeSelected);
+            this.bagGlist.setSelectedSlotIndex(this.getSelectedSlotIndex("active"));
         }
 
         if (this.warehouseGlist) {
-            this.warehouseGlist.setSelectedItemId(warehouseSelected);
+            this.warehouseGlist.setSelectedSlotIndex(this.getWarehousePageSelectedSlotIndex());
         }
 
         this.updateWarehousePageButtonState();
     }
 
-    private getSelectedItemId(bucket: InventoryBucket): string {
-        return this.selectedSlot && this.selectedSlot.bucket === bucket ? this.selectedSlot.itemId : "";
+    private getSelectedSlotIndex(bucket: InventoryBucket): number {
+        return this.selectedSlot && this.selectedSlot.bucket === bucket ? this.selectedSlot.slotIndex : -1;
+    }
+
+    private getWarehousePageSelectedSlotIndex(): number {
+        const selectedIndex = this.getSelectedSlotIndex("warehouse");
+        if (selectedIndex < 0) {
+            return -1;
+        }
+
+        const pageStart = this.currentWarehousePage * WarehouseManager.PAGE_SIZE;
+        const pageEnd = pageStart + WarehouseManager.PAGE_SIZE;
+        return selectedIndex >= pageStart && selectedIndex < pageEnd ? selectedIndex - pageStart : -1;
     }
 
     private toListData(items: InventorySlotItem[]): Array<ListTemplateData | null> {

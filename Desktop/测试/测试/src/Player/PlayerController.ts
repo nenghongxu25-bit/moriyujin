@@ -20,6 +20,42 @@ export class PlayerController extends Laya.Script {
     public moveSpeed: number = 0;
 
     @property(Boolean)
+    public footstepSoundEnabled: boolean = true;
+
+    @property(String)
+    public cunzhuangWalkSoundUrl: string = "sound/sfx/walk/walk_wood.mp3";
+
+    @property(String)
+    public cunzhuangRunSoundUrl: string = "sound/sfx/run/run_wood.mp3";
+
+    @property(String)
+    public forestWalkSoundUrl: string = "sound/sfx/walk/walk_grass.mp3";
+
+    @property(String)
+    public forestRunSoundUrl: string = "sound/sfx/run/run_grass.mp3";
+
+    @property(String)
+    public mineWalkSoundUrl: string = "sound/sfx/walk/walk_floor.wav";
+
+    @property(String)
+    public mineRunSoundUrl: string = "sound/sfx/run/run_inside_floor.mp3";
+
+    @property(Number)
+    public walkFootstepInterval: number = 420;
+
+    @property(Number)
+    public runFootstepInterval: number = 300;
+
+    @property(Number)
+    public walkFootstepPlaybackRate: number = 1;
+
+    @property(Number)
+    public runFootstepPlaybackRate: number = 1;
+
+    @property(Number)
+    public footstepPlaybackRateVariance: number = 0;
+
+    @property(Boolean)
     public isRunning: boolean = false;
 
     @property(Laya.Node)
@@ -44,6 +80,15 @@ export class PlayerController extends Laya.Script {
     public hpFillNode: Laya.Node | null = null;
 
     @property(Laya.Node)
+    public hpBarNode: Laya.Node | null = null;
+
+    @property(Laya.Node)
+    public staminaFillNode: Laya.Node | null = null;
+
+    @property(Laya.Node)
+    public staminaBarNode: Laya.Node | null = null;
+
+    @property(Laya.Node)
     public weaponSlotNode: Laya.Node | null = null;
 
     @property(Laya.Node)
@@ -51,6 +96,12 @@ export class PlayerController extends Laya.Script {
 
     @property(String)
     public weaponSpineSlotName: string = "";
+
+    @property(String)
+    public weaponMeleeSpineSlotName: string = "weapon_melee_slot";
+
+    @property(String)
+    public weaponRangedSpineSlotName: string = "weapon_ranged_slot";
 
     @property(String)
     public insertPlateSpineSlotName: string = "";
@@ -69,6 +120,30 @@ export class PlayerController extends Laya.Script {
 
     @property(Number)
     public hpFillFullWidth: number = 70;
+
+    @property(Number)
+    public currentStamina: number = 100;
+
+    @property(Number)
+    public maxStamina: number = 100;
+
+    @property(Number)
+    public staminaFillFullWidth: number = 70;
+
+    @property(Number)
+    public hpBarRightX: number = -35;
+
+    @property(Number)
+    public hpBarLeftX: number = 35;
+
+    @property(Number)
+    public staminaBarRightX: number = -35;
+
+    @property(Number)
+    public staminaBarLeftX: number = 35;
+
+    @property(String)
+    public deathReturnSceneUrl: string = "scenes/cunzhuang.ls";
 
     @property(Number)
     public initialFacingSign: number = 1;
@@ -95,16 +170,28 @@ export class PlayerController extends Laya.Script {
     public attackDamageRange: number = 120;
 
     @property(String)
-    public idleAnimation: string = "idle";
+    public idleAnimation: string = "idle/idle_melee";
 
     @property(String)
-    public walkAnimation: string = "walk";
+    public walkAnimation: string = "walk/walk_body_lower";
 
     @property(String)
-    public runAnimation: string = "run";
+    public runAnimation: string = "run/run_body_lower";
 
     @property(String)
-    public attackAnimation: string = "attack_swing";
+    public attackAnimation: string = "attack/attack_melee_swing";
+
+    @property(Boolean)
+    public layeredSpineAnimationEnabled: boolean = true;
+
+    @property(String)
+    public upperIdleAnimation: string = "idle/idle_melee";
+
+    @property(String)
+    public upperWalkAnimation: string = "walk/walk_body_upper_melee";
+
+    @property(String)
+    public upperRunAnimation: string = "run/run_body_upper_melee";
 
     @property(Number)
     public attackAnimationDuration: number = 1067;
@@ -114,6 +201,8 @@ export class PlayerController extends Laya.Script {
     public combat!: PlayerCombatController;
     public animation!: PlayerAnimationController;
     private attackToken: number = 0;
+    private staminaTickElapsed: number = 0;
+    private deathReturnTriggered: boolean = false;
     private lastEquipmentSignature: string = "__init";
     private readonly lastEquipmentIconUrls: Record<EquipmentSlotType, string> = {
         insertPlate: "",
@@ -138,7 +227,10 @@ export class PlayerController extends Laya.Script {
         this.ui.onAwake();
         this.setRunningState(this.isRunning);
         this.combat.setAttackNodeVisible(false);
+        this.syncHpFromData();
+        this.syncStaminaFromData();
         this.refreshHpBar();
+        this.refreshStaminaBar();
         this.syncEquipmentStats();
         Laya.timer.callLater(this, this.syncEquipmentSpineSlots);
         this.animation.onAwake();
@@ -150,7 +242,10 @@ export class PlayerController extends Laya.Script {
         this.ui.onStart();
         this.setRunningState(this.isRunning);
         this.combat.setAttackNodeVisible(false);
+        this.syncHpFromData();
+        this.syncStaminaFromData();
         this.refreshHpBar();
+        this.refreshStaminaBar();
         this.syncEquipmentStats();
         Laya.timer.callLater(this, this.syncEquipmentSpineSlots);
         this.animation.onStart();
@@ -158,6 +253,7 @@ export class PlayerController extends Laya.Script {
 
     onUpdate(): void {
         this.movement.onUpdate();
+        this.updateStamina();
         this.syncEquipmentStats();
         this.animation.onUpdate();
         this.syncEquipmentSpineSlots();
@@ -205,8 +301,8 @@ export class PlayerController extends Laya.Script {
     }
 
     public setRunningState(value: boolean): void {
-        this.isRunning = value;
-        this.moveSpeed = value ? this.runSpeed : 0;
+        this.isRunning = value && this.currentStamina > 0;
+        this.moveSpeed = this.isRunning ? this.runSpeed : 0;
     }
 
     public setRunning(value: boolean): void {
@@ -236,7 +332,12 @@ export class PlayerController extends Laya.Script {
     public setHp(currentHp: number, maxHp: number = this.maxHp): void {
         this.maxHp = Math.max(1, Math.floor(maxHp));
         this.currentHp = Math.max(0, Math.min(Math.floor(currentHp), this.maxHp));
+        DataManager.getInstance().setPlayerHp(this.currentHp, this.maxHp);
         this.refreshHpBar();
+
+        if (this.currentHp <= 0) {
+            this.returnToDeathScene();
+        }
     }
 
     public takeDamage(amount: number): void {
@@ -256,6 +357,88 @@ export class PlayerController extends Laya.Script {
 
         const ratio = this.currentHp / Math.max(1, this.maxHp);
         this.applyHpFillWidth(fill, Math.max(0, this.hpFillFullWidth * ratio));
+        this.syncStatusBarTransform();
+    }
+
+    public syncHpFromData(): void {
+        const stats = DataManager.getInstance().getPlayerStats();
+        this.maxHp = Math.max(1, Math.floor(stats.maxHp || 100));
+        const currentHp = Number.isFinite(stats.currentHp) ? stats.currentHp : this.maxHp;
+        this.currentHp = Math.max(0, Math.min(Math.floor(currentHp), this.maxHp));
+        this.refreshHpBar();
+    }
+
+    public setStamina(currentStamina: number, maxStamina: number = this.maxStamina): void {
+        this.maxStamina = Math.max(1, Math.floor(maxStamina));
+        this.currentStamina = Math.max(0, Math.min(Math.floor(currentStamina), this.maxStamina));
+        DataManager.getInstance().setPlayerStamina(this.currentStamina, this.maxStamina);
+        if (this.currentStamina <= 0 && this.isRunning) {
+            this.setRunningState(false);
+        }
+        this.refreshStaminaBar();
+    }
+
+    public consumeStaminaForCompletedAttack(): void {
+        this.setStamina(this.currentStamina - 10, this.maxStamina);
+    }
+
+    public syncStaminaFromData(): void {
+        const stats = DataManager.getInstance().getPlayerStats();
+        this.maxStamina = Math.max(1, Math.floor(stats.maxStamina || 100));
+        const currentStamina = Number.isFinite(stats.currentStamina) ? stats.currentStamina : this.maxStamina;
+        this.currentStamina = Math.max(0, Math.min(Math.floor(currentStamina), this.maxStamina));
+        if (this.currentStamina <= 0 && this.isRunning) {
+            this.setRunningState(false);
+        }
+        this.refreshStaminaBar();
+    }
+
+    public refreshStaminaBar(): void {
+        const fill = this.staminaFillNode as any;
+        if (!fill) {
+            return;
+        }
+
+        const ratio = this.currentStamina / Math.max(1, this.maxStamina);
+        this.applyHpFillWidth(fill, Math.max(0, this.staminaFillFullWidth * ratio));
+        this.syncStatusBarTransform();
+    }
+
+    public syncStatusBarTransform(): void {
+        const facingSign = this.movement ? this.movement.getFacingSign() : this.initialFacingSign >= 0 ? 1 : -1;
+        this.applyCounterTransform(this.hpBarNode || this.hpFillNode?.parent || null, facingSign, this.hpBarRightX, this.hpBarLeftX);
+        this.applyCounterTransform(this.staminaBarNode || this.staminaFillNode?.parent || null, facingSign, this.staminaBarRightX, this.staminaBarLeftX);
+    }
+
+    private updateStamina(): void {
+        this.staminaTickElapsed += Math.max(0, Laya.timer.delta || 0);
+
+        while (this.staminaTickElapsed >= 500) {
+            this.staminaTickElapsed -= 500;
+
+            if (this.isRunning && this.movement.getIsMovingNow()) {
+                this.setStamina(this.currentStamina - 10, this.maxStamina);
+            } else {
+                this.setStamina(this.currentStamina + 3, this.maxStamina);
+            }
+        }
+    }
+
+    private returnToDeathScene(): void {
+        if (this.deathReturnTriggered) {
+            return;
+        }
+
+        const url = String(this.deathReturnSceneUrl || "scenes/cunzhuang.ls").trim();
+        if (!url) {
+            return;
+        }
+
+        this.deathReturnTriggered = true;
+        Laya.timer.once(0, null, () => {
+            DataManager.getInstance().returnToBaseAfterDeath(url);
+            Laya.Scene.open(url);
+        });
     }
 
     private applyHpFillWidth(fill: any, width: number): void {
@@ -274,14 +457,37 @@ export class PlayerController extends Laya.Script {
         }
     }
 
+    private applyCounterTransform(node: Laya.Node | null, facingSign: number, rightX: number, leftX: number): void {
+        const sprite = node as Laya.Sprite | null;
+        if (!sprite) {
+            return;
+        }
+
+        const facingRight = facingSign === (this.initialFacingSign >= 0 ? 1 : -1);
+        sprite.x = facingRight ? leftX : rightX;
+        sprite.scaleX = facingRight ? -1 : 1;
+    }
+
     public syncWeaponSpineSlot(force: boolean = false): void {
-        this.syncEquipmentSpineSlot("weapon", this.weaponSpineSlotName, force);
+        const activeSlotName = String(this.weaponSpineSlotName || this.weaponMeleeSpineSlotName || "").trim();
+        const meleeSlotName = String(this.weaponMeleeSpineSlotName || "").trim();
+        const rangedSlotName = String(this.weaponRangedSpineSlotName || "").trim();
+
+        if (meleeSlotName && meleeSlotName !== activeSlotName) {
+            this.clearSpineSlotAttachment(meleeSlotName);
+        }
+
+        if (rangedSlotName && rangedSlotName !== activeSlotName) {
+            this.clearSpineSlotAttachment(rangedSlotName);
+        }
+
+        this.syncEquipmentSpineSlot("weapon", activeSlotName, force);
     }
 
     public syncEquipmentSpineSlots(force: boolean = false): void {
         this.syncEquipmentSpineSlot("insertPlate", this.insertPlateSpineSlotName, force);
         this.syncEquipmentSpineSlot("helmet", this.helmetSpineSlotName, force);
-        this.syncEquipmentSpineSlot("weapon", this.weaponSpineSlotName, force);
+        this.syncWeaponSpineSlot(force);
         this.syncEquipmentSpineSlot("armor", this.armorSpineSlotName, force);
     }
 
@@ -407,6 +613,18 @@ export class PlayerController extends Laya.Script {
             walkSpeed: this.walkSpeed,
             runSpeed: this.runSpeed,
             moveSpeed: this.moveSpeed,
+            footstepSoundEnabled: this.footstepSoundEnabled,
+            cunzhuangWalkSoundUrl: this.cunzhuangWalkSoundUrl,
+            cunzhuangRunSoundUrl: this.cunzhuangRunSoundUrl,
+            forestWalkSoundUrl: this.forestWalkSoundUrl,
+            forestRunSoundUrl: this.forestRunSoundUrl,
+            mineWalkSoundUrl: this.mineWalkSoundUrl,
+            mineRunSoundUrl: this.mineRunSoundUrl,
+            walkFootstepInterval: this.walkFootstepInterval,
+            runFootstepInterval: this.runFootstepInterval,
+            walkFootstepPlaybackRate: this.walkFootstepPlaybackRate,
+            runFootstepPlaybackRate: this.runFootstepPlaybackRate,
+            footstepPlaybackRateVariance: this.footstepPlaybackRateVariance,
             isRunning: this.isRunning,
             idleAnimation: this.idleAnimation,
             walkAnimation: this.walkAnimation,
@@ -420,9 +638,14 @@ export class PlayerController extends Laya.Script {
             stateText: this.stateText ? this.stateText.name : null,
             itemText: this.itemText ? this.itemText.name : null,
             hpFillNode: this.hpFillNode ? this.hpFillNode.name : null,
+            hpBarNode: this.hpBarNode ? this.hpBarNode.name : null,
+            staminaFillNode: this.staminaFillNode ? this.staminaFillNode.name : null,
+            staminaBarNode: this.staminaBarNode ? this.staminaBarNode.name : null,
             weaponSlotNode: this.weaponSlotNode ? this.weaponSlotNode.name : null,
             weaponIconNode: this.weaponIconNode ? this.weaponIconNode.name : null,
             weaponSpineSlotName: this.weaponSpineSlotName,
+            weaponMeleeSpineSlotName: this.weaponMeleeSpineSlotName,
+            weaponRangedSpineSlotName: this.weaponRangedSpineSlotName,
             insertPlateSpineSlotName: this.insertPlateSpineSlotName,
             helmetSpineSlotName: this.helmetSpineSlotName,
             armorSpineSlotName: this.armorSpineSlotName,
@@ -430,6 +653,14 @@ export class PlayerController extends Laya.Script {
             currentHp: this.currentHp,
             maxHp: this.maxHp,
             hpFillFullWidth: this.hpFillFullWidth,
+            currentStamina: this.currentStamina,
+            maxStamina: this.maxStamina,
+            staminaFillFullWidth: this.staminaFillFullWidth,
+            hpBarRightX: this.hpBarRightX,
+            hpBarLeftX: this.hpBarLeftX,
+            staminaBarRightX: this.staminaBarRightX,
+            staminaBarLeftX: this.staminaBarLeftX,
+            deathReturnSceneUrl: this.deathReturnSceneUrl,
             owner: this.owner ? this.owner.name : null,
             scaleX: this.owner ? (this.owner as Laya.Sprite).scaleX : null,
             initialFacingSign: this.initialFacingSign,

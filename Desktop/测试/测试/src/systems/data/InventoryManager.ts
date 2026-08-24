@@ -52,6 +52,18 @@ export class InventoryManager {
         this.syncBagViews();
     }
 
+    public returnToBaseAfterDeath(sceneUrl: string): void {
+        const nextScope = this.isBaseSceneUrl(sceneUrl) ? "base" : "instance";
+        if (nextScope !== "base") {
+            this.enterScene(sceneUrl);
+            return;
+        }
+
+        this.runInventory.length = 0;
+        this.currentScope = "base";
+        this.syncBagViews();
+    }
+
     public getCurrentScope(): InventoryScope {
         return this.currentScope;
     }

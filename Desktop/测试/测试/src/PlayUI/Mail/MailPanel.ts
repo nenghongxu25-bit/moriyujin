@@ -32,12 +32,19 @@ export class MailPanel extends Laya.Script {
     @property(Laya.Node)
     public rewardTargetNode: Laya.Node | null = null;
 
+    @property(Laya.Text)
+    public warehouseFullText: Laya.Text | null = null;
+
+    @property(Laya.Text)
+    public messageText: Laya.Text | null = null;
+
 
     private mailList: MailList | null = null;
 
     private rewardList: glist | null = null;
 
     private currentMailId: string = "";
+    private messageFadeToken: number = 0;
 
     private readonly onMailChanged =
         (): void => {
@@ -98,6 +105,8 @@ export class MailPanel extends Laya.Script {
 
     onDisable(): void {
 
+        this.clearMessageTextTimers();
+
         MailManager
             .getInstance()
             .removeChangeListener(
@@ -109,6 +118,8 @@ export class MailPanel extends Laya.Script {
 
 
     onDestroy(): void {
+
+        this.clearMessageTextTimers();
 
         MailManager
             .getInstance()
@@ -339,6 +350,7 @@ export class MailPanel extends Laya.Script {
         this.showRewards(
             mail.attachments
         );
+        this.hideMessageText();
 
 
         // 右侧按钮状态
@@ -510,6 +522,36 @@ export class MailPanel extends Laya.Script {
         // =====================================
 
 
+        const dataManager =
+            DataManager.getInstance();
+
+
+        if (
+            !dataManager.canGrantItemsToWarehouse(
+                mail.attachments
+            )
+        ) {
+
+            this.showMessageText(
+                "仓库已满，请清理仓库"
+            );
+            return;
+        }
+
+
+        if (
+            !dataManager.grantItemsToWarehouse(
+                mail.attachments
+            )
+        ) {
+
+            this.showMessageText(
+                "仓库已满，请清理仓库"
+            );
+            return;
+        }
+
+
         const success =
             manager.markClaimed(
                 mail.id
@@ -521,11 +563,7 @@ export class MailPanel extends Laya.Script {
         }
 
 
-        DataManager
-            .getInstance()
-            .grantItemsToWarehouse(
-                mail.attachments
-            );
+        this.hideMessageText();
 
 
         const updatedMail =
@@ -661,6 +699,171 @@ export class MailPanel extends Laya.Script {
         this.setRewardClaimedShown(
             false
         );
+        this.hideMessageText();
+    }
+
+
+    private showMessageText(
+        message: string
+    ): void {
+
+        const targetText =
+            this.getMessageTextNode();
+
+        if (!targetText) {
+            return;
+        }
+
+        this.messageFadeToken += 1;
+        const token =
+            this.messageFadeToken;
+
+        targetText.text =
+            String(
+                message || ""
+            );
+
+        (targetText as any).alpha =
+            1;
+
+        this.setNodeShown(
+            targetText,
+            true
+        );
+
+        Laya.timer.clear(
+            this,
+            this.fadeMessageText
+        );
+
+        Laya.timer.once(
+            1200,
+            this,
+            this.fadeMessageText,
+            [token]
+        );
+    }
+
+
+    private hideMessageText(): void {
+
+        this.messageFadeToken += 1;
+
+        this.clearMessageTextTimers();
+
+        const targetText =
+            this.getMessageTextNode();
+
+        if (!targetText) {
+            return;
+        }
+
+
+        targetText.text =
+            "";
+
+        this.setNodeShown(
+            targetText,
+            false
+        );
+
+        (targetText as any).alpha =
+            1;
+    }
+
+
+    private clearMessageTextTimers(): void {
+
+        Laya.timer.clear(
+            this,
+            this.fadeMessageText
+        );
+
+        Laya.timer.clear(
+            this,
+            this.finishMessageTextFade
+        );
+
+        const targetText =
+            this.getMessageTextNode();
+
+        if (targetText) {
+
+            Laya.Tween.clearAll(
+                targetText
+            );
+        }
+    }
+
+
+    private fadeMessageText(
+        token: number
+    ): void {
+
+        const targetText =
+            this.getMessageTextNode();
+
+        if (
+            token !== this.messageFadeToken
+            ||
+            !targetText
+        ) {
+            return;
+        }
+
+
+        Laya.Tween.clearAll(
+            targetText
+        );
+
+        Laya.Tween.to(
+            targetText as any,
+            {
+                alpha: 0
+            },
+            450,
+            null,
+            Laya.Handler.create(
+                this,
+                this.finishMessageTextFade,
+                [token]
+            )
+        );
+    }
+
+
+    private finishMessageTextFade(
+        token: number
+    ): void {
+
+        const targetText =
+            this.getMessageTextNode();
+
+        if (
+            token !== this.messageFadeToken
+            ||
+            !targetText
+        ) {
+            return;
+        }
+
+
+        targetText.text =
+            "";
+
+        this.setNodeShown(
+            targetText,
+            false
+        );
+
+        (targetText as any).alpha =
+            1;
+    }
+
+
+    private getMessageTextNode(): Laya.Text | null {
+
+        return this.messageText || this.warehouseFullText;
     }
 
 

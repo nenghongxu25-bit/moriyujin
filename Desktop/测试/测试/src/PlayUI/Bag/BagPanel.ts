@@ -80,8 +80,10 @@ export class BagPanel extends Laya.Script {
     private selectedBagSlot: SelectedBagSlotState | null = null;
     private lastPreviewWeaponAttachmentName: string = "__init";
     private previewSpineNode: Laya.Node | null = null;
+    private quickEquipInitialVisible: boolean | null = null;
 
     onAwake(): void {
+        this.captureInitialVisibility();
         this.bindControllers();
         this.bindEquipSlots();
         DataManager.getInstance().registerBagView(this);
@@ -93,6 +95,7 @@ export class BagPanel extends Laya.Script {
     }
 
     onEnable(): void {
+        this.captureInitialVisibility();
         this.bindControllers();
         this.bindEquipSlots();
         DataManager.getInstance().registerBagView(this);
@@ -300,11 +303,26 @@ export class BagPanel extends Laya.Script {
         const showContainer = this.currentState === 1;
 
         this.setNodeVisible(this.personPageNode, showDefault);
-        this.setNodeVisible(this.quickEquipNode, showDefault);
+        this.setNodeVisible(this.quickEquipNode, showDefault && this.shouldShowQuickEquipNode());
         this.setNodeVisible(this.containerNode, showContainer);
         this.setNodeVisible(this.containerGlistNode, showContainer);
         this.setNodeVisible(this.bagNode, true);
         this.setNodeVisible(this.bagGlistNode, true);
+    }
+
+    private captureInitialVisibility(): void {
+        if (this.quickEquipInitialVisible !== null || !this.quickEquipNode) {
+            return;
+        }
+
+        const target = this.quickEquipNode as any;
+        const visible = "visible" in target ? target.visible !== false : true;
+        const active = "active" in target ? target.active !== false : true;
+        this.quickEquipInitialVisible = visible && active;
+    }
+
+    private shouldShowQuickEquipNode(): boolean {
+        return this.quickEquipInitialVisible !== false;
     }
 
     private setNodeVisible(node: Laya.Node | null, visible: boolean): void {
@@ -414,7 +432,7 @@ export class BagPanel extends Laya.Script {
             this.gradeNode = this.findChildByName(root, "grade") as Laya.Text | null;
         }
         if (!this.gradeTextNode) {
-            this.gradeTextNode = this.findChildByName(root, "gradetext") as Laya.Text | null;
+            this.gradeTextNode = (this.findChildByName(root, "hptext") || this.findChildByName(root, "gradetext")) as Laya.Text | null;
         }
         if (!this.experienceTextNode) {
             this.experienceTextNode = this.findChildByName(root, "experiencetext") as Laya.Text | null;

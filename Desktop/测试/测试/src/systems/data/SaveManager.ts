@@ -61,6 +61,7 @@ export class SaveManager {
               )
             : [];
         storage.setItem(storageKey, JSON.stringify(payload));
+        this.notifyCloudSaveChanged();
     }
 
     public loadJson<T>(storageKey: string): T | null {
@@ -76,6 +77,7 @@ export class SaveManager {
     public saveJson(storageKey: string, value: unknown): void {
         const storage = this.getStorage();
         storage.setItem(storageKey, JSON.stringify(value));
+        this.notifyCloudSaveChanged();
     }
 
     public removeItems(storageKeys: string[]): void {
@@ -86,6 +88,7 @@ export class SaveManager {
                 storage.removeItem(key);
             }
         }
+        this.notifyCloudSaveChanged();
     }
 
     private getStorage(): Storage {
@@ -95,5 +98,12 @@ export class SaveManager {
         }
 
         return scope.localStorage as Storage;
+    }
+
+    private notifyCloudSaveChanged(): void {
+        const scope = globalThis as any;
+        if (scope && typeof scope.__scheduleDouyinCloudSave === "function") {
+            scope.__scheduleDouyinCloudSave();
+        }
     }
 }

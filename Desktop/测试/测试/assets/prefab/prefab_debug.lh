@@ -1,0 +1,169 @@
+{
+  "_$ver": 1,
+  "_$id": "z6u6dedz",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "alpha": 0.589,
+  "_$comp": [
+    {
+      "_$type": "bc5cb705-bb50-437e-8787-90153e635b2d",
+      "scriptPath": "../src/debug/DebugPanel.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "m2itarfu",
+      "_$type": "GList",
+      "name": "scene",
+      "width": 1334,
+      "height": 100,
+      "layout": {
+        "type": 2,
+        "rowGap": 20,
+        "columnGap": 20
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "direction": 1,
+        "barDisplay": 5
+      },
+      "_templateNode": {
+        "_$ref": "5wmgztwo",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": 4,
+      "_$child": [
+        {
+          "_$id": "5wmgztwo",
+          "_$type": "GWidget",
+          "name": "node",
+          "width": 200,
+          "height": 100,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#000000"
+          },
+          "_$child": [
+            {
+              "_$id": "b252dvah",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 200,
+              "height": 100,
+              "text": "探索",
+              "fontSize": 30,
+              "color": "#ffffff",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "6033ga8n",
+      "_$type": "GList",
+      "name": "type",
+      "y": 120,
+      "width": 1334,
+      "height": 100,
+      "layout": {
+        "type": 2,
+        "rowGap": 20,
+        "columnGap": 20
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "direction": 1,
+        "barDisplay": 5
+      },
+      "_templateNode": {
+        "_$ref": "sabwguhv",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": null,
+      "_$child": [
+        {
+          "_$id": "sabwguhv",
+          "_$type": "GWidget",
+          "name": "node_2",
+          "width": 200,
+          "height": 100,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#000000"
+          },
+          "_$child": [
+            {
+              "_$id": "u2qu1jee",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 200,
+              "height": 100,
+              "text": "探索",
+              "fontSize": 30,
+              "color": "#ffffff",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "eb6t1b1l",
+      "_$type": "GList",
+      "name": "debug",
+      "y": 240,
+      "width": 1334,
+      "height": 510,
+      "layout": {
+        "type": 3
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "barDisplay": 5
+      },
+      "_templateNode": {
+        "_$ref": "480w1eoa",
+        "_$tmpl": "itemTemplate"
+      },
+      "_initItemNum": null,
+      "_$child": [
+        {
+          "_$id": "480w1eoa",
+          "_$type": "GWidget",
+          "name": "node_1",
+          "width": 200,
+          "height": 100,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#000000"
+          },
+          "_$child": [
+            {
+              "_$id": "jgbdykwg",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 200,
+              "height": 100,
+              "text": "走路",
+              "fontSize": 30,
+              "color": "#ffffff",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

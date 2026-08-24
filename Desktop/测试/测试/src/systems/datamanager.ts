@@ -5,21 +5,23 @@ import { InventoryManager } from "./data/InventoryManager";
 import type { BagView, EquippedItem, EquipmentSlotType, InventoryBucket, InventoryScope, InventorySlotItem, InventoryViewItem, WarehouseView } from "./data/InventoryTypes";
 import { MailManager } from "./data/MailManager";
 import { SaveManager } from "./data/SaveManager";
-import { SignInManager, type SignInRewardDefinition, type SignInRewardView } from "./data/SignInManager";
+import { SignInManager, type SignInRewardDefinition, type SignInRewardView, type SignInUnlockPreview } from "./data/SignInManager";
 import { WarehouseManager } from "./data/WarehouseManager";
 
-export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, CraftingRecipeDefinition, CraftingStationId };
+export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, SignInUnlockPreview, CraftingRecipeDefinition, CraftingStationId };
 
 export interface PlayerStatsSnapshot {
     level: number;
     currentHp: number;
     maxHp: number;
+    currentStamina: number;
+    maxStamina: number;
     experience: number;
     nextLevelExperience: number;
 }
 
 export class DataManager {
-    private static readonly RESET_SAVE_ON_STARTUP = true;
+    private static readonly RESET_SAVE_ON_STARTUP = false;
     private static readonly EQUIPMENT_STORAGE_KEY = "laya_test_equipment_v1";
     private static readonly PLAYER_STATS_STORAGE_KEY = "laya_test_player_stats_v1";
     private static saveResetApplied: boolean = false;
@@ -43,6 +45,8 @@ export class DataManager {
         level: 1,
         currentHp: 100,
         maxHp: 100,
+        currentStamina: 100,
+        maxStamina: 100,
         experience: 0,
         nextLevelExperience: 200,
     };
@@ -107,6 +111,16 @@ export class DataManager {
         }
     }
 
+    public returnToBaseAfterDeath(sceneUrl: string): void {
+        this.playerStats.currentHp = this.playerStats.maxHp;
+        this.playerStats.currentStamina = this.playerStats.maxStamina;
+        this.savePlayerStats();
+        this.inventory.returnToBaseAfterDeath(sceneUrl);
+        if (this.loaded) {
+            this.ensureStarterItems();
+        }
+    }
+
     public getCurrentScope(): InventoryScope {
         return this.inventory.getCurrentScope();
     }
@@ -160,7 +174,27 @@ export class DataManager {
         }
     }
 
-    public grantItemsToWarehouse(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): void {
+    public canGrantItemsToWarehouse(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): boolean {
+        return this.warehouse.canAddItems(this.resolveWarehouseGrantItems(items));
+    }
+
+    public grantItemsToWarehouse(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): boolean {
+        const resolvedItems = this.resolveWarehouseGrantItems(items);
+        if (!this.warehouse.canAddItems(resolvedItems)) {
+            return false;
+        }
+
+        for (let i = 0; i < resolvedItems.length; i++) {
+            this.warehouse.addItem(resolvedItems[i]);
+        }
+
+        this.syncWarehouseViews();
+        return true;
+    }
+
+    private resolveWarehouseGrantItems(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): Array<{ itemId: string; name: string; count: number; icon?: string }> {
+        const resolvedItems: Array<{ itemId: string; name: string; count: number; icon?: string }> = [];
+
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
             if (!item || !item.itemId || !Number.isFinite(item.count) || item.count <= 0) {
@@ -168,15 +202,15 @@ export class DataManager {
             }
 
             const meta = this.resolveItemMeta(item.itemId);
-            this.warehouse.addItem({
+            resolvedItems.push({
                 itemId: item.itemId,
                 name: this.resolveDisplayName(item.itemId, item.name),
-                count: item.count,
+                count: Math.floor(item.count),
                 icon: item.icon || meta?.icon || this.items.resolveFallbackIcon(item.itemId),
             });
         }
 
-        this.syncWarehouseViews();
+        return resolvedItems;
     }
 
     public formatHarvestResults(results: HarvestResultItem[]): string {
@@ -185,6 +219,37 @@ export class DataManager {
 
     public getPlayerStats(): PlayerStatsSnapshot {
         return { ...this.playerStats };
+    }
+
+    public setPlayerHp(currentHp: number, maxHp: number = this.playerStats.maxHp): void {
+        const nextMaxHp = this.normalizePositiveInt(maxHp, this.playerStats.maxHp || 100);
+        const nextCurrentHp = Math.max(0, Math.min(nextMaxHp, this.normalizeInt(currentHp, nextMaxHp)));
+        if (this.playerStats.currentHp === nextCurrentHp && this.playerStats.maxHp === nextMaxHp) {
+            return;
+        }
+
+        this.playerStats = {
+            ...this.playerStats,
+            currentHp: nextCurrentHp,
+            maxHp: nextMaxHp,
+        };
+        this.savePlayerStats();
+        this.inventory.refreshBagViews();
+    }
+
+    public setPlayerStamina(currentStamina: number, maxStamina: number = this.playerStats.maxStamina): void {
+        const nextMaxStamina = this.normalizePositiveInt(maxStamina, this.playerStats.maxStamina || 100);
+        const nextCurrentStamina = Math.max(0, Math.min(nextMaxStamina, this.normalizeInt(currentStamina, nextMaxStamina)));
+        if (this.playerStats.currentStamina === nextCurrentStamina && this.playerStats.maxStamina === nextMaxStamina) {
+            return;
+        }
+
+        this.playerStats = {
+            ...this.playerStats,
+            currentStamina: nextCurrentStamina,
+            maxStamina: nextMaxStamina,
+        };
+        this.savePlayerStats();
     }
 
     public grantGatherExperience(): void {
@@ -201,11 +266,19 @@ export class DataManager {
             return;
         }
 
+        let leveledUp = false;
         this.playerStats.experience += value;
         while (this.playerStats.experience >= this.playerStats.nextLevelExperience) {
             this.playerStats.experience -= this.playerStats.nextLevelExperience;
             this.playerStats.level += 1;
+            this.playerStats.maxHp += 10;
+            this.playerStats.currentHp = this.playerStats.maxHp;
             this.playerStats.nextLevelExperience += 50;
+            leveledUp = true;
+        }
+
+        if (leveledUp) {
+            this.playerStats.currentHp = Math.min(this.playerStats.currentHp, this.playerStats.maxHp);
         }
 
         this.savePlayerStats();
@@ -222,6 +295,18 @@ export class DataManager {
 
     public getSignInRewards(): SignInRewardView[] {
         return this.signIn.getRewardViews((reward) => this.resolveSignInRewardView(reward));
+    }
+
+    public previewSignInUnlock(startDayKey: string, now: Date): SignInUnlockPreview {
+        return this.signIn.previewUnlock(startDayKey, now);
+    }
+
+    public getCurrentSignInDayKey(): string {
+        return this.signIn.getCurrentDayKey();
+    }
+
+    public async syncSignInTimeSource(): Promise<void> {
+        await this.signIn.syncTimeSource();
     }
 
     public getCraftingRecipes(station: CraftingStationId): CraftingRecipeDefinition[] {
@@ -432,6 +517,15 @@ export class DataManager {
         return this.inventory.moveActiveSlot(sourceSlotIndex, targetSlotIndex);
     }
 
+    public moveWarehouseSlot(sourceSlotIndex: number, targetSlotIndex: number): boolean {
+        const moved = this.warehouse.moveSlot(sourceSlotIndex, targetSlotIndex);
+        if (moved) {
+            this.syncWarehouseViews();
+        }
+
+        return moved;
+    }
+
     private async loadJson<T>(url: string, fallbackUrl?: string): Promise<T> {
         try {
             const raw = await Laya.loader.load(url, null, null, Laya.Loader.JSON);
@@ -461,6 +555,7 @@ export class DataManager {
             DataManager.EQUIPMENT_STORAGE_KEY,
             DataManager.PLAYER_STATS_STORAGE_KEY,
             "laya_test_sign_in_v1",
+            "laya_test_mail_v1",
         ]);
     }
 
@@ -573,6 +668,8 @@ export class DataManager {
                 level: 1,
                 currentHp: 100,
                 maxHp: 100,
+                currentStamina: 100,
+                maxStamina: 100,
                 experience: 0,
                 nextLevelExperience: 200,
             };
@@ -582,10 +679,13 @@ export class DataManager {
 
         const level = this.normalizePositiveInt(stored.level, 1);
         const maxHp = this.normalizePositiveInt(stored.maxHp, 100);
+        const maxStamina = this.normalizePositiveInt(stored.maxStamina, 100);
         this.playerStats = {
             level,
             maxHp,
             currentHp: Math.min(maxHp, this.normalizePositiveInt(stored.currentHp, maxHp)),
+            maxStamina,
+            currentStamina: Math.max(0, Math.min(maxStamina, this.normalizeInt(stored.currentStamina, maxStamina))),
             experience: Math.max(0, this.normalizeInt(stored.experience, 0)),
             nextLevelExperience: this.normalizePositiveInt(stored.nextLevelExperience, 200 + Math.max(0, level - 1) * 50),
         };

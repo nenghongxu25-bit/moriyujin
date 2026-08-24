@@ -1,9 +1,12 @@
 ﻿const { regClass, property } = Laya;
 
-import { DouyinLogin } from "./auth/DouyinLogin";
+import { DouyinLogin } from "./platform/douyin/DouyinLogin";
+import { DouyinCloudSaveManager } from "./platform/douyin/DouyinCloudSaveManager";
 
 @regClass()
 export class OpenSprite extends Laya.Script {
+    private static cloudLoginStarted: boolean = false;
+
     @property({ type: Laya.Node })
     public targetNode: Laya.Node | null = null;
 
@@ -13,6 +16,7 @@ export class OpenSprite extends Laya.Script {
     private boundOwner: Laya.Node | null = null;
 
     onAwake(): void {
+        OpenSprite.startCloudLoginOnce();
         this.bindClickTarget();
     }
 
@@ -26,6 +30,17 @@ export class OpenSprite extends Laya.Script {
 
     onDestroy(): void {
         this.unbindClickTarget();
+    }
+
+    private static startCloudLoginOnce(): void {
+        if (OpenSprite.cloudLoginStarted) {
+            return;
+        }
+
+        OpenSprite.cloudLoginStarted = true;
+        console.log("[DouyinCloud] 菜单启动，开始免登录");
+
+        void DouyinCloudSaveManager.bootstrap();
     }
 
     private bindClickTarget(): void {

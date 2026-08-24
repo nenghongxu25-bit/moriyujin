@@ -9,6 +9,12 @@
   "name": "Scene2D",
   "width": 1334,
   "height": 750,
+  "_$comp": [
+    {
+      "_$type": "74505597-ffcd-42bf-a41c-a619d3876601",
+      "scriptPath": "../src/debug/DebugBootstrap.ts"
+    }
+  ],
   "_$child": [
     {
       "_$id": "mdquci96",
@@ -1707,8 +1713,8 @@
                   "_$prefab": "820ef4e9-0dff-4acf-9218-71374ca37124",
                   "name": "oak",
                   "active": true,
-                  "x": -448,
-                  "y": 264,
+                  "x": -615,
+                  "y": -123,
                   "visible": true
                 },
                 {
@@ -1716,8 +1722,8 @@
                   "_$prefab": "da7ea9cc-7f34-4c16-af62-4503bb29ecf1",
                   "name": "pine",
                   "active": true,
-                  "x": 360,
-                  "y": 90,
+                  "x": -2,
+                  "y": -377,
                   "visible": true
                 },
                 {
@@ -1725,8 +1731,8 @@
                   "_$prefab": "7f72840a-eaf6-4fe0-bc7f-d7c1eff0855e",
                   "name": "bush",
                   "active": true,
-                  "x": -295,
-                  "y": 23,
+                  "x": -46,
+                  "y": 94,
                   "visible": true
                 },
                 {
@@ -1734,8 +1740,9 @@
                   "_$prefab": "116de3cb-3e77-4eb8-86d5-3cdb13cd19bf",
                   "name": "stones",
                   "active": true,
-                  "x": 700,
-                  "y": -35,
+                  "x": -247,
+                  "y": 212,
+                  "width": 128,
                   "visible": true
                 },
                 {
@@ -1743,8 +1750,26 @@
                   "_$prefab": "2aba04d5-f51b-4f7b-87a8-af84c6e26002",
                   "name": "branches",
                   "active": true,
-                  "x": 431,
-                  "y": -73,
+                  "x": -324,
+                  "y": -309,
+                  "visible": true
+                },
+                {
+                  "_$id": "syk335yh",
+                  "_$prefab": "da7ea9cc-7f34-4c16-af62-4503bb29ecf1",
+                  "name": "pine_1",
+                  "active": true,
+                  "x": 260,
+                  "y": -645,
+                  "visible": true
+                },
+                {
+                  "_$id": "3hdv4q5g",
+                  "_$prefab": "da7ea9cc-7f34-4c16-af62-4503bb29ecf1",
+                  "name": "pine_2",
+                  "active": true,
+                  "x": 436,
+                  "y": -255,
                   "visible": true
                 }
               ]
@@ -1761,9 +1786,15 @@
                   "_$prefab": "2ae6d8be-52e9-4517-9411-2c733fafabed",
                   "name": "LaevePoint",
                   "active": true,
-                  "x": 0,
-                  "y": 0,
-                  "visible": true
+                  "x": -362,
+                  "y": -748,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$override": "c803dca4-3833-4ccf-ae56-54ed9e6001d5",
+                      "sceneUrl": "scenes/cunzhuang.ls"
+                    }
+                  ]
                 }
               ]
             },
@@ -1795,8 +1826,8 @@
                   "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
                   "name": "zombie_1",
                   "active": true,
-                  "x": -291,
-                  "y": 186,
+                  "x": -333,
+                  "y": -150,
                   "visible": true,
                   "_$comp": [
                     {
@@ -1812,60 +1843,9 @@
                   "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
                   "name": "zombie_2",
                   "active": true,
-                  "x": 708,
-                  "y": -186,
+                  "x": 128,
+                  "y": -323,
                   "rotation": 0,
-                  "visible": true,
-                  "_$comp": [
-                    {
-                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
-                      "playerNode": {
-                        "_$ref": "eojseri5"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "_$id": "zjbfwf0u",
-                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
-                  "name": "zombie_3",
-                  "active": true,
-                  "x": 0,
-                  "y": 0,
-                  "visible": true,
-                  "_$comp": [
-                    {
-                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
-                      "playerNode": {
-                        "_$ref": "eojseri5"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "_$id": "xxouvzeq",
-                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
-                  "name": "zombie_4",
-                  "active": true,
-                  "x": 569,
-                  "y": 96,
-                  "visible": true,
-                  "_$comp": [
-                    {
-                      "_$override": "d8d0b0e8-83ce-4c82-89bf-6f1e5a1d3e17",
-                      "playerNode": {
-                        "_$ref": "eojseri5"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "_$id": "toc35yj9",
-                  "_$prefab": "0a3b4e70-9674-4a61-9a3c-80b7af2e2fc2",
-                  "name": "zombie_5",
-                  "active": true,
-                  "x": 316,
-                  "y": -131,
                   "visible": true,
                   "_$comp": [
                     {
@@ -1897,8 +1877,8 @@
               "_$prefab": "5ea8d755-d42c-43c2-b0e6-04787ff545f0",
               "name": "prefab_player",
               "active": true,
-              "x": 392,
-              "y": 283,
+              "x": -706,
+              "y": 492,
               "visible": true,
               "_$comp": [
                 {
@@ -1912,7 +1892,7 @@
                     ]
                   },
                   "isRunning": false,
-                  "attackAnimation": "attack_swing",
+                  "attackAnimation": "attack/attack_melee_swing",
                   "initialFacingSign": -1
                 }
               ],
@@ -1922,7 +1902,7 @@
                   "_$comp": [
                     {
                       "_$override": "Spine2DRenderNode",
-                      "animationName": "idle",
+                      "animationName": "idle/idle_melee",
                       "skinName": "player_normal",
                       "loop": true
                     }
@@ -1932,10 +1912,12 @@
                   "_$id": "lh500v0q",
                   "_$type": "Sprite",
                   "name": "Sprite",
+                  "active": false,
                   "x": 320,
                   "y": -280,
                   "width": 1334,
                   "height": 750,
+                  "visible": false,
                   "_$comp": [
                     {
                       "_$type": "ShurikenParticle2DRenderer",
@@ -2580,7 +2562,9 @@
             "la1qodvj"
           ],
           "x": 642,
-          "y": 350
+          "y": 350,
+          "visible": false,
+          "active": false
         },
         {
           "_$override": [
@@ -2606,6 +2590,14 @@
               }
             }
           ]
+        },
+        {
+          "_$override": [
+            "drk6pui3",
+            "ej1msfiy"
+          ],
+          "visible": false,
+          "active": false
         },
         {
           "_$override": [

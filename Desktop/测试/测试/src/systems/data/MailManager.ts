@@ -30,6 +30,7 @@ export interface PlayerMail {
 export type MailChangeListener = () => void;
 
 export class MailManager {
+    private static readonly STORAGE_KEY = "laya_test_mail_v1";
     private static instance: MailManager | null = null;
 
     private mails: PlayerMail[] = [];
@@ -42,6 +43,10 @@ export class MailManager {
         }
 
         return MailManager.instance;
+    }
+
+    private constructor() {
+        this.load();
     }
 
     // =========================
@@ -251,6 +256,70 @@ export class MailManager {
     }
 
     private notifyChanged(): void {
+        this.save();
         this.listeners.forEach((listener) => listener());
+    }
+
+    private load(): void {
+        try {
+            const raw = this.getStorage()?.getItem(MailManager.STORAGE_KEY);
+            if (!raw) {
+                return;
+            }
+
+            const parsed = JSON.parse(raw) as PlayerMail[];
+            if (!Array.isArray(parsed)) {
+                return;
+            }
+
+            this.mails = parsed
+                .map((mail) => this.normalizeMail(mail))
+                .filter((mail): mail is PlayerMail => !!mail)
+                .sort((a, b) => b.createdAt - a.createdAt);
+        } catch (error) {
+            console.error("[MailManager] 邮件存档读取失败:", error);
+        }
+    }
+
+    private save(): void {
+        try {
+            this.getStorage()?.setItem(MailManager.STORAGE_KEY, JSON.stringify(this.mails));
+            const scope = globalThis as any;
+            if (scope && typeof scope.__scheduleDouyinCloudSave === "function") {
+                scope.__scheduleDouyinCloudSave();
+            }
+        } catch (error) {
+            console.error("[MailManager] 邮件存档保存失败:", error);
+        }
+    }
+
+    private normalizeMail(mail: Partial<PlayerMail> | null | undefined): PlayerMail | null {
+        if (!mail || typeof mail.id !== "string" || !mail.id) {
+            return null;
+        }
+
+        return {
+            id: mail.id,
+            title: typeof mail.title === "string" ? mail.title : "",
+            content: typeof mail.content === "string" ? mail.content : "",
+            createdAt: Number.isFinite(Number(mail.createdAt)) ? Number(mail.createdAt) : Date.now(),
+            isRead: !!mail.isRead,
+            isClaimed: !!mail.isClaimed,
+            attachments: Array.isArray(mail.attachments)
+                ? mail.attachments
+                    .filter((item) => item && typeof item.itemId === "string" && !!item.itemId)
+                    .map((item) => ({
+                        itemId: item.itemId,
+                        name: typeof item.name === "string" ? item.name : item.itemId,
+                        count: Number.isFinite(Number(item.count)) ? Math.max(1, Math.floor(Number(item.count))) : 1,
+                        icon: typeof item.icon === "string" ? item.icon : undefined,
+                    }))
+                : [],
+        };
+    }
+
+    private getStorage(): Storage | null {
+        const scope = globalThis as any;
+        return scope && scope.localStorage ? scope.localStorage as Storage : null;
     }
 }

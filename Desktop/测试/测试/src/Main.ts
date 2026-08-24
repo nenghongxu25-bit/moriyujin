@@ -1,9 +1,9 @@
 import "./PlayUI/playerui/Joystick";
-import "./PlayUI/button/chop";
-import "./PlayUI/button/dig";
-import "./PlayUI/button/search";
-import "./PlayUI/button/attack";
-import "./PlayUI/button/run";
+import "./PlayUI/playerui/chop";
+import "./PlayUI/playerui/dig";
+import "./PlayUI/playerui/search";
+import "./PlayUI/playerui/attack";
+import "./PlayUI/playerui/run";
 import "./PlayUI/SideBar/SidebarNavigateButton";
 import "./PlayUI/playerui/bag";
 import "./PlayUI/Bag/BagPanel";
@@ -30,9 +30,11 @@ import "./harvestable/mound";
 import "./harvestable/dig";
 import "./harvestable/l1_kuang";
 import "./harvestable/l2_kuang";
+import { DebugGlobalUI } from "./debug/DebugGlobalUI";
+import "./systems/RuntimeDiagnostics";
 import { DataManager } from "./systems/datamanager";
 import { ByteDanceMonetization } from "./platform/ByteDanceMonetization";
-import { DouyinLogin } from "./auth/DouyinLogin";
+import { DouyinLogin } from "./platform/douyin/DouyinLogin";
 
 declare const Laya: any;
 
@@ -45,7 +47,7 @@ export class Main {
         ByteDanceMonetization.bootstrap();
         DouyinLogin.configure({
             loginEndpoint: "",
-            privacyText: "抖音隐私政策",
+            privacyText: "鎶栭煶闅愮鏀跨瓥",
             postLoginSceneUrl: "scenes/cunzhuang.ls",
         });
 
@@ -57,6 +59,9 @@ export class Main {
 
         DataManager.getInstance().enterScene("scenes/menu.ls");
         Laya.Scene.open("scenes/menu.ls");
+        DebugGlobalUI.install();
+        Laya.timer.once(500, null, () => DebugGlobalUI.ensure());
+        Laya.timer.once(1500, null, () => DebugGlobalUI.ensure());
     }
 }
 

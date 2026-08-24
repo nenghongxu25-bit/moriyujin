@@ -7,6 +7,9 @@
   "height": 0,
   "anchorX": 0.5,
   "anchorY": 0.5,
+  "postProcess": {
+    "_$type": "PostProcess2D"
+  },
   "_$comp": [
     {
       "_$type": "76db1d2e-7130-4636-8470-c6615ed7950b",
@@ -14,6 +17,18 @@
       "walkSpeed": 200,
       "runSpeed": 320,
       "moveSpeed": 0,
+      "footstepSoundEnabled": true,
+      "cunzhuangWalkSoundUrl": "sound/sfx/walk/walk_wood.mp3",
+      "cunzhuangRunSoundUrl": "sound/sfx/run/run_wood.mp3",
+      "forestWalkSoundUrl": "sound/sfx/walk/walk_grass.mp3",
+      "forestRunSoundUrl": "sound/sfx/run/run_grass.mp3",
+      "mineWalkSoundUrl": "sound/sfx/walk/walk_floor.wav",
+      "mineRunSoundUrl": "sound/sfx/run/run_inside_floor.mp3",
+      "walkFootstepInterval": 420,
+      "runFootstepInterval": 300,
+      "walkFootstepPlaybackRate": 1,
+      "runFootstepPlaybackRate": 1,
+      "footstepPlaybackRateVariance": 0,
       "isRunning": false,
       "joystickNode": null,
       "spineNode": {
@@ -35,15 +50,33 @@
           "zombie01_hpbar_fill"
         ]
       },
+      "hpBarNode": null,
+      "staminaFillNode": {
+        "_$ref": [
+          "3dvhu6id",
+          "zombie01_hpbar_fill"
+        ]
+      },
+      "staminaBarNode": null,
       "weaponSlotNode": null,
       "weaponIconNode": null,
-      "weaponSpineSlotName": "weapon_slot",
+      "weaponSpineSlotName": "weapon_melee_slot",
+      "weaponMeleeSpineSlotName": "weapon_melee_slot",
+      "weaponRangedSpineSlotName": "weapon_ranged_slot",
       "insertPlateSpineSlotName": "",
       "helmetSpineSlotName": "",
       "armorSpineSlotName": "cloth",
       "currentHp": 100,
       "maxHp": 100,
       "hpFillFullWidth": 70,
+      "currentStamina": 100,
+      "maxStamina": 100,
+      "staminaFillFullWidth": 70,
+      "hpBarRightX": -35,
+      "hpBarLeftX": 35,
+      "staminaBarRightX": -35,
+      "staminaBarLeftX": 35,
+      "deathReturnSceneUrl": "scenes/cunzhuang.ls",
       "initialFacingSign": -1,
       "attackAreaRightX": -100,
       "attackAreaLeftX": 0,
@@ -52,10 +85,14 @@
       "baseAttackPower": 10,
       "attackSpeed": 1,
       "attackDamageRange": 120,
-      "idleAnimation": "idle",
-      "walkAnimation": "walk",
-      "runAnimation": "run",
-      "attackAnimation": "attack_swing",
+      "idleAnimation": "idle/idle_melee",
+      "walkAnimation": "walk/walk_body_lower",
+      "runAnimation": "run/run_body_lower",
+      "attackAnimation": "attack/attack_melee_swing",
+      "layeredSpineAnimationEnabled": true,
+      "upperIdleAnimation": "idle/idle_melee",
+      "upperWalkAnimation": "walk/walk_body_upper_melee",
+      "upperRunAnimation": "run/run_body_upper_melee",
       "attackAnimationDuration": 1067
     }
   ],
@@ -75,8 +112,7 @@
           "useFastRender": false,
           "source": "res://f87ec402-9dd0-4a49-90f0-2352581455dc",
           "skinName": "player_normal",
-          "animationName": "idle",
-          "loop": false,
+          "animationName": "run/run_body_lower",
           "preview": true,
           "offset": {
             "_$type": "Vector2",
@@ -281,6 +317,8 @@
               "width": 70,
               "height": 10,
               "percent": false,
+              "lineWidth": 1,
+              "lineColor": "#000000",
               "fillColor": "#c93826"
             }
           ]
@@ -288,9 +326,20 @@
       ]
     },
     {
+      "_$id": "3dvhu6id",
+      "_$prefab": "f4378889-8436-492a-8fcb-a4a2fac30326",
+      "name": "TlBar_1",
+      "active": true,
+      "x": -35,
+      "y": -142,
+      "visible": true
+    },
+    {
       "_$id": "iybnbz69",
       "_$type": "Sprite",
       "name": "ParticleLayer",
+      "x": 28,
+      "y": 5,
       "width": 100,
       "height": 100,
       "_$child": [
@@ -298,10 +347,12 @@
           "_$id": "subywlda",
           "_$type": "Sprite",
           "name": "restore",
+          "active": false,
           "x": -5,
           "y": 58,
           "width": 100,
           "height": 100,
+          "visible": false,
           "_$comp": [
             {
               "_$type": "ShurikenParticle2DRenderer",

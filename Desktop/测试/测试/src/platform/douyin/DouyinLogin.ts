@@ -1,4 +1,4 @@
-import { DataManager } from "../systems/datamanager";
+import { DataManager } from "../../systems/datamanager";
 
 export interface DouyinLoginConfig {
     loginEndpoint: string;

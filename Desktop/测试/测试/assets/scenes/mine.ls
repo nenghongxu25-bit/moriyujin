@@ -9,6 +9,12 @@
   "name": "Scene2D",
   "width": 1334,
   "height": 750,
+  "_$comp": [
+    {
+      "_$type": "74505597-ffcd-42bf-a41c-a619d3876601",
+      "scriptPath": "../src/debug/DebugBootstrap.ts"
+    }
+  ],
   "_$child": [
     {
       "_$id": "x47lvtdt",
@@ -1866,8 +1872,8 @@
               "_$prefab": "5ea8d755-d42c-43c2-b0e6-04787ff545f0",
               "name": "prefab_player",
               "active": true,
-              "x": 117,
-              "y": -159,
+              "x": -750,
+              "y": 411,
               "visible": true,
               "_$comp": [
                 {
@@ -1906,7 +1912,7 @@
                   "_$comp": [
                     {
                       "_$override": "Spine2DRenderNode",
-                      "animationName": "idle",
+                      "animationName": "idle/idle_melee",
                       "loop": true
                     }
                   ]
@@ -1960,44 +1966,6 @@
         {
           "_$override": "p8xgvne7",
           "name": "BagPanel"
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "rz2srgmu"
-          ],
-          "name": "Contianer"
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "rz2srgmu",
-            "5ao6050k"
-          ],
-          "name": "ContianerList"
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "yhjq0cvz"
-          ],
-          "name": "Bag"
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "yhjq0cvz",
-            "g96x3opi"
-          ],
-          "name": "panel"
-        },
-        {
-          "_$override": [
-            "p8xgvne7",
-            "yhjq0cvz",
-            "7fpks0da"
-          ],
-          "name": "BagList"
         }
       ]
     },

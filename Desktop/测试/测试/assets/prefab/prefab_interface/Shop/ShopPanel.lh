@@ -1,0 +1,221 @@
+{
+  "_$ver": 1,
+  "_$id": "f52shtca",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "xavdnmv7",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 1334,
+      "height": 750,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "fillColor": "#253b46"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "h87ixrhg",
+          "_$type": "Area2D",
+          "name": "Area2D",
+          "x": 99,
+          "y": 37,
+          "width": 1115,
+          "height": 157,
+          "_$child": [
+            {
+              "_$id": "qu3185d1",
+              "_$type": "GWidget",
+              "name": "node",
+              "x": 14,
+              "y": -2,
+              "width": 200,
+              "height": 100,
+              "background": {
+                "_$type": "DrawRoundRectCmd",
+                "lt": 15,
+                "rt": 15,
+                "lb": 15,
+                "rb": 15,
+                "fillColor": "#3ba4a4"
+              },
+              "_$child": [
+                {
+                  "_$id": "0s2z3r2n",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 200,
+                  "height": 100,
+                  "text": "福利",
+                  "fontSize": 40,
+                  "color": "#083838",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "298bcb5e",
+              "_$type": "GWidget",
+              "name": "node_1",
+              "x": 257,
+              "width": 200,
+              "height": 100,
+              "visible": false,
+              "background": {
+                "_$type": "DrawRoundRectCmd",
+                "lt": 15,
+                "rt": 15,
+                "lb": 15,
+                "rb": 15,
+                "fillColor": "#3ba4a4"
+              },
+              "_$child": [
+                {
+                  "_$id": "nie49yni",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 200,
+                  "height": 100,
+                  "text": "铸造神器",
+                  "fontSize": 40,
+                  "color": "#083838",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "eppu6hi1",
+              "_$type": "GWidget",
+              "name": "node_2",
+              "x": 500,
+              "y": 1,
+              "width": 200,
+              "height": 100,
+              "visible": false,
+              "background": {
+                "_$type": "DrawRoundRectCmd",
+                "lt": 15,
+                "rt": 15,
+                "lb": 15,
+                "rb": 15,
+                "fillColor": "#3ba4a4"
+              },
+              "_$child": [
+                {
+                  "_$id": "2nz7zb82",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 200,
+                  "height": 100,
+                  "text": "限定兑换",
+                  "fontSize": 40,
+                  "color": "#083838",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "rd4n21p3",
+          "_$type": "Area2D",
+          "name": "Area2D",
+          "x": 56,
+          "y": 149,
+          "width": 1227,
+          "height": 573,
+          "visible": false,
+          "_$child": [
+            {
+              "_$id": "mdnsjrc8",
+              "_$type": "GList",
+              "name": "list",
+              "x": -5,
+              "y": -14,
+              "width": 1188,
+              "height": 594,
+              "layout": {
+                "type": 3,
+                "rowGap": 20,
+                "columnGap": 20,
+                "padding": [
+                  20,
+                  0,
+                  0,
+                  20
+                ]
+              },
+              "_templateNode": {
+                "_$ref": "ui4dnnz1",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "ui4dnnz1",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 300,
+                  "height": 200,
+                  "_$child": [
+                    {
+                      "_$id": "kkyeeuub",
+                      "_$type": "Sprite",
+                      "name": "Sprite_1",
+                      "width": 300,
+                      "height": 204,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRoundRectCmd",
+                          "lt": 20,
+                          "rt": 20,
+                          "lb": 20,
+                          "rb": 20,
+                          "lineWidth": 5,
+                          "lineColor": "#000000",
+                          "fillColor": "#204694"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "57s88wnv",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "x": 1,
+                          "y": 38,
+                          "width": 300,
+                          "height": 65,
+                          "text": "50废土币",
+                          "fontSize": 40,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,8 +3,8 @@
     "startupScene":  "res://e1682121-64b0-4c26-82c7-f06794c1d501",
     "alwaysIncluded":  [
                            "scenes/menu.ls",
-                           "scenes/main.ls",
                            "scenes/cunzhuang.ls",
+                           "scenes/forest.ls",
                            "scenes/mine.ls",
                            "res://9d0e2ac2-75e8-4fe7-96ed-e56fdfe4c5f0",
                            "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
@@ -93,6 +93,11 @@
                            "res://cbee195e-eed8-464a-8d9e-8d51e0946150",
                            "res://83c6528e-24f7-42e0-8c9d-d24a7516d213",
                            "res://5b10ab82-2c39-4321-9887-4abe87efc799",
+                           "res://657a2c72-7f28-4322-9757-64f85fb08baf",
+                           "res://5c6353a4-723e-43ec-8928-ce66ee780886",
+                           "res://d1d1148e-b41c-42f8-891d-2c9205cd18f2",
+                           "res://4b284b8d-17b4-407b-8f4b-15783772e965",
+                           "res://7da68a2b-0767-421a-8208-36271af348b7",
                            "res://d4742154-d7f6-480c-9247-bdb6de87ef95"
                        ],
     "android":  {

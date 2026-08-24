@@ -1,0 +1,48 @@
+{
+  "_$ver": 1,
+  "_$id": "k92ejoms",
+  "_$type": "Sprite",
+  "name": "TlBar_1",
+  "x": -35,
+  "y": -142,
+  "width": 70,
+  "height": 8,
+  "_$child": [
+    {
+      "_$id": "zombie01_hpbar_bg",
+      "_$type": "Sprite",
+      "name": "Bg",
+      "width": 70,
+      "height": 8,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "width": 70,
+          "height": 10,
+          "percent": false,
+          "lineWidth": 1,
+          "lineColor": "#1f160f",
+          "fillColor": "#3b1f1f"
+        }
+      ]
+    },
+    {
+      "_$id": "zombie01_hpbar_fill",
+      "_$type": "Sprite",
+      "name": "Fill",
+      "width": 68,
+      "height": 6,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "width": 70,
+          "height": 10,
+          "percent": false,
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#928910"
+        }
+      ]
+    }
+  ]
+}

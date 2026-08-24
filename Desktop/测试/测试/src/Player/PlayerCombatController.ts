@@ -22,10 +22,12 @@ export class PlayerCombatController {
         this.controller.animation.playActionAnimation(
             this.controller.attackAnimation,
             lockDuration,
-            this.controller.idleAnimation,
+            undefined,
             attackSpeed,
+            () => {
+                this.controller.consumeStaminaForCompletedAttack();
+            },
         );
-        this.controller.ui.showState("attack", lockDuration);
         Laya.timer.clear(this.controller, this.finishAttack);
         Laya.timer.once(lockDuration, this.controller, this.finishAttack);
     }

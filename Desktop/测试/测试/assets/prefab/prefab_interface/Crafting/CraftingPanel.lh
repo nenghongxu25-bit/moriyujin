@@ -230,6 +230,23 @@
               ]
             }
           ]
+        },
+        {
+          "_$id": "4kp5m8dv",
+          "_$prefab": "bd58ee71-7841-47e3-8f9f-4989d03732bb",
+          "name": "buttonmodule",
+          "active": true,
+          "x": 522,
+          "y": 230,
+          "scaleX": 1.5,
+          "scaleY": 1.5,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "fqr4xd66",
+              "text": "制作"
+            }
+          ]
         }
       ]
     },

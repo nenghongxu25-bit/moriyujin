@@ -11,6 +11,9 @@ export class PlayerMovementController {
     private facingSign: number = 1;
     private attackDirection: number = 1;
     private isMovingNow: boolean = false;
+    private footstepElapsed: number = 0;
+    private lastFootstepUrl: string = "";
+    private readonly blockedFootstepUrls: Record<string, boolean> = {};
 
     constructor(private controller: PlayerController) {
     }
@@ -19,12 +22,14 @@ export class PlayerMovementController {
         this.captureBaseScale();
         this.syncAttackArea();
         this.resolveJoystick();
+        this.preloadFootstepSounds();
     }
 
     public onStart(): void {
         this.captureBaseScale();
         this.syncAttackArea();
         this.resolveJoystick();
+        this.preloadFootstepSounds();
     }
 
     public onUpdate(): void {
@@ -46,6 +51,7 @@ export class PlayerMovementController {
 
         if (magnitude <= 0.0001) {
             this.isMovingNow = false;
+            this.footstepElapsed = 0;
             this.controller.animation.setLocomotionState(this.controller.idleAnimation);
             if ((this.updateFrame++ % 60) === 0) {
             }
@@ -72,6 +78,7 @@ export class PlayerMovementController {
 
         const nextAnimation = this.controller.isRunning ? this.controller.runAnimation : this.controller.walkAnimation;
         this.controller.animation.setLocomotionState(nextAnimation);
+        this.updateFootstepSound();
     }
 
     public getIsMovingNow(): boolean {
@@ -117,6 +124,8 @@ export class PlayerMovementController {
             initialFacingSign: this.controller.initialFacingSign,
             attackAreaRightX: this.controller.attackAreaRightX,
             attackAreaLeftX: this.controller.attackAreaLeftX,
+            footstepElapsed: this.footstepElapsed,
+            lastFootstepUrl: this.lastFootstepUrl,
         };
     }
 
@@ -181,6 +190,118 @@ export class PlayerMovementController {
 
         owner.scaleX = this.baseScaleX * this.facingSign;
         this.syncAttackArea();
+        this.controller.syncStatusBarTransform();
+    }
+
+    private updateFootstepSound(): void {
+        if (!this.controller.footstepSoundEnabled) {
+            this.footstepElapsed = 0;
+            return;
+        }
+
+        const url = this.resolveFootstepUrl();
+        if (!url || this.blockedFootstepUrls[url]) {
+            this.footstepElapsed = 0;
+            return;
+        }
+
+        if (url !== this.lastFootstepUrl) {
+            this.footstepElapsed = 0;
+            this.lastFootstepUrl = url;
+        }
+
+        const interval = Math.max(80, this.controller.isRunning ? this.controller.runFootstepInterval : this.controller.walkFootstepInterval);
+        this.footstepElapsed += Math.max(0, Laya.timer.delta || 0);
+        if (this.footstepElapsed < interval) {
+            return;
+        }
+
+        this.footstepElapsed %= interval;
+        try {
+            const channel = Laya.SoundManager.playSound(url, 1);
+            if (channel) {
+                channel.playbackRate = this.resolveFootstepPlaybackRate();
+            }
+        } catch (error) {
+            this.blockedFootstepUrls[url] = true;
+        }
+    }
+
+    private resolveFootstepPlaybackRate(): number {
+        const baseRate = this.controller.isRunning ? this.controller.runFootstepPlaybackRate : this.controller.walkFootstepPlaybackRate;
+        const variance = Math.max(0, Number(this.controller.footstepPlaybackRateVariance) || 0);
+        const randomOffset = variance > 0 ? (Math.random() * 2 - 1) * variance : 0;
+        return Math.max(0.1, Number(baseRate) + randomOffset || 1);
+    }
+
+    private resolveFootstepUrl(): string {
+        const sceneUrl = this.resolveSceneUrl();
+        const isRunning = this.controller.isRunning;
+
+        if (sceneUrl.includes("mine")) {
+            return this.normalizeSoundUrl(isRunning ? this.controller.mineRunSoundUrl : this.controller.mineWalkSoundUrl);
+        }
+
+        if (sceneUrl.includes("cunzhuang")) {
+            return this.normalizeSoundUrl(isRunning ? this.controller.cunzhuangRunSoundUrl : this.controller.cunzhuangWalkSoundUrl);
+        }
+
+        if (sceneUrl.includes("forest") || sceneUrl.includes("main")) {
+            return this.normalizeSoundUrl(isRunning ? this.controller.forestRunSoundUrl : this.controller.forestWalkSoundUrl);
+        }
+
+        return this.normalizeSoundUrl(isRunning ? this.controller.forestRunSoundUrl : this.controller.forestWalkSoundUrl);
+    }
+
+    private resolveSceneUrl(): string {
+        let node: any = this.owner;
+        while (node) {
+            const url = String(node.url || "");
+            if (url.endsWith(".ls")) {
+                return url.toLowerCase();
+            }
+            node = node.parent;
+        }
+
+        return "";
+    }
+
+    private normalizeSoundUrl(url: string): string {
+        return String(url || "").trim().replace(/^assets\//, "");
+    }
+
+    private preloadFootstepSounds(): void {
+        const urls = [
+            this.controller.cunzhuangWalkSoundUrl,
+            this.controller.cunzhuangRunSoundUrl,
+            this.controller.forestWalkSoundUrl,
+            this.controller.forestRunSoundUrl,
+            this.controller.mineWalkSoundUrl,
+            this.controller.mineRunSoundUrl,
+        ].map((url) => this.normalizeSoundUrl(url)).filter(Boolean);
+
+        for (let i = 0; i < urls.length; i++) {
+            const url = urls[i];
+            if (this.blockedFootstepUrls[url]) {
+                continue;
+            }
+
+            try {
+                const loaded = Laya.loader.getRes?.(url);
+                if (loaded) {
+                    continue;
+                }
+
+                const result = Laya.loader.load(url);
+                if (result && typeof result.catch === "function") {
+                    result.catch(() => {
+                        this.blockedFootstepUrls[url] = true;
+                    });
+                }
+            } catch (error) {
+                this.blockedFootstepUrls[url] = true;
+            }
+        }
     }
 
     private captureBaseScale(): void {
@@ -193,5 +314,6 @@ export class PlayerMovementController {
         this.facingSign = sign;
         this.baseScaleX = Math.abs(owner.scaleX || 1);
         owner.scaleX = this.baseScaleX * this.facingSign;
+        this.controller.syncStatusBarTransform();
     }
 }

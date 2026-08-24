@@ -15,6 +15,7 @@ export class SignInPanel extends Laya.Script {
     public dayCount: number = 31;
 
     private rewards: SignInRewardView[] = [];
+    private refreshToken: number = 0;
 
     onAwake(): void {
         this.resolveBindings();
@@ -27,6 +28,16 @@ export class SignInPanel extends Laya.Script {
     }
 
     public refresh(): void {
+        void this.refreshAsync();
+    }
+
+    private async refreshAsync(): Promise<void> {
+        const token = ++this.refreshToken;
+        await DataManager.getInstance().syncSignInTimeSource();
+        if (token !== this.refreshToken) {
+            return;
+        }
+
         const list = this.listNode as any;
         if (!list) {
             return;
@@ -99,12 +110,13 @@ export class SignInPanel extends Laya.Script {
         target.on(Laya.Event.CLICK, this, this.onItemClick, [slotNode]);
     }
 
-    private onItemClick(slotNode: Laya.Node): void {
+    private async onItemClick(slotNode: Laya.Node): Promise<void> {
         const item = slotNode.getComponent(SignInDayItem);
         if (!item || item.getState() !== "claimable") {
             return;
         }
 
+        await DataManager.getInstance().syncSignInTimeSource();
         if (DataManager.getInstance().claimSignInReward(item.getDay())) {
             this.refresh();
         }

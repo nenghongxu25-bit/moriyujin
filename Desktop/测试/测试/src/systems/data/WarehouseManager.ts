@@ -87,11 +87,49 @@ export class WarehouseManager {
         const emptyIndex = this.findEmptySlotIndex();
         if (emptyIndex >= 0) {
             this.placeItemAt(emptyIndex, item);
-        } else {
-            this.items.push({ ...item });
+            this.save();
+            return true;
         }
 
-        this.save();
+        return false;
+    }
+
+    public canAddItems(items: InventoryViewItem[]): boolean {
+        const incoming = Array.isArray(items)
+            ? items.filter((item) => item && !!item.itemId && Number.isFinite(item.count) && item.count > 0)
+            : [];
+        if (incoming.length === 0) {
+            return true;
+        }
+
+        const occupiedIds = new Set<string>();
+        let usedSlots = 0;
+        const limit = Math.max(0, this.slotCount);
+
+        for (let i = 0; i < Math.min(this.items.length, limit); i++) {
+            const item = this.items[i];
+            if (!item || !item.itemId) {
+                continue;
+            }
+
+            usedSlots += 1;
+            occupiedIds.add(item.itemId);
+        }
+
+        for (let i = 0; i < incoming.length; i++) {
+            const itemId = incoming[i].itemId || "";
+            if (!itemId || occupiedIds.has(itemId)) {
+                continue;
+            }
+
+            if (usedSlots >= limit) {
+                return false;
+            }
+
+            usedSlots += 1;
+            occupiedIds.add(itemId);
+        }
+
         return true;
     }
 
@@ -109,6 +147,32 @@ export class WarehouseManager {
         this.items[index] = null;
         this.save();
         return { ...item };
+    }
+
+    public moveSlot(sourceSlotIndex: number, targetSlotIndex: number): boolean {
+        const sourceIndex = this.normalizeSlotIndex(sourceSlotIndex);
+        const targetIndex = this.normalizeSlotIndex(targetSlotIndex);
+        if (sourceIndex === null || targetIndex === null || sourceIndex === targetIndex) {
+            return false;
+        }
+
+        if (sourceIndex >= this.slotCount || targetIndex >= this.slotCount) {
+            return false;
+        }
+
+        while (this.items.length <= Math.max(sourceIndex, targetIndex)) {
+            this.items.push(null);
+        }
+
+        const sourceItem = this.items[sourceIndex];
+        if (!sourceItem) {
+            return false;
+        }
+
+        this.items[sourceIndex] = this.items[targetIndex] || null;
+        this.items[targetIndex] = sourceItem;
+        this.save();
+        return true;
     }
 
     public canPlaceItemAt(slotIndex: number, itemId: string): boolean {
@@ -144,7 +208,7 @@ export class WarehouseManager {
     }
 
     private findEmptySlotIndex(): number {
-        for (let i = 0; i < this.items.length; i++) {
+        for (let i = 0; i < this.slotCount; i++) {
             if (!this.items[i]) {
                 return i;
             }
@@ -156,6 +220,10 @@ export class WarehouseManager {
     private placeItemAt(slotIndex: number, item: InventoryViewItem): void {
         const normalized = this.normalizeSlotIndex(slotIndex);
         if (normalized === null) {
+            return;
+        }
+
+        if (normalized >= this.slotCount) {
             return;
         }
 
