@@ -706,19 +706,27 @@ export class DataManager {
     }
 
     private ensureStarterItems(): void {
-        if (this.hasActiveItem("wood_club") || this.equippedItems.weapon?.itemId === "wood_club") {
-            return;
+        const starterItemIds = ["wood_club", "m16"];
+        const missingItems: Array<{ itemId: string; name?: string; count: number; icon?: string }> = [];
+
+        for (let i = 0; i < starterItemIds.length; i++) {
+            const itemId = starterItemIds[i];
+            if (this.hasActiveItem(itemId) || this.equippedItems.weapon?.itemId === itemId) {
+                continue;
+            }
+
+            const meta = this.resolveItemMeta(itemId);
+            missingItems.push({
+                itemId,
+                name: meta?.displayName || this.resolveFallbackName(itemId) || itemId,
+                count: 1,
+                icon: meta?.icon || this.resolveFallbackIcon(itemId),
+            });
         }
 
-        const meta = this.resolveItemMeta("wood_club");
-        this.grantItemsToActive([
-            {
-                itemId: "wood_club",
-                name: meta?.displayName || "简易木棒",
-                count: 1,
-                icon: meta?.icon || this.resolveFallbackIcon("wood_club"),
-            },
-        ]);
+        if (missingItems.length > 0) {
+            this.grantItemsToActive(missingItems);
+        }
     }
 
     private hasActiveItem(itemId: string): boolean {

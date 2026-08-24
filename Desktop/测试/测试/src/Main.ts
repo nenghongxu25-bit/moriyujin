@@ -30,8 +30,6 @@ import "./harvestable/mound";
 import "./harvestable/dig";
 import "./harvestable/l1_kuang";
 import "./harvestable/l2_kuang";
-import { DebugGlobalUI } from "./debug/DebugGlobalUI";
-import "./systems/RuntimeDiagnostics";
 import { DataManager } from "./systems/datamanager";
 import { ByteDanceMonetization } from "./platform/ByteDanceMonetization";
 import { DouyinLogin } from "./platform/douyin/DouyinLogin";
@@ -59,9 +57,6 @@ export class Main {
 
         DataManager.getInstance().enterScene("scenes/menu.ls");
         Laya.Scene.open("scenes/menu.ls");
-        DebugGlobalUI.install();
-        Laya.timer.once(500, null, () => DebugGlobalUI.ensure());
-        Laya.timer.once(1500, null, () => DebugGlobalUI.ensure());
     }
 }
 

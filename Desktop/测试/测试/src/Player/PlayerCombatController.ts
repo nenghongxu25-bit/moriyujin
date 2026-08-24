@@ -20,7 +20,7 @@ export class PlayerCombatController {
         this.controller.beginAttackHit();
         this.setAttackNodeVisible(true);
         this.controller.animation.playActionAnimation(
-            this.controller.attackAnimation,
+            this.controller.resolveAttackAnimation(),
             lockDuration,
             undefined,
             attackSpeed,

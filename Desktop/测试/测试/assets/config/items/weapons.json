@@ -104,6 +104,19 @@
             "durability": 65,
             "consumable": false,
             "description": "基础近战武器"
+        },
+        {
+            "id": "m16",
+            "displayName": "M16",
+            "nameZh": "M16",
+            "subCategory": "ranged",
+            "icon": "atlas/picture/items/weapons/rangeds/m16.png",
+            "stackMax": 1,
+            "attackPower": 18,
+            "attackSpeed": 1,
+            "durability": 80,
+            "consumable": false,
+            "description": "Ranged weapon"
         }
     ]
 }

@@ -53,7 +53,11 @@
       "stateListNode": {
         "_$ref": "na986ikc"
       },
-      "previewWeaponSpineSlotName": "weapon_slot",
+      "previewWeaponSpineSlotName": "",
+      "previewWeaponMeleeSpineSlotName": "weapon_melee_slot",
+      "previewWeaponRangedSpineSlotName": "weapon_ranged_slot",
+      "previewMeleeAnimation": "default/default_melee_swing",
+      "previewRangedAnimation": "default/default_ranged_firearm",
       "defaultState": 0
     }
   ],
@@ -241,7 +245,7 @@
                       "layer": 0,
                       "source": "res://f87ec402-9dd0-4a49-90f0-2352581455dc",
                       "skinName": "player_normal",
-                      "animationName": "idle",
+                      "animationName": "default/default_melee_swing",
                       "physicsUpdate": 2,
                       "premultipliedAlpha": true
                     }
@@ -352,12 +356,10 @@
                   "_$id": "orpay4vn",
                   "_$type": "Sprite",
                   "name": "text_2",
-                  "active": false,
                   "x": 251,
                   "y": 431,
                   "width": 100,
                   "height": 100,
-                  "visible": false,
                   "_$child": [
                     {
                       "_$id": "h2cc0uqh",
@@ -440,12 +442,10 @@
                   "_$id": "na986ikc",
                   "_$type": "GList",
                   "name": "statelist",
-                  "active": false,
                   "x": 314,
                   "y": 447,
                   "width": 220,
                   "height": 110,
-                  "visible": false,
                   "background": {
                     "_$type": "DrawRoundRectCmd",
                     "lt": 15,

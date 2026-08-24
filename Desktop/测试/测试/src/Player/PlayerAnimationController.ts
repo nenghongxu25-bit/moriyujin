@@ -112,6 +112,13 @@ export class PlayerAnimationController {
         return this.actionSequenceActive;
     }
 
+    public invalidateLocomotion(): void {
+        this.currentAnimation = "";
+        this.currentLowerAnimation = "";
+        this.currentUpperAnimation = "";
+        this.sync(true);
+    }
+
     public snapshot(): Record<string, any> {
         return {
             currentAnimation: this.currentAnimation,
@@ -139,12 +146,20 @@ export class PlayerAnimationController {
             return false;
         }
 
+        if (!this.hasAnimation(animationName)) {
+            return false;
+        }
+
         (this.spine as any).play(animationName, loop, 0);
         return true;
     }
 
     private playSpineTrack(animationName: string, loop: boolean, trackIndex: number): boolean {
         if (!this.spine || !this.isReady()) {
+            return false;
+        }
+
+        if (!this.hasAnimation(animationName)) {
             return false;
         }
 
@@ -156,6 +171,39 @@ export class PlayerAnimationController {
         }
 
         render.play(animationName, loop, trackIndex);
+        return true;
+    }
+
+    private hasAnimation(animationName: string): boolean {
+        if (!this.spine) {
+            return false;
+        }
+
+        const name = String(animationName || "").trim();
+        if (!name) {
+            return false;
+        }
+
+        const templet = (this.spine as any).templet;
+        if (templet && typeof templet.hasAnimation === "function") {
+            return !!templet.hasAnimation(name);
+        }
+
+        const anySpine = this.spine as any;
+        if (templet && typeof anySpine.getAnimNum === "function" && typeof anySpine.getAniNameByIndex === "function") {
+            try {
+                const count = Math.max(0, Number(anySpine.getAnimNum()) || 0);
+                for (let i = 0; i < count; i++) {
+                    if (anySpine.getAniNameByIndex(i) === name) {
+                        return true;
+                    }
+                }
+                return false;
+            } catch (error) {
+                return true;
+            }
+        }
+
         return true;
     }
 
@@ -255,7 +303,10 @@ export class PlayerAnimationController {
             }
 
             if (duration > 0) {
-                Laya.timer.once(duration + 50, this, advanceStep);
+                const advanceDelay = this.controller.layeredSpineAnimationEnabled
+                    ? Math.max(1, duration - 34)
+                    : duration + 50;
+                Laya.timer.once(advanceDelay, this, advanceStep);
             }
         } else if (duration > 0) {
             Laya.timer.once(duration, this, advanceStep);
@@ -417,15 +468,7 @@ export class PlayerAnimationController {
     }
 
     private resolveUpperLocomotionAnimation(lowerAnimation: string): string {
-        if (lowerAnimation === this.controller.runAnimation) {
-            return this.controller.upperRunAnimation || this.controller.upperIdleAnimation || lowerAnimation;
-        }
-
-        if (lowerAnimation === this.controller.walkAnimation) {
-            return this.controller.upperWalkAnimation || this.controller.upperIdleAnimation || lowerAnimation;
-        }
-
-        return this.controller.upperIdleAnimation || lowerAnimation;
+        return this.controller.resolveUpperLocomotionAnimation(lowerAnimation);
     }
 
 }

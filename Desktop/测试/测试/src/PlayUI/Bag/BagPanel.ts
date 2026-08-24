@@ -69,7 +69,19 @@ export class BagPanel extends Laya.Script {
     public stateListNode: Laya.Node | null = null;
 
     @property(String)
-    public previewWeaponSpineSlotName: string = "weapon_slot";
+    public previewWeaponSpineSlotName: string = "";
+
+    @property(String)
+    public previewWeaponMeleeSpineSlotName: string = "weapon_melee_slot";
+
+    @property(String)
+    public previewWeaponRangedSpineSlotName: string = "weapon_ranged_slot";
+
+    @property(String)
+    public previewMeleeAnimation: string = "default/default_melee_swing";
+
+    @property(String)
+    public previewRangedAnimation: string = "default/default_ranged_firearm";
 
     @property(Number)
     public defaultState: number = 0;
@@ -79,6 +91,7 @@ export class BagPanel extends Laya.Script {
     private containerGlist: glist | null = null;
     private selectedBagSlot: SelectedBagSlotState | null = null;
     private lastPreviewWeaponAttachmentName: string = "__init";
+    private lastPreviewAnimationName: string = "__init";
     private previewSpineNode: Laya.Node | null = null;
     private quickEquipInitialVisible: boolean | null = null;
 
@@ -561,13 +574,15 @@ export class BagPanel extends Laya.Script {
     }
 
     private refreshPreviewSpineWeapon(): void {
-        const slotName = String(this.previewWeaponSpineSlotName || "").trim();
+        const slotName = this.resolvePreviewWeaponSpineSlotName();
         if (!slotName) {
             return;
         }
 
         const weapon = DataManager.getInstance().getEquippedItem("weapon");
         const attachmentName = weapon ? this.resolveWeaponAttachmentName(weapon.itemId) : "";
+        this.refreshPreviewSpineAnimation();
+        this.clearInactivePreviewWeaponSlot(slotName);
         if (!attachmentName) {
             if (this.lastPreviewWeaponAttachmentName) {
                 if (this.applyPreviewSpineAttachment(slotName, null)) {
@@ -605,14 +620,119 @@ export class BagPanel extends Laya.Script {
             knife: "weapon_slot2",
             long_knife: "weapon_slot5",
             machete: "weapon_slot6",
+            m16: "weapon_ranged_M16",
         };
 
         return map[itemId] || "";
     }
 
+    private resolvePreviewWeaponSpineSlotName(): string {
+        if (this.isPreviewRangedWeapon()) {
+            return String(this.previewWeaponRangedSpineSlotName || this.previewWeaponSpineSlotName || "").trim();
+        }
+
+        return String(this.previewWeaponMeleeSpineSlotName || this.previewWeaponSpineSlotName || "").trim();
+    }
+
+    private isPreviewRangedWeapon(): boolean {
+        const weapon = DataManager.getInstance().getEquippedItem("weapon");
+        if (!weapon || !weapon.itemId) {
+            return false;
+        }
+
+        const meta = DataManager.getInstance().resolveItemMeta(weapon.itemId);
+        const subCategory = String(meta?.subCategory || "").toLowerCase();
+        return subCategory.includes("ranged");
+    }
+
+    private refreshPreviewSpineAnimation(): void {
+        const animationName = this.resolvePreviewSpineAnimationName();
+        if (!animationName || animationName === this.lastPreviewAnimationName) {
+            return;
+        }
+
+        const spine = this.getPreviewSpine();
+        if (!spine) {
+            Laya.timer.callLater(this, this.refreshPreviewSpineAnimation);
+            return;
+        }
+
+        if (!this.isPreviewSpineReady(spine)) {
+            Laya.timer.callLater(this, this.refreshPreviewSpineAnimation);
+            return;
+        }
+
+        if (!this.hasPreviewAnimation(spine, animationName)) {
+            return;
+        }
+
+        try {
+            spine.play(animationName, true, true);
+            this.lastPreviewAnimationName = animationName;
+        } catch (error) {
+            Laya.timer.callLater(this, this.refreshPreviewSpineAnimation);
+        }
+    }
+
+    private resolvePreviewSpineAnimationName(): string {
+        return this.isPreviewRangedWeapon()
+            ? String(this.previewRangedAnimation || this.previewMeleeAnimation || "").trim()
+            : String(this.previewMeleeAnimation || "").trim();
+    }
+
+    private hasPreviewAnimation(spine: Laya.Spine2DRenderNode, animationName: string): boolean {
+        const templet = (spine as any).templet;
+        if (templet && typeof templet.hasAnimation === "function") {
+            return !!templet.hasAnimation(animationName);
+        }
+
+        const anySpine = spine as any;
+        if (templet && typeof anySpine.getAnimNum === "function" && typeof anySpine.getAniNameByIndex === "function") {
+            const count = Math.max(0, Number(anySpine.getAnimNum()) || 0);
+            for (let i = 0; i < count; i++) {
+                if (anySpine.getAniNameByIndex(i) === animationName) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        return true;
+    }
+
+    private isPreviewSpineReady(spine: Laya.Spine2DRenderNode): boolean {
+        const anySpine = spine as any;
+        const templet = anySpine.templet;
+        if (!templet) {
+            return false;
+        }
+
+        if (typeof templet.getAnimationCount === "function") {
+            try {
+                return Number(templet.getAnimationCount()) > 0;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private clearInactivePreviewWeaponSlot(activeSlotName: string): void {
+        const meleeSlotName = String(this.previewWeaponMeleeSpineSlotName || "").trim();
+        const rangedSlotName = String(this.previewWeaponRangedSpineSlotName || "").trim();
+
+        if (meleeSlotName && meleeSlotName !== activeSlotName) {
+            this.applyPreviewSpineAttachment(meleeSlotName, null);
+        }
+
+        if (rangedSlotName && rangedSlotName !== activeSlotName) {
+            this.applyPreviewSpineAttachment(rangedSlotName, null);
+        }
+    }
+
     private applyPreviewSpineAttachment(slotName: string, attachmentName: string | null): boolean {
-        const spineNode = this.previewSpineNode || this.findChildByName(this.personPageNode, "Sprite");
-        const spine = spineNode ? spineNode.getComponent(Laya.Spine2DRenderNode) : null;
+        const spine = this.getPreviewSpine();
         if (!spine) {
             return false;
         }
@@ -637,6 +757,11 @@ export class BagPanel extends Laya.Script {
         }
 
         return false;
+    }
+
+    private getPreviewSpine(): Laya.Spine2DRenderNode | null {
+        const spineNode = this.previewSpineNode || this.findChildByName(this.personPageNode, "Sprite");
+        return spineNode ? spineNode.getComponent(Laya.Spine2DRenderNode) : null;
     }
 
     private findChildByName(root: Laya.Node | null, name: string): Laya.Node | null {

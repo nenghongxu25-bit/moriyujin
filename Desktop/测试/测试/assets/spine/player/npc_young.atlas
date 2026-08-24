@@ -117,9 +117,12 @@ bounds:2,2,1088,1136
 offsets:79,67,1254,1254
 
 npc_young_6.png
-size:199,61
+size:199,115
 filter:Linear,Linear
 pma:true
+weapon_ranged/AK47
+bounds:2,2,182,52
+offsets:7,41,200,133
 weapon_ranged/M16
-bounds:2,2,195,57
+bounds:2,56,195,57
 offsets:3,34,200,133

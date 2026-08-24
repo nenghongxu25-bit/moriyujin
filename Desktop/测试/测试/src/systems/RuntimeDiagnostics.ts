@@ -60,17 +60,26 @@ const EQUIPMENT_SLOTS: EquipmentSlotType[] = ["insertPlate", "helmet", "weapon",
 const CRAFTING_STATIONS: CraftingStationId[] = ["campfire", "pengrenji", "processing", "equipment", "manufacture", "medicine", "advance"];
 
 export class RuntimeDiagnostics {
+    private static readonly ENABLE_RUNTIME_DIAGNOSTICS = false;
     private static readonly TEST_BUTTON_NAME = "__FeatureIntegrityTestButton";
     private static readonly TEST_PANEL_NAME = "__FeatureIntegrityTestPanel";
     private static installingButton: boolean = false;
 
     public static install(): void {
+        if (!RuntimeDiagnostics.ENABLE_RUNTIME_DIAGNOSTICS) {
+            return;
+        }
+
         const scope = globalThis as any;
         scope.runFeatureIntegrityTest = (options?: RuntimeDiagnosticOptions) => RuntimeDiagnostics.runAndLog(options);
         scope.FeatureIntegrityTest = RuntimeDiagnostics;
     }
 
     public static ensureButton(): void {
+        if (!RuntimeDiagnostics.ENABLE_RUNTIME_DIAGNOSTICS) {
+            return;
+        }
+
         const stage = Laya.stage;
         if (!stage) {
             return;

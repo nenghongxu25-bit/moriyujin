@@ -15,9 +15,9 @@ export class dig extends HarvestableBase {
             once: true,
             range: 170,
             sequence: [
-                { animation: "attack_swing", duration: 1067, loop: false },
-                { animation: "attack_swing", duration: 1067, loop: false },
-                { animation: "attack_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
             ],
             drops: DataManager.getInstance().getHarvestDrops("harvestable_dig", [
                 {

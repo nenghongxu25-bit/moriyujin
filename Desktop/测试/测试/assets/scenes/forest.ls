@@ -9,12 +9,6 @@
   "name": "Scene2D",
   "width": 1334,
   "height": 750,
-  "_$comp": [
-    {
-      "_$type": "74505597-ffcd-42bf-a41c-a619d3876601",
-      "scriptPath": "../src/debug/DebugBootstrap.ts"
-    }
-  ],
   "_$child": [
     {
       "_$id": "mdquci96",
@@ -1902,7 +1896,7 @@
                   "_$comp": [
                     {
                       "_$override": "Spine2DRenderNode",
-                      "animationName": "idle/idle_melee",
+                      "animationName": "idle/idle_melee_swing",
                       "skinName": "player_normal",
                       "loop": true
                     }
@@ -2563,8 +2557,8 @@
           ],
           "x": 642,
           "y": 350,
-          "visible": false,
-          "active": false
+          "visible": true,
+          "active": true
         },
         {
           "_$override": [
@@ -2715,6 +2709,14 @@
               }
             }
           ]
+        },
+        {
+          "_$override": [
+            "p8xgvne7",
+            "eavb30xg"
+          ],
+          "visible": true,
+          "active": true
         },
         {
           "_$override": [

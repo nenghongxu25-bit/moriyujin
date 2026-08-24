@@ -9,12 +9,6 @@
   "name": "Scene2D",
   "width": 1334,
   "height": 750,
-  "_$comp": [
-    {
-      "_$type": "74505597-ffcd-42bf-a41c-a619d3876601",
-      "scriptPath": "../src/debug/DebugBootstrap.ts"
-    }
-  ],
   "_$child": [
     {
       "_$id": "qjbatchd",

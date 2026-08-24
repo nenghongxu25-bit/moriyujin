@@ -170,7 +170,7 @@ export class PlayerController extends Laya.Script {
     public attackDamageRange: number = 120;
 
     @property(String)
-    public idleAnimation: string = "idle/idle_melee";
+    public idleAnimation: string = "idle/idle_melee_swing";
 
     @property(String)
     public walkAnimation: string = "walk/walk_body_lower";
@@ -181,17 +181,29 @@ export class PlayerController extends Laya.Script {
     @property(String)
     public attackAnimation: string = "attack/attack_melee_swing";
 
+    @property(String)
+    public rangedAttackAnimation: string = "attack/attack_ranged_firearm";
+
     @property(Boolean)
     public layeredSpineAnimationEnabled: boolean = true;
 
     @property(String)
-    public upperIdleAnimation: string = "idle/idle_melee";
+    public upperIdleAnimation: string = "idle/idle_melee_swing";
 
     @property(String)
-    public upperWalkAnimation: string = "walk/walk_body_upper_melee";
+    public upperWalkAnimation: string = "walk/walk_body_upper_melee_swing";
 
     @property(String)
-    public upperRunAnimation: string = "run/run_body_upper_melee";
+    public upperRunAnimation: string = "run/run_body_upper_melee_swing";
+
+    @property(String)
+    public rangedUpperIdleAnimation: string = "idle/idle_ranged_firearm";
+
+    @property(String)
+    public rangedUpperWalkAnimation: string = "walk/walk_body_upper_ranged_firearm";
+
+    @property(String)
+    public rangedUpperRunAnimation: string = "run/run_body_upper_ranged_firearm";
 
     @property(Number)
     public attackAnimationDuration: number = 1067;
@@ -297,6 +309,7 @@ export class PlayerController extends Laya.Script {
         this.lastEquipmentSignature = signature;
         this.attackPower = Math.max(0, Math.floor((this.baseAttackPower || 0) + dataManager.getEquipmentAttackBonus()));
         this.attackSpeed = Math.max(0.1, dataManager.getEquipmentAttackSpeed());
+        this.animation?.invalidateLocomotion();
         this.syncEquipmentSpineSlots(true);
     }
 
@@ -469,7 +482,7 @@ export class PlayerController extends Laya.Script {
     }
 
     public syncWeaponSpineSlot(force: boolean = false): void {
-        const activeSlotName = String(this.weaponSpineSlotName || this.weaponMeleeSpineSlotName || "").trim();
+        const activeSlotName = this.resolveActiveWeaponSpineSlotName();
         const meleeSlotName = String(this.weaponMeleeSpineSlotName || "").trim();
         const rangedSlotName = String(this.weaponRangedSpineSlotName || "").trim();
 
@@ -482,6 +495,35 @@ export class PlayerController extends Laya.Script {
         }
 
         this.syncEquipmentSpineSlot("weapon", activeSlotName, force);
+    }
+
+    public resolveUpperLocomotionAnimation(lowerAnimation: string): string {
+        const ranged = this.isEquippedRangedWeapon();
+        const idle = ranged
+            ? this.rangedUpperIdleAnimation || this.upperIdleAnimation
+            : this.upperIdleAnimation;
+
+        if (lowerAnimation === this.runAnimation) {
+            return ranged
+                ? this.rangedUpperRunAnimation || idle || lowerAnimation
+                : this.upperRunAnimation || idle || lowerAnimation;
+        }
+
+        if (lowerAnimation === this.walkAnimation) {
+            return ranged
+                ? this.rangedUpperWalkAnimation || idle || lowerAnimation
+                : this.upperWalkAnimation || idle || lowerAnimation;
+        }
+
+        return idle || lowerAnimation;
+    }
+
+    public resolveAttackAnimation(): string {
+        if (this.isEquippedRangedWeapon()) {
+            return this.rangedAttackAnimation || this.attackAnimation;
+        }
+
+        return this.attackAnimation;
     }
 
     public syncEquipmentSpineSlots(force: boolean = false): void {
@@ -558,9 +600,29 @@ export class PlayerController extends Laya.Script {
             knife: "weapon_slot2",
             long_knife: "weapon_slot5",
             machete: "weapon_slot6",
+            m16: "weapon_ranged_M16",
         };
 
         return map[itemId] || "";
+    }
+
+    private resolveActiveWeaponSpineSlotName(): string {
+        if (this.isEquippedRangedWeapon()) {
+            return String(this.weaponRangedSpineSlotName || this.weaponSpineSlotName || "").trim();
+        }
+
+        return String(this.weaponMeleeSpineSlotName || this.weaponSpineSlotName || "").trim();
+    }
+
+    public isEquippedRangedWeapon(): boolean {
+        const weapon = DataManager.getInstance().getEquippedItem("weapon");
+        if (!weapon || !weapon.itemId) {
+            return false;
+        }
+
+        const meta = DataManager.getInstance().resolveItemMeta(weapon.itemId);
+        const subCategory = String(meta?.subCategory || "").toLowerCase();
+        return subCategory.includes("ranged");
     }
 
     private applySpineSlotAttachment(slotName: string, attachmentName: string | null): boolean {
