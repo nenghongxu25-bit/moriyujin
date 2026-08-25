@@ -3,12 +3,12 @@
   "_$id": "bshvx403",
   "_$type": "GWidget",
   "name": "Root",
-  "width": 800,
-  "height": 460,
+  "width": 1334,
+  "height": 750,
   "_$comp": [
     {
       "_$type": "7f7b2a1a-0d2d-4f07-8b2d-2df6fef0a4a1",
-      "scriptPath": "../src/PlayUI/module/MailPanel.ts",
+      "scriptPath": "../src/PlayUI/Mail/MailPanel.ts",
       "mailListNode": {
         "_$ref": "dialog_entry_list"
       },
@@ -21,9 +21,8 @@
       "getRewardButton": {
         "_$ref": "jf6o4une"
       },
-      "rewardTargetNode": {
-        "_$ref": "sbsnrylr"
-      }
+      "rewardTargetNode": null,
+      "messageText": null
     }
   ],
   "_$child": [
@@ -31,6 +30,8 @@
       "_$id": "01ljwcs9",
       "_$type": "GPanel",
       "name": "panel",
+      "x": 262,
+      "y": 155,
       "width": 800,
       "height": 450,
       "background": {
@@ -85,7 +86,7 @@
           "_$comp": [
             {
               "_$type": "080df137-6a67-4706-8c99-3c2ec24808fa",
-              "scriptPath": "../src/PlayUI/module/MailList.ts",
+              "scriptPath": "../src/PlayUI/Mail/MailList.ts",
               "listNode": {
                 "_$ref": "dialog_entry_list"
               },
@@ -107,7 +108,7 @@
               "_$comp": [
                 {
                   "_$type": "e9b896f7-3773-4c57-9cf1-0e13c09838da",
-                  "scriptPath": "../src/PlayUI/module/MailTemplate.ts",
+                  "scriptPath": "../src/PlayUI/Mail/MailTemplate.ts",
                   "titleText": {
                     "_$ref": [
                       "hwwbrbgj",
@@ -234,14 +235,15 @@
                   "_$comp": [
                     {
                       "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
-                      "scriptPath": "../src/PlayUI/module/glist.ts",
+                      "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
                       "listNode": {
                         "_$ref": "9bryjchh"
                       },
                       "templateNode": {
                         "_$ref": "kf7cmfk3"
                       },
-                      "slotCount": 0
+                      "slotCount": 0,
+                      "selectionEnabled": true
                     }
                   ],
                   "_$child": [
@@ -267,8 +269,8 @@
       "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
       "name": "CloseSprite",
       "active": true,
-      "x": 345,
-      "y": 377,
+      "x": 900,
+      "y": 543,
       "scaleX": 0.5,
       "scaleY": 0.5,
       "visible": true,

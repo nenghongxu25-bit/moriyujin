@@ -20,18 +20,74 @@
   "_$comp": [
     {
       "_$type": "3db5f4f4-1d50-4b5c-a876-7bc6f7a7eb10",
-      "scriptPath": "../src/PlayUI/attack.ts",
-      "playerNode": null
+      "scriptPath": "../src/PlayUI/playerui/attack.ts",
+      "playerNode": null,
+      "attackBase": {
+        "_$ref": "t42e6rru"
+      },
+      "attackHandle": {
+        "_$ref": "jcp3rvp9"
+      },
+      "radius": 48,
+      "dragThreshold": 16,
+      "tapMaxDistance": 14,
+      "meleeAutoAttackEnabled": true
     }
   ],
   "_$child": [
     {
-      "_$id": "img_attack",
-      "_$type": "GImage",
-      "name": "img",
+      "_$id": "t42e6rru",
+      "_$type": "Sprite",
+      "name": "base",
       "width": 128,
       "height": 128,
-      "src": "res://576268ab-59ee-4c26-b364-e23e18435ca5"
+      "alpha": 0.2,
+      "_gcmds": [
+        {
+          "_$type": "DrawCircleCmd",
+          "x": 0.5,
+          "y": 0.5,
+          "radius": 0.5,
+          "percent": true,
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#ffffff"
+        }
+      ]
+    },
+    {
+      "_$id": "jcp3rvp9",
+      "_$type": "Sprite",
+      "name": "handle",
+      "x": 14,
+      "y": 14,
+      "width": 100,
+      "height": 100,
+      "_gcmds": [
+        {
+          "_$type": "DrawCircleCmd",
+          "x": 0.5,
+          "y": 0.5,
+          "radius": 0.5,
+          "percent": true,
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#8b3131"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "img_attack",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 10,
+          "y": 15,
+          "width": 80,
+          "height": 80,
+          "src": "res://cbee195e-eed8-464a-8d9e-8d51e0946150",
+          "autoSize": false
+        }
+      ]
     }
   ]
 }

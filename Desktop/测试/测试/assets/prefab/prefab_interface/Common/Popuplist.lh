@@ -1,0 +1,44 @@
+{
+  "_$ver": 1,
+  "_$id": "s6kyeiyq",
+  "_$type": "GList",
+  "name": "Popuplist",
+  "x": 24,
+  "y": 60,
+  "width": 80,
+  "height": 90,
+  "layout": {
+    "type": 1
+  },
+  "_templateNode": {
+    "_$ref": "rkg7dfv2",
+    "_$tmpl": "itemTemplate"
+  },
+  "_initItemNum": 3,
+  "_$child": [
+    {
+      "_$id": "rkg7dfv2",
+      "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+      "name": "bt",
+      "active": true,
+      "x": 0,
+      "y": 0,
+      "width": 80,
+      "height": 30,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "3oei1uz6",
+          "width": 80,
+          "height": 30
+        },
+        {
+          "_$override": "qwk816k0",
+          "width": 80,
+          "height": 30,
+          "fontSize": 20
+        }
+      ]
+    }
+  ]
+}

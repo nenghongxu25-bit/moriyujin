@@ -15,6 +15,9 @@ export class glist extends Laya.Script {
     @property(Number)
     public slotCount: number = 0;
 
+    @property(Boolean)
+    public selectionEnabled: boolean = true;
+
     public listKey: string = "";
     public onSlotClick: GListSlotClickHandler | null = null;
 
@@ -70,6 +73,15 @@ export class glist extends Laya.Script {
         }
 
         this.hideTemplateNode();
+        this.renderSlots();
+        Laya.timer.callLater(this, this.renderSlots);
+    }
+
+    private renderSlots(): void {
+        const listRoot = this.getListRoot();
+        if (!listRoot) {
+            return;
+        }
 
         const children = listRoot.children || [];
         const maxSlots = Math.max(0, Math.floor(this.slotCount));
@@ -82,18 +94,20 @@ export class glist extends Laya.Script {
                 continue;
             }
 
-            const slot = slotNode.getComponent(listTemplate);
+            let slot = slotNode.getComponent(listTemplate);
             if (!slot) {
-                continue;
+                slot = slotNode.addComponent(listTemplate);
             }
 
             const item = this.items[dataIndex] || null;
             slot.bindData(item);
-            const selected =
-                this.selectedSlotIndex >= 0
-                    ? i === this.selectedSlotIndex && !!item
-                    : !!item && !!item.itemId && item.itemId === this.selectedItemId;
-            slot.setSelected(selected);
+            if (this.selectionEnabled) {
+                const selected =
+                    this.selectedSlotIndex >= 0
+                        ? i === this.selectedSlotIndex && !!item
+                        : !!item && !!item.itemId && item.itemId === this.selectedItemId;
+                slot.setSelected(selected);
+            }
             this.bindSlotClick(slotNode, i);
             dataIndex++;
         }

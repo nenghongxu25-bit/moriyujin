@@ -1690,7 +1690,7 @@
           "_$child": [
             {
               "_$override": "la1qodvj",
-              "visible": false
+              "visible": true
             },
             {
               "_$override": [
@@ -1723,7 +1723,17 @@
             },
             {
               "_$override": "ej1msfiy",
-              "visible": false
+              "visible": true,
+              "_$comp": [
+                {
+                  "_$type": "2938a217-4272-4f6d-aaf2-984b61320b26",
+                  "scriptPath": "../src/OpenSprite.ts",
+                  "targetNode": {
+                    "_$ref": "euevxv64"
+                  },
+                  "actionId": ""
+                }
+              ]
             },
             {
               "_$override": "mokveb9e",
@@ -2078,8 +2088,8 @@
               "_$prefab": "ba7354b5-c50c-400f-8dc6-7010cb184079",
               "name": "CraftingPanel",
               "active": true,
-              "x": 215,
-              "y": 101,
+              "x": 0,
+              "y": 0,
               "visible": false,
               "_$child": [
                 {
@@ -2145,7 +2155,7 @@
                 },
                 {
                   "_$override": "eavb30xg",
-                  "active": false
+                  "active": true
                 },
                 {
                   "_$override": "vzkfe927",
@@ -2176,8 +2186,8 @@
               "_$prefab": "a59fd96f-ba7b-4f76-9899-82f97c113bd7",
               "name": "MailPanel",
               "active": true,
-              "x": 268,
-              "y": 137,
+              "x": 0,
+              "y": 0,
               "visible": false,
               "alpha": 1,
               "_$comp": [
@@ -2190,8 +2200,8 @@
                       "sbsnrylr"
                     ]
                   },
-                  "warehouseFullText": {
-                    "_$ref": "3k3ro5g1"
+                  "messageText": {
+                    "_$ref": "iczt30jd"
                   }
                 }
               ],
@@ -2238,19 +2248,60 @@
               "x": 0,
               "y": 0,
               "visible": false
+            },
+            {
+              "_$id": "euevxv64",
+              "_$prefab": "952f2456-5258-42ea-9928-7fa0dc233070",
+              "name": "MakePanel",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": false,
+              "_$comp": [
+                {
+                  "_$override": "e7a82e0d-ec39-4ac1-9518-f70baf987b54",
+                  "messageTextNode": {
+                    "_$ref": "iczt30jd"
+                  }
+                }
+              ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "_$id": "4c5squ0r",
+      "_$prefab": "5963ec7e-fa31-4699-9c4e-b09c35dca815",
+      "name": "ad",
+      "active": true,
+      "x": 307,
+      "y": 294,
+      "visible": false,
+      "_$comp": [
         {
-          "_$id": "3k3ro5g1",
+          "_$override": "9c1f431e-702b-42bf-90f0-04f0f7e01a13",
+          "buttonNode": {
+            "_$ref": "4c5squ0r"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "5abopbdc",
+      "_$type": "Sprite",
+      "name": "text",
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "iczt30jd",
           "_$type": "Text",
-          "name": "Text",
-          "x": 518,
-          "y": 395,
-          "width": 299,
-          "height": 54,
-          "text": "111",
-          "fontSize": 35,
+          "name": "broadcast",
+          "width": 1334,
+          "height": 750,
+          "text": "Text",
+          "fontSize": 40,
           "color": "#000000",
           "bold": true,
           "align": "center",

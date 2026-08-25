@@ -1,0 +1,25 @@
+{
+    "category": "medicines",
+    "items": [
+        {
+            "id": "bandage",
+            "displayName": "绷带",
+            "nameZh": "绷带",
+            "subCategory": "medicine",
+            "icon": "atlas/picture/items/medicines/bandage.png",
+            "stackMax": 20,
+            "consumable": true,
+            "description": "恢复少量生命"
+        },
+        {
+            "id": "kangfuyao",
+            "displayName": "康复药",
+            "nameZh": "康复药",
+            "subCategory": "medicine",
+            "icon": "atlas/picture/items/medicines/kangfuyao.png",
+            "stackMax": 20,
+            "consumable": true,
+            "description": "恢复生命"
+        }
+    ]
+}

@@ -60,7 +60,9 @@ export class InventoryManager {
         }
 
         this.runInventory.length = 0;
+        this.baseInventory.length = 0;
         this.currentScope = "base";
+        this.saveManager.saveInventory(InventoryManager.BASE_STORAGE_KEY, this.baseInventory);
         this.syncBagViews();
     }
 
@@ -92,6 +94,60 @@ export class InventoryManager {
         return snapshot;
     }
 
+    public getItemCount(itemId: string): number {
+        const normalizedItemId = String(itemId || "").trim();
+        if (!normalizedItemId) {
+            return 0;
+        }
+
+        let count = 0;
+        const inventory = this.getActiveInventory();
+        for (let i = 0; i < inventory.length; i++) {
+            const item = inventory[i];
+            if (item && item.itemId === normalizedItemId) {
+                count += Math.max(0, Math.floor(item.count || 0));
+            }
+        }
+
+        return count;
+    }
+
+    public consumeItem(itemId: string, count: number): number {
+        const normalizedItemId = String(itemId || "").trim();
+        let remaining = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : 0;
+        if (!normalizedItemId || remaining <= 0) {
+            return 0;
+        }
+
+        let consumed = 0;
+        const inventory = this.getActiveInventory();
+        for (let i = 0; i < inventory.length && remaining > 0; i++) {
+            const item = inventory[i];
+            if (!item || item.itemId !== normalizedItemId) {
+                continue;
+            }
+
+            const available = Math.max(0, Math.floor(item.count || 0));
+            const used = Math.min(available, remaining);
+            if (used <= 0) {
+                continue;
+            }
+
+            item.count = available - used;
+            if (item.count <= 0) {
+                inventory[i] = null;
+            }
+            remaining -= used;
+            consumed += used;
+        }
+
+        if (consumed > 0) {
+            this.persistCurrentScope();
+            this.syncBagViews();
+        }
+
+        return consumed;
+    }
     public registerBagView(view: BagView): void {
         this.bagViews.add(view);
         view.setItems(this.getInventorySnapshot());
@@ -138,6 +194,57 @@ export class InventoryManager {
         this.persistCurrentScope();
         this.syncBagViews();
         return { ...item };
+    }
+
+    public removeActiveSlot(slotIndex: number): InventoryViewItem | null {
+        const index = this.normalizeSlotIndex(slotIndex);
+        if (index === null) {
+            return null;
+        }
+
+        const inventory = this.getActiveInventory();
+        const item = inventory[index] || null;
+        if (!item) {
+            return null;
+        }
+
+        inventory[index] = null;
+        this.persistCurrentScope();
+        this.syncBagViews();
+        return { ...item };
+    }
+
+    public consumeActiveSlotItem(slotIndex: number, count: number): InventoryViewItem | null {
+        const index = this.normalizeSlotIndex(slotIndex);
+        const amount = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : 0;
+        if (index === null || amount <= 0) {
+            return null;
+        }
+
+        const inventory = this.getActiveInventory();
+        const item = inventory[index] || null;
+        if (!item) {
+            return null;
+        }
+
+        const consumed = Math.min(Math.max(0, Math.floor(item.count || 0)), amount);
+        if (consumed <= 0) {
+            return null;
+        }
+
+        item.count -= consumed;
+        if (item.count <= 0) {
+            inventory[index] = null;
+        }
+
+        this.persistCurrentScope();
+        this.syncBagViews();
+        return {
+            itemId: item.itemId,
+            name: item.name,
+            count: consumed,
+            icon: item.icon,
+        };
     }
 
     public moveActiveSlot(sourceSlotIndex: number, targetSlotIndex: number): boolean {
@@ -196,6 +303,24 @@ export class InventoryManager {
         this.persistCurrentScope();
         this.syncBagViews();
         return true;
+    }
+
+    public swapActiveSlotItem(slotIndex: number, item: InventoryViewItem | null): InventoryViewItem | null {
+        const index = this.normalizeSlotIndex(slotIndex);
+        if (index === null) {
+            return null;
+        }
+
+        const inventory = this.getActiveInventory();
+        while (inventory.length <= index) {
+            inventory.push(null);
+        }
+
+        const previous = inventory[index] || null;
+        inventory[index] = item ? { ...item } : null;
+        this.persistCurrentScope();
+        this.syncBagViews();
+        return previous ? { ...previous } : null;
     }
 
     private syncBagViews(): void {

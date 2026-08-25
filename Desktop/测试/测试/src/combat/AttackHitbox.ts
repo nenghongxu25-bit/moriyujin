@@ -18,8 +18,6 @@ export class AttackHitbox extends Laya.Script {
     @property(String)
     public targetKind: string = "enemy";
 
-    private hitTokens: WeakMap<object, number> = new WeakMap();
-
     onAwake(): void {
         this.bind();
     }
@@ -30,12 +28,10 @@ export class AttackHitbox extends Laya.Script {
 
     onDisable(): void {
         this.unbind();
-        this.hitTokens = new WeakMap();
     }
 
     onDestroy(): void {
         this.unbind();
-        this.hitTokens = new WeakMap();
     }
 
     private bind(): void {
@@ -55,7 +51,7 @@ export class AttackHitbox extends Laya.Script {
         }
     }
 
-    private onTriggerEnter(other: any): void {
+    public onTriggerEnter(other: any): void {
         const attacker = this.resolveAttacker();
         if (!attacker) {
             return;
@@ -80,12 +76,6 @@ export class AttackHitbox extends Laya.Script {
             return;
         }
 
-        const key = receiver as object;
-        if (this.hitTokens.get(key) === token) {
-            return;
-        }
-
-        this.hitTokens.set(key, token);
         receiver.takeDamage(attacker.attackPower);
     }
 

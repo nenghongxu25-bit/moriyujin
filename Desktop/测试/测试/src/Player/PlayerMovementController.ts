@@ -10,6 +10,7 @@ export class PlayerMovementController {
     private baseScaleX: number = 1;
     private facingSign: number = 1;
     private attackDirection: number = 1;
+    private attackFacingLocked: boolean = false;
     private isMovingNow: boolean = false;
     private footstepElapsed: number = 0;
     private lastFootstepUrl: string = "";
@@ -74,7 +75,9 @@ export class PlayerMovementController {
 
         sprite.x += dx;
         sprite.y += dy;
-        this.updateFacing(nx);
+        if (!this.attackFacingLocked) {
+            this.updateFacing(nx);
+        }
 
         const nextAnimation = this.controller.isRunning ? this.controller.runAnimation : this.controller.walkAnimation;
         this.controller.animation.setLocomotionState(nextAnimation);
@@ -106,6 +109,22 @@ export class PlayerMovementController {
         return this.attackDirection;
     }
 
+    public setAttackFacingByDirection(x: number, y: number = 0): boolean {
+        const magnitude = Math.sqrt(x * x + y * y);
+        if (magnitude <= 0.0001 || Math.abs(x) <= 0.1) {
+            this.attackFacingLocked = true;
+            return false;
+        }
+
+        this.attackFacingLocked = true;
+        this.applyHorizontalFacing(x > 0 ? 1 : -1);
+        return true;
+    }
+
+    public clearAttackFacingOverride(): void {
+        this.attackFacingLocked = false;
+    }
+
     public getResolveSource(): string {
         return this.resolveSource;
     }
@@ -124,6 +143,7 @@ export class PlayerMovementController {
             initialFacingSign: this.controller.initialFacingSign,
             attackAreaRightX: this.controller.attackAreaRightX,
             attackAreaLeftX: this.controller.attackAreaLeftX,
+            attackFacingLocked: this.attackFacingLocked,
             footstepElapsed: this.footstepElapsed,
             lastFootstepUrl: this.lastFootstepUrl,
         };
@@ -173,21 +193,26 @@ export class PlayerMovementController {
             return;
         }
 
-        let changed = false;
         if (moveX > 0.1) {
-            this.attackDirection = 1;
-            this.facingSign = this.controller.initialFacingSign >= 0 ? 1 : -1;
-            changed = true;
+            this.applyHorizontalFacing(1);
         } else if (moveX < -0.1) {
-            this.attackDirection = -1;
-            this.facingSign = this.controller.initialFacingSign >= 0 ? -1 : 1;
-            changed = true;
+            this.applyHorizontalFacing(-1);
         }
+    }
 
-        if (!changed) {
+    private applyHorizontalFacing(direction: number): void {
+        const owner = this.owner as Laya.Sprite;
+        if (!owner) {
             return;
         }
 
+        const normalizedDirection = direction >= 0 ? 1 : -1;
+        if (this.attackDirection === normalizedDirection) {
+            return;
+        }
+
+        this.attackDirection = normalizedDirection;
+        this.facingSign = this.controller.initialFacingSign >= 0 ? normalizedDirection : -normalizedDirection;
         owner.scaleX = this.baseScaleX * this.facingSign;
         this.syncAttackArea();
         this.controller.syncStatusBarTransform();

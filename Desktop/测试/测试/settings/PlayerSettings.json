@@ -5,7 +5,6 @@
   },
   "physics2D": {
     "defaultConfig": {
-      "debugDraw": true,
       "drawAABB": true,
       "drawCenterOfMass": true
     }

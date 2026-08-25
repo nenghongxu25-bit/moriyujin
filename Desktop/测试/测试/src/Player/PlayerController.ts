@@ -2,7 +2,7 @@ const { regClass, property } = Laya;
 
 import { PlayerMovementController } from "./PlayerMovementController";
 import { PlayerUIHints } from "./PlayerUIHints";
-import { PlayerCombatController } from "./PlayerCombatController";
+import { PlayerCombatController, type PlayerAttackOptions } from "./PlayerCombatController";
 import { PlayerAnimationController } from "./PlayerAnimationController";
 import { DataManager, type EquipmentSlotType } from "../systems/datamanager";
 
@@ -169,6 +169,30 @@ export class PlayerController extends Laya.Script {
     @property(Number)
     public attackDamageRange: number = 120;
 
+    @property(Number)
+    public attackHitboxShowDelay: number = 0;
+
+    @property(Number)
+    public attackHitboxVisibleDuration: number = 200;
+
+    @property(Number)
+    public rangedAttackRange: number = 520;
+
+    @property(Number)
+    public rangedAttackWidth: number = 90;
+
+    @property(Number)
+    public rangedAttackHitDelay: number = 220;
+
+    @property(Number)
+    public rangedChargeDuration: number = 900;
+
+    @property(Number)
+    public rangedMinDamageMultiplier: number = 0.75;
+
+    @property(Number)
+    public rangedMaxDamageMultiplier: number = 2;
+
     @property(String)
     public idleAnimation: string = "idle/idle_melee_swing";
 
@@ -216,6 +240,8 @@ export class PlayerController extends Laya.Script {
     private staminaTickElapsed: number = 0;
     private deathReturnTriggered: boolean = false;
     private lastEquipmentSignature: string = "__init";
+    private lastWeaponVisualSignature: string = "__init";
+    private equipmentVisualInitAttempts: number = 0;
     private readonly lastEquipmentIconUrls: Record<EquipmentSlotType, string> = {
         insertPlate: "",
         helmet: "",
@@ -244,8 +270,8 @@ export class PlayerController extends Laya.Script {
         this.refreshHpBar();
         this.refreshStaminaBar();
         this.syncEquipmentStats();
-        Laya.timer.callLater(this, this.syncEquipmentSpineSlots);
         this.animation.onAwake();
+        this.scheduleEquipmentVisualInitialization();
     }
 
     onStart(): void {
@@ -259,8 +285,8 @@ export class PlayerController extends Laya.Script {
         this.refreshHpBar();
         this.refreshStaminaBar();
         this.syncEquipmentStats();
-        Laya.timer.callLater(this, this.syncEquipmentSpineSlots);
         this.animation.onStart();
+        this.scheduleEquipmentVisualInitialization();
     }
 
     onUpdate(): void {
@@ -268,7 +294,6 @@ export class PlayerController extends Laya.Script {
         this.updateStamina();
         this.syncEquipmentStats();
         this.animation.onUpdate();
-        this.syncEquipmentSpineSlots();
     }
 
     onDestroy(): void {
@@ -279,10 +304,23 @@ export class PlayerController extends Laya.Script {
         this.animation?.onDestroy();
         this.combat?.onDestroy();
         this.ui?.onDestroy();
+        Laya.timer.clear(this, this.tryInitializeEquipmentVisuals);
     }
 
-    public playAttack(): void {
-        this.combat.playAttack();
+    public playAttack(queueIfBusy: boolean = false, options: PlayerAttackOptions = {}): boolean {
+        return this.combat.playAttack(queueIfBusy, options);
+    }
+
+    public clearQueuedAttack(): void {
+        this.combat.clearQueuedAttack();
+    }
+
+    public setAttackFacingByDirection(x: number, y: number = 0): boolean {
+        return this.movement.setAttackFacingByDirection(x, y);
+    }
+
+    public clearAttackFacingOverride(): void {
+        this.movement.clearAttackFacingOverride();
     }
 
     public beginAttackHit(): number {
@@ -310,7 +348,7 @@ export class PlayerController extends Laya.Script {
         this.attackPower = Math.max(0, Math.floor((this.baseAttackPower || 0) + dataManager.getEquipmentAttackBonus()));
         this.attackSpeed = Math.max(0.1, dataManager.getEquipmentAttackSpeed());
         this.animation?.invalidateLocomotion();
-        this.syncEquipmentSpineSlots(true);
+        this.scheduleEquipmentVisualInitialization();
     }
 
     public setRunningState(value: boolean): void {
@@ -481,20 +519,32 @@ export class PlayerController extends Laya.Script {
         sprite.scaleX = facingRight ? -1 : 1;
     }
 
-    public syncWeaponSpineSlot(force: boolean = false): void {
+    public syncWeaponSpineSlot(force: boolean = false): boolean {
         const activeSlotName = this.resolveActiveWeaponSpineSlotName();
         const meleeSlotName = String(this.weaponMeleeSpineSlotName || "").trim();
         const rangedSlotName = String(this.weaponRangedSpineSlotName || "").trim();
+        const visualSignature = this.resolveWeaponVisualSignature(activeSlotName);
+        const shouldForce = force || visualSignature !== this.lastWeaponVisualSignature;
 
-        if (meleeSlotName && meleeSlotName !== activeSlotName) {
-            this.clearSpineSlotAttachment(meleeSlotName);
+        if (shouldForce) {
+            let cleared = true;
+            if (meleeSlotName) {
+                cleared = this.clearSpineSlotAttachment(meleeSlotName) && cleared;
+            }
+            if (rangedSlotName) {
+                cleared = this.clearSpineSlotAttachment(rangedSlotName) && cleared;
+            }
+            if (!cleared) {
+                return false;
+            }
         }
 
-        if (rangedSlotName && rangedSlotName !== activeSlotName) {
-            this.clearSpineSlotAttachment(rangedSlotName);
+        if (this.syncEquipmentSpineSlot("weapon", activeSlotName, shouldForce)) {
+            this.lastWeaponVisualSignature = visualSignature;
+            return true;
         }
 
-        this.syncEquipmentSpineSlot("weapon", activeSlotName, force);
+        return false;
     }
 
     public resolveUpperLocomotionAnimation(lowerAnimation: string): string {
@@ -526,17 +576,19 @@ export class PlayerController extends Laya.Script {
         return this.attackAnimation;
     }
 
-    public syncEquipmentSpineSlots(force: boolean = false): void {
-        this.syncEquipmentSpineSlot("insertPlate", this.insertPlateSpineSlotName, force);
-        this.syncEquipmentSpineSlot("helmet", this.helmetSpineSlotName, force);
-        this.syncWeaponSpineSlot(force);
-        this.syncEquipmentSpineSlot("armor", this.armorSpineSlotName, force);
+    public syncEquipmentSpineSlots(force: boolean = false): boolean {
+        let success = true;
+        success = this.syncEquipmentSpineSlot("insertPlate", this.insertPlateSpineSlotName, force) && success;
+        success = this.syncEquipmentSpineSlot("helmet", this.helmetSpineSlotName, force) && success;
+        success = this.syncWeaponSpineSlot(force) && success;
+        success = this.syncEquipmentSpineSlot("armor", this.armorSpineSlotName, force) && success;
+        return success;
     }
 
-    private syncEquipmentSpineSlot(slot: EquipmentSlotType, spineSlotName: string, force: boolean): void {
+    private syncEquipmentSpineSlot(slot: EquipmentSlotType, spineSlotName: string, force: boolean): boolean {
         const slotName = String(spineSlotName || "").trim();
         if (!slotName) {
-            return;
+            return true;
         }
 
         const attachmentName = this.resolveEquippedAttachmentName(slot);
@@ -545,25 +597,52 @@ export class PlayerController extends Laya.Script {
                 if (this.clearSpineSlotAttachment(slotName)) {
                     this.lastEquipmentAttachmentNames[slot] = "";
                     this.lastEquipmentIconUrls[slot] = "";
+                    return true;
                 }
+                return false;
             }
-            return;
+            return true;
         }
 
         if (!force && attachmentName === this.lastEquipmentAttachmentNames[slot]) {
-            return;
+            return true;
         }
 
         if (this.applySpineSlotAttachment(slotName, attachmentName)) {
             this.lastEquipmentAttachmentNames[slot] = attachmentName;
             this.lastEquipmentIconUrls[slot] = this.resolveEquippedItemIconUrl(slot);
+            return true;
         }
+
+        return false;
     }
 
     public refreshEquipmentFromData(): void {
         this.lastEquipmentSignature = "__force";
+        this.lastWeaponVisualSignature = "__force";
         this.syncEquipmentStats();
-        this.syncEquipmentSpineSlots(true);
+        this.scheduleEquipmentVisualInitialization();
+    }
+
+    public refreshEquipmentVisualsFromData(): boolean {
+        return this.syncEquipmentSpineSlots(true);
+    }
+
+    private scheduleEquipmentVisualInitialization(): void {
+        Laya.timer.clear(this, this.tryInitializeEquipmentVisuals);
+        this.equipmentVisualInitAttempts = 0;
+        this.tryInitializeEquipmentVisuals();
+    }
+
+    private tryInitializeEquipmentVisuals = (): void => {
+        this.equipmentVisualInitAttempts += 1;
+        if (this.refreshEquipmentVisualsFromData()) {
+            return;
+        }
+
+        if (this.equipmentVisualInitAttempts < 20) {
+            Laya.timer.once(50, this, this.tryInitializeEquipmentVisuals);
+        }
     }
 
     private resolveEquippedItemIconUrl(slot: EquipmentSlotType): string {
@@ -614,6 +693,21 @@ export class PlayerController extends Laya.Script {
         return String(this.weaponMeleeSpineSlotName || this.weaponSpineSlotName || "").trim();
     }
 
+    private resolveWeaponVisualSignature(activeSlotName: string): string {
+        const weapon = DataManager.getInstance().getEquippedItem("weapon");
+        const itemId = weapon?.itemId || "";
+        const attachmentName = itemId ? this.resolveWeaponAttachmentName(itemId) : "";
+        const ranged = this.isEquippedRangedWeapon() ? "ranged" : "melee";
+        return [
+            ranged,
+            itemId,
+            attachmentName,
+            activeSlotName,
+            String(this.weaponMeleeSpineSlotName || "").trim(),
+            String(this.weaponRangedSpineSlotName || "").trim(),
+        ].join("|");
+    }
+
     public isEquippedRangedWeapon(): boolean {
         const weapon = DataManager.getInstance().getEquippedItem("weapon");
         if (!weapon || !weapon.itemId) {
@@ -623,6 +717,122 @@ export class PlayerController extends Laya.Script {
         const meta = DataManager.getInstance().resolveItemMeta(weapon.itemId);
         const subCategory = String(meta?.subCategory || "").toLowerCase();
         return subCategory.includes("ranged");
+    }
+
+    public applyRangedAttackDamage(options: PlayerAttackOptions = {}): boolean {
+        const target = this.resolveRangedAttackTarget(options);
+        if (!target) {
+            return false;
+        }
+
+        target.receiver.takeDamage(this.resolveRangedAttackDamage(options.chargeRatio));
+        return true;
+    }
+
+    public resolveRangedChargeRatio(heldMs: number, dragRatio: number): number {
+        const duration = Math.max(1, this.rangedChargeDuration || 1);
+        const timeRatio = Math.max(0, Math.min(1, heldMs / duration));
+        const aimRatio = Math.max(0, Math.min(1, dragRatio));
+        return Math.max(timeRatio, aimRatio);
+    }
+
+    private resolveRangedAttackDamage(chargeRatio: number = 0): number {
+        const ratio = Math.max(0, Math.min(1, Number(chargeRatio) || 0));
+        const minMultiplier = Math.max(0, Number(this.rangedMinDamageMultiplier) || 0);
+        const maxMultiplier = Math.max(minMultiplier, Number(this.rangedMaxDamageMultiplier) || minMultiplier);
+        const multiplier = minMultiplier + (maxMultiplier - minMultiplier) * ratio;
+        return Math.max(1, Math.floor((this.attackPower || 0) * multiplier));
+    }
+
+    private resolveRangedAttackTarget(options: PlayerAttackOptions): { receiver: { takeDamage(amount: number): void }; distance: number } | null {
+        const owner = this.owner as Laya.Sprite | null;
+        if (!owner || !Laya.stage) {
+            return null;
+        }
+
+        const origin = this.getGlobalPosition(owner);
+        const direction = this.resolveRangedDirection(options);
+        const range = Math.max(1, this.rangedAttackRange || this.attackDamageRange || 1);
+        const halfWidth = Math.max(1, (this.rangedAttackWidth || 1) / 2);
+        let best: { receiver: { takeDamage(amount: number): void }; distance: number } | null = null;
+
+        this.visitNodes(Laya.stage, (node) => {
+            if (node === this.owner) {
+                return;
+            }
+
+            const receiver = this.findDamageReceiver(node);
+            if (!receiver || (receiver.isDead && receiver.isDead())) {
+                return;
+            }
+
+            const point = this.getGlobalPosition(node as Laya.Sprite);
+            const dx = point.x - origin.x;
+            const dy = point.y - origin.y;
+            const forward = dx * direction.x + dy * direction.y;
+            if (forward <= 0 || forward > range) {
+                return;
+            }
+
+            const side = Math.abs(dx * direction.y - dy * direction.x);
+            if (side > halfWidth) {
+                return;
+            }
+
+            if (!best || forward < best.distance) {
+                best = { receiver, distance: forward };
+            }
+        });
+
+        return best;
+    }
+
+    private resolveRangedDirection(options: PlayerAttackOptions): { x: number; y: number } {
+        let x = Number(options.directionX) || 0;
+        let y = Number(options.directionY) || 0;
+        const magnitude = Math.sqrt(x * x + y * y);
+        if (magnitude > 0.0001) {
+            return { x: x / magnitude, y: y / magnitude };
+        }
+
+        x = this.movement?.getAttackDirection() || 1;
+        return { x: x >= 0 ? 1 : -1, y: 0 };
+    }
+
+    private findDamageReceiver(node: Laya.Node | null): ({ takeDamage(amount: number): void; isDead?(): boolean } | null) {
+        const components = (node as any)?._components || (node as any)?.components || [];
+        for (let i = 0; i < components.length; i++) {
+            const component = components[i] as any;
+            if (component === this || !component || typeof component.takeDamage !== "function") {
+                continue;
+            }
+
+            if (typeof component.isDead === "function") {
+                return component;
+            }
+        }
+
+        return null;
+    }
+
+    private visitNodes(root: Laya.Node | null, visitor: (node: Laya.Node) => void): void {
+        if (!root) {
+            return;
+        }
+
+        visitor(root);
+        const childCount = (root as any).numChildren || 0;
+        for (let i = 0; i < childCount; i++) {
+            this.visitNodes(root.getChildAt(i), visitor);
+        }
+    }
+
+    private getGlobalPosition(node: Laya.Sprite): Laya.Point {
+        const point = new Laya.Point();
+        if (node && typeof node.localToGlobal === "function") {
+            node.localToGlobal(point, false);
+        }
+        return point;
     }
 
     private applySpineSlotAttachment(slotName: string, attachmentName: string | null): boolean {
@@ -654,6 +864,21 @@ export class PlayerController extends Laya.Script {
     }
 
     private clearSpineSlotAttachment(slotName: string): boolean {
+        const spine = this.spineNode ? this.spineNode.getComponent(Laya.Spine2DRenderNode) : null;
+        if (!spine) {
+            return false;
+        }
+
+        const anySpine = spine as any;
+        try {
+            const slot = typeof anySpine.findSlot === "function" ? anySpine.findSlot(slotName) : null;
+            if (slot && typeof slot.setAttachment === "function") {
+                slot.setAttachment(null);
+                return true;
+            }
+        } catch (error) {
+        }
+
         return this.applySpineSlotAttachment(slotName, null);
     }
     private resolveAssetUrl(path: string): string {
@@ -733,6 +958,14 @@ export class PlayerController extends Laya.Script {
             baseAttackPower: this.baseAttackPower,
             attackSpeed: this.attackSpeed,
             attackDamageRange: this.attackDamageRange,
+            attackHitboxShowDelay: this.attackHitboxShowDelay,
+            attackHitboxVisibleDuration: this.attackHitboxVisibleDuration,
+            rangedAttackRange: this.rangedAttackRange,
+            rangedAttackWidth: this.rangedAttackWidth,
+            rangedAttackHitDelay: this.rangedAttackHitDelay,
+            rangedChargeDuration: this.rangedChargeDuration,
+            rangedMinDamageMultiplier: this.rangedMinDamageMultiplier,
+            rangedMaxDamageMultiplier: this.rangedMaxDamageMultiplier,
             movement: this.movement ? this.movement.snapshot() : null,
             ui: this.ui ? this.ui.snapshot() : null,
             combat: this.combat ? this.combat.snapshot() : null,

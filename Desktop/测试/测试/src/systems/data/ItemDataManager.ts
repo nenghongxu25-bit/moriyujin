@@ -5,6 +5,9 @@ export interface ItemMeta {
     nameZh?: string;
     subCategory?: string;
     icon?: string;
+    stackMax?: number;
+    consumable?: boolean;
+    description?: string;
     attackPower?: number;
     attackSpeed?: number;
     durability?: number;
@@ -18,6 +21,9 @@ export interface ItemTableFile {
         nameZh?: string;
         subCategory?: string;
         icon?: string;
+        stackMax?: number;
+        consumable?: boolean;
+        description?: string;
         attackPower?: number;
         attackSpeed?: number;
         durability?: number;
@@ -48,6 +54,9 @@ export class ItemDataManager {
                 nameZh: item.nameZh,
                 subCategory: item.subCategory,
                 icon: this.normalizeIconPath(item.icon),
+                stackMax: this.normalizeOptionalNumber(item.stackMax),
+                consumable: typeof item.consumable === "boolean" ? item.consumable : undefined,
+                description: item.description,
                 attackPower: this.normalizeOptionalNumber(item.attackPower),
                 attackSpeed: this.normalizeOptionalNumber(item.attackSpeed),
                 durability: this.normalizeOptionalNumber(item.durability),

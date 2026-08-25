@@ -32,8 +32,6 @@ export class MailPanel extends Laya.Script {
     @property(Laya.Node)
     public rewardTargetNode: Laya.Node | null = null;
 
-    @property(Laya.Text)
-    public warehouseFullText: Laya.Text | null = null;
 
     @property(Laya.Text)
     public messageText: Laya.Text | null = null;
@@ -863,7 +861,7 @@ export class MailPanel extends Laya.Script {
 
     private getMessageTextNode(): Laya.Text | null {
 
-        return this.messageText || this.warehouseFullText;
+        return this.messageText;
     }
 
 

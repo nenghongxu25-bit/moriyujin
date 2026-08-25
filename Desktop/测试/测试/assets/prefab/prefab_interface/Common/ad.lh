@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "nx25bmjq",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 128,
+  "height": 128,
+  "_$comp": [
+    {
+      "_$type": "9c1f431e-702b-42bf-90f0-04f0f7e01a13",
+      "scriptPath": "../src/douyin/RewardedAdButton.ts",
+      "adUnitId": "318i7am8at329njhu7"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "9mhrx5zf",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 128,
+      "height": 128,
+      "alpha": 0.163,
+      "_gcmds": [
+        {
+          "_$type": "DrawCircleCmd",
+          "x": 0.5,
+          "y": 0.5,
+          "radius": 0.5,
+          "percent": true,
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#ffffff"
+        }
+      ]
+    }
+  ]
+}

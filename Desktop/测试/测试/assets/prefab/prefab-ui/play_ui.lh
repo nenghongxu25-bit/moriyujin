@@ -14,11 +14,32 @@
       "y": 350,
       "width": 100,
       "height": 100,
+      "_$comp": [
+        {
+          "_$type": "c50e856c-df34-4d80-9452-b4fbbf5a3425",
+          "scriptPath": "../src/PlayUI/playerui/QuickEquipContainer.ts",
+          "quickSlot1": {
+            "_$ref": "i17z1swu"
+          },
+          "quickSlot2": {
+            "_$ref": "jwr6iiy8"
+          },
+          "quickSlot3": {
+            "_$ref": "wz73alta"
+          },
+          "quickSlot4": {
+            "_$ref": "q0zy0yfu"
+          },
+          "weaponSlot": null,
+          "plateSlot": null,
+          "armorSlot": null
+        }
+      ],
       "_$child": [
         {
           "_$id": "i17z1swu",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_01",
+          "name": "1",
           "active": true,
           "x": -243,
           "y": 243,
@@ -28,7 +49,7 @@
         {
           "_$id": "q0zy0yfu",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_04",
+          "name": "4",
           "active": true,
           "x": 132,
           "y": 243,
@@ -38,7 +59,7 @@
         {
           "_$id": "wz73alta",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_03",
+          "name": "3",
           "active": true,
           "x": 7,
           "y": 243,
@@ -48,7 +69,7 @@
         {
           "_$id": "jwr6iiy8",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_02",
+          "name": "2",
           "active": true,
           "x": -118,
           "y": 243,

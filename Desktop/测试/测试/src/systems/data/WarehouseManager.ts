@@ -52,6 +52,57 @@ export class WarehouseManager {
         return snapshot;
     }
 
+    public getItemCount(itemId: string): number {
+        const normalizedItemId = String(itemId || "").trim();
+        if (!normalizedItemId) {
+            return 0;
+        }
+
+        let count = 0;
+        for (let i = 0; i < this.items.length; i++) {
+            const item = this.items[i];
+            if (item && item.itemId === normalizedItemId) {
+                count += Math.max(0, Math.floor(item.count || 0));
+            }
+        }
+
+        return count;
+    }
+
+    public consumeItem(itemId: string, count: number): number {
+        const normalizedItemId = String(itemId || "").trim();
+        let remaining = Number.isFinite(count) ? Math.max(0, Math.floor(count)) : 0;
+        if (!normalizedItemId || remaining <= 0) {
+            return 0;
+        }
+
+        let consumed = 0;
+        for (let i = 0; i < this.items.length && remaining > 0; i++) {
+            const item = this.items[i];
+            if (!item || item.itemId !== normalizedItemId) {
+                continue;
+            }
+
+            const available = Math.max(0, Math.floor(item.count || 0));
+            const used = Math.min(available, remaining);
+            if (used <= 0) {
+                continue;
+            }
+
+            item.count = available - used;
+            if (item.count <= 0) {
+                this.items[i] = null;
+            }
+            remaining -= used;
+            consumed += used;
+        }
+
+        if (consumed > 0) {
+            this.save();
+        }
+
+        return consumed;
+    }
     public addItem(item: InventoryViewItem, targetSlotIndex?: number): boolean {
         if (!item.itemId) {
             return false;

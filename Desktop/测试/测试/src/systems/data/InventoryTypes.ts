@@ -17,6 +17,10 @@ export interface BagView {
     refreshPlayerStats?(): void;
 }
 
+export interface QuickSlotView {
+    refreshQuickSlots(items: InventorySlotItem[]): void;
+}
+
 export interface WarehouseView {
     refresh(): void;
 }

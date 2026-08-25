@@ -1,0 +1,262 @@
+{
+  "_$ver": 1,
+  "_$id": "tu4jo9qo",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "e7a82e0d-ec39-4ac1-9518-f70baf987b54",
+      "scriptPath": "../src/PlayUI/Make/MakePanel.ts",
+      "outputListNode": {
+        "_$ref": "c5jqkljb"
+      },
+      "outputTemplateNode": {
+        "_$ref": "ol9cz4g0"
+      },
+      "inputListNode": {
+        "_$ref": "1xd2h4dv"
+      },
+      "inputTemplateNode": {
+        "_$ref": "v1qyi4wh"
+      },
+      "makeButtonNode": {
+        "_$ref": "lk88rhmq"
+      },
+      "makeButtonMaskNode": {
+        "_$ref": [
+          "lk88rhmq",
+          "n392fqkh"
+        ]
+      },
+      "messageTextNode": {
+        "_$ref": "make_message_text"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "eg4yidej",
+      "_$type": "Area2D",
+      "name": "Area2D",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "izxx1wz2",
+          "_$type": "Sprite",
+          "name": "Bg",
+          "x": 442,
+          "y": 77,
+          "width": 420,
+          "height": 570,
+          "_gcmds": [
+            {
+              "_$type": "DrawRoundRectCmd",
+              "lt": 20,
+              "rt": 20,
+              "lb": 20,
+              "rb": 20,
+              "lineWidth": 5,
+              "lineColor": "#000000",
+              "fillColor": "#957c44"
+            }
+          ]
+        },
+        {
+          "_$id": "c5jqkljb",
+          "_$type": "GList",
+          "name": "outputlist",
+          "x": 442,
+          "y": 142,
+          "width": 420,
+          "height": 337,
+          "layout": {
+            "type": 3,
+            "padding": [
+              10,
+              0,
+              0,
+              0
+            ],
+            "align": 1
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "barDisplay": 5
+          },
+          "_templateNode": {
+            "_$ref": "ol9cz4g0",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 20,
+          "_$child": [
+            {
+              "_$id": "ol9cz4g0",
+              "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+              "name": "boxmodule",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "_$id": "g83gat7p",
+          "_$type": "Sprite",
+          "name": "border",
+          "x": 442,
+          "y": 139,
+          "width": 420,
+          "height": 346,
+          "_gcmds": [
+            {
+              "_$type": "DrawRoundRectCmd",
+              "lt": 15,
+              "rt": 15,
+              "lb": 15,
+              "rb": 15,
+              "lineWidth": 10,
+              "lineColor": "#000000"
+            }
+          ]
+        },
+        {
+          "_$id": "egkww6ze",
+          "_$type": "Text",
+          "name": "title",
+          "x": 572,
+          "y": 92,
+          "width": 166,
+          "height": 55,
+          "text": "快速制作",
+          "fontSize": 40,
+          "color": "#000000",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "1xd2h4dv",
+          "_$type": "GList",
+          "name": "inputlist",
+          "x": 457,
+          "y": 525,
+          "width": 250,
+          "height": 100,
+          "layout": {
+            "type": 2,
+            "padding": [
+              0,
+              0,
+              0,
+              10
+            ]
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "direction": 1,
+            "barDisplay": 5
+          },
+          "_templateNode": {
+            "_$ref": "v1qyi4wh",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 1,
+          "_$child": [
+            {
+              "_$id": "v1qyi4wh",
+              "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+              "name": "boxmodule",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "_$id": "9woufc8g",
+          "_$type": "Sprite",
+          "name": "Sprite",
+          "x": 457,
+          "y": 515,
+          "width": 250,
+          "height": 120,
+          "_gcmds": [
+            {
+              "_$type": "DrawRoundRectCmd",
+              "lt": 15,
+              "rt": 15,
+              "lb": 15,
+              "rb": 15,
+              "lineWidth": 10,
+              "lineColor": "#000000"
+            }
+          ]
+        },
+        {
+          "_$id": "lk88rhmq",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "makebutton",
+          "active": true,
+          "x": 733,
+          "y": 525,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "制作"
+            },
+            {
+              "_$override": "n392fqkh",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "_$id": "noekgw19",
+          "_$type": "Sprite",
+          "name": "close",
+          "x": 788,
+          "y": 85,
+          "width": 50,
+          "height": 50,
+          "texture": {
+            "_$uuid": "2f8dc7c5-4a24-4efd-8e48-9772db215c5c",
+            "_$type": "Texture"
+          },
+          "_$comp": [
+            {
+              "_$type": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+              "scriptPath": "../src/CloseSprite.ts",
+              "targetNode": {
+                "_$ref": "tu4jo9qo"
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "make_message_text",
+          "_$type": "Text",
+          "name": "messageText",
+          "x": 457,
+          "y": 487,
+          "width": 390,
+          "height": 28,
+          "visible": false,
+          "fontSize": 22,
+          "color": "#000000",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

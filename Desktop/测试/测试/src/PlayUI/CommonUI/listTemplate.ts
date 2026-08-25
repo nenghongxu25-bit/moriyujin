@@ -4,6 +4,7 @@ export interface ListTemplateData {
     itemId?: string;
     name: string;
     count: number;
+    countText?: string;
     icon?: string;
 }
 
@@ -48,7 +49,7 @@ export class listTemplate extends Laya.Script {
 
         const itemId = String(data?.itemId || "");
         const itemName = this.resolveDisplayName(itemId, data?.name);
-        const countTextValue = String(data?.count ?? 0);
+        const countTextValue = data?.countText !== undefined ? String(data.countText) : String(data?.count ?? 0);
         const iconInput = data?.icon ? String(data.icon) : this.resolveFallbackIcon(itemId);
         const resolvedIconPath = this.resolveIconPath(iconInput, data);
 

@@ -16,6 +16,7 @@ import "./PlayUI/Crafting/CraftingItemList";
 import "./PlayUI/Crafting/CraftingRecipeItem";
 import "./PlayUI/Crafting/CraftingRecipeList";
 import "./PlayUI/Crafting/CraftingPanel";
+import "./douyin/RewardedAdButton";
 import "./SceneJumpTrigger";
 import './OpenSprite';
 import "./Player/PlayerCamera2D";

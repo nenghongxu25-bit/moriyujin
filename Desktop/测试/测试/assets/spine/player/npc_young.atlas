@@ -117,12 +117,18 @@ bounds:2,2,1088,1136
 offsets:79,67,1254,1254
 
 npc_young_6.png
-size:199,115
+size:327,119
 filter:Linear,Linear
 pma:true
 weapon_ranged/AK47
-bounds:2,2,182,52
+bounds:2,6,182,52
 offsets:7,41,200,133
 weapon_ranged/M16
-bounds:2,56,195,57
+bounds:2,60,195,57
 offsets:3,34,200,133
+weapon_ranged/fal
+bounds:199,85,126,32
+offsets:1,30,128,85
+weapon_ranged/geluoke
+bounds:199,2,118,81
+offsets:6,24,128,128

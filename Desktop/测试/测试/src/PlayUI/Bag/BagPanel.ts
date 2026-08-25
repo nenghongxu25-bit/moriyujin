@@ -2,7 +2,7 @@ const { regClass, property } = Laya;
 
 import { DataManager, type EquippedItem, type EquipmentSlotType, type InventorySlotItem } from "../../systems/datamanager";
 import { glist } from "../CommonUI/glist";
-import type { ListTemplateData } from "../CommonUI/listTemplate";
+import { listTemplate, type ListTemplateData } from "../CommonUI/listTemplate";
 import { PlayerController } from "../../Player/PlayerController";
 
 interface EquipSlotBinding {
@@ -14,6 +14,19 @@ interface EquipSlotBinding {
 interface SelectedBagSlotState {
     item: ListTemplateData;
     slotIndex: number;
+}
+
+interface SelectedQuickSlotState {
+    slotIndex: number;
+}
+
+type BagPopupActionType = "use" | "discard";
+
+interface BagPopupAction {
+    type: BagPopupActionType;
+    label: string;
+    itemId?: string;
+    slotIndex?: number;
 }
 
 interface PlayerBuffView {
@@ -68,6 +81,9 @@ export class BagPanel extends Laya.Script {
     @property(Laya.Node)
     public stateListNode: Laya.Node | null = null;
 
+    @property(Laya.Node)
+    public popupListNode: Laya.Node | null = null;
+
     @property(String)
     public previewWeaponSpineSlotName: string = "";
 
@@ -90,20 +106,26 @@ export class BagPanel extends Laya.Script {
     private bagGlist: glist | null = null;
     private containerGlist: glist | null = null;
     private selectedBagSlot: SelectedBagSlotState | null = null;
+    private selectedQuickSlot: SelectedQuickSlotState | null = null;
     private lastPreviewWeaponAttachmentName: string = "__init";
     private lastPreviewAnimationName: string = "__init";
     private previewSpineNode: Laya.Node | null = null;
     private quickEquipInitialVisible: boolean | null = null;
+    private quickSlotItems: InventorySlotItem[] = [];
+    private popupActions: BagPopupAction[] = [];
 
     onAwake(): void {
         this.captureInitialVisibility();
         this.bindControllers();
         this.bindEquipSlots();
+        this.bindQuickSlots();
         DataManager.getInstance().registerBagView(this);
+        DataManager.getInstance().registerQuickSlotView(this);
         this.openDefault();
         this.refreshEquipSlots();
         this.refreshPlayerStats();
         this.refreshBuffStates();
+        this.hidePopupList();
         Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
     }
 
@@ -111,20 +133,29 @@ export class BagPanel extends Laya.Script {
         this.captureInitialVisibility();
         this.bindControllers();
         this.bindEquipSlots();
+        this.bindQuickSlots();
         DataManager.getInstance().registerBagView(this);
+        DataManager.getInstance().registerQuickSlotView(this);
         this.syncVisibleState();
         this.refreshEquipSlots();
         this.refreshPlayerStats();
         this.refreshBuffStates();
+        this.hidePopupList();
         Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
     }
 
     onDisable(): void {
+        this.hidePopupList();
+        Laya.timer.clear(this, this.refreshPreviewSpineWeapon);
         DataManager.getInstance().unregisterBagView(this);
+        DataManager.getInstance().unregisterQuickSlotView(this);
     }
 
     onDestroy(): void {
+        this.hidePopupList();
+        Laya.timer.clear(this, this.refreshPreviewSpineWeapon);
         DataManager.getInstance().unregisterBagView(this);
+        DataManager.getInstance().unregisterQuickSlotView(this);
     }
 
     public setItems(items: InventorySlotItem[]): void {
@@ -133,6 +164,12 @@ export class BagPanel extends Laya.Script {
         this.refreshEquipSlots();
         this.refreshPlayerStats();
         this.refreshBuffStates();
+    }
+
+    public refreshQuickSlots(items: InventorySlotItem[]): void {
+        this.quickSlotItems = Array.isArray(items) ? items.map((item) => (item ? { ...item } : null)) : [];
+        this.bindQuickSlots();
+        this.renderQuickSlots();
     }
 
     public openDefault(): void {
@@ -152,6 +189,7 @@ export class BagPanel extends Laya.Script {
         this.setNodeVisible(this.containerGlistNode, false);
         this.setNodeVisible(this.bagNode, false);
         this.setNodeVisible(this.bagGlistNode, false);
+        this.hidePopupList();
     }
 
     public showDefaultState(): void {
@@ -170,12 +208,14 @@ export class BagPanel extends Laya.Script {
     public refresh(): void {
         this.bindControllers();
         this.bindEquipSlots();
+        this.bindQuickSlots();
         this.syncVisibleState();
         const snapshot = DataManager.getInstance().getInventorySnapshot();
         this.bindBagList(snapshot);
         this.refreshEquipSlots();
         this.refreshPlayerStats();
         this.refreshBuffStates();
+        this.renderQuickSlots();
     }
 
     public refreshBuffStates(): void {
@@ -221,32 +261,56 @@ export class BagPanel extends Laya.Script {
     private handleBagSlotClick = (item: ListTemplateData | null, listKey: string, slotIndex: number): void => {
         const normalizedSlotIndex = Number.isFinite(slotIndex) ? Math.floor(slotIndex) : -1;
         if (normalizedSlotIndex < 0) {
+            this.hidePopupList();
+            this.clearQuickSelection();
             this.clearBagSelection();
             return;
         }
 
-        if (!this.selectedBagSlot) {
-            if (item && item.itemId) {
-                this.setBagSelection(item, normalizedSlotIndex);
+        if (this.selectedQuickSlot) {
+            if (DataManager.getInstance().moveQuickSlotToActiveSlot(this.selectedQuickSlot.slotIndex, normalizedSlotIndex)) {
+                this.hidePopupList();
+                this.clearQuickSelection();
+                this.refresh();
+                return;
             }
+
+            this.hidePopupList();
+            this.clearQuickSelection();
             return;
         }
 
-        if (this.selectedBagSlot.slotIndex === normalizedSlotIndex) {
+        if (this.selectedBagSlot && this.selectedBagSlot.slotIndex !== normalizedSlotIndex) {
+            if (DataManager.getInstance().moveActiveInventorySlot(this.selectedBagSlot.slotIndex, normalizedSlotIndex)) {
+                this.hidePopupList();
+                this.clearBagSelection();
+                this.refresh();
+                return;
+            }
+
+            this.hidePopupList();
             this.clearBagSelection();
             return;
         }
 
-        if (DataManager.getInstance().moveActiveInventorySlot(this.selectedBagSlot.slotIndex, normalizedSlotIndex)) {
+        if (!item || !item.itemId) {
+            this.hidePopupList();
             this.clearBagSelection();
-            this.refresh();
             return;
         }
 
-        this.clearBagSelection();
+        if (this.selectedBagSlot && this.selectedBagSlot.slotIndex === normalizedSlotIndex) {
+            this.hidePopupList();
+            this.clearBagSelection();
+            return;
+        }
+
+        this.setBagSelection(item, normalizedSlotIndex);
+        this.showPopupList(this.getBagItemActions(item, normalizedSlotIndex));
     };
 
     private setBagSelection(item: ListTemplateData, slotIndex: number): void {
+        this.clearQuickSelection();
         this.selectedBagSlot = { item, slotIndex };
         if (this.bagGlist) {
             this.bagGlist.setSelectedSlotIndex(slotIndex);
@@ -280,20 +344,316 @@ export class BagPanel extends Laya.Script {
         }
     }
 
+    private bindQuickSlots(): void {
+        this.resolveQuickEquipNode();
+        const slots = this.getQuickSlotNodes();
+        for (let i = 0; i < slots.length; i++) {
+            const node = slots[i] as any;
+            if (!node || typeof node.on !== "function" || typeof node.off !== "function") {
+                continue;
+            }
+
+            node.mouseEnabled = true;
+            node.off(Laya.Event.CLICK, this, this.onQuickSlotClick);
+            node.on(Laya.Event.CLICK, this, this.onQuickSlotClick, [i]);
+        }
+    }
+
+    private onQuickSlotClick(quickSlotIndex: number): void {
+        const sourceBagSlotIndex = this.selectedBagSlot?.slotIndex;
+        if (!Number.isFinite(sourceBagSlotIndex)) {
+            this.handleQuickSlotSelection(quickSlotIndex);
+            return;
+        }
+
+        const dataManager = DataManager.getInstance();
+        if (dataManager.assignActiveSlotToQuickSlot(quickSlotIndex, sourceBagSlotIndex as number)) {
+            this.hidePopupList();
+            this.clearQuickSelection();
+            this.clearBagSelection();
+            this.refresh();
+            this.renderQuickSlots();
+            return;
+        }
+    }
+
+    private handleQuickSlotSelection(quickSlotIndex: number): void {
+        const dataManager = DataManager.getInstance();
+        const index = Number.isFinite(quickSlotIndex) ? Math.floor(quickSlotIndex) : -1;
+        if (index < 0) {
+            this.hidePopupList();
+            this.clearQuickSelection();
+            return;
+        }
+
+        if (this.selectedQuickSlot) {
+            if (this.selectedQuickSlot.slotIndex === index) {
+                this.hidePopupList();
+                this.clearQuickSelection();
+                return;
+            }
+
+            if (dataManager.moveQuickSlot(this.selectedQuickSlot.slotIndex, index)) {
+                this.hidePopupList();
+                this.clearQuickSelection();
+                return;
+            }
+        }
+
+        const item = this.quickSlotItems[index] || null;
+        if (!item || !item.itemId) {
+            this.hidePopupList();
+            this.clearQuickSelection();
+            return;
+        }
+
+        this.hidePopupList();
+        this.setQuickSelection(index);
+    }
+
+    private setQuickSelection(slotIndex: number): void {
+        this.clearBagSelection();
+        this.selectedQuickSlot = { slotIndex };
+        this.renderQuickSlots();
+    }
+
+    private clearQuickSelection(): void {
+        if (this.selectedQuickSlot) {
+            this.selectedQuickSlot = null;
+            this.renderQuickSlots();
+        }
+    }
+
+    private renderQuickSlots(): void {
+        const slots = this.getQuickSlotNodes();
+        for (let i = 0; i < slots.length; i++) {
+            const node = slots[i];
+            if (!node) {
+                continue;
+            }
+
+            let template = node.getComponent(listTemplate);
+            if (!template) {
+                template = node.addComponent(listTemplate);
+            }
+
+            const item = this.quickSlotItems[i] || null;
+            template.bindData(item ? this.toListData([item])[0] : null);
+            template.setSelected(!!item && this.selectedQuickSlot?.slotIndex === i);
+        }
+    }
+
+    private getQuickSlotNodes(): Array<Laya.Node | null> {
+        this.resolveQuickEquipNode();
+        const nodes: Array<Laya.Node | null> = [];
+        for (let i = 1; i <= 4; i++) {
+            nodes.push(this.findDirectChildByName(this.quickEquipNode, String(i)));
+        }
+
+        return nodes;
+    }
+
     private onEquipSlotClick(slot: EquipmentSlotType): void {
         const dataManager = DataManager.getInstance();
+        if (this.selectedQuickSlot) {
+            if (dataManager.moveQuickSlotToEquipment(this.selectedQuickSlot.slotIndex, slot)) {
+                this.hidePopupList();
+                this.clearQuickSelection();
+                this.refreshEquipSlots();
+                this.renderQuickSlots();
+                this.notifyPlayerEquipmentChanged();
+            }
+            return;
+        }
+
         if (this.selectedBagSlot?.item.itemId) {
             if (dataManager.equipItemFromActive(slot, this.selectedBagSlot.item.itemId)) {
+                this.hidePopupList();
                 this.clearBagSelection();
                 this.refreshEquipSlots();
+                this.renderQuickSlots();
                 this.notifyPlayerEquipmentChanged();
             }
             return;
         }
 
         if (dataManager.unequipItemToActive(slot)) {
+            this.hidePopupList();
+            this.clearBagSelection();
             this.refreshEquipSlots();
+            this.renderQuickSlots();
             this.notifyPlayerEquipmentChanged();
+            return;
+        }
+
+        this.hidePopupList();
+    }
+
+    private getBagItemActions(item: ListTemplateData, slotIndex: number): BagPopupAction[] {
+        const itemId = String(item.itemId || "");
+        const dataManager = DataManager.getInstance();
+        const actions: BagPopupAction[] = [];
+
+        if (dataManager.canUseItem(itemId)) {
+            actions.push({ type: "use", label: "\u4f7f\u7528", itemId, slotIndex });
+        }
+
+        actions.push({ type: "discard", label: "\u4e22\u5f03", itemId, slotIndex });
+        return actions;
+    }
+
+    private showPopupList(actions: BagPopupAction[]): void {
+        this.resolvePopupListNode();
+        const popup = this.popupListNode as any;
+        if (!popup || actions.length <= 0) {
+            return;
+        }
+
+        this.popupActions = actions.slice();
+        this.setNodeVisible(this.popupListNode, true);
+        popup.mouseEnabled = true;
+
+        if ("itemRenderer" in popup) {
+            popup.itemRenderer = (index: number, node: Laya.Node) => {
+                this.renderPopupActionItem(node, this.popupActions[index] || null);
+            };
+        }
+
+        if ("numItems" in popup) {
+            popup.numItems = this.popupActions.length;
+        }
+
+        if (typeof popup.refresh === "function") {
+            popup.refresh(true);
+        }
+
+        this.renderVisiblePopupActionItems();
+        Laya.timer.callLater(this, this.renderVisiblePopupActionItems);
+    }
+
+    private renderVisiblePopupActionItems(): void {
+        const popup = this.popupListNode as any;
+        if (!popup || !Array.isArray(popup.children)) {
+            return;
+        }
+
+        const children = popup.children as Laya.Node[];
+        const templateNode = this.getTemplateNode(this.popupListNode);
+        let actionIndex = 0;
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            if (!child || child === templateNode) {
+                continue;
+            }
+
+            this.renderPopupActionItem(child, this.popupActions[actionIndex] || null);
+            actionIndex++;
+        }
+    }
+
+    private renderPopupActionItem(node: Laya.Node, action: BagPopupAction | null): void {
+        const child = node as any;
+        if (!child) {
+            return;
+        }
+
+        this.setNodeVisible(node, !!action);
+        if (typeof child.off === "function") {
+            child.off(Laya.Event.CLICK, this, this.onPopupActionClick);
+        }
+
+        if (!action) {
+            return;
+        }
+
+        child.mouseEnabled = true;
+        this.setPopupActionLabel(node, action.label);
+        if (typeof child.on === "function") {
+            child.on(Laya.Event.CLICK, this, this.onPopupActionClick, [action]);
+        }
+    }
+
+    private hidePopupList(): void {
+        this.resolvePopupListNode();
+        const popup = this.popupListNode as any;
+        if (!popup) {
+            return;
+        }
+
+        if (Array.isArray(popup.children)) {
+            for (let i = 0; i < popup.children.length; i++) {
+                const child = popup.children[i] as any;
+                if (child && typeof child.off === "function") {
+                    child.off(Laya.Event.CLICK, this, this.onPopupActionClick);
+                }
+            }
+        }
+
+        this.setNodeVisible(this.popupListNode, false);
+        this.popupActions = [];
+    }
+
+    private onPopupActionClick(action: BagPopupAction, event?: Laya.Event): void {
+        if (event && typeof event.stopPropagation === "function") {
+            event.stopPropagation();
+        }
+
+        const dataManager = DataManager.getInstance();
+
+        if (action.type === "discard" && Number.isFinite(action.slotIndex)) {
+            dataManager.discardActiveSlot(action.slotIndex as number);
+        } else if (action.type === "use" && Number.isFinite(action.slotIndex)) {
+            if (dataManager.useActiveItemAtSlot(action.slotIndex as number)) {
+                const stats = dataManager.getPlayerStats();
+                PlayerController.activeInstance?.setHp(stats.currentHp, stats.maxHp);
+            }
+        }
+
+        this.hidePopupList();
+        this.clearBagSelection();
+        this.refresh();
+    }
+
+    private setPopupActionLabel(node: Laya.Node, label: string): void {
+        this.writePopupLabelRecursive(node, label);
+    }
+
+    private writePopupLabelRecursive(node: Laya.Node | null, label: string): void {
+        const target = node as any;
+        if (!target) {
+            return;
+        }
+
+        if ("visible" in target) {
+            target.visible = true;
+        }
+        if ("active" in target) {
+            target.active = true;
+        }
+
+        if ("text" in target) {
+            target.text = label;
+        }
+        if ("title" in target) {
+            target.title = label;
+        }
+        if ("label" in target) {
+            target.label = label;
+        }
+
+        const children = target.children as Laya.Node[] | undefined;
+        if (!children) {
+            return;
+        }
+
+        for (let i = 0; i < children.length; i++) {
+            this.writePopupLabelRecursive(children[i], label);
+        }
+    }
+
+    private resolvePopupListNode(): void {
+        if (!this.popupListNode) {
+            this.popupListNode = this.findChildByNameInsensitive(this.owner as Laya.Node, "popuplist");
         }
     }
 
@@ -436,6 +796,12 @@ export class BagPanel extends Laya.Script {
         }
         if (!this.previewSpineNode) {
             this.previewSpineNode = this.findChildByName(this.personPageNode, "Sprite");
+        }
+    }
+
+    private resolveQuickEquipNode(): void {
+        if (!this.quickEquipNode) {
+            this.quickEquipNode = this.findChildByNameInsensitive(this.owner as Laya.Node, "quickbox");
         }
     }
 
@@ -582,7 +948,10 @@ export class BagPanel extends Laya.Script {
         const weapon = DataManager.getInstance().getEquippedItem("weapon");
         const attachmentName = weapon ? this.resolveWeaponAttachmentName(weapon.itemId) : "";
         this.refreshPreviewSpineAnimation();
-        this.clearInactivePreviewWeaponSlot(slotName);
+        if (!this.clearPreviewWeaponSlots()) {
+            Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
+            return;
+        }
         if (!attachmentName) {
             if (this.lastPreviewWeaponAttachmentName) {
                 if (this.applyPreviewSpineAttachment(slotName, null)) {
@@ -591,10 +960,6 @@ export class BagPanel extends Laya.Script {
                     Laya.timer.callLater(this, this.refreshPreviewSpineWeapon);
                 }
             }
-            return;
-        }
-
-        if (attachmentName === this.lastPreviewWeaponAttachmentName) {
             return;
         }
 
@@ -718,17 +1083,39 @@ export class BagPanel extends Laya.Script {
         return true;
     }
 
-    private clearInactivePreviewWeaponSlot(activeSlotName: string): void {
+    private clearPreviewWeaponSlots(): boolean {
         const meleeSlotName = String(this.previewWeaponMeleeSpineSlotName || "").trim();
         const rangedSlotName = String(this.previewWeaponRangedSpineSlotName || "").trim();
+        let cleared = true;
 
-        if (meleeSlotName && meleeSlotName !== activeSlotName) {
-            this.applyPreviewSpineAttachment(meleeSlotName, null);
+        if (meleeSlotName) {
+            cleared = this.clearPreviewSpineAttachment(meleeSlotName) && cleared;
         }
 
-        if (rangedSlotName && rangedSlotName !== activeSlotName) {
-            this.applyPreviewSpineAttachment(rangedSlotName, null);
+        if (rangedSlotName) {
+            cleared = this.clearPreviewSpineAttachment(rangedSlotName) && cleared;
         }
+
+        return cleared;
+    }
+
+    private clearPreviewSpineAttachment(slotName: string): boolean {
+        const spine = this.getPreviewSpine();
+        if (!spine) {
+            return false;
+        }
+
+        const anySpine = spine as any;
+        try {
+            const slot = typeof anySpine.findSlot === "function" ? anySpine.findSlot(slotName) : null;
+            if (slot && typeof slot.setAttachment === "function") {
+                slot.setAttachment(null);
+                return true;
+            }
+        } catch (error) {
+        }
+
+        return this.applyPreviewSpineAttachment(slotName, null);
     }
 
     private applyPreviewSpineAttachment(slotName: string, attachmentName: string | null): boolean {
@@ -836,6 +1223,71 @@ export class BagPanel extends Laya.Script {
             const nested = this.findGlistController(child);
             if (nested) {
                 return nested;
+            }
+        }
+
+        return null;
+    }
+
+    private findChildByNameInsensitive(root: Laya.Node | null, name: string): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        const expected = String(name || "").toLowerCase();
+        const nodeName = String((root as any).name || "").toLowerCase();
+        if (nodeName === expected) {
+            return root;
+        }
+
+        const children = (root as any).children as Laya.Node[] | undefined;
+        if (!children) {
+            return null;
+        }
+
+        for (const child of children) {
+            const match = this.findChildByNameInsensitive(child, name);
+            if (match) {
+                return match;
+            }
+        }
+
+        return null;
+    }
+
+    private findDirectChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        const children = (root as any)?.children as Laya.Node[] | undefined;
+        if (!children) {
+            return null;
+        }
+
+        for (const child of children) {
+            if (String((child as any)?.name || "") === name) {
+                return child;
+            }
+        }
+
+        return null;
+    }
+
+    private findFirstTextNode(root: Laya.Node | null): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        if ("text" in (root as any)) {
+            return root;
+        }
+
+        const children = (root as any).children as Laya.Node[] | undefined;
+        if (!children) {
+            return null;
+        }
+
+        for (const child of children) {
+            const match = this.findFirstTextNode(child);
+            if (match) {
+                return match;
             }
         }
 

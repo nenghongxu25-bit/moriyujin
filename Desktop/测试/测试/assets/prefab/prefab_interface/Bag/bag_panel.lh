@@ -53,6 +53,12 @@
       "stateListNode": {
         "_$ref": "na986ikc"
       },
+      "popupListNode": {
+        "_$ref": [
+          "ybrtsioi",
+          "64g91x1v"
+        ]
+      },
       "previewWeaponSpineSlotName": "",
       "previewWeaponMeleeSpineSlotName": "weapon_melee_slot",
       "previewWeaponRangedSpineSlotName": "weapon_ranged_slot",
@@ -545,19 +551,17 @@
       "_$id": "eavb30xg",
       "_$type": "Sprite",
       "name": "quickbox",
-      "active": false,
       "x": 694,
       "y": 302,
       "width": 100,
       "height": 100,
       "scaleX": 0.8,
       "scaleY": 0.8,
-      "visible": false,
       "_$child": [
         {
           "_$id": "fk6o3n18",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule",
+          "name": "2",
           "active": true,
           "x": 188,
           "y": -262,
@@ -568,7 +572,7 @@
         {
           "_$id": "pwycrr2b",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_1",
+          "name": "1",
           "active": true,
           "x": 78,
           "y": -262,
@@ -579,7 +583,7 @@
         {
           "_$id": "s2cps5ph",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_2",
+          "name": "4",
           "active": true,
           "x": 392,
           "y": -262,
@@ -588,7 +592,7 @@
         {
           "_$id": "bkj30rn8",
           "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
-          "name": "boxmodule_3",
+          "name": "3",
           "active": true,
           "x": 291,
           "y": -262,
@@ -601,8 +605,8 @@
       "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
       "name": "CloseSprite",
       "active": true,
-      "x": 584,
-      "y": 585,
+      "x": 585,
+      "y": 607,
       "visible": true,
       "_$comp": [
         {

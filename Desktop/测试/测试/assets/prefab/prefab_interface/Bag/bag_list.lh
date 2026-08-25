@@ -17,7 +17,7 @@
       "x": -26,
       "y": -56,
       "width": 677,
-      "height": 534,
+      "height": 552,
       "_$child": [
         {
           "_$id": "ex9g98dk",
@@ -65,7 +65,8 @@
               "templateNode": {
                 "_$ref": "myzvhd4c"
               },
-              "slotCount": 30
+              "slotCount": 30,
+              "selectionEnabled": true
             }
           ],
           "_$child": [
@@ -154,6 +155,45 @@
                   "valign": "middle",
                   "leading": 2,
                   "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "64g91x1v",
+          "_$prefab": "834004e6-e8dc-437e-9292-0080611cdd27",
+          "name": "Popuplist",
+          "active": true,
+          "x": 48,
+          "y": 497,
+          "width": 517,
+          "visible": true,
+          "layout": {
+            "type": 2,
+            "columnGap": 50
+          },
+          "_$child": [
+            {
+              "_$override": "rkg7dfv2",
+              "scaleX": 1.5,
+              "scaleY": 1.5
+            },
+            {
+              "_$override": [
+                "rkg7dfv2",
+                "3oei1uz6"
+              ],
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 3,
+                  "lineColor": "#000000",
+                  "fillColor": "#656507"
                 }
               ]
             }
