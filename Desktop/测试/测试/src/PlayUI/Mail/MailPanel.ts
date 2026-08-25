@@ -550,6 +550,12 @@ export class MailPanel extends Laya.Script {
         }
 
 
+        const rewardMessage =
+            this.buildRewardClaimMessage(
+                mail.attachments
+            );
+
+
         const success =
             manager.markClaimed(
                 mail.id
@@ -561,7 +567,9 @@ export class MailPanel extends Laya.Script {
         }
 
 
-        this.hideMessageText();
+        this.showMessageText(
+            rewardMessage
+        );
 
 
         const updatedMail =
@@ -653,6 +661,45 @@ export class MailPanel extends Laya.Script {
     }
 
 
+    private buildRewardClaimMessage(
+        attachments:
+            MailAttachment[]
+    ): string {
+
+        const rewardText =
+            (attachments || [])
+                .filter(
+                    (item) =>
+                        !!item
+                        &&
+                        !!item.itemId
+                        &&
+                        Number.isFinite(
+                            item.count
+                        )
+                        &&
+                        item.count > 0
+                )
+                .map(
+                    (item) =>
+                        `${item.name || item.itemId}*${Math.max(
+                            1,
+                            Math.floor(
+                                item.count
+                            )
+                        )}`
+                )
+                .join(
+                    "\uff0c"
+                );
+
+
+        return rewardText
+            ? `\u83b7\u5f97${rewardText}`
+            : "\u83b7\u5f97\u5956\u52b1";
+    }
+
+
     // =========================
     // 没选中邮件
     // =========================
@@ -735,7 +782,7 @@ export class MailPanel extends Laya.Script {
         );
 
         Laya.timer.once(
-            1200,
+            1000,
             this,
             this.fadeMessageText,
             [token]
