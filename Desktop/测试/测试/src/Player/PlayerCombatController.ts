@@ -4,6 +4,7 @@ export interface PlayerAttackOptions {
     chargeRatio?: number;
     directionX?: number;
     directionY?: number;
+    spreadAngle?: number;
 }
 
 export class PlayerCombatController {
@@ -58,6 +59,8 @@ export class PlayerCombatController {
             ? Math.max(1, lockDuration - 34)
             : lockDuration;
         if (isRanged) {
+            this.playRangedAttackSound();
+            this.controller.spawnRangedBullet(options);
             const hitDelay = Math.max(0, this.controller.rangedAttackHitDelay || 0);
             Laya.timer.clear(this.controller, this.applyRangedAttack);
             Laya.timer.once(hitDelay, this.controller, this.applyRangedAttack, [options]);
@@ -112,4 +115,16 @@ export class PlayerCombatController {
 
         this.controller.applyRangedAttackDamage(options);
     };
+
+    private playRangedAttackSound(): void {
+        const url = String(this.controller.rangedAttackSoundUrl || "").trim().replace(/^assets\//, "");
+        if (!url) {
+            return;
+        }
+
+        try {
+            Laya.SoundManager.playSound(url, 1);
+        } catch (error) {
+        }
+    }
 }
