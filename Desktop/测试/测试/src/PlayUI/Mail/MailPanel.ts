@@ -4,6 +4,7 @@ import { glist } from "../CommonUI/glist";
 import { listTemplate, type ListTemplateData } from "../CommonUI/listTemplate";
 
 import { MailList } from "./MailList";
+import { MailMessageController } from "./MailMessageController";
 import type { MailListItemData } from "./MailTemplate";
 
 import {
@@ -42,7 +43,10 @@ export class MailPanel extends Laya.Script {
     private rewardList: glist | null = null;
 
     private currentMailId: string = "";
-    private messageFadeToken: number = 0;
+    private readonly messageController: MailMessageController = new MailMessageController(
+        () => this.messageText,
+        (node: Laya.Node | null, shown: boolean) => this.setNodeShown(node, shown)
+    );
 
     private readonly onMailChanged =
         (): void => {
@@ -103,7 +107,7 @@ export class MailPanel extends Laya.Script {
 
     onDisable(): void {
 
-        this.clearMessageTextTimers();
+        this.messageController.clearTimers();
 
         MailManager
             .getInstance()
@@ -117,7 +121,7 @@ export class MailPanel extends Laya.Script {
 
     onDestroy(): void {
 
-        this.clearMessageTextTimers();
+        this.messageController.clearTimers();
 
         MailManager
             .getInstance()
@@ -752,165 +756,16 @@ export class MailPanel extends Laya.Script {
         message: string
     ): void {
 
-        const targetText =
-            this.getMessageTextNode();
-
-        if (!targetText) {
-            return;
-        }
-
-        this.messageFadeToken += 1;
-        const token =
-            this.messageFadeToken;
-
-        targetText.text =
-            String(
-                message || ""
-            );
-
-        (targetText as any).alpha =
-            1;
-
-        this.setNodeShown(
-            targetText,
-            true
-        );
-
-        Laya.timer.clear(
-            this,
-            this.fadeMessageText
-        );
-
-        Laya.timer.once(
-            1000,
-            this,
-            this.fadeMessageText,
-            [token]
+        this.messageController.show(
+            message
         );
     }
 
 
     private hideMessageText(): void {
 
-        this.messageFadeToken += 1;
-
-        this.clearMessageTextTimers();
-
-        const targetText =
-            this.getMessageTextNode();
-
-        if (!targetText) {
-            return;
-        }
-
-
-        targetText.text =
-            "";
-
-        this.setNodeShown(
-            targetText,
-            false
-        );
-
-        (targetText as any).alpha =
-            1;
+        this.messageController.hide();
     }
-
-
-    private clearMessageTextTimers(): void {
-
-        Laya.timer.clear(
-            this,
-            this.fadeMessageText
-        );
-
-        Laya.timer.clear(
-            this,
-            this.finishMessageTextFade
-        );
-
-        const targetText =
-            this.getMessageTextNode();
-
-        if (targetText) {
-
-            Laya.Tween.clearAll(
-                targetText
-            );
-        }
-    }
-
-
-    private fadeMessageText(
-        token: number
-    ): void {
-
-        const targetText =
-            this.getMessageTextNode();
-
-        if (
-            token !== this.messageFadeToken
-            ||
-            !targetText
-        ) {
-            return;
-        }
-
-
-        Laya.Tween.clearAll(
-            targetText
-        );
-
-        Laya.Tween.to(
-            targetText as any,
-            {
-                alpha: 0
-            },
-            450,
-            null,
-            Laya.Handler.create(
-                this,
-                this.finishMessageTextFade,
-                [token]
-            )
-        );
-    }
-
-
-    private finishMessageTextFade(
-        token: number
-    ): void {
-
-        const targetText =
-            this.getMessageTextNode();
-
-        if (
-            token !== this.messageFadeToken
-            ||
-            !targetText
-        ) {
-            return;
-        }
-
-
-        targetText.text =
-            "";
-
-        this.setNodeShown(
-            targetText,
-            false
-        );
-
-        (targetText as any).alpha =
-            1;
-    }
-
-
-    private getMessageTextNode(): Laya.Text | null {
-
-        return this.messageText;
-    }
-
 
     private setRewardClaimedShown(
         shown: boolean

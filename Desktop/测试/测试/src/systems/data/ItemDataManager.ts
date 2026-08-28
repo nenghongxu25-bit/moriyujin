@@ -11,6 +11,7 @@ export interface ItemMeta {
     attackPower?: number;
     attackSpeed?: number;
     durability?: number;
+    useEffect?: ItemUseEffect;
 }
 
 export interface ItemTableFile {
@@ -27,7 +28,13 @@ export interface ItemTableFile {
         attackPower?: number;
         attackSpeed?: number;
         durability?: number;
+        useEffect?: ItemUseEffect;
     }>;
+}
+
+export interface ItemUseEffect {
+    type: string;
+    amount?: number;
 }
 
 export class ItemDataManager {
@@ -60,6 +67,7 @@ export class ItemDataManager {
                 attackPower: this.normalizeOptionalNumber(item.attackPower),
                 attackSpeed: this.normalizeOptionalNumber(item.attackSpeed),
                 durability: this.normalizeOptionalNumber(item.durability),
+                useEffect: this.normalizeUseEffect(item.useEffect),
             });
         }
     }
@@ -80,7 +88,6 @@ export class ItemDataManager {
             liuhuang: "atlas/picture/items/materials/basic_materials/liuhuang.png",
             xiyoujinshu: "atlas/picture/items/materials/basic_materials/xiyoujinshu.png",
             common_material_02: "atlas/picture/items/materials/basic_materials/shitou.png",
-            common_material_04: "atlas/picture/items/materials/basic_materials/grass.png",
             food_material_01: "atlas/picture/items/materials/food_materials/fruit.png",
             food_material_04: "atlas/picture/items/materials/basic_materials/chenshuimu.png",
             base_material_10: "atlas/picture/items/materials/basic_materials/chenshuimu.png",
@@ -114,5 +121,22 @@ export class ItemDataManager {
     private normalizeOptionalNumber(value: unknown): number | undefined {
         const numeric = Number(value);
         return Number.isFinite(numeric) ? numeric : undefined;
+    }
+
+    private normalizeUseEffect(effect: unknown): ItemUseEffect | undefined {
+        if (!effect || typeof effect !== "object") {
+            return undefined;
+        }
+
+        const raw = effect as Partial<ItemUseEffect>;
+        const type = String(raw.type || "").trim();
+        if (!type) {
+            return undefined;
+        }
+
+        return {
+            type,
+            amount: this.normalizeOptionalNumber(raw.amount),
+        };
     }
 }

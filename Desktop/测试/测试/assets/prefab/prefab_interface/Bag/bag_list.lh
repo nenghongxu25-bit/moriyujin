@@ -14,17 +14,17 @@
       "_$id": "g96x3opi",
       "_$type": "GPanel",
       "name": "panel",
-      "x": -26,
+      "x": -117,
       "y": -56,
-      "width": 677,
+      "width": 768,
       "height": 552,
       "_$child": [
         {
           "_$id": "ex9g98dk",
           "_$type": "GImage",
           "name": "img",
-          "x": 308,
-          "y": 269,
+          "x": 433,
+          "y": 264,
           "width": 450,
           "height": 520,
           "anchorX": 0.5,
@@ -37,8 +37,8 @@
           "_$id": "7fpks0da",
           "_$type": "GList",
           "name": "list",
-          "x": 84,
-          "y": 76,
+          "x": 222,
+          "y": 73,
           "width": 422,
           "height": 372,
           "background": {
@@ -165,10 +165,10 @@
           "_$prefab": "834004e6-e8dc-437e-9292-0080611cdd27",
           "name": "Popuplist",
           "active": true,
-          "x": 48,
-          "y": 497,
+          "x": 174,
+          "y": 498,
           "width": 517,
-          "visible": true,
+          "visible": false,
           "layout": {
             "type": 2,
             "columnGap": 50
@@ -196,6 +196,21 @@
                   "fillColor": "#656507"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "_$id": "t1bjjjp5",
+          "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+          "name": "bt",
+          "active": true,
+          "x": 57,
+          "y": 72,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "qwk816k0",
+              "text": "整理"
             }
           ]
         }

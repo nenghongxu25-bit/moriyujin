@@ -1,0 +1,998 @@
+{
+  "_$ver": 1,
+  "_$id": "5v7pmxp6",
+  "_$type": "Sprite",
+  "name": "suroundings",
+  "x": 66,
+  "y": -12,
+  "width": 2,
+  "height": 2,
+  "_$child": [
+    {
+      "_$id": "k7dyz6ys",
+      "_$type": "Sprite",
+      "name": "rain",
+      "x": -4,
+      "y": -274,
+      "width": 100,
+      "height": 94,
+      "_$comp": [
+        {
+          "_$type": "ShurikenParticle2DRenderer",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "e9465c45-91d5-4ffa-9125-85b941ed6952",
+            "_$type": "Material"
+          },
+          "particleSystem": {
+            "main": {
+              "startDelay": {
+                "_$type": "ParticleMinMaxCurve",
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startLifetime": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 3,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startSpeed": {
+                "_$type": "ParticleMinMaxCurve",
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startSize2D": true,
+              "startSizeX": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 3,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startSizeY": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 4,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startRotation": {
+                "_$type": "ParticleMinMaxCurve",
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startColor": {
+                "_$type": "ParticleMinMaxGradient",
+                "colorMin": {
+                  "_$type": "Color"
+                },
+                "colorMax": {
+                  "_$type": "Color"
+                },
+                "gradientMin": {
+                  "_$type": "Gradient",
+                  "_colorAlphaKeysCount": 0,
+                  "_colorRGBKeysCount": 0
+                },
+                "gradientMax": {
+                  "_$type": "Gradient",
+                  "_colorAlphaKeysCount": 0,
+                  "_colorRGBKeysCount": 0
+                }
+              },
+              "maxParticles": 150
+            },
+            "emission": {
+              "rateOverTime": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 30,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              }
+            },
+            "shape": {
+              "_$type": "Shape2DModule",
+              "shape": {
+                "_$type": "FanShape",
+                "angle": 0,
+                "radius": 14,
+                "emitType": 1,
+                "length": 1
+              }
+            },
+            "velocity2DOverLifetime": {
+              "_$type": "Velocity2DOverLifetimeModule",
+              "x": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": -6,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      -6,
+                      1,
+                      -6,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "y": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 22,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      22,
+                      1,
+                      22,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "9j5lht6u",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": -4,
+      "y": -288,
+      "width": 100,
+      "height": 100,
+      "_$comp": [
+        {
+          "_$type": "ShurikenParticle2DRenderer",
+          "layer": 0,
+          "sharedMaterial": {
+            "_$uuid": "431b4fee-be8e-467a-828b-0222ed185a44",
+            "_$type": "Material"
+          },
+          "particleSystem": {
+            "main": {
+              "startDelay": {
+                "_$type": "ParticleMinMaxCurve",
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startLifetime": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 5,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startSpeed": {
+                "_$type": "ParticleMinMaxCurve",
+                "mode": 2,
+                "constantMin": -1,
+                "constantMax": -3,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startSize2D": true,
+              "startSizeX": {
+                "_$type": "ParticleMinMaxCurve",
+                "mode": 2,
+                "constantMin": 0.1,
+                "constantMax": 0.2,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startSizeY": {
+                "_$type": "ParticleMinMaxCurve",
+                "mode": 2,
+                "constantMin": 0.1,
+                "constantMax": 0.2,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startRotation": {
+                "_$type": "ParticleMinMaxCurve",
+                "mode": 2,
+                "constantMax": 90,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              },
+              "startColor": {
+                "_$type": "ParticleMinMaxGradient",
+                "colorMin": {
+                  "_$type": "Color"
+                },
+                "colorMax": {
+                  "_$type": "Color"
+                },
+                "gradientMin": {
+                  "_$type": "Gradient",
+                  "_colorAlphaKeysCount": 0,
+                  "_colorRGBKeysCount": 0
+                },
+                "gradientMax": {
+                  "_$type": "Gradient",
+                  "_colorAlphaKeysCount": 0,
+                  "_colorRGBKeysCount": 0
+                }
+              },
+              "gravityModifier": {
+                "_$type": "Vector2",
+                "x": 10
+              },
+              "maxParticles": 150
+            },
+            "emission": {
+              "rateOverTime": {
+                "_$type": "ParticleMinMaxCurve",
+                "constantMax": 10,
+                "curveMin": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                },
+                "curveMax": {
+                  "_$type": "GradientDataNumber",
+                  "_elements": {
+                    "_$type": "Float32Array",
+                    "value": [
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "_currentLength": 0
+                }
+              }
+            },
+            "shape": {
+              "_$type": "Shape2DModule",
+              "shape": {
+                "_$type": "FanShape",
+                "angle": 0,
+                "radius": 14,
+                "emitType": 1,
+                "length": 1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

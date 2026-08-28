@@ -1,6 +1,9 @@
 import { SaveManager } from "./SaveManager";
 import type { BagView, InventoryBucket, InventoryScope, InventorySlotItem, InventoryViewItem } from "./InventoryTypes";
 
+export type InventoryItemNormalizer = (item: InventoryViewItem) => InventoryViewItem;
+export type InventorySortPriorityResolver = (item: InventoryViewItem) => number;
+
 export class InventoryManager {
     public static readonly BASE_STORAGE_KEY = "laya_test_base_inventory_v1";
 
@@ -10,8 +13,23 @@ export class InventoryManager {
     private readonly runInventory: InventorySlotItem[] = [];
     private readonly bagViews: Set<BagView> = new Set();
     private playerBagSlotCount: number = 50;
+    private stackMaxResolver: ((itemId: string) => number) | null = null;
+    private itemNormalizer: InventoryItemNormalizer | null = null;
+    private sortPriorityResolver: InventorySortPriorityResolver | null = null;
 
     public constructor(private readonly saveManager: SaveManager) {}
+
+    public setStackMaxResolver(resolver: (itemId: string) => number): void {
+        this.stackMaxResolver = resolver;
+    }
+
+    public setItemNormalizer(normalizer: InventoryItemNormalizer): void {
+        this.itemNormalizer = normalizer;
+    }
+
+    public setSortPriorityResolver(resolver: InventorySortPriorityResolver): void {
+        this.sortPriorityResolver = resolver;
+    }
 
     public loadPersistedInventories(): void {
         if (this.loaded) {
@@ -20,6 +38,8 @@ export class InventoryManager {
         }
 
         this.loadInventoryFromStorage(InventoryManager.BASE_STORAGE_KEY, this.baseInventory);
+        this.normalizeInventoryStacks(this.baseInventory);
+        this.saveManager.saveInventory(InventoryManager.BASE_STORAGE_KEY, this.baseInventory);
         this.currentScope = "base";
         this.runInventory.length = 0;
         this.loaded = true;
@@ -163,19 +183,94 @@ export class InventoryManager {
 
     public addItemToActive(itemId: string, name: string, count: number, icon?: string): void {
         const inventory = this.getActiveInventory();
-        const payload: InventoryViewItem = {
+        const payload = this.normalizeItem({
             itemId,
             name,
             count,
             icon,
-        };
+        });
 
-        if (!this.mergeIntoExistingSlot(inventory, payload)) {
-            this.placeItemIntoInventory(inventory, payload);
+        let remaining = Math.max(0, Math.floor(payload.count || 0));
+        while (remaining > 0) {
+            remaining = this.mergeIntoExistingSlot(inventory, { ...payload, count: remaining });
+            if (remaining <= 0) {
+                break;
+            }
+
+            const stackMax = this.getStackMax(payload.itemId || "");
+            const placedCount = Math.min(remaining, stackMax);
+            if (placedCount <= 0) {
+                break;
+            }
+
+            this.placeItemIntoInventory(inventory, { ...payload, count: placedCount });
+            remaining -= placedCount;
         }
 
         this.persistCurrentScope();
         this.syncBagViews();
+    }
+
+    public canAddItems(items: InventoryViewItem[]): boolean {
+        const incoming = Array.isArray(items)
+            ? items.filter((item) => item && !!item.itemId && Number.isFinite(item.count) && item.count > 0)
+            : [];
+        if (incoming.length === 0) {
+            return true;
+        }
+
+        const slotCountsByItemId = new Map<string, number[]>();
+        const inventory = this.getActiveInventory();
+        const limit = this.getPlayerBagSlotCount();
+
+        for (let i = 0; i < Math.min(inventory.length, limit); i++) {
+            const item = inventory[i];
+            if (!item || !item.itemId) {
+                continue;
+            }
+
+            const itemId = item.itemId;
+            const counts = slotCountsByItemId.get(itemId) || [];
+            counts.push(Math.max(0, Math.floor(item.count || 0)));
+            slotCountsByItemId.set(itemId, counts);
+        }
+
+        let usedSlots = 0;
+        slotCountsByItemId.forEach((counts) => {
+            usedSlots += counts.length;
+        });
+
+        for (let i = 0; i < incoming.length; i++) {
+            const itemId = incoming[i].itemId || "";
+            let remaining = Math.max(0, Math.floor(incoming[i].count || 0));
+            if (!itemId || remaining <= 0) {
+                continue;
+            }
+
+            const stackMax = this.getStackMax(itemId);
+            const counts = slotCountsByItemId.get(itemId) || [];
+            for (let slotIndex = 0; slotIndex < counts.length && remaining > 0; slotIndex++) {
+                const capacity = Math.max(0, stackMax - counts[slotIndex]);
+                const filled = Math.min(capacity, remaining);
+                counts[slotIndex] += filled;
+                remaining -= filled;
+            }
+
+            while (remaining > 0) {
+                if (usedSlots >= limit) {
+                    return false;
+                }
+
+                const placed = Math.min(stackMax, remaining);
+                counts.push(placed);
+                usedSlots += 1;
+                remaining -= placed;
+            }
+
+            slotCountsByItemId.set(itemId, counts);
+        }
+
+        return true;
     }
 
     public removeItemFromActive(itemId: string): InventoryViewItem | null {
@@ -247,6 +342,69 @@ export class InventoryManager {
         };
     }
 
+    public canSplitActiveSlot(slotIndex: number): boolean {
+        const index = this.normalizeSlotIndex(slotIndex);
+        if (index === null) {
+            return false;
+        }
+
+        const inventory = this.getActiveInventory();
+        const item = inventory[index] || null;
+        if (!item || !item.itemId) {
+            return false;
+        }
+
+        const count = Math.max(0, Math.floor(item.count || 0));
+        return count > 1
+            && this.getStackMax(item.itemId) > 1
+            && this.findEmptySlotIndexWithinLimit(inventory) >= 0;
+    }
+
+    public splitActiveSlot(slotIndex: number): boolean {
+        const index = this.normalizeSlotIndex(slotIndex);
+        if (index === null || !this.canSplitActiveSlot(index)) {
+            return false;
+        }
+
+        const inventory = this.getActiveInventory();
+        const item = inventory[index];
+        if (!item || !item.itemId) {
+            return false;
+        }
+
+        const emptyIndex = this.findEmptySlotIndexWithinLimit(inventory);
+        if (emptyIndex < 0) {
+            return false;
+        }
+
+        const totalCount = Math.max(0, Math.floor(item.count || 0));
+        const newSlotCount = Math.floor(totalCount / 2);
+        const sourceSlotCount = totalCount - newSlotCount;
+        if (newSlotCount <= 0 || sourceSlotCount <= 0) {
+            return false;
+        }
+
+        item.count = sourceSlotCount;
+        this.placeItemAtIndex(inventory, emptyIndex, { ...item, count: newSlotCount });
+        this.persistCurrentScope();
+        this.syncBagViews();
+        return true;
+    }
+
+    public organizeActiveInventory(): void {
+        const inventory = this.getActiveInventory();
+        const organized = this.buildOrganizedInventory(inventory);
+        inventory.length = 0;
+        const slotCount = this.getPlayerBagSlotCount();
+        const targetLength = Math.max(slotCount, organized.length);
+        for (let i = 0; i < targetLength; i++) {
+            inventory.push(organized[i] || null);
+        }
+
+        this.persistCurrentScope();
+        this.syncBagViews();
+    }
+
     public moveActiveSlot(sourceSlotIndex: number, targetSlotIndex: number): boolean {
         const sourceIndex = this.normalizeSlotIndex(sourceSlotIndex);
         const targetIndex = this.normalizeSlotIndex(targetSlotIndex);
@@ -262,6 +420,32 @@ export class InventoryManager {
         const sourceItem = inventory[sourceIndex];
         if (!sourceItem) {
             return false;
+        }
+
+        const targetItem = inventory[targetIndex] || null;
+        if (targetItem && targetItem.itemId === sourceItem.itemId && this.getStackMax(sourceItem.itemId || "") > 1) {
+            const stackMax = this.getStackMax(sourceItem.itemId || "");
+            const targetCount = Math.max(0, Math.floor(targetItem.count || 0));
+            const sourceCount = Math.max(0, Math.floor(sourceItem.count || 0));
+            const movedCount = Math.min(Math.max(0, stackMax - targetCount), sourceCount);
+            if (movedCount <= 0) {
+                return false;
+            }
+
+            targetItem.count = targetCount + movedCount;
+            sourceItem.count = sourceCount - movedCount;
+            if (!targetItem.icon && sourceItem.icon) {
+                targetItem.icon = sourceItem.icon;
+            }
+            if (!targetItem.name && sourceItem.name) {
+                targetItem.name = sourceItem.name;
+            }
+            if (sourceItem.count <= 0) {
+                inventory[sourceIndex] = null;
+            }
+            this.persistCurrentScope();
+            this.syncBagViews();
+            return true;
         }
 
         inventory[sourceIndex] = inventory[targetIndex] || null;
@@ -282,7 +466,15 @@ export class InventoryManager {
         }
 
         const slot = this.getActiveInventory()[index] || null;
-        return !slot || slot.itemId === itemId;
+        if (!slot) {
+            return true;
+        }
+
+        if (slot.itemId !== itemId || this.getStackMax(itemId) <= 1) {
+            return false;
+        }
+
+        return Math.max(0, Math.floor(slot.count || 0)) < this.getStackMax(itemId);
     }
 
     public placeItemInBucket(bucket: InventoryBucket, slotIndex: number, item: InventoryViewItem): boolean {
@@ -347,6 +539,8 @@ export class InventoryManager {
             const item = source[i];
             target.push(item ? { ...item } : null);
         }
+
+        this.normalizeInventoryStacks(target);
     }
 
     private loadInventoryFromStorage(storageKey: string, target: InventorySlotItem[]): void {
@@ -364,34 +558,125 @@ export class InventoryManager {
                 throw new Error(`Inventory storage "${storageKey}" itemId is invalid at index ${i}.`);
             }
 
-            target.push({
+            target.push(this.normalizeItem({
                 itemId,
                 name: item.name,
                 count: item.count,
                 icon: item.icon,
-            });
+            }));
         }
     }
 
-    private mergeIntoExistingSlot(inventory: InventorySlotItem[], item: InventoryViewItem): boolean {
-        const index = this.findItemIndex(inventory, item.itemId || "");
-        if (index < 0) {
-            return false;
+    private normalizeInventoryStacks(inventory: InventorySlotItem[]): void {
+        const normalized = this.buildNormalizedInventory(inventory, false);
+        inventory.length = 0;
+        for (let i = 0; i < normalized.length; i++) {
+            inventory.push(normalized[i]);
+        }
+    }
+
+    private buildOrganizedInventory(inventory: InventorySlotItem[]): InventorySlotItem[] {
+        const normalized = this.buildNormalizedInventory(inventory, false)
+            .filter((item): item is InventoryViewItem => !!item);
+
+        normalized.sort((a, b) => {
+            const priorityA = this.resolveSortPriority(a);
+            const priorityB = this.resolveSortPriority(b);
+            if (priorityA !== priorityB) {
+                return priorityA - priorityB;
+            }
+
+            const nameCompare = String(a.name || "").localeCompare(String(b.name || ""));
+            if (nameCompare !== 0) {
+                return nameCompare;
+            }
+
+            return String(a.itemId || "").localeCompare(String(b.itemId || ""));
+        });
+
+        return normalized;
+    }
+
+    private buildNormalizedInventory(inventory: InventorySlotItem[], keepEmptySlots: boolean): InventorySlotItem[] {
+        const normalized: InventorySlotItem[] = [];
+        const totals = new Map<string, InventoryViewItem>();
+
+        for (let i = 0; i < inventory.length; i++) {
+            const item = inventory[i] ? this.normalizeItem(inventory[i] as InventoryViewItem) : null;
+            if (!item || !item.itemId) {
+                if (keepEmptySlots) {
+                    normalized.push(null);
+                }
+                continue;
+            }
+
+            const itemId = item.itemId;
+            const existing = totals.get(itemId);
+            if (existing) {
+                existing.count += Math.max(0, Math.floor(item.count || 0));
+                if (!existing.icon && item.icon) {
+                    existing.icon = item.icon;
+                }
+                if (!existing.name && item.name) {
+                    existing.name = item.name;
+                }
+            } else {
+                totals.set(itemId, { ...item, count: Math.max(0, Math.floor(item.count || 0)) });
+            }
         }
 
-        const existing = inventory[index];
-        if (!existing) {
-            return false;
+        totals.forEach((item) => {
+            let remaining = Math.max(0, Math.floor(item.count || 0));
+            const itemId = item.itemId || "";
+            const stackMax = this.getStackMax(itemId);
+            while (remaining > 0) {
+                const count = Math.min(stackMax, remaining);
+                normalized.push({
+                    itemId,
+                    name: item.name,
+                    count,
+                    icon: item.icon,
+                });
+                remaining -= count;
+            }
+        });
+
+        return normalized;
+    }
+
+    private mergeIntoExistingSlot(inventory: InventorySlotItem[], item: InventoryViewItem): number {
+        const itemId = item.itemId || "";
+        const stackMax = this.getStackMax(itemId);
+        let remaining = Math.max(0, Math.floor(item.count || 0));
+
+        if (!itemId || stackMax <= 1) {
+            return remaining;
         }
 
-        existing.count += item.count;
-        if (!existing.icon && item.icon) {
-            existing.icon = item.icon;
+        for (let i = 0; i < inventory.length && remaining > 0; i++) {
+            const existing = inventory[i];
+            if (!existing || existing.itemId !== itemId) {
+                continue;
+            }
+
+            const currentCount = Math.max(0, Math.floor(existing.count || 0));
+            const capacity = Math.max(0, stackMax - currentCount);
+            if (capacity <= 0) {
+                continue;
+            }
+
+            const added = Math.min(capacity, remaining);
+            existing.count = currentCount + added;
+            remaining -= added;
+            if (!existing.icon && item.icon) {
+                existing.icon = item.icon;
+            }
+            if (!existing.name && item.name) {
+                existing.name = item.name;
+            }
         }
-        if (!existing.name && item.name) {
-            existing.name = item.name;
-        }
-        return true;
+
+        return remaining;
     }
 
     private placeItemIntoInventory(inventory: InventorySlotItem[], item: InventoryViewItem): void {
@@ -410,8 +695,9 @@ export class InventoryManager {
         }
 
         const current = inventory[slotIndex];
-        if (current && current.itemId === item.itemId) {
-            current.count += item.count;
+        if (current && current.itemId === item.itemId && this.getStackMax(item.itemId || "") > 1) {
+            const stackMax = this.getStackMax(item.itemId || "");
+            current.count = Math.min(stackMax, Math.max(0, Math.floor(current.count || 0)) + Math.max(0, Math.floor(item.count || 0)));
             if (!current.icon && item.icon) {
                 current.icon = item.icon;
             }
@@ -422,6 +708,29 @@ export class InventoryManager {
         }
 
         inventory[slotIndex] = { ...item };
+    }
+
+    private getStackMax(itemId: string): number {
+        const resolved = this.stackMaxResolver ? this.stackMaxResolver(itemId) : Number.MAX_SAFE_INTEGER;
+        if (!Number.isFinite(resolved)) {
+            return Number.MAX_SAFE_INTEGER;
+        }
+
+        return Math.max(1, Math.floor(resolved));
+    }
+
+    private normalizeItem(item: InventoryViewItem): InventoryViewItem {
+        const normalized = this.itemNormalizer ? this.itemNormalizer({ ...item }) : { ...item };
+        return {
+            itemId: normalized.itemId,
+            name: normalized.name,
+            count: Math.max(0, Math.floor(normalized.count || 0)),
+            icon: normalized.icon,
+        };
+    }
+
+    private resolveSortPriority(item: InventoryViewItem): number {
+        return this.sortPriorityResolver ? this.sortPriorityResolver(item) : Number.MAX_SAFE_INTEGER;
     }
 
     private persistCurrentScope(): void {
@@ -447,6 +756,17 @@ export class InventoryManager {
 
     private findEmptySlotIndex(inventory: InventorySlotItem[]): number {
         for (let i = 0; i < inventory.length; i++) {
+            if (!inventory[i]) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private findEmptySlotIndexWithinLimit(inventory: InventorySlotItem[]): number {
+        const limit = this.getPlayerBagSlotCount();
+        for (let i = 0; i < limit; i++) {
             if (!inventory[i]) {
                 return i;
             }

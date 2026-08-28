@@ -1,0 +1,109 @@
+{
+  "frames": {
+    "water1_water2_mix_30.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "water1_water2_mix_50.png": {
+      "frame": {
+        "idx": 0,
+        "x": 130,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "water1_water2_mix_80.png": {
+      "frame": {
+        "idx": 0,
+        "x": 260,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "water2_water3_mix_30.png": {
+      "frame": {
+        "idx": 0,
+        "x": 0,
+        "y": 130,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "water2_water3_mix_50.png": {
+      "frame": {
+        "idx": 0,
+        "x": 130,
+        "y": 130,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "water2_water3_mix_80.png": {
+      "frame": {
+        "idx": 0,
+        "x": 260,
+        "y": 130,
+        "w": 128,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "meta": {
+    "image": "water_mix_atlas.png"
+  }
+}

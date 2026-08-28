@@ -13,18 +13,46 @@ export class DouyinCloudSaveManager {
         "laya_test_warehouse_meta_v1",
         "laya_test_equipment_v1",
         "laya_test_player_stats_v1",
+        "laya_test_quick_slots_v1",
         "laya_test_sign_in_v1",
         "laya_test_mail_v1",
     ];
 
     private static bootstrapping: boolean = false;
+    private static bootstrapPromise: Promise<void> | null = null;
     private static ready: boolean = false;
     private static applyingCloudSave: boolean = false;
     private static dirty: boolean = false;
     private static uploadTimer: number = 0;
     private static playerId: string = "";
+    private static displayId: number = 0;
+
+    public static getPlayerId(): string {
+        return this.playerId;
+    }
+
+    public static getDisplayId(): number {
+        return this.displayId;
+    }
+
+    public static isReady(): boolean {
+        return this.ready;
+    }
 
     public static async bootstrap(): Promise<void> {
+        if (this.ready) {
+            return;
+        }
+
+        if (this.bootstrapPromise) {
+            return this.bootstrapPromise;
+        }
+
+        this.bootstrapPromise = this.runBootstrap();
+        return this.bootstrapPromise;
+    }
+
+    private static async runBootstrap(): Promise<void> {
         if (this.bootstrapping || this.ready) {
             return;
         }
@@ -40,6 +68,7 @@ export class DouyinCloudSaveManager {
             }
 
             this.playerId = playerId;
+            this.displayId = Number(loginResult.data?.displayId) || 0;
             console.log("[DouyinCloudSave] login success:", playerId);
 
             await this.loadCloudSave();
@@ -60,6 +89,7 @@ export class DouyinCloudSaveManager {
             }
         } finally {
             this.bootstrapping = false;
+            this.bootstrapPromise = null;
         }
     }
 
@@ -179,11 +209,12 @@ export class DouyinCloudSaveManager {
             (value && (value.errMsg || value.message)) ||
             error ||
             ""
-        );
+        ).toLowerCase();
 
         return errNo === 24001013 ||
-            message.indexOf("获取用户信息失败") >= 0 ||
-            message.indexOf("请重新登录") >= 0;
+            message.indexOf("auth") >= 0 ||
+            message.indexOf("login") >= 0 ||
+            message.indexOf("user") >= 0;
     }
 
     private static getStorage(): Storage {

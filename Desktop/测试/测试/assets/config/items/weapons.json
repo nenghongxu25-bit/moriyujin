@@ -117,6 +117,45 @@
             "durability": 80,
             "consumable": false,
             "description": "Ranged weapon"
+        },
+        {
+            "id": "fal",
+            "displayName": "FAL",
+            "nameZh": "FAL",
+            "subCategory": "ranged",
+            "icon": "atlas/picture/items/weapons/rangeds/fal.png",
+            "stackMax": 1,
+            "attackPower": 20,
+            "attackSpeed": 1,
+            "durability": 80,
+            "consumable": false,
+            "description": "Ranged weapon"
+        },
+        {
+            "id": "geluoke",
+            "displayName": "Geluoke",
+            "nameZh": "Geluoke",
+            "subCategory": "ranged",
+            "icon": "atlas/picture/items/weapons/rangeds/geluoke.png",
+            "stackMax": 1,
+            "attackPower": 14,
+            "attackSpeed": 1,
+            "durability": 80,
+            "consumable": false,
+            "description": "Ranged weapon"
+        },
+        {
+            "id": "akm",
+            "displayName": "AKM",
+            "nameZh": "AKM",
+            "subCategory": "ranged",
+            "icon": "atlas/picture/items/weapons/rangeds/ak47.png",
+            "stackMax": 1,
+            "attackPower": 22,
+            "attackSpeed": 1,
+            "durability": 80,
+            "consumable": false,
+            "description": "Ranged weapon"
         }
     ]
 }

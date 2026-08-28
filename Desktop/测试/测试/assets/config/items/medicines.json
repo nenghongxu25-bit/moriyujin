@@ -9,6 +9,10 @@
             "icon": "atlas/picture/items/medicines/bandage.png",
             "stackMax": 20,
             "consumable": true,
+            "useEffect": {
+                "type": "healHp",
+                "amount": 25
+            },
             "description": "恢复少量生命"
         },
         {
@@ -19,6 +23,10 @@
             "icon": "atlas/picture/items/medicines/kangfuyao.png",
             "stackMax": 20,
             "consumable": true,
+            "useEffect": {
+                "type": "healHp",
+                "amount": 50
+            },
             "description": "恢复生命"
         }
     ]

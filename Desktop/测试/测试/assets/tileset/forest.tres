@@ -1,0 +1,1322 @@
+{
+  "_$type": "TileSet",
+  "tileSize": {
+    "_$type": "Vector2",
+    "x": 64,
+    "y": 64
+  },
+  "groups": [
+    {
+      "_$type": "TileSetCellGroup",
+      "id": 0,
+      "atlas": {
+        "_$uuid": "acf7f038-24b7-482d-9df5-227fc8c97b18",
+        "_$type": "Texture2D"
+      },
+      "textureRegionSize": {
+        "_$type": "Vector2",
+        "x": 64,
+        "y": 64
+      },
+      "margin": {
+        "_$type": "Vector2"
+      },
+      "separation": {
+        "_$type": "Vector2"
+      },
+      "tiles": {
+        "0": {
+          "0": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2"
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "physicsDatas": {
+                  "_$type": "Record"
+                },
+                "lightOccluderDatas": {
+                  "_$type": "Record"
+                },
+                "customDatas": {
+                  "_$type": "any",
+                  "value": {}
+                }
+              },
+              "_$type": "Record"
+            }
+          },
+          "1": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "2": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "physicsDatas": {
+                  "_$type": "Record"
+                },
+                "lightOccluderDatas": {
+                  "_$type": "Record"
+                },
+                "customDatas": {
+                  "_$type": "any",
+                  "value": {}
+                }
+              },
+              "_$type": "Record"
+            }
+          },
+          "3": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "4": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 4
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "5": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 5
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record"
+        },
+        "1": {
+          "0": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "y": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "1": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "physicsDatas": {
+                  "_$type": "Record"
+                },
+                "lightOccluderDatas": {
+                  "_$type": "Record"
+                },
+                "customDatas": {
+                  "_$type": "any",
+                  "value": {}
+                }
+              },
+              "_$type": "Record"
+            }
+          },
+          "2": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 2,
+              "y": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "3": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 3,
+              "y": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "4": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 4,
+              "y": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "5": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 5,
+              "y": 1
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record"
+        },
+        "2": {
+          "0": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "y": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "1": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "physicsDatas": {
+                  "_$type": "Record"
+                },
+                "lightOccluderDatas": {
+                  "_$type": "Record"
+                },
+                "customDatas": {
+                  "_$type": "any",
+                  "value": {}
+                }
+              },
+              "_$type": "Record"
+            }
+          },
+          "2": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 2,
+              "y": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "3": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 3,
+              "y": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "4": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 4,
+              "y": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "5": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 5,
+              "y": 2
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record"
+        },
+        "3": {
+          "0": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "y": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "1": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "2": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 2,
+              "y": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "3": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 3,
+              "y": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "4": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 4,
+              "y": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "5": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 5,
+              "y": 3
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record"
+        },
+        "_$type": "Record"
+      }
+    }
+  ]
+}

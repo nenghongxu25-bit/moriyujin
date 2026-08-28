@@ -203,7 +203,7 @@ export class MakePanel extends Laya.Script {
             this.messageTextNode as any,
             { alpha: 0 },
             450,
-            null,
+            undefined,
             Laya.Handler.create(this, this.finishMessageFade, [token]),
         );
     }

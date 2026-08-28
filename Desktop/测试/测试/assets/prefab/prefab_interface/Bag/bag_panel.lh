@@ -59,6 +59,12 @@
           "64g91x1v"
         ]
       },
+      "organizeButtonNode": {
+        "_$ref": [
+          "ybrtsioi",
+          "t1bjjjp5"
+        ]
+      },
       "previewWeaponSpineSlotName": "",
       "previewWeaponMeleeSpineSlotName": "weapon_melee_slot",
       "previewWeaponRangedSpineSlotName": "weapon_ranged_slot",
@@ -118,7 +124,13 @@
           "active": true,
           "x": 712,
           "y": 204,
-          "visible": true
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "64g91x1v",
+              "visible": false
+            }
+          ]
         },
         {
           "_$id": "tags6qmg",

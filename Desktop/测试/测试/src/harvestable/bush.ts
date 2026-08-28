@@ -21,7 +21,7 @@ export class bush extends HarvestableBase {
             ],
             drops: DataManager.getInstance().getHarvestDrops("harvestable_bush", [
                 {
-                    itemId: "common_material_04",
+                    itemId: "grass",
                     label: "草",
                     minCount: 2,
                     maxCount: 3,

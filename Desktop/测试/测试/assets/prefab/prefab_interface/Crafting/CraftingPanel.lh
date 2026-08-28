@@ -236,8 +236,8 @@
           "_$prefab": "bd58ee71-7841-47e3-8f9f-4989d03732bb",
           "name": "buttonmodule",
           "active": true,
-          "x": 522,
-          "y": 230,
+          "x": 549,
+          "y": 255,
           "scaleX": 1.5,
           "scaleY": 1.5,
           "visible": true,
@@ -651,10 +651,10 @@
       "_$id": "joiii0ex",
       "_$type": "GWidget",
       "name": "CloseSprite",
-      "x": 672,
-      "y": 510,
-      "width": 128,
-      "height": 73,
+      "x": 963,
+      "y": 139,
+      "width": 100,
+      "height": 100,
       "_$comp": [
         {
           "_$type": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
@@ -669,25 +669,12 @@
           "_$id": "rfkfthtc",
           "_$type": "GImage",
           "name": "img",
-          "width": 128,
-          "height": 73,
-          "src": "res://590292af-12f7-4f03-a21b-0655c9c2353d"
-        },
-        {
-          "_$id": "feo6uqqp",
-          "_$type": "Text",
-          "name": "Text",
-          "x": 3,
-          "y": 22,
-          "width": 120,
-          "height": 28,
-          "text": "关闭",
-          "fontSize": 20,
-          "color": "#000000",
-          "align": "center",
-          "valign": "middle",
-          "leading": 2,
-          "letterSpacing": 0
+          "x": -2,
+          "y": -35,
+          "width": 100,
+          "height": 100,
+          "src": "res://2f8dc7c5-4a24-4efd-8e48-9772db215c5c",
+          "autoSize": false
         }
       ]
     }

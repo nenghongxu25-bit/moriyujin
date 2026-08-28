@@ -2,6 +2,8 @@
 
 import { DouyinLogin } from "./platform/douyin/DouyinLogin";
 import { DouyinCloudSaveManager } from "./platform/douyin/DouyinCloudSaveManager";
+import { DouyinUserProfileManager } from "./platform/douyin/DouyinUserProfileManager";
+import { PlayerProfileView } from "./PlayUI/playerui/PlayerProfileView";
 
 @regClass()
 export class OpenSprite extends Laya.Script {
@@ -17,6 +19,7 @@ export class OpenSprite extends Laya.Script {
 
     onAwake(): void {
         OpenSprite.startCloudLoginOnce();
+        OpenSprite.bindPlayerProfileViewOnce();
         this.bindClickTarget();
     }
 
@@ -41,6 +44,41 @@ export class OpenSprite extends Laya.Script {
         console.log("[DouyinCloud] 菜单启动，开始免登录");
 
         void DouyinCloudSaveManager.bootstrap();
+    }
+
+    private static bindPlayerProfileViewOnce(): void {
+        Laya.timer.once(0, null, () => {
+            const stage = Laya.stage as Laya.Node | null;
+            if (!stage) {
+                return;
+            }
+
+            const profileNode = OpenSprite.findNodeByName(stage, "touxiang");
+            if (!profileNode || profileNode.destroyed) {
+                return;
+            }
+
+            if (!profileNode.getComponent(PlayerProfileView)) {
+                profileNode.addComponent(PlayerProfileView);
+            }
+        });
+    }
+
+    private static findNodeByName(root: Laya.Node, name: string): Laya.Node | null {
+        if (root.name === name) {
+            return root;
+        }
+
+        const count = root.numChildren;
+        for (let i = 0; i < count; i++) {
+            const child = root.getChildAt(i);
+            const found = OpenSprite.findNodeByName(child, name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
     }
 
     private bindClickTarget(): void {
@@ -86,9 +124,23 @@ export class OpenSprite extends Laya.Script {
             return;
         }
 
+        if (actionId === "douyin-profile") {
+            void this.requestDouyinProfile();
+            return;
+        }
+
         if (this.targetNode) {
             (this.targetNode as any).visible = true;
             this.refreshTargetNode(this.targetNode);
+        }
+    }
+
+    private async requestDouyinProfile(): Promise<void> {
+        try {
+            const profile = await DouyinUserProfileManager.requestAndSaveProfile();
+            console.log("[DouyinProfile] profile saved:", profile);
+        } catch (error) {
+            console.warn("[DouyinProfile] request profile failed:", error);
         }
     }
 

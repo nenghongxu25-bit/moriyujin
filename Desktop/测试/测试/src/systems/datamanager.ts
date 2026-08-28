@@ -4,36 +4,23 @@ import { HarvestManager, type HarvestDropConfig, type HarvestResultItem, type Ha
 import { InventoryManager } from "./data/InventoryManager";
 import type { BagView, EquippedItem, EquipmentSlotType, InventoryBucket, InventoryScope, InventorySlotItem, InventoryViewItem, QuickSlotView, WarehouseView } from "./data/InventoryTypes";
 import { MailManager } from "./data/MailManager";
+import { PlayerStatsManager, type PlayerStatsSnapshot } from "./data/PlayerStatsManager";
 import { QuickMakeManager, type QuickMakeRecipeDefinition } from "./data/QuickMakeManager";
+import { QuickSlotManager, type QuickSlotUseResult } from "./data/QuickSlotManager";
 import { SaveManager } from "./data/SaveManager";
 import { SignInManager, type SignInRewardDefinition, type SignInRewardView, type SignInUnlockPreview } from "./data/SignInManager";
 import { WarehouseManager } from "./data/WarehouseManager";
 
-export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, QuickSlotView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, SignInUnlockPreview, CraftingRecipeDefinition, CraftingStationId, QuickMakeRecipeDefinition };
+export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, QuickSlotView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, SignInUnlockPreview, CraftingRecipeDefinition, CraftingStationId, QuickMakeRecipeDefinition, QuickSlotUseResult };
 
 export interface CraftResult {
     success: boolean;
     message: string;
 }
 
-export interface QuickSlotUseResult {
-    success: boolean;
-    usedItem?: boolean;
-    changedWeapon?: boolean;
-}
-
 interface WarehouseRecipePayload {
     inputs: CraftingIngredient[];
     output: CraftingOutput;
-}
-export interface PlayerStatsSnapshot {
-    level: number;
-    currentHp: number;
-    maxHp: number;
-    currentStamina: number;
-    maxStamina: number;
-    experience: number;
-    nextLevelExperience: number;
 }
 
 export class DataManager {
@@ -52,23 +39,13 @@ export class DataManager {
     private readonly crafting = new CraftingManager();
     private readonly quickMake = new QuickMakeManager();
     private readonly signIn = new SignInManager(this.save);
-    private readonly warehouseViews: Set<WarehouseView> = new Set();
-    private readonly quickSlotViews: Set<QuickSlotView> = new Set();
-    private readonly quickSlotItems: InventorySlotItem[] = [null, null, null, null];
-    private readonly equippedItems: Record<EquipmentSlotType, EquippedItem | null> = {
+    private readonly playerStats = new PlayerStatsManager(this.save, DataManager.PLAYER_STATS_STORAGE_KEY, () => this.inventory.refreshBagViews());
+    private readonly quickSlots = new QuickSlotManager(this, DataManager.QUICK_SLOT_STORAGE_KEY);
+    private readonly warehouseViews: Set<WarehouseView> = new Set();    private readonly equippedItems: Record<EquipmentSlotType, EquippedItem | null> = {
         insertPlate: null,
         helmet: null,
         weapon: null,
         armor: null,
-    };
-    private playerStats: PlayerStatsSnapshot = {
-        level: 1,
-        currentHp: 100,
-        maxHp: 100,
-        currentStamina: 100,
-        maxStamina: 100,
-        experience: 0,
-        nextLevelExperience: 200,
     };
     private loaded: boolean = false;
     private loading: boolean = false;
@@ -81,6 +58,14 @@ export class DataManager {
         return DataManager.instance;
     }
 
+    private constructor() {
+        this.inventory.setStackMaxResolver((itemId) => this.resolveItemStackMax(itemId));
+        this.inventory.setItemNormalizer((item) => this.normalizeInventoryItem(item));
+        this.inventory.setSortPriorityResolver((item) => this.resolveInventorySortPriority(item));
+        this.warehouse.setStackMaxResolver((itemId) => this.resolveItemStackMax(itemId));
+        this.warehouse.setItemNormalizer((item) => this.normalizeInventoryItem(item));
+    }
+
     public async loadAll(): Promise<void> {
         this.resetDevelopmentSaveOnStartup();
 
@@ -88,8 +73,8 @@ export class DataManager {
             this.inventory.loadPersistedInventories();
             this.warehouse.load();
             this.loadEquipment();
-            this.loadPlayerStats();
-            this.loadQuickSlots();
+            this.playerStats.load();
+            this.quickSlots.load();
             this.ensureStarterItems();
             return;
         }
@@ -119,8 +104,8 @@ export class DataManager {
             this.inventory.loadPersistedInventories();
             this.warehouse.load();
             this.loadEquipment();
-            this.loadPlayerStats();
-            this.loadQuickSlots();
+            this.playerStats.load();
+            this.quickSlots.load();
             this.loaded = true;
             this.ensureStarterItems();
         } finally {
@@ -136,9 +121,9 @@ export class DataManager {
     }
 
     public returnToBaseAfterDeath(sceneUrl: string): void {
-        this.playerStats.currentHp = this.playerStats.maxHp;
-        this.playerStats.currentStamina = this.playerStats.maxStamina;
-        this.savePlayerStats();
+        const stats = this.playerStats.getSnapshot();
+        this.playerStats.setHp(stats.maxHp, stats.maxHp);
+        this.playerStats.setStamina(stats.maxStamina, stats.maxStamina);
         this.inventory.returnToBaseAfterDeath(sceneUrl);
         this.clearQuickSlots();
     }
@@ -198,6 +183,25 @@ export class DataManager {
         this.refreshQuickSlotViews();
     }
 
+    public canGrantItemsToActive(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): boolean {
+        return this.inventory.canAddItems(this.resolveWarehouseGrantItems(items));
+    }
+
+    public grantItemsToActiveIfSpace(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): boolean {
+        const resolvedItems = this.resolveWarehouseGrantItems(items);
+        if (!this.inventory.canAddItems(resolvedItems)) {
+            return false;
+        }
+
+        for (let i = 0; i < resolvedItems.length; i++) {
+            const item = resolvedItems[i];
+            this.inventory.addItemToActive(item.itemId, item.name, item.count, item.icon);
+        }
+
+        this.refreshQuickSlotViews();
+        return true;
+    }
+
     public canGrantItemsToWarehouse(items: Array<{ itemId: string; name?: string; count: number; icon?: string }>): boolean {
         return this.warehouse.canAddItems(this.resolveWarehouseGrantItems(items));
     }
@@ -243,31 +247,31 @@ export class DataManager {
     }
 
     public getPlayerStats(): PlayerStatsSnapshot {
-        return { ...this.playerStats };
+        return this.playerStats.getSnapshot();
     }
 
-    public setPlayerHp(currentHp: number, maxHp: number = this.playerStats.maxHp): void {
-        const nextMaxHp = this.normalizePositiveInt(maxHp, this.playerStats.maxHp || 100);
-        const nextCurrentHp = Math.max(0, Math.min(nextMaxHp, this.normalizeInt(currentHp, nextMaxHp)));
-        if (this.playerStats.currentHp === nextCurrentHp && this.playerStats.maxHp === nextMaxHp) {
-            return;
-        }
-
-        this.playerStats = {
-            ...this.playerStats,
-            currentHp: nextCurrentHp,
-            maxHp: nextMaxHp,
-        };
-        this.savePlayerStats();
-        this.inventory.refreshBagViews();
+    public setPlayerHp(currentHp: number, maxHp: number = this.playerStats.getSnapshot().maxHp): void {
+        this.playerStats.setHp(currentHp, maxHp);
     }
-
     public discardActiveSlot(slotIndex: number): boolean {
         const removed = this.inventory.removeActiveSlot(slotIndex);
         if (removed?.itemId) {
             this.clearQuickSlotsForMissingItems();
         }
         return !!removed;
+    }
+
+    public canSplitActiveSlot(slotIndex: number): boolean {
+        return this.inventory.canSplitActiveSlot(slotIndex);
+    }
+
+    public splitActiveSlot(slotIndex: number): boolean {
+        return this.inventory.splitActiveSlot(slotIndex);
+    }
+
+    public organizeActiveInventory(): void {
+        this.inventory.organizeActiveInventory();
+        this.clearQuickSlotsForMissingItems();
     }
 
     public useActiveItemAtSlot(slotIndex: number): boolean {
@@ -286,7 +290,7 @@ export class DataManager {
 
         const healAmount = this.resolveUseHealAmount(consumed.itemId || "");
         if (healAmount > 0) {
-            this.setPlayerHp(this.playerStats.currentHp + healAmount, this.playerStats.maxHp);
+            this.setPlayerHp(this.playerStats.getSnapshot().currentHp + healAmount, this.playerStats.getSnapshot().maxHp);
         }
 
         this.clearQuickSlotsForMissingItems();
@@ -305,219 +309,60 @@ export class DataManager {
             || itemId === "kangfuyao";
     }
 
-    public setPlayerStamina(currentStamina: number, maxStamina: number = this.playerStats.maxStamina): void {
-        const nextMaxStamina = this.normalizePositiveInt(maxStamina, this.playerStats.maxStamina || 100);
-        const nextCurrentStamina = Math.max(0, Math.min(nextMaxStamina, this.normalizeInt(currentStamina, nextMaxStamina)));
-        if (this.playerStats.currentStamina === nextCurrentStamina && this.playerStats.maxStamina === nextMaxStamina) {
-            return;
-        }
-
-        this.playerStats = {
-            ...this.playerStats,
-            currentStamina: nextCurrentStamina,
-            maxStamina: nextMaxStamina,
-        };
-        this.savePlayerStats();
+    public setPlayerStamina(currentStamina: number, maxStamina: number = this.playerStats.getSnapshot().maxStamina): void {
+        this.playerStats.setStamina(currentStamina, maxStamina);
     }
 
     public grantGatherExperience(): void {
-        this.grantPlayerExperience(1);
+        this.playerStats.grantGatherExperience();
     }
 
     public grantEnemyDefeatExperience(): void {
-        this.grantPlayerExperience(1);
+        this.playerStats.grantEnemyDefeatExperience();
     }
 
     public grantPlayerExperience(amount: number): void {
-        const value = Number.isFinite(amount) ? Math.floor(amount) : 0;
-        if (value <= 0) {
-            return;
-        }
-
-        let leveledUp = false;
-        this.playerStats.experience += value;
-        while (this.playerStats.experience >= this.playerStats.nextLevelExperience) {
-            this.playerStats.experience -= this.playerStats.nextLevelExperience;
-            this.playerStats.level += 1;
-            this.playerStats.maxHp += 10;
-            this.playerStats.currentHp = this.playerStats.maxHp;
-            this.playerStats.nextLevelExperience += 50;
-            leveledUp = true;
-        }
-
-        if (leveledUp) {
-            this.playerStats.currentHp = Math.min(this.playerStats.currentHp, this.playerStats.maxHp);
-        }
-
-        this.savePlayerStats();
-        this.inventory.refreshBagViews();
+        this.playerStats.grantExperience(amount);
     }
-
     public getInventorySnapshot(bucket: InventoryBucket = "active"): InventorySlotItem[] {
         return bucket === "warehouse" ? this.warehouse.getSnapshot() : this.inventory.getInventorySnapshot();
     }
 
     public getQuickSlotItems(): InventorySlotItem[] {
-        return this.quickSlotItems.map((item) => (item ? { ...item } : null));
+        return this.quickSlots.getItems();
     }
 
     public canAssignItemToQuickSlot(itemId: string): boolean {
-        const meta = this.resolveItemMeta(itemId);
-        const category = String(meta?.category || "").toLowerCase();
-        const subCategory = String(meta?.subCategory || "").toLowerCase();
-        return category === "foods"
-            || category === "medicines"
-            || category === "weapons"
-            || subCategory.includes("food")
-            || subCategory.includes("medicine")
-            || subCategory.includes("weapon")
-            || subCategory.includes("melee")
-            || subCategory.includes("ranged");
+        return this.quickSlots.canAssignItem(itemId);
     }
 
     public assignActiveItemToQuickSlot(quickSlotIndex: number, itemId: string): boolean {
-        const inventory = this.inventory.getInventorySnapshot();
-        for (let i = 0; i < inventory.length; i++) {
-            const item = inventory[i];
-            if (item && item.itemId === itemId) {
-                return this.assignActiveSlotToQuickSlot(quickSlotIndex, i);
-            }
-        }
-
-        return false;
+        return this.quickSlots.assignActiveItem(quickSlotIndex, itemId);
     }
 
     public assignActiveSlotToQuickSlot(quickSlotIndex: number, activeSlotIndex: number): boolean {
-        const index = this.normalizeQuickSlotIndex(quickSlotIndex);
-        const slotIndex = Number.isFinite(activeSlotIndex) ? Math.floor(activeSlotIndex) : -1;
-        const activeItems = this.inventory.getInventorySnapshot();
-        const sourceItem = slotIndex >= 0 ? activeItems[slotIndex] : null;
-        const itemId = String(sourceItem?.itemId || "");
-        if (index < 0 || slotIndex < 0 || !sourceItem || !itemId || !this.canAssignItemToQuickSlot(itemId)) {
-            return false;
-        }
-
-        const removed = this.inventory.removeActiveSlot(slotIndex);
-        if (!removed) {
-            return false;
-        }
-
-        const previousQuickItem = this.quickSlotItems[index];
-        this.quickSlotItems[index] = removed;
-        if (previousQuickItem) {
-            this.inventory.placeItemInBucket("active", slotIndex, previousQuickItem);
-        }
-
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return true;
+        return this.quickSlots.assignActiveSlot(quickSlotIndex, activeSlotIndex);
     }
 
     public clearQuickSlot(quickSlotIndex: number): boolean {
-        const index = this.normalizeQuickSlotIndex(quickSlotIndex);
-        if (index < 0 || !this.quickSlotItems[index]) {
-            return false;
-        }
-
-        this.quickSlotItems[index] = null;
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return true;
+        return this.quickSlots.clear(quickSlotIndex);
     }
 
     public moveQuickSlot(sourceQuickSlotIndex: number, targetQuickSlotIndex: number): boolean {
-        const sourceIndex = this.normalizeQuickSlotIndex(sourceQuickSlotIndex);
-        const targetIndex = this.normalizeQuickSlotIndex(targetQuickSlotIndex);
-        if (sourceIndex < 0 || targetIndex < 0 || sourceIndex === targetIndex) {
-            return false;
-        }
-
-        const sourceItem = this.quickSlotItems[sourceIndex];
-        if (!sourceItem) {
-            return false;
-        }
-
-        this.quickSlotItems[sourceIndex] = this.quickSlotItems[targetIndex] || null;
-        this.quickSlotItems[targetIndex] = sourceItem;
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return true;
+        return this.quickSlots.move(sourceQuickSlotIndex, targetQuickSlotIndex);
     }
 
     public moveQuickSlotToActiveSlot(sourceQuickSlotIndex: number, targetActiveSlotIndex: number): boolean {
-        const sourceIndex = this.normalizeQuickSlotIndex(sourceQuickSlotIndex);
-        const targetIndex = Number.isFinite(targetActiveSlotIndex) ? Math.floor(targetActiveSlotIndex) : -1;
-        if (sourceIndex < 0 || targetIndex < 0) {
-            return false;
-        }
-
-        const sourceItem = this.quickSlotItems[sourceIndex];
-        if (!sourceItem) {
-            return false;
-        }
-
-        const previousActiveItem = this.inventory.swapActiveSlotItem(targetIndex, sourceItem);
-        if (previousActiveItem && !this.canAssignItemToQuickSlot(previousActiveItem.itemId || "")) {
-            this.inventory.swapActiveSlotItem(targetIndex, previousActiveItem);
-            return false;
-        }
-
-        this.quickSlotItems[sourceIndex] = previousActiveItem || null;
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return true;
+        return this.quickSlots.moveToActiveSlot(sourceQuickSlotIndex, targetActiveSlotIndex);
     }
 
     public moveQuickSlotToEquipment(sourceQuickSlotIndex: number, targetSlot: EquipmentSlotType): boolean {
-        const sourceIndex = this.normalizeQuickSlotIndex(sourceQuickSlotIndex);
-        if (sourceIndex < 0) {
-            return false;
-        }
-
-        const sourceItem = this.quickSlotItems[sourceIndex];
-        const itemId = String(sourceItem?.itemId || "");
-        if (!sourceItem || !this.canEquipItemToSlot(itemId, targetSlot)) {
-            return false;
-        }
-
-        const previousEquipment = this.equippedItems[targetSlot];
-        this.equippedItems[targetSlot] = {
-            itemId,
-            name: this.resolveDisplayName(itemId, sourceItem.name),
-            count: 1,
-            icon: sourceItem.icon || this.resolveItemMeta(itemId)?.icon || this.resolveFallbackIcon(itemId),
-        };
-        this.quickSlotItems[sourceIndex] = previousEquipment ? { ...previousEquipment } : null;
-        this.saveEquipment();
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return true;
+        return this.quickSlots.moveToEquipment(sourceQuickSlotIndex, targetSlot);
     }
 
     public activateQuickSlot(quickSlotIndex: number): QuickSlotUseResult {
-        const index = this.normalizeQuickSlotIndex(quickSlotIndex);
-        if (index < 0) {
-            return { success: false };
-        }
-
-        const item = this.quickSlotItems[index];
-        const itemId = String(item?.itemId || "").trim();
-        if (!item || !itemId) {
-            this.clearQuickSlot(index);
-            return { success: false };
-        }
-
-        if (this.canEquipItemToSlot(itemId, "weapon")) {
-            return this.switchWeaponWithQuickSlot(index, itemId);
-        }
-
-        if (this.canUseItem(itemId)) {
-            return this.useItemFromQuickSlot(index, itemId);
-        }
-
-        return { success: false };
+        return this.quickSlots.activate(quickSlotIndex);
     }
-
     public getWarehouseSnapshot(): InventorySlotItem[] {
         return this.warehouse.getSnapshot();
     }
@@ -566,7 +411,7 @@ export class DataManager {
             return false;
         }
 
-        return this.canRecipeToWarehouse(recipe);
+        return this.canRecipeToActivePreferred(recipe);
     }
 
     public quickMakeToWarehouse(recipeId: string): CraftResult {
@@ -575,7 +420,7 @@ export class DataManager {
             return { success: false, message: "\u914d\u65b9\u4e0d\u5b58\u5728" };
         }
 
-        return this.makeRecipeToWarehouse(recipe);
+        return this.makeRecipeToActivePreferred(recipe);
     }
 
     public canCraftToWarehouse(recipeId: string): boolean {
@@ -602,6 +447,42 @@ export class DataManager {
         }
 
         return this.hasIngredientsInActiveAndWarehouse(recipe.inputs) && this.canGrantItemsToWarehouse([recipe.output]);
+    }
+
+    private canRecipeToActivePreferred(recipe: WarehouseRecipePayload | null): boolean {
+        if (!recipe) {
+            return false;
+        }
+
+        return this.hasIngredientsInActiveAndWarehouse(recipe.inputs)
+            && (this.canGrantItemsToActive([recipe.output]) || this.canGrantItemsToWarehouse([recipe.output]));
+    }
+
+    private makeRecipeToActivePreferred(recipe: WarehouseRecipePayload | null): CraftResult {
+        if (!recipe) {
+            return { success: false, message: "\u914d\u65b9\u4e0d\u5b58\u5728" };
+        }
+
+        if (!this.hasIngredientsInActiveAndWarehouse(recipe.inputs)) {
+            return { success: false, message: "\u6750\u6599\u4e0d\u8db3\uff0c\u4e0d\u8fdb\u884c\u5236\u9020" };
+        }
+
+        if (!this.canGrantItemsToActive([recipe.output]) && !this.canGrantItemsToWarehouse([recipe.output])) {
+            return { success: false, message: "\u80cc\u5305\u548c\u4ed3\u5e93\u7a7a\u95f4\u4e0d\u8db3" };
+        }
+
+        if (!this.consumeIngredientsFromActiveAndWarehouse(recipe.inputs)) {
+            return { success: false, message: "\u6750\u6599\u4e0d\u8db3\uff0c\u4e0d\u8fdb\u884c\u5236\u9020" };
+        }
+
+        if (!this.grantItemsToActiveIfSpace([recipe.output]) && !this.grantItemsToWarehouse([recipe.output])) {
+            return { success: false, message: "\u80cc\u5305\u548c\u4ed3\u5e93\u7a7a\u95f4\u4e0d\u8db3" };
+        }
+
+        return {
+            success: true,
+            message: `\u83b7\u5f97${recipe.output.name || recipe.output.itemId}*${Math.max(0, Math.floor(recipe.output.count || 0))}`,
+        };
     }
 
     private makeRecipeToWarehouse(recipe: WarehouseRecipePayload | null): CraftResult {
@@ -661,17 +542,15 @@ export class DataManager {
     }
 
     public registerQuickSlotView(view: QuickSlotView): void {
-        this.quickSlotViews.add(view);
-        view.refreshQuickSlots(this.getQuickSlotItems());
+        this.quickSlots.registerView(view);
         if (!this.loaded) {
             void this.loadAll();
         }
     }
 
     public unregisterQuickSlotView(view: QuickSlotView): void {
-        this.quickSlotViews.delete(view);
+        this.quickSlots.unregisterView(view);
     }
-
     public registerWarehouseView(view: WarehouseView): void {
         this.warehouseViews.add(view);
         view.refresh();
@@ -685,12 +564,76 @@ export class DataManager {
         return this.items.resolveItemMeta(itemId);
     }
 
+    public resolveItemStackMax(itemId: string): number {
+        const meta = this.resolveItemMeta(itemId);
+        if (meta && Number.isFinite(meta.stackMax)) {
+            return Math.max(1, Math.floor(meta.stackMax || 1));
+        }
+
+        return Number.MAX_SAFE_INTEGER;
+    }
+
     public resolveFallbackIcon(itemId: string): string | undefined {
         return this.items.resolveFallbackIcon(itemId);
     }
 
     public resolveFallbackName(itemId: string): string | undefined {
         return this.items.resolveFallbackName(itemId);
+    }
+
+    private normalizeInventoryItem(item: InventoryViewItem): InventoryViewItem {
+        const itemId = this.resolveCanonicalItemId(item.itemId || "");
+        const meta = this.resolveItemMeta(itemId);
+        return {
+            itemId,
+            name: this.resolveDisplayName(itemId, item.name),
+            count: item.count,
+            icon: item.icon || meta?.icon || this.resolveFallbackIcon(itemId),
+        };
+    }
+
+    private resolveCanonicalItemId(itemId: string): string {
+        const normalizedItemId = String(itemId || "").trim();
+        if (normalizedItemId === "common_material_04") {
+            return "grass";
+        }
+
+        return normalizedItemId;
+    }
+
+    private resolveInventorySortPriority(item: InventoryViewItem): number {
+        const itemId = this.resolveCanonicalItemId(item.itemId || "");
+        const meta = this.resolveItemMeta(itemId);
+        const category = String(meta?.category || "").toLowerCase();
+        const subCategory = String(meta?.subCategory || "").toLowerCase();
+
+        if (category === "weapons" || subCategory.includes("weapon") || subCategory.includes("melee") || Number.isFinite(meta?.attackPower) || Number.isFinite(meta?.attackSpeed)) {
+            return 0;
+        }
+
+        if (category.includes("armor") || category.includes("helmet") || category.includes("plate")
+            || subCategory.includes("armor") || subCategory.includes("helmet") || subCategory.includes("plate")
+            || subCategory.includes("insert") || subCategory.includes("body") || subCategory.includes("head")) {
+            return 1;
+        }
+
+        if (category === "medicines" || subCategory.includes("medicine")) {
+            return 2;
+        }
+
+        if (category === "foods" || subCategory.includes("food")) {
+            return 3;
+        }
+
+        if (category === "materials" || subCategory.includes("material")) {
+            return 4;
+        }
+
+        if (category === "misc") {
+            return 5;
+        }
+
+        return 6;
     }
 
     public getEquippedItem(slot: EquipmentSlotType): EquippedItem | null {
@@ -775,15 +718,12 @@ export class DataManager {
 
     private resolveUseHealAmount(itemId: string): number {
         const normalizedItemId = String(itemId || "").trim();
-        if (normalizedItemId === "bandage") {
-            return 25;
-        }
-
-        if (normalizedItemId === "kangfuyao") {
-            return 50;
-        }
-
         const meta = this.resolveItemMeta(normalizedItemId);
+        const useEffect = meta?.useEffect;
+        if (useEffect && useEffect.type === "healHp" && Number.isFinite(useEffect.amount)) {
+            return Math.max(0, Math.floor(useEffect.amount || 0));
+        }
+
         const category = String(meta?.category || "").toLowerCase();
         if (category === "foods") {
             return 10;
@@ -821,59 +761,6 @@ export class DataManager {
         }
 
         return Math.max(0.1, this.resolveItemMeta(weapon.itemId)?.attackSpeed || 1);
-    }
-
-    private useItemFromQuickSlot(quickSlotIndex: number, itemId: string): QuickSlotUseResult {
-        const item = this.quickSlotItems[quickSlotIndex];
-        if (!item || item.itemId !== itemId || item.count <= 0) {
-            this.clearQuickSlot(quickSlotIndex);
-            return { success: false };
-        }
-
-        item.count = Math.max(0, Math.floor(item.count || 0) - 1);
-        if (item.count <= 0) {
-            this.quickSlotItems[quickSlotIndex] = null;
-        }
-
-        const healAmount = this.resolveUseHealAmount(itemId);
-        if (healAmount > 0) {
-            this.setPlayerHp(this.playerStats.currentHp + healAmount, this.playerStats.maxHp);
-        }
-
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return { success: true, usedItem: true };
-    }
-
-    private switchWeaponWithQuickSlot(quickSlotIndex: number, itemId: string): QuickSlotUseResult {
-        if (!this.canEquipItemToSlot(itemId, "weapon")) {
-            return { success: false };
-        }
-
-        const nextItem = this.quickSlotItems[quickSlotIndex];
-        if (!nextItem || nextItem.itemId !== itemId) {
-            this.clearQuickSlot(quickSlotIndex);
-            return { success: false };
-        }
-
-        const previousWeapon = this.equippedItems.weapon;
-        this.equippedItems.weapon = {
-            itemId: nextItem.itemId,
-            name: this.resolveDisplayName(nextItem.itemId, nextItem.name),
-            count: 1,
-            icon: nextItem.icon || this.resolveItemMeta(nextItem.itemId)?.icon || this.resolveFallbackIcon(nextItem.itemId),
-        };
-
-        if (previousWeapon) {
-            this.quickSlotItems[quickSlotIndex] = { ...previousWeapon };
-        } else {
-            this.quickSlotItems[quickSlotIndex] = null;
-        }
-
-        this.saveEquipment();
-        this.saveQuickSlots();
-        this.refreshQuickSlotViews();
-        return { success: true, changedWeapon: true };
     }
 
     public transferItem(sourceBucket: InventoryBucket, targetBucket: InventoryBucket, itemId: string, targetSlotIndex?: number): boolean {
@@ -1025,7 +912,7 @@ export class DataManager {
         const requirements = this.mergeCraftingIngredients(ingredients);
         for (let i = 0; i < requirements.length; i++) {
             const item = requirements[i];
-            const available = this.inventory.getItemCount(item.itemId) + this.warehouse.getItemCount(item.itemId);
+            const available = this.getAvailableItemCount(item.itemId);
             if (available < item.count) {
                 return false;
             }
@@ -1116,75 +1003,16 @@ export class DataManager {
     }
 
     private refreshQuickSlotViews(): void {
-        const items = this.getQuickSlotItems();
-        this.quickSlotViews.forEach((view) => view.refreshQuickSlots(items));
+        this.quickSlots.refreshViews();
     }
 
     private clearQuickSlots(): void {
-        let changed = false;
-        for (let i = 0; i < this.quickSlotItems.length; i++) {
-            if (this.quickSlotItems[i]) {
-                this.quickSlotItems[i] = null;
-                changed = true;
-            }
-        }
-
-        if (changed) {
-            this.saveQuickSlots();
-        }
-        this.refreshQuickSlotViews();
+        this.quickSlots.clearAll();
     }
 
     private clearQuickSlotsForMissingItems(): void {
-        let changed = false;
-        for (let i = 0; i < this.quickSlotItems.length; i++) {
-            const item = this.quickSlotItems[i];
-            if (item && (!item.itemId || item.count <= 0 || !this.canAssignItemToQuickSlot(item.itemId))) {
-                this.quickSlotItems[i] = null;
-                changed = true;
-            }
-        }
-
-        if (changed) {
-            this.saveQuickSlots();
-        }
-        this.refreshQuickSlotViews();
+        this.quickSlots.clearMissingItems();
     }
-
-    private loadQuickSlots(): void {
-        const stored = this.save.loadJson<Array<InventorySlotItem | string>>(DataManager.QUICK_SLOT_STORAGE_KEY);
-        for (let i = 0; i < this.quickSlotItems.length; i++) {
-            const storedItem = Array.isArray(stored) ? stored[i] : null;
-            if (typeof storedItem === "string") {
-                this.quickSlotItems[i] = null;
-                continue;
-            }
-
-            const item = storedItem || null;
-            const itemId = String(item?.itemId || "").trim();
-            const rawCount = item ? item.count : 0;
-            const count = Number.isFinite(rawCount) ? Math.max(0, Math.floor(rawCount)) : 0;
-            this.quickSlotItems[i] = itemId && count > 0 && this.canAssignItemToQuickSlot(itemId)
-                ? {
-                      itemId,
-                      name: this.resolveDisplayName(itemId, item?.name),
-                      count,
-                      icon: item?.icon || this.resolveItemMeta(itemId)?.icon || this.resolveFallbackIcon(itemId),
-                  }
-                : null;
-        }
-        this.clearQuickSlotsForMissingItems();
-    }
-
-    private saveQuickSlots(): void {
-        this.save.saveJson(DataManager.QUICK_SLOT_STORAGE_KEY, this.quickSlotItems.map((item) => (item ? { ...item } : null)));
-    }
-
-    private normalizeQuickSlotIndex(slotIndex: number): number {
-        const index = Number.isFinite(slotIndex) ? Math.floor(slotIndex) : -1;
-        return index >= 0 && index < this.quickSlotItems.length ? index : -1;
-    }
-
     private loadEquipment(): void {
         const stored = this.save.loadJson<Partial<Record<EquipmentSlotType, EquippedItem | null>>>(DataManager.EQUIPMENT_STORAGE_KEY) || {};
         const slots: EquipmentSlotType[] = ["insertPlate", "helmet", "weapon", "armor"];
@@ -1206,52 +1034,9 @@ export class DataManager {
         this.save.saveJson(DataManager.EQUIPMENT_STORAGE_KEY, this.equippedItems);
     }
 
-    private loadPlayerStats(): void {
-        const stored = this.save.loadJson<Partial<PlayerStatsSnapshot>>(DataManager.PLAYER_STATS_STORAGE_KEY);
-        if (!stored) {
-            this.playerStats = {
-                level: 1,
-                currentHp: 100,
-                maxHp: 100,
-                currentStamina: 100,
-                maxStamina: 100,
-                experience: 0,
-                nextLevelExperience: 200,
-            };
-            this.savePlayerStats();
-            return;
-        }
-
-        const level = this.normalizePositiveInt(stored.level, 1);
-        const maxHp = this.normalizePositiveInt(stored.maxHp, 100);
-        const maxStamina = this.normalizePositiveInt(stored.maxStamina, 100);
-        this.playerStats = {
-            level,
-            maxHp,
-            currentHp: Math.min(maxHp, this.normalizePositiveInt(stored.currentHp, maxHp)),
-            maxStamina,
-            currentStamina: Math.max(0, Math.min(maxStamina, this.normalizeInt(stored.currentStamina, maxStamina))),
-            experience: Math.max(0, this.normalizeInt(stored.experience, 0)),
-            nextLevelExperience: this.normalizePositiveInt(stored.nextLevelExperience, 200 + Math.max(0, level - 1) * 50),
-        };
-    }
-
-    private savePlayerStats(): void {
-        this.save.saveJson(DataManager.PLAYER_STATS_STORAGE_KEY, this.playerStats);
-    }
-
-    private normalizePositiveInt(value: unknown, fallback: number): number {
-        const normalized = this.normalizeInt(value, fallback);
-        return normalized > 0 ? normalized : fallback;
-    }
-
-    private normalizeInt(value: unknown, fallback: number): number {
-        const next = Number(value);
-        return Number.isFinite(next) ? Math.floor(next) : fallback;
-    }
 
     private ensureStarterItems(): void {
-        const starterItemIds = ["wood_club", "m16"];
+        const starterItemIds = ["fal", "m16", "geluoke", "akm"];
         const missingItems: Array<{ itemId: string; name?: string; count: number; icon?: string }> = [];
 
         for (let i = 0; i < starterItemIds.length; i++) {

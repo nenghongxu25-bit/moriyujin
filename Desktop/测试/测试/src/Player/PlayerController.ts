@@ -4,7 +4,9 @@ import { PlayerMovementController } from "./PlayerMovementController";
 import { PlayerUIHints } from "./PlayerUIHints";
 import { PlayerCombatController, type PlayerAttackOptions } from "./PlayerCombatController";
 import { PlayerAnimationController } from "./PlayerAnimationController";
-import { DataManager, type EquipmentSlotType } from "../systems/datamanager";
+import { PlayerEquipmentVisualController } from "./PlayerEquipmentVisualController";
+import { PlayerRangedController } from "./PlayerRangedController";
+import { DataManager } from "../systems/datamanager";
 
 @regClass()
 export class PlayerController extends Laya.Script {
@@ -18,6 +20,7 @@ export class PlayerController extends Laya.Script {
 
     @property(Number)
     public moveSpeed: number = 0;
+
 
     @property(Boolean)
     public footstepSoundEnabled: boolean = true;
@@ -263,27 +266,12 @@ export class PlayerController extends Laya.Script {
     public ui!: PlayerUIHints;
     public combat!: PlayerCombatController;
     public animation!: PlayerAnimationController;
+    public equipment!: PlayerEquipmentVisualController;
+    public ranged!: PlayerRangedController;
     private attackToken: number = 0;
     private staminaTickElapsed: number = 0;
     private deathReturnTriggered: boolean = false;
     private lastEquipmentSignature: string = "__init";
-    private lastWeaponVisualSignature: string = "__init";
-    private equipmentVisualInitAttempts: number = 0;
-    private rangedWeaponAimActive: boolean = false;
-    private rangedWeaponAimX: number = 1;
-    private rangedWeaponAimY: number = 0;
-    private readonly lastEquipmentIconUrls: Record<EquipmentSlotType, string> = {
-        insertPlate: "",
-        helmet: "",
-        weapon: "",
-        armor: "",
-    };
-    private readonly lastEquipmentAttachmentNames: Record<EquipmentSlotType, string> = {
-        insertPlate: "",
-        helmet: "",
-        weapon: "__init",
-        armor: "",
-    };
 
     onAwake(): void {
         PlayerController.activeInstance = this;
@@ -291,6 +279,8 @@ export class PlayerController extends Laya.Script {
         this.ui = new PlayerUIHints(this);
         this.combat = new PlayerCombatController(this);
         this.animation = new PlayerAnimationController(this);
+        this.equipment = new PlayerEquipmentVisualController(this);
+        this.ranged = new PlayerRangedController(this);
         this.movement.onAwake();
         this.ui.onAwake();
         this.setRunningState(this.isRunning);
@@ -301,7 +291,7 @@ export class PlayerController extends Laya.Script {
         this.refreshStaminaBar();
         this.syncEquipmentStats();
         this.animation.onAwake();
-        this.scheduleEquipmentVisualInitialization();
+        this.equipment.scheduleInitialization();
     }
 
     onStart(): void {
@@ -316,7 +306,7 @@ export class PlayerController extends Laya.Script {
         this.refreshStaminaBar();
         this.syncEquipmentStats();
         this.animation.onStart();
-        this.scheduleEquipmentVisualInitialization();
+        this.equipment.scheduleInitialization();
     }
 
     onUpdate(): void {
@@ -324,15 +314,15 @@ export class PlayerController extends Laya.Script {
         this.updateStamina();
         this.syncEquipmentStats();
         this.animation.onUpdate();
-        this.syncRangedWeaponAimRotation("update");
+        this.ranged.syncAimRotation("update");
     }
 
     onLateUpdate(): void {
-        this.syncRangedWeaponAimRotation("late");
+        this.ranged.syncAimRotation("late");
     }
 
     onPreRender(): void {
-        this.syncRangedWeaponAimRotation("pre");
+        this.ranged.syncAimRotation("pre");
     }
 
     onDestroy(): void {
@@ -340,10 +330,11 @@ export class PlayerController extends Laya.Script {
             PlayerController.activeInstance = null;
         }
 
+        this.ranged?.onDestroy();
+        this.equipment?.onDestroy();
         this.animation?.onDestroy();
         this.combat?.onDestroy();
         this.ui?.onDestroy();
-        Laya.timer.clear(this, this.tryInitializeEquipmentVisuals);
     }
 
     public playAttack(queueIfBusy: boolean = false, options: PlayerAttackOptions = {}): boolean {
@@ -363,21 +354,11 @@ export class PlayerController extends Laya.Script {
     }
 
     public setRangedWeaponAimByDirection(x: number, y: number = 0): void {
-        const magnitude = Math.sqrt(x * x + y * y);
-        if (magnitude <= 0.0001) {
-            return;
-        }
-
-        Laya.timer.clear(this, this.clearRangedWeaponAim);
-        this.rangedWeaponAimActive = true;
-        this.rangedWeaponAimX = x / magnitude;
-        this.rangedWeaponAimY = y / magnitude;
-        this.syncRangedWeaponAimRotation("input");
+        this.ranged.setAimByDirection(x, y);
     }
 
     public clearRangedWeaponAim(): void {
-        Laya.timer.clear(this, this.clearRangedWeaponAim);
-        this.rangedWeaponAimActive = false;
+        this.ranged.clearAim();
     }
 
     public beginAttackHit(): number {
@@ -405,7 +386,7 @@ export class PlayerController extends Laya.Script {
         this.attackPower = Math.max(0, Math.floor((this.baseAttackPower || 0) + dataManager.getEquipmentAttackBonus()));
         this.attackSpeed = Math.max(0.1, dataManager.getEquipmentAttackSpeed());
         this.animation?.invalidateLocomotion();
-        this.scheduleEquipmentVisualInitialization();
+        this.equipment.scheduleInitialization();
     }
 
     public setRunningState(value: boolean): void {
@@ -577,31 +558,7 @@ export class PlayerController extends Laya.Script {
     }
 
     public syncWeaponSpineSlot(force: boolean = false): boolean {
-        const activeSlotName = this.resolveActiveWeaponSpineSlotName();
-        const meleeSlotName = String(this.weaponMeleeSpineSlotName || "").trim();
-        const rangedSlotName = String(this.weaponRangedSpineSlotName || "").trim();
-        const visualSignature = this.resolveWeaponVisualSignature(activeSlotName);
-        const shouldForce = force || visualSignature !== this.lastWeaponVisualSignature;
-
-        if (shouldForce) {
-            let cleared = true;
-            if (meleeSlotName) {
-                cleared = this.clearSpineSlotAttachment(meleeSlotName) && cleared;
-            }
-            if (rangedSlotName) {
-                cleared = this.clearSpineSlotAttachment(rangedSlotName) && cleared;
-            }
-            if (!cleared) {
-                return false;
-            }
-        }
-
-        if (this.syncEquipmentSpineSlot("weapon", activeSlotName, shouldForce)) {
-            this.lastWeaponVisualSignature = visualSignature;
-            return true;
-        }
-
-        return false;
+        return this.equipment.syncWeaponSpineSlot(force);
     }
 
     public resolveUpperLocomotionAnimation(lowerAnimation: string): string {
@@ -634,541 +591,35 @@ export class PlayerController extends Laya.Script {
     }
 
     public syncEquipmentSpineSlots(force: boolean = false): boolean {
-        let success = true;
-        success = this.syncEquipmentSpineSlot("insertPlate", this.insertPlateSpineSlotName, force) && success;
-        success = this.syncEquipmentSpineSlot("helmet", this.helmetSpineSlotName, force) && success;
-        success = this.syncWeaponSpineSlot(force) && success;
-        success = this.syncEquipmentSpineSlot("armor", this.armorSpineSlotName, force) && success;
-        return success;
-    }
-
-    private syncEquipmentSpineSlot(slot: EquipmentSlotType, spineSlotName: string, force: boolean): boolean {
-        const slotName = String(spineSlotName || "").trim();
-        if (!slotName) {
-            return true;
-        }
-
-        const attachmentName = this.resolveEquippedAttachmentName(slot);
-        if (!attachmentName) {
-            if (force || this.lastEquipmentAttachmentNames[slot]) {
-                if (this.clearSpineSlotAttachment(slotName)) {
-                    this.lastEquipmentAttachmentNames[slot] = "";
-                    this.lastEquipmentIconUrls[slot] = "";
-                    return true;
-                }
-                return false;
-            }
-            return true;
-        }
-
-        if (!force && attachmentName === this.lastEquipmentAttachmentNames[slot]) {
-            return true;
-        }
-
-        if (this.applySpineSlotAttachment(slotName, attachmentName)) {
-            this.lastEquipmentAttachmentNames[slot] = attachmentName;
-            this.lastEquipmentIconUrls[slot] = this.resolveEquippedItemIconUrl(slot);
-            return true;
-        }
-
-        return false;
+        return this.equipment.syncEquipmentSpineSlots(force);
     }
 
     public refreshEquipmentFromData(): void {
-        this.lastEquipmentSignature = "__force";
-        this.lastWeaponVisualSignature = "__force";
-        this.syncEquipmentStats();
-        this.scheduleEquipmentVisualInitialization();
+        this.equipment.refreshFromData();
     }
 
     public refreshEquipmentVisualsFromData(): boolean {
-        return this.syncEquipmentSpineSlots(true);
+        return this.equipment.refreshVisualsFromData();
     }
 
-    private scheduleEquipmentVisualInitialization(): void {
-        Laya.timer.clear(this, this.tryInitializeEquipmentVisuals);
-        this.equipmentVisualInitAttempts = 0;
-        this.tryInitializeEquipmentVisuals();
-    }
-
-    private tryInitializeEquipmentVisuals = (): void => {
-        this.equipmentVisualInitAttempts += 1;
-        if (this.refreshEquipmentVisualsFromData()) {
-            return;
-        }
-
-        if (this.equipmentVisualInitAttempts < 20) {
-            Laya.timer.once(50, this, this.tryInitializeEquipmentVisuals);
-        }
-    }
-
-    private resolveEquippedItemIconUrl(slot: EquipmentSlotType): string {
-        const item = DataManager.getInstance().getEquippedItem(slot);
-        if (!item || !item.icon) {
-            return "";
-        }
-
-        return this.resolveAssetUrl(item.icon);
-    }
-
-    private resolveEquippedAttachmentName(slot: EquipmentSlotType): string {
-        const item = DataManager.getInstance().getEquippedItem(slot);
-        if (!item) {
-            return "";
-        }
-
-        if (slot === "weapon") {
-            return this.resolveWeaponAttachmentName(item.itemId);
-        }
-
-        if (slot === "armor") {
-            return "cloth";
-        }
-
-        return "";
-    }
-
-    private resolveWeaponAttachmentName(itemId: string): string {
-        const map: Record<string, string> = {
-            wood_club: "weapon_slot7",
-            baseket_bat: "basekat_bat",
-            cleaver: "weapon_slot",
-            knife: "weapon_slot2",
-            long_knife: "weapon_slot5",
-            machete: "weapon_slot6",
-            fal: "weapon_ranged_FAL",
-            m16: "weapon_ranged_M16",
-            geluoke: "weapon_ranged_geluoke",
-            akm: "weapon_ranged_AK47",
-        };
-
-        return map[itemId] || "";
-    }
-
-    private resolveActiveWeaponSpineSlotName(): string {
-        if (this.isEquippedRangedWeapon()) {
-            return String(this.weaponRangedSpineSlotName || this.weaponSpineSlotName || "").trim();
-        }
-
-        return String(this.weaponMeleeSpineSlotName || this.weaponSpineSlotName || "").trim();
-    }
-
-    private resolveWeaponVisualSignature(activeSlotName: string): string {
-        const weapon = DataManager.getInstance().getEquippedItem("weapon");
-        const itemId = weapon?.itemId || "";
-        const attachmentName = itemId ? this.resolveWeaponAttachmentName(itemId) : "";
-        const ranged = this.isEquippedRangedWeapon() ? "ranged" : "melee";
-        return [
-            ranged,
-            itemId,
-            attachmentName,
-            activeSlotName,
-            String(this.weaponMeleeSpineSlotName || "").trim(),
-            String(this.weaponRangedSpineSlotName || "").trim(),
-        ].join("|");
+    public invalidateEquipmentStats(): void {
+        this.lastEquipmentSignature = "__force";
     }
 
     public isEquippedRangedWeapon(): boolean {
-        const weapon = DataManager.getInstance().getEquippedItem("weapon");
-        if (!weapon || !weapon.itemId) {
-            return false;
-        }
-
-        const meta = DataManager.getInstance().resolveItemMeta(weapon.itemId);
-        const subCategory = String(meta?.subCategory || "").toLowerCase();
-        return subCategory.includes("ranged");
+        return this.equipment.isEquippedRangedWeapon();
     }
 
     public applyRangedAttackDamage(options: PlayerAttackOptions = {}): boolean {
-        const target = this.resolveRangedAttackTarget(options);
-        if (!target) {
-            return false;
-        }
-
-        target.receiver.takeDamage(this.resolveRangedAttackDamage(options.chargeRatio));
-        return true;
+        return this.ranged.applyDamage(options);
     }
 
     public spawnRangedBullet(options: PlayerAttackOptions = {}): void {
-        const owner = this.owner as Laya.Sprite | null;
-        const textureUrl = String(this.rangedBulletTextureUrl || "").trim().replace(/^assets\//, "");
-        if (!owner || !textureUrl) {
-            return;
-        }
-
-        const parent = owner.parent as Laya.Sprite | null;
-        if (!parent || typeof parent.globalToLocal !== "function") {
-            return;
-        }
-
-        const direction = this.resolveRangedDirection(options);
-        const baseAngle = Math.atan2(direction.y, direction.x) * 180 / Math.PI;
-        const spreadAngle = Math.max(0, Number(options.spreadAngle) || 0);
-        const bulletAngle = baseAngle + (Math.random() - 0.5) * spreadAngle;
-        const radians = bulletAngle * Math.PI / 180;
-        const range = Math.max(1, Number(this.rangedAttackRange) || Number(this.attackDamageRange) || 1);
-        const speed = Math.max(1, Number(this.rangedBulletSpeed) || 1);
-        const duration = Math.max(1, Math.floor(range / speed * 1000));
-        const globalStart = this.resolveRangedBulletStartGlobalPoint(owner, direction);
-        const localStart = parent.globalToLocal(globalStart, false);
-        const bullet = new Laya.Sprite();
-        const scale = Math.max(0.01, Number(this.rangedBulletScale) || 1);
-
-        bullet.mouseEnabled = false;
-        bullet.loadImage(textureUrl, Laya.Handler.create(this, this.centerRangedBulletPivot, [bullet]));
-        bullet.pos(localStart.x, localStart.y);
-        bullet.scale(scale, scale);
-        bullet.rotation = bulletAngle + (Number(this.rangedBulletRotationOffset) || 0);
-        parent.addChild(bullet);
-
-        Laya.Tween.to(
-            bullet,
-            {
-                x: localStart.x + Math.cos(radians) * range,
-                y: localStart.y + Math.sin(radians) * range,
-            },
-            duration,
-            undefined,
-            Laya.Handler.create(this, this.destroyRangedBullet, [bullet]),
-        );
+        this.ranged.spawnBullet(options);
     }
 
     public resolveRangedChargeRatio(heldMs: number, dragRatio: number): number {
-        const duration = Math.max(1, this.rangedChargeDuration || 1);
-        const timeRatio = Math.max(0, Math.min(1, heldMs / duration));
-        const aimRatio = Math.max(0, Math.min(1, dragRatio));
-        return Math.max(timeRatio, aimRatio);
-    }
-
-    private resolveRangedAttackDamage(chargeRatio: number = 0): number {
-        const ratio = Math.max(0, Math.min(1, Number(chargeRatio) || 0));
-        const minMultiplier = Math.max(0, Number(this.rangedMinDamageMultiplier) || 0);
-        const maxMultiplier = Math.max(minMultiplier, Number(this.rangedMaxDamageMultiplier) || minMultiplier);
-        const multiplier = minMultiplier + (maxMultiplier - minMultiplier) * ratio;
-        return Math.max(1, Math.floor((this.attackPower || 0) * multiplier));
-    }
-
-    private resolveRangedAttackTarget(options: PlayerAttackOptions): { receiver: { takeDamage(amount: number): void }; distance: number } | null {
-        const owner = this.owner as Laya.Sprite | null;
-        if (!owner || !Laya.stage) {
-            return null;
-        }
-
-        const origin = this.getGlobalPosition(owner);
-        const direction = this.resolveRangedDirection(options);
-        const range = Math.max(1, this.rangedAttackRange || this.attackDamageRange || 1);
-        const halfWidth = Math.max(1, (this.rangedAttackWidth || 1) / 2);
-        let best: { receiver: { takeDamage(amount: number): void }; distance: number } | null = null;
-
-        this.visitNodes(Laya.stage, (node) => {
-            if (node === this.owner) {
-                return;
-            }
-
-            const receiver = this.findDamageReceiver(node);
-            if (!receiver || (receiver.isDead && receiver.isDead())) {
-                return;
-            }
-
-            const point = this.getGlobalPosition(node as Laya.Sprite);
-            const dx = point.x - origin.x;
-            const dy = point.y - origin.y;
-            const forward = dx * direction.x + dy * direction.y;
-            if (forward <= 0 || forward > range) {
-                return;
-            }
-
-            const side = Math.abs(dx * direction.y - dy * direction.x);
-            if (side > halfWidth) {
-                return;
-            }
-
-            if (!best || forward < best.distance) {
-                best = { receiver, distance: forward };
-            }
-        });
-
-        return best;
-    }
-
-    private resolveRangedDirection(options: PlayerAttackOptions): { x: number; y: number } {
-        let x = Number(options.directionX) || 0;
-        let y = Number(options.directionY) || 0;
-        const magnitude = Math.sqrt(x * x + y * y);
-        if (magnitude > 0.0001) {
-            return { x: x / magnitude, y: y / magnitude };
-        }
-
-        x = this.movement?.getAttackDirection() || 1;
-        return { x: x >= 0 ? 1 : -1, y: 0 };
-    }
-
-    private resolveRangedBulletStartGlobalPoint(owner: Laya.Sprite, direction: { x: number; y: number }): Laya.Point {
-        const localStart = new Laya.Point(
-            direction.x * (Number(this.rangedBulletSpawnOffsetX) || 0),
-            direction.y * (Number(this.rangedBulletSpawnOffsetX) || 0) + (Number(this.rangedBulletSpawnOffsetY) || 0),
-        );
-        return owner.localToGlobal(localStart, false);
-    }
-
-    private destroyRangedBullet(bullet: Laya.Sprite): void {
-        Laya.Tween.clearAll(bullet);
-        if (!bullet.destroyed) {
-            bullet.destroy();
-        }
-    }
-
-    private centerRangedBulletPivot(bullet: Laya.Sprite): void {
-        if (!bullet || bullet.destroyed) {
-            return;
-        }
-
-        const texture = (bullet as any).texture;
-        const width = Number(texture?.width) || Number((bullet as any).width) || 0;
-        const height = Number(texture?.height) || Number((bullet as any).height) || 0;
-        if (width > 0 && height > 0) {
-            bullet.pivot(width * 0.5, height * 0.5);
-        }
-    }
-
-    private findDamageReceiver(node: Laya.Node | null): ({ takeDamage(amount: number): void; isDead?(): boolean } | null) {
-        const components = (node as any)?._components || (node as any)?.components || [];
-        for (let i = 0; i < components.length; i++) {
-            const component = components[i] as any;
-            if (component === this || !component || typeof component.takeDamage !== "function") {
-                continue;
-            }
-
-            if (typeof component.isDead === "function") {
-                return component;
-            }
-        }
-
-        return null;
-    }
-
-    private visitNodes(root: Laya.Node | null, visitor: (node: Laya.Node) => void): void {
-        if (!root) {
-            return;
-        }
-
-        visitor(root);
-        const childCount = (root as any).numChildren || 0;
-        for (let i = 0; i < childCount; i++) {
-            this.visitNodes(root.getChildAt(i), visitor);
-        }
-    }
-
-    private getGlobalPosition(node: Laya.Sprite): Laya.Point {
-        const point = new Laya.Point();
-        if (node && typeof node.localToGlobal === "function") {
-            node.localToGlobal(point, false);
-        }
-        return point;
-    }
-
-    private applySpineSlotAttachment(slotName: string, attachmentName: string | null): boolean {
-        const spine = this.spineNode ? this.spineNode.getComponent(Laya.Spine2DRenderNode) : null;
-        if (!spine) {
-            return false;
-        }
-
-        const anySpine = spine as any;
-        if (typeof anySpine.setSlotAttachment === "function") {
-            try {
-                anySpine.setSlotAttachment(slotName, attachmentName);
-                return true;
-            } catch (error) {
-                return false;
-            }
-        }
-
-        if (typeof anySpine.setAttachment === "function") {
-            try {
-                anySpine.setAttachment(slotName, attachmentName);
-                return true;
-            } catch (error) {
-                return false;
-            }
-        }
-
-        return false;
-    }
-
-    private clearSpineSlotAttachment(slotName: string): boolean {
-        const spine = this.spineNode ? this.spineNode.getComponent(Laya.Spine2DRenderNode) : null;
-        if (!spine) {
-            return false;
-        }
-
-        const anySpine = spine as any;
-        let cleared = false;
-
-        if (this.applySpineSlotAttachment(slotName, null)) {
-            cleared = true;
-        }
-
-        if (typeof anySpine.setSlotAttachment === "function") {
-            try {
-                anySpine.setSlotAttachment(slotName, "");
-                cleared = true;
-            } catch (error) {
-            }
-        }
-
-        try {
-            const slot = typeof anySpine.findSlot === "function" ? anySpine.findSlot(slotName) : null;
-            if (slot && typeof slot.setAttachment === "function") {
-                slot.setAttachment(null);
-                cleared = true;
-            }
-        } catch (error) {
-        }
-
-        return cleared;
-    }
-
-    private syncRangedWeaponAimRotation(phase: string = "update"): void {
-        if (!this.rangedWeaponAimActive || !this.isEquippedRangedWeapon()) {
-            return;
-        }
-
-        const slotName = String(this.weaponRangedSpineSlotName || this.weaponSpineSlotName || "").trim();
-        if (!slotName) {
-            return;
-        }
-
-        const spine = this.spineNode ? this.spineNode.getComponent(Laya.Spine2DRenderNode) : null;
-        this.configureSpineForRuntimeAim(spine);
-        const skeleton = this.resolveSpineSkeleton(spine);
-        const bone = this.resolveSpineSlotBone(spine, slotName, skeleton);
-        if (!bone) {
-            return;
-        }
-
-        const worldAngle = Math.atan2(this.rangedWeaponAimY, this.rangedWeaponAimX) * 180 / Math.PI;
-        const ownerScaleX = this.owner ? (this.owner as Laya.Sprite).scaleX : 1;
-        const localAngle = ownerScaleX < 0 ? 180 - worldAngle : worldAngle;
-        const targetRotation = this.normalizeDegrees(localAngle + (Number(this.rangedWeaponAimRotationOffset) || 0));
-        bone.rotation = targetRotation;
-
-        if (skeleton && typeof skeleton.updateWorldTransform === "function") {
-            try {
-                const physics = (globalThis as any).spine?.Physics?.update ?? 2;
-                skeleton.updateWorldTransform(physics);
-            } catch (error) {
-            }
-        } else if (typeof bone.updateWorldTransform === "function") {
-            try {
-                bone.updateWorldTransform();
-            } catch (error) {
-            }
-        }
-
-        this.markSpineRenderDirty(spine);
-    }
-
-    private configureSpineForRuntimeAim(spine: Laya.Spine2DRenderNode | null): void {
-        const anySpine = spine as any;
-        if (!anySpine) {
-            return;
-        }
-
-        try {
-            if ("enableCache" in anySpine) {
-                anySpine.enableCache = false;
-            }
-            if ("useFastRender" in anySpine) {
-                anySpine.useFastRender = false;
-            }
-        } catch (error) {
-        }
-    }
-
-    private markSpineRenderDirty(spine: Laya.Spine2DRenderNode | null): void {
-        const anySpine = spine as any;
-        if (!anySpine) {
-            return;
-        }
-
-        if ("_needUpdate" in anySpine) {
-            anySpine._needUpdate = true;
-        }
-    }
-
-    private resolveSpineSlotBone(spine: Laya.Spine2DRenderNode | null, slotName: string, skeleton?: any | null): any | null {
-        if (!spine) {
-            return null;
-        }
-
-        const anySpine = spine as any;
-
-        try {
-            const slot = typeof anySpine.getSlotByName === "function"
-                ? anySpine.getSlotByName(slotName)
-                : null;
-            if (slot?.bone) {
-                return slot.bone;
-            }
-        } catch (error) {
-        }
-
-        try {
-            const slot = typeof anySpine.findSlot === "function"
-                ? anySpine.findSlot(slotName)
-                : null;
-            if (slot?.bone) {
-                return slot.bone;
-            }
-        } catch (error) {
-        }
-
-        try {
-            const slot = skeleton && typeof skeleton.findSlot === "function"
-                ? skeleton.findSlot(slotName)
-                : null;
-            return slot?.bone || null;
-        } catch (error) {
-            return null;
-        }
-    }
-
-    private resolveSpineSkeleton(spine: Laya.Spine2DRenderNode | null): any | null {
-        const render = (spine as any)?._spineRender;
-        if (!render || typeof render.getSkeleton !== "function") {
-            return null;
-        }
-
-        try {
-            return render.getSkeleton();
-        } catch (error) {
-            return null;
-        }
-    }
-
-    private normalizeDegrees(value: number): number {
-        let result = value;
-        while (result > 180) {
-            result -= 360;
-        }
-        while (result < -180) {
-            result += 360;
-        }
-        return result;
-    }
-
-    private resolveAssetUrl(path: string): string {
-        const normalized = String(path || "").trim().replace(/^assets\//, "");
-        if (!normalized) {
-            return "";
-        }
-
-        const url = (Laya as any).URL;
-        if (url && typeof url.formatURL === "function") {
-            return String(url.formatURL(normalized) || normalized);
-        }
-
-        return normalized;
+        return this.ranged.resolveChargeRatio(heldMs, dragRatio);
     }
 
     public snapshot(): Record<string, any> {
@@ -1213,7 +664,7 @@ export class PlayerController extends Laya.Script {
             insertPlateSpineSlotName: this.insertPlateSpineSlotName,
             helmetSpineSlotName: this.helmetSpineSlotName,
             armorSpineSlotName: this.armorSpineSlotName,
-            lastEquipmentIconUrls: { ...this.lastEquipmentIconUrls },
+            equipment: this.equipment ? this.equipment.snapshot() : null,
             currentHp: this.currentHp,
             maxHp: this.maxHp,
             hpFillFullWidth: this.hpFillFullWidth,
@@ -1255,6 +706,7 @@ export class PlayerController extends Laya.Script {
             ui: this.ui ? this.ui.snapshot() : null,
             combat: this.combat ? this.combat.snapshot() : null,
             animation: this.animation ? this.animation.snapshot() : null,
+            ranged: this.ranged ? this.ranged.snapshot() : null,
         };
     }
 }

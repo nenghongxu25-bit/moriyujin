@@ -1,6 +1,8 @@
 import { SaveManager } from "./SaveManager";
 import type { InventorySlotItem, InventoryViewItem } from "./InventoryTypes";
 
+export type WarehouseItemNormalizer = (item: InventoryViewItem) => InventoryViewItem;
+
 interface WarehouseMeta {
     slotCount: number;
 }
@@ -14,8 +16,18 @@ export class WarehouseManager {
 
     private readonly items: InventorySlotItem[] = [];
     private slotCount: number = WarehouseManager.DEFAULT_SLOT_COUNT;
+    private stackMaxResolver: ((itemId: string) => number) | null = null;
+    private itemNormalizer: WarehouseItemNormalizer | null = null;
 
     public constructor(private readonly saveManager: SaveManager) {}
+
+    public setStackMaxResolver(resolver: (itemId: string) => number): void {
+        this.stackMaxResolver = resolver;
+    }
+
+    public setItemNormalizer(normalizer: WarehouseItemNormalizer): void {
+        this.itemNormalizer = normalizer;
+    }
 
     public load(): void {
         const items = this.saveManager.loadInventory(WarehouseManager.STORAGE_KEY);
@@ -25,8 +37,10 @@ export class WarehouseManager {
         this.items.length = 0;
         for (let i = 0; i < items.length; i++) {
             const item = items[i];
-            this.items.push(item ? { ...item } : null);
+            this.items.push(item ? this.normalizeItem(item) : null);
         }
+        this.normalizeStacks();
+        this.save();
     }
 
     public getSlotCount(): number {
@@ -107,10 +121,15 @@ export class WarehouseManager {
         if (!item.itemId) {
             return false;
         }
+        item = this.normalizeItem(item);
+        const itemId = item.itemId || "";
+        if (!itemId) {
+            return false;
+        }
 
         const normalizedTarget = this.normalizeSlotIndex(targetSlotIndex);
         if (normalizedTarget !== null) {
-            if (!this.canPlaceItemAt(normalizedTarget, item.itemId)) {
+            if (!this.canPlaceItemAt(normalizedTarget, itemId)) {
                 return false;
             }
 
@@ -119,30 +138,28 @@ export class WarehouseManager {
             return true;
         }
 
-        const existingIndex = this.findItemIndex(item.itemId);
-        if (existingIndex >= 0) {
-            const existing = this.items[existingIndex];
-            if (existing) {
-                existing.count += item.count;
-                if (!existing.icon && item.icon) {
-                    existing.icon = item.icon;
-                }
-                if (!existing.name && item.name) {
-                    existing.name = item.name;
-                }
+        let remaining = Math.max(0, Math.floor(item.count || 0));
+        while (remaining > 0) {
+            remaining = this.mergeIntoExistingSlots({ ...item, count: remaining });
+            if (remaining <= 0) {
+                this.save();
+                return true;
             }
-            this.save();
-            return true;
+
+            const stackMax = this.getStackMax(itemId);
+            const placedCount = Math.min(remaining, stackMax);
+            const emptyIndex = this.findEmptySlotIndex();
+            if (emptyIndex < 0) {
+                this.save();
+                return false;
+            }
+
+            this.placeItemAt(emptyIndex, { ...item, count: placedCount });
+            remaining -= placedCount;
         }
 
-        const emptyIndex = this.findEmptySlotIndex();
-        if (emptyIndex >= 0) {
-            this.placeItemAt(emptyIndex, item);
-            this.save();
-            return true;
-        }
-
-        return false;
+        this.save();
+        return true;
     }
 
     public canAddItems(items: InventoryViewItem[]): boolean {
@@ -153,8 +170,7 @@ export class WarehouseManager {
             return true;
         }
 
-        const occupiedIds = new Set<string>();
-        let usedSlots = 0;
+        const slotCountsByItemId = new Map<string, number[]>();
         const limit = Math.max(0, this.slotCount);
 
         for (let i = 0; i < Math.min(this.items.length, limit); i++) {
@@ -163,22 +179,45 @@ export class WarehouseManager {
                 continue;
             }
 
-            usedSlots += 1;
-            occupiedIds.add(item.itemId);
+            const itemId = item.itemId;
+            const counts = slotCountsByItemId.get(itemId) || [];
+            counts.push(Math.max(0, Math.floor(item.count || 0)));
+            slotCountsByItemId.set(itemId, counts);
         }
+
+        let usedSlots = 0;
+        slotCountsByItemId.forEach((counts) => {
+            usedSlots += counts.length;
+        });
 
         for (let i = 0; i < incoming.length; i++) {
             const itemId = incoming[i].itemId || "";
-            if (!itemId || occupiedIds.has(itemId)) {
+            let remaining = Math.max(0, Math.floor(incoming[i].count || 0));
+            if (!itemId || remaining <= 0) {
                 continue;
             }
 
-            if (usedSlots >= limit) {
-                return false;
+            const stackMax = this.getStackMax(itemId);
+            const counts = slotCountsByItemId.get(itemId) || [];
+            for (let slotIndex = 0; slotIndex < counts.length && remaining > 0; slotIndex++) {
+                const capacity = Math.max(0, stackMax - counts[slotIndex]);
+                const filled = Math.min(capacity, remaining);
+                counts[slotIndex] += filled;
+                remaining -= filled;
             }
 
-            usedSlots += 1;
-            occupiedIds.add(itemId);
+            while (remaining > 0) {
+                if (usedSlots >= limit) {
+                    return false;
+                }
+
+                const placed = Math.min(stackMax, remaining);
+                counts.push(placed);
+                usedSlots += 1;
+                remaining -= placed;
+            }
+
+            slotCountsByItemId.set(itemId, counts);
         }
 
         return true;
@@ -233,12 +272,84 @@ export class WarehouseManager {
         }
 
         const slot = this.items[index] || null;
-        return !slot || slot.itemId === itemId;
+        if (!slot) {
+            return true;
+        }
+
+        if (slot.itemId !== itemId || this.getStackMax(itemId) <= 1) {
+            return false;
+        }
+
+        return Math.max(0, Math.floor(slot.count || 0)) < this.getStackMax(itemId);
+    }
+
+    private mergeIntoExistingSlots(item: InventoryViewItem): number {
+        const itemId = item.itemId || "";
+        const stackMax = this.getStackMax(itemId);
+        let remaining = Math.max(0, Math.floor(item.count || 0));
+
+        if (!itemId || stackMax <= 1) {
+            return remaining;
+        }
+
+        for (let i = 0; i < this.items.length && remaining > 0; i++) {
+            const existing = this.items[i];
+            if (!existing || existing.itemId !== itemId) {
+                continue;
+            }
+
+            const currentCount = Math.max(0, Math.floor(existing.count || 0));
+            const capacity = Math.max(0, stackMax - currentCount);
+            if (capacity <= 0) {
+                continue;
+            }
+
+            const added = Math.min(capacity, remaining);
+            existing.count = currentCount + added;
+            remaining -= added;
+            if (!existing.icon && item.icon) {
+                existing.icon = item.icon;
+            }
+            if (!existing.name && item.name) {
+                existing.name = item.name;
+            }
+        }
+
+        return remaining;
     }
 
     private save(): void {
         this.saveManager.saveInventory(WarehouseManager.STORAGE_KEY, this.items);
         this.saveMeta();
+    }
+
+    private normalizeStacks(): void {
+        const normalized: InventorySlotItem[] = [];
+        for (let i = 0; i < this.items.length; i++) {
+            const item = this.items[i] ? this.normalizeItem(this.items[i] as InventoryViewItem) : null;
+            if (!item || !item.itemId) {
+                normalized.push(null);
+                continue;
+            }
+
+            let remaining = Math.max(0, Math.floor(item.count || 0));
+            const stackMax = this.getStackMax(item.itemId);
+            while (remaining > 0) {
+                const count = Math.min(stackMax, remaining);
+                normalized.push({
+                    itemId: item.itemId,
+                    name: item.name,
+                    count,
+                    icon: item.icon,
+                });
+                remaining -= count;
+            }
+        }
+
+        this.items.length = 0;
+        for (let i = 0; i < normalized.length; i++) {
+            this.items.push(normalized[i]);
+        }
     }
 
     private saveMeta(): void {
@@ -283,8 +394,9 @@ export class WarehouseManager {
         }
 
         const current = this.items[normalized];
-        if (current && current.itemId === item.itemId) {
-            current.count += item.count;
+        if (current && current.itemId === item.itemId && this.getStackMax(item.itemId || "") > 1) {
+            const stackMax = this.getStackMax(item.itemId || "");
+            current.count = Math.min(stackMax, Math.max(0, Math.floor(current.count || 0)) + Math.max(0, Math.floor(item.count || 0)));
             if (!current.icon && item.icon) {
                 current.icon = item.icon;
             }
@@ -295,6 +407,25 @@ export class WarehouseManager {
         }
 
         this.items[normalized] = { ...item };
+    }
+
+    private getStackMax(itemId: string): number {
+        const resolved = this.stackMaxResolver ? this.stackMaxResolver(itemId) : Number.MAX_SAFE_INTEGER;
+        if (!Number.isFinite(resolved)) {
+            return Number.MAX_SAFE_INTEGER;
+        }
+
+        return Math.max(1, Math.floor(resolved));
+    }
+
+    private normalizeItem(item: InventoryViewItem): InventoryViewItem {
+        const normalized = this.itemNormalizer ? this.itemNormalizer({ ...item }) : { ...item };
+        return {
+            itemId: normalized.itemId,
+            name: normalized.name,
+            count: Math.max(0, Math.floor(normalized.count || 0)),
+            icon: normalized.icon,
+        };
     }
 
     private normalizeSlotIndex(slotIndex: number | undefined): number | null {

@@ -8,7 +8,7 @@
                       "action":  "search",
                       "drops":  [
                                     {
-                                        "itemId":  "common_material_04",
+                                        "itemId":  "grass",
                                         "label":  "草",
                                         "minCount":  2,
                                         "maxCount":  3,

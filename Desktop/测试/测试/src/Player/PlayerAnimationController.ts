@@ -248,9 +248,7 @@ export class PlayerAnimationController {
             return;
         }
 
-        if (typeof this.spine.playbackRate === "function") {
-            this.spine.playbackRate(1);
-        }
+        this.applyLocomotionPlaybackRate(nextAnimation);
 
         if (this.playSpineAnimation(nextAnimation, true)) {
             this.currentAnimation = nextAnimation;
@@ -444,9 +442,7 @@ export class PlayerAnimationController {
     private syncLayeredLocomotion(lowerAnimation: string, force: boolean): void {
         const upperAnimation = this.resolveUpperLocomotionAnimation(lowerAnimation);
 
-        if (typeof this.spine?.playbackRate === "function") {
-            this.spine.playbackRate(1);
-        }
+        this.applyLocomotionPlaybackRate(lowerAnimation);
 
         this.syncLayeredLowerOnly(lowerAnimation, force);
 
@@ -458,13 +454,27 @@ export class PlayerAnimationController {
     }
 
     private syncLayeredLowerOnly(lowerAnimation: string, force: boolean): void {
-        if (typeof this.spine?.playbackRate === "function") {
-            this.spine.playbackRate(1);
-        }
+        this.applyLocomotionPlaybackRate(lowerAnimation);
 
         if ((force || this.currentLowerAnimation !== lowerAnimation) && this.playSpineTrack(lowerAnimation, true, 0)) {
             this.currentLowerAnimation = lowerAnimation;
         }
+    }
+
+    private applyLocomotionPlaybackRate(animationName: string): void {
+        if (typeof this.spine?.playbackRate !== "function") {
+            return;
+        }
+
+        this.spine.playbackRate(this.resolveLocomotionPlaybackRate(animationName));
+    }
+
+    private resolveLocomotionPlaybackRate(animationName: string): number {
+        if (animationName === this.controller.runAnimation) {
+            return Math.max(0.1, Number(this.controller.runAnimationPlaybackRate) || 1);
+        }
+
+        return 1;
     }
 
     private resolveUpperLocomotionAnimation(lowerAnimation: string): string {
