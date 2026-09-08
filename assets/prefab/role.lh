@@ -1,0 +1,1909 @@
+{
+  "_$ver": 1,
+  "_$id": "xk5a8qbp",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "6f361a5d-3330-470f-802a-6ea7ddd69246",
+      "scriptPath": "../src/RoleEquipmentPanel.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "525gba5a",
+      "_$type": "Area2D",
+      "name": "Area2D",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "r9jg9vb5",
+          "_$type": "Sprite",
+          "name": "role",
+          "width": 1334,
+          "height": 750,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "fillColor": "#1f3434"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "ljfdzmva",
+              "_$type": "GList",
+              "name": "roleList",
+              "x": 1116,
+              "y": 14,
+              "width": 200,
+              "height": 724,
+              "layout": {
+                "type": 1
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1
+              },
+              "_templateNode": {
+                "_$ref": "eiz73y1k",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 5,
+              "_$child": [
+                {
+                  "_$id": "eiz73y1k",
+                  "_$type": "GWidget",
+                  "name": "placeItem",
+                  "width": 150,
+                  "height": 198,
+                  "_$child": [
+                    {
+                      "_$id": "h9g1svxh",
+                      "_$type": "Sprite",
+                      "name": "avatar",
+                      "width": 180,
+                      "height": 180,
+                      "scaleX": 0.8,
+                      "scaleY": 0.8,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawCircleCmd",
+                          "x": 0.5,
+                          "y": 0.5,
+                          "radius": 0.5,
+                          "percent": true,
+                          "lineWidth": 1,
+                          "lineColor": "#000000",
+                          "fillColor": "#00fff6"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "egbflkbm",
+                          "_$type": "GImage",
+                          "name": "img",
+                          "width": 180,
+                          "height": 180,
+                          "src": "res://b18dde6e-0a4f-47a9-b8ee-4cbfc29f1346",
+                          "autoSize": false,
+                          "color": "#1900ff"
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "9e6epens",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "x": 16,
+                      "y": 149,
+                      "width": 120,
+                      "height": 42,
+                      "text": "青槐",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "7z8rjetz",
+          "_$type": "GWidget",
+          "name": "mainRoleCard",
+          "x": 223,
+          "y": 32,
+          "width": 150,
+          "height": 150,
+          "_$child": [
+            {
+              "_$id": "fmn0qlld",
+              "_$type": "Sprite",
+              "name": "avatar",
+              "width": 180,
+              "height": 180,
+              "scaleX": 0.8,
+              "scaleY": 0.8,
+              "_gcmds": [
+                {
+                  "_$type": "DrawCircleCmd",
+                  "x": 0.5,
+                  "y": 0.5,
+                  "radius": 0.5,
+                  "percent": true,
+                  "lineWidth": 1,
+                  "lineColor": "#000000",
+                  "fillColor": "#00fff6"
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "75vt4gp8",
+                  "_$type": "GImage",
+                  "name": "img",
+                  "width": 180,
+                  "height": 180,
+                  "src": "res://b18dde6e-0a4f-47a9-b8ee-4cbfc29f1346",
+                  "autoSize": false,
+                  "color": "#1900ff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "16m5m0el",
+          "_$type": "GList",
+          "name": "list",
+          "x": 67,
+          "y": 207,
+          "width": 793,
+          "height": 85,
+          "layout": {
+            "type": 2
+          },
+          "_templateNode": {
+            "_$ref": "0g42pkpe",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 10,
+          "_$child": [
+            {
+              "_$id": "0g42pkpe",
+              "_$type": "GWidget",
+              "name": "node",
+              "width": 100,
+              "height": 50,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "1rc8d5g9",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 100,
+                  "height": 50,
+                  "text": "Text",
+                  "fontSize": 30,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "linjk5v1",
+          "_$type": "Area2D",
+          "name": "shuxing",
+          "x": 38,
+          "y": 310,
+          "width": 792,
+          "height": 400,
+          "_$child": [
+            {
+              "_$id": "hjk5nv9c",
+              "_$type": "GList",
+              "name": "list",
+              "x": 30,
+              "y": 65,
+              "width": 639,
+              "height": 101,
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "columnGap": 200
+              },
+              "_templateNode": {
+                "_$ref": "v2jrs2jj",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "v2jrs2jj",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 30,
+                  "_$child": [
+                    {
+                      "_$id": "ymbndurb",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "Text",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "go7fzafj",
+              "_$type": "GList",
+              "name": "list_1",
+              "x": 206,
+              "y": 67,
+              "width": 639,
+              "height": 101,
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "columnGap": 200
+              },
+              "_templateNode": {
+                "_$ref": "t76k56ps",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "t76k56ps",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 88,
+                  "height": 30,
+                  "_$child": [
+                    {
+                      "_$id": "dnoge9hy",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "x": -13,
+                      "width": 100,
+                      "height": 30,
+                      "text": "Text",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "zw08ymm8",
+                      "_$type": "Sprite",
+                      "name": "Sprite",
+                      "x": 119,
+                      "width": 30,
+                      "height": 30,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#000000"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "bjntleiz",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 30,
+                          "height": 30,
+                          "text": "加",
+                          "fontSize": 25,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "qc773md5",
+              "_$type": "GList",
+              "name": "list_2",
+              "x": 30,
+              "y": 179,
+              "width": 639,
+              "height": 216,
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "columnGap": 200
+              },
+              "_templateNode": {
+                "_$ref": "n4zfhzvp",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 10,
+              "_$child": [
+                {
+                  "_$id": "n4zfhzvp",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 30,
+                  "_$child": [
+                    {
+                      "_$id": "0c1wp1jh",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "Text",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "gdzxbsy2",
+              "_$type": "GList",
+              "name": "list_3",
+              "x": 208,
+              "y": 184,
+              "width": 639,
+              "height": 213,
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "columnGap": 200
+              },
+              "_templateNode": {
+                "_$ref": "7ubnyft8",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 10,
+              "_$child": [
+                {
+                  "_$id": "7ubnyft8",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 30,
+                  "_$child": [
+                    {
+                      "_$id": "9g1pwdzn",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "Text",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "r7a2mqfr",
+              "_$type": "Text",
+              "name": "Text",
+              "x": 29,
+              "y": 22,
+              "width": 120,
+              "height": 28,
+              "text": "自由属性点：",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "iq1tesdk",
+              "_$type": "Text",
+              "name": "ziyoudian",
+              "x": 154,
+              "y": 21,
+              "width": 120,
+              "height": 28,
+              "text": "Text",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "k5t5u3ma",
+              "_$type": "Sprite",
+              "name": "queding",
+              "x": 241,
+              "y": 15,
+              "width": 100,
+              "height": 30,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRectCmd",
+                  "lineWidth": 3,
+                  "lineColor": "#252f22",
+                  "fillColor": "#000000"
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "nw7qdqio",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 100,
+                  "height": 30,
+                  "text": "确认加点\n",
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "b4fu1h4a",
+              "_$type": "Sprite",
+              "name": "chongzhi",
+              "x": 363,
+              "y": 16,
+              "width": 100,
+              "height": 30,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRectCmd",
+                  "lineWidth": 3,
+                  "lineColor": "#252f22",
+                  "fillColor": "#000000"
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "e2r3piqm",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 100,
+                  "height": 30,
+                  "text": "重置加点",
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "353crom0",
+          "_$type": "Area2D",
+          "name": "equipment",
+          "x": 42,
+          "y": 309,
+          "width": 822,
+          "height": 400,
+          "visible": false,
+          "_$child": [
+            {
+              "_$id": "cy3ybob2",
+              "_$type": "GList",
+              "name": "list_1",
+              "x": -6,
+              "y": 7,
+              "width": 639,
+              "height": 122,
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "rowGap": 10,
+                "columnGap": 200
+              },
+              "_templateNode": {
+                "_$ref": "npchtwi0",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "npchtwi0",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 30,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "wlb6xbxr",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "武器",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "czoao253",
+              "_$type": "GList",
+              "name": "list_2",
+              "x": 114,
+              "y": 6,
+              "width": 639,
+              "height": 120,
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "rowGap": 10,
+                "columnGap": 200
+              },
+              "_templateNode": {
+                "_$ref": "2ezj2pnl",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "2ezj2pnl",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 30,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "xg6plf5b",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "木剑",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "msz03lqr",
+              "_$type": "GList",
+              "name": "list_5",
+              "x": 607,
+              "y": 3,
+              "width": 100,
+              "height": 400,
+              "visible": false,
+              "layout": {
+                "type": 1
+              },
+              "_templateNode": {
+                "_$ref": "yigl8b50",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 10,
+              "_$child": [
+                {
+                  "_$id": "yigl8b50",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 1,
+                    "lineColor": "#292b29",
+                    "fillColor": "#000000"
+                  }
+                }
+              ]
+            },
+            {
+              "_$id": "1nnzzajg",
+              "_$type": "Area2D",
+              "name": "Area2D",
+              "x": -4,
+              "y": 128,
+              "width": 280,
+              "height": 307,
+              "_$child": [
+                {
+                  "_$id": "7g0e2491",
+                  "_$type": "GList",
+                  "name": "list_3",
+                  "width": 172,
+                  "height": 193,
+                  "visible": false,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#000000"
+                  },
+                  "layout": {
+                    "type": 1
+                  },
+                  "_templateNode": {
+                    "_$ref": "doczazc5",
+                    "_$tmpl": "itemTemplate"
+                  },
+                  "_initItemNum": 7,
+                  "_$child": [
+                    {
+                      "_$id": "doczazc5",
+                      "_$type": "GWidget",
+                      "name": "node",
+                      "width": 100,
+                      "height": 30,
+                      "background": {
+                        "_$type": "DrawRectCmd",
+                        "fillColor": "#000000"
+                      },
+                      "_$child": [
+                        {
+                          "_$id": "xth7ituk",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 100,
+                          "height": 30,
+                          "text": "Text",
+                          "fontSize": 20,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "esjdehzp",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "x": 47,
+                  "y": 221,
+                  "width": 100,
+                  "height": 30,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "zx6rjtk4",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "卸下",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "eexfhvwh",
+              "_$type": "Area2D",
+              "name": "Area2D",
+              "x": 289,
+              "y": 129,
+              "width": 335,
+              "height": 291,
+              "_$child": [
+                {
+                  "_$id": "uf4s9xvx",
+                  "_$type": "GList",
+                  "name": "list_4",
+                  "width": 172,
+                  "height": 197,
+                  "visible": false,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#000000"
+                  },
+                  "layout": {
+                    "type": 1
+                  },
+                  "_templateNode": {
+                    "_$ref": "pga2rl3l",
+                    "_$tmpl": "itemTemplate"
+                  },
+                  "_initItemNum": 7,
+                  "_$child": [
+                    {
+                      "_$id": "pga2rl3l",
+                      "_$type": "GWidget",
+                      "name": "node",
+                      "width": 100,
+                      "height": 30,
+                      "_$child": [
+                        {
+                          "_$id": "qrk7uagt",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 100,
+                          "height": 30,
+                          "text": "Text",
+                          "fontSize": 20,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "rpmypu6c",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "x": 99,
+                  "y": 224,
+                  "width": 100,
+                  "height": 30,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "d4bm1eh0",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 30,
+                      "text": "替换",
+                      "fontSize": 20,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "gizw72aa",
+          "_$type": "Text",
+          "name": "jieshao",
+          "x": 408,
+          "y": 30,
+          "width": 299,
+          "height": 140,
+          "text": "Text",
+          "fontSize": 20,
+          "color": "#ffffff",
+          "align": "center",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "oixr20qd",
+          "_$type": "Area2D",
+          "name": "jingmai",
+          "x": 44,
+          "y": 298,
+          "width": 631,
+          "height": 414,
+          "visible": false,
+          "_$child": [
+            {
+              "_$id": "zixyw7k1",
+              "_$type": "GList",
+              "name": "list",
+              "x": 20,
+              "y": 20,
+              "width": 200,
+              "height": 304,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#463636"
+              },
+              "layout": {
+                "type": 3,
+                "columns": 2,
+                "rowGap": 6
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 5
+              },
+              "_templateNode": {
+                "_$ref": "tv0ybtki",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 20,
+              "_$child": [
+                {
+                  "_$id": "tv0ybtki",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "b9khv05v",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 50,
+                      "text": "Text",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "3m3klpjg",
+              "_$type": "GList",
+              "name": "list_1",
+              "x": 250,
+              "y": 20,
+              "width": 100,
+              "height": 300,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#553838"
+              },
+              "layout": {
+                "type": 1,
+                "rowGap": 6
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 5
+              },
+              "_templateNode": {
+                "_$ref": "18j5foua",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 10,
+              "_$child": [
+                {
+                  "_$id": "18j5foua",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 100,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "qgrwo5ad",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 50,
+                      "text": "Text",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "8k9imye0",
+              "_$type": "GWidget",
+              "name": "node",
+              "x": 497,
+              "y": 265,
+              "width": 150,
+              "height": 50,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 2,
+                "lineColor": "#3c2d2d",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "g8nqq3b9",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 150,
+                  "height": 50,
+                  "text": "顺通",
+                  "fontSize": 18,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "pz4zrrqk",
+              "_$type": "GWidget",
+              "name": "node_1",
+              "x": 657,
+              "y": 265,
+              "width": 150,
+              "height": 50,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 2,
+                "lineColor": "#3c2d2d",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "9eveqa1s",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 150,
+                  "height": 50,
+                  "text": "逆通",
+                  "fontSize": 18,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "l6qq7my0",
+              "_$type": "GWidget",
+              "name": "node_2",
+              "x": 583,
+              "y": 18,
+              "width": 100,
+              "height": 100,
+              "_$child": [
+                {
+                  "_$id": "n5b16en4",
+                  "_$type": "Text",
+                  "name": "xiangqing",
+                  "width": 295,
+                  "height": 138,
+                  "text": "经脉：手太阴经\n顺通效果：臂力 +15\n逆通效果：内息 +15",
+                  "fontSize": 18,
+                  "color": "#ffffff",
+                  "leading": 6,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "e306yeb7",
+              "_$type": "GWidget",
+              "name": "node_3",
+              "x": 582,
+              "y": 162,
+              "width": 100,
+              "height": 100,
+              "_$child": [
+                {
+                  "_$id": "c0yim0g9",
+                  "_$type": "Text",
+                  "name": "jingdu",
+                  "x": -120,
+                  "y": -16,
+                  "width": 295,
+                  "height": 54,
+                  "text": "0/10\n冲穴需要100真气",
+                  "fontSize": 24,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 4,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "zq8k2m5p",
+                  "_$type": "Text",
+                  "name": "zhenqi",
+                  "x": -120,
+                  "y": 52,
+                  "width": 295,
+                  "height": 58,
+                  "text": "1000/1000\n真气已满",
+                  "fontSize": 20,
+                  "color": "#8fd3ff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 3,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "3qv4mesg",
+              "_$type": "GWidget",
+              "name": "node_4",
+              "x": 499,
+              "y": 263,
+              "width": 150,
+              "height": 50,
+              "visible": false,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 2,
+                "lineColor": "#3c2d2d",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "7df2qi1o",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 150,
+                  "height": 50,
+                  "text": "冲穴",
+                  "fontSize": 18,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "66na0e3b",
+              "_$type": "GWidget",
+              "name": "node_5",
+              "x": 661,
+              "y": 263,
+              "width": 150,
+              "height": 50,
+              "visible": false,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 2,
+                "lineColor": "#3c2d2d",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "dhy7emuu",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 150,
+                  "height": 50,
+                  "text": "重置",
+                  "fontSize": 18,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "b80o5uda",
+          "_$type": "Area2D",
+          "name": "gongfa",
+          "x": 42,
+          "y": 303,
+          "width": 783,
+          "height": 400,
+          "visible": false,
+          "_$child": [
+            {
+              "_$id": "auto_equippedArea",
+              "_$type": "Area2D",
+              "name": "equippedArea",
+              "width": 783,
+              "height": 400,
+              "_$child": [
+                {
+                  "_$id": "599dhr8o",
+                  "_$type": "GWidget",
+                  "name": "routineSlot",
+                  "x": 91,
+                  "y": 37,
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "s7hb5sgz",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "无",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "sx7e6sd0",
+                  "_$type": "GWidget",
+                  "name": "internalSlot",
+                  "x": 93,
+                  "y": 95,
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "ywpqaaw3",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "无",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "kod98qx7",
+                  "_$type": "GWidget",
+                  "name": "lightnessSlot",
+                  "x": 91,
+                  "y": 155,
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "old47okb",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "无",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "xl8eu4lv",
+                  "_$type": "Text",
+                  "name": "routineLabel",
+                  "x": 10,
+                  "y": 41,
+                  "width": 97,
+                  "height": 40,
+                  "text": "套路：",
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "n4muwke3",
+                  "_$type": "Text",
+                  "name": "internalLabel",
+                  "x": 11,
+                  "y": 101,
+                  "width": 97,
+                  "height": 40,
+                  "text": "内功：",
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "aisgkadi",
+                  "_$type": "Text",
+                  "name": "lightnessLabel",
+                  "x": 10,
+                  "y": 161,
+                  "width": 97,
+                  "height": 40,
+                  "text": "轻功：",
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "auto_learnedArea",
+              "_$type": "Area2D",
+              "name": "learnedArea",
+              "width": 783,
+              "height": 400,
+              "_$child": [
+                {
+                  "_$id": "y4yhztvl",
+                  "_$type": "GList",
+                  "name": "learnedSkillList",
+                  "x": 93,
+                  "y": 212,
+                  "width": 153,
+                  "height": 188,
+                  "layout": {
+                    "type": 1
+                  },
+                  "scroller": {
+                    "_$type": "Scroller",
+                    "barDisplay": 5
+                  },
+                  "_templateNode": {
+                    "_$ref": "2t3eegv6",
+                    "_$tmpl": "itemTemplate"
+                  },
+                  "_initItemNum": 3,
+                  "_$child": [
+                    {
+                      "_$id": "2t3eegv6",
+                      "_$type": "GWidget",
+                      "name": "learnedSkillItem",
+                      "width": 150,
+                      "height": 50,
+                      "background": {
+                        "_$type": "DrawRectCmd",
+                        "lineWidth": 2,
+                        "lineColor": "#3c2d2d",
+                        "fillColor": "#000000"
+                      },
+                      "_$child": [
+                        {
+                          "_$id": "s67w39ua",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 150,
+                          "height": 50,
+                          "text": "无",
+                          "fontSize": 18,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "idj8o0hv",
+                  "_$type": "Text",
+                  "name": "learnedSkillTitle",
+                  "x": 38,
+                  "y": 207,
+                  "width": 50,
+                  "height": 188,
+                  "text": "已\n学\n习\n功\n法",
+                  "fontSize": 30,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            },
+            {
+              "_$id": "auto_detailArea",
+              "_$type": "Area2D",
+              "name": "detailArea",
+              "width": 783,
+              "height": 400,
+              "_$child": [
+                {
+                  "_$id": "tgdzk74m",
+                  "_$type": "GList",
+                  "name": "skillMoveList",
+                  "x": 756,
+                  "y": 31,
+                  "width": 200,
+                  "height": 254,
+                  "layout": {
+                    "type": 1
+                  },
+                  "_templateNode": {
+                    "_$ref": "krlz7fc6",
+                    "_$tmpl": "itemTemplate"
+                  },
+                  "_initItemNum": 5,
+                  "_$child": [
+                    {
+                      "_$id": "krlz7fc6",
+                      "_$type": "GWidget",
+                      "name": "skillMoveItem",
+                      "width": 200,
+                      "height": 50,
+                      "background": {
+                        "_$type": "DrawRectCmd",
+                        "lineWidth": 2,
+                        "lineColor": "#3c2d2d",
+                        "fillColor": "#000000"
+                      },
+                      "_$child": [
+                        {
+                          "_$id": "qmdm4cbi",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 200,
+                          "height": 50,
+                          "text": "雪满关山月",
+                          "fontSize": 18,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "_$id": "o5t9b2xv",
+                  "_$type": "Text",
+                  "name": "skillMoveDetail",
+                  "x": 455,
+                  "y": 123,
+                  "width": 276,
+                  "height": 218,
+                  "text": "Text",
+                  "fontSize": 18,
+                  "color": "#ffffff",
+                  "overflow": "hidden",
+                  "wordWrap": true,
+                  "leading": 4,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "snn3wggj",
+                  "_$type": "Text",
+                  "name": "skillSummary",
+                  "x": 457,
+                  "y": 10,
+                  "width": 286,
+                  "height": 105,
+                  "text": "寒缨落月枪\n第1重\n攻击：+36\n命中：+18\n修炼层数0/3",
+                  "fontSize": 16,
+                  "color": "#ffffff",
+                  "overflow": "hidden",
+                  "wordWrap": true,
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "h02v3cgx",
+                  "_$type": "GWidget",
+                  "name": "jihuo",
+                  "x": 572,
+                  "y": 11,
+                  "width": 100,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "5fzof2g4",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 100,
+                      "height": 50,
+                      "text": "激活",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "auto_cultivateArea",
+              "_$type": "Area2D",
+              "name": "cultivateArea",
+              "width": 783,
+              "height": 400,
+              "_$child": [
+                {
+                  "_$id": "jzfpk4t3",
+                  "_$type": "GWidget",
+                  "name": "currentCultivationInfo",
+                  "x": 426,
+                  "y": 357,
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "ufjhak5r",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "修为：1200",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "xl48k9qb",
+                  "_$type": "GWidget",
+                  "name": "practiceCostInfo",
+                  "x": 616,
+                  "y": 354,
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "xww0jlla",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "消耗：120",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "nrgw3vmh",
+          "_$type": "Area2D",
+          "name": "tianfu",
+          "x": 65,
+          "y": 313,
+          "width": 815,
+          "height": 400,
+          "visible": false,
+          "_$child": [
+            {
+              "_$id": "14restc7",
+              "_$type": "GList",
+              "name": "list",
+              "x": 476,
+              "y": 9,
+              "width": 159,
+              "height": 312,
+              "layout": {
+                "type": 1
+              },
+              "_templateNode": {
+                "_$ref": "7t0wy3yi",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "7t0wy3yi",
+                  "_$type": "GWidget",
+                  "name": "3",
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "860vkkce",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "无",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "j2qd14vk",
+              "_$type": "Text",
+              "name": "xiangqing",
+              "x": 673,
+              "y": 8,
+              "width": 200,
+              "height": 200,
+              "text": "???????\n??????\n????? +18\n??????? +180",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "7ccuje57",
+              "_$type": "GList",
+              "name": "list_1",
+              "x": 27,
+              "y": 24,
+              "width": 152,
+              "height": 306,
+              "layout": {
+                "type": 1
+              },
+              "_templateNode": {
+                "_$ref": "ocsen12e",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "ocsen12e",
+                  "_$type": "GWidget",
+                  "name": "3",
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 2,
+                    "lineColor": "#3c2d2d",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "qsl9t2yw",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "无",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "sw8wb9zj",
+              "_$type": "GList",
+              "name": "list_2",
+              "x": 194,
+              "y": 27,
+              "width": 233,
+              "height": 301,
+              "layout": {
+                "type": 1
+              },
+              "_templateNode": {
+                "_$ref": "za1hruhx",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 6,
+              "_$child": [
+                {
+                  "_$id": "za1hruhx",
+                  "_$type": "GWidget",
+                  "name": "3",
+                  "width": 150,
+                  "height": 50,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 3,
+                    "lineColor": "#362424"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "x597cg6a",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 50,
+                      "text": "无",
+                      "fontSize": 18,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "kvarm466",
+                      "_$type": "Sprite",
+                      "name": "Sprite",
+                      "x": 160,
+                      "width": 50,
+                      "height": 50,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#372828"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "xkwdcc4s",
+                          "_$type": "Text",
+                          "name": "Text_1",
+                          "width": 50,
+                          "height": 50,
+                          "text": "加",
+                          "fontSize": 20,
+                          "color": "#ffffff",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "z0t2gyr3",
+              "_$type": "Text",
+              "name": "Text",
+              "x": 32,
+              "y": -26,
+              "width": 95,
+              "height": 41,
+              "text": "属性资质",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "aqz0cp7o",
+              "_$type": "Text",
+              "name": "Text_1",
+              "x": 163,
+              "y": -26,
+              "width": 95,
+              "height": 41,
+              "text": "0/200(初入茅庐)",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "2o0phwvv",
+              "_$type": "Sprite",
+              "name": "Sprite",
+              "x": 788,
+              "y": 271,
+              "width": 100,
+              "height": 50,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRectCmd",
+                  "fillColor": "#221b1b"
+                }
+              ],
+              "_$child": [
+                {
+                  "_$id": "i0kbhua1",
+                  "_$type": "Text",
+                  "name": "Text_1",
+                  "width": 100,
+                  "height": 50,
+                  "text": "洗骨伐髓",
+                  "fontSize": 20,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "o198022x",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 23,
+      "y": 28,
+      "width": 158,
+      "height": 59,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 3,
+          "lineColor": "#252f22",
+          "fillColor": "#000000"
+        }
+      ],
+      "_$comp": [
+        {
+          "_$type": "72bc4776-c5e7-4409-9d62-7bf88cb8b2dc",
+          "scriptPath": "../src/CloseNodeButton.ts",
+          "targetNode": {
+            "_$ref": "xk5a8qbp"
+          },
+          "targetNodeName": ""
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "qsygsey2",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 165,
+          "height": 62,
+          "text": "返回",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

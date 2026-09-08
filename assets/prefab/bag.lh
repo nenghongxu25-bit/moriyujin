@@ -1,0 +1,292 @@
+{
+  "_$ver": 1,
+  "_$id": "qsff302k",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "2ec334b6-6d1d-4b3a-a7c2-762054b00990",
+      "scriptPath": "../src/WarehousePanel.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "bag_bg_area",
+      "_$type": "Area2D",
+      "name": "Area2D",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "bag_bg",
+          "_$type": "Sprite",
+          "name": "Sprite",
+          "width": 1334,
+          "height": 750,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "fillColor": "#101e0e"
+            }
+          ]
+        },
+        {
+          "_$id": "bag_close_button",
+          "_$type": "Sprite",
+          "name": "Sprite",
+          "x": 35,
+          "y": 20,
+          "width": 158,
+          "height": 59,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "lineWidth": 3,
+              "lineColor": "#252f22",
+              "fillColor": "#000000"
+            }
+          ],
+          "_$comp": [
+            {
+              "_$type": "72bc4776-c5e7-4409-9d62-7bf88cb8b2dc",
+              "scriptPath": "../src/CloseNodeButton.ts",
+              "targetNode": {
+                "_$ref": "qsff302k"
+              },
+              "targetNodeName": ""
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "bag_close_text",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 165,
+              "height": 62,
+              "text": "返回",
+              "fontSize": 35,
+              "color": "#ffffff",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "zfnifhpd",
+          "_$type": "GWidget",
+          "name": "node",
+          "x": 187,
+          "y": -5,
+          "width": 100,
+          "height": 100,
+          "_$child": [
+            {
+              "_$id": "baglist_node",
+              "_$type": "GList",
+              "name": "baglist",
+              "x": 228,
+              "y": 132,
+              "width": 754,
+              "height": 560,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1d241d"
+              },
+              "layout": {
+                "type": 3
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 5
+              },
+              "_templateNode": {
+                "_$ref": "bag_item_template",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 7,
+              "_$child": [
+                {
+                  "_$id": "bag_item_template",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 150,
+                  "height": 70,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 3,
+                    "lineColor": "#ffffff",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "bag_item_highlight",
+                      "_$type": "Sprite",
+                      "name": "Highlight",
+                      "width": 150,
+                      "height": 70,
+                      "visible": false,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "width": 150,
+                          "height": 70,
+                          "lineWidth": 4,
+                          "lineColor": "#f1df8a",
+                          "fillColor": "rgba(0,0,0,0)"
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "bag_item_name",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 70,
+                      "text": "背包",
+                      "fontSize": 25,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0,
+                      "padding": [
+                        0,
+                        0,
+                        0,
+                        15
+                      ]
+                    },
+                    {
+                      "_$id": "bag_item_owner",
+                      "_$type": "Text",
+                      "name": "Text_1",
+                      "x": 97,
+                      "y": 33,
+                      "width": 50,
+                      "height": 32,
+                      "fontSize": 15,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "42f0laay",
+              "_$type": "GList",
+              "name": "list",
+              "x": 228,
+              "y": 52,
+              "width": 754,
+              "height": 73,
+              "layout": {
+                "type": 3
+              },
+              "_templateNode": {
+                "_$ref": "6lc7dz5c",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": null,
+              "_$child": [
+                {
+                  "_$id": "6lc7dz5c",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 150,
+                  "height": 70,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 3,
+                    "lineColor": "#ffffff",
+                    "fillColor": "#000000"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "xv0dilsi",
+                      "_$type": "Sprite",
+                      "name": "Highlight",
+                      "width": 150,
+                      "height": 70,
+                      "visible": false,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "width": 150,
+                          "height": 70,
+                          "lineWidth": 4,
+                          "lineColor": "#f1df8a",
+                          "fillColor": "rgba(0,0,0,0)"
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "gy2dy6de",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 150,
+                      "height": 70,
+                      "text": "背包",
+                      "fontSize": 25,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "c55533hy",
+              "_$type": "Text",
+              "name": "text",
+              "x": 883,
+              "y": 652,
+              "width": 96,
+              "height": 38,
+              "text": "11/20",
+              "fontSize": 20,
+              "color": "#ffffff",
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "qqxoxb8e",
+          "_$type": "Text",
+          "name": "xiangxi",
+          "x": 120,
+          "y": 157,
+          "width": 264,
+          "height": 324,
+          "text": "",
+          "fontSize": 20,
+          "color": "#ffffff",
+          "align": "left",
+          "valign": "top",
+          "wordWrap": true,
+          "overflow": "hidden",
+          "leading": 2,
+          "letterSpacing": 0,
+          "padding": [
+            20,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

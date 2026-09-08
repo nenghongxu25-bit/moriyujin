@@ -1,0 +1,446 @@
+{
+  "_$ver": 1,
+  "_$id": "sfgb77e1",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "xsjx03af",
+      "_$type": "Area2D",
+      "name": "MapRoot",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "hx9thuv4",
+          "_$type": "Sprite",
+          "name": "Background",
+          "width": 1334,
+          "height": 750,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "fillColor": "#20382d"
+            }
+          ]
+        },
+        {
+          "_$id": "miwvkusv",
+          "_$type": "GList",
+          "name": "list",
+          "width": 1334,
+          "height": 750,
+          "layout": {
+            "type": 1
+          },
+          "scroller": {
+            "_$type": "Scroller"
+          },
+          "_templateNode": {
+            "_$ref": "7zoim31h",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 10,
+          "_$child": [
+            {
+              "_$id": "7zoim31h",
+              "_$type": "GWidget",
+              "width": 1200,
+              "height": 200,
+              "background": {
+                "_$type": "DrawRoundRectCmd",
+                "lt": 20,
+                "rt": 20,
+                "lb": 20,
+                "rb": 20,
+                "lineWidth": 5,
+                "lineColor": "#000000",
+                "fillColor": "#299ba4"
+              },
+              "_$child": [
+                {
+                  "_$id": "hnl2b823",
+                  "_$type": "Sprite",
+                  "name": "Sprite",
+                  "x": 26,
+                  "y": 30,
+                  "width": 180,
+                  "height": 180,
+                  "scaleX": 0.8,
+                  "scaleY": 0.8,
+                  "_gcmds": [
+                    {
+                      "_$type": "DrawCircleCmd",
+                      "x": 0.5,
+                      "y": 0.5,
+                      "radius": 0.5,
+                      "percent": true,
+                      "lineWidth": 1,
+                      "lineColor": "#000000",
+                      "fillColor": "#42d4cf"
+                    }
+                  ],
+                  "_$child": [
+                    {
+                      "_$id": "r4w6gl9k",
+                      "_$type": "GImage",
+                      "name": "img",
+                      "width": 180,
+                      "height": 180,
+                      "src": "res://b18dde6e-0a4f-47a9-b8ee-4cbfc29f1346",
+                      "autoSize": false,
+                      "color": "#1900ff"
+                    }
+                  ]
+                },
+                {
+                  "_$id": "c9e03k57",
+                  "_$type": "Sprite",
+                  "name": "Sprite_1",
+                  "width": 100,
+                  "height": 100,
+                  "_$child": [
+                    {
+                      "_$id": "4ukxew36",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "x": 186,
+                      "y": 24,
+                      "width": 171,
+                      "height": 46,
+                      "text": "名字：青槐",
+                      "fontSize": 30,
+                      "color": "#0c2726",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "7a1emp7h",
+                      "_$type": "Text",
+                      "name": "Text_1",
+                      "x": 395,
+                      "y": 20,
+                      "width": 99,
+                      "height": 44,
+                      "text": "套路：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "xbuu831m",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 637,
+                      "y": 19,
+                      "width": 99,
+                      "height": 44,
+                      "text": "心法：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "fm2oj7zx",
+                      "_$type": "Text",
+                      "name": "Text_3",
+                      "x": 883,
+                      "y": 22,
+                      "width": 99,
+                      "height": 44,
+                      "text": "轻功：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "i6e7tbt4",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 474,
+                      "y": 20,
+                      "width": 117,
+                      "height": 44,
+                      "text": "青槐剑法",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "5cfcvamd",
+                      "_$type": "Text",
+                      "name": "Text_4",
+                      "x": 720,
+                      "y": 20,
+                      "width": 107,
+                      "height": 44,
+                      "text": "枯荣经",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "53919rg7",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 970,
+                      "y": 12,
+                      "width": 99,
+                      "height": 60,
+                      "text": "踏叶凌空",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "ritc7gtj",
+                  "_$type": "Sprite",
+                  "name": "type",
+                  "x": 197,
+                  "y": 75,
+                  "width": 100,
+                  "height": 100,
+                  "_$child": [
+                    {
+                      "_$id": "462t8cjw",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 4,
+                      "y": -4,
+                      "width": 99,
+                      "height": 44,
+                      "text": "武器：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "9fkvcy79",
+                      "_$type": "Text",
+                      "name": "Text_3",
+                      "x": 241,
+                      "y": -7,
+                      "width": 99,
+                      "height": 44,
+                      "text": "护甲：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "hqxlf0za",
+                      "_$type": "Text",
+                      "name": "Text_4",
+                      "x": 476,
+                      "y": -4,
+                      "width": 99,
+                      "height": 44,
+                      "text": "护腰：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "26vpkknt",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 4,
+                      "y": 52,
+                      "width": 99,
+                      "height": 44,
+                      "text": "护腕：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "9qpfro7d",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 244,
+                      "y": 49,
+                      "width": 99,
+                      "height": 44,
+                      "text": "戒指：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "jsbdmtbb",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 476,
+                      "y": 52,
+                      "width": 99,
+                      "height": 44,
+                      "text": "吊坠：",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                },
+                {
+                  "_$id": "ifet3ti5",
+                  "_$type": "Sprite",
+                  "name": "name",
+                  "width": 100,
+                  "height": 100,
+                  "_$child": [
+                    {
+                      "_$id": "r0dwb132",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 283,
+                      "y": 70,
+                      "width": 139,
+                      "height": 44,
+                      "text": "青锋剑",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "kvunube0",
+                      "_$type": "Text",
+                      "name": "Text_3",
+                      "x": 522,
+                      "y": 67,
+                      "width": 139,
+                      "height": 44,
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "q6lhqfdj",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 764,
+                      "y": 129,
+                      "width": 139,
+                      "height": 44,
+                      "text": "珀心玉",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "fbdwy655",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 532,
+                      "y": 68,
+                      "width": 139,
+                      "height": 44,
+                      "text": "磐槐软胄",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "c7kppquw",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 281,
+                      "y": 126,
+                      "width": 139,
+                      "height": 44,
+                      "text": "千缠百结",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "cmw4c1sr",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 530,
+                      "y": 126,
+                      "width": 139,
+                      "height": 44,
+                      "text": "岁寒双星",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "4bu10ru1",
+                      "_$type": "Text",
+                      "name": "Text_2",
+                      "x": 762,
+                      "y": 72,
+                      "width": 139,
+                      "height": 44,
+                      "text": "地龙锁",
+                      "fontSize": 30,
+                      "color": "#ffffff",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

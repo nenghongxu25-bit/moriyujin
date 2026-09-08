@@ -1,0 +1,358 @@
+{
+  "_$ver": 1,
+  "_$id": "cf79dgt9",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "10969bab-7ad0-47e4-861f-741c751c8a81",
+      "scriptPath": "../src/ZhenxingPanel.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "ttn1vazi",
+      "_$type": "Area2D",
+      "name": "MapRoot",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "d9pslzu8",
+          "_$type": "Sprite",
+          "name": "Background",
+          "width": 1334,
+          "height": 750,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "fillColor": "#20382d"
+            }
+          ]
+        },
+        {
+          "_$id": "kudswwxp",
+          "_$type": "GList",
+          "name": "playerlist",
+          "x": 228,
+          "y": 26,
+          "width": 530,
+          "height": 523,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 4,
+            "lineColor": "#16231d",
+            "fillColor": "#2d4739"
+          },
+          "layout": {
+            "type": 3,
+            "rowGap": 20,
+            "columnGap": 20,
+            "padding": [
+              20,
+              0,
+              0,
+              20
+            ]
+          },
+          "_templateNode": {
+            "_$ref": "1p6dh63n",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 9,
+          "_$child": [
+            {
+              "_$id": "1p6dh63n",
+              "_$type": "GWidget",
+              "name": "placeItem",
+              "width": 150,
+              "height": 150,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#ffffff",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "yphu6z1y",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 150,
+                  "height": 70,
+                  "text": "Text",
+                  "fontSize": 30,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                },
+                {
+                  "_$id": "xx9i0zxl",
+                  "_$type": "Sprite",
+                  "name": "Sprite",
+                  "x": 37,
+                  "y": 105,
+                  "width": 80,
+                  "height": 80,
+                  "_gcmds": [],
+                  "_$child": [
+                    {
+                      "_$id": "qj0wzneo",
+                      "_$type": "Sprite",
+                      "name": "HpBar",
+                      "x": -10,
+                      "y": -20,
+                      "width": 100,
+                      "height": 15,
+                      "_$child": [
+                        {
+                          "_$id": "vjupxck0",
+                          "_$type": "Sprite",
+                          "name": "Bg",
+                          "width": 100,
+                          "height": 20,
+                          "alpha": 0.8,
+                          "_gcmds": [
+                            {
+                              "_$type": "DrawRoundRectCmd",
+                              "lt": 10,
+                              "rt": 10,
+                              "lb": 10,
+                              "rb": 10,
+                              "lineColor": "#000000",
+                              "fillColor": "#000000"
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "zsei14jx",
+                          "_$type": "Sprite",
+                          "name": "Fill",
+                          "x": 100,
+                          "width": 100,
+                          "height": 20,
+                          "scaleX": -1,
+                          "_gcmds": [
+                            {
+                              "_$type": "DrawRoundRectCmd",
+                              "lt": 10,
+                              "rt": 10,
+                              "lb": 10,
+                              "rb": 10,
+                              "lineWidth": 2,
+                              "lineColor": "#000000",
+                              "fillColor": "#810000"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "zrchq3ut",
+                      "_$type": "Sprite",
+                      "name": "NLBar",
+                      "x": -9,
+                      "y": 1,
+                      "width": 100,
+                      "height": 15,
+                      "_$child": [
+                        {
+                          "_$id": "0uu82eqk",
+                          "_$type": "Sprite",
+                          "name": "Bg",
+                          "width": 100,
+                          "height": 20,
+                          "alpha": 0.8,
+                          "_gcmds": [
+                            {
+                              "_$type": "DrawRoundRectCmd",
+                              "lt": 10,
+                              "rt": 10,
+                              "lb": 10,
+                              "rb": 10,
+                              "lineColor": "#000000",
+                              "fillColor": "#000000"
+                            }
+                          ]
+                        },
+                        {
+                          "_$id": "2otf4pbu",
+                          "_$type": "Sprite",
+                          "name": "Fill",
+                          "x": 100,
+                          "width": 100,
+                          "height": 20,
+                          "scaleX": -1,
+                          "_gcmds": [
+                            {
+                              "_$type": "DrawRoundRectCmd",
+                              "lt": 10,
+                              "rt": 10,
+                              "lb": 10,
+                              "rb": 10,
+                              "lineWidth": 2,
+                              "lineColor": "#000000",
+                              "fillColor": "#073fc1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "3pjtflwq",
+          "_$type": "GList",
+          "name": "list",
+          "x": 783,
+          "y": 28,
+          "width": 200,
+          "height": 710,
+          "layout": {
+            "type": 1
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "barDisplay": 1
+          },
+          "_templateNode": {
+            "_$ref": "qnlspa80",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 5,
+          "_$child": [
+            {
+              "_$id": "qnlspa80",
+              "_$type": "GWidget",
+              "name": "placeItem",
+              "width": 150,
+              "height": 70,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#ffffff",
+                "fillColor": "#000000"
+              },
+              "_$child": [
+                {
+                  "_$id": "0p88pb4z",
+                  "_$type": "Text",
+                  "name": "Text",
+                  "width": 150,
+                  "height": 70,
+                  "text": "Text",
+                  "fontSize": 30,
+                  "color": "#ffffff",
+                  "align": "center",
+                  "valign": "middle",
+                  "leading": 2,
+                  "letterSpacing": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "ra3mlvkm",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 40,
+      "y": 40,
+      "width": 158,
+      "height": 59,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 3,
+          "lineColor": "#252f22",
+          "fillColor": "#000000"
+        }
+      ],
+      "_$comp": [
+        {
+          "_$type": "72bc4776-c5e7-4409-9d62-7bf88cb8b2dc",
+          "scriptPath": "../src/CloseNodeButton.ts",
+          "targetNode": {
+            "_$ref": "cf79dgt9"
+          },
+          "targetNodeName": ""
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "bw5rj9f7",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 165,
+          "height": 62,
+          "text": "返回",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "73d955x4",
+      "_$type": "Sprite",
+      "name": "xiazhen",
+      "x": 232,
+      "y": 574,
+      "width": 158,
+      "height": 59,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 3,
+          "lineColor": "#252f22",
+          "fillColor": "#000000"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "7xg665nh",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 165,
+          "height": 62,
+          "text": "下阵",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "f0lfa6hv",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 58,
+      "y": 160,
+      "width": 138,
+      "height": 52,
+      "text": "可上阵人数 x/y",
+      "fontSize": 20,
+      "color": "#ffffff",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

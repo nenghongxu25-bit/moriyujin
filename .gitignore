@@ -1,0 +1,12 @@
+.DS_Store
+.chat/
+.cursor/
+.tmp/
+.trae/
+temp
+library
+local
+release
+node_modules
+bin/js/bundles
+.memory/private/

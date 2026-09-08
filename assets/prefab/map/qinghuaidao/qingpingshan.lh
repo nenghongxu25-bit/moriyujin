@@ -1,0 +1,718 @@
+{
+  "_$ver": 1,
+  "_$id": "svi92954",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "8t9bufvu",
+      "_$type": "GWidget",
+      "name": "node",
+      "x": -5,
+      "y": 2,
+      "width": 1334,
+      "height": 750,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#183e18"
+      }
+    },
+    {
+      "_$id": "gjr16ykd",
+      "_$type": "GWidget",
+      "name": "node_1",
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "suj790ne",
+          "_$type": "GWidget",
+          "name": "placeItem_2",
+          "x": 959,
+          "y": 191,
+          "width": 150,
+          "height": 150,
+          "_$comp": [
+            {
+              "_$type": "fb0c4d5e-c9af-4fd4-8057-4f712fe07f04",
+              "scriptPath": "../src/OpenNodeButton.ts",
+              "targetNode": {
+                "_$ref": "vwyxkaxb"
+              },
+              "targetNodeName": "",
+              "buildingName": "采集区"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "6ho5gdu7",
+              "_$type": "Sprite",
+              "name": "itemBg",
+              "width": 150,
+              "height": 150,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 4,
+                  "lineColor": "#17140d",
+                  "fillColor": "#302407"
+                }
+              ]
+            },
+            {
+              "_$id": "b94re8lj",
+              "_$type": "Text",
+              "name": "char_0",
+              "width": 150,
+              "height": 150,
+              "text": "采集区",
+              "fontSize": 34,
+              "color": "#ad8b13",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "hnxwo7ey",
+          "_$type": "GWidget",
+          "name": "placeItem_4",
+          "x": 546,
+          "y": 76,
+          "width": 150,
+          "height": 150,
+          "_$comp": [
+            {
+              "_$type": "fb0c4d5e-c9af-4fd4-8057-4f712fe07f04",
+              "scriptPath": "../src/OpenNodeButton.ts",
+              "targetNode": {
+                "_$ref": "vwyxkaxb"
+              },
+              "targetNodeName": "",
+              "buildingName": "隐秘入口"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "uo07l24x",
+              "_$type": "Sprite",
+              "name": "itemBg",
+              "width": 150,
+              "height": 150,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 4,
+                  "lineColor": "#17140d",
+                  "fillColor": "#302407"
+                }
+              ]
+            },
+            {
+              "_$id": "34q1ty51",
+              "_$type": "Text",
+              "name": "char_0",
+              "width": 150,
+              "height": 150,
+              "text": "隐秘入口",
+              "fontSize": 34,
+              "color": "#ad8b13",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "v2px3qsw",
+          "_$type": "GWidget",
+          "name": "placeItem_5",
+          "x": 404,
+          "y": 375,
+          "width": 150,
+          "height": 150,
+          "_$comp": [
+            {
+              "_$type": "fb0c4d5e-c9af-4fd4-8057-4f712fe07f04",
+              "scriptPath": "../src/OpenNodeButton.ts",
+              "targetNode": {
+                "_$ref": "vwyxkaxb"
+              },
+              "targetNodeName": "",
+              "buildingName": "青屏寨"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "ha9ssufo",
+              "_$type": "Sprite",
+              "name": "itemBg",
+              "width": 150,
+              "height": 150,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 4,
+                  "lineColor": "#17140d",
+                  "fillColor": "#302407"
+                }
+              ]
+            },
+            {
+              "_$id": "1dacy4aw",
+              "_$type": "Text",
+              "name": "char_0",
+              "width": 150,
+              "height": 150,
+              "text": "青屏寨",
+              "fontSize": 34,
+              "color": "#ad8b13",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        },
+        {
+          "_$id": "jjher1vy",
+          "_$type": "GWidget",
+          "name": "placeItem_6",
+          "x": 1058,
+          "y": 375,
+          "width": 150,
+          "height": 150,
+          "_$comp": [
+            {
+              "_$type": "fb0c4d5e-c9af-4fd4-8057-4f712fe07f04",
+              "scriptPath": "../src/OpenNodeButton.ts",
+              "targetNode": {
+                "_$ref": "vwyxkaxb"
+              },
+              "targetNodeName": "",
+              "buildingName": "猎场"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "0hoahykk",
+              "_$type": "Sprite",
+              "name": "itemBg",
+              "width": 150,
+              "height": 150,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 4,
+                  "lineColor": "#17140d",
+                  "fillColor": "#302407"
+                }
+              ]
+            },
+            {
+              "_$id": "f0ku8pzp",
+              "_$type": "Text",
+              "name": "char_0",
+              "width": 150,
+              "height": 150,
+              "text": "猎场",
+              "fontSize": 34,
+              "color": "#ad8b13",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "vwyxkaxb",
+      "_$type": "GWidget",
+      "name": "node2",
+      "x": 8,
+      "y": 133,
+      "width": 100,
+      "height": 100,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "95z0l1tz",
+          "_$type": "GWidget",
+          "name": "place",
+          "width": 300,
+          "height": 400,
+          "_$child": [
+            {
+              "_$id": "jzl9zc0l",
+              "_$type": "Sprite",
+              "name": "itemBg",
+              "width": 300,
+              "height": 400,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 4,
+                  "lineColor": "#17140d",
+                  "fillColor": "#302407"
+                }
+              ]
+            },
+            {
+              "_$id": "d9nh3ogs",
+              "_$type": "Text",
+              "name": "name",
+              "x": 86,
+              "y": 34,
+              "width": 126,
+              "height": 42,
+              "text": "青槐居",
+              "fontSize": 34,
+              "color": "#ad8b13",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "uocnwya9",
+              "_$type": "GList",
+              "name": "list",
+              "x": 26,
+              "y": 99,
+              "width": 255,
+              "height": 300,
+              "layout": {
+                "type": 3,
+                "rowGap": 20,
+                "columnGap": 20,
+                "padding": [
+                  15,
+                  0,
+                  0,
+                  15
+                ]
+              },
+              "_templateNode": {
+                "_$ref": "ith928x7",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 5,
+              "_$child": [
+                {
+                  "_$id": "ith928x7",
+                  "_$type": "GWidget",
+                  "name": "role",
+                  "width": 100,
+                  "height": 50,
+                  "_$child": [
+                    {
+                      "_$id": "jbxtx63c",
+                      "_$type": "Sprite",
+                      "name": "itemBg",
+                      "width": 100,
+                      "height": 50,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRoundRectCmd",
+                          "lt": 10,
+                          "rt": 10,
+                          "lb": 10,
+                          "rb": 10,
+                          "lineWidth": 4,
+                          "lineColor": "#17140d",
+                          "fillColor": "#302407"
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "zi2e1cte",
+                      "_$type": "Text",
+                      "name": "char_0",
+                      "width": 100,
+                      "height": 50,
+                      "text": "栖枝院",
+                      "fontSize": 20,
+                      "color": "#ad8b13",
+                      "bold": true,
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "idnw37wl",
+          "_$type": "Sprite",
+          "name": "mapDrawerHead",
+          "x": 29,
+          "y": 34,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "scaleX": -0.3,
+          "scaleY": 0.3,
+          "_gcmds": [
+            {
+              "_$type": "DrawPolyCmd",
+              "x": 0,
+              "y": 0,
+              "points": [
+                0,
+                0,
+                100,
+                50,
+                0,
+                100
+              ],
+              "lineWidth": 9,
+              "lineColor": "#000000",
+              "fillColor": "#787933"
+            }
+          ],
+          "_$comp": [
+            {
+              "_$type": "72bc4776-c5e7-4409-9d62-7bf88cb8b2dc",
+              "scriptPath": "../src/CloseNodeButton.ts",
+              "targetNode": {
+                "_$ref": "vwyxkaxb"
+              },
+              "targetNodeName": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "72kw3qff",
+      "_$type": "GWidget",
+      "name": "node3",
+      "x": 330,
+      "y": 35,
+      "width": 100,
+      "height": 100,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "hvmwb1mb",
+          "_$type": "GWidget",
+          "name": "place",
+          "width": 300,
+          "height": 400,
+          "_$child": [
+            {
+              "_$id": "4buurv0g",
+              "_$type": "Sprite",
+              "name": "itemBg",
+              "width": 800,
+              "height": 400,
+              "_gcmds": [
+                {
+                  "_$type": "DrawRoundRectCmd",
+                  "lt": 10,
+                  "rt": 10,
+                  "lb": 10,
+                  "rb": 10,
+                  "lineWidth": 4,
+                  "lineColor": "#17140d",
+                  "fillColor": "#302407"
+                }
+              ]
+            },
+            {
+              "_$id": "2oa4aod2",
+              "_$type": "Text",
+              "name": "name",
+              "x": 78,
+              "y": 31,
+              "width": 126,
+              "height": 42,
+              "text": "青槐居",
+              "fontSize": 34,
+              "color": "#ad8b13",
+              "bold": true,
+              "align": "center",
+              "valign": "middle",
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "wyg8rqxh",
+              "_$type": "Text",
+              "name": "name_1",
+              "x": 51,
+              "y": 101,
+              "width": 701,
+              "height": 129,
+              "text": "青槐居",
+              "fontSize": 25,
+              "color": "#ad8b13",
+              "bold": true,
+              "leading": 2,
+              "letterSpacing": 0
+            },
+            {
+              "_$id": "ihn3dbin",
+              "_$type": "GList",
+              "name": "list",
+              "x": 22,
+              "y": 230,
+              "width": 490,
+              "height": 145,
+              "layout": {
+                "type": 3,
+                "rowGap": 20,
+                "columnGap": 20,
+                "padding": [
+                  15,
+                  0,
+                  0,
+                  15
+                ]
+              },
+              "_templateNode": {
+                "_$ref": "tvhasd9t",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 5,
+              "_$child": [
+                {
+                  "_$id": "tvhasd9t",
+                  "_$type": "GWidget",
+                  "name": "role",
+                  "width": 100,
+                  "height": 50,
+                  "_$child": [
+                    {
+                      "_$id": "jca45wde",
+                      "_$type": "Sprite",
+                      "name": "itemBg",
+                      "width": 100,
+                      "height": 50,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRoundRectCmd",
+                          "lt": 10,
+                          "rt": 10,
+                          "lb": 10,
+                          "rb": 10,
+                          "lineWidth": 4,
+                          "lineColor": "#17140d",
+                          "fillColor": "#302407"
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "94jg4k61",
+                      "_$type": "Text",
+                      "name": "char_0",
+                      "width": 100,
+                      "height": 50,
+                      "text": "栖枝院",
+                      "fontSize": 25,
+                      "color": "#ad8b13",
+                      "bold": true,
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_$id": "sg0c3umr",
+              "_$type": "GList",
+              "name": "list_1",
+              "x": 525,
+              "y": 227,
+              "width": 246,
+              "height": 145,
+              "layout": {
+                "type": 3,
+                "rowGap": 20,
+                "columnGap": 20,
+                "padding": [
+                  15,
+                  0,
+                  0,
+                  15
+                ]
+              },
+              "_templateNode": {
+                "_$ref": "batghi80",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 4,
+              "_$child": [
+                {
+                  "_$id": "batghi80",
+                  "_$type": "GWidget",
+                  "name": "role",
+                  "width": 100,
+                  "height": 50,
+                  "_$child": [
+                    {
+                      "_$id": "htqy5hgl",
+                      "_$type": "Sprite",
+                      "name": "itemBg",
+                      "width": 100,
+                      "height": 50,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRoundRectCmd",
+                          "lt": 10,
+                          "rt": 10,
+                          "lb": 10,
+                          "rb": 10,
+                          "lineWidth": 4,
+                          "lineColor": "#17140d",
+                          "fillColor": "#302407"
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "nymjfnaa",
+                      "_$type": "Text",
+                      "name": "char_0",
+                      "width": 100,
+                      "height": 50,
+                      "text": "栖枝院",
+                      "fontSize": 25,
+                      "color": "#ad8b13",
+                      "bold": true,
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "4mmcwqa3",
+          "_$type": "Sprite",
+          "name": "mapDrawerHead",
+          "x": 29,
+          "y": 34,
+          "width": 100,
+          "height": 100,
+          "anchorX": 0.5,
+          "scaleX": -0.3,
+          "scaleY": 0.3,
+          "_gcmds": [
+            {
+              "_$type": "DrawPolyCmd",
+              "x": 0,
+              "y": 0,
+              "points": [
+                0,
+                0,
+                100,
+                50,
+                0,
+                100
+              ],
+              "lineWidth": 9,
+              "lineColor": "#000000",
+              "fillColor": "#787933"
+            }
+          ],
+          "_$comp": [
+            {
+              "_$type": "72bc4776-c5e7-4409-9d62-7bf88cb8b2dc",
+              "scriptPath": "../src/CloseNodeButton.ts",
+              "targetNode": {
+                "_$ref": "72kw3qff"
+              },
+              "targetNodeName": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "tvjsx0fw",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 50,
+      "y": 44,
+      "width": 158,
+      "height": 59,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 3,
+          "lineColor": "#080908",
+          "fillColor": "#35361e"
+        }
+      ],
+      "_$comp": [
+        {
+          "_$type": "72bc4776-c5e7-4409-9d62-7bf88cb8b2dc",
+          "scriptPath": "../src/CloseNodeButton.ts",
+          "targetNode": {
+            "_$ref": "svi92954"
+          },
+          "targetNodeName": ""
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "jzz2zski",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 165,
+          "height": 62,
+          "text": "返回",
+          "fontSize": 35,
+          "color": "#ffffff",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}
