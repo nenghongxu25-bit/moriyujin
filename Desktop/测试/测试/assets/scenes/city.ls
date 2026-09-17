@@ -5862,9 +5862,7 @@
               "visible": false,
               "blendMode": "destinationOut",
               "mouseEnabled": false,
-              "_gcmds": [
-                { "_$type": "DrawRectCmd", "fillColor": "#000000" }
-              ]
+              "texture": { "_$uuid": "c5cba251-ae46-4487-98b5-1d2282647d45", "_$type": "Texture" }
             },
             {
               "_$id": "roomlitupper",
@@ -5875,9 +5873,7 @@
               "visible": false,
               "blendMode": "destinationOut",
               "mouseEnabled": false,
-              "_gcmds": [
-                { "_$type": "DrawRectCmd", "fillColor": "#000000" }
-              ]
+              "texture": { "_$uuid": "4876f987-dbc9-4b18-b9a6-9d4e938d33ed", "_$type": "Texture" }
             }
           ]
         },
@@ -5917,16 +5913,12 @@
                   "lightsOn": true,
                   "nightCutout": { "_$ref": "roomlitlower" },
                   "outsideAlpha": 1,
-                  "fadeSeconds": 0.12,
+                  "fadeSeconds": 0.5,
+                  "exitFadeSeconds": 0.3,
                   "exitPadding": 6
                 }
               ],
-              "_gcmds": [
-                {
-                  "_$type": "DrawRectCmd",
-                  "fillColor": "#000000"
-                }
-              ]
+              "texture": { "_$uuid": "c5cba251-ae46-4487-98b5-1d2282647d45", "_$type": "Texture" }
             },
             {
               "_$id": "l2kdgz79",
@@ -5943,16 +5935,12 @@
                   "lightsOn": true,
                   "nightCutout": { "_$ref": "roomlitupper" },
                   "outsideAlpha": 1,
-                  "fadeSeconds": 0.12,
+                  "fadeSeconds": 0.5,
+                  "exitFadeSeconds": 0.3,
                   "exitPadding": 6
                 }
               ],
-              "_gcmds": [
-                {
-                  "_$type": "DrawRectCmd",
-                  "fillColor": "#000000"
-                }
-              ]
+              "texture": { "_$uuid": "4876f987-dbc9-4b18-b9a6-9d4e938d33ed", "_$type": "Texture" }
             }
           ]
         }

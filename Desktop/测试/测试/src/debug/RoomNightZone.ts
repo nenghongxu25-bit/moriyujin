@@ -12,8 +12,11 @@ export class RoomNightZone extends Laya.Script {
     @property({ type: Number, caption: "室外遮挡强度" })
     public outsideAlpha: number = 1;
 
-    @property({ type: Number, caption: "进出淡变秒数" })
-    public fadeSeconds: number = 0.12;
+    @property({ type: Number, caption: "进屋渐亮秒数" })
+    public fadeSeconds: number = 0.5;
+
+    @property({ type: Number, caption: "出屋渐暗秒数" })
+    public exitFadeSeconds: number = 0.3;
 
     @property({ type: Number, caption: "边界缓冲像素" })
     public exitPadding: number = 6;
@@ -29,6 +32,8 @@ export class RoomNightZone extends Laya.Script {
     private lastB = NaN;
     private lastC = NaN;
     private lastD = NaN;
+    private revealProgress = 0;
+    private lightProgress = 0;
 
     public containsPlayer(target: Laya.Sprite, world: Laya.Sprite): boolean {
         const room = this.owner as Laya.Sprite;
@@ -45,19 +50,24 @@ export class RoomNightZone extends Laya.Script {
         world: Laya.Sprite, deltaSeconds: number): boolean {
         const room = this.owner as Laya.Sprite;
         this.revealed = reveal;
-        const desiredAlpha = reveal ? 0 : Math.max(0, Math.min(1, this.outsideAlpha));
-        const step = this.fadeSeconds <= 0 ? 1 : deltaSeconds / this.fadeSeconds;
-        if (room.alpha !== desiredAlpha) {
-            room.alpha = room.alpha < desiredAlpha ? Math.min(desiredAlpha, room.alpha + step) :
-                Math.max(desiredAlpha, room.alpha - step);
-        }
+        // Reverse the existing progress at the doorway instead of restarting a tween.
+        this.revealProgress = this.advance(this.revealProgress, reveal, deltaSeconds);
+        const revealAmount = this.ease(this.revealProgress);
+        const desiredAlpha = (1 - revealAmount) * Math.max(0, Math.min(1, this.outsideAlpha));
+        if (room.alpha !== desiredAlpha) room.alpha = desiredAlpha;
+        this.lightProgress = this.advance(this.lightProgress, reveal && isNight && this.lightsOn, deltaSeconds);
         const cutout = this.nightCutout;
         if (!cutout || cutout.destroyed) return false;
         // Outside rooms are already covered by the separate room concealment.
         // Avoid moving invisible exclusions inside the bitmap cache every frame.
-        const enabled = reveal && isNight && this.lightsOn;
+        const lightAmount = this.ease(this.lightProgress);
+        const enabled = isNight && lightAmount > 0;
         let changed = cutout.visible !== enabled;
         if (changed) cutout.visible = enabled;
+        if (cutout.alpha !== lightAmount) {
+            cutout.alpha = lightAmount;
+            changed = true;
+        }
         if (!enabled || room.width <= 0 || room.height <= 0) return changed;
 
         this.mapPoint(this.origin, 0, 0, room, targetNight, world);
@@ -92,10 +102,24 @@ export class RoomNightZone extends Laya.Script {
         targetNight.globalToLocal(point, false, world);
     }
 
+    private advance(progress: number, brighten: boolean, dt: number): number {
+        const seconds = brighten ? this.fadeSeconds : this.exitFadeSeconds;
+        const step = seconds <= 0 ? 1 : Math.max(0, dt) / seconds;
+        return brighten ? Math.min(1, progress + step) : Math.max(0, progress - step);
+    }
+
+    private ease(progress: number): number {
+        return progress * progress * (3 - 2 * progress);
+    }
+
     public resetRoom(): void {
         const room = this.owner as Laya.Sprite;
         if (!room.destroyed) room.alpha = Math.max(0, Math.min(1, this.outsideAlpha));
-        if (this.nightCutout && !this.nightCutout.destroyed) this.nightCutout.visible = false;
+        if (this.nightCutout && !this.nightCutout.destroyed) {
+            this.nightCutout.visible = false;
+            this.nightCutout.alpha = 0;
+        }
+        this.revealProgress = this.lightProgress = 0;
         this.playerInside = this.revealed = false;
     }
 }

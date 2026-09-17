@@ -1,0 +1,323 @@
+{
+  "started": 1789617982731,
+  "records": [
+    {
+      "rawMessage": "[RoomPerf] START {\"rooms\":2,\"documentHidden\":true}",
+      "message": "[RoomPerf] START {\"rooms\":2,\"documentHidden\":true}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789617983662,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 26,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:26"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE day-outside",
+      "message": "[RoomPerf] CASE day-outside",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789617986680,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"day-outside\",\"passed\":true,\"fps\":0.9917191451366313,\"rtChanges\":0,\"rtSize\":[null,null],\"documentHidden\":true,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"day-outside\",\"passed\":true,\"fps\":0.9917191451366313,\"rtChanges\":0,\"rtSize\":[null,null],\"documentHidden\":true,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789617989714,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE day-inside",
+      "message": "[RoomPerf] CASE day-inside",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789617992169,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"day-inside\",\"passed\":true,\"fps\":0.9916208042015419,\"rtChanges\":0,\"rtSize\":[null,null],\"documentHidden\":true,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"day-inside\",\"passed\":true,\"fps\":0.9916208042015419,\"rtChanges\":0,\"rtSize\":[null,null],\"documentHidden\":true,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789617996202,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE night-lights-off",
+      "message": "[RoomPerf] CASE night-lights-off",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789617997952,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"night-lights-off\",\"passed\":true,\"fps\":0.9838646202260931,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":true,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"night-lights-off\",\"passed\":true,\"fps\":0.9838646202260931,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":true,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618001001,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE night-lights-on",
+      "message": "[RoomPerf] CASE night-lights-on",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618003785,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"night-lights-on\",\"passed\":true,\"fps\":0.9918175055789734,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":true,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"night-lights-on\",\"passed\":true,\"fps\":0.9918175055789734,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":true,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618006818,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE night-exit",
+      "message": "[RoomPerf] CASE night-exit",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618009301,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"night-exit\",\"passed\":true,\"fps\":0.9919650828276181,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":true,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"night-exit\",\"passed\":true,\"fps\":0.9919650828276181,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":true,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618012325,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE second-room",
+      "message": "[RoomPerf] CASE second-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618014304,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"second-room\",\"passed\":true,\"fps\":60.01091107482956,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"second-room\",\"passed\":true,\"fps\":60.01091107482956,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618017320,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE combined-room",
+      "message": "[RoomPerf] CASE combined-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618019303,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"combined-room\",\"passed\":true,\"fps\":60.04366812240394,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"combined-room\",\"passed\":true,\"fps\":60.04366812240394,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618022319,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE move-lit-room",
+      "message": "[RoomPerf] CASE move-lit-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618024319,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"move-lit-room\",\"passed\":true,\"fps\":60.01984126984127,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"move-lit-room\",\"passed\":true,\"fps\":60.01984126984127,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618027337,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE lit-room-edge",
+      "message": "[RoomPerf] CASE lit-room-edge",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618029320,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 56,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:56"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"lit-room-edge\",\"passed\":true,\"fps\":60.070495954018284,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"lit-room-edge\",\"passed\":true,\"fps\":60.070495954018284,\"rtChanges\":0,\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618032352,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 1,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:1"
+    },
+    {
+      "rawMessage": "[RoomPerf] STOP {\"completed\":true,\"failures\":0}",
+      "message": "[RoomPerf] STOP {\"completed\":true,\"failures\":0}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789618034338,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 155,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:155"
+    }
+  ],
+  "screenshots": [
+    {
+      "scenario": "day-outside",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-day-outside.png"
+    },
+    {
+      "scenario": "day-inside",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-day-inside.png"
+    },
+    {
+      "scenario": "night-lights-off",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-night-lights-off.png"
+    },
+    {
+      "scenario": "night-lights-on",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-night-lights-on.png"
+    },
+    {
+      "scenario": "night-exit",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-night-exit.png"
+    },
+    {
+      "scenario": "second-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-second-room.png"
+    },
+    {
+      "scenario": "combined-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-combined-room.png"
+    },
+    {
+      "scenario": "move-lit-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-move-lit-room.png"
+    },
+    {
+      "scenario": "lit-room-edge",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-lit-room-edge.png"
+    }
+  ]
+}
