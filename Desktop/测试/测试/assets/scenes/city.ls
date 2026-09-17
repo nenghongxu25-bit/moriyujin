@@ -5852,6 +5852,107 @@
                 "_$type": "Texture"
               },
               "_mouseState": 1
+            },
+            {
+              "_$id": "roomlitlower",
+              "_$type": "Sprite",
+              "name": "room_light_cutout_lower",
+              "width": 2179,
+              "height": 891,
+              "visible": false,
+              "blendMode": "destinationOut",
+              "mouseEnabled": false,
+              "_gcmds": [
+                { "_$type": "DrawRectCmd", "fillColor": "#000000" }
+              ]
+            },
+            {
+              "_$id": "roomlitupper",
+              "_$type": "Sprite",
+              "name": "room_light_cutout_upper",
+              "width": 2179,
+              "height": 1029,
+              "visible": false,
+              "blendMode": "destinationOut",
+              "mouseEnabled": false,
+              "_gcmds": [
+                { "_$type": "DrawRectCmd", "fillColor": "#000000" }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "w8efo6iv",
+          "_$type": "Sprite",
+          "name": "roomnight",
+          "x": -1381,
+          "y": -435,
+          "width": 100,
+          "height": 100,
+          "mouseEnabled": false,
+          "_$comp": [
+            {
+              "_$type": "b0f26c1a-7564-48ad-a3b9-a1b836acf471",
+              "scriptPath": "../src/debug/RoomNightController.ts",
+              "targetNode": { "_$ref": "rqegugxn" },
+              "nightLayer": { "_$ref": "nightlayer" },
+              "isNight": true,
+              "combineRooms": false,
+              "diagnosticsEnabled": false
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "wz1yvcfq",
+              "_$type": "Sprite",
+              "name": "Sprite",
+              "x": -413,
+              "y": -72,
+              "width": 2179,
+              "height": 891,
+              "_$comp": [
+                {
+                  "_$type": "ea0adccf-1276-4447-bd10-35cd1242e487",
+                  "scriptPath": "../src/debug/RoomNightZone.ts",
+                  "lightsOn": true,
+                  "nightCutout": { "_$ref": "roomlitlower" },
+                  "outsideAlpha": 1,
+                  "fadeSeconds": 0.12,
+                  "exitPadding": 6
+                }
+              ],
+              "_gcmds": [
+                {
+                  "_$type": "DrawRectCmd",
+                  "fillColor": "#000000"
+                }
+              ]
+            },
+            {
+              "_$id": "l2kdgz79",
+              "_$type": "Sprite",
+              "name": "Sprite_1",
+              "x": -418,
+              "y": -1102,
+              "width": 2179,
+              "height": 1029,
+              "_$comp": [
+                {
+                  "_$type": "ea0adccf-1276-4447-bd10-35cd1242e487",
+                  "scriptPath": "../src/debug/RoomNightZone.ts",
+                  "lightsOn": true,
+                  "nightCutout": { "_$ref": "roomlitupper" },
+                  "outsideAlpha": 1,
+                  "fadeSeconds": 0.12,
+                  "exitPadding": 6
+                }
+              ],
+              "_gcmds": [
+                {
+                  "_$type": "DrawRectCmd",
+                  "fillColor": "#000000"
+                }
+              ]
             }
           ]
         }

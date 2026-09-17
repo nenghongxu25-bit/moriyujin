@@ -3,6 +3,7 @@ const { regClass, property } = Laya;
 import { Joystick } from "../PlayUI/playerui/Joystick";
 import { attack as AttackControl } from "../PlayUI/playerui/attack";
 import { NightLightingDiagnostics } from "./NightLightingDiagnostics";
+import { RoomNightController } from "./RoomNightController";
 
 @regClass("7f27ea9f-45c4-4a5a-9f28-99cf250706b9")
 export class DynamicCutoutProbe extends Laya.Script {
@@ -55,6 +56,7 @@ export class DynamicCutoutProbe extends Laya.Script {
     private readonly cacheBounds = new Laya.Rectangle();
     private readonly backgroundBounds = new Laya.Rectangle();
     private backgroundNode: Laya.Sprite | null = null;
+    private roomController: RoomNightController | null = null;
 
     onAwake(): void {
         this.resolveCutoutNode();
@@ -167,6 +169,11 @@ export class DynamicCutoutProbe extends Laya.Script {
                 owner.reCache();
             }
         }
+        if (!this.roomController || this.roomController.destroyed) {
+            this.roomController = owner.parent?.getChildByName("roomnight")
+                ?.getComponent(RoomNightController) || null;
+        }
+        if (this.roomController?.enabled) this.roomController.updateAfterFlashlight();
     }
 
     private alignLightPivot(node: Laya.Sprite): boolean {
