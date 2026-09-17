@@ -1,7 +1,8 @@
 {
   "resolution": {
     "scaleMode": "showall",
-    "screenMode": "horizontal"
+    "screenMode": "horizontal",
+    "alignH": "center"
   },
   "physics2D": {
     "defaultConfig": {

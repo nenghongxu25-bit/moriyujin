@@ -15,7 +15,7 @@ interface RangedWeaponVisualConfig {
 export class PlayerEquipmentVisualController {
     private static readonly RANGED_WEAPON_VISUALS: Record<string, RangedWeaponVisualConfig> = {
         akm: {
-            src: "res://19ba1d62-1ade-4d0a-a31e-5604544de574",
+            src: "atlas/picture/items/weapons/rangeds/ak47.png",
             x: 59,
             y: -75,
             width: 128,
@@ -24,7 +24,7 @@ export class PlayerEquipmentVisualController {
             scaleY: 1.5,
         },
         fal: {
-            src: "res://07be8694-cf42-48e4-a1ab-f0d9b577c9db",
+            src: "atlas/picture/items/weapons/rangeds/fal.png",
             x: -138,
             y: -79,
             width: 128,
@@ -33,7 +33,7 @@ export class PlayerEquipmentVisualController {
             scaleY: 1.5,
         },
         m16: {
-            src: "res://cbee195e-eed8-464a-8d9e-8d51e0946150",
+            src: "atlas/picture/items/weapons/rangeds/m16.png",
             x: 55,
             y: -82,
             width: 128,
@@ -42,7 +42,7 @@ export class PlayerEquipmentVisualController {
             scaleY: 1.5,
         },
         geluoke: {
-            src: "res://52b8e2d2-8b2f-4547-98e5-fe2093e0bacb",
+            src: "atlas/picture/items/weapons/rangeds/geluoke.png",
             x: -55,
             y: -50,
             width: 128,

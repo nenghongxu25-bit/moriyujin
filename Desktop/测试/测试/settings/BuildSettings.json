@@ -103,7 +103,14 @@
                            "res://d1d1148e-b41c-42f8-891d-2c9205cd18f2",
                            "res://4b284b8d-17b4-407b-8f4b-15783772e965",
                            "res://7da68a2b-0767-421a-8208-36271af348b7",
-                           "res://d4742154-d7f6-480c-9247-bdb6de87ef95"
+                           "res://d4742154-d7f6-480c-9247-bdb6de87ef95",
+                           "sound/sfx/walk/walk_wood.mp3",
+                           "sound/sfx/run/run_wood.mp3",
+                           "sound/sfx/walk/walk_grass.mp3",
+                           "sound/sfx/run/run_grass.mp3",
+                           "sound/sfx/walk/walk_floor.wav",
+                           "sound/sfx/run/run_inside_floor.mp3",
+                           "sound/sfx/weapon/ranged/akm/akm_singleshot.mp3"
                        ],
     "android":  {
                     "targetArchitectures":  {
