@@ -3,28 +3,54 @@ const path = require('node:path');
 const zlib = require('node:zlib');
 
 // Bake alpha once offline; white RGB is erased using destinationOut in the scene.
-const size = 512;
+const settings = require('./night-vision-settings.json');
+const size = settings.textureSize;
+for (const name of ['textureSize', 'worldSize', 'coreLength', 'coreWidth', 'coreFalloffPower', 'coreGain', 'outerLength', 'outerWidth', 'ambientRadius']) {
+    if (!Number.isFinite(settings[name]) || settings[name] <= 0) throw new Error(`Invalid ${name}`);
+}
+for (const name of ['edgeSoftness', 'ambientSoftness', 'intensity', 'outerIntensity', 'ambientIntensity', 'glowIntensity']) {
+    if (!Number.isFinite(settings[name]) || settings[name] < 0 || settings[name] > 1) throw new Error(`Invalid ${name}`);
+}
+if (!Number.isInteger(size) || size > 2048) throw new Error('textureSize must be an integer <= 2048');
+if (Math.max(settings.coreLength, settings.outerLength, settings.ambientRadius,
+    settings.coreWidth / 2, settings.outerWidth / 2) >= settings.worldSize / 2) {
+    throw new Error('Light must fit inside worldSize to avoid clipped edges');
+}
 const smooth = (a, b, x) => {
     const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
     return t * t * (3 - 2 * t);
 };
 const pixels = Buffer.alloc((size * 4 + 1) * size);
 const glowPixels = Buffer.alloc(pixels.length);
+// Width is the full beam envelope in world pixels, not an angular cutoff.
+// Elliptical distance rounds the far end; the transverse profile has no flat core.
+function beamAt(x, y, length, width, softness, falloffPower = 1) {
+    const forward = Math.max(0, x);
+    const spread = 18 + width * 0.5 * Math.pow(Math.min(1, forward / length), 0.72);
+    const side = Math.abs(y) / spread;
+    const edge = Math.max(0.05, softness);
+    const lateral = Math.exp(-side * side * (1.5 + edge)) * (1 - smooth(1 - edge, 1, side));
+    const elliptical = Math.hypot(forward / length, y / (width * 0.5));
+    const distance = Math.pow(1 - smooth(0.12, 1, elliptical), falloffPower);
+    return lateral * distance * smooth(-30, 16, x);
+}
 for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
-        const dx = (x + 0.5 - size / 2) / size * 640;
-        const dy = (y + 0.5 - size / 2) / size * 640;
+        const dx = (x + 0.5 - size / 2) / size * settings.worldSize;
+        const dy = (y + 0.5 - size / 2) / size * settings.worldSize;
         const radius = Math.hypot(dx, dy);
-        const angle = Math.abs(Math.atan2(dy, dx)) * 180 / Math.PI;
-        const beam = (1 - smooth(30, 53, angle)) * (1 - smooth(205, 310, radius));
-        const alpha = beam;
+        const core = Math.min(1, beamAt(dx, dy, settings.coreLength, settings.coreWidth,
+            settings.edgeSoftness, settings.coreFalloffPower) * settings.intensity * settings.coreGain);
+        const outer = beamAt(dx, dy, settings.outerLength, settings.outerWidth, settings.edgeSoftness) * settings.outerIntensity;
+        const ambient = (1 - smooth(1 - Math.max(0.05, settings.ambientSoftness), 1,
+            radius / settings.ambientRadius)) * settings.ambientIntensity;
+        // Union of alpha layers: continuous, bounded, without hard max() seams.
+        const alpha = 1 - (1 - core) * (1 - outer) * (1 - ambient);
         const offset = y * (size * 4 + 1) + 1 + x * 4;
         pixels[offset] = pixels[offset + 1] = pixels[offset + 2] = 255;
         pixels[offset + 3] = Math.round(alpha * 255);
-        // Keep the white light inside the revealed area, with no hard bright core.
-        const beamGlow = Math.exp(-Math.pow(angle / 30, 2)) *
-            (1 - smooth(15, 310, radius)) * 0.32;
-        const glowAlpha = beamGlow * alpha;
+        // Most illumination comes from removing darkness, not painting white.
+        const glowAlpha = core * alpha * settings.glowIntensity;
         glowPixels[offset] = glowPixels[offset + 1] = glowPixels[offset + 2] = 255;
         glowPixels[offset + 3] = Math.round(glowAlpha * 255);
     }

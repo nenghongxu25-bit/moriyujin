@@ -1,0 +1,17 @@
+{
+  "textureSize": 512,
+  "worldSize": 1238.709677,
+  "coreLength": 600,
+  "coreWidth": 460,
+  "coreFalloffPower": 0.7,
+  "outerLength": 520,
+  "outerWidth": 760,
+  "edgeSoftness": 0.85,
+  "ambientRadius": 240,
+  "ambientSoftness": 0.95,
+  "intensity": 1,
+  "coreGain": 2,
+  "outerIntensity": 0.28,
+  "ambientIntensity": 0.25,
+  "glowIntensity": 0.025
+}

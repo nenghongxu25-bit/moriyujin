@@ -5728,8 +5728,8 @@
               "_$prefab": "5ea8d755-d42c-43c2-b0e6-04787ff545f0",
               "name": "prefab_player",
               "active": true,
-              "x": 1335,
-              "y": -490,
+              "x": 264,
+              "y": 121,
               "visible": true,
               "_$comp": [
                 {
@@ -5797,11 +5797,14 @@
                 "_$ref": "rqegugxn"
               },
               "demoMotion": false,
-              "rearOffset": 100,
               "directionalLight": true,
+              "rearOffset": 0,
               "leftX": 40,
               "rightX": 230,
-              "speed": 120
+              "speed": 120,
+              "directionSmoothTime": 0.045,
+              "positionSmoothTime": 0,
+              "diagnosticsEnabled": false
             }
           ],
           "_$child": [
@@ -5813,6 +5816,7 @@
               "y": -375,
               "width": 1334,
               "height": 750,
+              "alpha": 0.8,
               "_gcmds": [
                 {
                   "_$type": "DrawRectCmd",
@@ -5824,30 +5828,30 @@
               "_$id": "circlecutout",
               "_$type": "Sprite",
               "name": "circle_cutout",
-              "width": 1238.709677,
-              "height": 1238.709677,
+              "width": 1491,
+              "height": 2597,
               "anchorX": 0.5,
               "anchorY": 0.5,
-              "blendMode": "destinationOut",
-              "mouseEnabled": false,
               "texture": {
                 "_$uuid": "1abf2cf8-b940-4d63-994c-b9ec9f8da0b2",
                 "_$type": "Texture"
-              }
+              },
+              "blendMode": "destinationOut",
+              "_mouseState": 1
             },
             {
               "_$id": "visionglow",
               "_$type": "Sprite",
               "name": "vision_glow",
-              "width": 1238.709677,
-              "height": 1238.709677,
+              "width": 1239,
+              "height": 1239,
               "anchorX": 0.5,
               "anchorY": 0.5,
-              "mouseEnabled": false,
               "texture": {
                 "_$uuid": "cf8b9242-e647-4a65-9583-6952b5513b38",
                 "_$type": "Texture"
-              }
+              },
+              "_mouseState": 1
             }
           ]
         }
