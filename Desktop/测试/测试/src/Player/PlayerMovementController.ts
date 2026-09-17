@@ -1,5 +1,6 @@
 import type { PlayerController } from "./PlayerController";
 import { Joystick } from "../PlayUI/playerui/Joystick";
+import { TileBlockMovement } from "../systems/TileBlockMovement";
 
 export class PlayerMovementController {
     private joystick: Joystick | null = null;
@@ -14,6 +15,7 @@ export class PlayerMovementController {
     private isMovingNow: boolean = false;
     private footstepElapsed: number = 0;
     private lastFootstepUrl: string = "";
+    private tileBlockMovement: TileBlockMovement = new TileBlockMovement();
     private readonly blockedFootstepUrls: Record<string, boolean> = {};
 
     constructor(private controller: PlayerController) {
@@ -23,6 +25,7 @@ export class PlayerMovementController {
         this.captureBaseScale();
         this.syncAttackArea();
         this.resolveJoystick();
+        this.tileBlockMovement.getBlockLayerName(this.owner as Laya.Sprite);
         this.preloadFootstepSounds();
     }
 
@@ -30,6 +33,7 @@ export class PlayerMovementController {
         this.captureBaseScale();
         this.syncAttackArea();
         this.resolveJoystick();
+        this.tileBlockMovement.getBlockLayerName(this.owner as Laya.Sprite);
         this.preloadFootstepSounds();
     }
 
@@ -37,7 +41,6 @@ export class PlayerMovementController {
         if (!this.joystick) {
             this.resolveJoystick();
         }
-
         if (!this.joystick) {
             if ((this.updateFrame++ % 60) === 0 && !this.warnedMissingJoystick) {
                 this.warnedMissingJoystick = true;
@@ -73,15 +76,20 @@ export class PlayerMovementController {
         const dx = nx * speed * dt;
         const dy = ny * speed * dt;
 
-        sprite.x += dx;
-        sprite.y += dy;
+        const moved = this.moveWithTileBlocking(sprite, dx, dy);
         if (!this.attackFacingLocked) {
             this.updateFacing(nx);
         }
 
-        const nextAnimation = this.controller.isRunning ? this.controller.runAnimation : this.controller.walkAnimation;
-        this.controller.animation.setLocomotionState(nextAnimation);
-        this.updateFootstepSound();
+        if (moved) {
+            const nextAnimation = this.controller.isRunning ? this.controller.runAnimation : this.controller.walkAnimation;
+            this.controller.animation.setLocomotionState(nextAnimation);
+            this.updateFootstepSound();
+        } else {
+            this.isMovingNow = false;
+            this.footstepElapsed = 0;
+            this.controller.animation.setLocomotionState(this.controller.idleAnimation);
+        }
     }
 
     public getIsMovingNow(): boolean {
@@ -146,6 +154,7 @@ export class PlayerMovementController {
             attackFacingLocked: this.attackFacingLocked,
             footstepElapsed: this.footstepElapsed,
             lastFootstepUrl: this.lastFootstepUrl,
+            blockLayer: this.tileBlockMovement.getBlockLayerName(this.owner as Laya.Sprite),
         };
     }
 
@@ -176,6 +185,13 @@ export class PlayerMovementController {
             this.joystick = joystick;
             this.resolveSource = source;
         }
+    }
+
+    private moveWithTileBlocking(sprite: Laya.Sprite, dx: number, dy: number): boolean {
+        return this.tileBlockMovement.move(sprite, dx, dy, {
+            halfWidth: this.controller.tileBlockHalfWidth,
+            footOffsetY: this.controller.tileBlockFootOffsetY,
+        }).moved;
     }
 
     private syncAttackArea(): void {
@@ -216,6 +232,46 @@ export class PlayerMovementController {
         owner.scaleX = this.baseScaleX * this.facingSign;
         this.syncAttackArea();
         this.controller.syncStatusBarTransform();
+    }
+
+    private resolveWorldScaleSign(node: Laya.Node): { x: number; y: number } {
+        let scaleX = 1;
+        let scaleY = 1;
+        let current: any = node;
+
+        while (current) {
+            if (typeof current.scaleX === "number" && current.scaleX !== 0) {
+                scaleX *= current.scaleX;
+            }
+            if (typeof current.scaleY === "number" && current.scaleY !== 0) {
+                scaleY *= current.scaleY;
+            }
+            current = current.parent;
+        }
+
+        return {
+            x: scaleX >= 0 ? 1 : -1,
+            y: scaleY >= 0 ? 1 : -1,
+        };
+    }
+
+    private findChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        if (root.name === name) {
+            return root;
+        }
+
+        for (let i = 0; i < root.numChildren; i++) {
+            const found = this.findChildByName(root.getChildAt(i), name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
     }
 
     private updateFootstepSound(): void {

@@ -44,6 +44,12 @@ export class ZombieController extends Laya.Script {
     public runSpeed: number = 240;
 
     @property(Number)
+    public tileBlockHalfWidth: number = 30;
+
+    @property(Number)
+    public tileBlockFootOffsetY: number = 80;
+
+    @property(Number)
     public attackDistance: number = 20;
 
     @property(Number)
@@ -54,6 +60,9 @@ export class ZombieController extends Laya.Script {
 
     @property(Number)
     public attackNodeShowDelay: number = 250;
+
+    @property(Number)
+    public attackInterval: number = 700;
 
     @property(Number)
     public attackPower: number = 8;
@@ -233,10 +242,13 @@ export class ZombieController extends Laya.Script {
         return {
             walkSpeed: this.walkSpeed,
             runSpeed: this.runSpeed,
+            tileBlockHalfWidth: this.tileBlockHalfWidth,
+            tileBlockFootOffsetY: this.tileBlockFootOffsetY,
             attackDistance: this.attackDistance,
             aggroDistance: this.aggroDistance,
             spawnIdleDuration: this.spawnIdleDuration,
             attackNodeShowDelay: this.attackNodeShowDelay,
+            attackInterval: this.attackInterval,
             attackPower: this.attackPower,
             attackLeftX: this.attackLeftX,
             attackRightX: this.attackRightX,

@@ -1,35 +1,119 @@
 {
-    "category": "misc",
-    "items": [
-        {
-            "id": "mutant_blood_1",
-            "displayName": "一阶变异血",
-            "nameZh": "一阶变异血",
-            "subCategory": "mutant_blood",
-            "icon": "atlas/picture/items/misc/flood_1.png",
-            "stackMax": 20,
-            "consumable": false,
-            "description": "变异生物材料"
-        },
-        {
-            "id": "mutant_blood_2",
-            "displayName": "二阶变异血",
-            "nameZh": "二阶变异血",
-            "subCategory": "mutant_blood",
-            "icon": "atlas/picture/items/misc/flood_2.png",
-            "stackMax": 20,
-            "consumable": false,
-            "description": "变异生物材料"
-        },
-        {
-            "id": "mutant_blood_3",
-            "displayName": "三阶变异血",
-            "nameZh": "三阶变异血",
-            "subCategory": "mutant_blood",
-            "icon": "atlas/picture/items/misc/flood_3.png",
-            "stackMax": 20,
-            "consumable": false,
-            "description": "变异生物材料"
-        }
-    ]
+    "category":  "misc",
+    "items":  [
+                  {
+                      "id":  "mutant_blood_1",
+                      "displayName":  "一阶变异血",
+                      "nameZh":  "一阶变异血",
+                      "subCategory":  "mutant_blood",
+                      "icon":  "atlas/picture/items/misc/flood_1.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "变异生物材料"
+                  },
+                  {
+                      "id":  "mutant_blood_2",
+                      "displayName":  "二阶变异血",
+                      "nameZh":  "二阶变异血",
+                      "subCategory":  "mutant_blood",
+                      "icon":  "atlas/picture/items/misc/flood_2.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "变异生物材料"
+                  },
+                  {
+                      "id":  "mutant_blood_3",
+                      "displayName":  "三阶变异血",
+                      "nameZh":  "三阶变异血",
+                      "subCategory":  "mutant_blood",
+                      "icon":  "atlas/picture/items/misc/flood_3.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "变异生物材料"
+                  },
+                  {
+                      "id":  "laoshigangkui",
+                      "displayName":  "老式钢盔",
+                      "nameZh":  "老式钢盔",
+                      "subCategory":  "heads",
+                      "icon":  "atlas/picture/items/armors/heads/laoshigangkui.png",
+                      "stackMax":  1,
+                      "defense":  8,
+                      "durability":  50,
+                      "consumable":  false,
+                      "description":  "基础头部防具"
+                  },
+                  {
+                      "id":  "k1",
+                      "displayName":  "K1",
+                      "nameZh":  "K1",
+                      "subCategory":  "heads",
+                      "icon":  "atlas/picture/items/armors/heads/k1.png",
+                      "stackMax":  1,
+                      "defense":  12,
+                      "durability":  65,
+                      "consumable":  false,
+                      "description":  "头部防具"
+                  },
+                  {
+                      "id":  "G6",
+                      "displayName":  "G6",
+                      "nameZh":  "G6",
+                      "subCategory":  "heads",
+                      "icon":  "atlas/picture/items/armors/heads/G6.png",
+                      "stackMax":  1,
+                      "defense":  16,
+                      "durability":  80,
+                      "consumable":  false,
+                      "description":  "头部防具"
+                  },
+                  {
+                      "id":  "CE3",
+                      "displayName":  "CE3",
+                      "nameZh":  "CE3",
+                      "subCategory":  "heads",
+                      "icon":  "atlas/picture/items/armors/heads/CE3.png",
+                      "stackMax":  1,
+                      "defense":  20,
+                      "durability":  95,
+                      "consumable":  false,
+                      "description":  "头部防具"
+                  },
+                  {
+                      "id":  "k1chaban",
+                      "displayName":  "K1插板",
+                      "nameZh":  "K1插板",
+                      "subCategory":  "insert_plate",
+                      "icon":  "atlas/picture/items/armors/bodies/k1chaban.png",
+                      "stackMax":  1,
+                      "defense":  18,
+                      "durability":  80,
+                      "consumable":  false,
+                      "description":  "防弹插板"
+                  },
+                  {
+                      "id":  "FNgangban",
+                      "displayName":  "FN钢板",
+                      "nameZh":  "FN钢板",
+                      "subCategory":  "insert_plate",
+                      "icon":  "atlas/picture/items/armors/bodies/FNgangban.png",
+                      "stackMax":  1,
+                      "defense":  24,
+                      "durability":  100,
+                      "consumable":  false,
+                      "description":  "防弹插板"
+                  },
+                  {
+                      "id":  "G6taociban",
+                      "displayName":  "G6陶瓷板",
+                      "nameZh":  "G6陶瓷板",
+                      "subCategory":  "insert_plate",
+                      "icon":  "atlas/picture/items/armors/bodies/G6taociban.png",
+                      "stackMax":  1,
+                      "defense":  30,
+                      "durability":  120,
+                      "consumable":  false,
+                      "description":  "防弹插板"
+                  }
+              ]
 }

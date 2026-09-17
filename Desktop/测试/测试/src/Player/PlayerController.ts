@@ -2,11 +2,16 @@ const { regClass, property } = Laya;
 
 import { PlayerMovementController } from "./PlayerMovementController";
 import { PlayerUIHints } from "./PlayerUIHints";
-import { PlayerCombatController, type PlayerAttackOptions } from "./PlayerCombatController";
+import { PlayerCombatController } from "./PlayerCombatController";
+import type { PlayerAttackOptions } from "./PlayerCombatController";
 import { PlayerAnimationController } from "./PlayerAnimationController";
 import { PlayerEquipmentVisualController } from "./PlayerEquipmentVisualController";
 import { PlayerRangedController } from "./PlayerRangedController";
 import { DataManager } from "../systems/datamanager";
+import { installSpineRuntimeGuard } from "../runtime/SpineRuntimeGuard";
+import { RunResultPanel } from "../PlayUI/RunResult/RunResultPanel";
+
+installSpineRuntimeGuard();
 
 @regClass()
 export class PlayerController extends Laya.Script {
@@ -20,6 +25,12 @@ export class PlayerController extends Laya.Script {
 
     @property(Number)
     public moveSpeed: number = 0;
+
+    @property(Number)
+    public tileBlockHalfWidth: number = 30;
+
+    @property(Number)
+    public tileBlockFootOffsetY: number = 80;
 
 
     @property(Boolean)
@@ -97,6 +108,12 @@ export class PlayerController extends Laya.Script {
     @property(Laya.Node)
     public weaponIconNode: Laya.Node | null = null;
 
+    @property(Laya.Node)
+    public rangedWeaponRootNode: Laya.Node | null = null;
+
+    @property(Laya.Node)
+    public rangedWeaponImageNode: Laya.Node | null = null;
+
     @property(String)
     public weaponSpineSlotName: string = "";
 
@@ -129,6 +146,9 @@ export class PlayerController extends Laya.Script {
 
     @property(Number)
     public maxStamina: number = 100;
+
+    @property(Number)
+    public runRecoverStaminaThreshold: number = 30;
 
     @property(Number)
     public staminaFillFullWidth: number = 70;
@@ -270,8 +290,10 @@ export class PlayerController extends Laya.Script {
     public ranged!: PlayerRangedController;
     private attackToken: number = 0;
     private staminaTickElapsed: number = 0;
+    private runStaminaLocked: boolean = false;
     private deathReturnTriggered: boolean = false;
     private lastEquipmentSignature: string = "__init";
+    private defaultRangedBulletSpeed: number = 0;
 
     onAwake(): void {
         PlayerController.activeInstance = this;
@@ -281,6 +303,7 @@ export class PlayerController extends Laya.Script {
         this.animation = new PlayerAnimationController(this);
         this.equipment = new PlayerEquipmentVisualController(this);
         this.ranged = new PlayerRangedController(this);
+        this.defaultRangedBulletSpeed = Math.max(1, Number(this.rangedBulletSpeed) || 1);
         this.movement.onAwake();
         this.ui.onAwake();
         this.setRunningState(this.isRunning);
@@ -314,15 +337,12 @@ export class PlayerController extends Laya.Script {
         this.updateStamina();
         this.syncEquipmentStats();
         this.animation.onUpdate();
+        this.syncRangedWeaponSpineSlotHidden();
         this.ranged.syncAimRotation("update");
     }
 
     onLateUpdate(): void {
         this.ranged.syncAimRotation("late");
-    }
-
-    onPreRender(): void {
-        this.ranged.syncAimRotation("pre");
     }
 
     onDestroy(): void {
@@ -377,7 +397,8 @@ export class PlayerController extends Laya.Script {
     public syncEquipmentStats(): void {
         const dataManager = DataManager.getInstance();
         const weapon = dataManager.getEquippedItem("weapon");
-        const signature = `${this.baseAttackPower}:${weapon ? `${weapon.itemId}:${weapon.count}` : ""}`;
+        const nextBulletSpeed = dataManager.getEquipmentBulletSpeed(this.defaultRangedBulletSpeed || this.rangedBulletSpeed);
+        const signature = `${this.baseAttackPower}:${nextBulletSpeed}:${weapon ? `${weapon.itemId}:${weapon.count}` : ""}`;
         if (this.lastEquipmentSignature === signature) {
             return;
         }
@@ -385,12 +406,14 @@ export class PlayerController extends Laya.Script {
         this.lastEquipmentSignature = signature;
         this.attackPower = Math.max(0, Math.floor((this.baseAttackPower || 0) + dataManager.getEquipmentAttackBonus()));
         this.attackSpeed = Math.max(0.1, dataManager.getEquipmentAttackSpeed());
+        this.rangedBulletSpeed = nextBulletSpeed;
         this.animation?.invalidateLocomotion();
         this.equipment.scheduleInitialization();
     }
 
     public setRunningState(value: boolean): void {
-        this.isRunning = value && this.currentStamina > 0;
+        this.updateRunStaminaLock();
+        this.isRunning = value && this.canStartRunning();
         this.moveSpeed = this.isRunning ? this.runSpeed : 0;
     }
 
@@ -400,6 +423,14 @@ export class PlayerController extends Laya.Script {
 
     public toggleRunning(): void {
         this.setRunningState(!this.isRunning);
+    }
+
+    public canStartRunning(): boolean {
+        return this.currentStamina > 0 && !this.runStaminaLocked;
+    }
+
+    public isRunStaminaLocked(): boolean {
+        return this.runStaminaLocked;
     }
 
     public showState(text: string, duration: number = 1200): void {
@@ -460,8 +491,9 @@ export class PlayerController extends Laya.Script {
     public setStamina(currentStamina: number, maxStamina: number = this.maxStamina): void {
         this.maxStamina = Math.max(1, Math.floor(maxStamina));
         this.currentStamina = Math.max(0, Math.min(Math.floor(currentStamina), this.maxStamina));
+        this.updateRunStaminaLock();
         DataManager.getInstance().setPlayerStamina(this.currentStamina, this.maxStamina);
-        if (this.currentStamina <= 0 && this.isRunning) {
+        if (!this.canStartRunning() && this.isRunning) {
             this.setRunningState(false);
         }
         this.refreshStaminaBar();
@@ -476,7 +508,8 @@ export class PlayerController extends Laya.Script {
         this.maxStamina = Math.max(1, Math.floor(stats.maxStamina || 100));
         const currentStamina = Number.isFinite(stats.currentStamina) ? stats.currentStamina : this.maxStamina;
         this.currentStamina = Math.max(0, Math.min(Math.floor(currentStamina), this.maxStamina));
-        if (this.currentStamina <= 0 && this.isRunning) {
+        this.updateRunStaminaLock();
+        if (!this.canStartRunning() && this.isRunning) {
             this.setRunningState(false);
         }
         this.refreshStaminaBar();
@@ -513,6 +546,18 @@ export class PlayerController extends Laya.Script {
         }
     }
 
+    private updateRunStaminaLock(): void {
+        if (this.currentStamina <= 0) {
+            this.runStaminaLocked = true;
+            return;
+        }
+
+        const recoverThreshold = Math.max(1, Math.min(this.maxStamina, Math.floor(this.runRecoverStaminaThreshold || 30)));
+        if (this.currentStamina >= recoverThreshold) {
+            this.runStaminaLocked = false;
+        }
+    }
+
     private returnToDeathScene(): void {
         if (this.deathReturnTriggered) {
             return;
@@ -525,8 +570,16 @@ export class PlayerController extends Laya.Script {
 
         this.deathReturnTriggered = true;
         Laya.timer.once(0, null, () => {
-            DataManager.getInstance().returnToBaseAfterDeath(url);
-            Laya.Scene.open(url);
+            const returnToBase = (): void => {
+                DataManager.getInstance().returnToBaseAfterDeath(url);
+                Laya.Scene.open(url);
+            };
+
+            if (RunResultPanel.showFailed(2500, returnToBase)) {
+                return;
+            }
+
+            returnToBase();
         });
     }
 
@@ -610,6 +663,14 @@ export class PlayerController extends Laya.Script {
         return this.equipment.isEquippedRangedWeapon();
     }
 
+    private syncRangedWeaponSpineSlotHidden(): void {
+        if (!this.equipment || !this.isEquippedRangedWeapon()) {
+            return;
+        }
+
+        this.equipment.syncWeaponSpineSlot(false);
+    }
+
     public applyRangedAttackDamage(options: PlayerAttackOptions = {}): boolean {
         return this.ranged.applyDamage(options);
     }
@@ -627,6 +688,8 @@ export class PlayerController extends Laya.Script {
             walkSpeed: this.walkSpeed,
             runSpeed: this.runSpeed,
             moveSpeed: this.moveSpeed,
+            tileBlockHalfWidth: this.tileBlockHalfWidth,
+            tileBlockFootOffsetY: this.tileBlockFootOffsetY,
             footstepSoundEnabled: this.footstepSoundEnabled,
             cunzhuangWalkSoundUrl: this.cunzhuangWalkSoundUrl,
             cunzhuangRunSoundUrl: this.cunzhuangRunSoundUrl,
@@ -658,6 +721,8 @@ export class PlayerController extends Laya.Script {
             staminaBarNode: this.staminaBarNode ? this.staminaBarNode.name : null,
             weaponSlotNode: this.weaponSlotNode ? this.weaponSlotNode.name : null,
             weaponIconNode: this.weaponIconNode ? this.weaponIconNode.name : null,
+            rangedWeaponRootNode: this.rangedWeaponRootNode ? this.rangedWeaponRootNode.name : null,
+            rangedWeaponImageNode: this.rangedWeaponImageNode ? this.rangedWeaponImageNode.name : null,
             weaponSpineSlotName: this.weaponSpineSlotName,
             weaponMeleeSpineSlotName: this.weaponMeleeSpineSlotName,
             weaponRangedSpineSlotName: this.weaponRangedSpineSlotName,

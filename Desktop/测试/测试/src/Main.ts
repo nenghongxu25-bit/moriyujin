@@ -16,6 +16,7 @@ import "./PlayUI/Crafting/CraftingItemList";
 import "./PlayUI/Crafting/CraftingRecipeItem";
 import "./PlayUI/Crafting/CraftingRecipeList";
 import "./PlayUI/Crafting/CraftingPanel";
+import "./PlayUI/RunResult/RunResultPanel";
 import "./douyin/RewardedAdButton";
 import "./SceneJumpTrigger";
 import './OpenSprite';
@@ -31,14 +32,23 @@ import "./harvestable/mound";
 import "./harvestable/dig";
 import "./harvestable/l1_kuang";
 import "./harvestable/l2_kuang";
+import "./harvestable/l3_kuang";
+import "./container/pobudai";
+import "./container/ironbox";
+import "./container/kongtou";
+import "./debug/DynamicCutoutProbe";
 import { DataManager } from "./systems/datamanager";
 import { ByteDanceMonetization } from "./platform/ByteDanceMonetization";
 import { DouyinLogin } from "./platform/douyin/DouyinLogin";
+import { installSpineRuntimeGuard } from "./runtime/SpineRuntimeGuard";
+import { RunResultPanel } from "./PlayUI/RunResult/RunResultPanel";
 
 declare const Laya: any;
 
 export class Main {
     constructor() {
+        installSpineRuntimeGuard();
+        RunResultPanel.installAutoBind();
         this.init();
     }
 

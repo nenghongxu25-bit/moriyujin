@@ -206,8 +206,8 @@
       "_$id": "vj1cy1vc",
       "_$type": "GWidget",
       "name": "touxiang",
-      "x": 461,
-      "y": 313,
+      "x": 34,
+      "y": 33,
       "width": 314,
       "height": 120,
       "background": {
@@ -216,6 +216,8 @@
         "rt": 15,
         "lb": 15,
         "rb": 15,
+        "lineWidth": 5,
+        "lineColor": "#000000",
         "fillColor": "#787e16"
       },
       "_$child": [

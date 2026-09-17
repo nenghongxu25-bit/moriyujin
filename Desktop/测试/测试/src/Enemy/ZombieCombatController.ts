@@ -24,7 +24,7 @@ export class ZombieCombatController {
         this.controller.view.playOneShot(this.controller.attackAnimation || "attack");
 
         Laya.timer.clear(this, this.onAttackFinished);
-        Laya.timer.once(700, this, this.onAttackFinished);
+        Laya.timer.once(Math.max(100, this.controller.attackInterval || 700), this, this.onAttackFinished);
     }
 
     public reset(): void {

@@ -1,6 +1,7 @@
 const { regClass, property } = Laya;
 
 import { DataManager } from "./systems/datamanager";
+import { RunResultPanel } from "./PlayUI/RunResult/RunResultPanel";
 
 @regClass()
 export class SceneJumpTrigger extends Laya.Script {
@@ -45,7 +46,7 @@ export class SceneJumpTrigger extends Laya.Script {
         }
 
         if (typeof owner.on === "function") {
-            owner.on(Laya.Event.TRIGGER_ENTER, this, this.onTriggerEnter);
+            owner.on(Laya.Event.TRIGGER_ENTER, this, this.handleTriggerEnter);
         }
     }
 
@@ -56,13 +57,13 @@ export class SceneJumpTrigger extends Laya.Script {
 
         const node = this.boundNode as any;
         if (typeof node.off === "function") {
-            node.off(Laya.Event.TRIGGER_ENTER, this, this.onTriggerEnter);
+            node.off(Laya.Event.TRIGGER_ENTER, this, this.handleTriggerEnter);
         }
 
         this.boundNode = null;
     }
 
-    private onTriggerEnter(other: any): void {
+    private handleTriggerEnter(other: any): void {
         if (this.jumped) {
             return;
         }
@@ -79,8 +80,21 @@ export class SceneJumpTrigger extends Laya.Script {
         this.jumped = true;
         // Defer scene switching until the trigger callback unwinds.
         Laya.timer.once(0, null, () => {
-            DataManager.getInstance().enterScene(url);
-            Laya.Scene.open(url);
+            const openTargetScene = (): void => {
+                DataManager.getInstance().enterScene(url);
+                Laya.Scene.open(url);
+            };
+
+            if (this.isReturnToBase(url) && RunResultPanel.showSuccess(2500, openTargetScene)) {
+                return;
+            }
+
+            openTargetScene();
         });
+    }
+
+    private isReturnToBase(sceneUrl: string): boolean {
+        const normalized = String(sceneUrl || "").toLowerCase();
+        return normalized.includes("cunzhuang");
     }
 }

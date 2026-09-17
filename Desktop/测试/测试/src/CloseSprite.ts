@@ -61,7 +61,24 @@ export class CloseSprite extends Laya.Script {
 
     private onCloseClick(): void {
         if (this.targetNode) {
+            this.notifyTargetPanelClosing(this.targetNode);
             (this.targetNode as any).visible = false;
+        }
+    }
+
+    private notifyTargetPanelClosing(node: Laya.Node): void {
+        const components = (node as any)._components as any[] | undefined;
+        if (!Array.isArray(components)) {
+            return;
+        }
+
+        for (let i = 0; i < components.length; i++) {
+            const component = components[i];
+            if (component && typeof component.closePanel === "function") {
+                component.closePanel();
+            } else if (component && typeof component.showDefaultState === "function") {
+                component.showDefaultState();
+            }
         }
     }
 }

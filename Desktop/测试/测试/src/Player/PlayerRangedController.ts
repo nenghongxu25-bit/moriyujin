@@ -2,9 +2,13 @@ import type { PlayerController } from "./PlayerController";
 import type { PlayerAttackOptions } from "./PlayerCombatController";
 
 export class PlayerRangedController {
+    private static readonly BULLET_DISPLAY_SPEED_MULTIPLIER = 2;
+
     private aimActive: boolean = false;
     private aimX: number = 1;
     private aimY: number = 0;
+    private rangedWeaponBaseScaleX: number | null = null;
+    private rangedWeaponBaseScaleY: number | null = null;
 
     constructor(private controller: PlayerController) {
     }
@@ -25,6 +29,7 @@ export class PlayerRangedController {
     public clearAim(): void {
         Laya.timer.clear(this.controller, this.controller.clearRangedWeaponAim);
         this.aimActive = false;
+        this.syncRangedWeaponRotation();
     }
 
     public onDestroy(): void {
@@ -60,7 +65,7 @@ export class PlayerRangedController {
         const bulletAngle = baseAngle + (Math.random() - 0.5) * spreadAngle;
         const radians = bulletAngle * Math.PI / 180;
         const range = Math.max(1, Number(this.controller.rangedAttackRange) || Number(this.controller.attackDamageRange) || 1);
-        const speed = Math.max(1, Number(this.controller.rangedBulletSpeed) || 1);
+        const speed = Math.max(1, Number(this.controller.rangedBulletSpeed) || 1) * PlayerRangedController.BULLET_DISPLAY_SPEED_MULTIPLIER;
         const duration = Math.max(1, Math.floor(range / speed * 1000));
         const globalStart = this.resolveBulletStartGlobalPoint(owner, direction);
         const localStart = parent.globalToLocal(globalStart, false);
@@ -95,50 +100,122 @@ export class PlayerRangedController {
 
     public syncAimRotation(phase: string = "update"): void {
         if (!this.aimActive || !this.controller.isEquippedRangedWeapon()) {
+            this.syncRangedWeaponRotation();
             return;
         }
 
-        const slotName = String(this.controller.weaponRangedSpineSlotName || this.controller.weaponSpineSlotName || "").trim();
-        if (!slotName) {
-            return;
-        }
-
-        const spine = this.controller.spineNode ? this.controller.spineNode.getComponent(Laya.Spine2DRenderNode) : null;
-        this.configureSpineForRuntimeAim(spine);
-        const skeleton = this.resolveSpineSkeleton(spine);
-        const bone = this.resolveSpineSlotBone(spine, slotName, skeleton);
-        if (!bone) {
-            return;
-        }
-
-        const worldAngle = Math.atan2(this.aimY, this.aimX) * 180 / Math.PI;
-        const ownerScaleX = this.controller.owner ? (this.controller.owner as Laya.Sprite).scaleX : 1;
-        const localAngle = ownerScaleX < 0 ? 180 - worldAngle : worldAngle;
-        const targetRotation = this.normalizeDegrees(localAngle + (Number(this.controller.rangedWeaponAimRotationOffset) || 0));
-        bone.rotation = targetRotation;
-
-        if (skeleton && typeof skeleton.updateWorldTransform === "function") {
-            try {
-                const physics = (globalThis as any).spine?.Physics?.update ?? 2;
-                skeleton.updateWorldTransform(physics);
-            } catch (error) {
-            }
-        } else if (typeof bone.updateWorldTransform === "function") {
-            try {
-                bone.updateWorldTransform();
-            } catch (error) {
-            }
-        }
-
-        this.markSpineRenderDirty(spine);
+        this.controller.syncWeaponSpineSlot(false);
+        this.syncRangedWeaponRotation();
     }
 
     public snapshot(): Record<string, any> {
+        const root = this.resolveRangedWeaponRoot() as any;
         return {
             aimActive: this.aimActive,
             aimX: this.aimX,
             aimY: this.aimY,
+            rangedWeaponRotation: root ? root.rotation : null,
         };
+    }
+
+    private syncRangedWeaponRotation(): void {
+        const root = this.resolveRangedWeaponRoot() as any;
+        if (!root) {
+            return;
+        }
+
+        this.captureRangedWeaponBaseScale(root);
+
+        if (!this.controller.isEquippedRangedWeapon()) {
+            this.applyRangedWeaponScale(root, 1);
+            root.rotation = 0;
+            return;
+        }
+
+        if (!this.aimActive) {
+            this.applyRangedWeaponScale(root, 1);
+            root.rotation = 0;
+            return;
+        }
+
+        const direction = { x: this.aimX, y: this.aimY };
+        this.applyRangedWeaponScale(root, 1);
+        const magnitude = Math.sqrt(direction.x * direction.x + direction.y * direction.y);
+        if (magnitude <= 0.0001) {
+            root.rotation = 0;
+            return;
+        }
+
+        const aimAngle = Math.atan2(direction.y, direction.x) * 180 / Math.PI;
+        const ancestorScale = this.resolveAncestorScaleSign(root);
+        const visualAngle = direction.x < 0 ? aimAngle + 180 : aimAngle;
+        root.rotation = (ancestorScale.x < 0 ? -visualAngle : visualAngle)
+            + (Number(this.controller.rangedWeaponAimRotationOffset) || 0);
+    }
+
+    private resolveRangedWeaponRoot(): Laya.Node | null {
+        if (this.controller.rangedWeaponRootNode && !this.controller.rangedWeaponRootNode.destroyed) {
+            return this.controller.rangedWeaponRootNode;
+        }
+
+        return this.findChildByName(this.controller.owner as Laya.Node | null, "ranged");
+    }
+
+    private captureRangedWeaponBaseScale(root: any): void {
+        if (this.rangedWeaponBaseScaleX !== null && this.rangedWeaponBaseScaleY !== null) {
+            return;
+        }
+
+        this.rangedWeaponBaseScaleX = Math.abs(Number(root.scaleX) || 1);
+        this.rangedWeaponBaseScaleY = Math.abs(Number(root.scaleY) || 1);
+    }
+
+    private applyRangedWeaponScale(root: any, directionSign: number): void {
+        this.captureRangedWeaponBaseScale(root);
+        const sign = directionSign >= 0 ? 1 : -1;
+        root.scaleX = (this.rangedWeaponBaseScaleX || 1) * sign;
+        root.scaleY = (this.rangedWeaponBaseScaleY || 1) * sign;
+    }
+
+    private resolveAncestorScaleSign(node: Laya.Node): { x: number; y: number } {
+        let scaleX = 1;
+        let scaleY = 1;
+        let current: any = node.parent;
+
+        while (current) {
+            if (typeof current.scaleX === "number" && current.scaleX !== 0) {
+                scaleX *= current.scaleX;
+            }
+            if (typeof current.scaleY === "number" && current.scaleY !== 0) {
+                scaleY *= current.scaleY;
+            }
+            current = current.parent;
+        }
+
+        return {
+            x: scaleX >= 0 ? 1 : -1,
+            y: scaleY >= 0 ? 1 : -1,
+        };
+    }
+
+    private findChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        if (root.name === name) {
+            return root;
+        }
+
+        const childCount = (root as any).numChildren || 0;
+        for (let i = 0; i < childCount; i++) {
+            const found = this.findChildByName(root.getChildAt(i), name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
     }
 
     private resolveAttackDamage(chargeRatio: number = 0): number {
@@ -268,92 +345,4 @@ export class PlayerRangedController {
         return point;
     }
 
-    private configureSpineForRuntimeAim(spine: Laya.Spine2DRenderNode | null): void {
-        const anySpine = spine as any;
-        if (!anySpine) {
-            return;
-        }
-
-        try {
-            if ("enableCache" in anySpine) {
-                anySpine.enableCache = false;
-            }
-            if ("useFastRender" in anySpine) {
-                anySpine.useFastRender = false;
-            }
-        } catch (error) {
-        }
-    }
-
-    private markSpineRenderDirty(spine: Laya.Spine2DRenderNode | null): void {
-        const anySpine = spine as any;
-        if (!anySpine) {
-            return;
-        }
-
-        if ("_needUpdate" in anySpine) {
-            anySpine._needUpdate = true;
-        }
-    }
-
-    private resolveSpineSlotBone(spine: Laya.Spine2DRenderNode | null, slotName: string, skeleton?: any | null): any | null {
-        if (!spine) {
-            return null;
-        }
-
-        const anySpine = spine as any;
-
-        try {
-            const slot = typeof anySpine.getSlotByName === "function"
-                ? anySpine.getSlotByName(slotName)
-                : null;
-            if (slot?.bone) {
-                return slot.bone;
-            }
-        } catch (error) {
-        }
-
-        try {
-            const slot = typeof anySpine.findSlot === "function"
-                ? anySpine.findSlot(slotName)
-                : null;
-            if (slot?.bone) {
-                return slot.bone;
-            }
-        } catch (error) {
-        }
-
-        try {
-            const slot = skeleton && typeof skeleton.findSlot === "function"
-                ? skeleton.findSlot(slotName)
-                : null;
-            return slot?.bone || null;
-        } catch (error) {
-            return null;
-        }
-    }
-
-    private resolveSpineSkeleton(spine: Laya.Spine2DRenderNode | null): any | null {
-        const render = (spine as any)?._spineRender;
-        if (!render || typeof render.getSkeleton !== "function") {
-            return null;
-        }
-
-        try {
-            return render.getSkeleton();
-        } catch (error) {
-            return null;
-        }
-    }
-
-    private normalizeDegrees(value: number): number {
-        let result = value;
-        while (result > 180) {
-            result -= 360;
-        }
-        while (result < -180) {
-            result += 360;
-        }
-        return result;
-    }
 }

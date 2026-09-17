@@ -66,8 +66,8 @@
       "_$prefab": "c90a477a-edd9-4563-9260-209a89c08b2e",
       "name": "bag_list",
       "active": true,
-      "x": 36,
-      "y": 130,
+      "x": 112,
+      "y": 240,
       "visible": true,
       "_$child": [
         {
@@ -82,8 +82,8 @@
       "_$prefab": "941c861a-11d5-440c-90e1-57eac5414741",
       "name": "warehouse_list",
       "active": true,
-      "x": 568,
-      "y": 130,
+      "x": 609,
+      "y": 139,
       "visible": true,
       "_$child": [
         {
@@ -105,7 +105,8 @@
                   "myzvhd4c"
                 ]
               },
-              "slotCount": 0
+              "slotCount": 0,
+              "selectionEnabled": true
             }
           ]
         },
@@ -141,6 +142,38 @@
               }
             }
           ]
+        },
+        {
+          "_$id": "tjve29jy",
+          "_$type": "Sprite",
+          "name": "detail",
+          "x": -409,
+          "y": -38,
+          "width": 300,
+          "height": 100,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "lineColor": "#000000",
+              "fillColor": "#939322"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "dh9w6jty",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 300,
+              "height": 100,
+              "visible": false,
+              "text": "Text",
+              "fontSize": 15,
+              "color": "#ffffff",
+              "align": "center",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
         }
       ]
     },
@@ -149,7 +182,7 @@
       "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
       "name": "CloseSprite",
       "active": true,
-      "x": 542,
+      "x": 537,
       "y": 599,
       "visible": true,
       "_$comp": [

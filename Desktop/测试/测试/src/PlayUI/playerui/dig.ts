@@ -3,7 +3,7 @@ const { regClass, property } = Laya;
 import { PlayerController } from "../../Player/PlayerController";
 import { HarvestableBase } from "../../harvestable/HarvestableBase";
 
-@regClass()
+@regClass("10034fdc-629a-4e30-8bc7-32dc80a0683f")
 export class dig extends Laya.Script {
     @property(Laya.Node)
     public playerNode: Laya.Node | null = null;

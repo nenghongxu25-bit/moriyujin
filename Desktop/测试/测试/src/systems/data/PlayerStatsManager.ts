@@ -6,6 +6,10 @@ export interface PlayerStatsSnapshot {
     maxHp: number;
     currentStamina: number;
     maxStamina: number;
+    currentSatiety: number;
+    maxSatiety: number;
+    currentHydration: number;
+    maxHydration: number;
     experience: number;
     nextLevelExperience: number;
 }
@@ -88,6 +92,38 @@ export class PlayerStatsManager {
         this.saveStats();
     }
 
+    public setSurvivalStats(
+        currentSatiety: number = this.stats.currentSatiety,
+        currentHydration: number = this.stats.currentHydration,
+        maxSatiety: number = this.stats.maxSatiety,
+        maxHydration: number = this.stats.maxHydration,
+    ): void {
+        const nextMaxSatiety = this.normalizePositiveInt(maxSatiety, this.stats.maxSatiety || 100);
+        const nextMaxHydration = this.normalizePositiveInt(maxHydration, this.stats.maxHydration || 100);
+        const nextCurrentSatiety = Math.max(0, Math.min(nextMaxSatiety, this.normalizeInt(currentSatiety, nextMaxSatiety)));
+        const nextCurrentHydration = Math.max(0, Math.min(nextMaxHydration, this.normalizeInt(currentHydration, nextMaxHydration)));
+        if (
+            this.stats.currentSatiety === nextCurrentSatiety
+            && this.stats.maxSatiety === nextMaxSatiety
+            && this.stats.currentHydration === nextCurrentHydration
+            && this.stats.maxHydration === nextMaxHydration
+        ) {
+            return;
+        }
+
+        this.stats = {
+            ...this.stats,
+            currentSatiety: nextCurrentSatiety,
+            maxSatiety: nextMaxSatiety,
+            currentHydration: nextCurrentHydration,
+            maxHydration: nextMaxHydration,
+        };
+        this.saveStats();
+        if (this.onHpChanged) {
+            this.onHpChanged();
+        }
+    }
+
     public load(): void {
         const stored = this.save.loadJson<Partial<PlayerStatsSnapshot>>(this.storageKey);
         if (!stored) {
@@ -99,12 +135,18 @@ export class PlayerStatsManager {
         const level = this.normalizePositiveInt(stored.level, 1);
         const maxHp = this.normalizePositiveInt(stored.maxHp, 100);
         const maxStamina = this.normalizePositiveInt(stored.maxStamina, 100);
+        const maxSatiety = this.normalizePositiveInt(stored.maxSatiety, 100);
+        const maxHydration = this.normalizePositiveInt(stored.maxHydration, 100);
         this.stats = {
             level,
             maxHp,
             currentHp: Math.min(maxHp, this.normalizePositiveInt(stored.currentHp, maxHp)),
             maxStamina,
             currentStamina: Math.max(0, Math.min(maxStamina, this.normalizeInt(stored.currentStamina, maxStamina))),
+            maxSatiety,
+            currentSatiety: Math.max(0, Math.min(maxSatiety, this.normalizeInt(stored.currentSatiety, maxSatiety))),
+            maxHydration,
+            currentHydration: Math.max(0, Math.min(maxHydration, this.normalizeInt(stored.currentHydration, maxHydration))),
             experience: Math.max(0, this.normalizeInt(stored.experience, 0)),
             nextLevelExperience: this.normalizePositiveInt(stored.nextLevelExperience, 200 + Math.max(0, level - 1) * 50),
         };
@@ -131,6 +173,10 @@ export class PlayerStatsManager {
             maxHp: 100,
             currentStamina: 100,
             maxStamina: 100,
+            currentSatiety: 100,
+            maxSatiety: 100,
+            currentHydration: 100,
+            maxHydration: 100,
             experience: 0,
             nextLevelExperience: 200,
         };

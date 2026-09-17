@@ -1,0 +1,84 @@
+{
+  "_$ver": 1,
+  "_$id": "rh9qrac9",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 400,
+  "height": 400,
+  "_$child": [
+    {
+      "_$id": "whitebg",
+      "_$type": "Sprite",
+      "name": "white_background",
+      "width": 425,
+      "height": 413,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "fillColor": "#ffffff"
+        }
+      ]
+    },
+    {
+      "_$id": "maskgroup",
+      "_$type": "Sprite",
+      "name": "MaskGroup",
+      "width": 400,
+      "height": 400,
+      "cacheAs": "bitmap",
+      "_$comp": [
+        {
+          "_$type": "7f27ea9f-45c4-4a5a-9f28-99cf250706b9",
+          "scriptPath": "../src/debug/DynamicCutoutProbe.ts",
+          "cutoutNode": {
+            "_$ref": [
+              "maskgroup",
+              "circlecutout"
+            ]
+          },
+          "leftX": 40,
+          "demoMotion": true,
+          "rightX": 230,
+          "speed": 120
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "blackrect",
+          "_$type": "Sprite",
+          "name": "black_rect",
+          "x": -45,
+          "y": 28,
+          "width": 471,
+          "height": 353,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "fillColor": "#000000"
+            }
+          ]
+        },
+        {
+          "_$id": "circlecutout",
+          "_$type": "Sprite",
+          "name": "circle_cutout",
+          "x": 110,
+          "y": 122,
+          "width": 150,
+          "height": 187,
+          "blendMode": "destinationOut",
+          "_gcmds": [
+            {
+              "_$type": "DrawCircleCmd",
+              "x": 0.5,
+              "y": 0.5,
+              "radius": 0.5,
+              "percent": true,
+              "fillColor": "#ffffff"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

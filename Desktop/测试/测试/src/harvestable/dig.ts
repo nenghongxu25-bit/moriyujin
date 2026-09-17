@@ -19,15 +19,7 @@ export class dig extends HarvestableBase {
                 { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
                 { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
             ],
-            drops: DataManager.getInstance().getHarvestDrops("harvestable_dig", [
-                {
-                    itemId: "food_material_04",
-                    label: "泥土",
-                    minCount: 1,
-                    maxCount: 2,
-                    probability: 1,
-                },
-            ]),
+            drops: DataManager.getInstance().getHarvestDrops("harvestable_dig", []),
         };
     }
 }

@@ -1,4 +1,4 @@
-﻿import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
 import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
@@ -10,18 +10,18 @@ export class l1_kuang extends HarvestableBase {
             id: "harvestable_l1_kuang",
             name: "l1-kuang",
             displayName: "L1矿",
-            action: "search",
-            interactTime: 1000,
+            action: "dig",
+            interactTime: 3201,
             once: true,
             range: 160,
             sequence: [
-                { animation: "search/search_start", duration: 816, loop: false },
-                { animation: "search/search_loop", duration: 2983, loop: true },
-                { animation: "search/search_end", duration: 816, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
             ],
             drops: DataManager.getInstance().getHarvestDrops("harvestable_l1_kuang", [
                 {
-                    itemId: "common_material_02",
+                    itemId: "shitou",
                     label: "石头",
                     minCount: 2,
                     maxCount: 4,

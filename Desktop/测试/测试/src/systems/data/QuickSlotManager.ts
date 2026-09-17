@@ -262,11 +262,7 @@ export class QuickSlotManager {
             this.items[quickSlotIndex] = null;
         }
 
-        const healAmount = this.data.resolveUseHealAmount(itemId);
-        if (healAmount > 0) {
-            const stats = this.data.getPlayerStats();
-            this.data.setPlayerHp(stats.currentHp + healAmount, stats.maxHp);
-        }
+        this.data.applyItemUseStats(itemId);
 
         this.save();
         this.refreshViews();

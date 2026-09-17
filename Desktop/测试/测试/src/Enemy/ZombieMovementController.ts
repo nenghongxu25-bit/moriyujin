@@ -1,21 +1,25 @@
 import type { ZombieController } from "./ZombieController";
 import { PlayerController } from "../Player/PlayerController";
+import { TileBlockMovement } from "../systems/TileBlockMovement";
 
 export class ZombieMovementController {
     private hasAggro: boolean = false;
     private spawnIdleUntil: number = 0;
+    private tileBlockMovement: TileBlockMovement = new TileBlockMovement();
 
     constructor(private controller: ZombieController) {
     }
 
     public onAwake(): void {
         this.resetSpawnIdle();
+        this.tileBlockMovement.getBlockLayerName(this.controller.ownerSprite);
     }
 
     public onStart(): void {
         if (this.spawnIdleUntil <= 0) {
             this.resetSpawnIdle();
         }
+        this.tileBlockMovement.getBlockLayerName(this.controller.ownerSprite);
     }
 
     public onUpdate(): void {
@@ -61,10 +65,12 @@ export class ZombieMovementController {
         const nx = distance > 0 ? deltaX / distance : 0;
         const ny = distance > 0 ? deltaY / distance : 0;
 
-        owner.x += nx * moveSpeed * dt;
-        owner.y += ny * moveSpeed * dt;
+        const moveResult = this.tileBlockMovement.move(owner, nx * moveSpeed * dt, ny * moveSpeed * dt, {
+            halfWidth: this.controller.tileBlockHalfWidth,
+            footOffsetY: this.controller.tileBlockFootOffsetY,
+        });
         this.controller.view.updateFacing(nx);
-        this.controller.view.playLocomotion(this.controller.runAnimation);
+        this.controller.view.playLocomotion(moveResult.moved ? this.controller.runAnimation : this.controller.idleAnimation);
     }
 
     public resetAggro(): void {
@@ -79,6 +85,7 @@ export class ZombieMovementController {
         return {
             hasAggro: this.hasAggro,
             spawnIdleUntil: this.spawnIdleUntil,
+            blockLayer: this.tileBlockMovement.getBlockLayerName(this.controller.ownerSprite),
         };
     }
 

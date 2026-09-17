@@ -10,8 +10,9 @@ import { QuickSlotManager, type QuickSlotUseResult } from "./data/QuickSlotManag
 import { SaveManager } from "./data/SaveManager";
 import { SignInManager, type SignInRewardDefinition, type SignInRewardView, type SignInUnlockPreview } from "./data/SignInManager";
 import { WarehouseManager } from "./data/WarehouseManager";
+import { RunSessionManager } from "./run/RunSessionManager";
 
-export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, QuickSlotView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, SignInUnlockPreview, CraftingRecipeDefinition, CraftingStationId, QuickMakeRecipeDefinition, QuickSlotUseResult };
+export type { InventoryViewItem, InventoryBucket, InventoryScope, BagView, QuickSlotView, WarehouseView, HarvestDropConfig, HarvestResultItem, ItemMeta, InventorySlotItem, EquippedItem, EquipmentSlotType, SignInRewardView, SignInUnlockPreview, CraftingRecipeDefinition, CraftingStationId, CraftingIngredient, QuickMakeRecipeDefinition, QuickSlotUseResult };
 
 export interface CraftResult {
     success: boolean;
@@ -80,6 +81,7 @@ export class DataManager {
         }
 
         if (this.loading) {
+            await this.waitForLoadComplete();
             return;
         }
 
@@ -114,6 +116,7 @@ export class DataManager {
     }
 
     public enterScene(sceneUrl: string): void {
+        RunSessionManager.getInstance().enterScene(sceneUrl);
         this.inventory.enterScene(sceneUrl);
         if (this.loaded) {
             this.ensureStarterItems();
@@ -288,10 +291,7 @@ export class DataManager {
             return false;
         }
 
-        const healAmount = this.resolveUseHealAmount(consumed.itemId || "");
-        if (healAmount > 0) {
-            this.setPlayerHp(this.playerStats.getSnapshot().currentHp + healAmount, this.playerStats.getSnapshot().maxHp);
-        }
+        this.applyItemUseStats(consumed.itemId || "");
 
         this.clearQuickSlotsForMissingItems();
         return true;
@@ -311,6 +311,41 @@ export class DataManager {
 
     public setPlayerStamina(currentStamina: number, maxStamina: number = this.playerStats.getSnapshot().maxStamina): void {
         this.playerStats.setStamina(currentStamina, maxStamina);
+    }
+
+    public setPlayerSurvivalStats(
+        currentSatiety: number,
+        currentHydration: number,
+        maxSatiety: number = this.playerStats.getSnapshot().maxSatiety,
+        maxHydration: number = this.playerStats.getSnapshot().maxHydration,
+    ): void {
+        this.playerStats.setSurvivalStats(currentSatiety, currentHydration, maxSatiety, maxHydration);
+    }
+
+    public applyItemUseStats(itemId: string): void {
+        const normalizedItemId = String(itemId || "").trim();
+        if (!normalizedItemId) {
+            return;
+        }
+
+        const meta = this.resolveItemMeta(normalizedItemId);
+        const stats = this.getPlayerStats();
+        const healAmount = this.resolveUseHealAmount(normalizedItemId);
+        const satietyAmount = Number.isFinite(meta?.satiety) ? Math.max(0, Math.floor(meta!.satiety as number)) : 0;
+        const hydrationAmount = Number.isFinite(meta?.hydration) ? Math.max(0, Math.floor(meta!.hydration as number)) : 0;
+
+        if (healAmount > 0) {
+            this.setPlayerHp(stats.currentHp + healAmount, stats.maxHp);
+        }
+
+        if (satietyAmount > 0 || hydrationAmount > 0) {
+            this.setPlayerSurvivalStats(
+                stats.currentSatiety + satietyAmount,
+                stats.currentHydration + hydrationAmount,
+                stats.maxSatiety,
+                stats.maxHydration,
+            );
+        }
     }
 
     public grantGatherExperience(): void {
@@ -754,6 +789,20 @@ export class DataManager {
         return this.resolveItemMeta(weapon.itemId)?.attackPower || 0;
     }
 
+    public getEquipmentDefenseBonus(): number {
+        const slots: EquipmentSlotType[] = ["insertPlate", "helmet", "armor"];
+        let totalDefense = 0;
+        for (let i = 0; i < slots.length; i++) {
+            const item = this.equippedItems[slots[i]];
+            const defense = item ? this.resolveItemMeta(item.itemId)?.defense : 0;
+            if (Number.isFinite(defense)) {
+                totalDefense += Math.max(0, Math.floor(defense as number));
+            }
+        }
+
+        return totalDefense;
+    }
+
     public getEquipmentAttackSpeed(): number {
         const weapon = this.equippedItems.weapon;
         if (!weapon) {
@@ -761,6 +810,17 @@ export class DataManager {
         }
 
         return Math.max(0.1, this.resolveItemMeta(weapon.itemId)?.attackSpeed || 1);
+    }
+
+    public getEquipmentBulletSpeed(fallbackSpeed: number): number {
+        const fallback = Math.max(1, Number(fallbackSpeed) || 1);
+        const weapon = this.equippedItems.weapon;
+        if (!weapon) {
+            return fallback;
+        }
+
+        const speed = this.resolveItemMeta(weapon.itemId)?.bulletSpeed;
+        return Number.isFinite(speed) ? Math.max(1, speed as number) : fallback;
     }
 
     public transferItem(sourceBucket: InventoryBucket, targetBucket: InventoryBucket, itemId: string, targetSlotIndex?: number): boolean {
@@ -813,6 +873,43 @@ export class DataManager {
         return false;
     }
 
+    public transferLooseItemToActive(item: { itemId?: string; name?: string; count: number; icon?: string } | null, targetSlotIndex?: number): boolean {
+        if (!item || !item.itemId || !Number.isFinite(item.count) || item.count <= 0) {
+            return false;
+        }
+
+        const resolvedItems = this.resolveWarehouseGrantItems([{
+            itemId: item.itemId,
+            name: item.name,
+            count: item.count,
+            icon: item.icon,
+        }]);
+        const resolvedItem = resolvedItems[0] || null;
+        if (!resolvedItem) {
+            return false;
+        }
+
+        if (targetSlotIndex !== undefined) {
+            if (!this.inventory.canPlaceItemInBucket("active", targetSlotIndex, resolvedItem.itemId)) {
+                return false;
+            }
+
+            const success = this.inventory.placeItemInBucket("active", targetSlotIndex, resolvedItem);
+            if (success) {
+                this.refreshQuickSlotViews();
+            }
+            return success;
+        }
+
+        if (!this.inventory.canAddItems([resolvedItem])) {
+            return false;
+        }
+
+        this.inventory.addItemToActive(resolvedItem.itemId, resolvedItem.name, resolvedItem.count, resolvedItem.icon);
+        this.refreshQuickSlotViews();
+        return true;
+    }
+
     public moveActiveInventorySlot(sourceSlotIndex: number, targetSlotIndex: number): boolean {
         return this.inventory.moveActiveSlot(sourceSlotIndex, targetSlotIndex);
     }
@@ -824,6 +921,12 @@ export class DataManager {
         }
 
         return moved;
+    }
+
+    private async waitForLoadComplete(): Promise<void> {
+        while (this.loading) {
+            await new Promise<void>((resolve) => setTimeout(resolve, 20));
+        }
     }
 
     private async loadJson<T>(url: string, fallbackUrl?: string): Promise<T> {
@@ -1033,7 +1136,6 @@ export class DataManager {
     private saveEquipment(): void {
         this.save.saveJson(DataManager.EQUIPMENT_STORAGE_KEY, this.equippedItems);
     }
-
 
     private ensureStarterItems(): void {
         const starterItemIds = ["fal", "m16", "geluoke", "akm"];

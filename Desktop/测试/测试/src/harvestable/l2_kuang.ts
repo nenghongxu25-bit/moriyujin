@@ -1,4 +1,4 @@
-﻿import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
+import { HarvestableBase, HarvestConfig } from "./HarvestableBase";
 import { DataManager } from "../systems/datamanager";
 
 const { regClass } = Laya;
@@ -10,14 +10,14 @@ export class l2_kuang extends HarvestableBase {
             id: "harvestable_l2_kuang",
             name: "l2-kuang",
             displayName: "L2矿",
-            action: "search",
-            interactTime: 1000,
+            action: "dig",
+            interactTime: 3201,
             once: true,
             range: 160,
             sequence: [
-                { animation: "search/search_start", duration: 816, loop: false },
-                { animation: "search/search_loop", duration: 2983, loop: true },
-                { animation: "search/search_end", duration: 816, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
+                { animation: "attack/attack_melee_swing", duration: 1067, loop: false },
             ],
             drops: DataManager.getInstance().getHarvestDrops("harvestable_l2_kuang", [
                 {
@@ -43,13 +43,6 @@ export class l2_kuang extends HarvestableBase {
                         { count: 2, probability: 0.3 },
                         { count: 3, probability: 0.2 },
                     ],
-                },
-                {
-                    itemId: "xiyoujinshu",
-                    label: "稀有金属",
-                    minCount: 1,
-                    maxCount: 1,
-                    probability: 0.1,
                 },
                 {
                     itemId: "liuhuang",

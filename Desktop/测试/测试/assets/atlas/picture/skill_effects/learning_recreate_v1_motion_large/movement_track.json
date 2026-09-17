@@ -1,0 +1,326 @@
+{
+  "frameRate": 20,
+  "frameSize": {
+    "width": 640,
+    "height": 320
+  },
+  "sourceFrameSize": {
+    "width": 384,
+    "height": 256
+  },
+  "anchor": {
+    "x": 320,
+    "y": 160
+  },
+  "description": "Baked VFX movement path. Use x/y offsets to sync the character root if playing original centered frames instead of baked large frames.",
+  "frames": [
+    {
+      "frame": 0,
+      "x": -150.0,
+      "y": -8.0,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 1,
+      "x": -110.2,
+      "y": -5.88,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 2,
+      "x": -76.53,
+      "y": -4.08,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 3,
+      "x": -48.98,
+      "y": -2.61,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 4,
+      "x": -27.55,
+      "y": -1.47,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 5,
+      "x": -12.24,
+      "y": -0.65,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 6,
+      "x": -3.06,
+      "y": -0.16,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 7,
+      "x": 0.0,
+      "y": 0.0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 8,
+      "x": 0,
+      "y": 0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 9,
+      "x": -6,
+      "y": 0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 10,
+      "x": 5,
+      "y": 0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 11,
+      "x": -4,
+      "y": 0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 12,
+      "x": 3,
+      "y": 0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 13,
+      "x": -2,
+      "y": 0,
+      "rotation": 0,
+      "scale": 1.08
+    },
+    {
+      "frame": 14,
+      "x": 2,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 15,
+      "x": -1,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 16,
+      "x": 1,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 17,
+      "x": 0,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 18,
+      "x": 1,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 19,
+      "x": -1,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 20,
+      "x": 0,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 21,
+      "x": 0,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 22,
+      "x": 0,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 23,
+      "x": 0,
+      "y": 2,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 24,
+      "x": 20.0,
+      "y": -42.0,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 25,
+      "x": 24.77,
+      "y": -39.86,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 26,
+      "x": 37.87,
+      "y": -33.98,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 27,
+      "x": 57.43,
+      "y": -25.2,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 28,
+      "x": 81.61,
+      "y": -14.35,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 29,
+      "x": 108.56,
+      "y": -2.26,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 30,
+      "x": 136.44,
+      "y": 10.26,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 31,
+      "x": 163.39,
+      "y": 22.35,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 32,
+      "x": 187.57,
+      "y": 33.2,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 33,
+      "x": 207.13,
+      "y": 41.98,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 34,
+      "x": 220.23,
+      "y": 47.86,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 35,
+      "x": 225.0,
+      "y": 50.0,
+      "rotation": -10,
+      "scale": 1.0
+    },
+    {
+      "frame": 36,
+      "x": 225.0,
+      "y": 50.0,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 37,
+      "x": 232.96,
+      "y": 52.65,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 38,
+      "x": 239.69,
+      "y": 54.9,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 39,
+      "x": 245.2,
+      "y": 56.73,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 40,
+      "x": 249.49,
+      "y": 58.16,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 41,
+      "x": 252.55,
+      "y": 59.18,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 42,
+      "x": 254.39,
+      "y": 59.8,
+      "rotation": 0,
+      "scale": 1.0
+    },
+    {
+      "frame": 43,
+      "x": 255.0,
+      "y": 60.0,
+      "rotation": 0,
+      "scale": 1.0
+    }
+  ]
+}

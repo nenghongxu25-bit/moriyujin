@@ -17,6 +17,8 @@
       "walkSpeed": 200,
       "runSpeed": 320,
       "moveSpeed": 0,
+      "tileBlockHalfWidth": 30,
+      "tileBlockFootOffsetY": 80,
       "footstepSoundEnabled": true,
       "cunzhuangWalkSoundUrl": "sound/sfx/walk/walk_wood.mp3",
       "cunzhuangRunSoundUrl": "sound/sfx/run/run_wood.mp3",
@@ -60,6 +62,12 @@
       "staminaBarNode": null,
       "weaponSlotNode": null,
       "weaponIconNode": null,
+      "rangedWeaponRootNode": {
+        "_$ref": "bd2nx4pp"
+      },
+      "rangedWeaponImageNode": {
+        "_$ref": "aftvsz87"
+      },
       "weaponSpineSlotName": "weapon_melee_slot",
       "weaponMeleeSpineSlotName": "weapon_melee_slot",
       "weaponRangedSpineSlotName": "weapon_ranged_slot",
@@ -71,6 +79,7 @@
       "hpFillFullWidth": 70,
       "currentStamina": 100,
       "maxStamina": 100,
+      "runRecoverStaminaThreshold": 30,
       "staminaFillFullWidth": 70,
       "hpBarRightX": -35,
       "hpBarLeftX": 35,
@@ -133,8 +142,7 @@
           "useFastRender": false,
           "source": "res://f87ec402-9dd0-4a49-90f0-2352581455dc",
           "skinName": "player_normal",
-          "animationName": "run/run_body_lower",
-          "preview": true,
+          "animationName": "idle/idle_ranged_firearm",
           "externalSkins": [
             {
               "_$type": "ExternalSkin"
@@ -1384,6 +1392,25 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "_$id": "bd2nx4pp",
+      "_$type": "Sprite",
+      "name": "ranged",
+      "x": 6,
+      "y": 28,
+      "width": 0,
+      "height": 0,
+      "_$child": [
+        {
+          "_$id": "aftvsz87",
+          "_$type": "GImage",
+          "name": "img",
+          "width": 100,
+          "height": 100,
+          "src": ""
         }
       ]
     }

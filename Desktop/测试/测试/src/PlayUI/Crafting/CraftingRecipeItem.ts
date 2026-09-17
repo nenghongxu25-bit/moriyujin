@@ -9,6 +9,9 @@ export class CraftingRecipeItem extends Laya.Script {
     @property(Laya.Text)
     public nameText: Laya.Text | null = null;
 
+    @property(Laya.Node)
+    public maskNode: Laya.Node | null = null;
+
     private recipeId: string = "";
     private onClickHandler: CraftingRecipeClickHandler | null = null;
     private bindingsResolved: boolean = false;
@@ -22,7 +25,7 @@ export class CraftingRecipeItem extends Laya.Script {
         this.onClickHandler = null;
     }
 
-    public bind(recipe: CraftingRecipeDefinition, onClick: CraftingRecipeClickHandler): void {
+    public bind(recipe: CraftingRecipeDefinition, onClick: CraftingRecipeClickHandler, selected: boolean = false): void {
         this.resolveBindings();
         this.recipeId = recipe.id;
         this.onClickHandler = onClick;
@@ -31,6 +34,7 @@ export class CraftingRecipeItem extends Laya.Script {
             this.nameText.text = recipe.name;
         }
 
+        this.setSelected(selected);
         this.bindClick();
     }
 
@@ -39,7 +43,27 @@ export class CraftingRecipeItem extends Laya.Script {
         if (this.nameText) {
             this.nameText.text = "";
         }
+        this.setSelected(false);
         this.unbindClick();
+    }
+
+    public setSelected(selected: boolean): void {
+        this.resolveBindings();
+        const mask = this.maskNode as any;
+        if (!mask) {
+            return;
+        }
+
+        mask.visible = !selected;
+        if ("active" in mask) {
+            mask.active = !selected;
+        }
+        if ("mouseEnabled" in mask) {
+            mask.mouseEnabled = false;
+        }
+        if ("touchable" in mask) {
+            mask.touchable = false;
+        }
     }
 
     private bindClick(): void {
@@ -72,7 +96,23 @@ export class CraftingRecipeItem extends Laya.Script {
         }
 
         this.nameText = this.nameText || (this.findFirstTextNode(this.owner as Laya.Node) as Laya.Text | null);
+        this.maskNode = this.maskNode || this.findDirectChildByName(this.owner as Laya.Node, "mask");
         this.bindingsResolved = true;
+    }
+
+    private findDirectChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        const children = root && Array.isArray((root as any).children)
+            ? ((root as any).children as Laya.Node[])
+            : [];
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            if (child && (child as any).name === name) {
+                return child;
+            }
+        }
+
+        return null;
     }
 
     private findFirstTextNode(root: Laya.Node | null): Laya.Node | null {

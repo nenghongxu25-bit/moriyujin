@@ -3,8 +3,8 @@
     "items": [
         {
             "id": "wood_club",
-            "displayName": "简易木棒",
-            "nameZh": "简易木棒",
+            "displayName": "木棒",
+            "nameZh": "木棒",
             "subCategory": "melees",
             "icon": "atlas/picture/items/weapons/melees/wood_club.png",
             "stackMax": 1,
@@ -94,8 +94,8 @@
         },
         {
             "id": "machete",
-            "displayName": "开山刀",
-            "nameZh": "开山刀",
+            "displayName": "大砍刀",
+            "nameZh": "大砍刀",
             "subCategory": "melees",
             "icon": "atlas/picture/items/weapons/melees/machete.png",
             "stackMax": 1,
@@ -114,6 +114,7 @@
             "stackMax": 1,
             "attackPower": 18,
             "attackSpeed": 1,
+            "bulletSpeed": 620,
             "durability": 80,
             "consumable": false,
             "description": "Ranged weapon"
@@ -127,6 +128,7 @@
             "stackMax": 1,
             "attackPower": 20,
             "attackSpeed": 1,
+            "bulletSpeed": 700,
             "durability": 80,
             "consumable": false,
             "description": "Ranged weapon"
@@ -140,6 +142,7 @@
             "stackMax": 1,
             "attackPower": 14,
             "attackSpeed": 1,
+            "bulletSpeed": 500,
             "durability": 80,
             "consumable": false,
             "description": "Ranged weapon"
@@ -153,6 +156,7 @@
             "stackMax": 1,
             "attackPower": 22,
             "attackSpeed": 1,
+            "bulletSpeed": 650,
             "durability": 80,
             "consumable": false,
             "description": "Ranged weapon"

@@ -1,5 +1,6 @@
 import { PlayerController } from "../Player/PlayerController";
 import { DataManager, type CraftingStationId, type EquipmentSlotType } from "./datamanager";
+import { installSpineRuntimeGuard } from "../runtime/SpineRuntimeGuard";
 
 declare const Laya: any;
 
@@ -628,4 +629,5 @@ export class RuntimeDiagnostics {
     }
 }
 
+installSpineRuntimeGuard();
 RuntimeDiagnostics.install();

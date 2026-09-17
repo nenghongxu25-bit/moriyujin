@@ -2,7 +2,7 @@ const { regClass, property } = Laya;
 
 import { DataManager } from "./systems/datamanager";
 
-@regClass()
+@regClass("efc1b234-4347-4332-bdef-e97122381b78")
 export class JumpToScene extends Laya.Script {
     @property(String)
     public sceneUrl: string = "";

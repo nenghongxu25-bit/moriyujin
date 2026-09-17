@@ -26,14 +26,7 @@ export class BagBuffStateController {
     }
 
     private getPreviewBuffStates(): PlayerBuffView[] {
-        return [
-            { id: "fullness", shortName: "\u9971", color: "#2f80ed", remainingSeconds: 60, durationSeconds: 60 },
-            { id: "bleeding", shortName: "\u8840", color: "#d83333", remainingSeconds: 18, durationSeconds: 20 },
-            { id: "slow", shortName: "\u51cf", color: "#808080", remainingSeconds: 10, durationSeconds: 12 },
-            { id: "regen", shortName: "\u56de", color: "#2eb872", remainingSeconds: 8, durationSeconds: 10 },
-            { id: "adrenaline", shortName: "\u80be", color: "#8e44ad", remainingSeconds: 14, durationSeconds: 15 },
-            { id: "poison", shortName: "\u6bd2", color: "#6b8e23", remainingSeconds: 22, durationSeconds: 25 },
-        ];
+        return [];
     }
 
     private renderStateList(buffs: PlayerBuffView[]): void {
@@ -56,8 +49,10 @@ export class BagBuffStateController {
             list.refresh(true);
         }
 
+        this.hideUnusedBuffStateItems(buffs.length);
         Laya.timer.callLater(this, () => {
             this.renderVisibleBuffStateItems(buffs);
+            this.hideUnusedBuffStateItems(buffs.length);
         });
     }
 
@@ -74,6 +69,24 @@ export class BagBuffStateController {
             }
 
             this.renderBuffStateItem(buffs[dataIndex] || null, child);
+            dataIndex++;
+        }
+    }
+
+    private hideUnusedBuffStateItems(visibleCount: number): void {
+        const list = this.getStateListNode() as any;
+        const children = list && Array.isArray(list.children) ? (list.children as Laya.Node[]) : [];
+        const templateNode = this.getTemplateNode(this.getStateListNode());
+        let dataIndex = 0;
+
+        for (let i = 0; i < children.length; i++) {
+            const child = children[i];
+            if (!child || child === templateNode) {
+                this.setNodeVisible(child, false);
+                continue;
+            }
+
+            this.setNodeVisible(child, dataIndex < visibleCount);
             dataIndex++;
         }
     }

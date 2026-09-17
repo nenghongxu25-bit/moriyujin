@@ -27,23 +27,6 @@
       "gravityScale": 0
     },
     {
-      "_$id": "fwbm",
-      "_$type": "StaticCollider",
-      "shapes": [
-        {
-          "_$type": "BoxShape2D",
-          "x": 0,
-          "y": 0,
-          "density": 10,
-          "restitution": 0,
-          "restitutionThreshold": 1,
-          "friction": 0.2,
-          "width": 128,
-          "height": 128
-        }
-      ]
-    },
-    {
       "_$id": "ly17",
       "_$type": "StaticCollider",
       "shapes": [
@@ -60,6 +43,16 @@
           "height": 128
         }
       ]
+    },
+    {
+      "_$type": "14f01483-b482-4199-a57f-d13f3907d80d",
+      "scriptPath": "../src/container/pobudai.ts",
+      "containerId": "",
+      "instanceId": "",
+      "displayName": "",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false
     }
   ],
   "_$child": [

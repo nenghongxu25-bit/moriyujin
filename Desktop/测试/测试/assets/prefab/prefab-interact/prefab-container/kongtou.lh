@@ -1,0 +1,49 @@
+{
+  "_$ver": 1,
+  "_$id": "jaw335na",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 384,
+  "height": 384,
+  "_$comp": [
+    {
+      "_$id": "ly17",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 384,
+          "height": 384
+        }
+      ]
+    },
+    {
+      "_$type": "1905b3f9-2516-45f7-8ad9-e250e9230b98",
+      "scriptPath": "../src/container/kongtou.ts",
+      "containerId": "",
+      "instanceId": "",
+      "displayName": "",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "2gj53fsf",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 384,
+      "height": 384,
+      "src": "res://b88ec950-bc7f-4803-8d67-57380aab99bf",
+      "autoSize": false
+    }
+  ]
+}

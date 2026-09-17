@@ -27,8 +27,8 @@
       "gravityScale": 0
     },
     {
-      "_$type": "f8822b1b-733c-43fd-b449-f8d36740a13a",
-      "scriptPath": "../../../../src/harvestable/dig.ts",
+      "_$type": "6c87a749-39d6-4bb5-b032-94e3f790eb25",
+      "scriptPath": "../../../../src/harvestable/l3_kuang.ts",
       "resourceId": "l3-kuang",
       "instanceId": ""
     }

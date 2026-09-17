@@ -5,7 +5,7 @@ import { DouyinCloudSaveManager } from "./platform/douyin/DouyinCloudSaveManager
 import { DouyinUserProfileManager } from "./platform/douyin/DouyinUserProfileManager";
 import { PlayerProfileView } from "./PlayUI/playerui/PlayerProfileView";
 
-@regClass()
+@regClass("2938a217-4272-4f6d-aaf2-984b61320b26")
 export class OpenSprite extends Laya.Script {
     private static cloudLoginStarted: boolean = false;
 

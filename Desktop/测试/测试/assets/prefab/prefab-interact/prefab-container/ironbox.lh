@@ -1,0 +1,51 @@
+{
+  "_$ver": 1,
+  "_$id": "jaw335na",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 256,
+  "height": 170,
+  "_$comp": [
+    {
+      "_$id": "fwbm",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 0,
+          "y": 0,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 256,
+          "height": 170
+        }
+      ]
+    },
+    {
+      "_$type": "d742f9d7-34ba-4ae9-abdd-d9fe9fe306f6",
+      "scriptPath": "../src/container/ironbox.ts",
+      "containerId": "",
+      "instanceId": "",
+      "displayName": "",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "2gj53fsf",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 128,
+      "height": 85,
+      "scaleX": 2,
+      "scaleY": 2,
+      "src": "res://f284be9f-a1d5-4a7c-acde-252fb7bacc54",
+      "autoSize": false
+    }
+  ]
+}

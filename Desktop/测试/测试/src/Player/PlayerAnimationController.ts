@@ -133,12 +133,25 @@ export class PlayerAnimationController {
             hasSpine: !!this.spine,
             ready: this.isReady(),
             spineAnimationName: this.spine ? this.spine.animationName : null,
-            spineCurrentTime: this.spine ? this.spine.currentTime : null,
-            spinePlayState: this.spine ? this.spine.playState : null,
+            spineCurrentTime: this.safeReadSpineNumber("currentTime"),
+            spinePlayState: this.safeReadSpineNumber("playState"),
             spineReadyState: this.getReadyState(),
             spineSource: this.getSpineSource(),
             spineTempletUrl: this.getSpineTempletUrl(),
         };
+    }
+
+    private safeReadSpineNumber(propertyName: string): number | null {
+        if (!this.spine) {
+            return null;
+        }
+
+        try {
+            const value = (this.spine as any)[propertyName];
+            return typeof value === "number" ? value : null;
+        } catch (error) {
+            return null;
+        }
     }
 
     private playSpineAnimation(animationName: string, loop: boolean): boolean {
@@ -150,8 +163,13 @@ export class PlayerAnimationController {
             return false;
         }
 
-        (this.spine as any).play(animationName, loop, 0);
-        return true;
+        try {
+            (this.spine as any).trackIndex = 0;
+            (this.spine as any).play(animationName, loop, true);
+            return true;
+        } catch (error) {
+            return false;
+        }
     }
 
     private playSpineTrack(animationName: string, loop: boolean, trackIndex: number): boolean {
@@ -165,13 +183,13 @@ export class PlayerAnimationController {
 
         this.wakeSpineRenderer(animationName, loop);
 
-        const render = (this.spine as any)._spineRender;
-        if (!render || typeof render.play !== "function") {
-            return this.playSpineAnimation(animationName, loop);
+        try {
+            (this.spine as any).trackIndex = Math.max(0, Math.floor(trackIndex || 0));
+            (this.spine as any).play(animationName, loop, true);
+            return true;
+        } catch (error) {
+            return false;
         }
-
-        render.play(animationName, loop, trackIndex);
-        return true;
     }
 
     private hasAnimation(animationName: string): boolean {
@@ -208,11 +226,12 @@ export class PlayerAnimationController {
     }
 
     private wakeSpineRenderer(animationName: string, loop: boolean): void {
-        if (!this.spine || this.spine.playState !== 0) {
+        if (!this.spine || this.safeReadSpineNumber("playState") !== 0) {
             return;
         }
 
         try {
+            (this.spine as any).trackIndex = 0;
             (this.spine as any).play(animationName, loop, true);
         } catch (error) {
         }
@@ -227,7 +246,7 @@ export class PlayerAnimationController {
             return;
         }
 
-        const nextAnimation = this.pendingAnimation || this.controller.idleAnimation || "idle";
+        const nextAnimation = this.resolveSingleTrackLocomotionAnimation(this.pendingAnimation || this.controller.idleAnimation || "idle");
         this.desiredAnimation = nextAnimation;
 
         if (this.actionSequenceActive && this.controller.layeredSpineAnimationEnabled) {
@@ -353,8 +372,11 @@ export class PlayerAnimationController {
             if (this.controller.layeredSpineAnimationEnabled) {
                 this.currentUpperAnimation = "";
                 this.syncLayeredLocomotion(fallbackAnimation, true);
-            } else if (this.playSpineAnimation(fallbackAnimation, true)) {
-                this.currentAnimation = fallbackAnimation;
+            } else {
+                const singleTrackFallback = this.resolveSingleTrackLocomotionAnimation(fallbackAnimation);
+                if (this.playSpineAnimation(singleTrackFallback, true)) {
+                    this.currentAnimation = singleTrackFallback;
+                }
             }
         }
 
@@ -479,6 +501,18 @@ export class PlayerAnimationController {
 
     private resolveUpperLocomotionAnimation(lowerAnimation: string): string {
         return this.controller.resolveUpperLocomotionAnimation(lowerAnimation);
+    }
+
+    private resolveSingleTrackLocomotionAnimation(animationName: string): string {
+        if (!this.controller.isEquippedRangedWeapon()) {
+            return animationName;
+        }
+
+        if (animationName === this.controller.walkAnimation || animationName === this.controller.runAnimation) {
+            return animationName;
+        }
+
+        return this.controller.resolveUpperLocomotionAnimation(animationName);
     }
 
 }

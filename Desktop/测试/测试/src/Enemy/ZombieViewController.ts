@@ -53,7 +53,7 @@ export class ZombieViewController {
             return;
         }
 
-        (this.spine as any).play(nextAnimation, true, 0);
+        (this.spine as any).play(nextAnimation, true, true);
         this.currentAnimation = nextAnimation;
     }
 
@@ -64,7 +64,7 @@ export class ZombieViewController {
             return;
         }
 
-        (this.spine as any).play(nextAnimation, false, 0);
+        (this.spine as any).play(nextAnimation, false, true);
         this.currentAnimation = nextAnimation;
     }
 
@@ -82,11 +82,11 @@ export class ZombieViewController {
 
         const animationName = this.controller.deathAnimation || "death";
         try {
-            (this.spine as any).play(animationName, false, 0);
+            (this.spine as any).play(animationName, false, true);
             this.currentAnimation = animationName;
         } catch (error) {
             if (animationName !== "death") {
-                (this.spine as any).play("death", false, 0);
+                (this.spine as any).play("death", false, true);
                 this.currentAnimation = "death";
             } else {
                 throw error;

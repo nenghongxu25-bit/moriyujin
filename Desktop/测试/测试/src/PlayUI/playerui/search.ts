@@ -2,14 +2,16 @@ const { regClass, property } = Laya;
 
 import { PlayerController } from "../../Player/PlayerController";
 import { HarvestableBase } from "../../harvestable/HarvestableBase";
+import { ContainerBase } from "../../container/ContainerBase";
 
-@regClass()
+@regClass("8f0c1a2b-5d7e-4c6f-9a8b-1f2e3d4c5b6a")
 export class search extends Laya.Script {
     @property(Laya.Node)
     public playerNode: Laya.Node | null = null;
 
     private boundOwner: Laya.Node | null = null;
-    private currentTarget: HarvestableBase | null = null;
+    private currentHarvestTarget: HarvestableBase | null = null;
+    private currentContainerTarget: ContainerBase | null = null;
 
     onAwake(): void {
         this.bindClickTarget();
@@ -27,13 +29,15 @@ export class search extends Laya.Script {
 
     onDisable(): void {
         this.unbindClickTarget();
-        this.currentTarget = null;
+        this.currentHarvestTarget = null;
+        this.currentContainerTarget = null;
         this.setVisible(false);
     }
 
     onDestroy(): void {
         this.unbindClickTarget();
-        this.currentTarget = null;
+        this.currentHarvestTarget = null;
+        this.currentContainerTarget = null;
     }
 
     private bindClickTarget(): void {
@@ -74,7 +78,18 @@ export class search extends Laya.Script {
 
     private onSearchClick(): void {
         const controller = this.resolvePlayerController();
-        const target = this.currentTarget || HarvestableBase.getFocusedTarget("search");
+        const container = this.currentContainerTarget || ContainerBase.getFocusedTarget();
+        if (controller && container) {
+            if (!container.open(controller)) {
+                this.refreshTarget();
+                return;
+            }
+
+            this.setVisible(false);
+            return;
+        }
+
+        const target = this.currentHarvestTarget || HarvestableBase.getFocusedTarget("search");
         if (!controller || !target) {
             return;
         }
@@ -88,10 +103,12 @@ export class search extends Laya.Script {
     }
 
     private refreshTarget(): void {
+        const container = ContainerBase.getFocusedTarget();
         const target = HarvestableBase.getFocusedTarget("search");
-        this.currentTarget = target;
+        this.currentContainerTarget = container && container.isAvailable() ? container : null;
+        this.currentHarvestTarget = target;
 
-        if (!target) {
+        if (!this.currentContainerTarget && !this.currentHarvestTarget) {
             this.setVisible(false);
             return;
         }

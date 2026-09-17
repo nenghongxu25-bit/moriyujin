@@ -1,6 +1,6 @@
 const { regClass, property } = Laya;
 
-@regClass()
+@regClass("86ea2fa4-fb96-4e24-a36e-36cc0c2d5253")
 export class Joystick extends Laya.Script {
 
     public static instance: Joystick | null = null;

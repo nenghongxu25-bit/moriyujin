@@ -3,7 +3,7 @@ const { regClass, property } = Laya;
 import { DataManager, type InventoryBucket, type InventorySlotItem } from "../../systems/datamanager";
 import { WarehouseManager } from "../../systems/data/WarehouseManager";
 import { glist } from "../CommonUI/glist";
-import type { ListTemplateData } from "../CommonUI/listTemplate";
+import { listTemplate, type ListTemplateData } from "../CommonUI/listTemplate";
 
 interface SelectedSlotState {
     bucket: InventoryBucket;
@@ -40,6 +40,12 @@ export class WarehousePanel extends Laya.Script {
     @property(Laya.Node)
     public warehousePageButton7: Laya.Node | null = null;
 
+    @property(Laya.Node)
+    public detailNode: Laya.Node | null = null;
+
+    @property(Laya.Node)
+    public detailTextNode: Laya.Node | null = null;
+
     private bagGlist: glist | null = null;
     private warehouseGlist: glist | null = null;
     private warehousePageButtons: Array<Laya.Node | null> = [];
@@ -49,6 +55,8 @@ export class WarehousePanel extends Laya.Script {
 
     onAwake(): void {
         this.bindControllers();
+        this.resolveDetailBindings();
+        this.hideWarehouseDetail();
         this.resetWarehousePageState();
         this.bindPageButtons();
         DataManager.getInstance().registerBagView(this);
@@ -58,6 +66,8 @@ export class WarehousePanel extends Laya.Script {
 
     onEnable(): void {
         this.bindControllers();
+        this.resolveDetailBindings();
+        this.hideWarehouseDetail();
         this.resetWarehousePageState();
         this.bindPageButtons();
         DataManager.getInstance().registerBagView(this);
@@ -70,12 +80,14 @@ export class WarehousePanel extends Laya.Script {
         DataManager.getInstance().unregisterWarehouseView(this);
         this.unbindPageButtons();
         this.clearSelection();
+        this.hideWarehouseDetail();
     }
 
     onDestroy(): void {
         DataManager.getInstance().unregisterBagView(this);
         DataManager.getInstance().unregisterWarehouseView(this);
         this.unbindPageButtons();
+        this.hideWarehouseDetail();
     }
 
     public setItems(items: InventorySlotItem[]): void {
@@ -129,10 +141,12 @@ export class WarehousePanel extends Laya.Script {
     }
 
     private handleBagSlotClick = (item: ListTemplateData | null, listKey: string, slotIndex: number): void => {
+        this.hideWarehouseDetail();
         this.handleSlotClick("active", item, listKey, slotIndex);
     };
 
     private handleWarehouseSlotClick = (item: ListTemplateData | null, listKey: string, slotIndex: number): void => {
+        this.showWarehouseDetail(item);
         this.handleSlotClick("warehouse", item, listKey, slotIndex);
     };
 
@@ -205,6 +219,37 @@ export class WarehousePanel extends Laya.Script {
         }
 
         this.updateWarehousePageButtonState();
+    }
+
+    private showWarehouseDetail(item: ListTemplateData | null): void {
+        this.resolveDetailBindings();
+        if (!item?.itemId) {
+            this.hideWarehouseDetail();
+            return;
+        }
+
+        if (this.detailTextNode && "text" in (this.detailTextNode as any)) {
+            (this.detailTextNode as any).text = listTemplate.formatItemDetailText(item);
+        }
+        if (this.detailTextNode && "visible" in (this.detailTextNode as any)) {
+            (this.detailTextNode as any).visible = true;
+        }
+        if (this.detailNode && "visible" in (this.detailNode as any)) {
+            (this.detailNode as any).visible = true;
+        }
+        if (this.detailNode && "zOrder" in (this.detailNode as any)) {
+            (this.detailNode as any).zOrder = 1000;
+        }
+    }
+
+    private hideWarehouseDetail(): void {
+        this.resolveDetailBindings();
+        if (this.detailNode && "visible" in (this.detailNode as any)) {
+            (this.detailNode as any).visible = false;
+        }
+        if (this.detailTextNode && "visible" in (this.detailTextNode as any)) {
+            (this.detailTextNode as any).visible = false;
+        }
     }
 
     private getSelectedSlotIndex(bucket: InventoryBucket): number {
@@ -315,6 +360,7 @@ export class WarehousePanel extends Laya.Script {
         }
 
         this.currentWarehousePage = nextPage;
+        this.hideWarehouseDetail();
         this.bindWarehouseList();
         this.applySelectionState();
     }
@@ -367,6 +413,18 @@ export class WarehousePanel extends Laya.Script {
         }
     }
 
+    private resolveDetailBindings(): void {
+        const root = this.owner as Laya.Node;
+        if (!this.detailNode) {
+            const warehouseRoot = this.findChildByName(root, "warehouse_list");
+            this.detailNode = this.findDirectChildByName(warehouseRoot, "detail")
+                || this.findChildByName(warehouseRoot, "detail");
+        }
+        if (!this.detailTextNode && this.detailNode) {
+            this.detailTextNode = this.findFirstTextChild(this.detailNode);
+        }
+    }
+
     private resolvePageButtonBindings(): void {
         const root = this.owner as Laya.Node;
         const buttonContainer = this.findChildByName(root, "button");
@@ -399,6 +457,31 @@ export class WarehousePanel extends Laya.Script {
 
         for (let i = 0; i < children.length; i++) {
             const found = this.findChildByName(children[i], name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
+    }
+
+    private findFirstTextChild(root: Laya.Node | null): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        const node = root as any;
+        if ("text" in node) {
+            return root;
+        }
+
+        const children = node.children as Laya.Node[] | undefined;
+        if (!children) {
+            return null;
+        }
+
+        for (let i = 0; i < children.length; i++) {
+            const found = this.findFirstTextChild(children[i]);
             if (found) {
                 return found;
             }

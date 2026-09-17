@@ -989,6 +989,8 @@
           "_$id": "mubhrxi2",
           "_$type": "Sprite",
           "name": "button",
+          "x": 332,
+          "y": -2,
           "width": 100,
           "height": 100,
           "_$child": [
@@ -997,8 +999,8 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite",
               "active": true,
-              "x": 907,
-              "y": 1,
+              "x": 785,
+              "y": 93,
               "visible": true,
               "_$comp": [
                 {
@@ -1020,9 +1022,9 @@
               "_$prefab": "e5f6cdc4-8abc-4212-b51b-3127183b1042",
               "name": "OpenSprite_1",
               "active": true,
-              "x": 938,
-              "y": 93,
-              "visible": false,
+              "x": 775,
+              "y": -2,
+              "visible": true,
               "_$comp": [
                 {
                   "_$override": "2938a217-4272-4f6d-aaf2-984b61320b26",
@@ -1329,6 +1331,24 @@
               "y": 0,
               "visible": false,
               "_$child": [
+                {
+                  "_$override": "57r39bvn",
+                  "scroller": {
+                    "_$type": "Scroller",
+                    "barDisplay": 5
+                  },
+                  "background": {
+                    "_$type": "DrawRoundRectCmd",
+                    "lt": 15,
+                    "rt": 15,
+                    "lb": 15,
+                    "rb": 15,
+                    "lineWidth": 2,
+                    "lineColor": "#000000",
+                    "fillColor": "#8c8514"
+                  },
+                  "width": 111
+                },
                 {
                   "_$override": "joiii0ex",
                   "_$comp": [

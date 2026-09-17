@@ -1,8 +1,59 @@
 import type { PlayerController } from "./PlayerController";
 import { DataManager, type EquipmentSlotType } from "../systems/datamanager";
 
+interface RangedWeaponVisualConfig {
+    src: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    scaleX: number;
+    scaleY: number;
+    rotation?: number;
+}
+
 export class PlayerEquipmentVisualController {
+    private static readonly RANGED_WEAPON_VISUALS: Record<string, RangedWeaponVisualConfig> = {
+        akm: {
+            src: "res://19ba1d62-1ade-4d0a-a31e-5604544de574",
+            x: 59,
+            y: -75,
+            width: 128,
+            height: 85,
+            scaleX: -1.5,
+            scaleY: 1.5,
+        },
+        fal: {
+            src: "res://07be8694-cf42-48e4-a1ab-f0d9b577c9db",
+            x: -138,
+            y: -79,
+            width: 128,
+            height: 85,
+            scaleX: 1.5,
+            scaleY: 1.5,
+        },
+        m16: {
+            src: "res://cbee195e-eed8-464a-8d9e-8d51e0946150",
+            x: 55,
+            y: -82,
+            width: 128,
+            height: 85,
+            scaleX: -1.5,
+            scaleY: 1.5,
+        },
+        geluoke: {
+            src: "res://52b8e2d2-8b2f-4547-98e5-fe2093e0bacb",
+            x: -55,
+            y: -50,
+            width: 128,
+            height: 128,
+            scaleX: 0.5,
+            scaleY: 0.5,
+        },
+    };
+
     private lastWeaponVisualSignature: string = "__init";
+    private lastRangedWeaponImageSignature: string = "__init";
     private equipmentVisualInitAttempts: number = 0;
     private readonly lastEquipmentIconUrls: Record<EquipmentSlotType, string> = {
         insertPlate: "",
@@ -25,6 +76,8 @@ export class PlayerEquipmentVisualController {
     }
 
     public syncWeaponSpineSlot(force: boolean = false): boolean {
+        const isRanged = this.isEquippedRangedWeapon();
+        this.syncRangedWeaponImage(force);
         const activeSlotName = this.resolveActiveWeaponSpineSlotName();
         const meleeSlotName = String(this.controller.weaponMeleeSpineSlotName || "").trim();
         const rangedSlotName = String(this.controller.weaponRangedSpineSlotName || "").trim();
@@ -42,6 +95,25 @@ export class PlayerEquipmentVisualController {
             if (!cleared) {
                 return false;
             }
+        }
+
+        if (isRanged) {
+            const slotName = rangedSlotName || activeSlotName;
+            if (!slotName) {
+                this.lastWeaponVisualSignature = visualSignature;
+                this.lastEquipmentAttachmentNames.weapon = "";
+                this.lastEquipmentIconUrls.weapon = "";
+                return true;
+            }
+
+            if (this.clearSpineSlotAttachment(slotName)) {
+                this.lastWeaponVisualSignature = visualSignature;
+                this.lastEquipmentAttachmentNames.weapon = "";
+                this.lastEquipmentIconUrls.weapon = "";
+                return true;
+            }
+
+            return false;
         }
 
         if (this.syncEquipmentSpineSlot("weapon", activeSlotName, shouldForce)) {
@@ -93,6 +165,7 @@ export class PlayerEquipmentVisualController {
         return {
             lastWeaponVisualSignature: this.lastWeaponVisualSignature,
             equipmentVisualInitAttempts: this.equipmentVisualInitAttempts,
+            lastRangedWeaponImageSignature: this.lastRangedWeaponImageSignature,
             lastEquipmentIconUrls: { ...this.lastEquipmentIconUrls },
             lastEquipmentAttachmentNames: { ...this.lastEquipmentAttachmentNames },
         };
@@ -265,7 +338,202 @@ export class PlayerEquipmentVisualController {
         } catch (error) {
         }
 
+        try {
+            const slot = typeof anySpine.getSlotByName === "function" ? anySpine.getSlotByName(slotName) : null;
+            if (slot && typeof slot.setAttachment === "function") {
+                slot.setAttachment(null);
+                cleared = true;
+            }
+        } catch (error) {
+        }
+
+        try {
+            const skeleton = this.resolveSpineSkeleton(anySpine);
+            const slot = skeleton && typeof skeleton.findSlot === "function" ? skeleton.findSlot(slotName) : null;
+            if (slot && typeof slot.setAttachment === "function") {
+                slot.setAttachment(null);
+                cleared = true;
+            }
+            if (skeleton && typeof skeleton.updateWorldTransform === "function") {
+                const physics = (globalThis as any).spine?.Physics?.update ?? 2;
+                skeleton.updateWorldTransform(physics);
+            }
+        } catch (error) {
+        }
+
+        this.markSpineRenderDirty(anySpine);
+
         return cleared;
+    }
+
+    private syncRangedWeaponImage(force: boolean): void {
+        const root = this.resolveRangedWeaponRootNode();
+        const image = this.resolveRangedWeaponImageNode(root);
+        if (!root && !image) {
+            return;
+        }
+
+        const weapon = DataManager.getInstance().getEquippedItem("weapon");
+        const itemId = String(weapon?.itemId || "");
+        const config = this.isEquippedRangedWeapon()
+            ? PlayerEquipmentVisualController.RANGED_WEAPON_VISUALS[itemId]
+            : null;
+        const signature = config
+            ? `${itemId}|${config.src}|${config.x}|${config.y}|${config.width}|${config.height}|${config.scaleX}|${config.scaleY}|${config.rotation || 0}`
+            : "hidden";
+
+        if (!force && signature === this.lastRangedWeaponImageSignature) {
+            return;
+        }
+
+        this.lastRangedWeaponImageSignature = signature;
+
+        if (root) {
+            this.setNodeVisible(root, !!config);
+        }
+
+        if (!image) {
+            return;
+        }
+
+        this.hideSiblingRangedWeaponImages(root, image);
+        this.setNodeVisible(image, !!config);
+
+        if (!config) {
+            return;
+        }
+
+        const anyImage = image as any;
+        if ("autoSize" in anyImage) {
+            anyImage.autoSize = false;
+        }
+        anyImage.src = config.src;
+        anyImage.x = config.x;
+        anyImage.y = config.y;
+        anyImage.width = config.width;
+        anyImage.height = config.height;
+        anyImage.scaleX = config.scaleX;
+        anyImage.scaleY = config.scaleY;
+        anyImage.rotation = config.rotation || 0;
+    }
+
+    private resolveRangedWeaponRootNode(): Laya.Node | null {
+        if (this.controller.rangedWeaponRootNode && !this.controller.rangedWeaponRootNode.destroyed) {
+            return this.controller.rangedWeaponRootNode;
+        }
+
+        return this.findChildByName(this.controller.owner as Laya.Node | null, "ranged");
+    }
+
+    private resolveRangedWeaponImageNode(root: Laya.Node | null): Laya.Node | null {
+        if (this.controller.rangedWeaponImageNode && !this.controller.rangedWeaponImageNode.destroyed) {
+            return this.controller.rangedWeaponImageNode;
+        }
+
+        if (!root) {
+            return null;
+        }
+
+        const named = this.findChildByName(root, "ranged_weapon_image");
+        if (named) {
+            return named;
+        }
+
+        return this.findFirstGImage(root);
+    }
+
+    private hideSiblingRangedWeaponImages(root: Laya.Node | null, activeImage: Laya.Node): void {
+        if (!root) {
+            return;
+        }
+
+        this.visitNodes(root, (node) => {
+            if (node !== activeImage && this.isGImageNode(node)) {
+                this.setNodeVisible(node, false);
+            }
+        });
+    }
+
+    private findFirstGImage(root: Laya.Node | null): Laya.Node | null {
+        let result: Laya.Node | null = null;
+        this.visitNodes(root, (node) => {
+            if (!result && this.isGImageNode(node)) {
+                result = node;
+            }
+        });
+        return result;
+    }
+
+    private findChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        if (root.name === name) {
+            return root;
+        }
+
+        const childCount = (root as any).numChildren || 0;
+        for (let i = 0; i < childCount; i++) {
+            const found = this.findChildByName(root.getChildAt(i), name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
+    }
+
+    private visitNodes(root: Laya.Node | null, visitor: (node: Laya.Node) => void): void {
+        if (!root) {
+            return;
+        }
+
+        visitor(root);
+        const childCount = (root as any).numChildren || 0;
+        for (let i = 0; i < childCount; i++) {
+            this.visitNodes(root.getChildAt(i), visitor);
+        }
+    }
+
+    private isGImageNode(node: Laya.Node): boolean {
+        return (node as any)?._$type === "GImage"
+            || typeof (node as any)?.src === "string"
+            || (typeof (globalThis as any).Laya?.GImage === "function" && node instanceof (globalThis as any).Laya.GImage);
+    }
+
+    private setNodeVisible(node: Laya.Node, visible: boolean): void {
+        const anyNode = node as any;
+        anyNode.visible = visible;
+        if ("active" in anyNode) {
+            anyNode.active = visible;
+        }
+    }
+
+    private resolveSpineSkeleton(spine: any): any | null {
+        const render = spine?._spineRender;
+        if (!render || typeof render.getSkeleton !== "function") {
+            return null;
+        }
+
+        try {
+            return render.getSkeleton();
+        } catch (error) {
+            return null;
+        }
+    }
+
+    private markSpineRenderDirty(spine: any): void {
+        if (!spine) {
+            return;
+        }
+
+        try {
+            if ("_needUpdate" in spine) {
+                spine._needUpdate = true;
+            }
+        } catch (error) {
+        }
     }
 
     private resolveAssetUrl(path: string): string {

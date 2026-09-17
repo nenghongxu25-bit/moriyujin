@@ -9,7 +9,9 @@
                       "icon":  "atlas/picture/items/foods/eats/bread.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "基础食物"
+                      "description":  "基础食物",
+                      "satiety":  25,
+                      "hydration":  null
                   },
                   {
                       "id":  "can",
@@ -19,7 +21,9 @@
                       "icon":  "atlas/picture/items/foods/eats/can.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "储存食物"
+                      "description":  "储存食物",
+                      "satiety":  35,
+                      "hydration":  5
                   },
                   {
                       "id":  "chocolate",
@@ -29,7 +33,9 @@
                       "icon":  "atlas/picture/items/foods/eats/chocolate.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "甜味零食"
+                      "description":  "甜味零食",
+                      "satiety":  18,
+                      "hydration":  null
                   },
                   {
                       "id":  "cookie",
@@ -39,7 +45,9 @@
                       "icon":  "atlas/picture/items/foods/eats/cookie.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烘焙点心"
+                      "description":  "烘焙点心",
+                      "satiety":  15,
+                      "hydration":  null
                   },
                   {
                       "id":  "fried_chips",
@@ -49,7 +57,9 @@
                       "icon":  "atlas/picture/items/foods/eats/fried_chips.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "酥脆休闲零食"
+                      "description":  "酥脆休闲零食",
+                      "satiety":  22,
+                      "hydration":  null
                   },
                   {
                       "id":  "grilled_corn",
@@ -59,7 +69,9 @@
                       "icon":  "atlas/picture/items/foods/eats/grilled_corn.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤后的玉米"
+                      "description":  "烧烤后的玉米",
+                      "satiety":  20,
+                      "hydration":  5
                   },
                   {
                       "id":  "grilled_fish",
@@ -69,7 +81,9 @@
                       "icon":  "atlas/picture/items/foods/eats/grilled_fish.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤的鱼"
+                      "description":  "烧烤的鱼",
+                      "satiety":  30,
+                      "hydration":  null
                   },
                   {
                       "id":  "grilled_mushroom",
@@ -79,7 +93,9 @@
                       "icon":  "atlas/picture/items/foods/eats/grilled_mushroom.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤的蘑菇"
+                      "description":  "烧烤的蘑菇",
+                      "satiety":  18,
+                      "hydration":  5
                   },
                   {
                       "id":  "grilled_potato",
@@ -89,7 +105,9 @@
                       "icon":  "atlas/picture/items/foods/eats/grilled_potato.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤的土豆"
+                      "description":  "烧烤的土豆",
+                      "satiety":  25,
+                      "hydration":  null
                   },
                   {
                       "id":  "mushroom_soup",
@@ -99,7 +117,9 @@
                       "icon":  "atlas/picture/items/foods/eats/mushroom_soup.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "蘑菇汤"
+                      "description":  "蘑菇汤",
+                      "satiety":  28,
+                      "hydration":  25
                   },
                   {
                       "id":  "rice",
@@ -109,7 +129,9 @@
                       "icon":  "atlas/picture/items/foods/eats/rice.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "主食"
+                      "description":  "主食",
+                      "satiety":  30,
+                      "hydration":  5
                   },
                   {
                       "id":  "roast",
@@ -119,7 +141,9 @@
                       "icon":  "atlas/picture/items/foods/eats/roast.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "烧烤能量食物"
+                      "description":  "烧烤能量食物",
+                      "satiety":  40,
+                      "hydration":  null
                   },
                   {
                       "id":  "soda",
@@ -129,7 +153,9 @@
                       "icon":  "atlas/picture/items/foods/drinks/soda.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "气泡饮料"
+                      "description":  "气泡饮料",
+                      "satiety":  null,
+                      "hydration":  25
                   },
                   {
                       "id":  "juice",
@@ -139,7 +165,9 @@
                       "icon":  "atlas/picture/items/foods/drinks/juice.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "水果饮料"
+                      "description":  "水果饮料",
+                      "satiety":  8,
+                      "hydration":  35
                   },
                   {
                       "id":  "beer",
@@ -149,7 +177,9 @@
                       "icon":  "atlas/picture/items/foods/drinks/beer.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "酒类饮料"
+                      "description":  "酒类饮料",
+                      "satiety":  5,
+                      "hydration":  20
                   },
                   {
                       "id":  "water",
@@ -159,7 +189,9 @@
                       "icon":  "atlas/picture/items/foods/drinks/water.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "纯净饮用水"
+                      "description":  "纯净饮用水",
+                      "satiety":  null,
+                      "hydration":  45
                   },
                   {
                       "id":  "vtamin",
@@ -169,7 +201,33 @@
                       "icon":  "atlas/picture/items/foods/drinks/vtamin.png",
                       "stackMax":  20,
                       "consumable":  false,
-                      "description":  "营养补充品"
+                      "description":  "营养补充品",
+                      "satiety":  null,
+                      "hydration":  5
+                  },
+                  {
+                      "id":  "hebaodan",
+                      "displayName":  "荷包蛋",
+                      "nameZh":  "荷包蛋",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/foods/eats/hebaodan.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "煎熟的鸡蛋",
+                      "satiety":  20,
+                      "hydration":  null
+                  },
+                  {
+                      "id":  "fengmi",
+                      "displayName":  "蜂蜜",
+                      "nameZh":  "蜂蜜",
+                      "subCategory":  "foods",
+                      "icon":  "atlas/picture/items/materials/food_materials/hua.png",
+                      "stackMax":  20,
+                      "consumable":  false,
+                      "description":  "甜味食物",
+                      "satiety":  10,
+                      "hydration":  5
                   }
               ]
 }

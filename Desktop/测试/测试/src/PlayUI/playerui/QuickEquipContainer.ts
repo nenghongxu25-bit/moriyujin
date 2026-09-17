@@ -4,7 +4,7 @@ import { DataManager, type InventorySlotItem } from "../../systems/datamanager";
 import { PlayerController } from "../../Player/PlayerController";
 import { listTemplate } from "../CommonUI/listTemplate";
 
-@regClass()
+@regClass("c50e856c-df34-4d80-9452-b4fbbf5a3425")
 export class QuickEquipContainer extends Laya.Script {
     @property(Laya.Node)
     public quickSlot1: Laya.Node | null = null;
@@ -31,15 +31,19 @@ export class QuickEquipContainer extends Laya.Script {
 
     onAwake(): void {
         this.resolveQuickSlotsByName();
+        this.initializeQuickSlotIconSizes();
         this.bindQuickSlotClicks();
         DataManager.getInstance().registerQuickSlotView(this);
+        Laya.timer.callLater(this, this.renderQuickSlots);
     }
 
     onEnable(): void {
         this.resolveQuickSlotsByName();
+        this.initializeQuickSlotIconSizes();
         this.bindQuickSlotClicks();
         DataManager.getInstance().registerQuickSlotView(this);
         this.renderQuickSlots();
+        Laya.timer.callLater(this, this.renderQuickSlots);
     }
 
     onDisable(): void {
@@ -95,6 +99,7 @@ export class QuickEquipContainer extends Laya.Script {
                 count: item.count,
                 icon: item.icon,
             } : null);
+            this.applySlotIconSize(node);
         }
     }
 
@@ -127,7 +132,7 @@ export class QuickEquipContainer extends Laya.Script {
             PlayerController.activeInstance?.setHp(stats.currentHp, stats.maxHp);
         }
 
-        if (result.changedWeapon) {
+        if (result.switchedWeapon) {
             PlayerController.activeInstance?.refreshEquipmentFromData();
             Laya.timer.callLater(this, () => {
                 PlayerController.activeInstance?.refreshEquipmentFromData();
@@ -178,5 +183,71 @@ export class QuickEquipContainer extends Laya.Script {
         if ("active" in target) {
             target.active = visible;
         }
+    }
+
+    private initializeQuickSlotIconSizes(): void {
+        const slots = this.getQuickSlots();
+        for (let i = 0; i < slots.length; i++) {
+            this.applySlotIconSize(slots[i]);
+        }
+
+        Laya.timer.callLater(this, () => {
+            this.resolveQuickSlotsByName();
+            const delayedSlots = this.getQuickSlots();
+            for (let i = 0; i < delayedSlots.length; i++) {
+                this.applySlotIconSize(delayedSlots[i]);
+            }
+        });
+    }
+
+    private applySlotIconSize(slotNode: Laya.Node | null): void {
+        const icon = slotNode ? this.findChildByName(slotNode, "icon") as any : null;
+        if (!icon) {
+            return;
+        }
+
+        if ("width" in icon) {
+            icon.width = 55;
+        }
+
+        if ("height" in icon) {
+            icon.height = 55;
+        }
+
+        if ("autoSize" in icon) {
+            icon.autoSize = false;
+        }
+
+        if ("scaleX" in icon) {
+            icon.scaleX = 1;
+        }
+
+        if ("scaleY" in icon) {
+            icon.scaleY = 1;
+        }
+    }
+
+    private findChildByName(root: Laya.Node | null, name: string): Laya.Node | null {
+        if (!root) {
+            return null;
+        }
+
+        if (String((root as any).name || "") === name) {
+            return root;
+        }
+
+        const children = (root as any).children as Laya.Node[] | undefined;
+        if (!children) {
+            return null;
+        }
+
+        for (let i = 0; i < children.length; i++) {
+            const found = this.findChildByName(children[i], name);
+            if (found) {
+                return found;
+            }
+        }
+
+        return null;
     }
 }

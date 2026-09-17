@@ -7,9 +7,13 @@ export interface ItemMeta {
     icon?: string;
     stackMax?: number;
     consumable?: boolean;
+    satiety?: number;
+    hydration?: number;
     description?: string;
     attackPower?: number;
     attackSpeed?: number;
+    bulletSpeed?: number;
+    defense?: number;
     durability?: number;
     useEffect?: ItemUseEffect;
 }
@@ -24,9 +28,13 @@ export interface ItemTableFile {
         icon?: string;
         stackMax?: number;
         consumable?: boolean;
+        satiety?: number;
+        hydration?: number;
         description?: string;
         attackPower?: number;
         attackSpeed?: number;
+        bulletSpeed?: number;
+        defense?: number;
         durability?: number;
         useEffect?: ItemUseEffect;
     }>;
@@ -63,9 +71,13 @@ export class ItemDataManager {
                 icon: this.normalizeIconPath(item.icon),
                 stackMax: this.normalizeOptionalNumber(item.stackMax),
                 consumable: typeof item.consumable === "boolean" ? item.consumable : undefined,
+                satiety: this.normalizeOptionalNumber(item.satiety),
+                hydration: this.normalizeOptionalNumber(item.hydration),
                 description: item.description,
                 attackPower: this.normalizeOptionalNumber(item.attackPower),
                 attackSpeed: this.normalizeOptionalNumber(item.attackSpeed),
+                bulletSpeed: this.normalizeOptionalNumber(item.bulletSpeed),
+                defense: this.normalizeOptionalNumber(item.defense),
                 durability: this.normalizeOptionalNumber(item.durability),
                 useEffect: this.normalizeUseEffect(item.useEffect),
             });
@@ -87,9 +99,9 @@ export class ItemDataManager {
             copper: "atlas/picture/items/materials/basic_materials/copper.png",
             liuhuang: "atlas/picture/items/materials/basic_materials/liuhuang.png",
             xiyoujinshu: "atlas/picture/items/materials/basic_materials/xiyoujinshu.png",
+            shitou: "atlas/picture/items/materials/basic_materials/shitou.png",
             common_material_02: "atlas/picture/items/materials/basic_materials/shitou.png",
             food_material_01: "atlas/picture/items/materials/food_materials/fruit.png",
-            food_material_04: "atlas/picture/items/materials/basic_materials/chenshuimu.png",
             base_material_10: "atlas/picture/items/materials/basic_materials/chenshuimu.png",
             mutant_blood_1: "atlas/picture/items/misc/flood_1.png",
             mutant_blood_2: "atlas/picture/items/misc/flood_2.png",

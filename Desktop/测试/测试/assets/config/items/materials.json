@@ -66,7 +66,7 @@
             "displayName": "花",
             "nameZh": "花",
             "subCategory": "basic_materials",
-            "icon": "atlas/picture/items/materials/basic_materials/hua.png",
+            "icon": "atlas/picture/items/materials/food_materials/hua.png",
             "stackMax": 20,
             "consumable": false,
             "description": "植物材料"
@@ -136,7 +136,7 @@
             "displayName": "蔬菜",
             "nameZh": "蔬菜",
             "subCategory": "basic_materials",
-            "icon": "atlas/picture/items/materials/basic_materials/shucai.png",
+            "icon": "atlas/picture/items/materials/food_materials/fruit.png",
             "stackMax": 20,
             "consumable": false,
             "description": "植物食材"
@@ -183,13 +183,13 @@
         },
         {
             "id": "xiaoshi",
-            "displayName": "小石头",
-            "nameZh": "小石头",
+            "displayName": "硝石",
+            "nameZh": "硝石",
             "subCategory": "basic_materials",
             "icon": "atlas/picture/items/materials/basic_materials/xiaoshi.png",
             "stackMax": 20,
             "consumable": false,
-            "description": "基础石材"
+            "description": "基础化工材料"
         },
         {
             "id": "xiaoshuzhi",
@@ -352,6 +352,56 @@
             "description": "动物皮革材料"
         },
         {
+            "id": "shengzi",
+            "displayName": "绳子",
+            "nameZh": "绳子",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/shengzi.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "绳子材料"
+        },
+        {
+            "id": "shikuai",
+            "displayName": "石块",
+            "nameZh": "石块",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/shikuai.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "加工石块材料"
+        },
+        {
+            "id": "muban",
+            "displayName": "木板",
+            "nameZh": "木板",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/muban.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "加工木板材料"
+        },
+        {
+            "id": "tieding",
+            "displayName": "铁锭",
+            "nameZh": "铁锭",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/tieding.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "加工铁锭材料"
+        },
+        {
+            "id": "tongding",
+            "displayName": "铜锭",
+            "nameZh": "铜锭",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/tongding.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "加工铜锭材料"
+        },
+        {
             "id": "Ti",
             "displayName": "钛",
             "nameZh": "钛",
@@ -392,6 +442,16 @@
             "description": "基础矿物"
         },
         {
+            "id": "shitou",
+            "displayName": "石头",
+            "nameZh": "石头",
+            "subCategory": "basic_materials",
+            "icon": "atlas/picture/items/materials/basic_materials/shitou.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "基础矿物"
+        },
+        {
             "id": "food_material_01",
             "displayName": "浆果",
             "nameZh": "浆果",
@@ -402,16 +462,6 @@
             "description": "采集植物"
         },
         {
-            "id": "food_material_04",
-            "displayName": "泥土",
-            "nameZh": "泥土",
-            "subCategory": "food_materials",
-            "icon": "atlas/picture/items/materials/basic_materials/chenshuimu.png",
-            "stackMax": 20,
-            "consumable": false,
-            "description": "采集土壤"
-        },
-        {
             "id": "base_material_10",
             "displayName": "矿渣",
             "nameZh": "矿渣",
@@ -420,6 +470,66 @@
             "stackMax": 20,
             "consumable": false,
             "description": "基础附属物"
+        },
+        {
+            "id": "gaofenzicailiao",
+            "displayName": "高分子材料",
+            "nameZh": "高分子材料",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/gaofenzicailiao.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "高分子材料"
+        },
+        {
+            "id": "tezhonghejin",
+            "displayName": "特种合金",
+            "nameZh": "特种合金",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/tezhonghejin.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "特种合金材料"
+        },
+        {
+            "id": "taihejin",
+            "displayName": "钛合金",
+            "nameZh": "钛合金",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/Ti.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "钛合金材料"
+        },
+        {
+            "id": "tezhonggang",
+            "displayName": "特种钢",
+            "nameZh": "特种钢",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/Wuding.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "特种钢材料"
+        },
+        {
+            "id": "junyongcaoci",
+            "displayName": "军用陶瓷",
+            "nameZh": "军用陶瓷",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/junyongcaoci.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "军用陶瓷材料"
+        },
+        {
+            "id": "huoyao",
+            "displayName": "火药",
+            "nameZh": "火药",
+            "subCategory": "advanced_materials",
+            "icon": "atlas/picture/items/materials/advanced_materials/huoyao.png",
+            "stackMax": 20,
+            "consumable": false,
+            "description": "火药材料"
         }
     ]
 }

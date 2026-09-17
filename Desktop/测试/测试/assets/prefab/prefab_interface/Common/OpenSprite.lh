@@ -31,7 +31,7 @@
       "name": "img",
       "width": 200,
       "height": 100,
-      "src": "res://590292af-12f7-4f03-a21b-0655c9c2353d",
+      "src": "atlas/picture/module/button.png",
       "autoSize": false
     },
     {

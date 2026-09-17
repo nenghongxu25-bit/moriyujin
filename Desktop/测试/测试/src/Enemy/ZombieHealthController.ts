@@ -1,6 +1,7 @@
 import type { ZombieController } from "./ZombieController";
 import { PlayerController } from "../Player/PlayerController";
 import { DataManager } from "../systems/datamanager";
+import { RunSessionManager } from "../systems/run/RunSessionManager";
 
 export class ZombieHealthController {
     private dropGranted: boolean = false;
@@ -11,6 +12,7 @@ export class ZombieHealthController {
     public setHp(currentHp: number, maxHp: number = this.controller.maxHp): void {
         this.controller.maxHp = Math.max(1, Math.floor(maxHp));
         this.controller.currentHp = Math.max(0, Math.min(Math.floor(currentHp), this.controller.maxHp));
+        this.setHpBarVisible(this.controller.currentHp > 0);
         this.refreshHpBar();
 
         if (this.controller.currentHp <= 0) {
@@ -55,6 +57,8 @@ export class ZombieHealthController {
         }
 
         this.controller.setDeadState(true);
+        RunSessionManager.getInstance().recordEnemyKill();
+        this.setHpBarVisible(false);
         this.grantDropsToPlayer();
         DataManager.getInstance().grantEnemyDefeatExperience();
         PlayerController.activeInstance?.syncHpFromData();
@@ -116,6 +120,18 @@ export class ZombieHealthController {
             if (nextWidth > 0) {
                 fill.graphics.drawRect(0, 0, nextWidth, height, color);
             }
+        }
+    }
+
+    private setHpBarVisible(visible: boolean): void {
+        const hpBarNode = (this.controller.hpBarNode || this.controller.hpFillNode?.parent || null) as any;
+        if (!hpBarNode) {
+            return;
+        }
+
+        hpBarNode.visible = visible;
+        if ("active" in hpBarNode) {
+            hpBarNode.active = visible;
         }
     }
 

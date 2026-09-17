@@ -1,0 +1,83 @@
+{
+  "_$ver": 1,
+  "_$id": "absqvzok",
+  "_$type": "Sprite",
+  "name": "Sprite",
+  "width": 400,
+  "height": 400,
+  "_$comp": [
+    {
+      "_$type": "TileMapLayer",
+      "layer": 0,
+      "_$step": 4,
+      "tileSet": {
+        "_$uuid": "59d9f5e9-bee5-4d9d-b86f-6ac76a718531",
+        "_$type": "TileSet"
+      },
+      "chunkDatas": {
+        "0": {
+          "0": {
+            "_$type": "TileMapChunkData",
+            "chunkX": 0,
+            "chunkY": 0,
+            "compressData": {
+              "_$type": "Record"
+            },
+            "transFlags": {
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record",
+          "-1": {
+            "_$type": "TileMapChunkData",
+            "chunkX": -1,
+            "chunkY": 0,
+            "compressData": {
+              "_$type": "Record"
+            },
+            "transFlags": {
+              "_$type": "Record"
+            }
+          }
+        },
+        "_$type": "Record",
+        "-1": {
+          "0": {
+            "_$type": "TileMapChunkData",
+            "chunkX": 0,
+            "chunkY": -1,
+            "compressData": {
+              "_$type": "Record"
+            },
+            "transFlags": {
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record",
+          "-1": {
+            "_$type": "TileMapChunkData",
+            "chunkX": -1,
+            "chunkY": -1,
+            "compressData": {
+              "_$type": "Record"
+            },
+            "transFlags": {
+              "_$type": "Record"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "5gy8yaxw",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "x": 512,
+      "y": 330,
+      "width": 71,
+      "height": 182
+    }
+  ]
+}

@@ -14,6 +14,9 @@ export class CraftingRecipeList extends Laya.Script {
     public onRecipeClick: CraftingRecipeClickHandler | null = null;
 
     private recipes: CraftingRecipeDefinition[] = [];
+    private selectedRecipeId: string = "";
+    private shouldScrollTop: boolean = false;
+    private virtualListEnabled: boolean = false;
 
     onAwake(): void {
         this.resolveBindings();
@@ -22,6 +25,8 @@ export class CraftingRecipeList extends Laya.Script {
     public setRecipes(recipes: CraftingRecipeDefinition[]): void {
         this.resolveBindings();
         this.recipes = Array.isArray(recipes) ? recipes.map((recipe) => ({ ...recipe })) : [];
+        this.selectedRecipeId = this.recipes.length > 0 ? this.recipes[0].id : "";
+        this.shouldScrollTop = true;
         this.refresh();
     }
 
@@ -31,11 +36,11 @@ export class CraftingRecipeList extends Laya.Script {
             return;
         }
 
-        if ("itemRenderer" in list) {
-            list.itemRenderer = (index: number, item: Laya.Node) => {
-                this.renderItem(index, item);
-            };
-        }
+        list.itemRenderer = (index: number, item: Laya.Node) => {
+            this.renderItem(index, item);
+        };
+
+        this.ensureVirtualList(list);
 
         if ("numItems" in list) {
             list.numItems = this.recipes.length;
@@ -45,21 +50,20 @@ export class CraftingRecipeList extends Laya.Script {
             list.refresh(true);
         }
 
-        Laya.timer.callLater(this, this.renderVisibleItems);
+        if (this.shouldScrollTop && typeof list.scrollTop === "function") {
+            list.scrollTop(false);
+        }
+        this.shouldScrollTop = false;
     }
 
-    private renderVisibleItems(): void {
-        const list = this.getListRoot() as any;
-        const children = list && Array.isArray(list.children) ? (list.children as Laya.Node[]) : [];
-        let dataIndex = 0;
-        for (let i = 0; i < children.length; i++) {
-            const node = children[i];
-            if (!node || node === this.getTemplateNode()) {
-                continue;
-            }
+    private ensureVirtualList(list: any): void {
+        if (this.virtualListEnabled) {
+            return;
+        }
 
-            this.renderItem(dataIndex, node);
-            dataIndex++;
+        if (list && typeof list.setVirtual === "function") {
+            list.setVirtual();
+            this.virtualListEnabled = true;
         }
     }
 
@@ -76,11 +80,22 @@ export class CraftingRecipeList extends Laya.Script {
             item = node.addComponent(CraftingRecipeItem);
         }
 
-        item.bind(recipe, (recipeId) => {
-            if (this.onRecipeClick) {
-                this.onRecipeClick(recipeId);
-            }
-        });
+        item.bind(recipe, (recipeId: string) => {
+            this.selectRecipe(recipeId);
+        }, recipe.id === this.selectedRecipeId);
+    }
+
+    private selectRecipe(recipeId: string): void {
+        if (!recipeId || recipeId === this.selectedRecipeId) {
+            return;
+        }
+
+        this.selectedRecipeId = recipeId;
+        this.refresh();
+
+        if (this.onRecipeClick) {
+            this.onRecipeClick(recipeId);
+        }
     }
 
     private resolveBindings(): void {

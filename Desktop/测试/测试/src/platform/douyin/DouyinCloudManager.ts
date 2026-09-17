@@ -103,20 +103,7 @@ export class DouyinCloudManager {
             throw new Error("Douyin cloud init failed.");
         }
 
-        if (
-            !this.cloud ||
-            (
-                typeof this.cloud.callFunction !== "function" &&
-                typeof this.cloud.callContainer !== "function"
-            )
-        ) {
-            throw new Error("Douyin cloud call API is unavailable.");
-        }
-
-        if (typeof this.cloud.callFunction !== "function") {
-            console.log("[DouyinCloud] callFunction unavailable, fallback to callContainer.");
-            return this.callCloudContainer<T>(body || {});
-        }
+        console.log("[DouyinCloud] call capabilities:", this.getDebugConfig());
 
         const loginResult = await this.loginDouyin();
         const requestBody = {
@@ -127,7 +114,16 @@ export class DouyinCloudManager {
             ).trim(),
         };
 
-        return this.callCloudFunction<T>(requestBody);
+        if (typeof this.cloud.callFunction === "function") {
+            return this.callCloudFunction<T>(requestBody);
+        }
+
+        if (typeof this.cloud.callContainer === "function") {
+            console.log("[DouyinCloud] callFunction unavailable, use callContainer:", this.getDebugConfig());
+            return this.callCloudContainer<T>(requestBody);
+        }
+
+        throw new Error("Douyin cloud call API is unavailable.");
     }
 
     public static init(): boolean {
@@ -148,7 +144,9 @@ export class DouyinCloudManager {
         try {
             this.cloud = tt.createCloud({
                 envID: this.ENV_ID,
+                envId: this.ENV_ID,
                 serviceID: this.SERVICE_ID,
+                serviceId: this.SERVICE_ID,
             });
 
             if (!this.cloud) {
@@ -156,7 +154,7 @@ export class DouyinCloudManager {
                 return false;
             }
 
-            console.log("[DouyinCloud] cloud initialized.");
+            console.log("[DouyinCloud] cloud initialized:", this.getDebugConfig());
             return true;
         } catch (error) {
             console.error("[DouyinCloud] cloud init error:", error);
@@ -167,6 +165,19 @@ export class DouyinCloudManager {
 
     public static getCloud(): any {
         return this.cloud;
+    }
+
+    public static getDebugConfig(): Record<string, unknown> {
+        return {
+            envID: this.ENV_ID,
+            serviceID: this.SERVICE_ID,
+            functionName: this.FUNCTION_NAME,
+            hasTT: typeof tt !== "undefined",
+            hasCreateCloud: typeof tt !== "undefined" && typeof tt.createCloud === "function",
+            hasCloud: !!this.cloud,
+            hasCallFunction: !!this.cloud && typeof this.cloud.callFunction === "function",
+            hasCallContainer: !!this.cloud && typeof this.cloud.callContainer === "function",
+        };
     }
 
     public static isInitialized(): boolean {
@@ -222,12 +233,18 @@ export class DouyinCloudManager {
                         this.resolveCloudResponse<T>(res, resolve, reject);
                     },
                     fail: (err: any) => {
-                        console.error("[DouyinCloud] callFunction failed:", err);
+                        console.error("[DouyinCloud] callFunction failed:", {
+                            config: this.getDebugConfig(),
+                            error: err,
+                        });
                         reject(err);
                     },
                 });
             } catch (error) {
-                console.error("[DouyinCloud] callFunction error:", error);
+                console.error("[DouyinCloud] callFunction error:", {
+                    config: this.getDebugConfig(),
+                    error,
+                });
                 reject(error);
             }
         });
@@ -235,32 +252,37 @@ export class DouyinCloudManager {
 
     private static callCloudContainer<T>(body: Record<string, any>): Promise<T> {
         return new Promise((resolve, reject) => {
+            const requestBody = JSON.stringify(body || {});
+
             try {
                 this.cloud.callContainer({
+                    serviceID: this.SERVICE_ID,
+                    serviceId: this.SERVICE_ID,
                     path: "/index",
                     init: {
                         method: "POST",
                         header: {
                             "content-type": "application/json",
                         },
-                        body: JSON.stringify(body || {}),
+                        body: requestBody,
                     },
                     success: (res: any) => {
                         console.log("[DouyinCloud] callContainer success:", res);
                         this.resolveCloudResponse<T>(res, resolve, reject);
                     },
                     fail: (err: any) => {
-                        if (this.isCloudUserAuthError(err)) {
-                            console.warn("[DouyinCloud] user auth unavailable:", err);
-                        } else {
-                            console.error("[DouyinCloud] callContainer failed:", err);
-                        }
-
+                        console.error("[DouyinCloud] callContainer failed:", {
+                            config: this.getDebugConfig(),
+                            error: err,
+                        });
                         reject(err);
                     },
                 });
             } catch (error) {
-                console.error("[DouyinCloud] callContainer error:", error);
+                console.error("[DouyinCloud] callContainer error:", {
+                    config: this.getDebugConfig(),
+                    error,
+                });
                 reject(error);
             }
         });

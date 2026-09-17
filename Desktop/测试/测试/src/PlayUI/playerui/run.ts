@@ -2,7 +2,7 @@ const { regClass, property } = Laya;
 
 import { PlayerController } from "../../Player/PlayerController";
 
-@regClass()
+@regClass("3e46d646-50d0-4380-9afa-0544eff22c4e")
 export class run extends Laya.Script {
     @property(Laya.Node)
     public playerNode: Laya.Node | null = null;
@@ -19,6 +19,10 @@ export class run extends Laya.Script {
 
     onEnable(): void {
         this.bindClickTarget();
+        this.syncVisualState();
+    }
+
+    onUpdate(): void {
         this.syncVisualState();
     }
 
@@ -69,6 +73,11 @@ export class run extends Laya.Script {
     private onRunClick(): void {
         const controller = this.resolvePlayerController();
         if (!controller) {
+            return;
+        }
+
+        if (!controller.isRunning && !controller.canStartRunning()) {
+            this.syncVisualState();
             return;
         }
 

@@ -140,6 +140,10 @@ export class glist extends Laya.Script {
             return;
         }
 
+        if (slot.consumeSuppressNextClick()) {
+            return;
+        }
+
         const data = slot.getBoundData();
         if (this.onSlotClick) {
             this.onSlotClick(data, this.listKey, slotIndex);

@@ -23,6 +23,10 @@ interface SelectedQuickSlotState {
     slotIndex: number;
 }
 
+interface SelectedContainerSlotState {
+    slotIndex: number;
+}
+
 @regClass()
 export class BagPanel extends Laya.Script {
     @property(Laya.Node)
@@ -64,6 +68,18 @@ export class BagPanel extends Laya.Script {
     @property(Laya.Text)
     public experienceTextNode: Laya.Text | null = null;
 
+    @property(Laya.Text)
+    public satietyTextNode: Laya.Text | null = null;
+
+    @property(Laya.Text)
+    public hydrationTextNode: Laya.Text | null = null;
+
+    @property(Laya.Text)
+    public attackTextNode: Laya.Text | null = null;
+
+    @property(Laya.Text)
+    public defendTextNode: Laya.Text | null = null;
+
     @property(Laya.Node)
     public stateListNode: Laya.Node | null = null;
 
@@ -96,6 +112,7 @@ export class BagPanel extends Laya.Script {
     private containerGlist: glist | null = null;
     private selectedBagSlot: SelectedBagSlotState | null = null;
     private selectedQuickSlot: SelectedQuickSlotState | null = null;
+    private selectedContainerSlot: SelectedContainerSlotState | null = null;
     private previewSpineNode: Laya.Node | null = null;
     private previewSpine: BagPreviewSpineController = new BagPreviewSpineController(this);
     private readonly buffStates: BagBuffStateController = new BagBuffStateController(
@@ -105,6 +122,7 @@ export class BagPanel extends Laya.Script {
     );
     private quickEquipInitialVisible: boolean | null = null;
     private quickSlotItems: InventorySlotItem[] = [];
+    private containerItems: InventorySlotItem[] = [];
     private readonly popup: BagPopupController = new BagPopupController(this);
 
     onAwake(): void {
@@ -177,9 +195,19 @@ export class BagPanel extends Laya.Script {
     public openContainerSearch(): void {
         this.currentState = 1;
         this.syncVisibleState();
+        this.bindContainerList();
+    }
+
+    public openContainerSearchWithItems(items: InventorySlotItem[]): void {
+        this.containerItems = Array.isArray(items) ? items.map((item) => (item ? { ...item } : null)) : [];
+        this.selectedContainerSlot = null;
+        this.openContainerSearch();
     }
 
     public closePanel(): void {
+        this.currentState = 0;
+        this.containerItems = [];
+        this.selectedContainerSlot = null;
         this.setNodeVisible(this.personPageNode, false);
         this.setNodeVisible(this.quickEquipNode, false);
         this.setNodeVisible(this.containerNode, false);
@@ -209,6 +237,7 @@ export class BagPanel extends Laya.Script {
         this.syncVisibleState();
         const snapshot = DataManager.getInstance().getInventorySnapshot();
         this.bindBagList(snapshot);
+        this.bindContainerList();
         this.refreshEquipSlots();
         this.refreshPlayerStats();
         this.refreshBuffStates();
@@ -221,8 +250,8 @@ export class BagPanel extends Laya.Script {
 
     public refreshPlayerStats(): void {
         this.resolvePlayerStatsNodes();
-        const stats = DataManager.getInstance().getPlayerStats();
-
+        const dataManager = DataManager.getInstance();
+        const stats = dataManager.getPlayerStats();
         if (this.gradeNode) {
             this.gradeNode.text = String(stats.level);
         }
@@ -234,6 +263,24 @@ export class BagPanel extends Laya.Script {
         if (this.experienceTextNode) {
             this.experienceTextNode.text = `${stats.experience}/${stats.nextLevelExperience}`;
         }
+
+        if (this.satietyTextNode) {
+            this.satietyTextNode.text = `${this.formatStatValue(stats.currentSatiety)}/${this.formatStatValue(stats.maxSatiety || 100)}`;
+        }
+
+        if (this.hydrationTextNode) {
+            this.hydrationTextNode.text = `${this.formatStatValue(stats.currentHydration)}/${this.formatStatValue(stats.maxHydration || 100)}`;
+        }
+
+        if (this.attackTextNode) {
+            const attackPower = PlayerController.activeInstance?.attackPower ?? (10 + dataManager.getEquipmentAttackBonus());
+            this.attackTextNode.text = this.formatStatValue(attackPower);
+        }
+
+        if (this.defendTextNode) {
+            this.defendTextNode.text = this.formatStatValue(dataManager.getEquipmentDefenseBonus());
+        }
+
     }
 
     private bindControllers(): void {
@@ -284,12 +331,71 @@ export class BagPanel extends Laya.Script {
         this.bagGlist.setSelectedSlotIndex(this.selectedBagSlot ? this.selectedBagSlot.slotIndex : -1);
     }
 
+    private bindContainerList(): void {
+        if (!this.containerGlist) {
+            return;
+        }
+
+        this.containerGlist.listKey = "container";
+        this.containerGlist.onSlotClick = this.handleContainerSlotClick;
+        this.containerGlist.setSlotCount(Math.max(9, this.containerItems.length));
+        this.containerGlist.setItems(this.toListData(this.containerItems));
+        this.containerGlist.setSelectedSlotIndex(this.selectedContainerSlot ? this.selectedContainerSlot.slotIndex : -1);
+    }
+
+    private handleContainerSlotClick = (item: ListTemplateData | null, listKey: string, slotIndex: number): void => {
+        const normalizedSlotIndex = Number.isFinite(slotIndex) ? Math.floor(slotIndex) : -1;
+        if (normalizedSlotIndex < 0 || !item || !item.itemId) {
+            this.clearContainerSelection();
+            return;
+        }
+
+        const sourceItem = this.containerItems[normalizedSlotIndex] || null;
+        if (!sourceItem || !sourceItem.itemId) {
+            this.clearContainerSelection();
+            return;
+        }
+
+        if (this.selectedContainerSlot && this.selectedContainerSlot.slotIndex === normalizedSlotIndex) {
+            this.clearContainerSelection();
+            return;
+        }
+
+        this.hidePopupList();
+        this.clearBagSelection();
+        this.clearQuickSelection();
+        this.selectedContainerSlot = { slotIndex: normalizedSlotIndex };
+        this.bindContainerList();
+    };
+
     private handleBagSlotClick = (item: ListTemplateData | null, listKey: string, slotIndex: number): void => {
         const normalizedSlotIndex = Number.isFinite(slotIndex) ? Math.floor(slotIndex) : -1;
         if (normalizedSlotIndex < 0) {
             this.hidePopupList();
             this.clearQuickSelection();
             this.clearBagSelection();
+            this.clearContainerSelection();
+            return;
+        }
+
+        if (this.selectedContainerSlot) {
+            const sourceSlotIndex = this.selectedContainerSlot.slotIndex;
+            const sourceItem = this.containerItems[sourceSlotIndex] || null;
+            const moved = DataManager.getInstance().transferLooseItemToActive(sourceItem, normalizedSlotIndex);
+
+            this.hidePopupList();
+            this.clearQuickSelection();
+            this.clearBagSelection();
+            this.clearContainerSelection();
+
+            if (moved) {
+                this.containerItems[sourceSlotIndex] = null;
+                this.refresh();
+                return;
+            }
+
+            PlayerController.activeInstance?.showState("背包空间不足");
+            this.refresh();
             return;
         }
 
@@ -337,6 +443,7 @@ export class BagPanel extends Laya.Script {
 
     private setBagSelection(item: ListTemplateData, slotIndex: number): void {
         this.clearQuickSelection();
+        this.clearContainerSelection();
         this.selectedBagSlot = { item, slotIndex };
         if (this.bagGlist) {
             this.bagGlist.setSelectedSlotIndex(slotIndex);
@@ -439,6 +546,7 @@ export class BagPanel extends Laya.Script {
 
     private setQuickSelection(slotIndex: number): void {
         this.clearBagSelection();
+        this.clearContainerSelection();
         this.selectedQuickSlot = { slotIndex };
         this.renderQuickSlots();
     }
@@ -447,6 +555,13 @@ export class BagPanel extends Laya.Script {
         if (this.selectedQuickSlot) {
             this.selectedQuickSlot = null;
             this.renderQuickSlots();
+        }
+    }
+
+    private clearContainerSelection(): void {
+        this.selectedContainerSlot = null;
+        if (this.containerGlist) {
+            this.containerGlist.setSelectedSlotIndex(-1);
         }
     }
 
@@ -628,10 +743,10 @@ export class BagPanel extends Laya.Script {
                 iconNode.src = iconPath;
             }
             if ("width" in iconNode) {
-                iconNode.width = 65;
+                iconNode.width = 55;
             }
             if ("height" in iconNode) {
-                iconNode.height = 65;
+                iconNode.height = 55;
             }
         }
 
@@ -696,6 +811,22 @@ export class BagPanel extends Laya.Script {
         if (!this.experienceTextNode) {
             this.experienceTextNode = this.findChildByName(root, "experiencetext") as Laya.Text | null;
         }
+        if (!this.satietyTextNode) {
+            this.satietyTextNode = this.findChildByName(root, "baoshidu") as Laya.Text | null;
+        }
+        if (!this.hydrationTextNode) {
+            this.hydrationTextNode = this.findChildByName(root, "shuifenzhi") as Laya.Text | null;
+        }
+        if (!this.attackTextNode) {
+            this.attackTextNode = this.findChildByName(root, "attack") as Laya.Text | null;
+        }
+        if (!this.defendTextNode) {
+            this.defendTextNode = this.findChildByName(root, "defend") as Laya.Text | null;
+        }
+    }
+
+    private formatStatValue(value: number): string {
+        return String(Number.isFinite(value) ? Math.floor(value) : 0);
     }
 
     private getTemplateNode(listNode: Laya.Node | null): Laya.Node | null {

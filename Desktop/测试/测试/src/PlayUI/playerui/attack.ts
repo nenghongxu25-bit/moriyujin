@@ -3,8 +3,12 @@ const { regClass, property } = Laya;
 import { PlayerController } from "../../Player/PlayerController";
 import { DataManager } from "../../systems/datamanager";
 
-@regClass()
+@regClass("3db5f4f4-1d50-4b5c-a876-7bc6f7a7eb10")
 export class attack extends Laya.Script {
+    public static activeDirectionX: number = 0;
+    public static activeDirectionY: number = 0;
+    public static directionActive: boolean = false;
+
     @property(Laya.Node)
     public playerNode: Laya.Node | null = null;
 
@@ -182,6 +186,10 @@ export class attack extends Laya.Script {
         }
 
         this.dragging = true;
+        attack.activeDirectionX = offset.x;
+        attack.activeDirectionY = offset.y;
+        attack.directionActive = true;
+
         const controller = this.resolvePlayerController();
         if (!controller) {
             return;
@@ -265,6 +273,9 @@ export class attack extends Laya.Script {
         this.lastDragRatio = 0;
         this.pressStartedAt = 0;
         this.autoAttackStarted = false;
+        attack.activeDirectionX = 0;
+        attack.activeDirectionY = 0;
+        attack.directionActive = false;
 
         Laya.timer.clear(this, this.onAutoAttackTick);
         Laya.stage.off("mousemove", this, this.onPointerMove);
