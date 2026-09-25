@@ -1,0 +1,92 @@
+﻿[
+    {
+        "file":  "artifact-pedestal.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  922282,
+        "visiblePixels":  643094,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              177,
+                              166,
+                              1078,
+                              1172
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "exhibit-table.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  1117181,
+        "visiblePixels":  443727,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              80,
+                              263,
+                              1174,
+                              1087
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "glass-display-case.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  933208,
+        "visiblePixels":  624461,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              302,
+                              44,
+                              960,
+                              1217
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "museum-info-stand.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  1163898,
+        "visiblePixels":  400919,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              240,
+                              61,
+                              1007,
+                              1187
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "round-display-plinth.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  1001509,
+        "visiblePixels":  562642,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              249,
+                              157,
+                              1005,
+                              1111
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "table-display-case.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  833821,
+        "visiblePixels":  727225,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              71,
+                              211,
+                              1192,
+                              1207
+                          ],
+        "valid":  true
+    }
+]

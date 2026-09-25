@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "generated-motion-study",
+  "animal": "young-boar",
+  "action": "attack",
+  "direction": "left",
+  "frameCount": 6,
+  "fps": 10,
+  "loop": false,
+  "frameWidth": 160,
+  "frameHeight": 160,
+  "pivot": {
+    "x": 80,
+    "y": 148
+  },
+  "frames": [
+    "frame_00.png",
+    "frame_01.png",
+    "frame_02.png",
+    "frame_03.png",
+    "frame_04.png",
+    "frame_05.png"
+  ],
+  "notes": "Preview only. No gameplay integration. Uniform scale per clip; silhouette center alignment. Gait/texture consistency requires art review."
+}

@@ -1,0 +1,15 @@
+{
+  "promptBase": "Use case: stylized-concept. Asset type: standalone full-body animal character illustration for a gritty temperate forest survival 2D game, matching semi-realistic hand-painted forest prop art with muted earth tones, textured weathered wood and mossy grey stones. Render as polished painterly game character art, detailed natural fur but not a studio photograph and not cartoon/chibi. One animal only, natural four-legged standing idle pose facing left in a three-quarter side view, slightly elevated camera looking down about 25 degrees. Anatomically correct, all four legs readable, full ears, muzzle and tail inside frame, no cropped extremities. Calm alert expression. Soft diffuse upper-left light, restrained dark contour, readable silhouette. Real transparent RGBA background including gaps between legs; no scenery, no ground patch, no pedestal, no halo, no shadow cloud, no baked checkerboard, no text, no watermark, no equipment, no clothing, no split panels or sprite sheet. Center full body with at least 8 percent transparent padding on every side. Subject: ",
+  "assets": [
+    {
+      "name": "young-boar",
+      "subject": "A small juvenile wild boar, compact rounded but natural body, short sturdy legs with cloven hooves, coarse warm dark-brown fur, faint tan longitudinal juvenile stripes on flanks, a short bristly mane, small pointed ears, dark eyes and earthy grey-brown snout. Young wild animal, NOT a pink domestic pig; no exaggerated tusks, no oversized cute eyes.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-01f0c473-ae50-49df-9c4d-1c9e02ce8f32.png"
+    },
+    {
+      "name": "wolf",
+      "subject": "An adult lean grey forest wolf with realistic wild canid proportions, thick layered grey-brown fur, dark charcoal saddle, lighter beige-grey muzzle and underside, amber eyes, upright pointed ears, long muzzle, four paws and bushy tail carried low. Alert but not snarling, mouth closed; NOT a husky, no blue eyes, not a fantasy monster.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-45a156b8-03f6-4355-b725-a8678d63bb5f.png"
+    }
+  ]
+}

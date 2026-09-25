@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_sports_bag",
+  "_$type": "Sprite",
+  "name": "拉链运动包",
+  "width": 216,
+  "height": 216,
+  "_$comp": [
+    {
+      "_$id": "sports_bag_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 21.6,
+          "y": 86.4,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 172.8,
+          "height": 129.6
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_sports_bag",
+      "instanceId": "",
+      "displayName": "拉链运动包",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "sports_bag",
+      "visualFolder": "loot-points-v3"
+    },
+    {
+      "_$id": "sports_bag_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 200.8125,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "sports_bag_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "sports_bag_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 216,
+      "height": 216,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://bcd2e465-4d66-4758-947d-e99fc4d4a836",
+      "autoSize": false
+    }
+  ]
+}

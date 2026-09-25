@@ -1,0 +1,66 @@
+﻿[
+    {
+        "id":  "medical_case",
+        "fixedPixelComparisons":  83109,
+        "batch":  1,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "trash_bin",
+        "fixedPixelComparisons":  129363,
+        "batch":  2,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "computer_tower",
+        "fixedPixelComparisons":  129201,
+        "batch":  3,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "supply_crate",
+        "fixedPixelComparisons":  108240,
+        "batch":  3,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "ammo_box",
+        "fixedPixelComparisons":  34377,
+        "batch":  1,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "toolbox",
+        "fixedPixelComparisons":  30366,
+        "batch":  1,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "suitcase",
+        "fixedPixelComparisons":  14562,
+        "batch":  2,
+        "method":  "fixed body, hinged surface",
+        "frameSize":  512,
+        "frames":  4
+    },
+    {
+        "id":  "duffel_bag",
+        "fixedPixelComparisons":  56439,
+        "batch":  1,
+        "method":  "fixed body, local bag opening",
+        "frameSize":  512,
+        "frames":  4
+    }
+]

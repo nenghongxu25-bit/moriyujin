@@ -1,0 +1,19 @@
+{
+  "_$ver": 1,
+  "_$id": "standardfire",
+  "_$type": "Sprite",
+  "name": "standard-fire",
+  "width": 192,
+  "height": 256,
+  "pivotX": 96,
+  "pivotY": 240,
+  "texture": {"_$uuid":"3304961e-3b44-4453-977d-c76fa8a2290f","_$type":"Texture"},
+  "_$comp": [
+    {
+      "_$type":"46162c80-4b23-4988-a13a-48a184e32811",
+      "sheet":{"_$uuid":"2e1c271d-0739-42d8-a6cd-0dbd4ba06830","_$type":"Texture"},
+      "fps":8,
+      "randomStart":true
+    }
+  ]
+}

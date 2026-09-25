@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "502f1892b7d8",
+  "_$type": "Sprite",
+  "name": "阻挡_boulder-moss",
+  "width": 192,
+  "height": 192,
+  "pivotX": 93,
+  "pivotY": 168,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 168
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "4e91c8883651"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 52,
+      "blockY": 152,
+      "blockWidth": 83,
+      "blockHeight": 16
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "4e91c8883651",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "dae0cb52-a611-4e37-9626-5c3affce3608",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

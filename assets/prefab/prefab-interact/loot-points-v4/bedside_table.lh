@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_bedside_table",
+  "_$type": "Sprite",
+  "name": "旧木床头柜",
+  "width": 232,
+  "height": 232,
+  "_$comp": [
+    {
+      "_$id": "bedside_table_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 23.200000000000003,
+          "y": 92.80000000000001,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 185.60000000000002,
+          "height": 139.2
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_bedside_table",
+      "instanceId": "",
+      "displayName": "旧木床头柜",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "bedside_table",
+      "visualFolder": "loot-points-v4"
+    },
+    {
+      "_$id": "bedside_table_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 215.6875,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "bedside_table_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "bedside_table_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 232,
+      "height": 232,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://ab44786b-4852-465f-a188-a73ec8c2ea5b",
+      "autoSize": false
+    }
+  ]
+}

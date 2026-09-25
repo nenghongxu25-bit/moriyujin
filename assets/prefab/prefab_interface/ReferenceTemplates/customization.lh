@@ -1,0 +1,732 @@
+{
+  "_$ver": 1,
+  "_$id": "rt_69",
+  "_$type": "Sprite",
+  "name": "page:customization",
+  "x": 0,
+  "y": 0,
+  "width": 1334,
+  "height": 750,
+  "mouseThrough": false,
+  "_$child": [
+    {
+      "_$id": "rt_6a",
+      "_$type": "GWidget",
+      "name": "Background",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#111619",
+        "lineColor": "#111619",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_6b",
+      "_$type": "GWidget",
+      "name": "Header",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 76,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#1e2529",
+        "lineColor": "#394247",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_6c",
+      "_$type": "Text",
+      "name": "Title",
+      "x": 40,
+      "y": 14,
+      "width": 210,
+      "height": 46,
+      "text": "个性化",
+      "font": "Microsoft YaHei",
+      "fontSize": 28,
+      "color": "#e2e6e8",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_6g",
+      "_$type": "Sprite",
+      "name": "go:lobby",
+      "x": 1178,
+      "y": 15,
+      "width": 120,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_6d",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_6e",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_6f",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 100,
+          "height": 44,
+          "text": "‹  返回",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_6h",
+      "_$type": "Text",
+      "name": "TemplateNote",
+      "x": 40,
+      "y": 716,
+      "width": 350,
+      "height": 22,
+      "text": "界面模板 · 展示数据",
+      "font": "Microsoft YaHei",
+      "fontSize": 12,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_6p",
+      "_$type": "Sprite",
+      "name": "pick:appearance:0",
+      "x": 90,
+      "y": 140,
+      "width": 500,
+      "height": 240,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_6n",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 500,
+          "height": 240,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_6j",
+          "_$type": "Sprite",
+          "name": "ReplaceableArtwork",
+          "x": 1,
+          "y": 1,
+          "width": 498,
+          "height": 238,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_6i",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "x": 0,
+              "y": 0,
+              "width": 498,
+              "height": 238,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#232c31",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_6k",
+              "_$type": "Sprite",
+              "name": "Artwork",
+              "x": 12,
+              "y": 24.200000000000003,
+              "width": 474,
+              "height": 189.6,
+              "texture": {
+                "_$uuid": "19ba1d62-1ade-4d0a-a31e-5604544de574",
+                "_$type": "Texture"
+              },
+              "alpha": 0.9,
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "rt_6l",
+          "_$type": "GWidget",
+          "name": "CaptionShade",
+          "x": 1,
+          "y": 176,
+          "width": 498,
+          "height": 62,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b20",
+            "lineColor": "#151b20",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_6m",
+          "_$type": "Text",
+          "name": "Category",
+          "x": 20,
+          "y": 182,
+          "width": 460,
+          "height": 48,
+          "text": "枪械",
+          "font": "Microsoft YaHei",
+          "fontSize": 25,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_6o",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 237,
+          "width": 500,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_6x",
+      "_$type": "Sprite",
+      "name": "pick:appearance:1",
+      "x": 604,
+      "y": 140,
+      "width": 248,
+      "height": 240,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_6v",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 248,
+          "height": 240,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_6r",
+          "_$type": "Sprite",
+          "name": "ReplaceableArtwork",
+          "x": 1,
+          "y": 1,
+          "width": 246,
+          "height": 238,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_6q",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "x": 0,
+              "y": 0,
+              "width": 246,
+              "height": 238,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#232c31",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_6s",
+              "_$type": "Sprite",
+              "name": "Artwork",
+              "x": 16,
+              "y": 12,
+              "width": 214,
+              "height": 214,
+              "texture": {
+                "_$uuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+                "_$type": "Texture"
+              },
+              "alpha": 0.9,
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "rt_6t",
+          "_$type": "GWidget",
+          "name": "CaptionShade",
+          "x": 1,
+          "y": 176,
+          "width": 246,
+          "height": 62,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b20",
+            "lineColor": "#151b20",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_6u",
+          "_$type": "Text",
+          "name": "Category",
+          "x": 20,
+          "y": 182,
+          "width": 208,
+          "height": 48,
+          "text": "个性资源",
+          "font": "Microsoft YaHei",
+          "fontSize": 25,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_6w",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 237,
+          "width": 248,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_75",
+      "_$type": "Sprite",
+      "name": "pick:appearance:2",
+      "x": 90,
+      "y": 394,
+      "width": 340,
+      "height": 260,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_73",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 340,
+          "height": 260,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_6z",
+          "_$type": "Sprite",
+          "name": "ReplaceableArtwork",
+          "x": 1,
+          "y": 1,
+          "width": 338,
+          "height": 258,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_6y",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "x": 0,
+              "y": 0,
+              "width": 338,
+              "height": 258,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#232c31",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_70",
+              "_$type": "Sprite",
+              "name": "Artwork",
+              "x": 52,
+              "y": 12,
+              "width": 234,
+              "height": 234,
+              "texture": {
+                "_$uuid": "97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+                "_$type": "Texture"
+              },
+              "alpha": 0.9,
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "rt_71",
+          "_$type": "GWidget",
+          "name": "CaptionShade",
+          "x": 1,
+          "y": 196,
+          "width": 338,
+          "height": 62,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b20",
+            "lineColor": "#151b20",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_72",
+          "_$type": "Text",
+          "name": "Category",
+          "x": 20,
+          "y": 202,
+          "width": 300,
+          "height": 48,
+          "text": "装备涂装",
+          "font": "Microsoft YaHei",
+          "fontSize": 25,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_74",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 257,
+          "width": 340,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_7d",
+      "_$type": "Sprite",
+      "name": "pick:appearance:3",
+      "x": 444,
+      "y": 394,
+      "width": 408,
+      "height": 260,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_7b",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 408,
+          "height": 260,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_77",
+          "_$type": "Sprite",
+          "name": "ReplaceableArtwork",
+          "x": 1,
+          "y": 1,
+          "width": 406,
+          "height": 258,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_76",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "x": 0,
+              "y": 0,
+              "width": 406,
+              "height": 258,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#232c31",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_78",
+              "_$type": "Sprite",
+              "name": "Artwork",
+              "x": 144.5,
+              "y": 12,
+              "width": 117,
+              "height": 234,
+              "texture": {
+                "_$uuid": "40109eca-4741-489f-aba0-11367d872b09",
+                "_$type": "Texture"
+              },
+              "alpha": 0.9,
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "rt_79",
+          "_$type": "GWidget",
+          "name": "CaptionShade",
+          "x": 1,
+          "y": 196,
+          "width": 406,
+          "height": 62,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b20",
+            "lineColor": "#151b20",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_7a",
+          "_$type": "Text",
+          "name": "Category",
+          "x": 20,
+          "y": 202,
+          "width": 368,
+          "height": 48,
+          "text": "近战武器",
+          "font": "Microsoft YaHei",
+          "fontSize": 25,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_7c",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 257,
+          "width": 408,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_7l",
+      "_$type": "Sprite",
+      "name": "pick:appearance:4",
+      "x": 866,
+      "y": 140,
+      "width": 376,
+      "height": 514,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_7j",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 376,
+          "height": 514,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_7f",
+          "_$type": "Sprite",
+          "name": "ReplaceableArtwork",
+          "x": 1,
+          "y": 1,
+          "width": 374,
+          "height": 512,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_7e",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "x": 0,
+              "y": 0,
+              "width": 374,
+              "height": 512,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#232c31",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_7g",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "x": 0,
+              "y": 69,
+              "width": 374,
+              "height": 374,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "alpha": 0.26,
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "rt_7h",
+          "_$type": "GWidget",
+          "name": "CaptionShade",
+          "x": 1,
+          "y": 450,
+          "width": 374,
+          "height": 62,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b20",
+            "lineColor": "#151b20",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_7i",
+          "_$type": "Text",
+          "name": "Category",
+          "x": 20,
+          "y": 456,
+          "width": 336,
+          "height": 48,
+          "text": "角色与外观",
+          "font": "Microsoft YaHei",
+          "fontSize": 25,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_7k",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 511,
+          "width": 376,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    }
+  ],
+  "visible": true,
+  "mouseEnabled": true,
+  "zOrder": 1000
+}

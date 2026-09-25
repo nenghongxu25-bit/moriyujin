@@ -1,0 +1,711 @@
+{
+  "_$ver": 1,
+  "_$id": "rt_mm",
+  "_$type": "Sprite",
+  "name": "page:mode",
+  "x": 0,
+  "y": 0,
+  "width": 1334,
+  "height": 750,
+  "mouseThrough": false,
+  "_$child": [
+    {
+      "_$id": "rt_mn",
+      "_$type": "GWidget",
+      "name": "Background",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#111619",
+        "lineColor": "#111619",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_mo",
+      "_$type": "GWidget",
+      "name": "Header",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 76,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#1e2529",
+        "lineColor": "#394247",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_mv",
+      "_$type": "Sprite",
+      "name": "ModeArtwork",
+      "x": 0,
+      "y": 77,
+      "width": 1334,
+      "height": 630,
+      "texture": {
+        "_$uuid": "a8299b9b-070f-41a4-9feb-14a7e6ae6924",
+        "_$type": "Texture"
+      },
+      "alpha": 0.38,
+      "mouseEnabled": false
+    },
+    {
+      "_$id": "rt_mp",
+      "_$type": "Text",
+      "name": "Title",
+      "x": 40,
+      "y": 14,
+      "width": 210,
+      "height": 46,
+      "text": "模式选择",
+      "font": "Microsoft YaHei",
+      "fontSize": 28,
+      "color": "#e2e6e8",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_mt",
+      "_$type": "Sprite",
+      "name": "go:lobby",
+      "x": 1178,
+      "y": 15,
+      "width": 120,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_mq",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_mr",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_ms",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 100,
+          "height": 44,
+          "text": "‹  返回",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_mu",
+      "_$type": "Text",
+      "name": "TemplateNote",
+      "x": 40,
+      "y": 716,
+      "width": 350,
+      "height": 22,
+      "text": "界面模板 · 展示数据",
+      "font": "Microsoft YaHei",
+      "fontSize": 12,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_mw",
+      "_$type": "Sprite",
+      "name": "view:mode:0",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_mx",
+          "_$type": "Text",
+          "name": "ModeTitle",
+          "x": 78,
+          "y": 150,
+          "width": 700,
+          "height": 100,
+          "text": "特遣队员",
+          "font": "Microsoft YaHei",
+          "fontSize": 66,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_my",
+          "_$type": "Text",
+          "name": "ModeDescription",
+          "x": 82,
+          "y": 267,
+          "width": 630,
+          "height": 86,
+          "text": "进入战区搜集物资，并携带战利品成功撤离。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        }
+      ],
+      "visible": true
+    },
+    {
+      "_$id": "rt_n3",
+      "_$type": "Sprite",
+      "name": "pick:mode:0",
+      "x": 76,
+      "y": 556,
+      "width": 221,
+      "height": 126,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_n1",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 221,
+          "height": 126,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_mz",
+          "_$type": "Sprite",
+          "name": "ModeThumbnail",
+          "x": 1,
+          "y": 1,
+          "width": 219,
+          "height": 124,
+          "texture": {
+            "_$uuid": "a8299b9b-070f-41a4-9feb-14a7e6ae6924",
+            "_$type": "Texture"
+          },
+          "alpha": 0.4,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_n0",
+          "_$type": "Text",
+          "name": "ModeName",
+          "x": 15,
+          "y": 74,
+          "width": 196,
+          "height": 40,
+          "text": "特遣队员",
+          "font": "Microsoft YaHei",
+          "fontSize": 22,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_n2",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 123,
+          "width": 221,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_n4",
+      "_$type": "Sprite",
+      "name": "view:mode:1",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_n5",
+          "_$type": "Text",
+          "name": "ModeTitle",
+          "x": 78,
+          "y": 150,
+          "width": 700,
+          "height": 100,
+          "text": "伪装潜入",
+          "font": "Microsoft YaHei",
+          "fontSize": 66,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_n6",
+          "_$type": "Text",
+          "name": "ModeDescription",
+          "x": 82,
+          "y": 267,
+          "width": 630,
+          "height": 86,
+          "text": "以临时身份进入战区，寻找新的生存机会。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_nb",
+      "_$type": "Sprite",
+      "name": "pick:mode:1",
+      "x": 311,
+      "y": 556,
+      "width": 221,
+      "height": 126,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_n9",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 221,
+          "height": 126,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_n7",
+          "_$type": "Sprite",
+          "name": "ModeThumbnail",
+          "x": 1,
+          "y": 1,
+          "width": 219,
+          "height": 124,
+          "texture": {
+            "_$uuid": "a8299b9b-070f-41a4-9feb-14a7e6ae6924",
+            "_$type": "Texture"
+          },
+          "alpha": 0.4,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_n8",
+          "_$type": "Text",
+          "name": "ModeName",
+          "x": 15,
+          "y": 74,
+          "width": 196,
+          "height": 40,
+          "text": "伪装潜入",
+          "font": "Microsoft YaHei",
+          "fontSize": 22,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_na",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 123,
+          "width": 221,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_nc",
+      "_$type": "Sprite",
+      "name": "view:mode:2",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_nd",
+          "_$type": "Text",
+          "name": "ModeTitle",
+          "x": 78,
+          "y": 150,
+          "width": 700,
+          "height": 100,
+          "text": "休闲行动",
+          "font": "Microsoft YaHei",
+          "fontSize": 66,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ne",
+          "_$type": "Text",
+          "name": "ModeDescription",
+          "x": 82,
+          "y": 267,
+          "width": 630,
+          "height": 86,
+          "text": "熟悉武器、地图与撤离路线。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_nj",
+      "_$type": "Sprite",
+      "name": "pick:mode:2",
+      "x": 546,
+      "y": 556,
+      "width": 221,
+      "height": 126,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_nh",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 221,
+          "height": 126,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_nf",
+          "_$type": "Sprite",
+          "name": "ModeThumbnail",
+          "x": 1,
+          "y": 1,
+          "width": 219,
+          "height": 124,
+          "texture": {
+            "_$uuid": "a8299b9b-070f-41a4-9feb-14a7e6ae6924",
+            "_$type": "Texture"
+          },
+          "alpha": 0.4,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_ng",
+          "_$type": "Text",
+          "name": "ModeName",
+          "x": 15,
+          "y": 74,
+          "width": 196,
+          "height": 40,
+          "text": "休闲行动",
+          "font": "Microsoft YaHei",
+          "fontSize": 22,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ni",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 123,
+          "width": 221,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_nk",
+      "_$type": "Sprite",
+      "name": "view:mode:3",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_nl",
+          "_$type": "Text",
+          "name": "ModeTitle",
+          "x": 78,
+          "y": 150,
+          "width": 700,
+          "height": 100,
+          "text": "限时活动",
+          "font": "Microsoft YaHei",
+          "fontSize": 66,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_nm",
+          "_$type": "Text",
+          "name": "ModeDescription",
+          "x": 82,
+          "y": 267,
+          "width": 630,
+          "height": 86,
+          "text": "参与特殊行动，挑战不同的任务目标。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_nr",
+      "_$type": "Sprite",
+      "name": "pick:mode:3",
+      "x": 781,
+      "y": 556,
+      "width": 221,
+      "height": 126,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_np",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 221,
+          "height": 126,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_nn",
+          "_$type": "Sprite",
+          "name": "ModeThumbnail",
+          "x": 1,
+          "y": 1,
+          "width": 219,
+          "height": 124,
+          "texture": {
+            "_$uuid": "a8299b9b-070f-41a4-9feb-14a7e6ae6924",
+            "_$type": "Texture"
+          },
+          "alpha": 0.4,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_no",
+          "_$type": "Text",
+          "name": "ModeName",
+          "x": 15,
+          "y": 74,
+          "width": 196,
+          "height": 40,
+          "text": "限时活动",
+          "font": "Microsoft YaHei",
+          "fontSize": 22,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_nq",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 123,
+          "width": 221,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_nv",
+      "_$type": "Sprite",
+      "name": "go:map",
+      "x": 1044,
+      "y": 582,
+      "width": 252,
+      "height": 98,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_ns",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 252,
+          "height": 98,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_nt",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 252,
+          "height": 98,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        },
+        {
+          "_$id": "rt_nu",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 232,
+          "height": 98,
+          "text": "下一步  ›",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    }
+  ],
+  "visible": true,
+  "mouseEnabled": true,
+  "zOrder": 1000
+}

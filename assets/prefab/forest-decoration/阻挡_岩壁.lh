@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "328308433ee4",
+  "_$type": "Sprite",
+  "name": "阻挡_岩壁",
+  "width": 360,
+  "height": 180,
+  "pivotX": 180,
+  "pivotY": 148,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 148
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "925b879cf8a7"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 30,
+      "blockY": 124,
+      "blockWidth": 300,
+      "blockHeight": 32
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "925b879cf8a7",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 360,
+      "height": 180,
+      "texture": {
+        "_$uuid": "c6b84dc4-d8ea-4f62-8ae3-11f2343b8027",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

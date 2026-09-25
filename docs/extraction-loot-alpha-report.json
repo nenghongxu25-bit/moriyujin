@@ -1,0 +1,198 @@
+﻿[
+    {
+        "transparentSamples":  281,
+        "visibleSamples":  203,
+        "width":  256,
+        "id":  "bolts_pouch",
+        "height":  256
+    },
+    {
+        "transparentSamples":  252,
+        "visibleSamples":  232,
+        "width":  256,
+        "id":  "insulating_tape",
+        "height":  256
+    },
+    {
+        "transparentSamples":  742,
+        "visibleSamples":  204,
+        "width":  256,
+        "id":  "rusty_wrench",
+        "height":  512
+    },
+    {
+        "transparentSamples":  644,
+        "visibleSamples":  302,
+        "width":  256,
+        "id":  "pliers",
+        "height":  512
+    },
+    {
+        "transparentSamples":  247,
+        "visibleSamples":  237,
+        "width":  256,
+        "id":  "precision_bearing",
+        "height":  256
+    },
+    {
+        "transparentSamples":  871,
+        "visibleSamples":  978,
+        "width":  512,
+        "id":  "electric_motor",
+        "height":  512
+    },
+    {
+        "transparentSamples":  295,
+        "visibleSamples":  189,
+        "width":  256,
+        "id":  "battery",
+        "height":  256
+    },
+    {
+        "transparentSamples":  284,
+        "visibleSamples":  200,
+        "width":  256,
+        "id":  "copper_wire",
+        "height":  256
+    },
+    {
+        "transparentSamples":  634,
+        "visibleSamples":  312,
+        "width":  512,
+        "id":  "radio",
+        "height":  256
+    },
+    {
+        "transparentSamples":  677,
+        "visibleSamples":  269,
+        "width":  512,
+        "id":  "hard_drive",
+        "height":  256
+    },
+    {
+        "transparentSamples":  586,
+        "visibleSamples":  360,
+        "width":  512,
+        "id":  "military_module",
+        "height":  256
+    },
+    {
+        "transparentSamples":  727,
+        "visibleSamples":  1122,
+        "width":  512,
+        "id":  "encrypted_terminal",
+        "height":  512
+    },
+    {
+        "transparentSamples":  345,
+        "visibleSamples":  139,
+        "width":  256,
+        "id":  "matches",
+        "height":  256
+    },
+    {
+        "transparentSamples":  320,
+        "visibleSamples":  164,
+        "width":  256,
+        "id":  "cigarettes",
+        "height":  256
+    },
+    {
+        "transparentSamples":  280,
+        "visibleSamples":  204,
+        "width":  256,
+        "id":  "lighter",
+        "height":  256
+    },
+    {
+        "transparentSamples":  374,
+        "visibleSamples":  572,
+        "width":  256,
+        "id":  "cleaner",
+        "height":  512
+    },
+    {
+        "transparentSamples":  304,
+        "visibleSamples":  180,
+        "width":  256,
+        "id":  "perfume",
+        "height":  256
+    },
+    {
+        "transparentSamples":  935,
+        "visibleSamples":  914,
+        "width":  512,
+        "id":  "old_book",
+        "height":  512
+    },
+    {
+        "transparentSamples":  291,
+        "visibleSamples":  193,
+        "width":  256,
+        "id":  "silver_ring",
+        "height":  256
+    },
+    {
+        "transparentSamples":  220,
+        "visibleSamples":  264,
+        "width":  256,
+        "id":  "silver_coin",
+        "height":  256
+    },
+    {
+        "transparentSamples":  346,
+        "visibleSamples":  138,
+        "width":  256,
+        "id":  "pocket_watch",
+        "height":  256
+    },
+    {
+        "transparentSamples":  323,
+        "visibleSamples":  161,
+        "width":  256,
+        "id":  "gold_bracelet",
+        "height":  256
+    },
+    {
+        "transparentSamples":  964,
+        "visibleSamples":  885,
+        "width":  512,
+        "id":  "antique_camera",
+        "height":  512
+    },
+    {
+        "transparentSamples":  1893,
+        "visibleSamples":  859,
+        "width":  512,
+        "id":  "gold_statue",
+        "height":  768
+    },
+    {
+        "transparentSamples":  327,
+        "visibleSamples":  157,
+        "width":  256,
+        "id":  "soil_sample",
+        "height":  256
+    },
+    {
+        "transparentSamples":  280,
+        "visibleSamples":  666,
+        "width":  256,
+        "id":  "mutant_sample",
+        "height":  512
+    },
+    {
+        "transparentSamples":  321,
+        "visibleSamples":  163,
+        "width":  256,
+        "id":  "anomalous_crystal",
+        "height":  256
+    },
+    {
+        "transparentSamples":  997,
+        "visibleSamples":  1755,
+        "width":  512,
+        "id":  "sample_case",
+        "height":  768
+    }
+]

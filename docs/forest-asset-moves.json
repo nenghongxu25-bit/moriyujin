@@ -1,0 +1,290 @@
+[
+  {
+    "from": "assets/decorate/forest/current/forest-pine-tree-v1.png",
+    "to": "assets/decorate/forest/vegetation/forest-pine-tree-v1.png",
+    "uuid": "fd40b293-e4cf-48bb-8dad-39153833012c",
+    "title": "松树",
+    "category": "树木植被",
+    "dir": "vegetation"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-crooked-pine-v1.png",
+    "to": "assets/decorate/forest/vegetation/forest-crooked-pine-v1.png",
+    "uuid": "ce5a1396-064b-460a-a400-d4c5e7debf99",
+    "title": "弯曲松树",
+    "category": "树木植被",
+    "dir": "vegetation"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-young-pine-v1.png",
+    "to": "assets/decorate/forest/vegetation/forest-young-pine-v1.png",
+    "uuid": "b153feb3-f016-46a4-b727-1a65b0743f98",
+    "title": "幼松",
+    "category": "树木植被",
+    "dir": "vegetation"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-dead-tree-v1.png",
+    "to": "assets/decorate/forest/vegetation/forest-dead-tree-v1.png",
+    "uuid": "787452e0-b3d1-4ed1-9889-7602a05a596f",
+    "title": "枯树",
+    "category": "树木植被",
+    "dir": "vegetation"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-shrub-v1.png",
+    "to": "assets/decorate/forest/vegetation/forest-shrub-v1.png",
+    "uuid": "aead6b2d-9829-41ce-b711-20f80bbcda33",
+    "title": "灌木",
+    "category": "树木植被",
+    "dir": "vegetation"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-sparse-shrub-v1.png",
+    "to": "assets/decorate/forest/vegetation/forest-sparse-shrub-v1.png",
+    "uuid": "53113d90-85ef-4542-a7dd-052004119cec",
+    "title": "稀疏灌木",
+    "category": "树木植被",
+    "dir": "vegetation"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-needle-leaf-litter-v1.png",
+    "to": "assets/decorate/forest/ground/forest-needle-leaf-litter-v1.png",
+    "uuid": "b9ab68d0-22f4-4c44-b04f-cbb47199a12a",
+    "title": "落叶松针",
+    "category": "地表枯木",
+    "dir": "ground"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-broken-branches-v1.png",
+    "to": "assets/decorate/forest/ground/forest-broken-branches-v1.png",
+    "uuid": "e2b4e9df-df6a-4b11-8bf2-1053190fb536",
+    "title": "断枝",
+    "category": "地表枯木",
+    "dir": "ground"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-fallen-log-v1.png",
+    "to": "assets/decorate/forest/ground/forest-fallen-log-v1.png",
+    "uuid": "32c98b15-5115-4cd2-b6b6-c53466d44492",
+    "title": "倒木",
+    "category": "地表枯木",
+    "dir": "ground"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-tree-stump-v1.png",
+    "to": "assets/decorate/forest/ground/forest-tree-stump-v1.png",
+    "uuid": "18342c68-10f0-4553-9989-407267a6f3fb",
+    "title": "树桩",
+    "category": "地表枯木",
+    "dir": "ground"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-broken-planks-v1.png",
+    "to": "assets/decorate/forest/ground/forest-broken-planks-v1.png",
+    "uuid": "a3ec8798-aa32-4438-abce-0cf6466b1eca",
+    "title": "破木板",
+    "category": "地表枯木",
+    "dir": "ground"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-bank-reeds-v1.png",
+    "to": "assets/decorate/forest/waterside/forest-bank-reeds-v1.png",
+    "uuid": "98824960-e70c-4154-a969-d848423f7215",
+    "title": "芦苇",
+    "category": "水岸岩石",
+    "dir": "waterside"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-muddy-bank-v1.png",
+    "to": "assets/decorate/forest/waterside/forest-muddy-bank-v1.png",
+    "uuid": "9edc253c-2109-4bce-83ca-a9000313d2ff",
+    "title": "泥岸",
+    "category": "水岸岩石",
+    "dir": "waterside"
+  },
+  {
+    "from": "assets/decorate/forest/expansion-v1/forest-rock-cliff-v1.png",
+    "to": "assets/decorate/forest/waterside/forest-rock-cliff-v1.png",
+    "uuid": "c6b84dc4-d8ea-4f62-8ae3-11f2343b8027",
+    "title": "岩壁",
+    "category": "水岸岩石",
+    "dir": "waterside"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-rocky-lookout-v1.png",
+    "to": "assets/decorate/forest/waterside/forest-rocky-lookout-v1.png",
+    "uuid": "9abdb935-51a2-4c33-bde8-870a683a4e87",
+    "title": "岩石瞭望点",
+    "category": "水岸岩石",
+    "dir": "waterside"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-wood-bridge-v1.png",
+    "to": "assets/decorate/forest/waterside/forest-wood-bridge-v1.png",
+    "uuid": "c676fa6c-aab7-471b-8e4d-db738bddcc9b",
+    "title": "木桥",
+    "category": "水岸岩石",
+    "dir": "waterside"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-sawmill-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-sawmill-v1.png",
+    "uuid": "0ce6f676-988d-453c-a081-ad6ebe8a19a0",
+    "title": "伐木场",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-cabin-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-cabin-v1.png",
+    "uuid": "ec5dee07-f620-44b9-a867-b90aba709140",
+    "title": "木屋",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-abandoned-house-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-abandoned-house-v1.png",
+    "uuid": "f07b19bd-b40d-4f4b-87ee-72044f0e64e6",
+    "title": "废弃住宅",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-outhouse-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-outhouse-v1.png",
+    "uuid": "a79ba965-a9ae-4420-ad54-6ea33c96ef07",
+    "title": "旱厕",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-bunker-entrance-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-bunker-entrance-v1.png",
+    "uuid": "d3c70fa3-686a-4de0-90b7-c1f1c91bf59f",
+    "title": "地堡入口",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-military-checkpoint-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-military-checkpoint-v1.png",
+    "uuid": "c8ec31c2-ac52-4ccf-8391-80684d2acdee",
+    "title": "军事检查站",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-watchtower-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-watchtower-v1.png",
+    "uuid": "3dade8e4-0dfd-4a1e-84a8-7f2fc7a8e7c3",
+    "title": "瞭望塔",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-military-tent-v1.png",
+    "to": "assets/decorate/forest/buildings/forest-military-tent-v1.png",
+    "uuid": "b43507ae-0cbe-4313-97f1-fae6c9a2b921",
+    "title": "军用帐篷",
+    "category": "建筑据点",
+    "dir": "buildings"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-wood-fence-v1.png",
+    "to": "assets/decorate/forest/props/forest-wood-fence-v1.png",
+    "uuid": "0de7a0a9-45fa-4cc9-bf80-ca05f07eebf1",
+    "title": "木围栏",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-rusty-pickup-v1.png",
+    "to": "assets/decorate/forest/props/forest-rusty-pickup-v1.png",
+    "uuid": "70337db2-b636-4a67-880c-1fff100a86d6",
+    "title": "旧皮卡",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-log-pile-v1.png",
+    "to": "assets/decorate/forest/props/forest-log-pile-v1.png",
+    "uuid": "ead7abd9-3225-42fb-b270-912da03a4bd5",
+    "title": "原木堆",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-generator-v1.png",
+    "to": "assets/decorate/forest/props/forest-generator-v1.png",
+    "uuid": "559cf783-8461-4b81-9cc0-f6e29290f30a",
+    "title": "发电机",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-fuel-barrel-v1.png",
+    "to": "assets/decorate/forest/props/forest-fuel-barrel-v1.png",
+    "uuid": "c189dc46-6429-4d68-ac17-9a42e4536338",
+    "title": "油桶",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/current/forest-campfire-v1.png",
+    "to": "assets/decorate/forest/props/forest-campfire-v1.png",
+    "uuid": "353d77e0-e9c8-4595-b828-aa1b82c02296",
+    "title": "篝火",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-extinguished-campfire-v1.png",
+    "to": "assets/decorate/forest/props/forest-extinguished-campfire-v1.png",
+    "uuid": "b2960314-91ec-472b-b0d8-7fc7a86caf0b",
+    "title": "熄灭篝火",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-discarded-tire-v1.png",
+    "to": "assets/decorate/forest/props/forest-discarded-tire-v1.png",
+    "uuid": "5fbd3479-a033-476b-be39-a2af52668d43",
+    "title": "废轮胎",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-abandoned-backpack-v1.png",
+    "to": "assets/decorate/forest/props/forest-abandoned-backpack-v1.png",
+    "uuid": "133fcf6e-fa79-4563-9c06-2d718e84561c",
+    "title": "背包",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-rusty-toolbox-v1.png",
+    "to": "assets/decorate/forest/props/forest-rusty-toolbox-v1.png",
+    "uuid": "1220d44e-88ee-41ad-802f-598c8b1dd5f6",
+    "title": "工具箱",
+    "category": "设施杂物",
+    "dir": "props"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-wolf-v1.png",
+    "to": "assets/decorate/forest/animals/forest-wolf-v1.png",
+    "uuid": "52ff134d-533b-41bc-8b5e-3d65c6e3f30e",
+    "title": "狼",
+    "category": "动物试样",
+    "dir": "animals"
+  },
+  {
+    "from": "assets/decorate/forest/new-preview/forest-young-boar-v1.png",
+    "to": "assets/decorate/forest/animals/forest-young-boar-v1.png",
+    "uuid": "907d1b03-e5d7-46fb-878b-bac108a6e134",
+    "title": "幼野猪",
+    "category": "动物试样",
+    "dir": "animals"
+  }
+]

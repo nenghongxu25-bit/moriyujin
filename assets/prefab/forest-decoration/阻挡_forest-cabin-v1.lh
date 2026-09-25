@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "02e2a61b32b7",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-cabin-v1",
+  "width": 256,
+  "height": 242,
+  "pivotX": 126,
+  "pivotY": 235,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 235
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "a4bae998ec47"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 42,
+      "blockY": 205,
+      "blockWidth": 167,
+      "blockHeight": 30
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "a4bae998ec47",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 256,
+      "height": 242,
+      "texture": {
+        "_$uuid": "ec5dee07-f620-44b9-a867-b90aba709140",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

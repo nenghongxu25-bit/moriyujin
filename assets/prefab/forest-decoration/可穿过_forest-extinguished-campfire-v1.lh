@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "60428d5c232f",
+  "_$type": "Sprite",
+  "name": "可穿过_forest-extinguished-campfire-v1",
+  "width": 128,
+  "height": 86,
+  "pivotX": 64,
+  "pivotY": 84,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 84
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "ff7e9fcdcf60"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "ff7e9fcdcf60",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 128,
+      "height": 86,
+      "texture": {
+        "_$uuid": "b2960314-91ec-472b-b0d8-7fc7a86caf0b",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

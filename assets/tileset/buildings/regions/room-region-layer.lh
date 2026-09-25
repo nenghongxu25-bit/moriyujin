@@ -1,0 +1,26 @@
+{
+  "_$id": "61d32d3a-8f06-41ce-8bb3-ee3ae27e4a8e",
+  "_$type": "Sprite",
+  "name": "Room_01",
+  "width": 0,
+  "height": 0,
+  "scaleX": 0.25,
+  "scaleY": 0.25,
+  "_$comp": [
+    {
+      "_$type": "TileMapLayer",
+      "layer": 0,
+      "tileSet": {
+        "_$uuid": "d17f4bc4-50c6-4fa4-9b53-e999ad0e6cab",
+        "_$type": "TileSet"
+      },
+      "chunkDatas": {
+        "_$type": "Record"
+      }
+    },
+    {
+      "_$type": "f97a2854-4901-4ced-974c-e694db888b03"
+    }
+  ],
+  "_$ver": 1
+}

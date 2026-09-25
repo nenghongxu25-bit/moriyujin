@@ -1,0 +1,23 @@
+{
+  "_$ver": 1,
+  "_$id": "8b732e223e0e",
+  "_$type": "Sprite",
+  "name": "地表_落叶",
+  "width": 192,
+  "height": 128,
+  "pivotX": 96,
+  "pivotY": 0,
+  "_$child": [
+    {
+      "_$id": "f1534f0bcae4",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 128,
+      "texture": {
+        "_$uuid": "b9ab68d0-22f4-4c44-b04f-cbb47199a12a",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

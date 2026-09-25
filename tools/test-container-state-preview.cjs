@@ -1,0 +1,16 @@
+const fs=require('fs'),assert=require('assert');
+(async()=>{const tabs=await(await fetch('http://localhost:9234/json')).json(),ws=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise(r=>ws.addEventListener('open',r));let seq=0;const pending=new Map();ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}};
+ const call=(method,params={})=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+ const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+ await call('Page.enable');await call('Page.navigate',{url:'file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/docs/container-states-preview.html'});await new Promise(r=>setTimeout(r,900));
+ assert.equal(await ev('Object.keys(packingDemo.states).length'),8);
+ assert.equal(await ev('Array.from(document.images).filter(i=>i.complete&&i.naturalWidth>0).length'),16);
+ const click=(id,action)=>ev(`document.querySelector('#${id} [data-action=${action}]').click()`);
+ await click('rig_light','add');await click('rig_light','toggle');assert.equal(await ev("packingDemo.states.rig_light.state"),'expanded');assert((await ev("document.querySelector('#rig_light .result').textContent")).includes('先清空'));
+ await click('rig_light','clear');await click('rig_light','toggle');assert.equal(await ev('packingDemo.states.rig_light.gridHeight'),1);await click('rig_light','add');assert.equal(await ev('packingDemo.states.rig_light.contents.length'),0);await click('rig_light','toggle');
+ await click('rig_light','nest');assert.equal(await ev('packingDemo.states.rig_light.contents.length'),0);
+ await click('backpack_cargo','nest');assert.equal(await ev("packingDemo.states.backpack_cargo.contents[0].itemId"),'rig_heavy');await click('backpack_cargo','toggle');assert.equal(await ev('packingDemo.states.backpack_cargo.state'),'expanded');
+ await call('Page.reload');await new Promise(r=>setTimeout(r,600));
+ fs.writeFileSync('docs/container-states-preview.png',Buffer.from((await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:true})).data,'base64'));
+ console.log('PASS browser: 16 images, fold/open, nonempty fold rejection, folded insert rejection, partition rejection and successful nesting.');ws.close();
+})().catch(e=>{console.error(e);process.exit(1);});

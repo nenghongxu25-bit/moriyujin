@@ -1,0 +1,47 @@
+const fs=require('fs'),vm=require('vm'),ts=require('typescript'),assert=require('assert');
+class RoomRegion{};class TileMapLayer{};
+const Laya={Script:class{},TileMapLayer,Vector2:class{},Point:class{constructor(x,y){this.x=x;this.y=y;}},regClass:()=>()=>{},property:()=>()=>{},stage:{off(){}},Event:{KEY_DOWN:1,KEY_UP:2}};
+const rays=[];const walls={setDarknessDepth(){},canSeeGround:(world,x,y,tx,ty)=>{rays.push([x,y,tx,ty]);return tx<100;}};
+const ctx={exports:{},Laya,console:{info(){}},require:p=>p.includes('RoomRegion')?{RoomRegion}:p.includes('BrickWallTileLayer')?{BrickWallTileLayer:walls}:p.includes('PlayerController')?{PlayerController:{activeInstance:null}}:p.includes('Joystick')?{Joystick:{instance:null}}:{attack:{}}};
+vm.runInNewContext(ts.transpileModule(fs.readFileSync('src/systems/RoomDarkness.ts','utf8'),{compilerOptions:{module:1,target:4,experimentalDecorators:true}}).outputText,ctx);
+const calls=[];const graphics={clear:()=>calls.length=0,drawPoly:(x,y,p)=>calls.push(p)};
+const map={renderTileSize:32,tileSet:{tileSize:{x:256,y:128}},_chunkDatas:{0:{0:{chunkX:0,chunkY:0,compressData:{0:[0,2]}}}},gridToPixel:(x,y,p)=>{p.x=x*256;p.y=y*64;}};
+const region={activeInHierarchy:true,scaleY:.25,children:[],getComponent:t=>t===RoomRegion?{}:t===TileMapLayer?map:null,localToGlobal:p=>({x:p.x*.25,y:p.y*.25})};
+const world={children:[region],getComponent:()=>null,globalToLocal:p=>p,localToGlobal:p=>p};
+const effect=new ctx.exports.RoomDarkness();effect.world=world;effect.black={graphics,getBounds:()=>({x:0,y:-256,width:200,height:300})};effect.owner={setSelfBounds(){}};
+effect.rebuild();assert.equal(effect.patches.length,2,'only painted region cells become darkness');assert.equal(calls.length,2);assert.equal(effect.black.alpha,1,'opaque union before applying global dark alpha');
+const mask={graphics};effect.visibility({globalToLocal:p=>p},mask,0,0);assert.equal(calls.length,1,'wall-blocked patch excluded from light');assert.equal(rays.length,2);
+const stillLight={globalToLocal:p=>p};effect.visibility(stillLight,mask,0,0);
+assert.equal(rays.length,2,'stationary light reuses wall rays');
+effect.visibility({globalToLocal:p=>({x:p.x+10,y:p.y-5})},mask,0,0);
+assert.equal(rays.length,2,'camera transform does not repeat world rays');
+assert.equal(calls[0][0],10);assert.equal(calls[0][1],-277);
+effect.visibility(stillLight,mask,1,0);assert.equal(rays.length,4,'moving light refreshes rays immediately');
+walls.sightRevision=1;effect.visibility(stillLight,mask,1,0);assert.equal(rays.length,6,'rebuilt/removed walls invalidate cached visibility');
+const stablePolygon=calls[0];effect.visibility(stillLight,mask,2,0);assert.equal(rays.length,8);assert.strictEqual(calls[0],stablePolygon,'moving origin with unchanged visible cells keeps existing mask geometry');
+const glowCalls=[];effect.visibility(stillLight,{graphics:{clear:()=>glowCalls.length=0,drawPoly:(x,y,p)=>glowCalls.push(p)}},2,0);
+assert.equal(rays.length,8,'soft glow reuses flashlight rays from the same origin');assert.equal(glowCalls.length,1);
+region.activeInHierarchy=false;effect.rebuild();assert.equal(effect.patches.length,0,'inactive room excluded');
+console.log('PASS: logical painted ranges, no floor dependency, opaque darkness union, wall-clipped light, inactive rooms.');
+const extra=ctx.exports.additionalRoomDarkness;
+for(const ambient of [0,.25,.8,.86,1]){const additional=extra(.86,ambient);assert(Math.abs(ambient+(1-ambient)*additional-Math.max(.86,ambient))<1e-9);}
+Laya.Matrix=class{constructor(a,b,c,d,tx,ty){Object.assign(this,{a,b,c,d,tx,ty});}};
+Laya.Sprite=class{constructor(){this.graphics={clear(){},drawPoly(){}};}addChild(){}size(width,height){Object.assign(this,{width,height});}destroy(){this.destroyed=true;}};
+const shared=new ctx.exports.RoomDarkness();shared.world=world;shared.black={};shared.beam={};shared.lamp={};shared.patches=[{}];shared.owner={addChild(){},reCache(){}};
+let offset=10;const source={name:'circle_cutout',texture:{},blendMode:'destinationOut',visible:true,activeInHierarchy:true,width:100,height:200,alpha:.7,localToGlobal:p=>({x:offset-p.y*2,y:20+p.x*2})};
+const bg={visible:true,alpha:.8},night={visible:true,alpha:1,children:[source],getChildByName:()=>bg};shared.externalNightLayer=night;
+const visibility=[];shared.visibility=(node,mask,x,y)=>visibility.push([x,y]);shared.updateSharedLights();
+assert(Math.abs(shared.owner.alpha-.3)<1e-9,'room adds only missing ambient darkness');
+let copy=shared.sharedLights.get(source);assert.equal(copy.light.transform.a,0);assert.equal(copy.light.transform.b,2);assert.equal(copy.light.transform.c,-2);assert.equal(copy.light.transform.tx,10);assert.equal(copy.light.texture,source.texture);assert.equal(copy.node.alpha,.7);assert.equal(copy.node.transform,undefined,'mask container stays unrotated');
+offset=30;shared.updateSharedLights();assert.equal(copy.light.transform.tx,30,'follows source motion');assert.equal(shared.sharedLights.size,1,'reuses light copy');
+let lastSupplement=shared.owner.alpha;
+for(const fade of [1,.8,.5,.2,0]){
+ night.alpha=fade;shared.updateSharedLights();
+ assert(shared.owner.alpha<=lastSupplement+1e-9,'lightning must never deepen the room overlay');lastSupplement=shared.owner.alpha;
+ assert(Math.abs(.8*fade+(1-.8*fade)*shared.owner.alpha-.86*fade)<1e-9,'room and ambient share the same lightning fade');
+}
+night.alpha=1;shared.updateSharedLights();assert(Math.abs(shared.owner.alpha-.3)<1e-9,'normal darkness returns after lightning');
+night.visible=false;shared.updateSharedLights();assert.equal(shared.owner.alpha,.86,'indoor darkness remains when global night disabled');
+night.children=[];shared.updateSharedLights();assert(copy.node.destroyed&&copy.mask.destroyed);assert.equal(shared.sharedLights.size,0);
+shared.patches=[];shared.updateSharedLights();assert.equal(shared.owner.alpha,0,'no rooms leaves city unchanged');
+console.log('PASS: ambient compensation, source texture/alpha/rotation/scale/position, copy reuse, daylight, cleanup, empty city.');

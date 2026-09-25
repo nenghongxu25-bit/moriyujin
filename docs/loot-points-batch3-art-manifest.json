@@ -1,0 +1,47 @@
+{
+  "generator": "built-in image_gen",
+  "items": [
+    {
+      "id": "supply_crate",
+      "name": "军用补给箱",
+      "displaySize": 300,
+      "prompt": "Use case: stylized-concept. Transparent PNG game animation sprite sheet, square 1024x1024, genuine zero-alpha background. Exactly FOUR chronological sprites in a 2x2 equal-cell grid: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN, reading order. ONE identical object, same fixed camera, same stationary body and same size in every frame. Orthographic 2:1 isometric view, see front and right surfaces. Realistic hand-painted worn tactical extraction game art, muted colors, upper-left lighting. No floor, shadows, glow, backgrounds, text, logos or grid lines. Entire object and moving door must fit in central 80% of each cell with generous transparent margins. Only specified opening part moves, never rotate entire object. A broad squat reinforced wooden military supply chest with faded olive metal straps, two front catches and a rear-hinged wooden lid. Lid progressively rotates 0,30,65,100 degrees, revealing empty raw wooden interior. The stationary box base never changes.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-2746de8a-cb68-4a75-949e-ff8d9969df6a.png"
+    },
+    {
+      "id": "weapon_locker",
+      "name": "钢制武器柜",
+      "displaySize": 360,
+      "prompt": "Use case: stylized-concept. Transparent PNG game animation sprite sheet, square 1024x1024, genuine zero-alpha background. Exactly FOUR chronological sprites in a 2x2 equal-cell grid: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN, reading order. ONE identical object, same fixed camera, same stationary body and same size in every frame. Orthographic 2:1 isometric view, see front and right surfaces. Realistic hand-painted worn tactical extraction game art, muted colors, upper-left lighting. No floor, shadows, glow, backgrounds, text, logos or grid lines. Entire object and moving door must fit in central 80% of each cell with generous transparent margins. Only specified opening part moves, never rotate entire object. A tall narrow gun locker of dark olive steel, single full-height door, vent slots, vertical handle. LEFT vertical hinge opens front door 0,30,65,100 degrees. Empty interior rifle rack and upper shelf, NO guns inside, no top lid. Cabinet body remains fixed.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-589fa648-ca17-4d52-bdfe-4b5cf8e1c4ca.png"
+    },
+    {
+      "id": "medical_cabinet",
+      "name": "急救医疗柜",
+      "displaySize": 240,
+      "prompt": "Use case: stylized-concept. Transparent PNG game animation sprite sheet, square 1024x1024, genuine zero-alpha background. Exactly FOUR chronological sprites in a 2x2 equal-cell grid: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN, reading order. ONE identical object, same fixed camera, same stationary body and same size in every frame. Orthographic 2:1 isometric view, see front and right surfaces. Realistic hand-painted worn tactical extraction game art, muted colors, upper-left lighting. No floor, shadows, glow, backgrounds, text, logos or grid lines. Entire object and moving door must fit in central 80% of each cell with generous transparent margins. Only specified opening part moves, never rotate entire object. A compact off-white metal wall medical cabinet with faded red plus emblem, single LEFT-hinged front door opens 0,30,65,100 degrees, three empty shelves inside. Rear cabinet housing stays fixed. No wall shown.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-6c07781c-b130-4c0d-8006-e1a476be4595.png"
+    },
+    {
+      "id": "computer_tower",
+      "name": "旧式电脑主机",
+      "displaySize": 216,
+      "prompt": "Use case: stylized-concept. Transparent PNG game animation sprite sheet, square 1024x1024, genuine zero-alpha background. Exactly FOUR chronological sprites in a 2x2 equal-cell grid: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN, reading order. ONE identical object, same fixed camera, same stationary body and same size in every frame. Orthographic 2:1 isometric view, see front and right surfaces. Realistic hand-painted worn tactical extraction game art, muted colors, upper-left lighting. No floor, shadows, glow, backgrounds, text, logos or grid lines. Entire object and moving door must fit in central 80% of each cell with generous transparent margins. Only specified opening part moves, never rotate entire object. A worn charcoal grey desktop computer tower, narrow front bezel on RIGHT with power button and drive bays, BROAD visible side panel facing viewer. Broad side is a hinged maintenance door attached at rear LEFT vertical edge, opens progressively 0,30,65,100 degrees to reveal motherboard, dusty fan and cables. Entire fixed chassis and front bezel stay identical. Side panel remains attached, no floating panel, no lid opening.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-249f317a-c6ea-4cd5-81ec-bbf39e417b92.png"
+    },
+    {
+      "id": "hanging_jacket",
+      "name": "墙挂工装夹克",
+      "displaySize": 236,
+      "prompt": "Use case: stylized-concept. Transparent PNG game animation sprite sheet, square 1024x1024, genuine zero-alpha background. Exactly FOUR chronological sprites in a 2x2 equal-cell grid: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN, reading order. ONE identical object, same fixed camera, same stationary body and same size in every frame. Orthographic 2:1 isometric view, see front and right surfaces. Realistic hand-painted worn tactical extraction game art, muted colors, upper-left lighting. No floor, shadows, glow, backgrounds, text, logos or grid lines. Entire object and moving door must fit in central 80% of each cell with generous transparent margins. Only specified opening part moves, never rotate entire object. A dusty tan canvas work jacket hanging from a simple dark metal coat hook, no wall visible, oblique isometric orientation matching a wall running down-right at 26.565 degrees. CLOSED jacket has two large lower flap cargo pockets. Across four frames ONLY both pocket flaps gradually lift from closed to fully folded upward revealing dark searchable pocket openings. Jacket body, sleeves, collar and hook remain absolutely fixed. No hands, no person, no opening central jacket zipper.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-6b4709d8-6d79-4198-85c6-94e6370f1932.png"
+    },
+    {
+      "id": "sports_bag",
+      "name": "拉链运动包",
+      "displaySize": 216,
+      "prompt": "Use case: stylized-concept. Transparent PNG game animation sprite sheet, square 1024x1024, genuine zero-alpha background. Exactly FOUR chronological sprites in a 2x2 equal-cell grid: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN, reading order. ONE identical object, same fixed camera, same stationary body and same size in every frame. Orthographic 2:1 isometric view, see front and right surfaces. Realistic hand-painted worn tactical extraction game art, muted colors, upper-left lighting. No floor, shadows, glow, backgrounds, text, logos or grid lines. Entire object and moving door must fit in central 80% of each cell with generous transparent margins. Only specified opening part moves, never rotate entire object. A compact faded red and charcoal nylon sports holdall on ground with black short carrying handles and an arched zipper across top. Four stages: zipper fully closed; narrow unzipped slit; half-open soft mouth; fully unzipped wide top with back fabric flap folded back and dark lining visible. Body and handles remain fixed. No rigid lid, no logos or stripes resembling brands.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-120b8175-0e13-460b-97e5-41b820ff2a1c.png"
+    }
+  ]
+}

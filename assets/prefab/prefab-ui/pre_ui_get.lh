@@ -1,0 +1,19 @@
+{
+  "_$ver": 1,
+  "_$id": "get_root_001",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 128,
+  "height": 128,
+  "_$child": [
+    {
+      "_$id": "img_get",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 128,
+      "height": 128,
+      "src": "res://0b981838-9af1-457b-b919-3ea354d06d05",
+      "autoSize": false
+    }
+  ]
+}

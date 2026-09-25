@@ -1,0 +1,1444 @@
+{
+  "version": 1,
+  "backup": ".tmp/image-cleanup-backup-20260919",
+  "duplicates": [
+    {
+      "from": "assets/picture/draw/wood_box_city_style_preview_128.png",
+      "keep": "assets/atlas/picture/interacts/containers/wood_box.png",
+      "oldUuid": "536c0d52-5c93-41bd-9af6-9bf7f0b95cea",
+      "newUuid": "fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+      "hash": "a927ea8e473786795757d9db07b78282474bb26451c450b1f916fc4282d4a03a",
+      "bytes": 29622
+    },
+    {
+      "from": "assets/atlas/picture/items/armors/bodies/k1chaban.png",
+      "keep": "assets/atlas/picture/items/shared/armor-plate.png",
+      "oldUuid": "2243dc4a-b41d-4854-b127-ef53226ad0e0",
+      "newUuid": "97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+      "hash": "2975732e983ebc6faa1fdfdceb394e45c1f4e081891eea25be99d9faf09c3acf",
+      "bytes": 11124
+    },
+    {
+      "from": "assets/atlas/picture/items/armors/heads/k1.png",
+      "keep": "assets/atlas/picture/items/shared/helmet.png",
+      "oldUuid": "de421032-3889-47e8-86fa-7303e0d3e0ab",
+      "newUuid": "296adca1-d671-45e5-9c20-44bc38c9dea1",
+      "hash": "99dae6b68844156dbdc04f2165e7d0e7144f3faac9bfc89a16eb362894de1545",
+      "bytes": 12780
+    },
+    {
+      "from": "assets/atlas/picture/items/armors/heads/laoshigangkui.png",
+      "keep": "assets/atlas/picture/items/shared/helmet.png",
+      "oldUuid": "f2ef59ef-7a83-476f-b5a2-04cf60213b57",
+      "newUuid": "296adca1-d671-45e5-9c20-44bc38c9dea1",
+      "hash": "99dae6b68844156dbdc04f2165e7d0e7144f3faac9bfc89a16eb362894de1545",
+      "bytes": 12780
+    },
+    {
+      "from": "assets/atlas/picture/items/foods/eats/grilled_corn.png",
+      "keep": "assets/atlas/picture/items/shared/cooked-food.png",
+      "oldUuid": "c7562ee6-fd53-48c5-a85a-583494288cae",
+      "newUuid": "f4849d33-faa8-4bd6-85f0-d3045b847f64",
+      "hash": "37c0264ed11a518ecb9147e0c72e852a1c7aa94f3992a0ccda65a6698305bda4",
+      "bytes": 23828
+    },
+    {
+      "from": "assets/atlas/picture/items/foods/eats/grilled_fish.png",
+      "keep": "assets/atlas/picture/items/shared/cooked-food.png",
+      "oldUuid": "19cef2f3-95d4-4f56-9607-5371c8afef8f",
+      "newUuid": "f4849d33-faa8-4bd6-85f0-d3045b847f64",
+      "hash": "37c0264ed11a518ecb9147e0c72e852a1c7aa94f3992a0ccda65a6698305bda4",
+      "bytes": 23828
+    },
+    {
+      "from": "assets/atlas/picture/items/foods/eats/grilled_mushroom.png",
+      "keep": "assets/atlas/picture/items/shared/cooked-food.png",
+      "oldUuid": "96bbbcf8-57a9-49ec-ba8e-dbf0c9e86e6a",
+      "newUuid": "f4849d33-faa8-4bd6-85f0-d3045b847f64",
+      "hash": "37c0264ed11a518ecb9147e0c72e852a1c7aa94f3992a0ccda65a6698305bda4",
+      "bytes": 23828
+    },
+    {
+      "from": "assets/atlas/picture/items/foods/eats/grilled_potato.png",
+      "keep": "assets/atlas/picture/items/shared/cooked-food.png",
+      "oldUuid": "a0d1fb7a-8839-4bf8-8095-20268bd8e493",
+      "newUuid": "f4849d33-faa8-4bd6-85f0-d3045b847f64",
+      "hash": "37c0264ed11a518ecb9147e0c72e852a1c7aa94f3992a0ccda65a6698305bda4",
+      "bytes": 23828
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/advanced_materials/tieding.png",
+      "keep": "assets/atlas/picture/items/shared/metal-ingot.png",
+      "oldUuid": "0274932b-bbc0-4578-b080-31bad545438c",
+      "newUuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+      "hash": "d6c144b5ab499683d204994c6af36a34a53523cfbd02939c165e8cc673e6059f",
+      "bytes": 21123
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/advanced_materials/tongding.png",
+      "keep": "assets/atlas/picture/items/shared/metal-ingot.png",
+      "oldUuid": "e0e4c071-37e1-4ac1-833e-4093c9241cf1",
+      "newUuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+      "hash": "d6c144b5ab499683d204994c6af36a34a53523cfbd02939c165e8cc673e6059f",
+      "bytes": 21123
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/advanced_materials/Wu.png",
+      "keep": "assets/atlas/picture/items/shared/metal-ingot.png",
+      "oldUuid": "59b718da-dd7b-470e-88e2-e356fff3b9d0",
+      "newUuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+      "hash": "d6c144b5ab499683d204994c6af36a34a53523cfbd02939c165e8cc673e6059f",
+      "bytes": 21123
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/advanced_materials/Wuding.png",
+      "keep": "assets/atlas/picture/items/shared/metal-ingot.png",
+      "oldUuid": "dc27cab1-e856-4eb3-a61d-603abbd9119a",
+      "newUuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+      "hash": "d6c144b5ab499683d204994c6af36a34a53523cfbd02939c165e8cc673e6059f",
+      "bytes": 21123
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/advanced_materials/yingmu.png",
+      "keep": "assets/atlas/picture/items/shared/metal-ingot.png",
+      "oldUuid": "aff7c47b-1c5d-4cb2-9714-4743f0cdc839",
+      "newUuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+      "hash": "d6c144b5ab499683d204994c6af36a34a53523cfbd02939c165e8cc673e6059f",
+      "bytes": 21123
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/renshen.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "e659d729-ed8b-4729-bd6f-d76aff8704ed",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/shougu.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "8a806e38-d2e1-4d96-9e87-dd2827529295",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/shupi.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "32097425-9106-4409-9523-0ae9c8debec2",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/shuzhi.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "ec9674e9-45d2-44da-8c45-86c103ea99c6",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/tiaoliao.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "14101de7-e926-42f4-b4a6-c73e8d2623ac",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/xiaoshi.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "5ecb2525-9591-4a43-86d6-b906b310444a",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/xiaoshuzhi.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "8935566d-143b-4a02-9817-8c509fd46e91",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/xiyoujinshu.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "83af80e4-9430-44b1-a3e6-efc5e8b5ec4c",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/yaocao.png",
+      "keep": "assets/atlas/picture/items/shared/basic-material.png",
+      "oldUuid": "ca45151a-5349-492c-b091-9105893d63b6",
+      "newUuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "bytes": 30748
+    }
+  ],
+  "moves": [
+    {
+      "from": "assets/atlas/picture/items/armors/bodies/G6taociban.png",
+      "to": "assets/atlas/picture/items/shared/armor-plate.png",
+      "uuid": "97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+      "hash": "2975732e983ebc6faa1fdfdceb394e45c1f4e081891eea25be99d9faf09c3acf",
+      "reason": "shared-placeholder"
+    },
+    {
+      "from": "assets/atlas/picture/items/armors/heads/G6.png",
+      "to": "assets/atlas/picture/items/shared/helmet.png",
+      "uuid": "296adca1-d671-45e5-9c20-44bc38c9dea1",
+      "hash": "99dae6b68844156dbdc04f2165e7d0e7144f3faac9bfc89a16eb362894de1545",
+      "reason": "shared-placeholder"
+    },
+    {
+      "from": "assets/atlas/picture/items/foods/eats/fried_chips.png",
+      "to": "assets/atlas/picture/items/shared/cooked-food.png",
+      "uuid": "f4849d33-faa8-4bd6-85f0-d3045b847f64",
+      "hash": "37c0264ed11a518ecb9147e0c72e852a1c7aa94f3992a0ccda65a6698305bda4",
+      "reason": "shared-placeholder"
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/advanced_materials/Ti.png",
+      "to": "assets/atlas/picture/items/shared/metal-ingot.png",
+      "uuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+      "hash": "d6c144b5ab499683d204994c6af36a34a53523cfbd02939c165e8cc673e6059f",
+      "reason": "shared-placeholder"
+    },
+    {
+      "from": "assets/atlas/picture/items/materials/basic_materials/wood.png",
+      "to": "assets/atlas/picture/items/shared/basic-material.png",
+      "uuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+      "hash": "eec5f61b57a66ebb25896a3840895cb8f0daed65a1d0f3440c5dff8d8b97d479",
+      "reason": "shared-placeholder"
+    },
+    {
+      "from": "assets/atlas/picture/draw/campfire-animation.json",
+      "to": "assets/atlas/picture/effects/fire/campfire-animation.json",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/campfire-base.png",
+      "to": "assets/atlas/picture/effects/fire/campfire-base.png",
+      "uuid": "086d17c8-4c51-44c1-8196-ca07dcd32cea",
+      "hash": "202273292fbe968bf0dff0537d8a9e66db3485ae69c6e7205c77affee3db3c5f",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/campfire-preview.html",
+      "to": "assets/atlas/picture/effects/fire/campfire-preview.html",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/campfire-README.md",
+      "to": "assets/atlas/picture/effects/fire/campfire-README.md",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/dumpster.png",
+      "to": "art-library/images/environment/city/dumpster.png",
+      "uuid": "0fcde733-5ba0-408b-86fc-1d53f0928689",
+      "hash": "c651d6c457177e21e70df35dc7268d6d28b8f492fd11c64dccd602baf09ade16",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/fire_hydrant.png",
+      "to": "art-library/images/environment/city/fire_hydrant.png",
+      "uuid": "860f2340-e123-466d-9005-5fab2bff7f64",
+      "hash": "ed80914e1dbc6cbe6c01d917c7dd4c1c841660b8267bb2fd1b4903a9c4c5b0ed",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-abandoned-house-v1.png",
+      "to": "art-library/images/environment/forest/forest-abandoned-house-v1.png",
+      "uuid": "f07b19bd-b40d-4f4b-87ee-72044f0e64e6",
+      "hash": "04193de61d1688a8c11154583d4935e9489513ea584f65b1ad62f5aa4b88bf39",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-bunker-entrance-v1.png",
+      "to": "art-library/images/environment/forest/forest-bunker-entrance-v1.png",
+      "uuid": "d3c70fa3-686a-4de0-90b7-c1f1c91bf59f",
+      "hash": "f92775fb4c4fa3add62b62ba128d7afbc589481343dbbc990f8d5a3c673eabde",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-cabin-v1.png",
+      "to": "art-library/images/environment/forest/forest-cabin-v1.png",
+      "uuid": "ec5dee07-f620-44b9-a867-b90aba709140",
+      "hash": "63446fd2a88b750d49ff1f05fb06dd3e57bff4dde4b6d84f78131817a033a21f",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-campfire-v1.png",
+      "to": "art-library/images/environment/forest/forest-campfire-v1.png",
+      "uuid": "353d77e0-e9c8-4595-b828-aa1b82c02296",
+      "hash": "92d11d5bfa3e633c3cf021cb6e83fe57507ef5167ea39916e949c89f77c5451b",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-environment-kit-v1.png",
+      "to": "art-library/images/environment/forest/forest-environment-kit-v1.png",
+      "uuid": "849957d5-049d-4e93-ada0-d4c8051d2d15",
+      "hash": "222e32d2b4449b4f61be08330beb407f3fd2319dc1f622222a66e0ab4c116c7d",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-fallen-log-v1.png",
+      "to": "art-library/images/environment/forest/forest-fallen-log-v1.png",
+      "uuid": "32c98b15-5115-4cd2-b6b6-c53466d44492",
+      "hash": "418007fcfac90b3bca2d0bab0902bbc457972b5a89272a6b98733ae96350df63",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-fuel-barrel-v1.png",
+      "to": "art-library/images/environment/forest/forest-fuel-barrel-v1.png",
+      "uuid": "c189dc46-6429-4d68-ac17-9a42e4536338",
+      "hash": "f9ee06fe88e90c510d9bbe833ba3497bc4ef69c70e7acf889e9c32215101e46f",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-generator-v1.png",
+      "to": "art-library/images/environment/forest/forest-generator-v1.png",
+      "uuid": "559cf783-8461-4b81-9cc0-f6e29290f30a",
+      "hash": "89a8db51a0b2a1803610879259a425939db6af348a39d3b24d6702cfc74a4c39",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-log-pile-v1.png",
+      "to": "art-library/images/environment/forest/forest-log-pile-v1.png",
+      "uuid": "ead7abd9-3225-42fb-b270-912da03a4bd5",
+      "hash": "1e5f0ac957841f46cb54b11d56ad3f19549a1a43bd7e6e8b7d6d7093ec784317",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-military-checkpoint-v1.png",
+      "to": "art-library/images/environment/forest/forest-military-checkpoint-v1.png",
+      "uuid": "c8ec31c2-ac52-4ccf-8391-80684d2acdee",
+      "hash": "3d2ee6ddae7acb67c8f8c305f823c1ae17a5c900cf6ead29b1c13df87e624984",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-military-tent-v1.png",
+      "to": "art-library/images/environment/forest/forest-military-tent-v1.png",
+      "uuid": "b43507ae-0cbe-4313-97f1-fae6c9a2b921",
+      "hash": "39404b29b1bdddc3bc56dc623d83f8eb4c0021765c913c452ebb40b3abe8ec30",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-outhouse-v1.png",
+      "to": "art-library/images/environment/forest/forest-outhouse-v1.png",
+      "uuid": "a79ba965-a9ae-4420-ad54-6ea33c96ef07",
+      "hash": "c439ac9943cb2ab71f93dca06be0135af330632b53d0b3d25340aa2b25ed26ff",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-pine-tree-v1.png",
+      "to": "art-library/images/environment/forest/forest-pine-tree-v1.png",
+      "uuid": "fd40b293-e4cf-48bb-8dad-39153833012c",
+      "hash": "1450d573deca280041422a4d6e0af75bf434dc8c40b467f302219f97e971f627",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-rocky-lookout-v1.png",
+      "to": "art-library/images/environment/forest/forest-rocky-lookout-v1.png",
+      "uuid": "9abdb935-51a2-4c33-bde8-870a683a4e87",
+      "hash": "056cf23f28db0785936b9f85bc694eac86a8fe2f4c195fa37cfc1c1d81dd3adc",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-rusty-pickup-v1.png",
+      "to": "art-library/images/environment/forest/forest-rusty-pickup-v1.png",
+      "uuid": "70337db2-b636-4a67-880c-1fff100a86d6",
+      "hash": "6f6379f5a173d202de02bf109358915c8e795023b6d43433d956bebd2a3f1569",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-sawmill-v1.png",
+      "to": "art-library/images/environment/forest/forest-sawmill-v1.png",
+      "uuid": "0ce6f676-988d-453c-a081-ad6ebe8a19a0",
+      "hash": "88b15cea593bcd1dee053dc5b23769154f7ae9c3ece5437fe07f418bb4d7a765",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-shrub-v1.png",
+      "to": "art-library/images/environment/forest/forest-shrub-v1.png",
+      "uuid": "aead6b2d-9829-41ce-b711-20f80bbcda33",
+      "hash": "4c868d6b158a2bfd48873e220299367d76b8b56aa3bff2596f2f0eacb96012b9",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-structures-kit-v1.png",
+      "to": "art-library/images/environment/forest/forest-structures-kit-v1.png",
+      "uuid": "6cb7f723-e3d4-4539-b503-ed77abb1053d",
+      "hash": "5b62b48b346e33a9c478e188f7280926f1102f1542dffdb810b0c0e92c1789b2",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-watchtower-v1.png",
+      "to": "art-library/images/environment/forest/forest-watchtower-v1.png",
+      "uuid": "3dade8e4-0dfd-4a1e-84a8-7f2fc7a8e7c3",
+      "hash": "cc0e54347614885cf5cf802da26d8894af35fbe41a8486342a0c1751b21f434c",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-wood-bridge-v1.png",
+      "to": "art-library/images/environment/forest/forest-wood-bridge-v1.png",
+      "uuid": "c676fa6c-aab7-471b-8e4d-db738bddcc9b",
+      "hash": "23e29564f0fb02784e442178e9e47334eaad0a73d2a80e52350f4fdeb837fadf",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/forest-wood-fence-v1.png",
+      "to": "art-library/images/environment/forest/forest-wood-fence-v1.png",
+      "uuid": "0de7a0a9-45fa-4cc9-bf80-ca05f07eebf1",
+      "hash": "95f4726f72778df68a5aefeff517783de56f7ad1adcc55f612681eda368e212d",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/road_barrier.png",
+      "to": "art-library/images/environment/city/road_barrier.png",
+      "uuid": "cf9a7984-04d4-4e42-9525-091407ea30f1",
+      "hash": "4d432db81f353db656be895d7b012bbc19050cf5d1e5186bb98246aaeb575985",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snow-particle-sheet.lmat",
+      "to": "assets/atlas/picture/effects/weather/snow-particle-sheet.lmat",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snow-particle-sheet.png",
+      "to": "assets/atlas/picture/effects/weather/snow-particle-sheet.png",
+      "uuid": "c3598cd1-ca99-4b6a-b6f6-6c47e6bd3576",
+      "hash": "b6800097521408029a8b38fb7f84f2956faec49ea515ed8fa6c79d32d5a0f963",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snow-particle.lmat",
+      "to": "assets/atlas/picture/effects/weather/snow-particle.lmat",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-00.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-00.png",
+      "uuid": "11afe3ea-e596-46b0-9f8f-4b8bd51d9b80",
+      "hash": "8b794e20e94728ffe021c016c24a747338a3a15e2580ac92da059b4c59581b99",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-01.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-01.png",
+      "uuid": "a59167e0-aa4c-4f89-a2a5-28974882580c",
+      "hash": "08d22ef247f7ca62c3c46c7a084b8781390ab0bf26f0e229a62ad9e9da3acbde",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-02.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-02.png",
+      "uuid": "758eaf0f-6305-448e-9ddc-04d2f8666f47",
+      "hash": "b1452d8c0800e34293965269b9a8ffeab52f1322abcac3d9a90193ed82c0b0a0",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-04.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-04.png",
+      "uuid": "a0b8c92c-746c-4379-981f-3c3d32a259f7",
+      "hash": "335d451b1cb4ab250605041851f305bb23926268c55632abcd8c93ba672b8b78",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-05.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-05.png",
+      "uuid": "53f1c82d-8540-47c5-b618-c2e854ce43da",
+      "hash": "3e30e6d843efe99fd6f60c7791102d4854c1bacd85f6ce41c624073c760fe797",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-06.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-06.png",
+      "uuid": "c872ab6d-d25d-49d7-8c75-b32b451f9a38",
+      "hash": "b93aa0295859acb0da49667a671b78ab4826ca28c52502050258d344f159fd06",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-08.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-08.png",
+      "uuid": "0c0b7ca4-c94c-4e3a-a9cf-3dae64f25791",
+      "hash": "7b24027628ae6211e2b8f028ef1d3be7d92e8ef6033abf8833b343c73c0d4db2",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-09.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-09.png",
+      "uuid": "8c7bda66-677b-4772-8d2f-c97b43e8f1fa",
+      "hash": "b3300a7e0c714ef850e04213b808384f291a7cab31eb21204859dac59ef5713b",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes/snowflake-10.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes/snowflake-10.png",
+      "uuid": "4df116d6-ea61-4615-8d96-618c6c1fbc1e",
+      "hash": "bbe55fa432d7eaa8bf5b40fdf1693dfb04f0f059f79c850668efc83b2cef75a5",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-00.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-00.png",
+      "uuid": "4750178e-0fce-426d-91dd-784f5a630da4",
+      "hash": "2ba6312d4f5ba1ab564bcbd05ba74b25f1f789008dd61c4eb715a6cc303c3cbd",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-01.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-01.png",
+      "uuid": "f94bae99-3bb0-46a7-b34d-24898fab7d56",
+      "hash": "d685eaed8bfa11d8ba8177084f7b2b4143a2928077ee13e0d3e7c0d4e7fae0a0",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-02.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-02.png",
+      "uuid": "3bc42b08-6e07-4975-bc13-1cd1104e8025",
+      "hash": "6ec080a17b06130c5722b6df7c51d9cb3cb81b55bd025e20a4a0e2adaee1fd51",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-03.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-03.png",
+      "uuid": "9ae9da72-dbbb-47e1-a3bb-dd1da0ce3fcd",
+      "hash": "66c441892ce26dd90908a8f4595d6688849b8421c8e4bb2cab2c4683bc32ec67",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-04.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-04.png",
+      "uuid": "151fa370-122c-4d98-baf4-3a6bce4a6681",
+      "hash": "dc9c26b2f6398e87ed02a4a5a2e41dfba55041b5cfdc9eff70de470e3f90c3af",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-05.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-05.png",
+      "uuid": "7b75665f-c830-4cd4-a0f6-b53048dc154c",
+      "hash": "f08f1338c5c0dbd9b886629080d1a38f69a08b38151f8b15859b5029db4cee09",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-06.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-06.png",
+      "uuid": "c53a6819-4774-4b39-b190-6cd112bbc142",
+      "hash": "07b603538abca286fb5abc5a298fa41f7e536436982b0ae8d9ec8df984abf950",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-07.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-07.png",
+      "uuid": "e02ea31c-12ab-42fc-a166-c9ec8d62762a",
+      "hash": "e543a63465308d3f2a07ace9550485ad13cbeaf5b498d3b1fe78332fec28c37d",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-08.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-08.png",
+      "uuid": "ec553184-ef86-4a80-96f6-832f93597afc",
+      "hash": "24df66018ae9ffc4f62bfb1a04a1d6c788b71dab20e0f3919bc07b260155ab5b",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-09.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-09.png",
+      "uuid": "517152d1-7eb5-4e57-a3d8-ac18564f4394",
+      "hash": "984060e64d595947690d25d402e3f6e86c2158c7340f46b59940fedc502cedcf",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-10.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-10.png",
+      "uuid": "b61aae13-4b87-4e4e-8c08-c730231b9832",
+      "hash": "0c34e8da63715bbbf748b96f8a2a9ff52dab3295cb77076ab4e642b25b656879",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-11.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-11.png",
+      "uuid": "c11adec8-9854-460f-b764-d58c3e3676bb",
+      "hash": "c5273293835b92b401c063c48a96ba4aaeb6d78897a13a829c25315cc99a7b67",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-12.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-12.png",
+      "uuid": "20ed63b8-aa70-46eb-a8f7-ab77529d680b",
+      "hash": "2264aefca5fab0badf05db4d675c2d742704a08f2df1efdd0a59707f8f74ea2d",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-13.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-13.png",
+      "uuid": "35233dc3-0a3b-4a95-a7b3-c297188a0216",
+      "hash": "c93c0477c2ca0044f2dfd6e1aa5e38deca600745f15d260d38e4e68b13d00e63",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-14.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-14.png",
+      "uuid": "29dfbaa3-97d4-4111-800f-5bb5a548ff9f",
+      "hash": "e05cdf200073c706913787db53ddfbda0b76b85e52cda05aae36fa30443fff50",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/snowflakes-v2/snowflake-15.png",
+      "to": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-15.png",
+      "uuid": "72a4e01b-4841-4d47-bb8a-b995e4dd2092",
+      "hash": "c8cf2c383b53e38bcf6e4c81e6614fe783ef284ccc4df3a0624a8d33b42c28ab",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/street_lamp.png",
+      "to": "art-library/images/environment/city/street_lamp.png",
+      "uuid": "cb755805-fe52-4efa-a4d2-92ff217f4427",
+      "hash": "e3cb0ea9894f5d3cef37b8aecc57155e315644144dd4642bd4bf2b711b248cd3",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-animation-README.md",
+      "to": "assets/atlas/picture/effects/fire/torch-animation-README.md",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-animation.json",
+      "to": "assets/atlas/picture/effects/fire/torch-animation.json",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-body.png",
+      "to": "assets/atlas/picture/effects/fire/torch-body.png",
+      "uuid": "2d938dba-df29-4cd5-b3f1-65c880373b35",
+      "hash": "b352dc96b4e9336cdd81fdd41a2ddc6bdeebd748aad85f32f6a6a594c163feb2",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-concept.png",
+      "to": "assets/atlas/picture/effects/fire/torch-concept.png",
+      "uuid": "c093b5d0-86b0-466a-b6b4-a795e06177c6",
+      "hash": "fa9f29e757cb127f664676a428593ed3cc5f25b1ddb23f77c5e8387066df6274",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-flame-sheet.png",
+      "to": "assets/atlas/picture/effects/fire/torch-flame-sheet.png",
+      "uuid": "2e1c271d-0739-42d8-a6cd-0dbd4ba06830",
+      "hash": "3055543e866f307fa73249d25e2d4848451c9afa958a7c002a5392b4c9352c45",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-00.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-00.png",
+      "uuid": "3304961e-3b44-4453-977d-c76fa8a2290f",
+      "hash": "481e6dad175555672f89d8f69f11d29e4848f5784d14ab71c6fc12e37184a259",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-01.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-01.png",
+      "uuid": "8755a26e-4a60-4ab5-92d6-a95eb1d58359",
+      "hash": "11cb0a4c364d29c55a99792214b7e9f12c51ae72fb06a9ac86dc44f5106b6c75",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-02.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-02.png",
+      "uuid": "061ef271-7ff0-4aff-ac89-182623718370",
+      "hash": "34df6f241d1913a91be8fb639663f278002d597ab84dfb00b26ae5b1f3ec020a",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-03.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-03.png",
+      "uuid": "972cf9a2-8c60-49c9-9db7-4044e5b5e51f",
+      "hash": "4a24fa6cce2085dbdcb4ffd00115ee4702d13c1cde3842c7c306db8013557c8e",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-04.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-04.png",
+      "uuid": "608e06bb-b2a2-4f61-a224-690bc589d2e6",
+      "hash": "37595420999c8c2c9e27dcd60206292c21c903359f628c40f96c3fbe94632e01",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-05.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-05.png",
+      "uuid": "b2083556-c468-4187-a6e6-220d4879f7f7",
+      "hash": "e259374666ae0cc2884b1f732ceb36ad1eb1d14aa0ade50905035ad837f2c1ce",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-06.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-06.png",
+      "uuid": "42e54c10-c2f5-4958-a102-546cb30dd5e0",
+      "hash": "05476a8a32596faf601d2efa5fc71e02002ea93d73e6ad608ae9d71b64cc6c43",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-frames/flame-07.png",
+      "to": "assets/atlas/picture/effects/fire/torch-frames/flame-07.png",
+      "uuid": "d92836a7-8309-4c89-9728-e47ff65a5bb3",
+      "hash": "17f842ad5668e7503bc4451244bbf874e9bd2772e21dffde81ddd263882f4b78",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/torch-preview.html",
+      "to": "assets/atlas/picture/effects/fire/torch-preview.html",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/draw/utility_pole.png",
+      "to": "art-library/images/environment/city/utility_pole.png",
+      "uuid": "11e707da-3243-4d5a-b3c1-0e4a46e4f975",
+      "hash": "47c3ed08e3ebc22f5e7e7e9a151897e4e1c7521321280f3e49b7e8b6551f54bc",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/draw/vending_machine.png",
+      "to": "art-library/images/environment/city/vending_machine.png",
+      "uuid": "87ab7204-af0f-46a8-b83a-68c19b5ef757",
+      "hash": "e5090cbb839db9509757e75fc04f25c8e3847743dacd0decfa88279d23bd07bf",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/c6cee19859632ad69b3939373949d2e5.png",
+      "to": "art-library/images/decorate/c6cee19859632ad69b3939373949d2e5.png",
+      "uuid": "c6da621d-3095-487b-9692-38711b6858e7",
+      "hash": "5a211e30045dc12878a5058adb91c535f1bdf4926d6d916ea4cd9447f1e950fb",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/c957d676e35629d89cdac13779022519.png",
+      "to": "art-library/images/decorate/c957d676e35629d89cdac13779022519.png",
+      "uuid": "bb7dbc21-c850-4758-a51f-221aca12b757",
+      "hash": "ddb27a50f7890ba9eb524a13d2cdc7f96c999703f51d85b2bb995bcc0f7a59dd",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/ChatGPT Image 2026年8月10日 10_45_23 (1) (1) (1).png",
+      "to": "art-library/images/decorate/ChatGPT Image 2026年8月10日 10_45_23 (1) (1) (1).png",
+      "uuid": "ce79c40c-849b-4257-81e0-23d358cc8cb1",
+      "hash": "127b7852a53fb5f0b9637c4266a5b2f08508e23feef4fd3cc7e277a56ceb326b",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/ChatGPT Image 2026年8月31日 11_31_00.png",
+      "to": "art-library/images/decorate/ChatGPT Image 2026年8月31日 11_31_00.png",
+      "uuid": "b1e7439a-67d9-48c3-99e8-2a77ba388bcd",
+      "hash": "93d7058904fc967e1dc8bdcb4f24f007e463458b77b40b8cca19f8722c4e4c42",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/gudui.png",
+      "to": "art-library/images/decorate/gudui.png",
+      "uuid": "bf035a11-2fd2-41c8-966d-c488114f39ae",
+      "hash": "1af98b51cf49a8257ed030c76ea52942d9d965f7fc03c2cabe6b091fa51f6760",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/effects/vision_soft_cone.png",
+      "to": "art-library/images/effects/vision_soft_cone.png",
+      "uuid": "9f9ed7d1-1f73-4d33-9d64-5272cb4d4e16",
+      "hash": "136cf9958aed83406c9f58a74f91376d9d908a405c5632e40a3eca2858b5e0d1",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/fire-light-soft.png",
+      "to": "assets/atlas/picture/effects/lighting/fire-light-soft.png",
+      "uuid": "a0df9fa1-674f-439b-a3d0-2e741d39f8ae",
+      "hash": "6cc702bb18fa9e5311e50f595f0932e29d12d4109c93c7f7defcec0789c58373",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/fire-light-warm.png",
+      "to": "assets/atlas/picture/effects/lighting/fire-light-warm.png",
+      "uuid": "2ef73fda-f151-4f4b-8eb2-4c9bcb188a23",
+      "hash": "dfd4029f837b84c85dc60c42551765d9721b24332137e595c3689ad372435698",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/module/ChatGPT Image 2026年8月10日 12_26_56.png",
+      "to": "art-library/images/module/ChatGPT Image 2026年8月10日 12_26_56.png",
+      "uuid": "b7a4959b-6481-447c-af6d-8feb3b242092",
+      "hash": "f6439504a59e43da20b33d1c3f694a4a452b73994e2dc5e69be43a489b06347a",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/module/jiazaitu.png",
+      "to": "art-library/images/module/jiazaitu.png",
+      "uuid": "b307d780-aff1-41fa-9568-e516a2b5c5ea",
+      "hash": "3a94620f3a337249b5c2302eced0d4f08279c3921c40b5b2a09bde7f16296eaf",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/module/long_box.png",
+      "to": "art-library/images/module/long_box.png",
+      "uuid": "41fc734e-bfc4-496c-8185-8faf87b8bae3",
+      "hash": "0f603523d21796772affa1ba15d18ce31984325d3d3d205f3bcb6bc6e3af6bac",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/module/makeroom_bg.png",
+      "to": "art-library/images/module/makeroom_bg.png",
+      "uuid": "86639d21-2799-4817-becc-bba1e0db4ee9",
+      "hash": "cf28d3682a2a41183285d61acaf78f71f05d4a2d888c2b6d4dbdcc1e548cb37b",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/module/talkdialog.png",
+      "to": "art-library/images/module/talkdialog.png",
+      "uuid": "02a64a26-a74c-4fdf-b2f1-afaf7430cb41",
+      "hash": "24ddd4a2702d1313351b9dd269e60a181b004128b0e6718fdeb6417f3327f69f",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/night-vision-glow.png",
+      "to": "assets/atlas/picture/effects/lighting/night-vision-glow.png",
+      "uuid": "cf8b9242-e647-4a65-9583-6952b5513b38",
+      "hash": "d34a0b4aa8756a2224ada54c7b6387fcec1c105f8a8ae9e115f8faf7afd31bdd",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/night-vision-soft.png",
+      "to": "assets/atlas/picture/effects/lighting/night-vision-soft.png",
+      "uuid": "1abf2cf8-b940-4d63-994c-b9ec9f8da0b2",
+      "hash": "5b5624c94b4a14ff7a2292e7eba3c9cfffb2fb13041f54ff5778dd5507bb1763",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/npc/grandma.png",
+      "to": "art-library/images/npc/grandma.png",
+      "uuid": "4a52ae70-08bd-4fb1-8965-0e81db4f31b2",
+      "hash": "0e2511d577d1c1bcbeed1e8d0de4e85704725c711ec4e881f5f738191ca8fdfe",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/npc/grandpa.png",
+      "to": "art-library/images/npc/grandpa.png",
+      "uuid": "e45f0a5b-3cba-40fd-b6f1-f6a9496971d7",
+      "hash": "b4a0670c44e2a74eda0b206b4a351d02ecdfb26f84d032a53c7572e5213e8e0f",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/room-soft-lower.png",
+      "to": "assets/atlas/picture/effects/lighting/room-soft-lower.png",
+      "uuid": "c5cba251-ae46-4487-98b5-1d2282647d45",
+      "hash": "2278724de56f5576dc05afa723acbf157673e668928a313db62506f83b349d3b",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/room-soft-third.png",
+      "to": "assets/atlas/picture/effects/lighting/room-soft-third.png",
+      "uuid": "b7a3d10a-64c8-43ac-9036-17e052ba915f",
+      "hash": "bb5965e28ba81d4c5d22c7821f6649bc8c7dfcec93a17ee9884df44ea338d523",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/room-soft-upper.png",
+      "to": "assets/atlas/picture/effects/lighting/room-soft-upper.png",
+      "uuid": "4876f987-dbc9-4b18-b9a6-9d4e938d33ed",
+      "hash": "e1dfc6568f6c466bde20653215696b838f47b5192ac1c9a4cf8d43e50de5ab77",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/atlas/picture/ui/attack.png",
+      "to": "art-library/images/ui/attack.png",
+      "uuid": "576268ab-59ee-4c26-b364-e23e18435ca5",
+      "hash": "3aa58258e29ae7337050b49b4ea4486eb019ebce3d636896a0dcbfd17b96faba",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/atlas/picture/vfx/water-surface.png",
+      "to": "art-library/images/vfx/water-surface.png",
+      "uuid": "de6304f3-478d-4e79-b69e-db34ccacb786",
+      "hash": "5185d40cbb0f821efd79c8e95e4d3dcc8505689831cb1f266db5b4bcd0d8bb1d",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/forest-preview/forest-tileset-preview-v1.png",
+      "to": "art-library/images/previews/forest-tileset-preview-v1.png",
+      "uuid": "764ebc3f-cdb3-4057-b6a9-c287b227d197",
+      "hash": "25bb5d64222ee4ac868e51e96a2d9de104579469e192d8d75835b3003ee84a02",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/picture/draw/abandoned_crashed_vehicle.png",
+      "to": "assets/atlas/picture/environment/city/abandoned_crashed_vehicle.png",
+      "uuid": "18a5185a-1dc8-4cef-9853-8aa69e9d6ce7",
+      "hash": "e711e2cce46e65550ebdc22a6f1f25638b1556187f4b0fd66e44db3c0c9586a0",
+      "reason": "classification"
+    },
+    {
+      "from": "assets/picture/draw/abandoned_park_bench.png",
+      "to": "art-library/images/environment/city/abandoned_park_bench.png",
+      "uuid": "0047ee6e-d4e0-4cb7-b56c-d1fa8d803b2f",
+      "hash": "828a5cdbcf62e49c67023146c9d801a5d367cf069586da4d2d037e6956324b13",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/picture/draw/city_dumpster.png",
+      "to": "art-library/images/environment/city/city_dumpster.png",
+      "uuid": "289c53e4-02e0-498b-b8b9-0228ad75a463",
+      "hash": "44e55605ffb62f31bcfb109c5e7f0116137e636baeef16f578896b4c8638bbeb",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/picture/draw/damaged_street_lamp.png",
+      "to": "art-library/images/environment/city/damaged_street_lamp.png",
+      "uuid": "909ffb13-9575-4f41-a947-772a97f9cbd4",
+      "hash": "7d15bc608f2f7e1087855b9fcb25b6dbcd443573cafb6342eea6c99376bc367b",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/picture/draw/road_construction_barricade.png",
+      "to": "art-library/images/environment/city/road_construction_barricade.png",
+      "uuid": "1f8e1266-9f2a-4341-819a-ce17a8497af6",
+      "hash": "a1d2e06c038f323809d32f436acc4c2c4c2a2e6b9e83be176eb3c532eed97312",
+      "reason": "unreferenced-reserve"
+    },
+    {
+      "from": "assets/picture/draw/wood_box_remaster_preview_128.png",
+      "to": "art-library/images/containers/wood_box_remaster_preview_128.png",
+      "uuid": "73f96fd0-6f4f-4879-8cb1-21b2855593b4",
+      "hash": "db8d8d9a591749d6a5d0669da72de07e1ff96cc88e5683fb462d9eaaecd043d6",
+      "reason": "unreferenced-reserve"
+    }
+  ],
+  "replacements": [
+    [
+      "536c0d52-5c93-41bd-9af6-9bf7f0b95cea",
+      "fe0d72a6-0f55-43a1-b6c0-df5c50c9d230"
+    ],
+    [
+      "picture/draw/wood_box_city_style_preview_128.png",
+      "atlas/picture/interacts/containers/wood_box.png"
+    ],
+    [
+      "2243dc4a-b41d-4854-b127-ef53226ad0e0",
+      "97b8e5b4-62be-47b3-a4a3-eb189e9e429a"
+    ],
+    [
+      "atlas/picture/items/armors/bodies/k1chaban.png",
+      "atlas/picture/items/shared/armor-plate.png"
+    ],
+    [
+      "de421032-3889-47e8-86fa-7303e0d3e0ab",
+      "296adca1-d671-45e5-9c20-44bc38c9dea1"
+    ],
+    [
+      "atlas/picture/items/armors/heads/k1.png",
+      "atlas/picture/items/shared/helmet.png"
+    ],
+    [
+      "f2ef59ef-7a83-476f-b5a2-04cf60213b57",
+      "296adca1-d671-45e5-9c20-44bc38c9dea1"
+    ],
+    [
+      "atlas/picture/items/armors/heads/laoshigangkui.png",
+      "atlas/picture/items/shared/helmet.png"
+    ],
+    [
+      "c7562ee6-fd53-48c5-a85a-583494288cae",
+      "f4849d33-faa8-4bd6-85f0-d3045b847f64"
+    ],
+    [
+      "atlas/picture/items/foods/eats/grilled_corn.png",
+      "atlas/picture/items/shared/cooked-food.png"
+    ],
+    [
+      "19cef2f3-95d4-4f56-9607-5371c8afef8f",
+      "f4849d33-faa8-4bd6-85f0-d3045b847f64"
+    ],
+    [
+      "atlas/picture/items/foods/eats/grilled_fish.png",
+      "atlas/picture/items/shared/cooked-food.png"
+    ],
+    [
+      "96bbbcf8-57a9-49ec-ba8e-dbf0c9e86e6a",
+      "f4849d33-faa8-4bd6-85f0-d3045b847f64"
+    ],
+    [
+      "atlas/picture/items/foods/eats/grilled_mushroom.png",
+      "atlas/picture/items/shared/cooked-food.png"
+    ],
+    [
+      "a0d1fb7a-8839-4bf8-8095-20268bd8e493",
+      "f4849d33-faa8-4bd6-85f0-d3045b847f64"
+    ],
+    [
+      "atlas/picture/items/foods/eats/grilled_potato.png",
+      "atlas/picture/items/shared/cooked-food.png"
+    ],
+    [
+      "0274932b-bbc0-4578-b080-31bad545438c",
+      "9c14d322-88ca-4692-bd61-9d6f79f74822"
+    ],
+    [
+      "atlas/picture/items/materials/advanced_materials/tieding.png",
+      "atlas/picture/items/shared/metal-ingot.png"
+    ],
+    [
+      "e0e4c071-37e1-4ac1-833e-4093c9241cf1",
+      "9c14d322-88ca-4692-bd61-9d6f79f74822"
+    ],
+    [
+      "atlas/picture/items/materials/advanced_materials/tongding.png",
+      "atlas/picture/items/shared/metal-ingot.png"
+    ],
+    [
+      "59b718da-dd7b-470e-88e2-e356fff3b9d0",
+      "9c14d322-88ca-4692-bd61-9d6f79f74822"
+    ],
+    [
+      "atlas/picture/items/materials/advanced_materials/Wu.png",
+      "atlas/picture/items/shared/metal-ingot.png"
+    ],
+    [
+      "dc27cab1-e856-4eb3-a61d-603abbd9119a",
+      "9c14d322-88ca-4692-bd61-9d6f79f74822"
+    ],
+    [
+      "atlas/picture/items/materials/advanced_materials/Wuding.png",
+      "atlas/picture/items/shared/metal-ingot.png"
+    ],
+    [
+      "aff7c47b-1c5d-4cb2-9714-4743f0cdc839",
+      "9c14d322-88ca-4692-bd61-9d6f79f74822"
+    ],
+    [
+      "atlas/picture/items/materials/advanced_materials/yingmu.png",
+      "atlas/picture/items/shared/metal-ingot.png"
+    ],
+    [
+      "e659d729-ed8b-4729-bd6f-d76aff8704ed",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/renshen.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "8a806e38-d2e1-4d96-9e87-dd2827529295",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/shougu.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "32097425-9106-4409-9523-0ae9c8debec2",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/shupi.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "ec9674e9-45d2-44da-8c45-86c103ea99c6",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/shuzhi.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "14101de7-e926-42f4-b4a6-c73e8d2623ac",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/tiaoliao.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "5ecb2525-9591-4a43-86d6-b906b310444a",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/xiaoshi.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "8935566d-143b-4a02-9817-8c509fd46e91",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/xiaoshuzhi.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "83af80e4-9430-44b1-a3e6-efc5e8b5ec4c",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/xiyoujinshu.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "ca45151a-5349-492c-b091-9105893d63b6",
+      "b6be2b59-d955-48d3-b661-6121084b63da"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/yaocao.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "atlas/picture/items/armors/bodies/G6taociban.png",
+      "atlas/picture/items/shared/armor-plate.png"
+    ],
+    [
+      "atlas/picture/items/armors/heads/G6.png",
+      "atlas/picture/items/shared/helmet.png"
+    ],
+    [
+      "atlas/picture/items/foods/eats/fried_chips.png",
+      "atlas/picture/items/shared/cooked-food.png"
+    ],
+    [
+      "atlas/picture/items/materials/advanced_materials/Ti.png",
+      "atlas/picture/items/shared/metal-ingot.png"
+    ],
+    [
+      "atlas/picture/items/materials/basic_materials/wood.png",
+      "atlas/picture/items/shared/basic-material.png"
+    ],
+    [
+      "atlas/picture/draw/campfire-animation.json",
+      "atlas/picture/effects/fire/campfire-animation.json"
+    ],
+    [
+      "atlas/picture/draw/campfire-base.png",
+      "atlas/picture/effects/fire/campfire-base.png"
+    ],
+    [
+      "atlas/picture/draw/campfire-preview.html",
+      "atlas/picture/effects/fire/campfire-preview.html"
+    ],
+    [
+      "atlas/picture/draw/campfire-README.md",
+      "atlas/picture/effects/fire/campfire-README.md"
+    ],
+    [
+      "atlas/picture/draw/snow-particle-sheet.lmat",
+      "atlas/picture/effects/weather/snow-particle-sheet.lmat"
+    ],
+    [
+      "atlas/picture/draw/snow-particle-sheet.png",
+      "atlas/picture/effects/weather/snow-particle-sheet.png"
+    ],
+    [
+      "atlas/picture/draw/snow-particle.lmat",
+      "atlas/picture/effects/weather/snow-particle.lmat"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-00.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-00.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-01.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-01.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-02.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-02.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-04.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-04.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-05.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-05.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-06.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-06.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-08.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-08.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-09.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-09.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes/snowflake-10.png",
+      "atlas/picture/effects/weather/snowflakes/snowflake-10.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-00.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-00.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-01.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-01.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-02.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-02.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-03.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-03.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-04.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-04.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-05.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-05.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-06.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-06.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-07.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-07.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-08.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-08.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-09.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-09.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-10.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-10.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-11.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-11.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-12.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-12.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-13.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-13.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-14.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-14.png"
+    ],
+    [
+      "atlas/picture/draw/snowflakes-v2/snowflake-15.png",
+      "atlas/picture/effects/weather/snowflakes-v2/snowflake-15.png"
+    ],
+    [
+      "atlas/picture/draw/torch-animation-README.md",
+      "atlas/picture/effects/fire/torch-animation-README.md"
+    ],
+    [
+      "atlas/picture/draw/torch-animation.json",
+      "atlas/picture/effects/fire/torch-animation.json"
+    ],
+    [
+      "atlas/picture/draw/torch-body.png",
+      "atlas/picture/effects/fire/torch-body.png"
+    ],
+    [
+      "atlas/picture/draw/torch-concept.png",
+      "atlas/picture/effects/fire/torch-concept.png"
+    ],
+    [
+      "atlas/picture/draw/torch-flame-sheet.png",
+      "atlas/picture/effects/fire/torch-flame-sheet.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-00.png",
+      "atlas/picture/effects/fire/torch-frames/flame-00.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-01.png",
+      "atlas/picture/effects/fire/torch-frames/flame-01.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-02.png",
+      "atlas/picture/effects/fire/torch-frames/flame-02.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-03.png",
+      "atlas/picture/effects/fire/torch-frames/flame-03.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-04.png",
+      "atlas/picture/effects/fire/torch-frames/flame-04.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-05.png",
+      "atlas/picture/effects/fire/torch-frames/flame-05.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-06.png",
+      "atlas/picture/effects/fire/torch-frames/flame-06.png"
+    ],
+    [
+      "atlas/picture/draw/torch-frames/flame-07.png",
+      "atlas/picture/effects/fire/torch-frames/flame-07.png"
+    ],
+    [
+      "atlas/picture/draw/torch-preview.html",
+      "atlas/picture/effects/fire/torch-preview.html"
+    ],
+    [
+      "atlas/picture/fire-light-soft.png",
+      "atlas/picture/effects/lighting/fire-light-soft.png"
+    ],
+    [
+      "atlas/picture/fire-light-warm.png",
+      "atlas/picture/effects/lighting/fire-light-warm.png"
+    ],
+    [
+      "atlas/picture/night-vision-glow.png",
+      "atlas/picture/effects/lighting/night-vision-glow.png"
+    ],
+    [
+      "atlas/picture/night-vision-soft.png",
+      "atlas/picture/effects/lighting/night-vision-soft.png"
+    ],
+    [
+      "atlas/picture/room-soft-lower.png",
+      "atlas/picture/effects/lighting/room-soft-lower.png"
+    ],
+    [
+      "atlas/picture/room-soft-third.png",
+      "atlas/picture/effects/lighting/room-soft-third.png"
+    ],
+    [
+      "atlas/picture/room-soft-upper.png",
+      "atlas/picture/effects/lighting/room-soft-upper.png"
+    ],
+    [
+      "picture/draw/abandoned_crashed_vehicle.png",
+      "atlas/picture/environment/city/abandoned_crashed_vehicle.png"
+    ]
+  ],
+  "iconAliases": {
+    "assets/atlas/picture/interacts/containers/wood_box.png": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "atlas/picture/interacts/containers/wood_box.png": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "res://atlas/picture/interacts/containers/wood_box.png": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "assets/picture/draw/wood_box_city_style_preview_128.png": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "picture/draw/wood_box_city_style_preview_128.png": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "res://picture/draw/wood_box_city_style_preview_128.png": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "res://536c0d52-5c93-41bd-9af6-9bf7f0b95cea": "res://fe0d72a6-0f55-43a1-b6c0-df5c50c9d230",
+    "assets/atlas/picture/items/armors/bodies/G6taociban.png": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "atlas/picture/items/armors/bodies/G6taociban.png": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "res://atlas/picture/items/armors/bodies/G6taociban.png": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "assets/atlas/picture/items/armors/bodies/k1chaban.png": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "atlas/picture/items/armors/bodies/k1chaban.png": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "res://atlas/picture/items/armors/bodies/k1chaban.png": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "res://2243dc4a-b41d-4854-b127-ef53226ad0e0": "res://97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+    "assets/atlas/picture/items/armors/heads/G6.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "atlas/picture/items/armors/heads/G6.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "res://atlas/picture/items/armors/heads/G6.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "assets/atlas/picture/items/armors/heads/k1.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "atlas/picture/items/armors/heads/k1.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "res://atlas/picture/items/armors/heads/k1.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "res://de421032-3889-47e8-86fa-7303e0d3e0ab": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "assets/atlas/picture/items/armors/heads/laoshigangkui.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "atlas/picture/items/armors/heads/laoshigangkui.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "res://atlas/picture/items/armors/heads/laoshigangkui.png": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "res://f2ef59ef-7a83-476f-b5a2-04cf60213b57": "res://296adca1-d671-45e5-9c20-44bc38c9dea1",
+    "assets/atlas/picture/items/foods/eats/fried_chips.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "atlas/picture/items/foods/eats/fried_chips.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://atlas/picture/items/foods/eats/fried_chips.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "assets/atlas/picture/items/foods/eats/grilled_corn.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "atlas/picture/items/foods/eats/grilled_corn.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://atlas/picture/items/foods/eats/grilled_corn.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://c7562ee6-fd53-48c5-a85a-583494288cae": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "assets/atlas/picture/items/foods/eats/grilled_fish.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "atlas/picture/items/foods/eats/grilled_fish.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://atlas/picture/items/foods/eats/grilled_fish.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://19cef2f3-95d4-4f56-9607-5371c8afef8f": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "assets/atlas/picture/items/foods/eats/grilled_mushroom.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "atlas/picture/items/foods/eats/grilled_mushroom.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://atlas/picture/items/foods/eats/grilled_mushroom.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://96bbbcf8-57a9-49ec-ba8e-dbf0c9e86e6a": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "assets/atlas/picture/items/foods/eats/grilled_potato.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "atlas/picture/items/foods/eats/grilled_potato.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://atlas/picture/items/foods/eats/grilled_potato.png": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "res://a0d1fb7a-8839-4bf8-8095-20268bd8e493": "res://f4849d33-faa8-4bd6-85f0-d3045b847f64",
+    "assets/atlas/picture/items/materials/advanced_materials/Ti.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "atlas/picture/items/materials/advanced_materials/Ti.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://atlas/picture/items/materials/advanced_materials/Ti.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "assets/atlas/picture/items/materials/advanced_materials/tieding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "atlas/picture/items/materials/advanced_materials/tieding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://atlas/picture/items/materials/advanced_materials/tieding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://0274932b-bbc0-4578-b080-31bad545438c": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "assets/atlas/picture/items/materials/advanced_materials/tongding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "atlas/picture/items/materials/advanced_materials/tongding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://atlas/picture/items/materials/advanced_materials/tongding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://e0e4c071-37e1-4ac1-833e-4093c9241cf1": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "assets/atlas/picture/items/materials/advanced_materials/Wu.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "atlas/picture/items/materials/advanced_materials/Wu.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://atlas/picture/items/materials/advanced_materials/Wu.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://59b718da-dd7b-470e-88e2-e356fff3b9d0": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "assets/atlas/picture/items/materials/advanced_materials/Wuding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "atlas/picture/items/materials/advanced_materials/Wuding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://atlas/picture/items/materials/advanced_materials/Wuding.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://dc27cab1-e856-4eb3-a61d-603abbd9119a": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "assets/atlas/picture/items/materials/advanced_materials/yingmu.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "atlas/picture/items/materials/advanced_materials/yingmu.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://atlas/picture/items/materials/advanced_materials/yingmu.png": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "res://aff7c47b-1c5d-4cb2-9714-4743f0cdc839": "res://9c14d322-88ca-4692-bd61-9d6f79f74822",
+    "assets/atlas/picture/items/materials/basic_materials/renshen.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/renshen.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/renshen.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://e659d729-ed8b-4729-bd6f-d76aff8704ed": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/shougu.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/shougu.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/shougu.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://8a806e38-d2e1-4d96-9e87-dd2827529295": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/shupi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/shupi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/shupi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://32097425-9106-4409-9523-0ae9c8debec2": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/shuzhi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/shuzhi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/shuzhi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://ec9674e9-45d2-44da-8c45-86c103ea99c6": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/tiaoliao.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/tiaoliao.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/tiaoliao.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://14101de7-e926-42f4-b4a6-c73e8d2623ac": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/wood.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/wood.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/wood.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/xiaoshi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/xiaoshi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/xiaoshi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://5ecb2525-9591-4a43-86d6-b906b310444a": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/xiaoshuzhi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/xiaoshuzhi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/xiaoshuzhi.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://8935566d-143b-4a02-9817-8c509fd46e91": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/xiyoujinshu.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/xiyoujinshu.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/xiyoujinshu.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://83af80e4-9430-44b1-a3e6-efc5e8b5ec4c": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "assets/atlas/picture/items/materials/basic_materials/yaocao.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "atlas/picture/items/materials/basic_materials/yaocao.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://atlas/picture/items/materials/basic_materials/yaocao.png": "res://b6be2b59-d955-48d3-b661-6121084b63da",
+    "res://ca45151a-5349-492c-b091-9105893d63b6": "res://b6be2b59-d955-48d3-b661-6121084b63da"
+  },
+  "notes": [
+    "Spine source/export bundles and tilesets retained intact; no unreferenced inference used to delete them.",
+    "Unreferenced artwork moved to art-library, not permanently erased.",
+    "Exact duplicate item placeholders merged with old-save icon compatibility."
+  ]
+}

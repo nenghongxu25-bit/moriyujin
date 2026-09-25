@@ -1,0 +1,46 @@
+{
+  "_$ver": 1,
+  "_$id": "974dae3ac1ce",
+  "_$type": "Sprite",
+  "name": "可穿过_flowers-white",
+  "width": 192,
+  "height": 192,
+  "pivotX": 91,
+  "pivotY": 181,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 181
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "578d93f6d456"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "578d93f6d456",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "f85940d3-80c2-4083-be56-87c36a668b56",
+        "_$type": "Texture"
+      },
+      "_$comp": [
+        {
+          "_$type": "b38c8c9f-4382-48a4-904d-29878f66a31b",
+          "scriptPath": "../../../src/systems/ForestDecorationShader.ts",
+          "effect": 0,
+          "amplitude": 1.4,
+          "phase": 3.437
+        }
+      ]
+    }
+  ]
+}

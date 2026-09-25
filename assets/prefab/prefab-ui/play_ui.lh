@@ -1,0 +1,401 @@
+{
+  "_$ver": 1,
+  "_$id": "7at4ccy0",
+  "_$type": "Sprite",
+  "name": "play_ui",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "d6686b69-ea29-463d-95b8-5e22b631036f",
+      "scriptPath": "../src/PlayUI/DesignWidthCenter.ts"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "la1qodvj",
+      "_$type": "Sprite",
+      "name": "quick_box",
+      "x": 470,
+      "y": 643,
+      "width": 432,
+      "height": 102,
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "_$comp": [
+        {
+          "_$type": "c50e856c-df34-4d80-9452-b4fbbf5a3425",
+          "scriptPath": "../src/PlayUI/playerui/QuickEquipContainer.ts",
+          "meleeSlot": {
+            "_$ref": "i17z1swu"
+          },
+          "primaryWeaponSlot": {
+            "_$ref": "wz73alta"
+          },
+          "pistolSlot": {
+            "_$ref": "jwr6iiy8"
+          },
+          "secondaryWeaponSlot": {
+            "_$ref": "pa0ji77y"
+          },
+          "throwableSlot": {
+            "_$ref": "1vcg85f4"
+          },
+          "medicineSlot": {
+            "_$ref": "asjwpwu6"
+          }
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "i17z1swu",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "dao",
+          "active": true,
+          "x": 417,
+          "y": -57,
+          "width": 100,
+          "height": 50,
+          "visible": true,
+          "alpha": 1,
+          "_$child": [
+            {
+              "_$override": "zfgejdrd",
+              "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+              "width": 100,
+              "height": 50,
+              "scaleX": 1,
+              "scaleY": 1,
+              "autoSize": false,
+              "y": 25
+            },
+            {
+              "_$override": "jdhjlgub",
+              "width": 100,
+              "height": 50,
+              "y": 25
+            }
+          ]
+        },
+        {
+          "_$id": "wz73alta",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "zhu",
+          "active": true,
+          "x": 23,
+          "y": 0,
+          "width": 250,
+          "anchorX": 0,
+          "anchorY": 0,
+          "visible": true,
+          "alpha": 1,
+          "_$child": [
+            {
+              "_$override": "zfgejdrd",
+              "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+              "width": 250,
+              "height": 100,
+              "scaleX": 1,
+              "scaleY": 1,
+              "autoSize": false,
+              "x": 125
+            },
+            {
+              "_$override": "jdhjlgub",
+              "width": 220,
+              "height": 60,
+              "x": 125
+            }
+          ]
+        },
+        {
+          "_$id": "jwr6iiy8",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "shou",
+          "active": true,
+          "x": -74,
+          "y": -2,
+          "visible": true,
+          "alpha": 1,
+          "_$child": [
+            {
+              "_$override": "zfgejdrd",
+              "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+              "width": 100,
+              "height": 100,
+              "scaleX": 1,
+              "scaleY": 1,
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "pa0ji77y",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "fu",
+          "active": true,
+          "x": 277,
+          "y": -2,
+          "width": 250,
+          "anchorX": 0,
+          "anchorY": 0,
+          "visible": true,
+          "alpha": 1,
+          "_$child": [
+            {
+              "_$override": "zfgejdrd",
+              "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+              "width": 250,
+              "height": 100,
+              "scaleX": 1,
+              "scaleY": 1,
+              "autoSize": false,
+              "x": 125
+            },
+            {
+              "_$override": "jdhjlgub",
+              "width": 220,
+              "height": 60,
+              "x": 125
+            }
+          ]
+        },
+        {
+          "_$id": "1vcg85f4",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "touzhi",
+          "active": true,
+          "x": 530,
+          "y": -2,
+          "visible": true,
+          "alpha": 1,
+          "_$child": [
+            {
+              "_$override": "zfgejdrd",
+              "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+              "width": 100,
+              "height": 100,
+              "scaleX": 1,
+              "scaleY": 1,
+              "autoSize": false
+            }
+          ]
+        },
+        {
+          "_$id": "asjwpwu6",
+          "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+          "name": "yaopin",
+          "active": true,
+          "x": -178,
+          "y": 0,
+          "visible": true,
+          "alpha": 1,
+          "_$child": [
+            {
+              "_$override": "zfgejdrd",
+              "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+              "width": 100,
+              "height": 100,
+              "scaleX": 1,
+              "scaleY": 1,
+              "autoSize": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "i3rmmb8s",
+      "_$type": "Sprite",
+      "name": "play",
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "9xqe96ru",
+          "_$prefab": "da0ae4df-3d2a-4c55-9057-101aad31f057",
+          "name": "pre-joystick",
+          "active": true,
+          "x": 169,
+          "y": 358,
+          "width": 200,
+          "height": 200,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "0jvaucmc",
+              "x": 0,
+              "y": 0,
+              "width": 200,
+              "height": 200
+            }
+          ]
+        },
+        {
+          "_$id": "run_ui",
+          "_$prefab": "597bdad8-a08e-42dc-a52f-f2c9cf13272d",
+          "name": "pre_ui_run",
+          "active": false,
+          "x": 252,
+          "y": 474,
+          "scaleX": 0.7,
+          "scaleY": 0.7,
+          "visible": false
+        },
+        {
+          "_$id": "bag_ui",
+          "_$prefab": "3dfda96a-e94e-48ec-bf05-3c296043bfe0",
+          "name": "pre_ui_bag",
+          "active": true,
+          "x": 1098,
+          "y": 28,
+          "scaleX": 0.7,
+          "scaleY": 0.7,
+          "visible": true
+        },
+        {
+          "_$id": "ej1msfiy",
+          "_$prefab": "ae4738c7-aa19-4fd6-a972-021a2e00cf9f",
+          "name": "pre_ui_make",
+          "active": true,
+          "x": 1204,
+          "y": 28,
+          "scaleX": 0.7,
+          "scaleY": 0.7,
+          "visible": true
+        },
+        {
+          "_$id": "asq102c8",
+          "_$prefab": "5ff33faa-4bb0-4a8f-83c2-dbf7851a98a9",
+          "name": "pre_ui_attack",
+          "active": true,
+          "x": 904,
+          "y": 344,
+          "scaleX": 1.35,
+          "scaleY": 1.35,
+          "visible": true
+        },
+        {
+          "_$id": "1g66j51m",
+          "_$prefab": "f1df447f-bbda-481d-b4e8-90706e9c2e05",
+          "name": "pre-switch",
+          "active": true,
+          "x": 1221,
+          "y": 237,
+          "scaleX": 0.68,
+          "scaleY": 0.68,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "rk8t267l",
+      "_$type": "Sprite",
+      "name": "button",
+      "x": -175,
+      "y": -223,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "ibud8gfq",
+          "_$prefab": "5861da4e-ae9f-4a1f-a0c1-54f4111b0619",
+          "name": "get",
+          "active": true,
+          "x": 1022,
+          "y": 441,
+          "scaleX": 0.76,
+          "scaleY": 0.76,
+          "visible": false,
+          "alpha": 1
+        },
+        {
+          "_$id": "alf07qsz",
+          "_$prefab": "7bd582da-1482-4e4f-91e3-772a7c947dc4",
+          "name": "pre_ui_talk",
+          "active": true,
+          "x": 1022,
+          "y": 441,
+          "scaleX": 0.76,
+          "scaleY": 0.76,
+          "visible": false
+        },
+        {
+          "_$id": "tdloqyfr",
+          "_$prefab": "12f60185-0272-472a-affa-d034560685ab",
+          "name": "pre_ui_search",
+          "active": true,
+          "x": 1022,
+          "y": 441,
+          "scaleX": 0.76,
+          "scaleY": 0.76,
+          "visible": false
+        }
+      ]
+    },
+    {
+      "_$id": "vj1cy1vc",
+      "_$type": "GWidget",
+      "name": "touxiang",
+      "x": 28,
+      "y": 28,
+      "width": 320,
+      "height": 88,
+      "_$child": [
+        {
+          "_$id": "hud_profile_back",
+          "_$type": "GImage",
+          "name": "HudBackground",
+          "width": 320,
+          "height": 88,
+          "_mouseState": 1,
+          "src": "res://6994e22a-3fa2-45f8-bd92-10a1f34f5f02",
+          "autoSize": false
+        },
+        {
+          "_$id": "wc0jzlul",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 12,
+          "y": 12,
+          "width": 64,
+          "height": 64,
+          "src": "res://e2d4124f-9d66-449b-ab62-9a248e949620",
+          "autoSize": false
+        },
+        {
+          "_$id": "n26kis57",
+          "_$type": "Text",
+          "name": "name",
+          "x": 88,
+          "y": 16,
+          "width": 215,
+          "height": 28,
+          "text": "Text",
+          "fontSize": 21,
+          "color": "#eee9d9",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "da4wpiau",
+          "_$type": "Text",
+          "name": "id",
+          "x": 88,
+          "y": 47,
+          "width": 215,
+          "height": 24,
+          "text": "Text",
+          "fontSize": 15,
+          "color": "#b4bdb0",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

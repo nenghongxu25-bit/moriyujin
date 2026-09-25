@@ -1,0 +1,53 @@
+const assert=require('assert');
+(async()=>{
+ const tabs=await(await fetch('http://localhost:9234/json')).json(),ws=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);
+ await new Promise(r=>ws.addEventListener('open',r));let seq=0;const pending=new Map();
+ ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}};
+ const call=(method,params={})=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+ const evaluate=async expression=>{const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+ await evaluate("Laya.Scene.open('spatial-inventory-study/spatial-inventory-preview.ls',true).then(()=>new Promise(r=>setTimeout(r,1000)))");
+ await evaluate(`(()=>{function walk(n){for(const c of n._components||[])if(c.warehouseMode===true)globalThis.panel=c;for(let i=0;i<n.numChildren;i++)walk(n.getChildAt(i));}walk(Laya.stage);panel.dm.warehouse.getGridStorage().items=[];panel.dm.syncWarehouseViews();})()`);
+ const point=expr=>evaluate(`(()=>{const p=${expr};const r=document.querySelector('canvas').getBoundingClientRect();return {x:r.x+p.x*r.width/Laya.stage.width,y:r.y+p.y*r.height/Laya.stage.height};})()`);
+ const mouse=async(type,p)=>{await call('Input.dispatchMouseEvent',{type,...p,button:type==='mouseMoved'?'none':'left',buttons:type==='mouseReleased'?0:1,clickCount:1});await new Promise(r=>setTimeout(r,60));};
+ let dragCount=0;
+ const drag=async(a,b)=>{
+   await mouse('mousePressed',a);await mouse('mouseMoved',{x:a.x+18,y:a.y+12});await mouse('mouseMoved',b);
+   if(dragCount++===0){
+     assert(await evaluate("Array.from({length:10},(_,i)=>panel.bagGlist.gridNodes[i+10]).every(n=>n.visible&&n.parent===panel.bagGlist.gridRoot&&n.width===70&&n.height===70)"),'all ten source cells must be visible as individual empty grid cells');
+     assert.equal(await evaluate("panel.dm.getInventorySnapshot()[10]?.itemId"),'akm','drag preview must not remove saved/source data');
+     const shot=await call('Page.captureScreenshot',{format:'png'});require('fs').writeFileSync('docs/inventory-drag-empty-cells.png',Buffer.from(shot.data,'base64'));
+   }
+   await mouse('mouseReleased',b);await new Promise(r=>setTimeout(r,200));
+ };
+ await drag(await point('panel.bagGlist.gridNodes[10].localToGlobal(new Laya.Point(180,72))'),await point('panel.warehouseGlist.gridRoot.localToGlobal(new Laya.Point(180,72))'));
+ assert.equal(await evaluate("panel.dm.getWarehouseSnapshot()[0]?.itemId"),'akm','grabbing middle of rifle must place its visible top-left, not treat cursor as anchor');
+ await drag(await point('panel.warehouseGlist.gridNodes[0].localToGlobal(new Laya.Point(340,100))'),await point("panel.node('equip_weapon').localToGlobal(new Laya.Point(300,75))"));
+ assert.equal(await evaluate("panel.dm.getEquippedItem('weapon')?.itemId"),'akm','overlapping equipment slot should accept gun even when pointer is outside');
+ await evaluate("panel.dm.unequipItemToActive('weapon');panel.dm.inventory.getGridStorage().items=[];panel.dm.warehouse.getGridStorage().items=[];const gun=panel.dm.normalizeInventoryItem({itemId:'akm',name:'AKM',count:1});panel.dm.inventory.getGridStorage().items[0]={...gun,rotated:true};panel.dm.inventory.refreshBagViews();panel.dm.syncWarehouseViews();panel.warehouseGlist.gridRoot.scroller.posY=288;");
+ await new Promise(r=>setTimeout(r,150));
+ await drag(await point('panel.bagGlist.gridNodes[0].localToGlobal(new Laya.Point(100,300))'),await point('panel.warehouseGlist.gridRoot.localToGlobal(new Laya.Point(100,300))'));
+ assert.equal(await evaluate("panel.dm.getWarehouseSnapshot()[24]?.itemId"),'akm','scrolled drop retains grabbed offset and rotation');
+ assert(await evaluate('panel.dm.getWarehouseSnapshot()[24].rotated'));
+ await evaluate("panel.dm.inventory.getGridStorage().items=[];panel.dm.inventory.getGridStorage().items[0]=panel.dm.normalizeInventoryItem({itemId:'knife',name:'knife',count:1});panel.dm.inventory.refreshBagViews()");
+ await drag(await point('panel.bagGlist.gridNodes[0].localToGlobal(new Laya.Point(16,16))'),await point('panel.warehouseGlist.gridNodes[24].localToGlobal(new Laya.Point(16,16))'));
+ assert.equal(await evaluate("panel.dm.getInventorySnapshot()[0]?.itemId"),'knife','occupied placement still rejected');
+ assert.equal(await evaluate("panel.dm.getWarehouseSnapshot()[24]?.itemId"),'akm');
+ const reset="panel.dm.inventory.getGridStorage().items=[];panel.dm.warehouse.getGridStorage().items=[];panel.dm.inventory.getGridStorage().items[0]=panel.dm.normalizeInventoryItem({itemId:'akm',name:'AKM',count:1});panel.dm.inventory.refreshBagViews();panel.dm.syncWarehouseViews();panel.warehouseGlist.gridRoot.scroller.posY=0;";
+ await evaluate(reset);await new Promise(r=>setTimeout(r,150));
+ await drag(await point('panel.bagGlist.gridNodes[0].localToGlobal(new Laya.Point(180,72))'),await point('panel.warehouseGlist.gridRoot.localToGlobal(new Laya.Point(162,54))'));
+ assert.equal(await evaluate("panel.dm.getWarehouseSnapshot()[0]?.itemId"),'akm','small edge overhang snaps inside');
+ await evaluate(reset);await new Promise(r=>setTimeout(r,150));
+ const start=await point('panel.bagGlist.gridNodes[0].localToGlobal(new Laya.Point(180,72))');
+ const end=await point('panel.warehouseGlist.gridRoot.localToGlobal(new Laya.Point(180,72))');
+ await mouse('mousePressed',start);await mouse('mouseMoved',{x:start.x+20,y:start.y+20});await mouse('mouseReleased',end);
+ await new Promise(r=>setTimeout(r,200));
+ assert.equal(await evaluate("panel.dm.getWarehouseSnapshot()[0]?.itemId"),'akm','release position re-evaluated without final move');
+ const cancelStart=await point('panel.warehouseGlist.gridNodes[0].localToGlobal(new Laya.Point(180,72))');
+ await mouse('mousePressed',cancelStart);await mouse('mouseMoved',{x:cancelStart.x-35,y:cancelStart.y+30});
+ await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',windowsVirtualKeyCode:27});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Escape',windowsVirtualKeyCode:27});await mouse('mouseReleased',cancelStart);
+ assert.equal(await evaluate("panel.dm.getWarehouseSnapshot()[0]?.itemId"),'akm');
+ assert.equal(await evaluate('panel.warehouseGlist.gridNodes[0].width'),358,'cancel restores item rectangle');
+ assert.equal(await evaluate('panel.warehouseGlist.gridNodes[1].visible'),false,'cancel restores covered-cell visibility');
+ assert.equal(await evaluate('panel.warehouseGlist.dragPreviewNode.visible'),false,'cancel hides preview');
+ console.log('PASS: empty source cells during drag, data retained, cancel restoration, middle-grab placement, equipment overlap, scrolled rotated placement, occupied rejection, edge snap, final release position');ws.close();
+})().catch(e=>{console.error(e);process.exit(1);});

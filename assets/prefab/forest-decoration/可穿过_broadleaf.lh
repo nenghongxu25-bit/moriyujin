@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "ab351a3f4325",
+  "_$type": "Sprite",
+  "name": "可穿过_broadleaf",
+  "width": 192,
+  "height": 192,
+  "pivotX": 96,
+  "pivotY": 188,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 188
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "b9f276c94d7d"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "b9f276c94d7d",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "6816e981-0ec0-4bd4-9f72-966c333e5e8d",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

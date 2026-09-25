@@ -1,0 +1,25 @@
+{
+  "image": "torch-flame-sheet.png",
+  "body": "../../decorate/fire/campfire-base.png",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 384,
+  "frameHeight": 512,
+  "frameCount": 8,
+  "fps": 8,
+  "loop": true,
+  "order": "row-major",
+  "composition": {
+    "width": 1280,
+    "height": 1280,
+    "bodyX": 0,
+    "bodyY": 0,
+    "bodyWidth": 1280,
+    "bodyHeight": 1280,
+    "flameX": 315,
+    "flameY": 240,
+    "flameWidth": 650,
+    "flameHeight": 650
+  },
+  "note": "Shared torch flame sheet; generic metadata, not a Laya atlas."
+}

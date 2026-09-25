@@ -1,0 +1,43 @@
+{
+  "archive": "backups/forest-atlas-cleanup-20260921",
+  "directories": [
+    "assets/forest-isometric-study",
+    "assets/tileset/forest",
+    "assets/tileset/forest-cliffs-v1",
+    "assets/tileset/forest-kit-v2",
+    "assets/tileset/forest-kit-v3",
+    "assets/tileset/forest-reusable",
+    "assets/tileset/forest-style-v2",
+    "assets/tileset/forest-style-v2-hd"
+  ],
+  "files": [
+    {
+      "from": "assets/forest-isometric-study/forest-diamond.tres",
+      "to": "assets/tileset/forest/forest-diamond.tres"
+    },
+    {
+      "from": "assets/forest-isometric-study/tiles/forest-diamond-atlas.png",
+      "to": "assets/tileset/forest/forest-diamond-atlas.png"
+    },
+    {
+      "from": "assets/tileset/forest/water-flow.png",
+      "to": "assets/tileset/forest/water-flow.png"
+    },
+    {
+      "from": "assets/tileset/forest-kit-v3/grass-water.png",
+      "to": "assets/tileset/forest/rain-water.png"
+    },
+    {
+      "from": "assets/tileset/forest-kit-v3/grass-dirt.png",
+      "to": "assets/tileset/forest/reference/grass-dirt.png"
+    },
+    {
+      "from": "assets/tileset/forest-style-v2-hd/forest-diamond.tres",
+      "to": "assets/tileset/buildings/floors/terrain/terrain-diamond.tres"
+    },
+    {
+      "from": "assets/tileset/forest-style-v2-hd/tiles/forest-diamond-atlas.png",
+      "to": "assets/tileset/buildings/floors/terrain/terrain-diamond-atlas.png"
+    }
+  ]
+}

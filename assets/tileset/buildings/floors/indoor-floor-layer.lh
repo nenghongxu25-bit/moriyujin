@@ -1,0 +1,23 @@
+{
+  "_$ver": 1,
+  "_$id": "f2b2b4017352",
+  "_$type": "Sprite",
+  "name": "IndoorFloorLayer",
+  "scaleX": 0.25,
+  "scaleY": 0.25,
+  "_$comp": [
+    {
+      "_$type": "TileMapLayer",
+      "tileSet": {
+        "_$uuid": "d8f9a0f4-e911-4d2a-8772-aaf9788eee8a",
+        "_$type": "TileSet"
+      },
+      "chunkDatas": {
+        "_$type": "Record"
+      }
+    },
+    {
+      "_$type": "567e9b12-042a-4a56-88a1-a8e69f9fd745"
+    }
+  ]
+}

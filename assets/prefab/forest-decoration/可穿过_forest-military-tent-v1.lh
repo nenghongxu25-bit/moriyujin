@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "769cada9ac23",
+  "_$type": "Sprite",
+  "name": "可穿过_forest-military-tent-v1",
+  "width": 256,
+  "height": 225,
+  "pivotX": 122,
+  "pivotY": 215,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 215
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "f44f363fdc89"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "f44f363fdc89",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 256,
+      "height": 225,
+      "texture": {
+        "_$uuid": "b43507ae-0cbe-4313-97f1-fae6c9a2b921",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

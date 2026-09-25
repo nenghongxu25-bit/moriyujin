@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "b0bd62bf4376",
+  "_$type": "Sprite",
+  "name": "可穿过_forest-wood-bridge-v1",
+  "width": 288,
+  "height": 150,
+  "pivotX": 129,
+  "pivotY": 130,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 130
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "51c6f83e3733"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "51c6f83e3733",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 288,
+      "height": 150,
+      "texture": {
+        "_$uuid": "c676fa6c-aab7-471b-8e4d-db738bddcc9b",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

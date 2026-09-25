@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "4e716f8e12f9",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-wood-fence-v1",
+  "width": 192,
+  "height": 128,
+  "pivotX": 98,
+  "pivotY": 105,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 105
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "196f3ed5c450"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 42,
+      "blockY": 93,
+      "blockWidth": 113,
+      "blockHeight": 12
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "196f3ed5c450",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 128,
+      "texture": {
+        "_$uuid": "0de7a0a9-45fa-4cc9-bf80-ca05f07eebf1",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "_$ver": 1,
+  "_$id": "f61e521f2157",
+  "_$type": "Sprite",
+  "name": "地表_lily-pads",
+  "width": 192,
+  "height": 192,
+  "pivotX": 96,
+  "pivotY": 159,
+  "_$child": [
+    {
+      "_$id": "151351f02547",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "f4fe43c3-61c5-4f87-a4e3-2f2127dc2a3f",
+        "_$type": "Texture"
+      },
+      "_$comp": [
+        {
+          "_$type": "b38c8c9f-4382-48a4-904d-29878f66a31b",
+          "scriptPath": "../../../src/systems/ForestDecorationShader.ts",
+          "effect": 1,
+          "amplitude": 0.9,
+          "phase": 4.7727
+        }
+      ]
+    }
+  ]
+}

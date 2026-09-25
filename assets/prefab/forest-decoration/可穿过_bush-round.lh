@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "d4bf8fe2ac52",
+  "_$type": "Sprite",
+  "name": "可穿过_bush-round",
+  "width": 192,
+  "height": 192,
+  "pivotX": 96,
+  "pivotY": 187,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 187
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "ed12df7bd61d"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "ed12df7bd61d",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "95a908b7-c4b8-4006-ae68-4d574addf2aa",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

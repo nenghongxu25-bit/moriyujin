@@ -1,0 +1,35 @@
+{
+  "promptBase": "Use case: stylized-concept. Standalone 2D game environment prop for a gritty forest survival scavenging game. Hand-painted semi-realistic sprite with fine weathered material texture, muted olive green, moss brown and charcoal palette, crisp readable silhouette, restrained dark contour, soft diffuse light from upper left. Elevated orthographic three-quarter view at about 40 degrees looking down, matching an illustrated forest cabin / rusty pickup prop set, not a flat UI inventory icon. One isolated complete object only, centered and filling about 85% of canvas with safe transparent margins; no clipping. REAL transparent RGBA background including holes and gaps, no background color, no baked checkerboard, no haze, no glow, no ground plane, no scenery, no labels, no text, no watermark, no sprite sheet. Keep shape readable when downscaled to 128 pixels. Subject: ",
+  "assets": [
+    {
+      "name": "tree-stump",
+      "subject": "One squat old cut pine tree stump, uneven exposed growth rings, cracked bark, a few roots flaring at the base and modest moss attached to bark. No surrounding soil patch.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-1c8125fa-b191-4ceb-98c8-2d6663e5c087.png"
+    },
+    {
+      "name": "discarded-tire",
+      "subject": "One discarded worn black vehicle tire lying flat on its side, seen from above at an oblique angle, visible hollow center, cracked rubber tread, a little attached moss and dirt. No wheel rim, no surrounding debris.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-40c2a14c-475d-4679-b45c-d1c5e989613b.png"
+    },
+    {
+      "name": "abandoned-backpack",
+      "subject": "One abandoned olive drab canvas field backpack resting upright with slightly slumped shape, two worn front pockets, buckles and attached straps, subtle dirt and frayed seams. Closed bag; no weapons or loose items.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-efcd8ee0-5fe0-408a-a29f-c770f3e015cb.png"
+    },
+    {
+      "name": "rusty-toolbox",
+      "subject": "One small closed vintage steel toolbox, squat rectangular box with a top carrying handle and two latches, faded dark red paint with worn rusty edges and dirt. No tools outside it, no logos.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-397862de-a473-41a8-82d4-13ecad307523.png"
+    },
+    {
+      "name": "broken-planks",
+      "subject": "One compact overlapping pile of three broken old wooden planks, splintered irregular ends, weathered grey-brown wood grain, a few bent rusty nails embedded in wood and restrained moss. All three planks touch as a single prop. No surrounding debris.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-6efdab26-8801-4462-a573-330809e0ab43.png"
+    },
+    {
+      "name": "extinguished-campfire",
+      "subject": "One completely extinguished campfire: a low compact ring of irregular mossy grey stones enclosing three charred crossed logs and cold ash. Entire stone ring intact. Absolutely no flame, no glowing embers, no smoke. No surrounding soil patch.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-ca748879-0eb4-4488-a1a5-e1d05e028491.png"
+    }
+  ]
+}

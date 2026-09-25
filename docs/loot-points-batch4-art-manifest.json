@@ -1,0 +1,33 @@
+{
+  "generator": "built-in image_gen",
+  "items": [
+    {
+      "id": "bedside_table",
+      "name": "旧木床头柜",
+      "displaySize": 232,
+      "prompt": "四格 2×2 透明序列图；暗胡桃木单抽屉床头柜，关闭、微开、半开、全开。柜体、短脚、相机、比例和落点固定，仅抽屉直线前移。",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-99a77748-3bf1-473e-be90-21652743f861.png"
+    },
+    {
+      "id": "office_desk",
+      "name": "旧式办公桌",
+      "displaySize": 340,
+      "prompt": "四格 2×2 透明序列图；锈蚀深绿色金属办公桌，关闭、微开、半开、全开。桌体、桌腿、相机、比例和落点固定，仅右侧浅抽屉直线前移。",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-5a96d0ff-97be-4b1a-bd43-a4b5a8bd43f6.png"
+    },
+    {
+      "id": "cardboard_box",
+      "name": "旧纸箱",
+      "displaySize": 268,
+      "prompt": "四格 2×2 透明序列图；磨损棕色封箱纸箱，关闭、前盖轻掀、半开、四片盖全开。箱体、相机、比例和落点固定，仅上盖翻动。",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-bc70339f-04aa-44c9-ba2f-ea172838799e.png"
+    },
+    {
+      "id": "kitchen_cabinet",
+      "name": "厨房吊柜",
+      "displaySize": 300,
+      "prompt": "四格 2×2 透明序列图；陈旧奶油色双开门厨房吊柜，关闭、右门半开、双门半开、双门全开。柜体、层板、相机、比例和落点固定，仅门绕侧铰链转动。",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-f026b499-b873-4999-b54f-4fcc9c97c762.png"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "index": 0,
+    "id": "bolts_pouch",
+    "name": "螺栓袋",
+    "category": "industrial",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-10a54759-fcb5-4ea7-8c67-02ad63012010.png"
+  },
+  {
+    "index": 1,
+    "id": "insulating_tape",
+    "name": "绝缘胶带",
+    "category": "industrial",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-2d82058b-fc8e-490d-8000-e9a751fe78fe.png"
+  },
+  {
+    "index": 2,
+    "id": "rusty_wrench",
+    "name": "锈蚀扳手",
+    "category": "industrial",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-b0bceb60-4066-41e7-b40f-1f49090cb1ec.png"
+  },
+  {
+    "index": 3,
+    "id": "pliers",
+    "name": "钢丝钳",
+    "category": "industrial",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-ab5d1d9f-3afd-4ea1-a33f-e8673b850540.png"
+  },
+  {
+    "index": 4,
+    "id": "precision_bearing",
+    "name": "精密轴承",
+    "category": "industrial",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-fe046af6-1ae9-4502-b5bd-960bcfe22d27.png"
+  },
+  {
+    "index": 5,
+    "id": "electric_motor",
+    "name": "小型电动机",
+    "category": "industrial",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-dabf8afd-ae07-48b4-97dc-70969c5ed662.png"
+  },
+  {
+    "index": 6,
+    "id": "battery",
+    "name": "普通电池",
+    "category": "electronics",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-b7d6a9e3-a9b6-4b8d-916f-e2e525b570c0.png"
+  },
+  {
+    "index": 7,
+    "id": "copper_wire",
+    "name": "铜线卷",
+    "category": "electronics",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-5ff457dc-33b7-4f75-9129-f72469f3395a.png"
+  },
+  {
+    "index": 8,
+    "id": "radio",
+    "name": "老式收音机",
+    "category": "electronics",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-26eda4ff-3f71-4161-b2a6-3b7a330fecdb.png"
+  },
+  {
+    "index": 9,
+    "id": "hard_drive",
+    "name": "完好硬盘",
+    "category": "electronics",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-367d9f6c-fd7e-44c6-8a9e-8f0c62a79b9b.png"
+  },
+  {
+    "index": 10,
+    "id": "military_module",
+    "name": "军用通信模块",
+    "category": "electronics",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-97bba785-ced5-4b50-b5ff-b3777f162268.png"
+  },
+  {
+    "index": 11,
+    "id": "encrypted_terminal",
+    "name": "加密数据终端",
+    "category": "electronics",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-7983999f-de38-4c4b-af55-30beff87f49e.png"
+  },
+  {
+    "index": 12,
+    "id": "matches",
+    "name": "一盒火柴",
+    "category": "household",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-0216d945-419f-4349-b235-ae12913d943a.png"
+  },
+  {
+    "index": 13,
+    "id": "cigarettes",
+    "name": "香烟",
+    "category": "household",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-6a13f964-73f2-44c5-b289-ff589543a30c.png"
+  },
+  {
+    "index": 14,
+    "id": "lighter",
+    "name": "金属打火机",
+    "category": "household",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-77e86d68-f6be-4859-b773-ad151adc206e.png"
+  },
+  {
+    "index": 15,
+    "id": "cleaner",
+    "name": "浓缩清洁剂",
+    "category": "household",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-c4e95dad-d822-4e9c-ba06-520311d2042f.png"
+  },
+  {
+    "index": 16,
+    "id": "perfume",
+    "name": "未拆封香水",
+    "category": "household",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-2809a0dd-01f6-4249-b997-355f8141658d.png"
+  },
+  {
+    "index": 17,
+    "id": "old_book",
+    "name": "精装旧书",
+    "category": "household",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-b2436fbf-5870-46f2-87f7-9090c51d8039.png"
+  },
+  {
+    "index": 18,
+    "id": "silver_ring",
+    "name": "银戒指",
+    "category": "valuables",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-502c45ab-bcca-4ca7-a9c8-3f592ed3d85d.png"
+  },
+  {
+    "index": 19,
+    "id": "silver_coin",
+    "name": "纪念银币",
+    "category": "valuables",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-46c14467-e7a2-4779-9687-ffaa39cd272d.png"
+  },
+  {
+    "index": 20,
+    "id": "pocket_watch",
+    "name": "机械怀表",
+    "category": "valuables",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-73a596ad-e331-4c6d-956c-1ec792745658.png"
+  },
+  {
+    "index": 21,
+    "id": "gold_bracelet",
+    "name": "金手镯",
+    "category": "valuables",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-6a9a2532-05cf-4fb3-9534-6c5894652d8b.png"
+  },
+  {
+    "index": 22,
+    "id": "antique_camera",
+    "name": "古董相机",
+    "category": "valuables",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-8b4e5684-b7f2-418b-af55-e27f7f3a13c4.png"
+  },
+  {
+    "index": 23,
+    "id": "gold_statue",
+    "name": "黄金雕像",
+    "category": "valuables",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-f97ef1cb-29ba-433d-aca2-7a7354346f31.png"
+  }
+]

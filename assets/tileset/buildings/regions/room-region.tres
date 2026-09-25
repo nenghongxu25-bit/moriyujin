@@ -1,0 +1,104 @@
+{
+  "_$type": "TileSet",
+  "tileSize": {
+    "_$type": "Vector2",
+    "x": 256,
+    "y": 128
+  },
+  "groups": [
+    {
+      "_$type": "TileSetCellGroup",
+      "id": 0,
+      "_maxAlternativesCount": 1,
+      "_maxCellCount": {
+        "_$type": "Vector2",
+        "x": 1,
+        "y": 1
+      },
+      "atlas": {
+        "_$uuid": "609dc465-356d-4a62-8fe5-b3b5a5095f0c",
+        "_$type": "Texture2D"
+      },
+      "atlasSize": {
+        "_$type": "Vector2",
+        "x": 268,
+        "y": 140
+      },
+      "textureRegionSize": {
+        "_$type": "Vector2",
+        "x": 256,
+        "y": 128
+      },
+      "margin": {
+        "_$type": "Vector2",
+        "x": 4,
+        "y": 4
+      },
+      "separation": {
+        "_$type": "Vector2",
+        "x": 8,
+        "y": 8
+      },
+      "tiles": {
+        "0": {
+          "0": {
+            "_$type": "TileAlternativesData",
+            "localPos": {
+              "_$type": "Vector2",
+              "x": 0,
+              "y": 0
+            },
+            "sizeByAtlas": {
+              "_$type": "Vector2",
+              "x": 1,
+              "y": 1
+            },
+            "animation_columns": 0,
+            "animation_separation": {
+              "_$type": "Vector2"
+            },
+            "animation_speed": 1,
+            "animationMode": null,
+            "animationFrams": [],
+            "tileDatas": {
+              "0": {
+                "_$type": "TileSetCellData",
+                "rotateCount": 0,
+                "texture_origin": {
+                  "_$type": "Vector2"
+                },
+                "z_index": 0,
+                "y_sort_origin": 0,
+                "terrainSet": -1,
+                "terrain": -1,
+                "_terrain_peering_bits": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ]
+              },
+              "_$type": "Record"
+            }
+          },
+          "_$type": "Record"
+        },
+        "_$type": "Record"
+      },
+      "name": "Room region / editor only"
+    }
+  ],
+  "tileShape": 1
+}

@@ -1,0 +1,1196 @@
+{
+  "_$ver": 1,
+  "_$id": "rt_kh",
+  "_$type": "Sprite",
+  "name": "page:weapons",
+  "x": 0,
+  "y": 0,
+  "width": 1334,
+  "height": 750,
+  "mouseThrough": false,
+  "_$child": [
+    {
+      "_$id": "rt_ki",
+      "_$type": "GWidget",
+      "name": "Background",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#111619",
+        "lineColor": "#111619",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_kj",
+      "_$type": "GWidget",
+      "name": "Header",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 76,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#1e2529",
+        "lineColor": "#394247",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_kk",
+      "_$type": "Text",
+      "name": "Title",
+      "x": 40,
+      "y": 14,
+      "width": 210,
+      "height": 46,
+      "text": "选择枪械",
+      "font": "Microsoft YaHei",
+      "fontSize": 28,
+      "color": "#e2e6e8",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_ko",
+      "_$type": "Sprite",
+      "name": "go:lobby",
+      "x": 1178,
+      "y": 15,
+      "width": 120,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_kl",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_km",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_kn",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 100,
+          "height": 44,
+          "text": "‹  返回",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_kp",
+      "_$type": "Text",
+      "name": "TemplateNote",
+      "x": 40,
+      "y": 716,
+      "width": 350,
+      "height": 22,
+      "text": "界面模板 · 展示数据",
+      "font": "Microsoft YaHei",
+      "fontSize": 12,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_kt",
+      "_$type": "Sprite",
+      "name": "pick:scheme:0",
+      "x": 46,
+      "y": 98,
+      "width": 168,
+      "height": 46,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_kq",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 168,
+          "height": 46,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_kr",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 168,
+          "height": 46,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_ks",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 148,
+          "height": 46,
+          "text": "此枪方案",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_ku",
+      "_$type": "Text",
+      "name": "WeaponName",
+      "x": 52,
+      "y": 207,
+      "width": 330,
+      "height": 40,
+      "text": "AK 系列步枪",
+      "font": "Microsoft YaHei",
+      "fontSize": 27,
+      "color": "#e2e6e8",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_kv",
+      "_$type": "Text",
+      "name": "WeaponInfo",
+      "x": 52,
+      "y": 253,
+      "width": 340,
+      "height": 76,
+      "text": "射速：—\n开火模式：半自动 / 全自动",
+      "font": "Microsoft YaHei",
+      "fontSize": 18,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_kw",
+      "_$type": "Text",
+      "name": "Attribute",
+      "x": 52,
+      "y": 364,
+      "width": 185,
+      "height": 36,
+      "text": "垂直后坐控制  —",
+      "font": "Microsoft YaHei",
+      "fontSize": 17,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_kx",
+      "_$type": "Text",
+      "name": "Attribute",
+      "x": 244,
+      "y": 364,
+      "width": 185,
+      "height": 36,
+      "text": "水平后坐控制  —",
+      "font": "Microsoft YaHei",
+      "fontSize": 17,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_ky",
+      "_$type": "Text",
+      "name": "Attribute",
+      "x": 52,
+      "y": 406,
+      "width": 185,
+      "height": 36,
+      "text": "人机工效  —",
+      "font": "Microsoft YaHei",
+      "fontSize": 17,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_kz",
+      "_$type": "Text",
+      "name": "Attribute",
+      "x": 244,
+      "y": 406,
+      "width": 185,
+      "height": 36,
+      "text": "精准度  —",
+      "font": "Microsoft YaHei",
+      "fontSize": 17,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_l0",
+      "_$type": "Text",
+      "name": "Attribute",
+      "x": 52,
+      "y": 448,
+      "width": 185,
+      "height": 36,
+      "text": "腰射稳定度  —",
+      "font": "Microsoft YaHei",
+      "fontSize": 17,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_l1",
+      "_$type": "Text",
+      "name": "Attribute",
+      "x": 244,
+      "y": 448,
+      "width": 185,
+      "height": 36,
+      "text": "有效射程  —",
+      "font": "Microsoft YaHei",
+      "fontSize": 17,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_l5",
+      "_$type": "Sprite",
+      "name": "pick:weaponClass:0",
+      "x": 48,
+      "y": 550,
+      "width": 189,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_l2",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_l3",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        },
+        {
+          "_$id": "rt_l4",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 169,
+          "height": 44,
+          "text": "突击步枪",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_l9",
+      "_$type": "Sprite",
+      "name": "pick:weaponClass:1",
+      "x": 247,
+      "y": 550,
+      "width": 189,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_l6",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_l7",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_l8",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 169,
+          "height": 44,
+          "text": "冲锋枪",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_ld",
+      "_$type": "Sprite",
+      "name": "pick:weaponClass:2",
+      "x": 446,
+      "y": 550,
+      "width": 189,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_la",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_lb",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_lc",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 169,
+          "height": 44,
+          "text": "狙击步枪",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_lh",
+      "_$type": "Sprite",
+      "name": "pick:weaponClass:3",
+      "x": 645,
+      "y": 550,
+      "width": 189,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_le",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_lf",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_lg",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 169,
+          "height": 44,
+          "text": "霰弹枪",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_ll",
+      "_$type": "Sprite",
+      "name": "pick:weaponClass:4",
+      "x": 844,
+      "y": 550,
+      "width": 189,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_li",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_lj",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 189,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_lk",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 169,
+          "height": 44,
+          "text": "手枪",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_lr",
+      "_$type": "Sprite",
+      "name": "pick:weapon:0",
+      "x": 48,
+      "y": 610,
+      "width": 294,
+      "height": 92,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_lp",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 294,
+          "height": 92,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_lm",
+          "_$type": "Sprite",
+          "name": "Thumbnail",
+          "x": 10,
+          "y": 18,
+          "width": 130,
+          "height": 52,
+          "texture": {
+            "_$uuid": "19ba1d62-1ade-4d0a-a31e-5604544de574",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_ln",
+          "_$type": "Text",
+          "name": "Weapon",
+          "x": 150,
+          "y": 14,
+          "width": 132,
+          "height": 32,
+          "text": "AK 系列",
+          "font": "Microsoft YaHei",
+          "fontSize": 19,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_lo",
+          "_$type": "Text",
+          "name": "Caliber",
+          "x": 150,
+          "y": 52,
+          "width": 136,
+          "height": 28,
+          "text": "7.62 × 39",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_lq",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 89,
+          "width": 294,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_ls",
+      "_$type": "Sprite",
+      "name": "view:weapon:0",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_lt",
+          "_$type": "Sprite",
+          "name": "WeaponPreview",
+          "x": 464,
+          "y": 170.4,
+          "width": 788,
+          "height": 315.2,
+          "texture": {
+            "_$uuid": "19ba1d62-1ade-4d0a-a31e-5604544de574",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        }
+      ],
+      "visible": true
+    },
+    {
+      "_$id": "rt_lz",
+      "_$type": "Sprite",
+      "name": "pick:weapon:1",
+      "x": 356,
+      "y": 610,
+      "width": 294,
+      "height": 92,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_lx",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 294,
+          "height": 92,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_lu",
+          "_$type": "Sprite",
+          "name": "Thumbnail",
+          "x": 10,
+          "y": 18,
+          "width": 130,
+          "height": 52,
+          "texture": {
+            "_$uuid": "cbee195e-eed8-464a-8d9e-8d51e0946150",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_lv",
+          "_$type": "Text",
+          "name": "Weapon",
+          "x": 150,
+          "y": 14,
+          "width": 132,
+          "height": 32,
+          "text": "M16",
+          "font": "Microsoft YaHei",
+          "fontSize": 19,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_lw",
+          "_$type": "Text",
+          "name": "Caliber",
+          "x": 150,
+          "y": 52,
+          "width": 136,
+          "height": 28,
+          "text": "5.56 × 45",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ly",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 89,
+          "width": 294,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_m0",
+      "_$type": "Sprite",
+      "name": "view:weapon:1",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_m1",
+          "_$type": "Sprite",
+          "name": "WeaponPreview",
+          "x": 464,
+          "y": 170.4,
+          "width": 788,
+          "height": 315.2,
+          "texture": {
+            "_$uuid": "cbee195e-eed8-464a-8d9e-8d51e0946150",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_m7",
+      "_$type": "Sprite",
+      "name": "pick:weapon:2",
+      "x": 664,
+      "y": 610,
+      "width": 294,
+      "height": 92,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_m5",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 294,
+          "height": 92,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_m2",
+          "_$type": "Sprite",
+          "name": "Thumbnail",
+          "x": 10,
+          "y": 18,
+          "width": 130,
+          "height": 52,
+          "texture": {
+            "_$uuid": "07be8694-cf42-48e4-a1ab-f0d9b577c9db",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_m3",
+          "_$type": "Text",
+          "name": "Weapon",
+          "x": 150,
+          "y": 14,
+          "width": 132,
+          "height": 32,
+          "text": "FAL",
+          "font": "Microsoft YaHei",
+          "fontSize": 19,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_m4",
+          "_$type": "Text",
+          "name": "Caliber",
+          "x": 150,
+          "y": 52,
+          "width": 136,
+          "height": 28,
+          "text": "7.62 × 51",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_m6",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 89,
+          "width": 294,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_m8",
+      "_$type": "Sprite",
+      "name": "view:weapon:2",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_m9",
+          "_$type": "Sprite",
+          "name": "WeaponPreview",
+          "x": 464,
+          "y": 170.4,
+          "width": 788,
+          "height": 315.2,
+          "texture": {
+            "_$uuid": "07be8694-cf42-48e4-a1ab-f0d9b577c9db",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_mf",
+      "_$type": "Sprite",
+      "name": "pick:weapon:3",
+      "x": 972,
+      "y": 610,
+      "width": 294,
+      "height": 92,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_md",
+          "_$type": "GWidget",
+          "name": "Background",
+          "x": 0,
+          "y": 0,
+          "width": 294,
+          "height": 92,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_ma",
+          "_$type": "Sprite",
+          "name": "Thumbnail",
+          "x": 10,
+          "y": 11.5,
+          "width": 130,
+          "height": 65,
+          "texture": {
+            "_$uuid": "52b8e2d2-8b2f-4547-98e5-fe2093e0bacb",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_mb",
+          "_$type": "Text",
+          "name": "Weapon",
+          "x": 150,
+          "y": 14,
+          "width": 132,
+          "height": 32,
+          "text": "手枪",
+          "font": "Microsoft YaHei",
+          "fontSize": 19,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_mc",
+          "_$type": "Text",
+          "name": "Caliber",
+          "x": 150,
+          "y": 52,
+          "width": 136,
+          "height": 28,
+          "text": "9 × 19",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_me",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 89,
+          "width": 294,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#d76532",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_mg",
+      "_$type": "Sprite",
+      "name": "view:weapon:3",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_mh",
+          "_$type": "Sprite",
+          "name": "WeaponPreview",
+          "x": 538,
+          "y": 168,
+          "width": 640,
+          "height": 320,
+          "texture": {
+            "_$uuid": "52b8e2d2-8b2f-4547-98e5-fe2093e0bacb",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_ml",
+      "_$type": "Sprite",
+      "name": "pick:confirmWeapon:0",
+      "x": 1090,
+      "y": 546,
+      "width": 204,
+      "height": 48,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_mi",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 204,
+          "height": 48,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_mj",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 204,
+          "height": 48,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        },
+        {
+          "_$id": "rt_mk",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 184,
+          "height": 48,
+          "text": "选定枪械",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    }
+  ],
+  "visible": true,
+  "mouseEnabled": true,
+  "zOrder": 1000
+}

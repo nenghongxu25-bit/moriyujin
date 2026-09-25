@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "5111824e9a60",
+  "_$type": "Sprite",
+  "name": "可穿过_branch-fallen",
+  "width": 192,
+  "height": 192,
+  "pivotX": 97,
+  "pivotY": 158,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 158
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "4186dc7154a5"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "4186dc7154a5",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "5c6538d9-0b3b-4606-8153-cd370dba044f",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

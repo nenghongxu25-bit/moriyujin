@@ -1,0 +1,21 @@
+{
+  "_$ver": 1,
+  "_$id": "8a6b83f6d105",
+  "_$type": "Sprite",
+  "name": "RoofLayer",
+  "_$comp": [
+    {
+      "_$type": "TileMapLayer",
+      "tileSet": {
+        "_$uuid": "597bee4f-2b51-4b22-b0ba-1dc144c22543",
+        "_$type": "TileSet"
+      },
+      "chunkDatas": {
+        "_$type": "Record"
+      }
+    },
+    {
+      "_$type": "3591ef95-3f88-4957-88b2-bb349b43fcb1"
+    }
+  ]
+}

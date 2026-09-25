@@ -1,0 +1,258 @@
+{
+  "generatedWith": "Built-in image_gen",
+  "status": "art-only; not registered in gameplay item tables",
+  "items": [
+    {
+      "id": "bolts_pouch",
+      "name": "螺栓袋",
+      "category": "industrial",
+      "grid": "1x1",
+      "rarity": "gray",
+      "file": "industrial/bolts_pouch.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A small worn transparent zip pouch containing several steel hex-head bolts and nuts, clearly visible metal hardware"
+    },
+    {
+      "id": "insulating_tape",
+      "name": "绝缘胶带",
+      "category": "industrial",
+      "grid": "1x1",
+      "rarity": "gray",
+      "file": "industrial/insulating_tape.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: One partially used roll of black electrical insulating tape, exposed cardboard core, slightly dusty edges"
+    },
+    {
+      "id": "rusty_wrench",
+      "name": "锈蚀扳手",
+      "category": "industrial",
+      "grid": "1x2",
+      "rarity": "gray",
+      "file": "industrial/rusty_wrench.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A single old open-ended steel wrench, patches of rust, elongated vertical composition slightly tilted"
+    },
+    {
+      "id": "pliers",
+      "name": "钢丝钳",
+      "category": "industrial",
+      "grid": "1x2",
+      "rarity": "green",
+      "file": "industrial/pliers.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: One pair of combination cutting pliers, faded red rubber grips, worn steel jaws, closed, vertical composition"
+    },
+    {
+      "id": "precision_bearing",
+      "name": "精密轴承",
+      "category": "industrial",
+      "grid": "1x1",
+      "rarity": "green",
+      "file": "industrial/precision_bearing.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: One precision steel ball bearing, concentric polished rings with visible steel balls, subtle oil and wear"
+    },
+    {
+      "id": "electric_motor",
+      "name": "小型电动机",
+      "category": "industrial",
+      "grid": "2x2",
+      "rarity": "blue",
+      "file": "industrial/electric_motor.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A compact salvaged industrial electric motor, ribbed dull steel housing, copper windings visible at one end, short shaft"
+    },
+    {
+      "id": "battery",
+      "name": "普通电池",
+      "category": "electronics",
+      "grid": "1x1",
+      "rarity": "gray",
+      "file": "electronics/battery.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A pair of ordinary cylindrical batteries together, worn muted olive and cream generic casings, visible terminals, no logos"
+    },
+    {
+      "id": "copper_wire",
+      "name": "铜线卷",
+      "category": "electronics",
+      "grid": "1x1",
+      "rarity": "green",
+      "file": "electronics/copper_wire.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A compact coil of reddish copper electrical wire, one short loose end, dark aged highlights"
+    },
+    {
+      "id": "radio",
+      "name": "老式收音机",
+      "category": "electronics",
+      "grid": "2x1",
+      "rarity": "green",
+      "file": "electronics/radio.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: An old portable horizontal transistor radio, olive grey plastic case, speaker grille, tuning window and short folded antenna"
+    },
+    {
+      "id": "hard_drive",
+      "name": "完好硬盘",
+      "category": "electronics",
+      "grid": "2x1",
+      "rarity": "blue",
+      "file": "electronics/hard_drive.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: An intact internal computer hard disk drive, closed brushed steel lid, black chassis, visible connector edge, horizontal"
+    },
+    {
+      "id": "military_module",
+      "name": "军用通信模块",
+      "category": "electronics",
+      "grid": "2x1",
+      "rarity": "purple",
+      "file": "electronics/military_module.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A rugged small military communication module, olive metal rectangular enclosure, recessed connectors and heatsink, horizontal, no screen"
+    },
+    {
+      "id": "encrypted_terminal",
+      "name": "加密数据终端",
+      "category": "electronics",
+      "grid": "2x2",
+      "rarity": "gold",
+      "file": "electronics/encrypted_terminal.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A portable rugged encrypted data terminal, dark olive square case, small dim green display, compact keypad and protective corners"
+    },
+    {
+      "id": "matches",
+      "name": "一盒火柴",
+      "category": "household",
+      "grid": "1x1",
+      "rarity": "gray",
+      "file": "household/matches.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A small slightly open cardboard matchbox with a few wooden match heads visible, faded plain ochre paper sleeve"
+    },
+    {
+      "id": "cigarettes",
+      "name": "香烟",
+      "category": "household",
+      "grid": "1x1",
+      "rarity": "green",
+      "file": "household/cigarettes.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: One slightly opened crumpled cigarette pack, faded cream paper with a muted red stripe, two filter tips visible, no brand"
+    },
+    {
+      "id": "lighter",
+      "name": "金属打火机",
+      "category": "household",
+      "grid": "1x1",
+      "rarity": "green",
+      "file": "household/lighter.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A single closed rectangular flip-top metal pocket lighter, scratched brushed brass, distinctive hinge and lid seam"
+    },
+    {
+      "id": "cleaner",
+      "name": "浓缩清洁剂",
+      "category": "household",
+      "grid": "1x2",
+      "rarity": "green",
+      "file": "household/cleaner.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A sealed tall opaque muted blue plastic concentrated cleaning fluid bottle, utilitarian screw cap, faded simple hazard pictogram label, no readable words"
+    },
+    {
+      "id": "perfume",
+      "name": "未拆封香水",
+      "category": "household",
+      "grid": "1x1",
+      "rarity": "blue",
+      "file": "household/perfume.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A pristine sealed small perfume bottle, thick clear squared glass with pale amber liquid, black cap and intact tamper seal"
+    },
+    {
+      "id": "old_book",
+      "name": "精装旧书",
+      "category": "household",
+      "grid": "2x2",
+      "rarity": "blue",
+      "file": "household/old_book.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A thick old hardcover book, dark burgundy cloth cover, worn gilded corner flourishes, yellowed pages, closed, no readable title"
+    },
+    {
+      "id": "silver_ring",
+      "name": "银戒指",
+      "category": "valuables",
+      "grid": "1x1",
+      "rarity": "blue",
+      "file": "valuables/silver_ring.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A single modest silver band ring with a small engraved pattern, aged patina and clean highlights"
+    },
+    {
+      "id": "silver_coin",
+      "name": "纪念银币",
+      "category": "valuables",
+      "grid": "1x1",
+      "rarity": "blue",
+      "file": "valuables/silver_coin.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A single commemorative silver coin shown slightly tilted, original embossed laurel and bird motif, fine rim wear, no readable lettering"
+    },
+    {
+      "id": "pocket_watch",
+      "name": "机械怀表",
+      "category": "valuables",
+      "grid": "1x1",
+      "rarity": "purple",
+      "file": "valuables/pocket_watch.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: An antique brass mechanical pocket watch with hinged cover open, visible cream clock dial and a short curled chain, no brand"
+    },
+    {
+      "id": "gold_bracelet",
+      "name": "金手镯",
+      "category": "valuables",
+      "grid": "1x1",
+      "rarity": "purple",
+      "file": "valuables/gold_bracelet.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: One solid gold bangle bracelet with restrained engraved geometric detail, realistic rich gold reflections, no jewels"
+    },
+    {
+      "id": "antique_camera",
+      "name": "古董相机",
+      "category": "valuables",
+      "grid": "2x2",
+      "rarity": "purple",
+      "file": "valuables/antique_camera.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A vintage compact film camera, black leatherette and aged silver metal body, large protruding lens, no strap and no brand"
+    },
+    {
+      "id": "gold_statue",
+      "name": "黄金雕像",
+      "category": "valuables",
+      "grid": "2x3",
+      "rarity": "gold",
+      "file": "valuables/gold_statue.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A small heavy antique gold statuette of an original stylized standing bird, integral narrow plinth, weathered gold, tall vertical composition"
+    },
+    {
+      "id": "soil_sample",
+      "name": "密封污染土样",
+      "category": "samples",
+      "grid": "1x1",
+      "rarity": "green",
+      "file": "samples/soil_sample.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A sealed short cylindrical laboratory vial containing layered dark contaminated soil, tamper seal and small yellow hazard pictogram"
+    },
+    {
+      "id": "mutant_sample",
+      "name": "变异组织标本",
+      "category": "samples",
+      "grid": "1x2",
+      "rarity": "blue",
+      "file": "samples/mutant_sample.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A sealed tall laboratory specimen jar containing a small non-graphic pale organic tissue sample suspended in cloudy amber preservative, steel lid"
+    },
+    {
+      "id": "anomalous_crystal",
+      "name": "异常结晶",
+      "category": "samples",
+      "grid": "1x1",
+      "rarity": "purple",
+      "file": "samples/anomalous_crystal.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: A small angular smoky mineral crystal cluster with subtle turquoise translucent core, tiny mineral inclusions, no magical aura or floating particles"
+    },
+    {
+      "id": "sample_case",
+      "name": "旧实验室样本箱",
+      "category": "samples",
+      "grid": "2x3",
+      "rarity": "gold",
+      "file": "samples/sample_case.png",
+      "prompt": "Create ONE original production-ready extraction survival game inventory item icon. Transparent PNG with genuine alpha=0 outside object. One isolated item only, no background, no ground plane, no cast shadow outside silhouette, no frame, no colored rarity panel, no text labels, no watermark, no logos. Realistic detailed hand-painted raster game art, restrained worn post-apocalyptic utility, natural believable materials, muted palette, soft upper-left lighting, consistent elevated three-quarter orthographic view about 30 degrees, crisp readable silhouette at small icon size. Square 1024x1024 canvas, entire object centered within 12 percent transparent margins, no cropping. Preserve item proportions; elongated items use vertical or horizontal framing as specified. SUBJECT: An old rugged laboratory sample carrying case, olive grey reinforced hard shell, metal latches, sealed lid and faded yellow biohazard pictogram, rectangular vertical composition"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+﻿[
+    {
+        "file":  "checkout-counter.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  798150,
+        "visiblePixels":  765492,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              58,
+                              94,
+                              1195,
+                              1207
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "filing-cabinet.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  977116,
+        "visiblePixels":  585876,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              338,
+                              59,
+                              932,
+                              1199
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "mechanic-tool-cart.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  789781,
+        "visiblePixels":  771648,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              162,
+                              73,
+                              1139,
+                              1203
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "office-desk.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  924443,
+        "visiblePixels":  636724,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              90,
+                              64,
+                              1176,
+                              1192
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "shop-shelf.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  836338,
+        "visiblePixels":  723328,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              179,
+                              67,
+                              1085,
+                              1204
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "staff-locker.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  1051074,
+        "visiblePixels":  513624,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              352,
+                              63,
+                              902,
+                              1189
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "vending-machine.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  843838,
+        "visiblePixels":  721057,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              280,
+                              42,
+                              982,
+                              1220
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "waiting-sofa.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  1019348,
+        "visiblePixels":  544308,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              80,
+                              219,
+                              1175,
+                              1081
+                          ],
+        "valid":  true
+    }
+]

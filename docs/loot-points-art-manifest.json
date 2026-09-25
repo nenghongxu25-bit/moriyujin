@@ -1,0 +1,47 @@
+{
+  "generator": "built-in image_gen",
+  "items": [
+    {
+      "id": "weapon_crate",
+      "name": "军用武器箱",
+      "displaySize": 320,
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-c81212f1-3135-4ee9-823c-9047105c11ef.png",
+      "prompt": "Use case: stylized-concept. TRANSPARENT PNG GAME SPRITE SHEET, 1024x1024 square, actual alpha=0 empty background. Exactly FOUR sprites in 2x2 equal 512px cells, NO backdrop NO floor NO shadows NO gradients NO labels NO grid lines. One identical object shown four times: top left fully CLOSED, top right opening 30 degrees, bottom left opening 65 degrees, bottom right fully OPEN 100 degrees. Same stationary base, size, lighting, and camera in every cell, base centered at x256,y425 inside each cell. Entire object including lid fits inside x50..462,y60..450. Orthographic 2:1 isometric game prop, ground axes +/-26.565 degrees, visible front and right sides, realistic hand-painted worn tactical material, upper-left light. Only lid moves around fixed rear hinge. Subject: a long olive-green military rifle storage crate with reinforced metal edges, two small latches and black foam inside. Original extraction shooter loot container. Real transparent cutout sprites, not a presentation board."
+    },
+    {
+      "id": "ammo_box",
+      "name": "钢制弹药箱",
+      "displaySize": 176,
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-d5cac1b8-f9f9-4abe-948b-3264b1060197.png",
+      "prompt": "Use case: stylized-concept. TRANSPARENT PNG GAME SPRITE SHEET, 1024x1024 square, actual alpha=0 empty background. Exactly FOUR sprites in 2x2 equal 512px cells, NO backdrop NO floor NO shadows NO gradients NO labels NO grid lines. One identical object shown four times: top left fully CLOSED, top right opening 30 degrees, bottom left opening 65 degrees, bottom right fully OPEN 100 degrees. Same stationary base, size, lighting, and camera in every cell, base centered at x256,y425 inside each cell. Entire object including lid fits inside x50..462,y60..450. Orthographic 2:1 isometric game prop, ground axes +/-26.565 degrees, visible front and right sides, realistic hand-painted worn tactical material, upper-left light. Only lid moves around fixed rear hinge. Subject: a compact squat olive green steel ammunition box with pressed metal ribs, carry handle attached to the lid, dark empty inside. All four objects have the same rectangular base shape."
+    },
+    {
+      "id": "medical_case",
+      "name": "急救医疗箱",
+      "displaySize": 208,
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-4130107b-fd6b-467f-8254-78252861ce6a.png",
+      "prompt": "Use case: stylized-concept. TRANSPARENT PNG GAME SPRITE SHEET, 1024x1024 square, actual alpha=0 empty background. Exactly FOUR sprites in 2x2 equal 512px cells, NO backdrop NO floor NO shadows NO gradients NO labels NO grid lines. One identical object shown four times: top left fully CLOSED, top right opening 30 degrees, bottom left opening 65 degrees, bottom right fully OPEN 100 degrees. Same stationary base, size, lighting, and camera in every cell, base centered at x256,y425 inside each cell. Entire object including lid fits inside x50..462,y60..450. Orthographic 2:1 isometric game prop, ground axes +/-26.565 degrees, visible front and right sides, realistic hand-painted worn tactical material, upper-left light. Only lid moves around fixed rear hinge. Subject: a rectangular off-white and faded red medical hard case, a simple pale medical plus emblem on red lid, worn polymer shell, cream inner tray. No lettering. All four objects have the same rectangular base shape."
+    },
+    {
+      "id": "toolbox",
+      "name": "工业工具箱",
+      "displaySize": 208,
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-80bfe076-508f-4cce-bb5a-392152888a8f.png",
+      "prompt": "Use case: stylized-concept. TRANSPARENT PNG GAME SPRITE SHEET, 1024x1024 square, actual alpha=0 empty background. Exactly FOUR sprites in 2x2 equal 512px cells, NO backdrop NO floor NO shadows NO gradients NO labels NO grid lines. One identical object shown four times: top left fully CLOSED, top right opening 30 degrees, bottom left opening 65 degrees, bottom right fully OPEN 100 degrees. Same stationary base, size, lighting, and camera in every cell, base centered at x256,y425 inside each cell. Entire object including lid fits inside x50..462,y60..450. Orthographic 2:1 isometric game prop, ground axes +/-26.565 degrees, visible front and right sides, realistic hand-painted worn tactical material, upper-left light. Only lid moves around fixed rear hinge. Subject: a worn mustard yellow steel portable toolbox, dark grip handle on lid, single latch, dark shallow empty tool tray inside."
+    },
+    {
+      "id": "duffel_bag",
+      "name": "帆布旅行袋",
+      "displaySize": 224,
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-122a04eb-7bcb-4b19-bf5d-6faed1d8c304.png",
+      "prompt": "Use case: stylized-concept. TRANSPARENT PNG GAME SPRITE SHEET, 1024x1024 square, actual alpha=0 empty background. Exactly FOUR sprites in 2x2 equal 512px cells, NO backdrop NO floor NO shadows NO gradients NO labels NO grid lines. One identical object shown four times: top left fully CLOSED, top right opening 30 degrees, bottom left opening 65 degrees, bottom right fully OPEN 100 degrees. Same stationary base, size, lighting, and camera in every cell, base centered at x256,y425 inside each cell. Entire object including lid fits inside x50..462,y60..450. Orthographic 2:1 isometric game prop, ground axes +/-26.565 degrees, visible front and right sides, realistic hand-painted worn tactical material, upper-left light. Only lid moves around fixed rear hinge. Subject: a weathered navy blue fabric travel duffel bag with tan webbing handles, zipped top. Instead of rigid hinged lid angles: four progressive zipper opening states CLOSED, narrow partly unzipped slit, wider open mouth with fabric flap peeling backward, fully unzipped open bag with folded back fabric flap and visible dark lining. Keep same fabric bag base and handles. NO rigid lid."
+    },
+    {
+      "id": "safe",
+      "name": "机械保险箱",
+      "displaySize": 240,
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-94d63b91-344c-4622-a8ed-3f22b9a4a27b.png",
+      "prompt": "Use case: stylized-concept. TRANSPARENT PNG GAME SPRITE SHEET, 1024x1024 square, actual alpha=0 empty background. Exactly FOUR sprites in 2x2 equal 512px cells, NO backdrop NO floor NO shadows NO gradients NO labels NO grid lines. One identical object shown four times: top left fully CLOSED, top right opening 30 degrees, bottom left opening 65 degrees, bottom right fully OPEN 100 degrees. Same stationary base, size, lighting, and camera in every cell, base centered at x256,y425 inside each cell. Entire object including lid fits inside x50..462,y60..450. Orthographic 2:1 isometric game prop, ground axes +/-26.565 degrees, visible front and right sides, realistic hand-painted worn tactical material, upper-left light. Only lid moves around fixed rear hinge. Subject: a squat upright industrial grey steel safe, brass dial and horizontal handle on front door, four progressive states front door CLOSED, cracked ajar 25 degrees, open 60 degrees, fully OPEN 100 degrees. Door pivots on left-side VERTICAL hinge, NOT a top lid. Interior dark empty shelf. Same stationary cabinet and feet."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "_$id": "acd0fa630ebf",
+  "_$type": "Sprite",
+  "name": "House",
+  "_$comp": [
+    {
+      "_$type": "4970ea9d-81c3-4897-b5a2-360a7281ca0d",
+      "player": null,
+      "fadeSeconds": 0.2
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "035795e176a5",
+      "_$type": "Sprite",
+      "name": "IndoorFloorLayer",
+      "_$comp": [
+        {
+          "_$type": "TileMapLayer",
+          "tileSet": {
+            "_$uuid": "bc627b0d-a980-4f19-ad73-c8cff46fae1a",
+            "_$type": "TileSet"
+          },
+          "chunkDatas": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$type": "567e9b12-042a-4a56-88a1-a8e69f9fd745"
+        }
+      ],
+      "scaleX": 0.25,
+      "scaleY": 0.25
+    },
+    {
+      "_$id": "3854a961cbf1",
+      "_$type": "Sprite",
+      "name": "BrickWallLayer",
+      "width": 0,
+      "height": 0,
+      "_$comp": [
+        {
+          "_$type": "TileMapLayer",
+          "layer": 0,
+          "tileSet": {
+            "_$uuid": "045e4ac5-bdbc-4d01-a4fa-1a374b73cec6",
+            "_$type": "TileSet"
+          },
+          "chunkDatas": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$type": "818f8acf-a35f-42d4-b285-b2d8b67d5af8",
+          "scriptPath": "../src/systems/BrickWallTileLayer.ts",
+          "actorLayer": null
+        }
+      ]
+    },
+    {
+      "_$id": "2c25168cbc7b",
+      "_$type": "Sprite",
+      "name": "RoofLayer",
+      "width": 0,
+      "height": 0,
+      "_$comp": [
+        {
+          "_$type": "TileMapLayer",
+          "layer": 0,
+          "tileSet": {
+            "_$uuid": "810ce2b9-719c-4c25-890a-f650da8741b4",
+            "_$type": "TileSet"
+          },
+          "chunkDatas": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$type": "3591ef95-3f88-4957-88b2-bb349b43fcb1",
+          "scriptPath": "../src/systems/RoofTileLayer.ts"
+        }
+      ]
+    }
+  ],
+  "_$ver": 1
+}

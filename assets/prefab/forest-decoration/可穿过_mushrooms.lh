@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "09f64195fe23",
+  "_$type": "Sprite",
+  "name": "可穿过_mushrooms",
+  "width": 192,
+  "height": 192,
+  "pivotX": 91,
+  "pivotY": 163,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 163
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "bbd7efdfc256"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "bbd7efdfc256",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "c0420dfd-9e1f-4b09-97dd-ac1bce640b20",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

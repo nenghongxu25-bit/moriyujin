@@ -1,0 +1,1 @@
+Laya.loader.load('prefab/prefab_interface/Bag/bag_panel.lh').then(p=>{for(let i=0;i<Laya.stage.numChildren;i++)Laya.stage.getChildAt(i).visible=false;const n=p.create();Laya.stage.addChild(n);return new Promise(resolve=>setTimeout(()=>resolve({name:n.name,width:n.width,height:n.height}),1000));})

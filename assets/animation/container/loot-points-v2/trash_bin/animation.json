@@ -1,0 +1,17 @@
+{
+  "name": "trash_bin",
+  "fps": 8,
+  "loop": false,
+  "width": 512,
+  "height": 512,
+  "groundAnchor": {
+    "x": 256,
+    "y": 476
+  },
+  "frames": [
+    "frame_00.png",
+    "frame_01.png",
+    "frame_02.png",
+    "frame_03.png"
+  ]
+}

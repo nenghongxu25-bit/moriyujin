@@ -1,0 +1,22 @@
+{
+  "atlas": "forest-cliff-wall.png",
+  "width": 1254,
+  "height": 1254,
+  "cellSize": 418,
+  "columns": 3,
+  "rows": 3,
+  "worldCellSize": 128,
+  "layerScale": 0.3062200956937799,
+  "tiles": [
+    "top-left",
+    "grass-top",
+    "top-right",
+    "left-edge",
+    "earth-fill",
+    "right-edge",
+    "bottom-left",
+    "rubble-bottom",
+    "bottom-right"
+  ],
+  "notes": "Manual nine-slice wall facade. Middle spans alternate horizontal/vertical flips. No automatic terrain rules or collision."
+}

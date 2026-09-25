@@ -1,0 +1,32 @@
+[
+  {
+    "scene": "city",
+    "preservedNodes": 127,
+    "promotedEntities": 1,
+    "actorChildren": 86,
+    "layers": [
+      "GroundLayer",
+      "GroundDecorLayer",
+      "ActorLayer",
+      "RoofLayer",
+      "LightingLayer",
+      "EffectLayer",
+      "LogicLayer"
+    ]
+  },
+  {
+    "scene": "forest",
+    "preservedNodes": 91,
+    "promotedEntities": 63,
+    "actorChildren": 64,
+    "layers": [
+      "GroundLayer",
+      "GroundDecorLayer",
+      "ActorLayer",
+      "RoofLayer",
+      "LightingLayer",
+      "EffectLayer",
+      "LogicLayer"
+    ]
+  }
+]

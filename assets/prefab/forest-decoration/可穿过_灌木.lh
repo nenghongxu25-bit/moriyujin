@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "6e286a63c7e7",
+  "_$type": "Sprite",
+  "name": "可穿过_灌木",
+  "width": 192,
+  "height": 192,
+  "pivotX": 96,
+  "pivotY": 174,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 174
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "d847f6bbe9bd"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "d847f6bbe9bd",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "53113d90-85ef-4542-a7dd-052004119cec",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

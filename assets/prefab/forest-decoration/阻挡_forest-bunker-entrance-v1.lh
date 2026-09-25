@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "9fe11d2a15fa",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-bunker-entrance-v1",
+  "width": 256,
+  "height": 171,
+  "pivotX": 128,
+  "pivotY": 169,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 169
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "972895844d4f"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 37,
+      "blockY": 147,
+      "blockWidth": 182,
+      "blockHeight": 22
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "972895844d4f",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 256,
+      "height": 171,
+      "texture": {
+        "_$uuid": "d3c70fa3-686a-4de0-90b7-c1f1c91bf59f",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

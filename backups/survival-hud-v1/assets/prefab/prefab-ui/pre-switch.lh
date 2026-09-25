@@ -1,0 +1,29 @@
+{
+  "_$ver": 1,
+  "_$id": "dgyp7iur",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 100,
+  "height": 100,
+  "_$child": [
+    {
+      "_$id": "1a98ya81",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 100,
+      "height": 100,
+      "_gcmds": [
+        {
+          "_$type": "DrawCircleCmd",
+          "x": 0.5,
+          "y": 0.5,
+          "radius": 0.5,
+          "percent": true,
+          "lineWidth": 1,
+          "lineColor": "#000000",
+          "fillColor": "#ffffff"
+        }
+      ]
+    }
+  ]
+}

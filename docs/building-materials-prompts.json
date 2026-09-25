@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "use_case": "stylized-concept",
+  "materials": [
+    {
+      "id": "wood",
+      "prompt": "Create one seamless square material texture for a detailed isometric post-apocalyptic survival game. Flat orthographic straight-on surface, fills the entire frame edge to edge, uniform soft diffuse lighting, no perspective, no wall silhouette, no objects, no border, no text. Muted earthy colors, crisp finely painted texture with restrained realistic grain, clean readable joins at game scale, no blur or depth of field. Suitable as a repeating material mapped onto existing game geometry. 1024x1024. Weathered brown timber planks, horizontal long narrow boards with subtle staggered end joints, fine grain, a few knots, rubbed edges and restrained dark nail heads. Warm desaturated brown, abandoned cabin material, intact structural planks, not broken or missing."
+    },
+    {
+      "id": "concrete",
+      "prompt": "Create one seamless square material texture for a detailed isometric post-apocalyptic survival game. Flat orthographic straight-on surface, fills the entire frame edge to edge, uniform soft diffuse lighting, no perspective, no wall silhouette, no objects, no border, no text. Muted earthy colors, crisp finely painted texture with restrained realistic grain, clean readable joins at game scale, no blur or depth of field. Suitable as a repeating material mapped onto existing game geometry. 1024x1024. Old poured cement surface, cool medium gray, fine aggregate pores, subtle mottling, occasional fine cracks and restrained weather stains. Broad continuous concrete with no dramatic large joints or holes; readable neutral urban survivor shelter material."
+    },
+    {
+      "id": "plaster",
+      "prompt": "Create one seamless square material texture for a detailed isometric post-apocalyptic survival game. Flat orthographic straight-on surface, fills the entire frame edge to edge, uniform soft diffuse lighting, no perspective, no wall silhouette, no objects, no border, no text. Muted earthy colors, crisp finely painted texture with restrained realistic grain, clean readable joins at game scale, no blur or depth of field. Suitable as a repeating material mapped onto existing game geometry. 1024x1024. Old off-white lime plaster surface, muted warm ivory and light gray, fine chalky grain, sparse hairline cracks, small worn patches exposing gray undercoat. Predominantly intact white plaster, no brick patches, no holes, no strong grime gradient."
+    },
+    {
+      "id": "stone",
+      "prompt": "Create one seamless square material texture for a detailed isometric post-apocalyptic survival game. Flat orthographic straight-on surface, fills the entire frame edge to edge, uniform soft diffuse lighting, no perspective, no wall silhouette, no objects, no border, no text. Muted earthy colors, crisp finely painted texture with restrained realistic grain, clean readable joins at game scale, no blur or depth of field. Suitable as a repeating material mapped onto existing game geometry. 1024x1024. Weathered gray stone masonry laid in regular staggered horizontal courses, medium rectangular stone blocks, shallow dark gray mortar joints. Crisp beveled worn edges, restrained granular texture, muted slate gray with slight warm variation, no moss, no projecting stones."
+    },
+    {
+      "id": "terracotta",
+      "prompt": "Create one seamless square material texture for a detailed isometric post-apocalyptic survival game. Flat orthographic straight-on surface, fills the entire frame edge to edge, uniform soft diffuse lighting, no perspective, no wall silhouette, no objects, no border, no text. Muted earthy colors, crisp finely painted texture with restrained realistic grain, clean readable joins at game scale, no blur or depth of field. Suitable as a repeating material mapped onto existing game geometry. 1024x1024. Old muted burnt orange terracotta roof tiles, horizontal courses of small flat overlapping clay shingles with evenly spaced joints. Restrained brown weathering, chipped corners, subtle narrow overlap shadows, no deep curved barrel geometry; readable rough clay surface."
+    },
+    {
+      "id": "metal",
+      "prompt": "Create one seamless square material texture for a detailed isometric post-apocalyptic survival game. Flat orthographic straight-on surface, fills the entire frame edge to edge, uniform soft diffuse lighting, no perspective, no wall silhouette, no objects, no border, no text. Muted earthy colors, crisp finely painted texture with restrained realistic grain, clean readable joins at game scale, no blur or depth of field. Suitable as a repeating material mapped onto existing game geometry. 1024x1024. Weathered galvanized metal roofing, muted blue-gray with patchy reddish brown surface rust and fine scratches, regularly spaced narrow vertical folded standing seams. Flat repeating roofing sheet, restrained small fasteners, no holes and no heavy dramatic directional shading."
+    }
+  ]
+}

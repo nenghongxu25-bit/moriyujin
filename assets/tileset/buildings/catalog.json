@@ -1,0 +1,65 @@
+{
+  "standard": "docs/building-tiles-standard.md",
+  "walls": [
+    {
+      "id": "wood",
+      "label": "旧木板墙",
+      "tileset": "assets/tileset/buildings/walls/wood/wood-wall.tres",
+      "gable": "assets/tileset/buildings/walls/wood/wood-gable.tres",
+      "tiles": 16,
+      "gableTiles": 14
+    },
+    {
+      "id": "concrete",
+      "label": "旧水泥墙",
+      "tileset": "assets/tileset/buildings/walls/concrete/concrete-wall.tres",
+      "gable": "assets/tileset/buildings/walls/concrete/concrete-gable.tres",
+      "tiles": 16,
+      "gableTiles": 14
+    },
+    {
+      "id": "plaster",
+      "label": "旧白粉墙",
+      "tileset": "assets/tileset/buildings/walls/plaster/plaster-wall.tres",
+      "gable": "assets/tileset/buildings/walls/plaster/plaster-gable.tres",
+      "tiles": 16,
+      "gableTiles": 14
+    },
+    {
+      "id": "stone",
+      "label": "灰石墙",
+      "tileset": "assets/tileset/buildings/walls/stone/stone-wall.tres",
+      "gable": "assets/tileset/buildings/walls/stone/stone-gable.tres",
+      "tiles": 16,
+      "gableTiles": 14
+    }
+  ],
+  "floors": [
+    {
+      "gid": 0,
+      "label": "旧木板地板"
+    },
+    {
+      "gid": 1,
+      "label": "水泥地板"
+    },
+    {
+      "gid": 2,
+      "label": "灰石板地板"
+    }
+  ],
+  "roofs": [
+    {
+      "id": "terracotta",
+      "label": "旧红瓦屋顶",
+      "tileset": "assets/tileset/buildings/roofs/terracotta/terracotta-roof.tres",
+      "tiles": 42
+    },
+    {
+      "id": "metal",
+      "label": "锈蚀金属屋顶",
+      "tileset": "assets/tileset/buildings/roofs/metal/metal-roof.tres",
+      "tiles": 42
+    }
+  ]
+}

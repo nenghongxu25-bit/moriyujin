@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_medical_cabinet",
+  "_$type": "Sprite",
+  "name": "急救医疗柜",
+  "width": 240,
+  "height": 240,
+  "_$comp": [
+    {
+      "_$id": "medical_cabinet_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 24,
+          "y": 96,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 192,
+          "height": 144
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_medical_cabinet",
+      "instanceId": "",
+      "displayName": "急救医疗柜",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "medical_cabinet",
+      "visualFolder": "loot-points-v3"
+    },
+    {
+      "_$id": "medical_cabinet_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 223.125,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "medical_cabinet_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "medical_cabinet_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 240,
+      "height": 240,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://8c678864-d558-4823-b377-5834b3722c0e",
+      "autoSize": false
+    }
+  ]
+}

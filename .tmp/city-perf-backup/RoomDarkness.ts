@@ -1,0 +1,197 @@
+import {RoomRegion} from './RoomRegion';
+import {BrickWallTileLayer} from './BrickWallTileLayer';
+import {PlayerController} from '../Player/PlayerController';
+import {Joystick} from '../PlayUI/playerui/Joystick';
+import {attack as AttackControl} from '../PlayUI/playerui/attack';
+const {regClass,property}=Laya;
+
+type RoomPatch={x:number;y:number;halfW:number;halfH:number;outline:number[]};
+
+export function additionalRoomDarkness(room:number,ambient:number):number {
+    room=Math.max(0,Math.min(1,room));ambient=Math.max(0,Math.min(1,ambient));
+    return ambient>=room?0:(room-ambient)/(1-ambient);
+}
+
+/** One world-space dark surface for every logical room under the shared ActorLayer. */
+@regClass('c21b8ba5-48c5-43d2-9476-a93783851231')
+export class RoomDarkness extends Laya.Script {
+    private static live=new Set<RoomDarkness>();
+    public static updateAfterNight(night:Laya.Sprite):void {
+        for(const effect of this.live)if(effect.externalNightLayer===night)effect.updateSharedLights();
+    }
+    @property({type:Laya.Sprite,caption:'已有环境黑夜层（空为独立试样）'})
+    public externalNightLayer:Laya.Sprite=null;
+    private sharedLights=new Map<Laya.Sprite,{node:Laya.Sprite;mask:Laya.Sprite;light:Laya.Sprite}>();
+    @property({type:Laya.Sprite,caption:'玩家（空则查找正式玩家）'})
+    public player:Laya.Sprite=null;
+    @property({type:Number,caption:'室内黑暗强度'}) public darkness=.86;
+    @property({type:Number,caption:'墙高／黑暗投影高度'}) public wallHeight=256;
+    @property({type:Boolean,caption:'启用手电'}) public flashlightOn=true;
+    @property({type:Boolean,caption:'启用示范室内灯'}) public lampOn=true;
+    @property({type:Number,caption:'试样玩家脚底偏移'}) public footOffsetY=0;
+    @property({type:Number,caption:'手电离脚底高度'}) public flashlightHeight=72;
+    private patches:RoomPatch[]=[];
+    private world:Laya.Sprite;
+    private black:Laya.Sprite;
+    private beam:Laya.Sprite;
+    private beamMask:Laya.Sprite;
+    private lamp:Laya.Sprite;
+    private lampMask:Laya.Sprite;
+    private timer=100;
+    private lastX=NaN;private lastY=NaN;private direction=0;
+    private keys=new Set<string>();
+    private down=(e:any)=>{const k=String(e.key||'').toLowerCase();this.keys.add(k);if(!e.repeat&&k==='f')this.flashlightOn=!this.flashlightOn;if(!e.repeat&&k==='l')this.lampOn=!this.lampOn;};
+    private up=(e:any)=>this.keys.delete(String(e.key||'').toLowerCase());
+    onEnable():void {RoomDarkness.live.add(this);Laya.stage.on(Laya.Event.KEY_DOWN,this,this.down);Laya.stage.on(Laya.Event.KEY_UP,this,this.up);if(this.world)this.rebuild();}
+    onStart():void {
+        const owner=this.owner as Laya.Sprite;this.world=owner.parent as Laya.Sprite;
+        this.black=owner.getChildByName('RoomShade') as Laya.Sprite;
+        this.beam=owner.getChildByName('circle_cutout') as Laya.Sprite;
+        this.lamp=owner.getChildByName('lamp_cutout') as Laya.Sprite;
+        this.beamMask=owner.getChildByName('FlashlightVisibility') as Laya.Sprite;
+        this.lampMask=owner.getChildByName('LampVisibility') as Laya.Sprite;
+        if(!this.black||!this.beam||!this.lamp||!this.beamMask||!this.lampMask){console.error('[RoomDarkness] Use the room-lighting prefab.');return;}
+        owner.cacheAs='bitmap';owner.zOrder=99998;owner.mouseEnabled=false;
+        // Masks must not also render as ordinary children of the cached dark layer.
+        this.beamMask.removeSelf();this.lampMask.removeSelf();
+        this.beam.mask=this.beamMask;this.lamp.mask=this.lampMask;
+        this.rebuild();
+    }
+    public rebuild():void {
+        if(!this.world||!this.black)return;
+        this.patches=[];this.black.graphics.clear();
+        const visit=(node:Laya.Node)=>{
+            const region=node.getComponent(RoomRegion),sprite=node as Laya.Sprite;
+            if(region&&node.activeInHierarchy){
+                const map=node.getComponent(Laya.TileMapLayer),chunks=(map as any)?._chunkDatas;
+                if(map&&chunks){
+                    const size=map.renderTileSize,center=new Laya.Vector2();
+                    const halfW=map.tileSet.tileSize.x/2,halfH=map.tileSet.tileSize.y/2;
+                    const origin=this.toWorld(sprite,0,0),up=this.toWorld(sprite,0,-this.wallHeight/Math.max(.0001,sprite.scaleY));
+                    const rise=origin.y-up.y;
+                    for(const row of Object.values(chunks))for(const chunk of Object.values(row) as any[]){
+                        if(!chunk?.compressData)continue;
+                        for(const indices of Object.values(chunk.compressData) as any[])if(Array.isArray(indices))for(const index of indices){
+                            map.gridToPixel(chunk.chunkX*size+index%size,chunk.chunkY*size+Math.floor(index/size),center);
+                            const c=this.toWorld(sprite,center.x,center.y);
+                            const t=this.toWorld(sprite,center.x,center.y-halfH),r=this.toWorld(sprite,center.x+halfW,center.y);
+                            const b=this.toWorld(sprite,center.x,center.y+halfH),l=this.toWorld(sprite,center.x-halfW,center.y);
+                            const outline=[t.x,t.y-rise,r.x,r.y-rise,r.x,r.y,b.x,b.y,l.x,l.y,l.x,l.y-rise];
+                            this.patches.push({x:c.x,y:c.y,halfW:Math.abs(r.x-c.x),halfH:Math.abs(b.y-c.y),outline});
+                            this.black.graphics.drawPoly(0,0,outline,'#000000');
+                        }
+                    }
+                }
+            }
+            for(const child of node.children)visit(child);
+        };
+        visit(this.world);
+        BrickWallTileLayer.setDarknessDepth(this.world,this.patches.length?99998:null,(x,y)=>this.patches.some(p=>
+            Math.abs(x-p.x)/p.halfW+Math.abs(y-p.y)/p.halfH<=1.001));
+        // Opaque union is cached before applying a single darkness alpha.
+        this.black.cacheAs='bitmap';this.black.alpha=1;
+        const bounds=this.black.getBounds();
+        (this.owner as Laya.Sprite).setSelfBounds(bounds);
+        this.timer=100;console.info(`[RoomDarkness] ${this.patches.length} logical cells; one indoor darkness layer.`);
+    }
+    private toWorld(node:Laya.Sprite,x:number,y:number):Laya.Point {
+        return this.world.globalToLocal(node.localToGlobal(new Laya.Point(x,y),false),false);
+    }
+    private visibility(light:Laya.Sprite,mask:Laya.Sprite,x:number,y:number):void {
+        mask.graphics.clear();
+        for(const p of this.patches){
+            if(!BrickWallTileLayer.canSeeGround(this.world,x,y,p.x,p.y))continue;
+            const polygon:number[]=[];
+            for(let i=0;i<p.outline.length;i+=2){
+                const point=light.globalToLocal(this.world.localToGlobal(new Laya.Point(p.outline[i],p.outline[i+1]),false),false);
+                polygon.push(point.x,point.y);
+            }
+            mask.graphics.drawPoly(0,0,polygon,'#ffffff');
+        }
+    }
+    onLateUpdate():void {
+        if(!this.black||!this.beam)return;
+        // The city driver calls us after its camera, flashlight, lightning and fire updates.
+        if(this.externalNightLayer&&!this.externalNightLayer.destroyed)return;
+        const owner=this.owner as Laya.Sprite;owner.alpha=Math.max(0,Math.min(1,this.darkness));
+        const controller=PlayerController.activeInstance,actor=this.player||controller?.owner as Laya.Sprite;
+        this.beam.visible=this.flashlightOn&&!!actor&&!actor.destroyed;
+        this.lamp.visible=this.lampOn;
+        if(actor&&!actor.destroyed){
+            const foot=this.toWorld(actor,0,controller?.owner===actor?controller.tileBlockFootOffsetY:this.footOffsetY);
+            let dx=AttackControl.directionActive?AttackControl.activeDirectionX:Joystick.instance?.valueX||0;
+            let dy=AttackControl.directionActive?AttackControl.activeDirectionY:Joystick.instance?.valueY||0;
+            if(!dx&&!dy){dx=Number(this.keys.has('d')||this.keys.has('arrowright'))-Number(this.keys.has('a')||this.keys.has('arrowleft'));dy=Number(this.keys.has('s')||this.keys.has('arrowdown'))-Number(this.keys.has('w')||this.keys.has('arrowup'));}
+            if(!dx&&!dy&&Number.isFinite(this.lastX)){dx=foot.x-this.lastX;dy=foot.y-this.lastY;}
+            if(dx*dx+dy*dy>.0001)this.direction=Math.atan2(dy,dx)*180/Math.PI;
+            this.lastX=foot.x;this.lastY=foot.y;
+            this.beam.pos(foot.x,foot.y-this.flashlightHeight);this.beam.rotation=this.direction;
+            // Mask coordinates depend on the current moving/rotating light transform.
+            if(this.flashlightOn)this.visibility(this.beam,this.beamMask,foot.x,foot.y);
+        }
+        this.timer+=Laya.timer.delta;
+        if(this.lampOn&&this.timer>=100){this.timer=0;this.visibility(this.lamp,this.lampMask,this.lamp.x,this.lamp.y+this.flashlightHeight);}
+        owner.reCache();
+    }
+    private updateSharedLights():void {
+        if(!this.world||!this.black||!this.beam)return;
+        const night=this.externalNightLayer,owner=this.owner as Laya.Sprite;
+        if(!this.patches.length){owner.alpha=0;return;}
+        const background=night.getChildByName('black_rect') as Laya.Sprite;
+        const ambient=night.visible&&background?.visible?night.alpha*background.alpha:0;
+        // Lightning fades the shared night layer. Fade the room target with it
+        // instead of compensating the flash by making the room layer darker.
+        const roomTarget=this.darkness*(night.visible?Math.max(0,Math.min(1,night.alpha)):1);
+        owner.alpha=additionalRoomDarkness(roomTarget,ambient);
+        this.beam.visible=false;this.lamp.visible=false;
+        const controller=PlayerController.activeInstance,actor=this.player||controller?.owner as Laya.Sprite;
+        const foot=actor&&!actor.destroyed?this.toWorld(actor,0,controller?.owner===actor?controller.tileBlockFootOffsetY:this.footOffsetY):null;
+        const sources=new Set<Laya.Sprite>();
+        for(const child of night.children){
+            const source=child as Laya.Sprite;
+            if(!source.texture||source.blendMode!=='destinationOut')continue;
+            sources.add(source);
+            let copy=this.sharedLights.get(source);
+            if(!copy){
+                const node=new Laya.Sprite(),mask=new Laya.Sprite(),light=new Laya.Sprite();
+                node.name='Shared_'+source.name;node.blendMode='destinationOut';node.mouseEnabled=false;
+                // Keep the mask's cached render target in world space. Rotating the
+                // masked sprite itself also rotates its cache bounds and clips light.
+                node.addChild(light);owner.addChild(node);node.mask=mask;
+                copy={node,mask,light};this.sharedLights.set(source,copy);
+            }
+            const node=copy.node;
+            node.visible=source.visible&&source.activeInHierarchy;
+            if(!node.visible)continue;
+            const light=copy.light;
+            light.texture=source.texture;light.size(source.width,source.height);node.alpha=source.alpha;
+            const o=this.toWorld(source,0,0),x=this.toWorld(source,1,0),y=this.toWorld(source,0,1);
+            light.transform=new Laya.Matrix(x.x-o.x,x.y-o.y,y.x-o.x,y.y-o.y,o.x,o.y);
+            const playerLight=source.name==='circle_cutout'||source.name==='vision_glow';
+            const origin=playerLight&&foot?foot:this.toWorld(source,source.width/2,source.height/2);
+            this.visibility(node,copy.mask,origin.x,origin.y+(playerLight?0:this.flashlightHeight));
+        }
+        for(const [source,copy] of this.sharedLights)if(!sources.has(source)||source.destroyed){
+            copy.node.mask=null;copy.node.destroy();copy.mask.destroy();this.sharedLights.delete(source);
+        }
+        owner.reCache();
+    }
+    onDisable():void {
+        RoomDarkness.live.delete(this);
+        if(this.world)BrickWallTileLayer.setDarknessDepth(this.world,null);
+        Laya.stage.off(Laya.Event.KEY_DOWN,this,this.down);Laya.stage.off(Laya.Event.KEY_UP,this,this.up);this.keys.clear();
+        if(this.black&&!this.black.destroyed)this.black.graphics.clear();
+    }
+    onDestroy():void {
+        RoomDarkness.live.delete(this);
+        for(const copy of this.sharedLights.values()){
+            if(!copy.node.destroyed){copy.node.mask=null;copy.node.destroy();}
+            if(!copy.mask.destroyed)copy.mask.destroy();
+        }
+        this.sharedLights.clear();
+        if(this.beam&&!this.beam.destroyed)this.beam.mask=null;
+        if(this.lamp&&!this.lamp.destroyed)this.lamp.mask=null;
+        if(this.beamMask&&!this.beamMask.destroyed)this.beamMask.destroy();
+        if(this.lampMask&&!this.lampMask.destroyed)this.lampMask.destroy();
+    }
+}

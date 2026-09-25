@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "c21317802639",
+  "_$type": "Sprite",
+  "name": "可穿过_sapling-dead",
+  "width": 192,
+  "height": 192,
+  "pivotX": 94,
+  "pivotY": 166,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 166
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "d2ffe3be1ae9"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "d2ffe3be1ae9",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "918e89b8-9900-48fb-ae75-e3c18e6ba4a9",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

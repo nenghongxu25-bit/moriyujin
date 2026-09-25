@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "4b5204a1ca38",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-discarded-tire-v1",
+  "width": 128,
+  "height": 108,
+  "pivotX": 65,
+  "pivotY": 104,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 104
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "21c26d86c34b"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 31,
+      "blockY": 91,
+      "blockWidth": 67,
+      "blockHeight": 13
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "21c26d86c34b",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 128,
+      "height": 108,
+      "texture": {
+        "_$uuid": "5fbd3479-a033-476b-be39-a2af52668d43",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

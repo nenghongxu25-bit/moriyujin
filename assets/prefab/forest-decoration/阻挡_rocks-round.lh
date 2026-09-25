@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "b7909da84d2b",
+  "_$type": "Sprite",
+  "name": "阻挡_rocks-round",
+  "width": 192,
+  "height": 192,
+  "pivotX": 96,
+  "pivotY": 166,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 166
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "cffbfc3515a9"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 58,
+      "blockY": 153,
+      "blockWidth": 77,
+      "blockHeight": 13
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "cffbfc3515a9",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "0eda0cc4-5877-4b07-86cb-f798f89ae9f4",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

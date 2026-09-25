@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "9b1fa0c6b452",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-fallen-log-v1",
+  "width": 192,
+  "height": 128,
+  "pivotX": 101,
+  "pivotY": 120,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 120
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "37b3da407d8c"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 56,
+      "blockY": 106,
+      "blockWidth": 89,
+      "blockHeight": 14
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "37b3da407d8c",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 128,
+      "texture": {
+        "_$uuid": "32c98b15-5115-4cd2-b6b6-c53466d44492",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_cash_register",
+  "_$type": "Sprite",
+  "name": "旧式收银机",
+  "width": 192,
+  "height": 192,
+  "_$comp": [
+    {
+      "_$id": "cash_register_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 19.200000000000003,
+          "y": 76.80000000000001,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 153.60000000000002,
+          "height": 115.19999999999999
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_cash_register",
+      "instanceId": "",
+      "displayName": "旧式收银机",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "cash_register",
+      "visualFolder": "loot-points-v2"
+    },
+    {
+      "_$id": "cash_register_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 178.5,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "cash_register_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "cash_register_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 192,
+      "height": 192,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://9ddcea4d-2627-4127-b9ad-9e6c1485c267",
+      "autoSize": false
+    }
+  ]
+}

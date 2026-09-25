@@ -1,0 +1,1856 @@
+{
+  "_$ver": 1,
+  "_$id": "rt_7m",
+  "_$type": "Sprite",
+  "name": "page:mail",
+  "x": 0,
+  "y": 0,
+  "width": 1334,
+  "height": 750,
+  "mouseThrough": false,
+  "_$child": [
+    {
+      "_$id": "rt_7n",
+      "_$type": "GWidget",
+      "name": "Background",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#111619",
+        "lineColor": "#111619",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_7o",
+      "_$type": "GWidget",
+      "name": "Header",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 76,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#1e2529",
+        "lineColor": "#394247",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "rt_7p",
+      "_$type": "Text",
+      "name": "Title",
+      "x": 40,
+      "y": 14,
+      "width": 210,
+      "height": 46,
+      "text": "邮件",
+      "font": "Microsoft YaHei",
+      "fontSize": 28,
+      "color": "#e2e6e8",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_7t",
+      "_$type": "Sprite",
+      "name": "go:lobby",
+      "x": 1178,
+      "y": 15,
+      "width": 120,
+      "height": 44,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_7q",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_7r",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_7s",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 100,
+          "height": 44,
+          "text": "‹  返回",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_7u",
+      "_$type": "Text",
+      "name": "TemplateNote",
+      "x": 40,
+      "y": 716,
+      "width": 350,
+      "height": 22,
+      "text": "界面模板 · 展示数据",
+      "font": "Microsoft YaHei",
+      "fontSize": 12,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_7y",
+      "_$type": "Sprite",
+      "name": "pick:mailCategory:0",
+      "x": 40,
+      "y": 106,
+      "width": 172,
+      "height": 64,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_7v",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_7w",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        },
+        {
+          "_$id": "rt_7x",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 152,
+          "height": 64,
+          "text": "系统邮件",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_82",
+      "_$type": "Sprite",
+      "name": "pick:mailCategory:1",
+      "x": 40,
+      "y": 180,
+      "width": 172,
+      "height": 64,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_7z",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_80",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_81",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 152,
+          "height": 64,
+          "text": "市场邮件",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_86",
+      "_$type": "Sprite",
+      "name": "pick:mailCategory:2",
+      "x": 40,
+      "y": 254,
+      "width": 172,
+      "height": 64,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_83",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_84",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_85",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 152,
+          "height": 64,
+          "text": "物资归还",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8a",
+      "_$type": "Sprite",
+      "name": "pick:mailCategory:3",
+      "x": 40,
+      "y": 328,
+      "width": 172,
+      "height": 64,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_87",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_88",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 172,
+          "height": 64,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_89",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 152,
+          "height": 64,
+          "text": "派遣邮件",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8e",
+      "_$type": "Sprite",
+      "name": "pick:mail:0",
+      "x": 230,
+      "y": 106,
+      "width": 292,
+      "height": 84,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_8b",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_8c",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": true
+        },
+        {
+          "_$id": "rt_8d",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 272,
+          "height": 84,
+          "text": "仓库已满物品找回\n29 日后过期",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8i",
+      "_$type": "Sprite",
+      "name": "pick:mail:1",
+      "x": 230,
+      "y": 200,
+      "width": 292,
+      "height": 84,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_8f",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_8g",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_8h",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 272,
+          "height": 84,
+          "text": "行动补给已送达\n28 日后过期",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8m",
+      "_$type": "Sprite",
+      "name": "pick:mail:2",
+      "x": 230,
+      "y": 294,
+      "width": 292,
+      "height": 84,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_8j",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_8k",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_8l",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 272,
+          "height": 84,
+          "text": "市场交易通知\n27 日后过期",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8q",
+      "_$type": "Sprite",
+      "name": "pick:mail:3",
+      "x": 230,
+      "y": 388,
+      "width": 292,
+      "height": 84,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_8n",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_8o",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_8p",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 272,
+          "height": 84,
+          "text": "赛季奖励\n26 日后过期",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8u",
+      "_$type": "Sprite",
+      "name": "pick:mail:4",
+      "x": 230,
+      "y": 482,
+      "width": 292,
+      "height": 84,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_8r",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_8s",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 292,
+          "height": 84,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_8t",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 272,
+          "height": 84,
+          "text": "派遣任务完成\n25 日后过期",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_8v",
+      "_$type": "Text",
+      "name": "Unread",
+      "x": 234,
+      "y": 602,
+      "width": 288,
+      "height": 30,
+      "text": "5 / 200    未读邮件  5",
+      "font": "Microsoft YaHei",
+      "fontSize": 16,
+      "color": "#8f999e",
+      "mouseEnabled": false,
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5
+    },
+    {
+      "_$id": "rt_8z",
+      "_$type": "Sprite",
+      "name": "pick:mailAction:0",
+      "x": 230,
+      "y": 654,
+      "width": 140,
+      "height": 48,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_8w",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 140,
+          "height": 48,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_8x",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 140,
+          "height": 48,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_8y",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 120,
+          "height": 48,
+          "text": "一键领取",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_93",
+      "_$type": "Sprite",
+      "name": "pick:mailAction:1",
+      "x": 382,
+      "y": 654,
+      "width": 140,
+      "height": 48,
+      "mouseThrough": false,
+      "_$child": [
+        {
+          "_$id": "rt_90",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "x": 0,
+          "y": 0,
+          "width": 140,
+          "height": 48,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_91",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "x": 0,
+          "y": 0,
+          "width": 140,
+          "height": 48,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#34241d",
+            "lineColor": "#d76532",
+            "lineWidth": 1
+          },
+          "visible": false
+        },
+        {
+          "_$id": "rt_92",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "y": 0,
+          "width": 120,
+          "height": 48,
+          "text": "删除已读",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "align": "center"
+        }
+      ],
+      "mouseEnabled": true
+    },
+    {
+      "_$id": "rt_94",
+      "_$type": "Sprite",
+      "name": "view:mail:0",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_95",
+          "_$type": "GWidget",
+          "name": "ReadingPane",
+          "x": 544,
+          "y": 106,
+          "width": 754,
+          "height": 596,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b1f",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_96",
+          "_$type": "Sprite",
+          "name": "SenderAvatar",
+          "x": 564,
+          "y": 123,
+          "width": 58,
+          "height": 58,
+          "texture": {
+            "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+            "_$type": "Texture"
+          },
+          "alpha": 0.55,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_97",
+          "_$type": "Text",
+          "name": "Subject",
+          "x": 644,
+          "y": 118,
+          "width": 610,
+          "height": 38,
+          "text": "仓库已满物品找回",
+          "font": "Microsoft YaHei",
+          "fontSize": 23,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_98",
+          "_$type": "Text",
+          "name": "Sender",
+          "x": 644,
+          "y": 158,
+          "width": 600,
+          "height": 26,
+          "text": "发件人：系统通知",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_99",
+          "_$type": "Text",
+          "name": "Body",
+          "x": 570,
+          "y": 240,
+          "width": 688,
+          "height": 130,
+          "text": "由于您的仓库已满，以下物品通过邮件发送。请及时领取。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9a",
+          "_$type": "GWidget",
+          "name": "AttachmentSlot",
+          "x": 568,
+          "y": 508,
+          "width": 100,
+          "height": 120,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_9b",
+          "_$type": "Sprite",
+          "name": "Attachment",
+          "x": 578,
+          "y": 515,
+          "width": 80,
+          "height": 80,
+          "texture": {
+            "_$uuid": "296adca1-d671-45e5-9c20-44bc38c9dea1",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_9c",
+          "_$type": "Text",
+          "name": "Count",
+          "x": 622,
+          "y": 601,
+          "width": 40,
+          "height": 22,
+          "text": "×1",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9g",
+          "_$type": "Sprite",
+          "name": "pick:claim:0",
+          "x": 1094,
+          "y": 642,
+          "width": 180,
+          "height": 46,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_9d",
+              "_$type": "GWidget",
+              "name": "ButtonBackground",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1b2226",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_9e",
+              "_$type": "GWidget",
+              "name": "Selected",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#34241d",
+                "lineColor": "#d76532",
+                "lineWidth": 1
+              },
+              "visible": false
+            },
+            {
+              "_$id": "rt_9f",
+              "_$type": "Text",
+              "name": "Label",
+              "x": 10,
+              "y": 0,
+              "width": 160,
+              "height": 46,
+              "text": "领取物品",
+              "font": "Microsoft YaHei",
+              "fontSize": 18,
+              "color": "#e2e6e8",
+              "mouseEnabled": false,
+              "valign": "middle",
+              "wordWrap": true,
+              "leading": 5,
+              "align": "center"
+            }
+          ],
+          "mouseEnabled": true
+        }
+      ],
+      "visible": true
+    },
+    {
+      "_$id": "rt_9h",
+      "_$type": "Sprite",
+      "name": "view:mail:1",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_9i",
+          "_$type": "GWidget",
+          "name": "ReadingPane",
+          "x": 544,
+          "y": 106,
+          "width": 754,
+          "height": 596,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b1f",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_9j",
+          "_$type": "Sprite",
+          "name": "SenderAvatar",
+          "x": 564,
+          "y": 123,
+          "width": 58,
+          "height": 58,
+          "texture": {
+            "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+            "_$type": "Texture"
+          },
+          "alpha": 0.55,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_9k",
+          "_$type": "Text",
+          "name": "Subject",
+          "x": 644,
+          "y": 118,
+          "width": 610,
+          "height": 38,
+          "text": "行动补给已送达",
+          "font": "Microsoft YaHei",
+          "fontSize": 23,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9l",
+          "_$type": "Text",
+          "name": "Sender",
+          "x": 644,
+          "y": 158,
+          "width": 600,
+          "height": 26,
+          "text": "发件人：系统通知",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9m",
+          "_$type": "Text",
+          "name": "Body",
+          "x": 570,
+          "y": 240,
+          "width": 688,
+          "height": 130,
+          "text": "本次行动的通知和奖励将在这里展示。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9n",
+          "_$type": "GWidget",
+          "name": "AttachmentSlot",
+          "x": 568,
+          "y": 508,
+          "width": 100,
+          "height": 120,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_9o",
+          "_$type": "Sprite",
+          "name": "Attachment",
+          "x": 578,
+          "y": 515,
+          "width": 80,
+          "height": 80,
+          "texture": {
+            "_$uuid": "97b8e5b4-62be-47b3-a4a3-eb189e9e429a",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_9p",
+          "_$type": "Text",
+          "name": "Count",
+          "x": 622,
+          "y": 601,
+          "width": 40,
+          "height": 22,
+          "text": "×1",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9t",
+          "_$type": "Sprite",
+          "name": "pick:claim:1",
+          "x": 1094,
+          "y": 642,
+          "width": 180,
+          "height": 46,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_9q",
+              "_$type": "GWidget",
+              "name": "ButtonBackground",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1b2226",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_9r",
+              "_$type": "GWidget",
+              "name": "Selected",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#34241d",
+                "lineColor": "#d76532",
+                "lineWidth": 1
+              },
+              "visible": false
+            },
+            {
+              "_$id": "rt_9s",
+              "_$type": "Text",
+              "name": "Label",
+              "x": 10,
+              "y": 0,
+              "width": 160,
+              "height": 46,
+              "text": "领取物品",
+              "font": "Microsoft YaHei",
+              "fontSize": 18,
+              "color": "#e2e6e8",
+              "mouseEnabled": false,
+              "valign": "middle",
+              "wordWrap": true,
+              "leading": 5,
+              "align": "center"
+            }
+          ],
+          "mouseEnabled": true
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_9u",
+      "_$type": "Sprite",
+      "name": "view:mail:2",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_9v",
+          "_$type": "GWidget",
+          "name": "ReadingPane",
+          "x": 544,
+          "y": 106,
+          "width": 754,
+          "height": 596,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b1f",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_9w",
+          "_$type": "Sprite",
+          "name": "SenderAvatar",
+          "x": 564,
+          "y": 123,
+          "width": 58,
+          "height": 58,
+          "texture": {
+            "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+            "_$type": "Texture"
+          },
+          "alpha": 0.55,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_9x",
+          "_$type": "Text",
+          "name": "Subject",
+          "x": 644,
+          "y": 118,
+          "width": 610,
+          "height": 38,
+          "text": "市场交易通知",
+          "font": "Microsoft YaHei",
+          "fontSize": 23,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9y",
+          "_$type": "Text",
+          "name": "Sender",
+          "x": 644,
+          "y": 158,
+          "width": 600,
+          "height": 26,
+          "text": "发件人：系统通知",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_9z",
+          "_$type": "Text",
+          "name": "Body",
+          "x": 570,
+          "y": 240,
+          "width": 688,
+          "height": 130,
+          "text": "本次行动的通知和奖励将在这里展示。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_a0",
+          "_$type": "GWidget",
+          "name": "AttachmentSlot",
+          "x": 568,
+          "y": 508,
+          "width": 100,
+          "height": 120,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_a1",
+          "_$type": "Sprite",
+          "name": "Attachment",
+          "x": 578,
+          "y": 515,
+          "width": 80,
+          "height": 80,
+          "texture": {
+            "_$uuid": "9c14d322-88ca-4692-bd61-9d6f79f74822",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_a2",
+          "_$type": "Text",
+          "name": "Count",
+          "x": 622,
+          "y": 601,
+          "width": 40,
+          "height": 22,
+          "text": "×1",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_a6",
+          "_$type": "Sprite",
+          "name": "pick:claim:2",
+          "x": 1094,
+          "y": 642,
+          "width": 180,
+          "height": 46,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_a3",
+              "_$type": "GWidget",
+              "name": "ButtonBackground",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1b2226",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_a4",
+              "_$type": "GWidget",
+              "name": "Selected",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#34241d",
+                "lineColor": "#d76532",
+                "lineWidth": 1
+              },
+              "visible": false
+            },
+            {
+              "_$id": "rt_a5",
+              "_$type": "Text",
+              "name": "Label",
+              "x": 10,
+              "y": 0,
+              "width": 160,
+              "height": 46,
+              "text": "领取物品",
+              "font": "Microsoft YaHei",
+              "fontSize": 18,
+              "color": "#e2e6e8",
+              "mouseEnabled": false,
+              "valign": "middle",
+              "wordWrap": true,
+              "leading": 5,
+              "align": "center"
+            }
+          ],
+          "mouseEnabled": true
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_a7",
+      "_$type": "Sprite",
+      "name": "view:mail:3",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_a8",
+          "_$type": "GWidget",
+          "name": "ReadingPane",
+          "x": 544,
+          "y": 106,
+          "width": 754,
+          "height": 596,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b1f",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_a9",
+          "_$type": "Sprite",
+          "name": "SenderAvatar",
+          "x": 564,
+          "y": 123,
+          "width": 58,
+          "height": 58,
+          "texture": {
+            "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+            "_$type": "Texture"
+          },
+          "alpha": 0.55,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_aa",
+          "_$type": "Text",
+          "name": "Subject",
+          "x": 644,
+          "y": 118,
+          "width": 610,
+          "height": 38,
+          "text": "赛季奖励",
+          "font": "Microsoft YaHei",
+          "fontSize": 23,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ab",
+          "_$type": "Text",
+          "name": "Sender",
+          "x": 644,
+          "y": 158,
+          "width": 600,
+          "height": 26,
+          "text": "发件人：系统通知",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ac",
+          "_$type": "Text",
+          "name": "Body",
+          "x": 570,
+          "y": 240,
+          "width": 688,
+          "height": 130,
+          "text": "本次行动的通知和奖励将在这里展示。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ad",
+          "_$type": "GWidget",
+          "name": "AttachmentSlot",
+          "x": 568,
+          "y": 508,
+          "width": 100,
+          "height": 120,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_ae",
+          "_$type": "Sprite",
+          "name": "Attachment",
+          "x": 578,
+          "y": 515,
+          "width": 80,
+          "height": 80,
+          "texture": {
+            "_$uuid": "b6be2b59-d955-48d3-b661-6121084b63da",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_af",
+          "_$type": "Text",
+          "name": "Count",
+          "x": 622,
+          "y": 601,
+          "width": 40,
+          "height": 22,
+          "text": "×1",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_aj",
+          "_$type": "Sprite",
+          "name": "pick:claim:3",
+          "x": 1094,
+          "y": 642,
+          "width": 180,
+          "height": 46,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_ag",
+              "_$type": "GWidget",
+              "name": "ButtonBackground",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1b2226",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_ah",
+              "_$type": "GWidget",
+              "name": "Selected",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#34241d",
+                "lineColor": "#d76532",
+                "lineWidth": 1
+              },
+              "visible": false
+            },
+            {
+              "_$id": "rt_ai",
+              "_$type": "Text",
+              "name": "Label",
+              "x": 10,
+              "y": 0,
+              "width": 160,
+              "height": 46,
+              "text": "领取物品",
+              "font": "Microsoft YaHei",
+              "fontSize": 18,
+              "color": "#e2e6e8",
+              "mouseEnabled": false,
+              "valign": "middle",
+              "wordWrap": true,
+              "leading": 5,
+              "align": "center"
+            }
+          ],
+          "mouseEnabled": true
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "rt_ak",
+      "_$type": "Sprite",
+      "name": "view:mail:4",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseThrough": true,
+      "_$child": [
+        {
+          "_$id": "rt_al",
+          "_$type": "GWidget",
+          "name": "ReadingPane",
+          "x": 544,
+          "y": 106,
+          "width": 754,
+          "height": 596,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#151b1f",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_am",
+          "_$type": "Sprite",
+          "name": "SenderAvatar",
+          "x": 564,
+          "y": 123,
+          "width": 58,
+          "height": 58,
+          "texture": {
+            "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+            "_$type": "Texture"
+          },
+          "alpha": 0.55,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_an",
+          "_$type": "Text",
+          "name": "Subject",
+          "x": 644,
+          "y": 118,
+          "width": 610,
+          "height": 38,
+          "text": "派遣任务完成",
+          "font": "Microsoft YaHei",
+          "fontSize": 23,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ao",
+          "_$type": "Text",
+          "name": "Sender",
+          "x": 644,
+          "y": 158,
+          "width": 600,
+          "height": 26,
+          "text": "发件人：系统通知",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#8f999e",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_ap",
+          "_$type": "Text",
+          "name": "Body",
+          "x": 570,
+          "y": 240,
+          "width": 688,
+          "height": 130,
+          "text": "本次行动的通知和奖励将在这里展示。",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_aq",
+          "_$type": "GWidget",
+          "name": "AttachmentSlot",
+          "x": 568,
+          "y": 508,
+          "width": 100,
+          "height": 120,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#1b2226",
+            "lineColor": "#394247",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "rt_ar",
+          "_$type": "Sprite",
+          "name": "Attachment",
+          "x": 578,
+          "y": 515,
+          "width": 80,
+          "height": 80,
+          "texture": {
+            "_$uuid": "f4849d33-faa8-4bd6-85f0-d3045b847f64",
+            "_$type": "Texture"
+          },
+          "alpha": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "rt_as",
+          "_$type": "Text",
+          "name": "Count",
+          "x": 622,
+          "y": 601,
+          "width": 40,
+          "height": 22,
+          "text": "×1",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#e2e6e8",
+          "mouseEnabled": false,
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5
+        },
+        {
+          "_$id": "rt_aw",
+          "_$type": "Sprite",
+          "name": "pick:claim:4",
+          "x": 1094,
+          "y": 642,
+          "width": 180,
+          "height": 46,
+          "mouseThrough": false,
+          "_$child": [
+            {
+              "_$id": "rt_at",
+              "_$type": "GWidget",
+              "name": "ButtonBackground",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#1b2226",
+                "lineColor": "#394247",
+                "lineWidth": 1
+              }
+            },
+            {
+              "_$id": "rt_au",
+              "_$type": "GWidget",
+              "name": "Selected",
+              "x": 0,
+              "y": 0,
+              "width": 180,
+              "height": 46,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#34241d",
+                "lineColor": "#d76532",
+                "lineWidth": 1
+              },
+              "visible": false
+            },
+            {
+              "_$id": "rt_av",
+              "_$type": "Text",
+              "name": "Label",
+              "x": 10,
+              "y": 0,
+              "width": 160,
+              "height": 46,
+              "text": "领取物品",
+              "font": "Microsoft YaHei",
+              "fontSize": 18,
+              "color": "#e2e6e8",
+              "mouseEnabled": false,
+              "valign": "middle",
+              "wordWrap": true,
+              "leading": 5,
+              "align": "center"
+            }
+          ],
+          "mouseEnabled": true
+        }
+      ],
+      "visible": false
+    }
+  ],
+  "visible": true,
+  "mouseEnabled": true,
+  "zOrder": 1000
+}

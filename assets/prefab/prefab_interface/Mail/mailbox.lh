@@ -1,0 +1,92 @@
+{
+  "_$ver": 1,
+  "_$id": "hvph8ws0",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 278,
+  "height": 78,
+  "_$child": [
+    {
+      "_$id": "25l412rc",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 278,
+      "height": 78,
+      "alpha": 0.544,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "lineWidth": 1,
+          "lineColor": "#647565",
+          "fillColor": "#293832"
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "_$id": "chrtrl42",
+      "_$type": "Text",
+      "name": "text",
+      "x": 12,
+      "y": 10,
+      "width": 250,
+      "height": 30,
+      "text": "信",
+      "fontSize": 19,
+      "color": "#eee9d9",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "18vbvc5c",
+      "_$type": "Text",
+      "name": "Text",
+      "x": 12,
+      "y": 43,
+      "width": 250,
+      "height": 23,
+      "text": "2026/8/11",
+      "fontSize": 14,
+      "color": "#b6c2b3",
+      "leading": 2,
+      "letterSpacing": 0,
+      "align": "left"
+    },
+    {
+      "_$id": "6ns76496",
+      "_$type": "Sprite",
+      "name": "mask",
+      "width": 278,
+      "height": 78,
+      "visible": false,
+      "alpha": 0.2,
+      "_gcmds": [
+        {
+          "_$type": "DrawRectCmd",
+          "fillColor": "#14201c"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "kxs24l6z",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 278,
+          "height": 78,
+          "text": "已查看",
+          "fontSize": 20,
+          "color": "#eee9d9",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0,
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "x": 0,
+      "y": 0
+    }
+  ]
+}

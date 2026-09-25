@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "862b6e1e2deb",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-tree-stump-v1",
+  "width": 128,
+  "height": 128,
+  "pivotX": 64,
+  "pivotY": 125,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 125
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "8515a13c2808"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 47,
+      "blockY": 109,
+      "blockWidth": 35,
+      "blockHeight": 16
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "8515a13c2808",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 128,
+      "height": 128,
+      "texture": {
+        "_$uuid": "18342c68-10f0-4553-9989-407267a6f3fb",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

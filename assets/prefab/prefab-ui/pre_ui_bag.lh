@@ -1,0 +1,40 @@
+{
+  "_$ver": 1,
+  "_$id": "bag_root_001",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 128,
+  "height": 128,
+  "_$comp": [
+    {
+      "_$type": "2938a217-4272-4f6d-aaf2-984b61320b26",
+      "scriptPath": "../src/OpenSprite.ts",
+      "targetNode": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "img_bag",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 128,
+      "height": 128,
+      "src": "res://ff1e6a05-be1f-4b7d-8551-31bd6cd8e721",
+      "autoSize": false
+    },
+    {
+      "_$id": "hud_label_bag",
+      "_$type": "Text",
+      "name": "HudCaption",
+      "x": 0,
+      "y": 96,
+      "width": 128,
+      "height": 23,
+      "text": "背包",
+      "fontSize": 20,
+      "color": "#eee9d9",
+      "align": "center",
+      "mouseEnabled": false
+    }
+  ]
+}

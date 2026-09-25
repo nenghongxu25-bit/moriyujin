@@ -1,0 +1,915 @@
+{
+  "_$ver": 1,
+  "_$id": "rt_1",
+  "_$type": "Sprite",
+  "name": "page:contacts",
+  "width": 1334,
+  "height": 750,
+  "_mouseState": 2,
+  "_$child": [
+    {
+      "_$id": "rt_2",
+      "_$type": "GWidget",
+      "name": "Background",
+      "width": 1334,
+      "height": 750,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "lineWidth": 1,
+        "lineColor": "#111619",
+        "fillColor": "#111619"
+      }
+    },
+    {
+      "_$id": "rt_3",
+      "_$type": "GWidget",
+      "name": "Header",
+      "width": 1334,
+      "height": 76,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "lineWidth": 1,
+        "lineColor": "#394247",
+        "fillColor": "#1e2529"
+      }
+    },
+    {
+      "_$id": "rt_4",
+      "_$type": "Text",
+      "name": "Title",
+      "x": 40,
+      "y": 14,
+      "width": 210,
+      "height": 46,
+      "_mouseState": 1,
+      "text": "联络人",
+      "font": "Microsoft YaHei",
+      "fontSize": 28,
+      "color": "#e2e6e8",
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "rt_8",
+      "_$type": "Sprite",
+      "name": "go:lobby",
+      "x": 1178,
+      "y": 15,
+      "width": 120,
+      "height": 44,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_5",
+          "_$type": "GWidget",
+          "name": "ButtonBackground",
+          "width": 120,
+          "height": 44,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_6",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "width": 120,
+          "height": 44,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#34241d"
+          }
+        },
+        {
+          "_$id": "rt_7",
+          "_$type": "Text",
+          "name": "Label",
+          "x": 10,
+          "width": 100,
+          "height": 44,
+          "_mouseState": 1,
+          "text": "‹  返回",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#e2e6e8",
+          "align": "center",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "rt_9",
+      "_$type": "Text",
+      "name": "TemplateNote",
+      "x": 40,
+      "y": 716,
+      "width": 350,
+      "height": 22,
+      "_mouseState": 1,
+      "text": "界面模板 · 展示数据",
+      "font": "Microsoft YaHei",
+      "fontSize": 12,
+      "color": "#8f999e",
+      "valign": "middle",
+      "wordWrap": true,
+      "leading": 5,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "rt_m",
+      "_$type": "Sprite",
+      "name": "pick:contact:0",
+      "x": 140,
+      "y": 180,
+      "width": 346,
+      "height": 138,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_k",
+          "_$type": "GWidget",
+          "name": "Background",
+          "width": 346,
+          "height": 138,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_f",
+          "_$type": "Sprite",
+          "name": "PortraitSlot",
+          "x": 1,
+          "y": 1,
+          "width": 344,
+          "height": 136,
+          "_$child": [
+            {
+              "_$id": "rt_e",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "width": 344,
+              "height": 136,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#394247",
+                "fillColor": "#232c31"
+              }
+            },
+            {
+              "_$id": "rt_g",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "width": 136,
+              "height": 136,
+              "alpha": 0.26,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "_mouseState": 1
+            }
+          ]
+        },
+        {
+          "_$id": "rt_h",
+          "_$type": "Text",
+          "name": "FunctionIcon",
+          "x": 278,
+          "y": 10,
+          "width": 55,
+          "height": 30,
+          "_mouseState": 1,
+          "text": "军械",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_i",
+          "_$type": "Text",
+          "name": "Name",
+          "x": 114,
+          "y": 77,
+          "width": 220,
+          "height": 28,
+          "_mouseState": 1,
+          "text": "老周",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_j",
+          "_$type": "Text",
+          "name": "Role",
+          "x": 114,
+          "y": 108,
+          "width": 220,
+          "height": 24,
+          "_mouseState": 1,
+          "text": "军械师 · 枪械 / 弹药 / 维修",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_l",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "y": 135,
+          "width": 346,
+          "height": 3,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#d76532"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "rt_v",
+      "_$type": "Sprite",
+      "name": "pick:contact:1",
+      "x": 494,
+      "y": 180,
+      "width": 346,
+      "height": 138,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_t",
+          "_$type": "GWidget",
+          "name": "Background",
+          "width": 346,
+          "height": 138,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_o",
+          "_$type": "Sprite",
+          "name": "PortraitSlot",
+          "x": 1,
+          "y": 1,
+          "width": 344,
+          "height": 136,
+          "_$child": [
+            {
+              "_$id": "rt_n",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "width": 344,
+              "height": 136,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#394247",
+                "fillColor": "#232c31"
+              }
+            },
+            {
+              "_$id": "rt_p",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "width": 136,
+              "height": 136,
+              "alpha": 0.26,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "_mouseState": 1
+            }
+          ]
+        },
+        {
+          "_$id": "rt_q",
+          "_$type": "Text",
+          "name": "FunctionIcon",
+          "x": 278,
+          "y": 10,
+          "width": 55,
+          "height": 30,
+          "_mouseState": 1,
+          "text": "医疗",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_r",
+          "_$type": "Text",
+          "name": "Name",
+          "x": 114,
+          "y": 77,
+          "width": 220,
+          "height": 28,
+          "_mouseState": 1,
+          "text": "林医生",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_s",
+          "_$type": "Text",
+          "name": "Role",
+          "x": 114,
+          "y": 108,
+          "width": 220,
+          "height": 24,
+          "_mouseState": 1,
+          "text": "急救医生 · 药品 / 治疗",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_u",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "y": 135,
+          "width": 346,
+          "height": 3,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#d76532"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "rt_14",
+      "_$type": "Sprite",
+      "name": "pick:contact:2",
+      "x": 848,
+      "y": 180,
+      "width": 346,
+      "height": 138,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_12",
+          "_$type": "GWidget",
+          "name": "Background",
+          "width": 346,
+          "height": 138,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_x",
+          "_$type": "Sprite",
+          "name": "PortraitSlot",
+          "x": 1,
+          "y": 1,
+          "width": 344,
+          "height": 136,
+          "_$child": [
+            {
+              "_$id": "rt_w",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "width": 344,
+              "height": 136,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#394247",
+                "fillColor": "#232c31"
+              }
+            },
+            {
+              "_$id": "rt_y",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "width": 136,
+              "height": 136,
+              "alpha": 0.26,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "_mouseState": 1
+            }
+          ]
+        },
+        {
+          "_$id": "rt_z",
+          "_$type": "Text",
+          "name": "FunctionIcon",
+          "x": 278,
+          "y": 10,
+          "width": 55,
+          "height": 30,
+          "_mouseState": 1,
+          "text": "情报",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_10",
+          "_$type": "Text",
+          "name": "Name",
+          "x": 114,
+          "y": 77,
+          "width": 220,
+          "height": 28,
+          "_mouseState": 1,
+          "text": "燕子",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_11",
+          "_$type": "Text",
+          "name": "Role",
+          "x": 114,
+          "y": 108,
+          "width": 220,
+          "height": 24,
+          "_mouseState": 1,
+          "text": "森林信使 · 探索 / 情报 / 寻人",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_13",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "y": 135,
+          "width": 346,
+          "height": 3,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#d76532"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "rt_1d",
+      "_$type": "Sprite",
+      "name": "pick:contact:3",
+      "x": 140,
+      "y": 366,
+      "width": 346,
+      "height": 138,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_1b",
+          "_$type": "GWidget",
+          "name": "Background",
+          "width": 346,
+          "height": 138,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_16",
+          "_$type": "Sprite",
+          "name": "PortraitSlot",
+          "x": 1,
+          "y": 1,
+          "width": 344,
+          "height": 136,
+          "_$child": [
+            {
+              "_$id": "rt_15",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "width": 344,
+              "height": 136,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#394247",
+                "fillColor": "#232c31"
+              }
+            },
+            {
+              "_$id": "rt_17",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "width": 136,
+              "height": 136,
+              "alpha": 0.26,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "_mouseState": 1
+            }
+          ]
+        },
+        {
+          "_$id": "rt_18",
+          "_$type": "Text",
+          "name": "FunctionIcon",
+          "x": 278,
+          "y": 10,
+          "width": 55,
+          "height": 30,
+          "_mouseState": 1,
+          "text": "工坊",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_19",
+          "_$type": "Text",
+          "name": "Name",
+          "x": 114,
+          "y": 77,
+          "width": 220,
+          "height": 28,
+          "_mouseState": 1,
+          "text": "铁叔",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1a",
+          "_$type": "Text",
+          "name": "Role",
+          "x": 114,
+          "y": 108,
+          "width": 220,
+          "height": 24,
+          "_mouseState": 1,
+          "text": "维修工 · 防具 / 背包 / 工具",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1c",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "y": 135,
+          "width": 346,
+          "height": 3,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#d76532"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "rt_1m",
+      "_$type": "Sprite",
+      "name": "pick:contact:4",
+      "x": 494,
+      "y": 366,
+      "width": 346,
+      "height": 138,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_1k",
+          "_$type": "GWidget",
+          "name": "Background",
+          "width": 346,
+          "height": 138,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_1f",
+          "_$type": "Sprite",
+          "name": "PortraitSlot",
+          "x": 1,
+          "y": 1,
+          "width": 344,
+          "height": 136,
+          "_$child": [
+            {
+              "_$id": "rt_1e",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "width": 344,
+              "height": 136,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#394247",
+                "fillColor": "#232c31"
+              }
+            },
+            {
+              "_$id": "rt_1g",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "width": 136,
+              "height": 136,
+              "alpha": 0.26,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "_mouseState": 1
+            }
+          ]
+        },
+        {
+          "_$id": "rt_1h",
+          "_$type": "Text",
+          "name": "FunctionIcon",
+          "x": 278,
+          "y": 10,
+          "width": 55,
+          "height": 30,
+          "_mouseState": 1,
+          "text": "回收",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1i",
+          "_$type": "Text",
+          "name": "Name",
+          "x": 114,
+          "y": 77,
+          "width": 220,
+          "height": 28,
+          "_mouseState": 1,
+          "text": "阿拾",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1j",
+          "_$type": "Text",
+          "name": "Role",
+          "x": 114,
+          "y": 108,
+          "width": 220,
+          "height": 24,
+          "_mouseState": 1,
+          "text": "拾荒者 · 回收 / 换物 / 材料",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1l",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "y": 135,
+          "width": 346,
+          "height": 3,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#d76532"
+          }
+        }
+      ]
+    },
+    {
+      "_$id": "rt_1v",
+      "_$type": "Sprite",
+      "name": "pick:contact:5",
+      "x": 848,
+      "y": 366,
+      "width": 346,
+      "height": 138,
+      "_mouseState": 2,
+      "_$child": [
+        {
+          "_$id": "rt_1t",
+          "_$type": "GWidget",
+          "name": "Background",
+          "width": 346,
+          "height": 138,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#394247",
+            "fillColor": "#1b2226"
+          }
+        },
+        {
+          "_$id": "rt_1o",
+          "_$type": "Sprite",
+          "name": "PortraitSlot",
+          "x": 1,
+          "y": 1,
+          "width": 344,
+          "height": 136,
+          "_$child": [
+            {
+              "_$id": "rt_1n",
+              "_$type": "GWidget",
+              "name": "ArtBackground",
+              "width": 344,
+              "height": 136,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "lineWidth": 1,
+                "lineColor": "#394247",
+                "fillColor": "#232c31"
+              }
+            },
+            {
+              "_$id": "rt_1p",
+              "_$type": "Sprite",
+              "name": "ReplaceablePortrait",
+              "width": 136,
+              "height": 136,
+              "alpha": 0.26,
+              "texture": {
+                "_$uuid": "e2d4124f-9d66-449b-ab62-9a248e949620",
+                "_$type": "Texture"
+              },
+              "_mouseState": 1
+            }
+          ]
+        },
+        {
+          "_$id": "rt_1q",
+          "_$type": "Text",
+          "name": "FunctionIcon",
+          "x": 278,
+          "y": 10,
+          "width": 55,
+          "height": 30,
+          "_mouseState": 1,
+          "text": "商队",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1r",
+          "_$type": "Text",
+          "name": "Name",
+          "x": 114,
+          "y": 77,
+          "width": 220,
+          "height": 28,
+          "_mouseState": 1,
+          "text": "白先生",
+          "font": "Microsoft YaHei",
+          "fontSize": 21,
+          "color": "#e2e6e8",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1s",
+          "_$type": "Text",
+          "name": "Role",
+          "x": 114,
+          "y": 108,
+          "width": 220,
+          "height": 24,
+          "_mouseState": 1,
+          "text": "流动商人 · 稀缺物资 / 金券",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#8f999e",
+          "valign": "middle",
+          "wordWrap": true,
+          "leading": 5,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "rt_1u",
+          "_$type": "GWidget",
+          "name": "Selected",
+          "y": 135,
+          "width": 346,
+          "height": 3,
+          "visible": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "lineWidth": 1,
+            "lineColor": "#d76532",
+            "fillColor": "#d76532"
+          }
+        }
+      ]
+    }
+  ]
+}

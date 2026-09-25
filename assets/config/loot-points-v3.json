@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "frameSize": 512,
+  "fps": 8,
+  "loop": false,
+  "items": [
+    {
+      "id": "supply_crate",
+      "name": "军用补给箱",
+      "displaySize": 300,
+      "source": "art/loot-points-v3/source/supply_crate.png",
+      "frames": [
+        "animation/container/loot-points-v3/supply_crate/frame_00.png",
+        "animation/container/loot-points-v3/supply_crate/frame_01.png",
+        "animation/container/loot-points-v3/supply_crate/frame_02.png",
+        "animation/container/loot-points-v3/supply_crate/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v3/supply_crate.lh"
+    },
+    {
+      "id": "weapon_locker",
+      "name": "钢制武器柜",
+      "displaySize": 360,
+      "source": "art/loot-points-v3/source/weapon_locker.png",
+      "frames": [
+        "animation/container/loot-points-v3/weapon_locker/frame_00.png",
+        "animation/container/loot-points-v3/weapon_locker/frame_01.png",
+        "animation/container/loot-points-v3/weapon_locker/frame_02.png",
+        "animation/container/loot-points-v3/weapon_locker/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v3/weapon_locker.lh"
+    },
+    {
+      "id": "medical_cabinet",
+      "name": "急救医疗柜",
+      "displaySize": 240,
+      "source": "art/loot-points-v3/source/medical_cabinet.png",
+      "frames": [
+        "animation/container/loot-points-v3/medical_cabinet/frame_00.png",
+        "animation/container/loot-points-v3/medical_cabinet/frame_01.png",
+        "animation/container/loot-points-v3/medical_cabinet/frame_02.png",
+        "animation/container/loot-points-v3/medical_cabinet/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v3/medical_cabinet.lh"
+    },
+    {
+      "id": "computer_tower",
+      "name": "旧式电脑主机",
+      "displaySize": 216,
+      "source": "art/loot-points-v3/source/computer_tower.png",
+      "frames": [
+        "animation/container/loot-points-v3/computer_tower/frame_00.png",
+        "animation/container/loot-points-v3/computer_tower/frame_01.png",
+        "animation/container/loot-points-v3/computer_tower/frame_02.png",
+        "animation/container/loot-points-v3/computer_tower/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v3/computer_tower.lh"
+    },
+    {
+      "id": "hanging_jacket",
+      "name": "墙挂工装夹克",
+      "displaySize": 236,
+      "source": "art/loot-points-v3/source/hanging_jacket.png",
+      "frames": [
+        "animation/container/loot-points-v3/hanging_jacket/frame_00.png",
+        "animation/container/loot-points-v3/hanging_jacket/frame_01.png",
+        "animation/container/loot-points-v3/hanging_jacket/frame_02.png",
+        "animation/container/loot-points-v3/hanging_jacket/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v3/hanging_jacket.lh"
+    },
+    {
+      "id": "sports_bag",
+      "name": "拉链运动包",
+      "displaySize": 216,
+      "source": "art/loot-points-v3/source/sports_bag.png",
+      "frames": [
+        "animation/container/loot-points-v3/sports_bag/frame_00.png",
+        "animation/container/loot-points-v3/sports_bag/frame_01.png",
+        "animation/container/loot-points-v3/sports_bag/frame_02.png",
+        "animation/container/loot-points-v3/sports_bag/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v3/sports_bag.lh"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "d2ef9444f40c",
+  "_$type": "Sprite",
+  "name": "可穿过_forest-rusty-toolbox-v1",
+  "width": 128,
+  "height": 86,
+  "pivotX": 64,
+  "pivotY": 81,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 81
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "bf05ee3e2ef6"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "bf05ee3e2ef6",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 128,
+      "height": 86,
+      "texture": {
+        "_$uuid": "1220d44e-88ee-41ad-802f-598c8b1dd5f6",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

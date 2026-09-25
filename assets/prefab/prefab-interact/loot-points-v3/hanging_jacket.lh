@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_hanging_jacket",
+  "_$type": "Sprite",
+  "name": "墙挂工装夹克",
+  "width": 236,
+  "height": 236,
+  "_$comp": [
+    {
+      "_$id": "hanging_jacket_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 23.6,
+          "y": 94.4,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 188.8,
+          "height": 141.6
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_hanging_jacket",
+      "instanceId": "",
+      "displayName": "墙挂工装夹克",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "hanging_jacket",
+      "visualFolder": "loot-points-v3"
+    },
+    {
+      "_$id": "hanging_jacket_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 219.40625,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "hanging_jacket_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "hanging_jacket_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 236,
+      "height": 236,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://41a73829-6e85-47bd-8ef6-77e5c1a24b2c",
+      "autoSize": false
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_duffel_bag",
+  "_$type": "Sprite",
+  "name": "帆布旅行袋",
+  "width": 224,
+  "height": 224,
+  "_$comp": [
+    {
+      "_$id": "duffel_bag_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 22.400000000000002,
+          "y": 89.60000000000001,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 179.20000000000002,
+          "height": 134.4
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_duffel_bag",
+      "instanceId": "",
+      "displayName": "帆布旅行袋",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "duffel_bag"
+    },
+    {
+      "_$id": "duffel_bag_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 208.25,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "duffel_bag_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "duffel_bag_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 224,
+      "height": 224,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://7620039a-aaf0-4013-a160-39ca623cf113",
+      "autoSize": false
+    }
+  ]
+}

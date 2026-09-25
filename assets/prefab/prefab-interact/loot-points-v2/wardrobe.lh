@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_wardrobe",
+  "_$type": "Sprite",
+  "name": "旧木衣柜",
+  "width": 360,
+  "height": 360,
+  "_$comp": [
+    {
+      "_$id": "wardrobe_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 36,
+          "y": 144,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 288,
+          "height": 216
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_wardrobe",
+      "instanceId": "",
+      "displayName": "旧木衣柜",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "wardrobe",
+      "visualFolder": "loot-points-v2"
+    },
+    {
+      "_$id": "wardrobe_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 334.6875,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "wardrobe_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "wardrobe_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 360,
+      "height": 360,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://3318c4dc-4f0c-4505-91cd-99fc154de11f",
+      "autoSize": false
+    }
+  ]
+}

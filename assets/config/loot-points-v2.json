@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "frameSize": 512,
+  "fps": 8,
+  "loop": false,
+  "items": [
+    {
+      "id": "filing_cabinet",
+      "name": "旧式文件柜",
+      "displaySize": 300,
+      "source": "art/loot-points-v2/source/filing_cabinet.png",
+      "frames": [
+        "animation/container/loot-points-v2/filing_cabinet/frame_00.png",
+        "animation/container/loot-points-v2/filing_cabinet/frame_01.png",
+        "animation/container/loot-points-v2/filing_cabinet/frame_02.png",
+        "animation/container/loot-points-v2/filing_cabinet/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v2/filing_cabinet.lh"
+    },
+    {
+      "id": "wardrobe",
+      "name": "旧木衣柜",
+      "displaySize": 360,
+      "source": "art/loot-points-v2/source/wardrobe.png",
+      "frames": [
+        "animation/container/loot-points-v2/wardrobe/frame_00.png",
+        "animation/container/loot-points-v2/wardrobe/frame_01.png",
+        "animation/container/loot-points-v2/wardrobe/frame_02.png",
+        "animation/container/loot-points-v2/wardrobe/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v2/wardrobe.lh"
+    },
+    {
+      "id": "refrigerator",
+      "name": "老式冰箱",
+      "displaySize": 340,
+      "source": "art/loot-points-v2/source/refrigerator.png",
+      "frames": [
+        "animation/container/loot-points-v2/refrigerator/frame_00.png",
+        "animation/container/loot-points-v2/refrigerator/frame_01.png",
+        "animation/container/loot-points-v2/refrigerator/frame_02.png",
+        "animation/container/loot-points-v2/refrigerator/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v2/refrigerator.lh"
+    },
+    {
+      "id": "suitcase",
+      "name": "硬壳旅行箱",
+      "displaySize": 224,
+      "source": "art/loot-points-v2/source/suitcase.png",
+      "frames": [
+        "animation/container/loot-points-v2/suitcase/frame_00.png",
+        "animation/container/loot-points-v2/suitcase/frame_01.png",
+        "animation/container/loot-points-v2/suitcase/frame_02.png",
+        "animation/container/loot-points-v2/suitcase/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v2/suitcase.lh"
+    },
+    {
+      "id": "cash_register",
+      "name": "旧式收银机",
+      "displaySize": 192,
+      "source": "art/loot-points-v2/source/cash_register.png",
+      "revisionPrompt": "Correct this transparent 2x2 cash register animation sprite sheet. All four props must be FULLY visible with generous empty transparent margins including the bottom of extended cash drawer in lower right cell, which is currently cut off. Reframe each prop smaller at identical scale, occupying only central 75% of each cell. Keep four sequential closed to open drawer poses, same stationary upper machine, same camera and art, square 1024x1024 output, genuine transparent alpha background. No text or floor.",
+      "frames": [
+        "animation/container/loot-points-v2/cash_register/frame_00.png",
+        "animation/container/loot-points-v2/cash_register/frame_01.png",
+        "animation/container/loot-points-v2/cash_register/frame_02.png",
+        "animation/container/loot-points-v2/cash_register/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v2/cash_register.lh"
+    },
+    {
+      "id": "trash_bin",
+      "name": "翻盖垃圾桶",
+      "displaySize": 220,
+      "source": "art/loot-points-v2/source/trash_bin.png",
+      "frames": [
+        "animation/container/loot-points-v2/trash_bin/frame_00.png",
+        "animation/container/loot-points-v2/trash_bin/frame_01.png",
+        "animation/container/loot-points-v2/trash_bin/frame_02.png",
+        "animation/container/loot-points-v2/trash_bin/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v2/trash_bin.lh"
+    }
+  ]
+}

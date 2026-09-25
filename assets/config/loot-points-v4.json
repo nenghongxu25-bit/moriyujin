@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "frameSize": 512,
+  "fps": 8,
+  "loop": false,
+  "items": [
+    {
+      "id": "bedside_table",
+      "name": "旧木床头柜",
+      "displaySize": 232,
+      "source": "art/loot-points-v4/source/bedside_table.png",
+      "frames": [
+        "animation/container/loot-points-v4/bedside_table/frame_00.png",
+        "animation/container/loot-points-v4/bedside_table/frame_01.png",
+        "animation/container/loot-points-v4/bedside_table/frame_02.png",
+        "animation/container/loot-points-v4/bedside_table/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v4/bedside_table.lh"
+    },
+    {
+      "id": "office_desk",
+      "name": "旧式办公桌",
+      "displaySize": 340,
+      "source": "art/loot-points-v4/source/office_desk.png",
+      "frames": [
+        "animation/container/loot-points-v4/office_desk/frame_00.png",
+        "animation/container/loot-points-v4/office_desk/frame_01.png",
+        "animation/container/loot-points-v4/office_desk/frame_02.png",
+        "animation/container/loot-points-v4/office_desk/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v4/office_desk.lh"
+    },
+    {
+      "id": "cardboard_box",
+      "name": "旧纸箱",
+      "displaySize": 268,
+      "source": "art/loot-points-v4/source/cardboard_box.png",
+      "frames": [
+        "animation/container/loot-points-v4/cardboard_box/frame_00.png",
+        "animation/container/loot-points-v4/cardboard_box/frame_01.png",
+        "animation/container/loot-points-v4/cardboard_box/frame_02.png",
+        "animation/container/loot-points-v4/cardboard_box/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v4/cardboard_box.lh"
+    },
+    {
+      "id": "kitchen_cabinet",
+      "name": "厨房吊柜",
+      "displaySize": 300,
+      "source": "art/loot-points-v4/source/kitchen_cabinet.png",
+      "frames": [
+        "animation/container/loot-points-v4/kitchen_cabinet/frame_00.png",
+        "animation/container/loot-points-v4/kitchen_cabinet/frame_01.png",
+        "animation/container/loot-points-v4/kitchen_cabinet/frame_02.png",
+        "animation/container/loot-points-v4/kitchen_cabinet/frame_03.png"
+      ],
+      "prefab": "assets/prefab/prefab-interact/loot-points-v4/kitchen_cabinet.lh"
+    }
+  ]
+}

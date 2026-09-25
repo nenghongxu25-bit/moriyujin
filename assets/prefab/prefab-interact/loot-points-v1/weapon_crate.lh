@@ -1,0 +1,74 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_weapon_crate",
+  "_$type": "Sprite",
+  "name": "军用武器箱",
+  "width": 320,
+  "height": 320,
+  "_$comp": [
+    {
+      "_$id": "weapon_crate_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 32,
+          "y": 128,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 256,
+          "height": 192
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_weapon_crate",
+      "instanceId": "",
+      "displayName": "军用武器箱",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "weapon_crate"
+    },
+    {
+      "_$id": "weapon_crate_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 297.5,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../../src/systems/DepthObstacle.ts",
+      "blockX": 88,
+      "blockY": 260,
+      "blockWidth": 144,
+      "blockHeight": 28
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "weapon_crate_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "weapon_crate_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 320,
+      "height": 320,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://5b78a720-a7ac-4f77-a3f2-95bea230d654",
+      "autoSize": false
+    }
+  ]
+}

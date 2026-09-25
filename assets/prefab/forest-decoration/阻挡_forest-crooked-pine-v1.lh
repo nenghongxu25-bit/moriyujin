@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "584ac3bda26a",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-crooked-pine-v1",
+  "width": 256,
+  "height": 384,
+  "pivotX": 148,
+  "pivotY": 369,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 369
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "8ec86de1f38d"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 122,
+      "blockY": 339,
+      "blockWidth": 52,
+      "blockHeight": 30
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "8ec86de1f38d",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 256,
+      "height": 384,
+      "texture": {
+        "_$uuid": "ce5a1396-064b-460a-a400-d4c5e7debf99",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "Laya ShurikenParticle2DRenderer authoring reference",
+  "texture": "smoke_particle_cloud.png",
+  "blend": "alpha",
+  "presets": {
+    "smoke_grenade": {
+      "duration": 8,
+      "looping": true,
+      "startLifetime": [3.5, 5.5],
+      "startSpeed": [5, 13],
+      "startSize": [54, 105],
+      "startRotation": [-180, 180],
+      "rateOverTime": 18,
+      "shape": "circle",
+      "shapeRadius": 18,
+      "sizeOverLifetime": [[0, 0.62], [0.28, 1.0], [1, 1.48]],
+      "alphaOverLifetime": [[0, 0], [0.12, 0.5], [0.72, 0.38], [1, 0]],
+      "color": "#B8BEC0",
+      "gravityY": -2,
+      "simulationSpace": "world"
+    },
+    "tear_gas": {
+      "duration": 8,
+      "looping": true,
+      "startLifetime": [2.8, 4.8],
+      "startSpeed": [7, 16],
+      "startSize": [46, 90],
+      "startRotation": [-180, 180],
+      "rateOverTime": 22,
+      "shape": "circle",
+      "shapeRadius": 15,
+      "sizeOverLifetime": [[0, 0.58], [0.3, 1.0], [1, 1.32]],
+      "alphaOverLifetime": [[0, 0], [0.1, 0.42], [0.6, 0.34], [1, 0]],
+      "color": "#B7B39A",
+      "gravityY": -1,
+      "simulationSpace": "world"
+    }
+  }
+}

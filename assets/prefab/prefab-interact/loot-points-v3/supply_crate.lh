@@ -1,0 +1,75 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_supply_crate",
+  "_$type": "Sprite",
+  "name": "军用补给箱",
+  "width": 300,
+  "height": 300,
+  "_$comp": [
+    {
+      "_$id": "supply_crate_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 30,
+          "y": 120,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 240,
+          "height": 180
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_supply_crate",
+      "instanceId": "",
+      "displayName": "军用补给箱",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "supply_crate",
+      "visualFolder": "loot-points-v3"
+    },
+    {
+      "_$id": "supply_crate_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 278.90625,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../../src/systems/DepthObstacle.ts",
+      "blockX": 82,
+      "blockY": 250,
+      "blockWidth": 136,
+      "blockHeight": 26
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "supply_crate_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "supply_crate_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 300,
+      "height": 300,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://32795755-dfb4-42ab-8fda-34ca4966df45",
+      "autoSize": false
+    }
+  ]
+}

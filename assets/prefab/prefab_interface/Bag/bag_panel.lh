@@ -1,0 +1,2890 @@
+{
+  "_$id": "r0itm6j1",
+  "_$type": "GWidget",
+  "name": "Root",
+  "x": 0,
+  "y": 0,
+  "width": 1334,
+  "height": 750,
+  "_$ver": 1,
+  "mouseEnabled": true,
+  "_$comp": [
+    {
+      "_$type": "cccc26aa-5d81-479b-9e05-9dc1ee8b8c83"
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "tac_2",
+      "_$type": "GWidget",
+      "name": "background",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseEnabled": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#0e1215",
+        "lineColor": "#0e1215",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "tac_3",
+      "_$type": "GWidget",
+      "name": "header",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 82,
+      "mouseEnabled": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#191e20",
+        "lineColor": "#303839",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "tac_4",
+      "_$type": "GWidget",
+      "name": "accent",
+      "x": 24,
+      "y": 23,
+      "width": 4,
+      "height": 35,
+      "mouseEnabled": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#b8ac7f",
+        "lineColor": "#b8ac7f",
+        "lineWidth": 1
+      }
+    },
+    {
+      "_$id": "tac_5",
+      "_$type": "Text",
+      "name": "title",
+      "x": 44,
+      "y": 19,
+      "width": 260,
+      "height": 42,
+      "text": "随身装备",
+      "font": "Microsoft YaHei",
+      "fontSize": 29,
+      "color": "#e2e4da",
+      "valign": "middle",
+      "overflow": "hidden",
+      "mouseEnabled": false
+    },
+    {
+      "_$id": "tac_6",
+      "_$type": "Text",
+      "name": "subtitle",
+      "x": 320,
+      "y": 28,
+      "width": 350,
+      "height": 25,
+      "text": "LOADOUT  /  装备管理",
+      "font": "Microsoft YaHei",
+      "fontSize": 13,
+      "color": "#7c8787",
+      "valign": "middle",
+      "overflow": "hidden",
+      "mouseEnabled": false
+    },
+    {
+      "_$id": "tac_7",
+      "_$type": "GWidget",
+      "name": "close",
+      "x": 1198,
+      "y": 24,
+      "width": 112,
+      "height": 34,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_8",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 112,
+          "height": 34,
+          "text": "关闭  ×",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_56",
+      "_$type": "GWidget",
+      "name": "storageZone",
+      "x": 756,
+      "y": 142,
+      "width": 554,
+      "height": 510,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#191d20",
+        "lineColor": "#363d40",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_57",
+          "_$type": "Text",
+          "name": "storageTitle",
+          "x": 16,
+          "y": 10,
+          "width": 300,
+          "height": 26,
+          "text": "仓库 / STASH",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#d9dccf",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_58",
+          "_$type": "Text",
+          "name": "storageCapacity",
+          "x": 384,
+          "y": 12,
+          "width": 152,
+          "height": 24,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 13,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_59",
+          "_$type": "GList",
+          "name": "storageGrid",
+          "x": 12,
+          "y": 52,
+          "width": 450,
+          "height": 448,
+          "mouseEnabled": true,
+          "layout": {
+            "type": 0
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "vScrollBarRes": {
+              "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+              "_$type": "Prefab"
+            }
+          },
+          "_templateNode": {
+            "_$ref": "tac_64",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 210,
+          "_$comp": [
+            {
+              "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "listNode": {
+                "_$ref": "tac_59"
+              },
+              "templateNode": {
+                "_$ref": "tac_64"
+              },
+              "slotCount": 210,
+              "dragPreviewNode": {
+                "_$ref": "tac_195"
+              }
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "tac_64",
+              "_$type": "GWidget",
+              "name": "itemTemplate",
+              "x": 0,
+              "y": 0,
+              "width": 70,
+              "height": 70,
+              "mouseEnabled": true,
+              "_$child": [
+                {
+                  "_$id": "tac_60",
+                  "_$type": "GWidget",
+                  "name": "item",
+                  "x": 0,
+                  "y": 0,
+                  "width": 70,
+                  "height": 70,
+                  "mouseEnabled": false,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#141c20",
+                    "lineColor": "#394447",
+                    "lineWidth": 1
+                  }
+                },
+                {
+                  "_$id": "tac_61",
+                  "_$type": "GLoader",
+                  "name": "icon",
+                  "x": 4,
+                  "y": 4,
+                  "width": 60,
+                  "height": 48,
+                  "src": "",
+                  "fitMode": 2,
+                  "align": 1,
+                  "valign": 1,
+                  "mouseEnabled": false
+                },
+                {
+                  "_$id": "tac_62",
+                  "_$type": "Text",
+                  "name": "name",
+                  "x": 4,
+                  "y": 50,
+                  "width": 62,
+                  "height": 18,
+                  "text": "",
+                  "font": "Microsoft YaHei",
+                  "fontSize": 12,
+                  "color": "#b7bcba",
+                  "valign": "middle",
+                  "overflow": "hidden",
+                  "mouseEnabled": false
+                },
+                {
+                  "_$id": "tac_63",
+                  "_$type": "Text",
+                  "name": "amount",
+                  "x": 40,
+                  "y": 2,
+                  "width": 26,
+                  "height": 18,
+                  "text": "",
+                  "font": "Microsoft YaHei",
+                  "fontSize": 12,
+                  "color": "#b7bcba",
+                  "valign": "middle",
+                  "overflow": "hidden",
+                  "mouseEnabled": false
+                }
+              ],
+              "_$comp": [
+                {
+                  "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                  "templateSlot": {
+                    "_$ref": "tac_60"
+                  },
+                  "gimg": {
+                    "_$ref": "tac_61"
+                  },
+                  "nameText": {
+                    "_$ref": "tac_62"
+                  },
+                  "countText": {
+                    "_$ref": "tac_63"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "tac_65",
+          "_$type": "GWidget",
+          "name": "filterAll",
+          "x": 470,
+          "y": 52,
+          "width": 70,
+          "height": 34,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_66",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 70,
+              "height": 34,
+              "text": "全部",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_67",
+          "_$type": "GWidget",
+          "name": "filterWeapons",
+          "x": 470,
+          "y": 98,
+          "width": 70,
+          "height": 34,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_68",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 70,
+              "height": 34,
+              "text": "武器",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_69",
+          "_$type": "GWidget",
+          "name": "filterOther",
+          "x": 470,
+          "y": 144,
+          "width": 70,
+          "height": 34,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_70",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 70,
+              "height": 34,
+              "text": "物资",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_71",
+          "_$type": "Text",
+          "name": "scrollHint",
+          "x": 476,
+          "y": 218,
+          "width": 64,
+          "height": 54,
+          "text": "滚动\n浏览",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#788380",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        }
+      ]
+    },
+    {
+      "_$id": "tac_72",
+      "_$type": "GWidget",
+      "name": "inspectionZone",
+      "x": 756,
+      "y": 98,
+      "width": 554,
+      "height": 554,
+      "mouseEnabled": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#191d20",
+        "lineColor": "#363d40",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_73",
+          "_$type": "Text",
+          "name": "inspectHeading",
+          "x": 20,
+          "y": 12,
+          "width": 500,
+          "height": 26,
+          "text": "物品检视 / INSPECT",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#d9dccf",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_74",
+          "_$type": "GLoader",
+          "name": "inspectionIcon",
+          "x": 44,
+          "y": 64,
+          "width": 466,
+          "height": 178,
+          "src": "",
+          "fitMode": 2,
+          "align": 1,
+          "valign": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_75",
+          "_$type": "Text",
+          "name": "inspectionName",
+          "x": 24,
+          "y": 265,
+          "width": 506,
+          "height": 34,
+          "text": "选择物品查看详情",
+          "font": "Microsoft YaHei",
+          "fontSize": 24,
+          "color": "#e2e4da",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_76",
+          "_$type": "Text",
+          "name": "inspectionText",
+          "x": 24,
+          "y": 317,
+          "width": 506,
+          "height": 198,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 15,
+          "color": "#b7bcba",
+          "valign": "top",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "wordWrap": true,
+          "leading": 8
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "tac_77",
+      "_$type": "Text",
+      "name": "selectedName",
+      "x": 24,
+      "y": 662,
+      "width": 308,
+      "height": 30,
+      "text": "选择物品查看详情",
+      "font": "Microsoft YaHei",
+      "fontSize": 15,
+      "color": "#d9dccf",
+      "valign": "middle",
+      "overflow": "hidden",
+      "mouseEnabled": false
+    },
+    {
+      "_$id": "tac_78",
+      "_$type": "GWidget",
+      "name": "transfer",
+      "x": 348,
+      "y": 664,
+      "width": 88,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_79",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 32,
+          "text": "快捷转移",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_80",
+      "_$type": "GWidget",
+      "name": "equip",
+      "x": 444,
+      "y": 664,
+      "width": 88,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_81",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 32,
+          "text": "装备",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_82",
+      "_$type": "GWidget",
+      "name": "rotate",
+      "x": 540,
+      "y": 664,
+      "width": 88,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_83",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 32,
+          "text": "旋转 R",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_84",
+      "_$type": "GWidget",
+      "name": "split",
+      "x": 636,
+      "y": 664,
+      "width": 88,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_85",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 32,
+          "text": "拆分",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_86",
+      "_$type": "GWidget",
+      "name": "inspect",
+      "x": 732,
+      "y": 664,
+      "width": 88,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_87",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 32,
+          "text": "详情",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_88",
+      "_$type": "GWidget",
+      "name": "discard",
+      "x": 828,
+      "y": 664,
+      "width": 88,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_89",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 32,
+          "text": "丢弃",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_90",
+      "_$type": "GWidget",
+      "name": "organizeBag",
+      "x": 940,
+      "y": 664,
+      "width": 116,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_91",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 116,
+          "height": 32,
+          "text": "整理背包",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_92",
+      "_$type": "GWidget",
+      "name": "toggleContainer",
+      "x": 1198,
+      "y": 664,
+      "width": 112,
+      "height": 32,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_93",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 112,
+          "height": 32,
+          "text": "卷起",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ],
+      "visible": false
+    },
+    {
+      "_$id": "tac_94",
+      "_$type": "Input",
+      "name": "searchInput",
+      "x": 1035,
+      "y": 29,
+      "width": 146,
+      "height": 28,
+      "text": "",
+      "prompt": "搜索名称 / ID",
+      "fontSize": 13,
+      "color": "#d9dccf",
+      "bgColor": "#101619",
+      "borderColor": "#394446",
+      "padding": "4,6,4,6"
+    },
+    {
+      "_$id": "tac_95",
+      "_$type": "Text",
+      "name": "status",
+      "x": 24,
+      "y": 711,
+      "width": 1220,
+      "height": 23,
+      "text": "快速双击转移  ·  拖拽移动  ·  R 旋转  ·  Ctrl+点击转移  ·  Alt+点击装备",
+      "font": "Microsoft YaHei",
+      "fontSize": 13,
+      "color": "#7d8b87",
+      "valign": "middle",
+      "overflow": "hidden",
+      "mouseEnabled": false
+    },
+    {
+      "_$id": "tac_96",
+      "_$type": "GWidget",
+      "name": "contextMenu",
+      "x": 600,
+      "y": 300,
+      "width": 184,
+      "height": 238,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#242c2f",
+        "lineColor": "#818c83",
+        "lineWidth": 1
+      },
+      "visible": false,
+      "zOrder": 900,
+      "_$child": [
+        {
+          "_$id": "tac_97",
+          "_$type": "GWidget",
+          "name": "contextTransfer",
+          "x": 8,
+          "y": 8,
+          "width": 168,
+          "height": 33,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_98",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 168,
+              "height": 33,
+              "text": "快捷转移",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_99",
+          "_$type": "GWidget",
+          "name": "contextEquip",
+          "x": 8,
+          "y": 45,
+          "width": 168,
+          "height": 33,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_100",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 168,
+              "height": 33,
+              "text": "装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_101",
+          "_$type": "GWidget",
+          "name": "contextRotate",
+          "x": 8,
+          "y": 82,
+          "width": 168,
+          "height": 33,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_102",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 168,
+              "height": 33,
+              "text": "旋转",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_103",
+          "_$type": "GWidget",
+          "name": "contextSplit",
+          "x": 8,
+          "y": 119,
+          "width": 168,
+          "height": 33,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_104",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 168,
+              "height": 33,
+              "text": "拆分",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_105",
+          "_$type": "GWidget",
+          "name": "contextInspect",
+          "x": 8,
+          "y": 156,
+          "width": 168,
+          "height": 33,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_106",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 168,
+              "height": 33,
+              "text": "详情",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_107",
+          "_$type": "GWidget",
+          "name": "contextDiscard",
+          "x": 8,
+          "y": 193,
+          "width": 168,
+          "height": 33,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_108",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 168,
+              "height": 33,
+              "text": "丢弃",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "tac_109",
+      "_$type": "GWidget",
+      "name": "dialogShield",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#000000",
+        "lineColor": "#000000",
+        "lineWidth": 1
+      },
+      "alpha": 0.65,
+      "visible": false,
+      "zOrder": 999
+    },
+    {
+      "_$id": "tac_110",
+      "_$type": "GWidget",
+      "name": "dialog",
+      "x": 429,
+      "y": 151,
+      "width": 476,
+      "height": 450,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#202729",
+        "lineColor": "#879185",
+        "lineWidth": 1
+      },
+      "visible": false,
+      "zOrder": 1000,
+      "_$child": [
+        {
+          "_$id": "tac_111",
+          "_$type": "Text",
+          "name": "dialogTitle",
+          "x": 24,
+          "y": 16,
+          "width": 368,
+          "height": 36,
+          "text": "物品详情",
+          "font": "Microsoft YaHei",
+          "fontSize": 24,
+          "color": "#ececdf",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_112",
+          "_$type": "GWidget",
+          "name": "dialogClose",
+          "x": 413,
+          "y": 16,
+          "width": 40,
+          "height": 32,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_113",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 40,
+              "height": 32,
+              "text": "×",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "_$id": "tac_114",
+          "_$type": "Text",
+          "name": "dialogText",
+          "x": 24,
+          "y": 70,
+          "width": 428,
+          "height": 262,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#c6ceca",
+          "valign": "top",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "wordWrap": true,
+          "leading": 8
+        },
+        {
+          "_$id": "tac_115",
+          "_$type": "Input",
+          "name": "splitInput",
+          "x": 24,
+          "y": 344,
+          "width": 180,
+          "height": 36,
+          "type": "number",
+          "text": "1",
+          "fontSize": 20,
+          "color": "#e2e4da",
+          "bgColor": "#0d1316",
+          "borderColor": "#62706c",
+          "padding": "4,8,4,8"
+        },
+        {
+          "_$id": "tac_116",
+          "_$type": "GWidget",
+          "name": "dialogConfirm",
+          "x": 304,
+          "y": 390,
+          "width": 148,
+          "height": 36,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#252b2d",
+            "lineColor": "#4a5150",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_117",
+              "_$type": "Text",
+              "name": "label",
+              "x": 0,
+              "y": 0,
+              "width": 148,
+              "height": 36,
+              "text": "确认",
+              "font": "Microsoft YaHei",
+              "fontSize": 14,
+              "color": "#deded2",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false,
+              "align": "center"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "tac_118",
+      "_$type": "Text",
+      "name": "loadoutHeading",
+      "x": 36,
+      "y": 94,
+      "width": 500,
+      "height": 32,
+      "text": "随身装备 / LOADOUT",
+      "font": "Microsoft YaHei",
+      "fontSize": 18,
+      "color": "#e0e0d5",
+      "valign": "middle",
+      "overflow": "hidden",
+      "mouseEnabled": false
+    },
+    {
+      "_$id": "tac_119",
+      "_$type": "GPanel",
+      "name": "loadoutScroll",
+      "x": 24,
+      "y": 136,
+      "width": 714,
+      "height": 516,
+      "mouseEnabled": true,
+      "clipping": true,
+      "layout": {
+        "type": 0
+      },
+      "scroller": {
+        "_$type": "Scroller",
+        "vScrollBarRes": {
+          "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+          "_$type": "Prefab"
+        }
+      },
+      "_$child": [
+        {
+          "_$id": "tac_120",
+          "_$type": "GWidget",
+          "name": "equip_helmet",
+          "x": 0,
+          "y": 0,
+          "width": 220,
+          "height": 144,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_121",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 200,
+              "height": 20,
+              "text": "头盔",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_122",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 196,
+              "height": 92,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_123",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 120,
+              "width": 200,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_124",
+          "_$type": "GWidget",
+          "name": "equip_armor",
+          "x": 230,
+          "y": 0,
+          "width": 220,
+          "height": 144,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_125",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 200,
+              "height": 20,
+              "text": "护甲",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_126",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 196,
+              "height": 92,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_127",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 120,
+              "width": 200,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_128",
+          "_$type": "GWidget",
+          "name": "equip_headset",
+          "x": 460,
+          "y": 0,
+          "width": 220,
+          "height": 144,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_129",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 200,
+              "height": 20,
+              "text": "耳机",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_130",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 196,
+              "height": 92,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_131",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 120,
+              "width": 200,
+              "height": 20,
+              "text": "暂未开放",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_132",
+          "_$type": "GWidget",
+          "name": "equip_weapon",
+          "x": 0,
+          "y": 158,
+          "width": 466,
+          "height": 162,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_133",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 446,
+              "height": 20,
+              "text": "主武器",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_134",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 442,
+              "height": 110,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_135",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 138,
+              "width": 446,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_136",
+          "_$type": "GWidget",
+          "name": "equip_pistol",
+          "x": 480,
+          "y": 158,
+          "width": 200,
+          "height": 162,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_137",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 180,
+              "height": 20,
+              "text": "手枪",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_138",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 176,
+              "height": 110,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_139",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 138,
+              "width": 180,
+              "height": 20,
+              "text": "暂未开放",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_140",
+          "_$type": "GWidget",
+          "name": "equip_secondary",
+          "x": 0,
+          "y": 334,
+          "width": 466,
+          "height": 162,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_141",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 446,
+              "height": 20,
+              "text": "副武器",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_142",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 442,
+              "height": 110,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_143",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 138,
+              "width": 446,
+              "height": 20,
+              "text": "暂未开放",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_144",
+          "_$type": "GWidget",
+          "name": "equip_melee",
+          "x": 480,
+          "y": 334,
+          "width": 200,
+          "height": 162,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_145",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 180,
+              "height": 20,
+              "text": "近战武器",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_146",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 176,
+              "height": 110,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_147",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 138,
+              "width": 180,
+              "height": 20,
+              "text": "暂未开放",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_148",
+          "_$type": "Text",
+          "name": "pocketTitle",
+          "x": 0,
+          "y": 520,
+          "width": 680,
+          "height": 30,
+          "text": "口袋 / POCKETS",
+          "font": "Microsoft YaHei",
+          "fontSize": 17,
+          "color": "#d5d7ca",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_29",
+          "_$type": "GWidget",
+          "name": "quick_0",
+          "x": 0,
+          "y": 564,
+          "width": 158,
+          "height": 110,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_30",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 5,
+              "y": 3,
+              "width": 14,
+              "height": 16,
+              "text": "1",
+              "font": "Microsoft YaHei",
+              "fontSize": 10,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_31",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 24,
+              "width": 134,
+              "height": 60,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_32",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 87,
+              "width": 138,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_33",
+          "_$type": "GWidget",
+          "name": "quick_1",
+          "x": 170,
+          "y": 564,
+          "width": 158,
+          "height": 110,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_34",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 5,
+              "y": 3,
+              "width": 14,
+              "height": 16,
+              "text": "2",
+              "font": "Microsoft YaHei",
+              "fontSize": 10,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_35",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 24,
+              "width": 134,
+              "height": 60,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_36",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 87,
+              "width": 138,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_37",
+          "_$type": "GWidget",
+          "name": "quick_2",
+          "x": 340,
+          "y": 564,
+          "width": 158,
+          "height": 110,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_38",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 5,
+              "y": 3,
+              "width": 14,
+              "height": 16,
+              "text": "3",
+              "font": "Microsoft YaHei",
+              "fontSize": 10,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_39",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 24,
+              "width": 134,
+              "height": 60,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_40",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 87,
+              "width": 138,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_41",
+          "_$type": "GWidget",
+          "name": "quick_3",
+          "x": 510,
+          "y": 564,
+          "width": 158,
+          "height": 110,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_42",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 5,
+              "y": 3,
+              "width": 14,
+              "height": 16,
+              "text": "4",
+              "font": "Microsoft YaHei",
+              "fontSize": 10,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_43",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 24,
+              "width": 134,
+              "height": 60,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_44",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 87,
+              "width": 138,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_149",
+          "_$type": "Text",
+          "name": "pocketHint",
+          "x": 0,
+          "y": 681,
+          "width": 680,
+          "height": 24,
+          "text": "快捷收纳 · 选中背包物品后点击分配",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_150",
+          "_$type": "GWidget",
+          "name": "equip_rig",
+          "x": 0,
+          "y": 724,
+          "width": 490,
+          "height": 110,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_151",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 470,
+              "height": 20,
+              "text": "弹挂 / CHEST RIG",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_152",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 466,
+              "height": 58,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_153",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 86,
+              "width": 470,
+              "height": 20,
+              "text": "暂未开放",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_154",
+          "_$type": "GWidget",
+          "name": "equip_insertPlate",
+          "x": 504,
+          "y": 724,
+          "width": 176,
+          "height": 110,
+          "mouseEnabled": true,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#111517",
+            "lineColor": "#363d40",
+            "lineWidth": 1
+          },
+          "_$child": [
+            {
+              "_$id": "tac_155",
+              "_$type": "Text",
+              "name": "slotTitle",
+              "x": 10,
+              "y": 7,
+              "width": 156,
+              "height": 20,
+              "text": "防弹插板",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#8b928f",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_156",
+              "_$type": "GLoader",
+              "name": "icon",
+              "x": 12,
+              "y": 26,
+              "width": 152,
+              "height": 58,
+              "src": "",
+              "fitMode": 2,
+              "align": 1,
+              "valign": 1,
+              "mouseEnabled": false
+            },
+            {
+              "_$id": "tac_157",
+              "_$type": "Text",
+              "name": "itemLabel",
+              "x": 10,
+              "y": 86,
+              "width": 156,
+              "height": 20,
+              "text": "未装备",
+              "font": "Microsoft YaHei",
+              "fontSize": 12,
+              "color": "#c4c9c5",
+              "valign": "middle",
+              "overflow": "hidden",
+              "mouseEnabled": false
+            }
+          ]
+        },
+        {
+          "_$id": "tac_158",
+          "_$type": "Text",
+          "name": "carryTitle",
+          "x": 0,
+          "y": 856,
+          "width": 430,
+          "height": 32,
+          "text": "背包 / BACKPACK",
+          "font": "Microsoft YaHei",
+          "fontSize": 18,
+          "color": "#d5d7ca",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_159",
+          "_$type": "Text",
+          "name": "carryCapacity",
+          "x": 490,
+          "y": 856,
+          "width": 190,
+          "height": 32,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_50",
+          "_$type": "GList",
+          "name": "carryGrid",
+          "x": 0,
+          "y": 902,
+          "width": 698,
+          "height": 1360,
+          "mouseEnabled": true,
+          "layout": {
+            "type": 0
+          },
+          "_templateNode": {
+            "_$ref": "tac_55",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 50,
+          "_$comp": [
+            {
+              "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "listNode": {
+                "_$ref": "tac_50"
+              },
+              "templateNode": {
+                "_$ref": "tac_55"
+              },
+              "slotCount": 50,
+              "dragPreviewNode": {
+                "_$ref": "tac_195"
+              }
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "tac_55",
+              "_$type": "GWidget",
+              "name": "itemTemplate",
+              "x": 0,
+              "y": 0,
+              "width": 70,
+              "height": 70,
+              "mouseEnabled": true,
+              "_$child": [
+                {
+                  "_$id": "tac_51",
+                  "_$type": "GWidget",
+                  "name": "item",
+                  "x": 0,
+                  "y": 0,
+                  "width": 70,
+                  "height": 70,
+                  "mouseEnabled": false,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "fillColor": "#141c20",
+                    "lineColor": "#394447",
+                    "lineWidth": 1
+                  }
+                },
+                {
+                  "_$id": "tac_52",
+                  "_$type": "GLoader",
+                  "name": "icon",
+                  "x": 4,
+                  "y": 4,
+                  "width": 60,
+                  "height": 48,
+                  "src": "",
+                  "fitMode": 2,
+                  "align": 1,
+                  "valign": 1,
+                  "mouseEnabled": false
+                },
+                {
+                  "_$id": "tac_53",
+                  "_$type": "Text",
+                  "name": "name",
+                  "x": 4,
+                  "y": 50,
+                  "width": 62,
+                  "height": 18,
+                  "text": "",
+                  "font": "Microsoft YaHei",
+                  "fontSize": 12,
+                  "color": "#b7bcba",
+                  "valign": "middle",
+                  "overflow": "hidden",
+                  "mouseEnabled": false
+                },
+                {
+                  "_$id": "tac_54",
+                  "_$type": "Text",
+                  "name": "amount",
+                  "x": 40,
+                  "y": 2,
+                  "width": 26,
+                  "height": 18,
+                  "text": "",
+                  "font": "Microsoft YaHei",
+                  "fontSize": 12,
+                  "color": "#b7bcba",
+                  "valign": "middle",
+                  "overflow": "hidden",
+                  "mouseEnabled": false
+                }
+              ],
+              "_$comp": [
+                {
+                  "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+                  "templateSlot": {
+                    "_$ref": "tac_51"
+                  },
+                  "gimg": {
+                    "_$ref": "tac_52"
+                  },
+                  "nameText": {
+                    "_$ref": "tac_53"
+                  },
+                  "countText": {
+                    "_$ref": "tac_54"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "tac_160",
+          "_$type": "Text",
+          "name": "loadoutEnd",
+          "x": 0,
+          "y": 2278,
+          "width": 680,
+          "height": 28,
+          "text": "— 装备与收纳 —",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#64716e",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        }
+      ]
+    },
+    {
+      "_$id": "tac_161",
+      "_$type": "GWidget",
+      "name": "playerStatusZone",
+      "x": 756,
+      "y": 142,
+      "width": 554,
+      "height": 510,
+      "mouseEnabled": false,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#171d20",
+        "lineColor": "#384144",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_162",
+          "_$type": "Text",
+          "name": "healthHeading",
+          "x": 24,
+          "y": 14,
+          "width": 500,
+          "height": 34,
+          "text": "身体状态 / VITALS",
+          "font": "Microsoft YaHei",
+          "fontSize": 20,
+          "color": "#dce1d4",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_163",
+          "_$type": "Text",
+          "name": "hpTitle",
+          "x": 24,
+          "y": 76,
+          "width": 140,
+          "height": 24,
+          "text": "健康",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_164",
+          "_$type": "Text",
+          "name": "hpValue",
+          "x": 274,
+          "y": 76,
+          "width": 254,
+          "height": 24,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 17,
+          "color": "#e2e5dc",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "right"
+        },
+        {
+          "_$id": "tac_165",
+          "_$type": "GWidget",
+          "name": "hpTrack",
+          "x": 24,
+          "y": 110,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#303a3d",
+            "lineColor": "#303a3d",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_166",
+          "_$type": "GWidget",
+          "name": "hpFill",
+          "x": 24,
+          "y": 110,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#b9c99c",
+            "lineColor": "#b9c99c",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_167",
+          "_$type": "Text",
+          "name": "staminaTitle",
+          "x": 24,
+          "y": 146,
+          "width": 140,
+          "height": 24,
+          "text": "体力",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_168",
+          "_$type": "Text",
+          "name": "staminaValue",
+          "x": 274,
+          "y": 146,
+          "width": 254,
+          "height": 24,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 17,
+          "color": "#e2e5dc",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "right"
+        },
+        {
+          "_$id": "tac_169",
+          "_$type": "GWidget",
+          "name": "staminaTrack",
+          "x": 24,
+          "y": 180,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#303a3d",
+            "lineColor": "#303a3d",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_170",
+          "_$type": "GWidget",
+          "name": "staminaFill",
+          "x": 24,
+          "y": 180,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#c6c7ab",
+            "lineColor": "#c6c7ab",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_171",
+          "_$type": "Text",
+          "name": "hydrationTitle",
+          "x": 24,
+          "y": 216,
+          "width": 140,
+          "height": 24,
+          "text": "水量",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_172",
+          "_$type": "Text",
+          "name": "hydrationValue",
+          "x": 274,
+          "y": 216,
+          "width": 254,
+          "height": 24,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 17,
+          "color": "#e2e5dc",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "right"
+        },
+        {
+          "_$id": "tac_173",
+          "_$type": "GWidget",
+          "name": "hydrationTrack",
+          "x": 24,
+          "y": 250,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#303a3d",
+            "lineColor": "#303a3d",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_174",
+          "_$type": "GWidget",
+          "name": "hydrationFill",
+          "x": 24,
+          "y": 250,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#8eb7c2",
+            "lineColor": "#8eb7c2",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_175",
+          "_$type": "Text",
+          "name": "energyTitle",
+          "x": 24,
+          "y": 286,
+          "width": 140,
+          "height": 24,
+          "text": "能量",
+          "font": "Microsoft YaHei",
+          "fontSize": 16,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_176",
+          "_$type": "Text",
+          "name": "energyValue",
+          "x": 274,
+          "y": 286,
+          "width": 254,
+          "height": 24,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 17,
+          "color": "#e2e5dc",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "right"
+        },
+        {
+          "_$id": "tac_177",
+          "_$type": "GWidget",
+          "name": "energyTrack",
+          "x": 24,
+          "y": 320,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#303a3d",
+            "lineColor": "#303a3d",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_178",
+          "_$type": "GWidget",
+          "name": "energyFill",
+          "x": 24,
+          "y": 320,
+          "width": 504,
+          "height": 5,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#c3ad80",
+            "lineColor": "#c3ad80",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_179",
+          "_$type": "Text",
+          "name": "conditionTitle",
+          "x": 24,
+          "y": 368,
+          "width": 504,
+          "height": 26,
+          "text": "当前状态",
+          "font": "Microsoft YaHei",
+          "fontSize": 17,
+          "color": "#dce1d4",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_180",
+          "_$type": "Text",
+          "name": "conditionText",
+          "x": 24,
+          "y": 402,
+          "width": 504,
+          "height": 62,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#b7bcba",
+          "valign": "top",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "wordWrap": true
+        },
+        {
+          "_$id": "tac_181",
+          "_$type": "Text",
+          "name": "combatStats",
+          "x": 24,
+          "y": 474,
+          "width": 504,
+          "height": 22,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 13,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        }
+      ]
+    },
+    {
+      "_$id": "tac_182",
+      "_$type": "GWidget",
+      "name": "showStatus",
+      "x": 756,
+      "y": 98,
+      "width": 150,
+      "height": 34,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_183",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 150,
+          "height": 34,
+          "text": "玩家状态",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_184",
+      "_$type": "GWidget",
+      "name": "showStorage",
+      "x": 916,
+      "y": 98,
+      "width": 150,
+      "height": 34,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_185",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 150,
+          "height": 34,
+          "text": "搜索容器",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_186",
+      "_$type": "GWidget",
+      "name": "scrollEquipment",
+      "x": 534,
+      "y": 98,
+      "width": 88,
+      "height": 30,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_187",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 88,
+          "height": 30,
+          "text": "装备",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_188",
+      "_$type": "GWidget",
+      "name": "scrollBag",
+      "x": 630,
+      "y": 98,
+      "width": 108,
+      "height": 30,
+      "mouseEnabled": true,
+      "background": {
+        "_$type": "DrawRectCmd",
+        "fillColor": "#252b2d",
+        "lineColor": "#4a5150",
+        "lineWidth": 1
+      },
+      "_$child": [
+        {
+          "_$id": "tac_189",
+          "_$type": "Text",
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 108,
+          "height": 30,
+          "text": "背包 ↓",
+          "font": "Microsoft YaHei",
+          "fontSize": 14,
+          "color": "#deded2",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false,
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "_$id": "tac_195",
+      "_$type": "GWidget",
+      "name": "inventoryDragPreview",
+      "x": 0,
+      "y": 0,
+      "width": 70,
+      "height": 70,
+      "mouseEnabled": false,
+      "_$child": [
+        {
+          "_$id": "tac_191",
+          "_$type": "GWidget",
+          "name": "item",
+          "x": 0,
+          "y": 0,
+          "width": 70,
+          "height": 70,
+          "mouseEnabled": false,
+          "background": {
+            "_$type": "DrawRectCmd",
+            "fillColor": "#141c20",
+            "lineColor": "#394447",
+            "lineWidth": 1
+          }
+        },
+        {
+          "_$id": "tac_192",
+          "_$type": "GLoader",
+          "name": "icon",
+          "x": 4,
+          "y": 4,
+          "width": 60,
+          "height": 48,
+          "src": "",
+          "fitMode": 2,
+          "align": 1,
+          "valign": 1,
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_193",
+          "_$type": "Text",
+          "name": "name",
+          "x": 4,
+          "y": 50,
+          "width": 62,
+          "height": 18,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "tac_194",
+          "_$type": "Text",
+          "name": "amount",
+          "x": 40,
+          "y": 2,
+          "width": 26,
+          "height": 18,
+          "text": "",
+          "font": "Microsoft YaHei",
+          "fontSize": 12,
+          "color": "#b7bcba",
+          "valign": "middle",
+          "overflow": "hidden",
+          "mouseEnabled": false
+        }
+      ],
+      "_$comp": [
+        {
+          "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+          "templateSlot": {
+            "_$ref": "tac_191"
+          },
+          "gimg": {
+            "_$ref": "tac_192"
+          },
+          "nameText": {
+            "_$ref": "tac_193"
+          },
+          "countText": {
+            "_$ref": "tac_194"
+          }
+        }
+      ],
+      "visible": false
+    }
+  ]
+}

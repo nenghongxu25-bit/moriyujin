@@ -1,0 +1,490 @@
+{
+  "inventory": [
+    {
+      "source": "assets/decorate/forest-elements-v2/boulder-moss.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/branch-fallen.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/broadleaf.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/bush-berries.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/bush-round.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/fern.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/flowers-white.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/grass-short.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/grass-tall.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/gravel-scatter.png",
+      "role": "ground"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/leaves-dry.png",
+      "role": "ground"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/lily-pads.png",
+      "role": "groundFx"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/log-moss.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/mushrooms.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/pebbles-three.png",
+      "role": "ground"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/reeds.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/rock-moss-small.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/rocks-flat.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/rocks-round.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/roots.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/sapling-dead.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/sapling-pine.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/stump.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/tree-small.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/animals/forest-wolf-v1.png",
+      "role": "actor"
+    },
+    {
+      "source": "assets/decorate/forest/animals/forest-young-boar-v1.png",
+      "role": "actor"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-abandoned-house-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-bunker-entrance-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-cabin-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-military-checkpoint-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-military-tent-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-outhouse-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-sawmill-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-watchtower-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-broken-branches-v1.png",
+      "role": "ground"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-broken-planks-v1.png",
+      "role": "ground"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-fallen-log-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-needle-leaf-litter-v1.png",
+      "role": "ground",
+      "prefab": "assets/prefab/forest-decoration/地表_落叶.lh"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-tree-stump-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-abandoned-backpack-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-campfire-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-discarded-tire-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-extinguished-campfire-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-fuel-barrel-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-generator-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-log-pile-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-rusty-pickup-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-rusty-toolbox-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-wood-fence-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-crooked-pine-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-dead-tree-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-pine-tree-v1.png",
+      "role": "blocking",
+      "prefab": "assets/prefab/forest-decoration/阻挡_松树.lh"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-shrub-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-sparse-shrub-v1.png",
+      "role": "passable",
+      "prefab": "assets/prefab/forest-decoration/可穿过_灌木.lh"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-young-pine-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-bank-reeds-v1.png",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-muddy-bank-v1.png",
+      "role": "ground"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-rock-cliff-v1.png",
+      "role": "blocking",
+      "prefab": "assets/prefab/forest-decoration/阻挡_岩壁.lh"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-rocky-lookout-v1.png",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-wood-bridge-v1.png",
+      "role": "passable"
+    }
+  ],
+  "prefabs": [
+    {
+      "source": "assets/decorate/forest-elements-v2/boulder-moss.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_boulder-moss.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/branch-fallen.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_branch-fallen.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/broadleaf.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_broadleaf.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/bush-berries.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_bush-berries.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/bush-round.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_bush-round.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/fern.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_fern.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/flowers-white.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_flowers-white.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/grass-short.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_grass-short.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/grass-tall.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_grass-tall.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/lily-pads.png",
+      "prefab": "assets/prefab/forest-decoration/地表_lily-pads.lh",
+      "role": "groundFx"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/log-moss.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_log-moss.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/mushrooms.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_mushrooms.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/reeds.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_reeds.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/rock-moss-small.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_rock-moss-small.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/rocks-flat.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_rocks-flat.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/rocks-round.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_rocks-round.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/roots.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_roots.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/sapling-dead.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_sapling-dead.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/sapling-pine.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_sapling-pine.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/stump.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_stump.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest-elements-v2/tree-small.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_tree-small.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-abandoned-house-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-abandoned-house-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-bunker-entrance-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-bunker-entrance-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-cabin-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-cabin-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-military-checkpoint-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-military-checkpoint-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-military-tent-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-military-tent-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-outhouse-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-outhouse-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-sawmill-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-sawmill-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/buildings/forest-watchtower-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-watchtower-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-fallen-log-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-fallen-log-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/ground/forest-tree-stump-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-tree-stump-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-abandoned-backpack-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-abandoned-backpack-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-campfire-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-campfire-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-discarded-tire-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-discarded-tire-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-extinguished-campfire-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-extinguished-campfire-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-fuel-barrel-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-fuel-barrel-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-generator-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-generator-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-log-pile-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-log-pile-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-rusty-pickup-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-rusty-pickup-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-rusty-toolbox-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-rusty-toolbox-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/props/forest-wood-fence-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-wood-fence-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-crooked-pine-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-crooked-pine-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-dead-tree-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-dead-tree-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-shrub-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-shrub-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/vegetation/forest-young-pine-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-young-pine-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-bank-reeds-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-bank-reeds-v1.lh",
+      "role": "passable"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-rocky-lookout-v1.png",
+      "prefab": "assets/prefab/forest-decoration/阻挡_forest-rocky-lookout-v1.lh",
+      "role": "blocking"
+    },
+    {
+      "source": "assets/decorate/forest/waterside/forest-wood-bridge-v1.png",
+      "prefab": "assets/prefab/forest-decoration/可穿过_forest-wood-bridge-v1.lh",
+      "role": "passable"
+    }
+  ]
+}

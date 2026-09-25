@@ -1,0 +1,27 @@
+const assert=require('assert'),fs=require('fs');
+module.exports=async(evaluate,call)=>{
+ await evaluate(fs.readFileSync('.tmp/spatial-state.js','utf8'));
+ const delay=()=>new Promise(r=>setTimeout(r,200));
+ const point=async expr=>evaluate(`(()=>{const p=${expr};const rect=document.querySelector('canvas').getBoundingClientRect();return {x:rect.x+p.x*rect.width/Laya.stage.width,y:rect.y+p.y*rect.height/Laya.stage.height};})()`);
+ const cell=(v,i)=>point(`__spatialViews[${v}].gridNodes[${i}].localToGlobal(new Laya.Point(12,12))`);
+ const mouse=async(type,p)=>{await call('Input.dispatchMouseEvent',{type,...p,button:type==='mouseMoved'?'none':'left',buttons:type==='mouseReleased'?0:1,clickCount:1});await new Promise(r=>setTimeout(r,50));};
+ const click=async p=>{await mouse('mousePressed',p);await mouse('mouseReleased',p);await delay();};
+ const key=async(code)=>{await call('Input.dispatchKeyEvent',{type:'keyDown',key:code===82?'r':'Escape',windowsVirtualKeyCode:code});await call('Input.dispatchKeyEvent',{type:'keyUp',windowsVirtualKeyCode:code});};
+ const drag=async(a,b,code)=>{await mouse('mousePressed',a);await mouse('mouseMoved',{x:a.x+14,y:a.y+14});if(code)await key(code);await mouse('mouseMoved',b);await mouse('mouseReleased',b);await delay();};
+ const items=()=>evaluate('__spatialViews.map(v=>v.gridItems.map((item,index)=>item?{id:item.itemId,count:item.count,rotated:!!item.rotated,index}:null).filter(Boolean))');
+ await click(await cell(0,2));
+ await click(await point('__spatialViews[0].rotateButton.localToGlobal(new Laya.Point(20,15))'));
+ assert.equal((await items())[0].find(i=>i.id==='knife').rotated,true,'touch rotate button');
+ await drag(await cell(0,0),await cell(1,1));
+ assert.equal((await items())[1].find(i=>i.index===1).count,3,'cross-container drag');
+ const before=await items();await drag(await cell(0,2),await cell(1,0));assert.deepStrictEqual(await items(),before,'occupied drop rollback');
+ await drag(await cell(1,1),await cell(0,4));assert.equal((await items())[0].find(i=>i.index===4).count,3,'warehouse to backpack');
+ await drag(await cell(0,2),await cell(0,0),82);assert.equal((await items())[0].find(i=>i.id==='knife').rotated,false,'R while dragging');
+ const edgeBefore=await items();await drag(await cell(0,10),await cell(1,24));assert.deepStrictEqual(await items(),edgeBefore,'page boundary rejection');
+ await mouse('mousePressed',await cell(0,10));await mouse('mouseMoved',{x:600,y:250});await key(27);await mouse('mouseReleased',{x:600,y:250});await delay();assert.deepStrictEqual(await items(),edgeBefore,'Escape restores source');
+ await evaluate('__spatialViews[0].gridRoot.scroller.posY=160');await delay();
+ await drag(await cell(0,10),await cell(0,20));assert.equal((await items())[0].find(i=>i.id==='akm').index,20,'scrolled drop coordinates');
+ await evaluate(`(()=>{let panel;const walk=n=>{for(const c of n.getComponents(Laya.Script)||[])if(c.warehouseGlist)panel=c;for(let i=0;i<n.numChildren;i++)walk(n.getChildAt(i));};walk(Laya.stage);panel.onWarehousePageButtonClick(1);})()`);await delay();
+ await drag(await cell(0,20),await cell(1,0));assert.equal((await items())[1].find(i=>i.id==='akm').index,0,'second page transfer');
+ console.log('PASS UI: rotate button, drag both ways, occupied rollback, R rotation, page edge, Escape, scrolled placement, second page transfer');
+};

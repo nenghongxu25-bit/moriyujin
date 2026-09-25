@@ -1,0 +1,17 @@
+Tool: built-in image_gen.imagegen
+Final assets: assets/tileset/forest-kit-v2/forest-terrain.png and forest-props.png
+Each output is 1536x1024. TileSets are configured through MCP as 6x4 cells, 256x256 per cell.
+
+Terrain generation specification:
+Top-down forest pixel art; opaque 6x4 atlas. Upper-left 3x3 is a nine-slice grass/dirt transition, upper-right 3x3 is a nine-slice grass/water transition. Bottom row contains two grass variants, moss grass, dirt, cobblestone, gravel. Style reference: assets/tileset/forest/forest.png.
+
+Exact final terrain edit prompt:
+Edit this production tileset atlas with surgical changes ONLY. Preserve exactly1536x1024 dimensions, exact6x4 layout with256x256 cells, all terrain shapes and locations. REMOVE ALL dark straight grid/separator lines at x=256,512,768,1024,1280 and y=256,512,768. Heal each removed line with the adjacent natural texture so the dirt nine-slice panel and pond nine-slice panel are continuous ground without any grid overlay. No black borders around cells anywhere. Preserve bottom-row tile arrangement. Also reduce grass contrast slightly and remove the conspicuous white flower crosses from the ground, substituting ordinary grass texture, because flowers will be separate sprites. Do not move, rescale or rotate any terrain panel or boundary. No framing no labels no text no added objects. This is actual tiled game terrain, not a chart.
+
+Prop generation specification:
+24 distinct transparent forest sprites in a 6x4 atlas: short grass, tall grass, fern, shrub, broadleaf undergrowth, flowers; mossy stone, pebbles, boulder, flat rocks, rock cluster, gravel; stump, branch, roots, log, leaves, mushrooms; reeds, lily pads, berry bush, pine sapling, leafy tree, dead sapling. Style reference: the initial generated forest tileset concept sheet.
+
+Exact final prop edit prompt:
+Production sprite atlas correction. Keep exact1536x1024 canvas and exact6columns by4rows of256x256 cells, same24 sprites in same row-major order, same art and colors. Maintain REAL TRANSPARENT ALPHA background, no backdrop. Each cell MUST have a fully transparent margin of32pixels on all4sides. Reduce each sprite to fit inside192x192 maximum and center it inside its own cell. Especially bottom-row reed at col0, leafy tree at col4, dead sapling at col5 currently cross the horizontal y768 cut line: move them DOWN and scale them SMALLER so their topmost pixels are at y800 or later and their bottommost pixels at y992 or earlier. All other row boundaries y256,y512,y768 and column boundaries x256,x512,x768,x1024,x1280 must be fully transparent and contain NO sprite pixels. Preserve the complete roots, stems and canopy; do not crop them. Remove every colored background glow or haze: between and around sprites must be alpha0, including the32pixel margin. Sprites only, no ground discs no labels no text no grid.
+
+Validation: slice boundaries have zero pixels with alpha >32. Exact32px margins were requested but are not claimed as verified; only the actual slice boundaries were checked. Runtime screenshot is docs/forest-kit-v2-runtime.png.

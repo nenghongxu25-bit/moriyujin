@@ -1,0 +1,109 @@
+{
+  "_$ver": 1,
+  "_$id": "lgxgrw6r",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$child": [
+    {
+      "_$id": "5p6li2ob",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 1334,
+      "height": 750,
+      "src": "res://21dfa076-f83c-449f-9605-f94c9fafe451",
+      "autoSize": false,
+      "color": "#ffffff",
+      "x": 0,
+      "y": 0,
+      "anchorX": 0,
+      "anchorY": 0,
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    {
+      "_$id": "01nu257i",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 567,
+      "y": 646,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "lgxgrw6r"
+          }
+        }
+      ],
+      "scaleX": 1,
+      "scaleY": 1,
+      "width": 200,
+      "height": 80
+    },
+    {
+      "_$id": "rakvbas9",
+      "_$prefab": "23b9adb8-6418-49ed-a4d7-98cf6c7624b8",
+      "name": "JumpToScene",
+      "active": true,
+      "x": 320,
+      "y": 273,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "efc1b234-4347-4332-bdef-e97122381b78",
+          "sceneUrl": "scenes/forest.ls"
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "2kur2vy4",
+          "text": "森林",
+          "color": "#eee9d9"
+        }
+      ],
+      "scaleX": 1.5,
+      "scaleY": 1.5
+    },
+    {
+      "_$id": "xs2cv5mf",
+      "_$prefab": "23b9adb8-6418-49ed-a4d7-98cf6c7624b8",
+      "name": "JumpToScene_1",
+      "active": true,
+      "x": 730,
+      "y": 273,
+      "visible": false,
+      "_$comp": [
+        {
+          "_$override": "efc1b234-4347-4332-bdef-e97122381b78",
+          "sceneUrl": "scenes/mine.ls"
+        }
+      ],
+      "_$child": [
+        {
+          "_$override": "2kur2vy4",
+          "text": "矿区",
+          "color": "#eee9d9"
+        }
+      ],
+      "scaleX": 1.5,
+      "scaleY": 1.5
+    },
+    {
+      "_$id": "map_visual_title",
+      "_$type": "Text",
+      "name": "title",
+      "x": 52,
+      "y": 31,
+      "width": 850,
+      "height": 48,
+      "fontSize": 32,
+      "bold": true,
+      "color": "#eee9d9",
+      "text": "外出探索"
+    }
+  ]
+}

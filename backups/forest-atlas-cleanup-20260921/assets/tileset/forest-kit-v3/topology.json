@@ -1,0 +1,2695 @@
+{
+  "canonicalMasks": 47,
+  "quarterKinds": 20,
+  "materials": [
+    "grass-water",
+    "grass-dirt"
+  ],
+  "foregroundDirectionsPerMaterial": 2,
+  "masks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    25,
+    27,
+    29,
+    31,
+    35,
+    39,
+    43,
+    47,
+    59,
+    63,
+    70,
+    71,
+    78,
+    79,
+    95,
+    103,
+    111,
+    127,
+    140,
+    141,
+    142,
+    143,
+    157,
+    159,
+    175,
+    191,
+    206,
+    207,
+    223,
+    239,
+    255
+  ],
+  "patterns": [
+    {
+      "mask": 0,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 3,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 5,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 15,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 17,
+          "kind": "convex"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 0,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 2,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 12,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 14,
+          "kind": "convex"
+        }
+      ]
+    },
+    {
+      "mask": 1,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 15,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 17,
+          "kind": "convex"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 12,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 14,
+          "kind": "convex"
+        }
+      ]
+    },
+    {
+      "mask": 2,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 3,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 15,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 0,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 12,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 3,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 15,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 12,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 4,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 3,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 5,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 0,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 2,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 5,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 6,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 3,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 0,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 7,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 8,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 5,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 17,
+          "kind": "convex"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 2,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 14,
+          "kind": "convex"
+        }
+      ]
+    },
+    {
+      "mask": 9,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 17,
+          "kind": "convex"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 14,
+          "kind": "convex"
+        }
+      ]
+    },
+    {
+      "mask": 10,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 11,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 12,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 5,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 2,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 13,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 14,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 15,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 25,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 17,
+          "kind": "convex"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 14,
+          "kind": "convex"
+        }
+      ]
+    },
+    {
+      "mask": 27,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 29,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 31,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 35,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 15,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 12,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 39,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 43,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 47,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 59,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 16,
+          "kind": "horizontal"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 13,
+          "kind": "horizontal"
+        }
+      ]
+    },
+    {
+      "mask": 63,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 70,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 3,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 0,
+          "kind": "convex"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 71,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 78,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 79,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 95,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 103,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 9,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 6,
+          "kind": "vertical"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 111,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 127,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 2,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 5,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 140,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 5,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 2,
+          "kind": "convex"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 141,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 142,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 143,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 157,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 11,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 11,
+          "kind": "vertical"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 8,
+          "kind": "vertical"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 8,
+          "kind": "vertical"
+        }
+      ]
+    },
+    {
+      "mask": 159,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 175,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 191,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 0,
+          "kind": "concave"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 3,
+          "kind": "concave"
+        }
+      ]
+    },
+    {
+      "mask": 206,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 4,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 1,
+          "kind": "horizontal"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 207,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 223,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 12,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 15,
+          "kind": "concave"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 239,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 14,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 17,
+          "kind": "concave"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    },
+    {
+      "mask": 255,
+      "grassForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 10,
+          "kind": "solid"
+        }
+      ],
+      "otherForeground": [
+        {
+          "qx": 0,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 0,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 0,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        },
+        {
+          "qx": 1,
+          "qy": 1,
+          "gid": 7,
+          "kind": "solid"
+        }
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "name": "grass-island",
+      "set": "grass-water",
+      "grass": true,
+      "rows": [
+        "000000000",
+        "001111000",
+        "011011100",
+        "001111000",
+        "000000000"
+      ]
+    },
+    {
+      "name": "grass-patch-in-dirt",
+      "set": "grass-dirt",
+      "grass": true,
+      "rows": [
+        "000000000",
+        "011110000",
+        "011111110",
+        "000011110",
+        "000000000"
+      ]
+    },
+    {
+      "name": "concave-pond",
+      "set": "grass-water",
+      "grass": false,
+      "rows": [
+        "000000000",
+        "011111110",
+        "011001110",
+        "011101110",
+        "000000000"
+      ]
+    },
+    {
+      "name": "branching-dirt",
+      "set": "grass-dirt",
+      "grass": false,
+      "rows": [
+        "000010000",
+        "000010000",
+        "011111110",
+        "001000100",
+        "001000100"
+      ]
+    }
+  ]
+}

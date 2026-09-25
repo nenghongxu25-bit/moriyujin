@@ -1,0 +1,172 @@
+{
+  "_$ver": 1,
+  "_$id": "sign_in_root",
+  "_$type": "GWidget",
+  "name": "sign_in_panel",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "3e222049-733b-4ee2-a4d1-0a3ded8326da",
+      "scriptPath": "../src/PlayUI/SignIn/SignInPanel.ts",
+      "listNode": {
+        "_$ref": "k8v6t44v"
+      },
+      "templateNode": {
+        "_$ref": "a9azeaba"
+      },
+      "dayCount": 31
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "xj93j7g4",
+      "_$type": "Sprite",
+      "name": "Sprite",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "zc59zs9r",
+          "_$type": "Area2D",
+          "name": "Area2D",
+          "width": 1334,
+          "height": 750,
+          "_$child": [
+            {
+              "_$id": "k8v6t44v",
+              "_$type": "GList",
+              "name": "list",
+              "x": 180,
+              "y": 126,
+              "width": 974,
+              "height": 504,
+              "layout": {
+                "type": 3,
+                "columns": 7,
+                "columnGap": 18,
+                "rowGap": 14
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1,
+                "vScrollBarRes": {
+                  "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+                  "_$type": "Prefab"
+                }
+              },
+              "_templateNode": {
+                "_$ref": "a9azeaba",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 31,
+              "_$child": [
+                {
+                  "_$id": "a9azeaba",
+                  "_$prefab": "beae0efa-4589-4740-aecb-5704c61d02a1",
+                  "name": "bt_nojs",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true,
+                  "_$comp": [
+                    {
+                      "_$type": "253fef41-3bfb-4528-b0e7-2709ee13721f",
+                      "scriptPath": "../src/PlayUI/SignIn/SignInDayItem.ts",
+                      "iconNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "jdhjlgub"
+                        ]
+                      },
+                      "nameTextNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "5zg64bdz"
+                        ]
+                      },
+                      "amountTextNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "gj3qvj55"
+                        ]
+                      },
+                      "claimedMaskNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "v2tjsckl"
+                        ]
+                      },
+                      "lockedMaskNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "me62y2qp"
+                        ]
+                      },
+                      "dayButtonNode": {
+                        "_$ref": [
+                          "a9azeaba",
+                          "e5bji9mh",
+                          "qwk816k0"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "x": 0,
+      "y": 0,
+      "anchorX": 0,
+      "anchorY": 0,
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "texture": {
+        "_$uuid": "21dfa076-f83c-449f-9605-f94c9fafe451",
+        "_$type": "Texture"
+      }
+    },
+    {
+      "_$id": "ale854qg",
+      "_$type": "Text",
+      "name": "title",
+      "x": 52,
+      "y": 31,
+      "width": 850,
+      "height": 48,
+      "text": "每日签到",
+      "fontSize": 32,
+      "color": "#eee9d9",
+      "bold": true,
+      "align": "left",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "lgf653rx",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 567,
+      "y": 646,
+      "height": 80,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "sign_in_root"
+          }
+        }
+      ],
+      "scaleX": 1,
+      "scaleY": 1,
+      "width": 200
+    }
+  ]
+}

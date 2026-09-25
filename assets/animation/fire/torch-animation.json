@@ -1,0 +1,14 @@
+{
+  "image": "torch-flame-sheet.png",
+  "body": "../../decorate/fire/torch-body.png",
+  "columns": 4,
+  "rows": 2,
+  "frameWidth": 384,
+  "frameHeight": 512,
+  "frameCount": 8,
+  "fps": 8,
+  "loop": true,
+  "order": "row-major",
+  "composition": {"width":1254,"height":1254,"bodyX":0,"bodyY":0,"flameX":422,"flameY":105},
+  "note": "Generic atlas metadata, not a Laya .atlas file. Preload regions once and change frame at 8 fps."
+}

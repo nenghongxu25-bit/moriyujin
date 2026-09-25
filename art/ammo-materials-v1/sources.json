@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ammo-762x39",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-d1c13e97-cd1c-46ae-9316-c3e04341d92c.png",
+    "source": "art/ammo-materials-v1/originals/ammo-762x39.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "ammo-762x51",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-d9a10a09-8299-4330-a432-ca798d9bf5af.png",
+    "source": "art/ammo-materials-v1/originals/ammo-762x51.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "ammo-556x45",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-a2a6af9d-b8b4-418b-a040-7ccf451b2eee.png",
+    "source": "art/ammo-materials-v1/originals/ammo-556x45.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "ammo-545x39",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-bbb2a719-4fb4-4e9f-839d-2732b9dbe85d.png",
+    "source": "art/ammo-materials-v1/originals/ammo-545x39.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "ammo-9x19",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-501e581c-6b1b-41dd-8099-f1e430e662c9.png",
+    "source": "art/ammo-materials-v1/originals/ammo-9x19.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "modification-parts",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-81ecaf06-8f47-4d5d-9473-d1e9c9284ac4.png",
+    "source": "art/ammo-materials-v1/originals/modification-parts.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "precision-components",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-fb9a22bc-20b5-4f45-87fd-27433a0c4481.png",
+    "source": "art/ammo-materials-v1/originals/precision-components.png",
+    "gridWidth": 1,
+    "gridHeight": 1
+  },
+  {
+    "id": "repair-kit",
+    "generatedSource": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e912-7f60-95c9-b77c62934614\\exec-cdcdafb2-7961-4f73-acca-410531dbf470.png",
+    "source": "art/ammo-materials-v1/originals/repair-kit.png",
+    "gridWidth": 2,
+    "gridHeight": 1
+  }
+]

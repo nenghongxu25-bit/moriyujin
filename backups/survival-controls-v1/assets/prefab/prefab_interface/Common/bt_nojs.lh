@@ -1,0 +1,176 @@
+{
+  "_$ver": 1,
+  "_$id": "d4izll19",
+  "_$type": "GWidget",
+  "name": "bt_nojs",
+  "width": 120,
+  "height": 126,
+  "scaleX": 1,
+  "scaleY": 1,
+  "_$child": [
+    {
+      "_$id": "zfgejdrd",
+      "_$type": "GImage",
+      "name": "item",
+      "x": 60,
+      "y": 62,
+      "width": 116,
+      "height": 122,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://39096a6d-997b-4019-9457-2e9168d54fc2",
+      "autoSize": false,
+      "color": "#ffffff"
+    },
+    {
+      "_$id": "jdhjlgub",
+      "_$type": "GImage",
+      "name": "icon",
+      "x": 60,
+      "y": 57,
+      "width": 62,
+      "height": 62,
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "src": "",
+      "autoSize": false
+    },
+    {
+      "_$id": "5zg64bdz",
+      "_$type": "Text",
+      "name": "name",
+      "x": 5,
+      "y": 91,
+      "width": 110,
+      "height": 24,
+      "text": "防弹陶瓷",
+      "fontSize": 13,
+      "color": "#b6c2b3",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "gj3qvj55",
+      "_$type": "Text",
+      "name": "amount",
+      "x": 91,
+      "y": 32,
+      "width": 23,
+      "height": 20,
+      "text": "1",
+      "fontSize": 13,
+      "color": "#eee9d9",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "v2tjsckl",
+      "_$type": "Sprite",
+      "name": "mask_1",
+      "x": 4,
+      "y": 30,
+      "width": 112,
+      "height": 90,
+      "visible": false,
+      "alpha": 0.75,
+      "_gcmds": [
+        {
+          "_$type": "DrawRoundRectCmd",
+          "lt": 6,
+          "rt": 6,
+          "lb": 6,
+          "rb": 6,
+          "fillColor": "#344a3f"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "2lcn2e3v",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 112,
+          "height": 90,
+          "text": "已领取",
+          "fontSize": 17,
+          "color": "#eee9d9",
+          "bold": true,
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "me62y2qp",
+      "_$type": "Sprite",
+      "name": "mask_0",
+      "x": 4,
+      "y": 30,
+      "width": 112,
+      "height": 90,
+      "alpha": 0.75,
+      "_gcmds": [
+        {
+          "_$type": "DrawRoundRectCmd",
+          "lt": 6,
+          "rt": 6,
+          "lb": 6,
+          "rb": 6,
+          "fillColor": "#14201c"
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "fskturo6",
+          "_$type": "Text",
+          "name": "Text",
+          "width": 112,
+          "height": 90,
+          "text": "未解锁",
+          "fontSize": 17,
+          "color": "#eee9d9",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    },
+    {
+      "_$id": "e5bji9mh",
+      "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+      "name": "bt",
+      "active": true,
+      "x": 10,
+      "y": 4,
+      "scaleX": 1,
+      "scaleY": 0.5,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "3oei1uz6",
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "lineWidth": 1,
+              "lineColor": "#647565",
+              "fillColor": "#293832"
+            }
+          ]
+        },
+        {
+          "_$override": "qwk816k0",
+          "text": "第一天",
+          "color": "#eee9d9"
+        }
+      ]
+    }
+  ]
+}

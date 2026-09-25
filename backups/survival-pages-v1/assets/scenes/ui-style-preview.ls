@@ -1,0 +1,15 @@
+{
+ "_$ver":1,"_$id":"survivaluipreview","_$type":"Scene","name":"SurvivalUIStylePreview","width":1334,"height":750,
+ "_$comp":[{"_$type":"c8e09930-0428-4097-b41f-6c5b53096285","scriptPath":"../src/PlayUI/SurvivalUIStylePreview.ts"}],
+ "_$child":[
+  {"_$id":"preview_signin","_$prefab":"e44dba20-104c-4b36-9a31-db9de2fd93fe","name":"SignIn"},
+  {"_$id":"preview_battlepass","_$prefab":"f7c68002-452f-476a-8f0b-23cae147ab6c","name":"BattlePass","active":false},
+  {"_$id":"preview_workbench","_$prefab":"ba7354b5-c50c-400f-8dc6-7010cb184079","name":"Workbench","active":false},
+  {"_$id":"preview_make","_$prefab":"952f2456-5258-42ea-9928-7fa0dc233070","name":"QuickCraft","active":false},
+  {"_$id":"preview_bag","_$prefab":"8ae45e30-f989-4f5e-b586-6e6c4cdbaaee","name":"Bag","active":false},
+  {"_$id":"preview_warehouse","_$prefab":"9bf2effb-3f48-4c83-8ac7-38f62f17e5a2","name":"Warehouse","active":false},
+  {"_$id":"preview_mail","_$prefab":"a59fd96f-ba7b-4f76-9899-82f97c113bd7","name":"Mail","active":false},
+  {"_$id":"preview_shop","_$prefab":"f3702e1a-8721-41a3-ac3b-686268d448cc","name":"Shop","active":false},
+  {"_$id":"preview_map","_$prefab":"73ecaedc-782b-45f4-9ec4-b0ab7333b96c","name":"MapSelect","active":false}
+ ]
+}

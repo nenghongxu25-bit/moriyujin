@@ -1,0 +1,21 @@
+{
+  "_$ver": 1,
+  "_$id": "4c0c4b5009ad",
+  "_$type": "Sprite",
+  "name": "BrickWallLayer",
+  "_$comp": [
+    {
+      "_$type": "TileMapLayer",
+      "tileSet": {
+        "_$uuid": "0f2619bf-b974-47a1-811c-81f504087223",
+        "_$type": "TileSet"
+      },
+      "chunkDatas": {
+        "_$type": "Record"
+      }
+    },
+    {
+      "_$type": "818f8acf-a35f-42d4-b285-b2d8b67d5af8"
+    }
+  ]
+}

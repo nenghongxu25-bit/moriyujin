@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "61f38326ad03",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-rocky-lookout-v1",
+  "width": 256,
+  "height": 158,
+  "pivotX": 128,
+  "pivotY": 154,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 154
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "9772aa0a4ddc"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 38,
+      "blockY": 134,
+      "blockWidth": 180,
+      "blockHeight": 20
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "9772aa0a4ddc",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 256,
+      "height": 158,
+      "texture": {
+        "_$uuid": "9abdb935-51a2-4c33-bde8-870a683a4e87",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

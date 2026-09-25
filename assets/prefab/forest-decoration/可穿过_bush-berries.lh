@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "07c608558329",
+  "_$type": "Sprite",
+  "name": "可穿过_bush-berries",
+  "width": 192,
+  "height": 192,
+  "pivotX": 93,
+  "pivotY": 162,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 162
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "5992caafa71f"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "5992caafa71f",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "8d47768a-edba-4126-981a-7176e704de4c",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

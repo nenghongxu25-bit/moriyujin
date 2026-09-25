@@ -1,0 +1,1 @@
+(()=>{let panel;function walk(n){for(const c of n._components||[])if(c.warehouseMode===true)panel=c;for(let i=0;i<n.numChildren;i++)walk(n.getChildAt(i));}walk(Laya.stage);globalThis.weaponPanel=panel;const i=panel.node('equip_weapon').getChildByName('icon');return {type:i.constructor.name,fitSupported:'fitMode' in i,width:i.width,height:i.height};})()

@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "31934f61becc",
+  "_$type": "Sprite",
+  "name": "可穿过_sapling-pine",
+  "width": 192,
+  "height": 192,
+  "pivotX": 92,
+  "pivotY": 166,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 166
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "432cfbad7c52"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "432cfbad7c52",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "66adc7f8-a8f9-4d0c-8456-15f9c86a027a",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

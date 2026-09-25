@@ -1,0 +1,3 @@
+const fs=require('fs');const scene=JSON.parse(fs.readFileSync('assets/scenes/forest.ls','utf8').replace(/^\uFEFF/,''));
+const walk=(n,path)=>{path+='/'+n.name;if(n._$prefab&&/wall|house|墙|建筑|房/i.test(path))console.log(JSON.stringify({path,prefab:n._$prefab,children:n._$child?.length}));for(const c of n._$comp||[])if(/wall|brick/i.test(c.scriptPath||'')||c._$type==='TileMapLayer')console.log(JSON.stringify({path,comp:c.scriptPath||c._$type,tileset:c.tileSet}));for(const child of n._$child||[])walk(child,path);};walk(scene,'');
+console.log('Actor direct children',JSON.stringify(scene._$child.flatMap(n=>n._$child||[]).filter(n=>/Actor/i.test(n.name)).map(n=>({name:n.name,children:n._$child?.map(c=>({name:c.name,prefab:c._$prefab}))}))).slice(0,4000));

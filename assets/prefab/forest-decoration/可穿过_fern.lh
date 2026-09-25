@@ -1,0 +1,46 @@
+{
+  "_$ver": 1,
+  "_$id": "32128941a95d",
+  "_$type": "Sprite",
+  "name": "可穿过_fern",
+  "width": 192,
+  "height": 192,
+  "pivotX": 96,
+  "pivotY": 188,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 188
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "f708da0e86f8"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "f708da0e86f8",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "830bc6a5-3e6d-4fa1-b2bd-bc8fa7020a22",
+        "_$type": "Texture"
+      },
+      "_$comp": [
+        {
+          "_$type": "b38c8c9f-4382-48a4-904d-29878f66a31b",
+          "scriptPath": "../../../src/systems/ForestDecorationShader.ts",
+          "effect": 0,
+          "amplitude": 1.8,
+          "phase": 2.0842
+        }
+      ]
+    }
+  ]
+}

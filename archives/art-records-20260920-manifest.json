@@ -1,0 +1,757 @@
+[
+  {
+    "path": "docs/aim-arc-usage.md",
+    "size": 1397,
+    "sha256": "a4e5760c431a77981dc33338937cce89087f741b25be7149846c848c0c5f156d"
+  },
+  {
+    "path": "docs/animal-animation-preview.md",
+    "size": 10710,
+    "sha256": "86ff481cff41dc4604ee9c333beea39c6a4c394ab9281208d1cf55e82e8433ec"
+  },
+  {
+    "path": "docs/animal-behavior.md",
+    "size": 3177,
+    "sha256": "b995daed4847b24da61a520515ffe989460675f637c3825d9413431c1d7ab377"
+  },
+  {
+    "path": "docs/art-records-backup.md",
+    "size": 2452,
+    "sha256": "4ebe35ec4ac724d4684bebe2d2d3090edbc6c25132abf2a5ef0a475cfd540929"
+  },
+  {
+    "path": "docs/city-depth-occlusion.md",
+    "size": 6982,
+    "sha256": "b42850ede50570c63a234765df5da1415a65c66640acafe10a3dc720307112f5"
+  },
+  {
+    "path": "docs/deferred-sky-perspective.md",
+    "size": 1709,
+    "sha256": "570aad2b8e2947aee2a372cccfa868aab602268aeb8c152632141e6277d19f3d"
+  },
+  {
+    "path": "docs/deferred-spine-two-hand-ik.md",
+    "size": 1569,
+    "sha256": "6613b9316a48110a8900cdd9313a9a2d808cb50039b3c177b965b97cb8cfb68f"
+  },
+  {
+    "path": "docs/depth-occlusion-demo.md",
+    "size": 3047,
+    "sha256": "dc7791631f8665f5375e77973ea44fc0d2ca0061a0c3482254a146deface5af6"
+  },
+  {
+    "path": "docs/fire-light-usage.md",
+    "size": 1672,
+    "sha256": "5fd6b04ec6fe3d0bd241a6e3c2b3ef6e220c25bf9669342cfc11d0d481d5005b"
+  },
+  {
+    "path": "docs/fire-mode-switch-click-runtime.json",
+    "size": 14983,
+    "sha256": "cdf4f9a120ba9a487e13df9d44cd18404e09f1d4f1a4ad52f01a5e41b8721927"
+  },
+  {
+    "path": "docs/fire-mode-switch-runtime.json",
+    "size": 11814,
+    "sha256": "6484fe321966619e8a081bfa6534760b405f2284c728c71451c799c95c9cccdd"
+  },
+  {
+    "path": "docs/fire-mode-switch.md",
+    "size": 2333,
+    "sha256": "e58c372798b187bae85f8d35b57ee6a9226e219ec9661a77bd377be5e91841f1"
+  },
+  {
+    "path": "docs/fire-switch-color-runtime.json",
+    "size": 14863,
+    "sha256": "6c275cef2e2e2a52cb7e76c1be7df48faf7f1c9d9e51b8b9ed1cd78f7adc4ef5"
+  },
+  {
+    "path": "docs/flashlight-feather-20260917.md",
+    "size": 860,
+    "sha256": "d8d973d344fe2c88e107b5e1ceff183a6c2d8aaafe43727b50f3e78a51f3160a"
+  },
+  {
+    "path": "docs/forest-animal-preview.md",
+    "size": 2568,
+    "sha256": "6d2ebc0e7bd109b9faad61ace9c9364ded7922b1c161910a696e3cd8f487fed9"
+  },
+  {
+    "path": "docs/forest-asset-catalog.html",
+    "size": 15376,
+    "sha256": "92a91a58ecdaefb14e0aa8d66cd94669bd560aca8f94b88b702ffe3d21dbed8b"
+  },
+  {
+    "path": "docs/forest-asset-moves.json",
+    "size": 10270,
+    "sha256": "686d46e1fdcabd14c7d680ee66bd089e32278b7f92e185dbca411cbdbf132748"
+  },
+  {
+    "path": "docs/forest-decoration-layers.md",
+    "size": 2675,
+    "sha256": "2f54b0aeb9e4a69a0950e2e753790151a874a4a61a58a9a5765051e73e818408"
+  },
+  {
+    "path": "docs/forest-elements-v2-generation.md",
+    "size": 3454,
+    "sha256": "0eca548c8aff4e2c9f579342d45bf23d397d8fba05868449d645576362507893"
+  },
+  {
+    "path": "docs/forest-expansion-prompts-recovered.json",
+    "size": 5404,
+    "sha256": "8b86fd80b3f9c950b3a93a2ec2b531e2524e7fa8de3e54f4640c7d25762b7699"
+  },
+  {
+    "path": "docs/forest-grass-generation-prompt-v1.txt",
+    "size": 2481,
+    "sha256": "cfd260251c93fda9a8f79ecf378bf637c49ff8f27f288b2d6fada250449f7bd9"
+  },
+  {
+    "path": "docs/forest-image-repair-review.md",
+    "size": 5429,
+    "sha256": "257f940a4ac5ab2c88f3ce71b749ccbd1f5bdc92693787bb0dc09dd3d320ca68"
+  },
+  {
+    "path": "docs/forest-kit-v2-generation.txt",
+    "size": 3088,
+    "sha256": "8ff47e8c792ce0cf9975fb8ea1ae2fd654f3c00935f34bfd895f2c59de6f65cf"
+  },
+  {
+    "path": "docs/forest-new-preview.md",
+    "size": 3679,
+    "sha256": "1a70298fcf4c5c4ea9b5847db4f27758b1540407b7cc1f4e72df1e87e576e804"
+  },
+  {
+    "path": "docs/forest-perspective-study.md",
+    "size": 796,
+    "sha256": "47a7bf43f0c57b7f8119b68ed3ac54c4868f3dad387283ac72d61498806d57d3"
+  },
+  {
+    "path": "docs/forest-region-layout.md",
+    "size": 2875,
+    "sha256": "9cdde0b6384f1768f343d116a739008cace4365e54ae066c5902309446ba5345"
+  },
+  {
+    "path": "docs/forest-v3-generation.md",
+    "size": 3393,
+    "sha256": "700fe08c7c441cd07dd75b42479b1921c57cccd2c8188b817eb3bdf0579e041c"
+  },
+  {
+    "path": "docs/forest-water-flow.md",
+    "size": 1234,
+    "sha256": "cbbde758632cfe2dd633d99262a09e2068919b165c9b8f4b36c2b1db0c0584a7"
+  },
+  {
+    "path": "docs/forest-water-generated.md",
+    "size": 2211,
+    "sha256": "6c1787d3623c9e035b51a518f1c165a0fa54f2b95342a997e46adff8390cc715"
+  },
+  {
+    "path": "docs/ground-rain-preview.md",
+    "size": 3486,
+    "sha256": "ad9bd9e089116748897b0d618362a45eafafecdea8882e562a6b4e0912e8b220"
+  },
+  {
+    "path": "docs/ground-snow-preview.md",
+    "size": 1971,
+    "sha256": "219d378e0b33d1617846ffd4f57944f1e6f80c3bafc724df81a028a4a10c8ced"
+  },
+  {
+    "path": "docs/image-cleanup-20260919-manifest.json",
+    "size": 66831,
+    "sha256": "c82d38547cef6ba02bc7971312cf3173de788e07eb4ca4a0a6d1999b71dd211c"
+  },
+  {
+    "path": "docs/image-cleanup-20260919.md",
+    "size": 2854,
+    "sha256": "3c1e1687f19c2293ea235f50fc30c6f46c5a4fa3e5b3344c59964f227614bfee"
+  },
+  {
+    "path": "docs/image-material-layout-manifest.json",
+    "size": 31005,
+    "sha256": "adc45a95697b8c5b74244ba53da8176afc0e496aacd6539329a53f310cb669d3"
+  },
+  {
+    "path": "docs/image-material-layout.md",
+    "size": 2583,
+    "sha256": "a8bacf67a3286e5bacce7e84e892c9187cda55b2d23885a39075e5a9312ffc78"
+  },
+  {
+    "path": "docs/lightning.md",
+    "size": 2132,
+    "sha256": "227497bf4c17867ad42afa87baa708ca43a8099ce2834de062c12cd59bc14948"
+  },
+  {
+    "path": "docs/museum-props-v1-generation.md",
+    "size": 2775,
+    "sha256": "868a96672c17a8c8df03ef1469612efcddaa3eba22b9992255fa2bfcb6abd727"
+  },
+  {
+    "path": "docs/night-light-tuning-20260917.md",
+    "size": 1444,
+    "sha256": "a9588672ca2519692dcb526d1e7237673e6f170ef07e5c5cd7171696c2093cd6"
+  },
+  {
+    "path": "docs/night-lighting-performance-20260917.md",
+    "size": 5560,
+    "sha256": "89607a0a62d1878d3d7ac6a181fcc0c540f8a5e2dc4c449cf0917d8c8b955068"
+  },
+  {
+    "path": "docs/night-lighting-performance-20260917.raw.json",
+    "size": 92659,
+    "sha256": "c012aa7947243e13910988ff0e00ba5e2423ae4b32f0f3a900b695c14c3bb3ba"
+  },
+  {
+    "path": "docs/night-lighting-performance-fix-20260917.md",
+    "size": 3361,
+    "sha256": "bcd74fabb1ef2fbbfbaf76f988f4bd2a850bff611eae6c268b1f91f24e449fd0"
+  },
+  {
+    "path": "docs/night-lighting-performance-fixed-active.raw.json",
+    "size": 94497,
+    "sha256": "352d7ccac388524e648900cdf07f3d9ce2fe7d3c3cf6aa15b2d81a737c876e9c"
+  },
+  {
+    "path": "docs/night-lighting-performance-fixed-background.raw.json",
+    "size": 61857,
+    "sha256": "4d5ae2c6c5c112813804e67a4954e944c03cebfbbe91e296d709c2d85d865fea"
+  },
+  {
+    "path": "docs/resource_path_note_2026-08-11.md",
+    "size": 884,
+    "sha256": "f09648db292f4559376b23b3adbc25d53de607d5e6712cef0bd2ff7ed19a5477"
+  },
+  {
+    "path": "docs/room-flashlight-regression.raw.json",
+    "size": 26665,
+    "sha256": "2cd7bca17766fcf692714bbb6d817fbe56f5b1081ee95d9e0fa4b030d29b2e9c"
+  },
+  {
+    "path": "docs/room-inside-alpha-regression.raw.json",
+    "size": 37480,
+    "sha256": "f9f286a198716a54efabafdefb41fb4b04b188dfc80df644c395b4872b6866ae"
+  },
+  {
+    "path": "docs/roomnight-fade-regression.raw.json",
+    "size": 19152,
+    "sha256": "4664bbc8d1e2e4fd5b74050d17ab5b42082217e23ae598eb7931e47eee2a28c7"
+  },
+  {
+    "path": "docs/roomnight-regression-20260917.raw.json",
+    "size": 19192,
+    "sha256": "a96291268e0f2545c51213a311e38c55c8f221682810c47924aa53e1c427dfda"
+  },
+  {
+    "path": "docs/roomnight-soft-edge-regression.raw.json",
+    "size": 19128,
+    "sha256": "3e3cc94251d983b82363eb580f32442761b8f0318a7546a72497767d50dd7c88"
+  },
+  {
+    "path": "docs/roomnight-usage.md",
+    "size": 5688,
+    "sha256": "7f1877126863f439a45fa6724cd2689ffa5652972c68e15c005fac7c6db38863"
+  },
+  {
+    "path": "docs/search_animation_issue.md",
+    "size": 1052,
+    "sha256": "060d66d8319d836867f7cfa90edb86eb0d0f3765d277c405fcb0fdf3f2a704af"
+  },
+  {
+    "path": "docs/survival-hud-v1.md",
+    "size": 1314,
+    "sha256": "ef2016c260e266624d4749348478cf692ddf539afcbd70a17db7a759194b0740"
+  },
+  {
+    "path": "docs/survival-pages-v1.md",
+    "size": 3108,
+    "sha256": "5ca6f047a10ffd6b35f3b0cac34caaf55ba7b0127385bbc22fb61c72703c12af"
+  },
+  {
+    "path": "docs/terrain-transition-standard.md",
+    "size": 3671,
+    "sha256": "93141852141a0518cad98b27213bbd88ea2074f4d68693b69672fb1ba4936ea8"
+  },
+  {
+    "path": "docs/urban-kit-v1-generation.md",
+    "size": 4797,
+    "sha256": "f881872bfc3c4d3aa6561b90584aea1e08395d1fe9c3ea380105ec50d59e9f74"
+  },
+  {
+    "path": "docs/urban-props-v2-generation.md",
+    "size": 2839,
+    "sha256": "868494684012f004d28d0c88beb22126671f245b61a8aedecff1a5929eb185a9"
+  },
+  {
+    "path": "docs/weapon-aim-modes.md",
+    "size": 3053,
+    "sha256": "64d5b6dc6f630c1b546d80528ce2819c8aaab039f4511b091af9817750495ddd"
+  },
+  {
+    "path": "docs/weapon-input-runtime.raw.json",
+    "size": 7130,
+    "sha256": "ca37a4c664b7c4d878c55fa232669e92d7ff01029107e458959eea32001cd121"
+  },
+  {
+    "path": "docs/weapon-rpm-runtime.json",
+    "size": 13214,
+    "sha256": "6b215be1e8e6ad9b08b3253f3beb6e929b1574387f322e9cd450248aa17e79b8"
+  },
+  {
+    "path": "docs/weather-motion-diagnosis.md",
+    "size": 4371,
+    "sha256": "df589946251ca212d3dd666faacf4f0fb0676079d76068de6187f50a5aec1439"
+  },
+  {
+    "path": "docs/weather-screen-verification.json",
+    "size": 5049,
+    "sha256": "93cf2d11c40486d86f929be04a993ea90408c60b8cae883b47e75105b17a88cd"
+  },
+  {
+    "path": "docs/world-scene-layers.md",
+    "size": 3032,
+    "sha256": "f6d42e2aa3195d836f956e593c51e571496e770800bbf0dfb49f061611bc8cad"
+  },
+  {
+    "path": "assets/forest-generation-records/expansion-v1/README.md",
+    "size": 1536,
+    "sha256": "0e3e223209ed0e12eed3b135f0e7bb892d9ee985e94f0e5719fe0adeab7f47af"
+  },
+  {
+    "path": "assets/forest-generation-records/expansion-v1/rock-cliff-prompt.txt",
+    "size": 996,
+    "sha256": "588bbcb6f4d5f5981864946b42c1add5cd641b1d1676184ef530644cde71876b"
+  },
+  {
+    "path": "archives/cozy-isometric-study/assets/isometric-study/generation-prompt.txt",
+    "size": 1678,
+    "sha256": "0e2b912b805962742993a1fe5b35cbc29e96ac05e731df16facf7f8f2080fc8d"
+  },
+  {
+    "path": "archives/cozy-isometric-study/assets/isometric-study/README.md",
+    "size": 1043,
+    "sha256": "2912a21ec33de171b78f1702293c68cc0fa8f179b3cf3d3af7a3462b25cf0056"
+  },
+  {
+    "path": "archives/cozy-isometric-study/README.md",
+    "size": 1028,
+    "sha256": "f99206c0a43f67d07354a53d00e432dc896a33c9a583e3948fe1bab57c3ff063"
+  },
+  {
+    "path": ".tmp/actor-groups/forest-before.json",
+    "size": 274567,
+    "sha256": "6080e430e7d91495a8666968f47b863f06219183bcf1014d29b849cfcb784fed"
+  },
+  {
+    "path": ".tmp/add-forest-cliff.cjs",
+    "size": 928,
+    "sha256": "b2057f7bbdc1231e8fefd466e5e48632cd4bca1e68bd930fbbe4048e9d2f848d"
+  },
+  {
+    "path": ".tmp/animal-animation-jobs.json",
+    "size": 12672,
+    "sha256": "aefa04bad3d7c8337f02142a65575bf9d9f96eb3ff7c432d3a7f87a95ea0bc61"
+  },
+  {
+    "path": ".tmp/archive-forest-sources.ps1",
+    "size": 1189,
+    "sha256": "333a25ec7c52fcdabeddb07e096148759a8159f10676e95027024e482e56f750"
+  },
+  {
+    "path": ".tmp/audit-images.cjs",
+    "size": 2461,
+    "sha256": "98e955644523e9201b696aae92f7cc41adfcbf2182b333dc71e6688e7a6dd2e4"
+  },
+  {
+    "path": ".tmp/build-animal-apng.cjs",
+    "size": 3255,
+    "sha256": "8ab3b81327296d01fef7c2c8cc570710e7288cbccdaea87526641f87bcb6e642"
+  },
+  {
+    "path": ".tmp/build-forest-expansion.cjs",
+    "size": 1259,
+    "sha256": "1d7ea5f4bedde68a1bbd88cee99fea56067ba7fa9a8b9900ba6ad3bfdb158798"
+  },
+  {
+    "path": ".tmp/build-forest-hd-preview.cjs",
+    "size": 1311,
+    "sha256": "13738688b7a6c5006eac4d6178d1c3d8e0e4bce0758bca3a178d0e60e7ded637"
+  },
+  {
+    "path": ".tmp/build-forest-kit-v2.cjs",
+    "size": 3262,
+    "sha256": "168fb09c62bd997c8446879a689b3f0965f45f6e83f302f00348e6cfc722b0df"
+  },
+  {
+    "path": ".tmp/build-forest-style-preview.cjs",
+    "size": 1068,
+    "sha256": "05c4a913adce8f5d86077a9c9118c6ab6e4f2e01382fd717b484507887f90a90"
+  },
+  {
+    "path": ".tmp/classify-image-layout.cjs",
+    "size": 4081,
+    "sha256": "17b3bedc715450d83aead360fc7fe414878290ac857700eef508d4356db4779e"
+  },
+  {
+    "path": ".tmp/clean-forest-fragments.ps1",
+    "size": 3572,
+    "sha256": "ef6b994722f9c08bd9733fc063d7df16a6f6bfc0a857f9d83e55e183fd86e72a"
+  },
+  {
+    "path": ".tmp/export-animal-animation.ps1",
+    "size": 4810,
+    "sha256": "a83cc77571ab6ce8876a8ec8486ebc7fbe2f5a3707d487a9677235e384df7f31"
+  },
+  {
+    "path": ".tmp/forest-animal-generation.json",
+    "size": 2215,
+    "sha256": "30a194bb2da4815c4a98d2a84e7e44033e5a482c4c3fbc4bf2cb798e964c0540"
+  },
+  {
+    "path": ".tmp/forest-asset-categories.json",
+    "size": 1022,
+    "sha256": "6e2f4302f9c6f5745d6b6739bbcd48c53ae7efcfbeaab81e56d0316b4fbaea5f"
+  },
+  {
+    "path": ".tmp/forest-elements-check.json",
+    "size": 3165,
+    "sha256": "37a9983541b877d44f808f17818c73a0ed2d901ed29f75bcdd93a3b5d770a8b1"
+  },
+  {
+    "path": ".tmp/forest-elements-imports.jsonl",
+    "size": 27530,
+    "sha256": "757d761b889e694d64bad07d233f3579880ece66aa9c4d06574bbd30879c56ed"
+  },
+  {
+    "path": ".tmp/forest-elements-v2/manifest.json",
+    "size": 8361,
+    "sha256": "6623f6c874953784b14cce286bd5ab67a2f1173a4b75ba2b60e050de4e9dfda0"
+  },
+  {
+    "path": ".tmp/forest-elements-v2-cut/manifest.json",
+    "size": 8390,
+    "sha256": "58c291b018b66e9857fd62180779eb0c0bf1496c9c3ee403f252bebc630623f0"
+  },
+  {
+    "path": ".tmp/forest-elements-v2-final/manifest.json",
+    "size": 8361,
+    "sha256": "658096993d77e5968f0f55aa8064fa6f5db3ca7e953fd692209972b5a57a742d"
+  },
+  {
+    "path": ".tmp/forest-iso/edit.json",
+    "size": 8355,
+    "sha256": "aa4cd018521bc46393080ab67ce765581eaf369c797d1772aa69d20e121888f2"
+  },
+  {
+    "path": ".tmp/forest-iso/region.json",
+    "size": 2278,
+    "sha256": "e495926899ea5b06c5e1d3fccb48bffab5d297fda9f50cba3d422de4e4f35eb3"
+  },
+  {
+    "path": ".tmp/forest-kit-v2-requests.json",
+    "size": 34334,
+    "sha256": "af28fdb4cf14280f8e7e7ce44fc427d4a4a71845c471a06ccdf4fc8dd8ba5107"
+  },
+  {
+    "path": ".tmp/forest-native-iso/requests.json",
+    "size": 40400,
+    "sha256": "157defc550adcf87992b8d5422ec5db9d6319b855bc8ac8bb316e1bb7225538d"
+  },
+  {
+    "path": ".tmp/forest-new-generation.json",
+    "size": 3493,
+    "sha256": "ef3939631ca16f652ed0bbcec69c12ae2cec1831d7b4bb3e434655cdaafaf0f3"
+  },
+  {
+    "path": ".tmp/forest-v3-requests.json",
+    "size": 61035,
+    "sha256": "fc10d39ef767b9d57f9738c797777c296a81e9874b47a93a723a5a8068293c4e"
+  },
+  {
+    "path": ".tmp/grass-asset-requests.json",
+    "size": 12750,
+    "sha256": "2a13787bb873142a9878795aec8e7636e84ebf0a9015ff55cea7efc931171220"
+  },
+  {
+    "path": ".tmp/grass-selection.json",
+    "size": 45,
+    "sha256": "2bf6bb9b25d84f188bf678fb0b04b7c862e27595c5b5e44b3f29874b61c6b3a2"
+  },
+  {
+    "path": ".tmp/image-audit.json",
+    "size": 710493,
+    "sha256": "1a5c893f9f80b3ff7f7c2be760c9510fbf77397e73a46a7b81921a29929be1dc"
+  },
+  {
+    "path": ".tmp/image-cleanup-backup-20260919/before/assets/atlas/picture/draw/campfire-animation.json",
+    "size": 514,
+    "sha256": "a16cffa75543c439fe4ee6ea91a70f9727271f4fb715d34127c51f060adf86af"
+  },
+  {
+    "path": ".tmp/image-cleanup-backup-20260919/before/assets/atlas/picture/draw/torch-animation.json",
+    "size": 412,
+    "sha256": "de222b247aff5d5854910aaee350a6d23abd2576523c3c970ffb11a62d67d36e"
+  },
+  {
+    "path": ".tmp/image-cleanup-backup-20260919/before/assets/config/items/foods.json",
+    "size": 10107,
+    "sha256": "34746d661ec9e30d011ec25d4c53998e06ddc9a643f936d370d4ab08e71cc326"
+  },
+  {
+    "path": ".tmp/image-cleanup-backup-20260919/before/assets/config/items/materials.json",
+    "size": 18749,
+    "sha256": "a8bea60817996bfde0752753dc4204af42099cc4f96ac1ea64b83979f0f7661f"
+  },
+  {
+    "path": ".tmp/image-cleanup-backup-20260919/before/assets/config/items/misc.json",
+    "size": 5188,
+    "sha256": "c443a537de8709a92c3448bad403cc37c6ed68e56a98d80f7b84770ba649e62e"
+  },
+  {
+    "path": ".tmp/image-cleanup-backup-20260919/before/settings/BuildSettings.json",
+    "size": 8567,
+    "sha256": "0beb4bbf13406ae3973d0a2f2d2f63ae68bc6fe8b4d5e271f1fd91271b552cad"
+  },
+  {
+    "path": ".tmp/image-cleanup-changed.json",
+    "size": 353,
+    "sha256": "657270fdbaf10821f22fa6ed5b137175ba31bf29418cb3a064435dbc606cff21"
+  },
+  {
+    "path": ".tmp/image-cleanup-plan.json",
+    "size": 66831,
+    "sha256": "c82d38547cef6ba02bc7971312cf3173de788e07eb4ca4a0a6d1999b71dd211c"
+  },
+  {
+    "path": ".tmp/image-cleanup-verification.json",
+    "size": 245,
+    "sha256": "46e50703106d6ed9eba56ef3e8535e860982c01988ea222b5b0df5ab27cef325"
+  },
+  {
+    "path": ".tmp/image-layout-backup-20260919/before/assets/atlas/picture/effects/fire/campfire-animation.json",
+    "size": 514,
+    "sha256": "a16cffa75543c439fe4ee6ea91a70f9727271f4fb715d34127c51f060adf86af"
+  },
+  {
+    "path": ".tmp/image-layout-backup-20260919/before/assets/atlas/picture/effects/fire/torch-animation.json",
+    "size": 412,
+    "sha256": "de222b247aff5d5854910aaee350a6d23abd2576523c3c970ffb11a62d67d36e"
+  },
+  {
+    "path": ".tmp/image-layout-backup-20260919/before/assets/atlas/picture/interacts/containers/old_safe_open/animation.json",
+    "size": 146,
+    "sha256": "b0aa7448712ac554fc31c31e126358cf96e1174aab42555b19cd7b71856f02f1"
+  },
+  {
+    "path": ".tmp/image-layout-plan.json",
+    "size": 31005,
+    "sha256": "adc45a95697b8c5b74244ba53da8176afc0e496aacd6539329a53f310cb669d3"
+  },
+  {
+    "path": ".tmp/import-forest-animals.ps1",
+    "size": 809,
+    "sha256": "61517fb855a7f279c3431b49963e547a33024bc2f050ba769542efc39f33f9e1"
+  },
+  {
+    "path": ".tmp/import-new-forest-previews.ps1",
+    "size": 899,
+    "sha256": "f407c29b5e5be2847290d82e99e77b07b76ae0266d7f073af4d1f7f7fbcd31f2"
+  },
+  {
+    "path": ".tmp/inspect-forest-components.ps1",
+    "size": 1306,
+    "sha256": "523c580d2adb10fe1b4f2969ac6822b44443898fba0b2f44689a5ace29c8cac5"
+  },
+  {
+    "path": ".tmp/move-image-assets.ps1",
+    "size": 1874,
+    "sha256": "b655dc108a89cfd1400233394a69cf4d6a66d6bfeba80373d13103a8c76e0e15"
+  },
+  {
+    "path": ".tmp/museum-preview-request.json",
+    "size": 2031,
+    "sha256": "6f5df5b27631d74f31aec066794091f9b1d5a1bd258d2d8d3dbcf0f2e20de9e1"
+  },
+  {
+    "path": ".tmp/prepare-image-cleanup.cjs",
+    "size": 4589,
+    "sha256": "071a6c17e811e96594fd1644820ce4f6871d9e8ae880ed0f285a8ca2294b58af"
+  },
+  {
+    "path": ".tmp/remove-empty-image-folders.ps1",
+    "size": 1889,
+    "sha256": "173502fc06cd2d6658671a8370f7b97660c567b0c724909f52b1393ef7906c78"
+  },
+  {
+    "path": ".tmp/resize-forest-assets.ps1",
+    "size": 4052,
+    "sha256": "9f302c84ffc40c03572d221efaa5a9490486cfca93741828ea4febeddd26d449"
+  },
+  {
+    "path": ".tmp/restore-forest-crops.ps1",
+    "size": 3055,
+    "sha256": "3844f52516c62a4c7238438b57dcb99f8b3c958aeb6f65b9ec22b7f6d2add99e"
+  },
+  {
+    "path": ".tmp/rewrite-image-references.cjs",
+    "size": 1712,
+    "sha256": "113d42b8c8920eac8657931fd0acc574d6ad1e59365c3ca958d5461b74b3f40b"
+  },
+  {
+    "path": ".tmp/setup-forest-decoration.cjs",
+    "size": 3580,
+    "sha256": "5e5976b9c93b2219d976f4e55c06ddcba3b9c7d28d0bc3371f092f560015b71c"
+  },
+  {
+    "path": ".tmp/test-scene-cleanup.json",
+    "size": 2556,
+    "sha256": "108d9c5eb1d22df4bf33227f0c12ed6ee5b04b9af8989f1574fd1f8b40b586db"
+  },
+  {
+    "path": ".tmp/urban-preview-request.json",
+    "size": 3194,
+    "sha256": "3b780e11f357f53f4541133ccf132404f0f5602d90e54bab3c09800de54508ba"
+  },
+  {
+    "path": ".tmp/urban-props-preview-request.json",
+    "size": 2566,
+    "sha256": "6e8c9cb114423c4547807b8ccdc5cb53467729eea39191437c6262d30c37ab7f"
+  },
+  {
+    "path": ".tmp/verify-image-cleanup.cjs",
+    "size": 4159,
+    "sha256": "30f23ca1184602c234a69d409aade4583759a6cebb76c97c441bd538cc53a6b2"
+  },
+  {
+    "path": ".tmp/verify-image-layout.cjs",
+    "size": 1973,
+    "sha256": "d9cb841f4e255960eef954301fa8d58b928877323ccd610c096ea702b48e5750"
+  },
+  {
+    "path": ".tmp/world-layers/forest-before.json",
+    "size": 275822,
+    "sha256": "1e5d3fd3198dfdecb09147f2e41326bf1b4e550a31453d6c3518fe831cb00b7e"
+  },
+  {
+    "path": "tools/apply-forest-transition-bands.ps1",
+    "size": 3374,
+    "sha256": "5822e6604440afd300616c2e5c5540d9765841f8934b6737a4ee1c6ea9102aea"
+  },
+  {
+    "path": "tools/apply_forest_center_2_2_cover.ps1",
+    "size": 1719,
+    "sha256": "7674c5cf52afaee7751cf2573bd935846bae59a3f9e5563f0c3638ea13f0f609"
+  },
+  {
+    "path": "tools/apply_forest_complement_cover_2_2.ps1",
+    "size": 4041,
+    "sha256": "30f5d1252574ebb67b652ca8863a2d1e0c88443596d9623a15c5c94ff4ef7f7a"
+  },
+  {
+    "path": "tools/apply_forest_cover_once.ps1",
+    "size": 2466,
+    "sha256": "c0b70701924dd950b280fcab3151021bdbf0ba638ba1543d17c6ce66b2535595"
+  },
+  {
+    "path": "tools/apply_forest_cover_rotations_only.ps1",
+    "size": 3971,
+    "sha256": "03d0e1fd1eada0a2bbfcbf8d15a2d1dbd67a30665b7f52b649e51335f62b0f67"
+  },
+  {
+    "path": "tools/apply_forest_local_rotated_tiles_1_1_2_1.ps1",
+    "size": 4231,
+    "sha256": "0fcd4c0607ae56db9b31656706f2ed96ba84d4ef0b69aa345dc2a3f98cb721da"
+  },
+  {
+    "path": "tools/apply_forest_local_rotations_1_1_2_1.ps1",
+    "size": 3485,
+    "sha256": "bcd578558b282df24784b867f187e6a6dbfd2c25b46fe1a27a5285d0178f2343"
+  },
+  {
+    "path": "tools/apply_forest_rotated_cover.ps1",
+    "size": 3885,
+    "sha256": "239ca7d44816b25abd4994a05e1dcd674ab95f4db90dd0930afcd1c74cf7c200"
+  },
+  {
+    "path": "tools/bake-forest-diamond-hd.ps1",
+    "size": 1888,
+    "sha256": "8923fc19c49cdd025ecaa23e4134d554b36a4182c7b795947cb3d72f6c16079f"
+  },
+  {
+    "path": "tools/bake-forest-diamond-tiles.ps1",
+    "size": 1852,
+    "sha256": "55d57d8f6aa5914c34621bbccdd556e31d266feb77ec695a7571f4a908011156"
+  },
+  {
+    "path": "tools/bake_forest_tiles.js",
+    "size": 4587,
+    "sha256": "9ee8de8faf1838680f41ef14ebf10a439bbaa3f8b49e4c4dd0a4cf68815bb0ff"
+  },
+  {
+    "path": "tools/build-current-forest-isometric.cjs",
+    "size": 3193,
+    "sha256": "4717aa333b1206402c1947571732a956ca8436e2a539c122ad7a1d94f1fb43c5"
+  },
+  {
+    "path": "tools/build-forest-cliffs.cjs",
+    "size": 4036,
+    "sha256": "7be0c75e4cb3be32255ab1646c6aa2287c141d91a37693b24c49c1f59526a5b6"
+  },
+  {
+    "path": "tools/build-forest-transitions-v3.cjs",
+    "size": 6042,
+    "sha256": "3c8ed5146b3f8220ea0ce98ccae42d2e86fdfc2774c4de239c71b736b9ad3556"
+  },
+  {
+    "path": "tools/configure-forest-native-isometric.cjs",
+    "size": 2553,
+    "sha256": "7a0530ceee5e38162767e91c7f83b9ef821af4918f7b1784bd62fae72a9ba297"
+  },
+  {
+    "path": "tools/irregular-forest-terrain.ps1",
+    "size": 3103,
+    "sha256": "8c305e99e84a9792698568a45044781463bf7d219df686eccc96f2bc8f653eb8"
+  },
+  {
+    "path": "tools/rebuild_forest_no_texture_rotation.ps1",
+    "size": 4655,
+    "sha256": "b6b6d0754c7c6fb8a49768e592379ed28e58108434d93d82fa0dd8859bf293f4"
+  },
+  {
+    "path": "tools/replace-forest-water.ps1",
+    "size": 3795,
+    "sha256": "8944f494bb79f24515406dbb5eb880cbdccb6d15c5bf021bbbbd3bd636664707"
+  },
+  {
+    "path": "tools/restyle-forest-atlas.ps1",
+    "size": 2576,
+    "sha256": "826d90c9a1f5f1f0babd8e06828b85902ba5e3b9a2749b78d8349b2cbb9e9dc9"
+  },
+  {
+    "path": "tools/round-forest-terrain.ps1",
+    "size": 2827,
+    "sha256": "a60fcce823846bd8a8fb6871daa6127d0faa947f5f7502d1253ee125eb22cb97"
+  },
+  {
+    "path": "tools/split-forest-props.ps1",
+    "size": 4167,
+    "sha256": "3e6f7d25f27d194a6af1095c4ff87dade0940a34a3bff9928a26c66b5d3aae15"
+  },
+  {
+    "path": "tools/test-forest-water-flow.cjs",
+    "size": 2296,
+    "sha256": "d45697454f29bfedb42e0bebfc41d53ac59407e54bbe32c43d9080bd362e268d"
+  },
+  {
+    "path": "tools/test-forest-weather-mask.cjs",
+    "size": 3423,
+    "sha256": "77de214f95eb7ad689949ede3cc1495b26dbb21524b0dd96292c1ff476a69aa1"
+  },
+  {
+    "path": "archives/test-scenes-cleanup-20260920.zip",
+    "size": 40689,
+    "sha256": "62dcfaac6063e20e0fec2e33e69254e9d22d4c64897fc6505c6d6002c0c26946"
+  },
+  {
+    "path": "archives/test-scenes-cleanup-20260920.json",
+    "size": 2556,
+    "sha256": "108d9c5eb1d22df4bf33227f0c12ed6ee5b04b9af8989f1574fd1f8b40b586db"
+  }
+]

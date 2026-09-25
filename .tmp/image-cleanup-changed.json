@@ -1,0 +1,11 @@
+[
+  "src/PlayUI/BattlePass/BattlePassPanel.ts",
+  "src/systems/data/CraftingManager.ts",
+  "src/systems/data/ItemDataManager.ts",
+  "src/systems/data/MailManager.ts",
+  "src/systems/data/QuickMakeManager.ts",
+  "assets/config/items/foods.json",
+  "assets/config/items/materials.json",
+  "assets/config/items/misc.json",
+  "settings/BuildSettings.json"
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "path": "assets/decorate/city/museum-props-v1/museum-props-preview.ls",
+    "uuid": "90060e48-ab6b-484b-8672-0d5ffea2f7e7",
+    "references": []
+  },
+  {
+    "path": "assets/decorate/city/urban-kit-v1/urban-elements-preview.ls",
+    "uuid": "aa530887-a708-4a5d-946e-3757e6cea820",
+    "references": []
+  },
+  {
+    "path": "assets/decorate/city/urban-props-v2/urban-props-preview.ls",
+    "uuid": "0d4be67e-cf51-4e84-9a12-530a5d3eb47d",
+    "references": []
+  },
+  {
+    "path": "assets/forest-expansion-preview.ls",
+    "uuid": "ef3f63d1-b5c6-4b39-9fa3-d225f545f122",
+    "references": []
+  },
+  {
+    "path": "assets/forest-isometric-study/forest-isometric-study.ls",
+    "uuid": "19985c3f-abba-4a0c-8d42-1866f1209999",
+    "references": []
+  },
+  {
+    "path": "assets/forest-style-hd-preview.ls",
+    "uuid": "4d503d6c-3a54-4177-b11e-94b73b2ad23b",
+    "references": []
+  },
+  {
+    "path": "assets/forest-style-v2-preview.ls",
+    "uuid": "9d1e764b-153e-4827-88fb-e83ad3eca2e0",
+    "references": []
+  },
+  {
+    "path": "assets/isometric-study/isometric-study.ls",
+    "uuid": "305948e5-aaab-451e-92a5-479073fe30ec",
+    "references": []
+  },
+  {
+    "path": "assets/scenes/animal-behavior-test.ls",
+    "uuid": "13e0a173-96e7-4ef9-9291-135944a71213",
+    "references": []
+  },
+  {
+    "path": "assets/scenes/depth_occlusion_demo.ls",
+    "uuid": "944d0d1d-3330-4e40-b6e8-e41c81c21cab",
+    "references": []
+  },
+  {
+    "path": "assets/scenes/ui-style-preview.ls",
+    "uuid": "742e7f36-337c-4565-8d9f-e390ab90b1b1",
+    "references": []
+  },
+  {
+    "path": "assets/tileset/forest-cliffs-v1/forest-cliff-demo.ls",
+    "uuid": "b4353ba9-5022-4a33-991b-3314b685a54d",
+    "references": []
+  },
+  {
+    "path": "assets/tileset/forest-kit-v2/forest-kit-demo.ls",
+    "uuid": "9716f249-7489-4abe-a08d-d86aab8bdc91",
+    "references": []
+  },
+  {
+    "path": "assets/tileset/forest-kit-v3/terrain-47-patterns.ls",
+    "uuid": "1e5e9994-7013-4016-abb8-295c5b772324",
+    "references": []
+  },
+  {
+    "path": "assets/tileset/forest-kit-v3/terrain-transitions-demo.ls",
+    "uuid": "6486dc28-f279-4671-800c-be876db4d2df",
+    "references": []
+  },
+  {
+    "path": "assets/tileset/forest-reusable/grass-reuse-test.ls",
+    "uuid": "159b2468-2cad-49bb-9626-2d3b868f93ef",
+    "references": []
+  },
+  {
+    "path": "assets/weather-rain-demo.ls",
+    "uuid": "fe284301-2a61-4c4a-8d31-b83048fc969c",
+    "references": []
+  },
+  {
+    "path": "assets/weather-snow-demo.ls",
+    "uuid": "2ef85d7c-f1b4-4d2b-b8aa-10ed2b0e7010",
+    "references": []
+  }
+]

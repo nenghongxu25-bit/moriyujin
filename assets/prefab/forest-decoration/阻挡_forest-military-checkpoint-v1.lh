@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "f72ce8d43901",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-military-checkpoint-v1",
+  "width": 256,
+  "height": 139,
+  "pivotX": 128,
+  "pivotY": 132,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 132
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "daae8d73f8e6"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 39,
+      "blockY": 116,
+      "blockWidth": 178,
+      "blockHeight": 16
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "daae8d73f8e6",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 256,
+      "height": 139,
+      "texture": {
+        "_$uuid": "c8ec31c2-ac52-4ccf-8391-80684d2acdee",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

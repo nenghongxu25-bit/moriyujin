@@ -1,0 +1,28 @@
+const fs=require('fs'),assert=require('assert');
+(async()=>{
+ const tabs=await(await fetch('http://localhost:9234/json')).json();const ws=new WebSocket(tabs.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise(r=>ws.addEventListener('open',r));let seq=0;const pending=new Map();ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}};
+ const call=(method,params={})=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+ const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+ const delay=()=>new Promise(r=>setTimeout(r,300));
+ await ev(fs.readFileSync('.tmp/preview-remastered-weapons.js','utf8'));
+ await ev(`(()=>{function walk(n){for(const c of n._components||[])if(c.warehouseMode===true)globalThis.p=c;for(let i=0;i<n.numChildren;i++)walk(n.getChildAt(i));}walk(Laya.stage);p.dm.equipGridItem('active',p.dm.getInventorySnapshot().findIndex(i=>i?.itemId==='akm'),'weapon');p.refresh();})()`);
+ const point=expr=>ev(`(()=>{const q=${expr}.localToGlobal(new Laya.Point(20,16)),r=document.querySelector('canvas').getBoundingClientRect();return {x:r.x+q.x*r.width/Laya.stage.width,y:r.y+q.y*r.height/Laya.stage.height};})()`);
+ const click=async n=>{const q=await point(`p.node('${n}')`);for(const type of ['mousePressed','mouseReleased'])await call('Input.dispatchMouseEvent',{type,...q,button:'left',clickCount:1});await delay();};
+ await click('showStatus');assert(await ev("p.node('playerStatusZone').visible"));
+ await ev("p.dm.setPlayerHp(65,100);p.dm.setPlayerStamina(22,100);p.dm.setPlayerSurvivalStats(18,24,100,100)").catch(async()=>{await ev("p.dm.playerStats.setSurvivalStats(18,24,100,100)");});await delay();
+ assert.equal(await ev("p.node('hpValue').text"),'65 / 100');assert.equal(await ev("p.node('hpFill').width"),327.6);
+ assert((await ev("p.node('conditionText').text")).includes('缺水'));
+ fs.writeFileSync('docs/extraction-layout-top.png',Buffer.from((await call('Page.captureScreenshot',{format:'png'})).data,'base64'));
+ const q=await point("p.node('loadoutScroll')");await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:q.x+400,y:q.y+200,deltaX:0,deltaY:550});await delay();assert(await ev("p.node('loadoutScroll').scroller.posY>0"),'wheel scroll');
+ await click('scrollBag');assert(await ev("Math.abs(p.node('loadoutScroll').scroller.posY-p.node('carryTitle').y)<1"),'bag shortcut');
+ await click('showStorage');assert(await ev("p.node('storageZone').visible&&!p.node('playerStatusZone').visible"));
+ fs.writeFileSync('docs/extraction-layout-storage.png',Buffer.from((await call('Page.captureScreenshot',{format:'png'})).data,'base64'));
+ const before=await ev("p.dm.getWarehouseSnapshot().filter(i=>i?.itemId==='geluoke').length");
+ const gun=await ev("p.dm.getInventorySnapshot().findIndex(i=>i?.itemId==='geluoke')");
+ const gunPoint=await point(`p.bagGlist.gridNodes[${gun}]`);
+ for(const type of ['mousePressed','mouseReleased'])await call('Input.dispatchMouseEvent',{type,...gunPoint,button:'left',clickCount:1,modifiers:2});await delay();
+ assert.equal(await ev("p.dm.getWarehouseSnapshot().filter(i=>i?.itemId==='geluoke').length"),before+1);
+ await click('scrollEquipment');assert.equal(await ev("p.node('loadoutScroll').scroller.posY"),0);
+ assert(await ev("(()=>{const r=p.node('loadoutScroll').localToGlobal(new Laya.Point(20,20));return p.bagGlist.gridIndexAt(r.x,r.y)===-1;})()"),'offscreen bag rejects drop');
+ console.log('PASS: wheel scrolling, equipment/bag shortcuts, live vitals and states, status/storage tabs, transfer, clipping');ws.close();
+})().catch(e=>{console.error(e);process.exit(1);});

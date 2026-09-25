@@ -1,0 +1,758 @@
+﻿[
+    {
+        "transform":  {
+                          "scale":  1.00600,
+                          "dx":  0.00,
+                          "dy":  -2.00,
+                          "before":  4.8064,
+                          "after":  4.1216,
+                          "samples":  5550
+                      },
+        "batch":  1,
+        "id":  "weapon_crate",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.04600,
+                          "dx":  -1.50,
+                          "dy":  -10.00,
+                          "before":  7.4801,
+                          "after":  6.0257,
+                          "samples":  5550
+                      },
+        "batch":  1,
+        "id":  "weapon_crate",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00450,
+                          "dx":  8.50,
+                          "dy":  -2.00,
+                          "before":  10.2701,
+                          "after":  6.3543,
+                          "samples":  5550
+                      },
+        "batch":  1,
+        "id":  "weapon_crate",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  0.98850,
+                          "dx":  0.00,
+                          "dy":  -3.00,
+                          "before":  11.8982,
+                          "after":  4.1399,
+                          "samples":  5226
+                      },
+        "batch":  1,
+        "id":  "ammo_box",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  0.89350,
+                          "dx":  3.00,
+                          "dy":  -59.50,
+                          "before":  67.5872,
+                          "after":  10.8018,
+                          "samples":  5226
+                      },
+        "batch":  1,
+        "id":  "ammo_box",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  0.88900,
+                          "dx":  8.00,
+                          "dy":  -58.00,
+                          "before":  68.6778,
+                          "after":  10.6301,
+                          "samples":  5226
+                      },
+        "batch":  1,
+        "id":  "ammo_box",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.11550,
+                          "dx":  -11.50,
+                          "dy":  48.00,
+                          "before":  63.7222,
+                          "after":  11.6875,
+                          "samples":  5421
+                      },
+        "batch":  1,
+        "id":  "medical_case",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.02950,
+                          "dx":  1.00,
+                          "dy":  -6.00,
+                          "before":  11.7833,
+                          "after":  8.4947,
+                          "samples":  5421
+                      },
+        "batch":  1,
+        "id":  "medical_case",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.02350,
+                          "dx":  8.00,
+                          "dy":  -5.00,
+                          "before":  20.3272,
+                          "after":  9.9817,
+                          "samples":  5421
+                      },
+        "batch":  1,
+        "id":  "medical_case",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  0.97950,
+                          "dx":  6.50,
+                          "dy":  4.00,
+                          "before":  10.8143,
+                          "after":  4.9256,
+                          "samples":  5762
+                      },
+        "batch":  1,
+        "id":  "toolbox",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.01500,
+                          "dx":  8.00,
+                          "dy":  -4.00,
+                          "before":  16.0550,
+                          "after":  4.5944,
+                          "samples":  5762
+                      },
+        "batch":  1,
+        "id":  "toolbox",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00050,
+                          "dx":  21.50,
+                          "dy":  -1.50,
+                          "before":  25.4667,
+                          "after":  4.8135,
+                          "samples":  5762
+                      },
+        "batch":  1,
+        "id":  "toolbox",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00300,
+                          "dx":  -1.00,
+                          "dy":  -1.00,
+                          "before":  4.1137,
+                          "after":  3.3818,
+                          "samples":  6840
+                      },
+        "batch":  1,
+        "id":  "duffel_bag",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  -1.00,
+                          "before":  4.2981,
+                          "after":  3.4744,
+                          "samples":  6840
+                      },
+        "batch":  1,
+        "id":  "duffel_bag",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00300,
+                          "dx":  0.00,
+                          "dy":  -2.00,
+                          "before":  4.9575,
+                          "after":  3.9998,
+                          "samples":  6840
+                      },
+        "batch":  1,
+        "id":  "duffel_bag",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  1.00,
+                          "dy":  0.00,
+                          "before":  4.9405,
+                          "after":  3.1483,
+                          "samples":  5320
+                      },
+        "batch":  1,
+        "id":  "safe",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  0.99850,
+                          "dx":  1.00,
+                          "dy":  0.50,
+                          "before":  5.4411,
+                          "after":  3.3502,
+                          "samples":  5320
+                      },
+        "batch":  1,
+        "id":  "safe",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  0.99850,
+                          "dx":  0.00,
+                          "dy":  0.50,
+                          "before":  4.1935,
+                          "after":  3.4524,
+                          "samples":  5320
+                      },
+        "batch":  1,
+        "id":  "safe",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  2.0077,
+                          "after":  2.0077,
+                          "samples":  3648
+                      },
+        "batch":  2,
+        "id":  "filing_cabinet",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  2.2921,
+                          "after":  2.2921,
+                          "samples":  3648
+                      },
+        "batch":  2,
+        "id":  "filing_cabinet",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  2.2716,
+                          "after":  2.2716,
+                          "samples":  3648
+                      },
+        "batch":  2,
+        "id":  "filing_cabinet",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  1.50,
+                          "dy":  0.00,
+                          "before":  10.4271,
+                          "after":  4.0027,
+                          "samples":  3192
+                      },
+        "batch":  2,
+        "id":  "wardrobe",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  3.7205,
+                          "after":  3.7205,
+                          "samples":  3192
+                      },
+        "batch":  2,
+        "id":  "wardrobe",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  4.0260,
+                          "after":  4.0260,
+                          "samples":  3192
+                      },
+        "batch":  2,
+        "id":  "wardrobe",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  0.99550,
+                          "dx":  0.50,
+                          "dy":  -0.50,
+                          "before":  4.7364,
+                          "after":  4.3256,
+                          "samples":  3822
+                      },
+        "batch":  2,
+        "id":  "refrigerator",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  -0.50,
+                          "dy":  0.00,
+                          "before":  4.1520,
+                          "after":  4.1274,
+                          "samples":  3822
+                      },
+        "batch":  2,
+        "id":  "refrigerator",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  0.99850,
+                          "dx":  -1.00,
+                          "dy":  -0.50,
+                          "before":  8.7168,
+                          "after":  4.9035,
+                          "samples":  3822
+                      },
+        "batch":  2,
+        "id":  "refrigerator",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  0.99700,
+                          "dx":  -1.00,
+                          "dy":  1.00,
+                          "before":  6.9102,
+                          "after":  5.7469,
+                          "samples":  5328
+                      },
+        "batch":  2,
+        "id":  "suitcase",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  0.96000,
+                          "dx":  14.50,
+                          "dy":  8.00,
+                          "before":  14.5323,
+                          "after":  6.3098,
+                          "samples":  5328
+                      },
+        "batch":  2,
+        "id":  "suitcase",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  0.99700,
+                          "dx":  9.50,
+                          "dy":  1.00,
+                          "before":  12.3599,
+                          "after":  6.0068,
+                          "samples":  5328
+                      },
+        "batch":  2,
+        "id":  "suitcase",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00750,
+                          "dx":  -0.50,
+                          "dy":  2.00,
+                          "before":  7.7866,
+                          "after":  5.9133,
+                          "samples":  7888
+                      },
+        "batch":  2,
+        "id":  "cash_register",
+        "mode":  "top",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00150,
+                          "dx":  -0.50,
+                          "dy":  0.00,
+                          "before":  6.0469,
+                          "after":  5.4179,
+                          "samples":  7888
+                      },
+        "batch":  2,
+        "id":  "cash_register",
+        "mode":  "top",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  2.00,
+                          "dy":  0.00,
+                          "before":  9.4170,
+                          "after":  5.8643,
+                          "samples":  7888
+                      },
+        "batch":  2,
+        "id":  "cash_register",
+        "mode":  "top",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  0.99250,
+                          "dx":  0.50,
+                          "dy":  38.00,
+                          "before":  40.3221,
+                          "after":  4.3824,
+                          "samples":  4416
+                      },
+        "batch":  2,
+        "id":  "trash_bin",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.01050,
+                          "dx":  -2.00,
+                          "dy":  -4.50,
+                          "before":  8.6731,
+                          "after":  6.0860,
+                          "samples":  4416
+                      },
+        "batch":  2,
+        "id":  "trash_bin",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.01050,
+                          "dx":  22.00,
+                          "dy":  -4.50,
+                          "before":  34.3621,
+                          "after":  6.1022,
+                          "samples":  4416
+                      },
+        "batch":  2,
+        "id":  "trash_bin",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.03550,
+                          "dx":  -8.00,
+                          "dy":  -7.00,
+                          "before":  10.6772,
+                          "after":  6.2727,
+                          "samples":  5964
+                      },
+        "batch":  3,
+        "id":  "supply_crate",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.08600,
+                          "dx":  -2.00,
+                          "dy":  -18.00,
+                          "before":  10.3658,
+                          "after":  7.7968,
+                          "samples":  5964
+                      },
+        "batch":  3,
+        "id":  "supply_crate",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.07550,
+                          "dx":  2.00,
+                          "dy":  -16.50,
+                          "before":  11.4050,
+                          "after":  7.8666,
+                          "samples":  5964
+                      },
+        "batch":  3,
+        "id":  "supply_crate",
+        "mode":  "bottom",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  3.00,
+                          "before":  4.8027,
+                          "after":  2.2262,
+                          "samples":  2718
+                      },
+        "batch":  3,
+        "id":  "weapon_locker",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  1.8714,
+                          "after":  1.8714,
+                          "samples":  2718
+                      },
+        "batch":  3,
+        "id":  "weapon_locker",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  2.2733,
+                          "after":  2.2733,
+                          "samples":  2718
+                      },
+        "batch":  3,
+        "id":  "weapon_locker",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  1.00,
+                          "dy":  12.00,
+                          "before":  15.0830,
+                          "after":  3.7876,
+                          "samples":  4588
+                      },
+        "batch":  3,
+        "id":  "medical_cabinet",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.50,
+                          "dy":  10.00,
+                          "before":  12.6094,
+                          "after":  4.5860,
+                          "samples":  4588
+                      },
+        "batch":  3,
+        "id":  "medical_cabinet",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  0.99550,
+                          "dx":  1.50,
+                          "dy":  2.00,
+                          "before":  7.4991,
+                          "after":  4.7534,
+                          "samples":  4588
+                      },
+        "batch":  3,
+        "id":  "medical_cabinet",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00150,
+                          "dx":  -1.50,
+                          "dy":  0.00,
+                          "before":  7.2485,
+                          "after":  3.5891,
+                          "samples":  5016
+                      },
+        "batch":  3,
+        "id":  "computer_tower",
+        "mode":  "right",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  0.99850,
+                          "dx":  0.00,
+                          "dy":  0.50,
+                          "before":  4.6687,
+                          "after":  4.6013,
+                          "samples":  5016
+                      },
+        "batch":  3,
+        "id":  "computer_tower",
+        "mode":  "right",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  0.99700,
+                          "dx":  2.00,
+                          "dy":  0.00,
+                          "before":  7.8922,
+                          "after":  5.0072,
+                          "samples":  5016
+                      },
+        "batch":  3,
+        "id":  "computer_tower",
+        "mode":  "right",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  -1.00,
+                          "dy":  0.00,
+                          "before":  6.5837,
+                          "after":  2.6909,
+                          "samples":  8698
+                      },
+        "batch":  3,
+        "id":  "hanging_jacket",
+        "mode":  "jacket",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  -1.00,
+                          "dy":  0.00,
+                          "before":  6.5279,
+                          "after":  2.6152,
+                          "samples":  8698
+                      },
+        "batch":  3,
+        "id":  "hanging_jacket",
+        "mode":  "jacket",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  0.00,
+                          "before":  2.0005,
+                          "after":  2.0005,
+                          "samples":  8698
+                      },
+        "batch":  3,
+        "id":  "hanging_jacket",
+        "mode":  "jacket",
+        "frame":  3
+    },
+    {
+        "transform":  {
+                          "scale":  1.00150,
+                          "dx":  -0.50,
+                          "dy":  -1.50,
+                          "before":  3.9298,
+                          "after":  3.4919,
+                          "samples":  6644
+                      },
+        "batch":  3,
+        "id":  "sports_bag",
+        "mode":  "bottom",
+        "frame":  1
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  -1.00,
+                          "dy":  0.00,
+                          "before":  4.3925,
+                          "after":  3.4855,
+                          "samples":  6644
+                      },
+        "batch":  3,
+        "id":  "sports_bag",
+        "mode":  "bottom",
+        "frame":  2
+    },
+    {
+        "transform":  {
+                          "scale":  1.00000,
+                          "dx":  0.00,
+                          "dy":  -1.00,
+                          "before":  4.7803,
+                          "after":  4.5416,
+                          "samples":  6644
+                      },
+        "batch":  3,
+        "id":  "sports_bag",
+        "mode":  "bottom",
+        "frame":  3
+    }
+]

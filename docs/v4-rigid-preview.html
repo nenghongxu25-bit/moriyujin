@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><title>纸箱与吊柜：固定主体动画复查</title>
+<style>body{font:16px sans-serif;background:#263332;color:#eee;margin:24px}main{display:flex;flex-wrap:wrap;gap:20px}figure{margin:0}img{width:400px;background:repeating-conic-gradient(#eee 0 25%,#d4d4d4 0 50%) 0/24px 24px}button{padding:10px;margin:8px}p{max-width:850px}</style>
+<p>同一完整主体 + 独立门板 / 纸盖。逐帧检查固定箱壁、柜顶及侧面；活动部件按固定铰链转动。可切换背景检查缺口和残片。</p>
+<button onclick="paused=!paused">暂停 / 继续</button><button onclick="paused=true;show((frame+1)%4)">下一帧</button><button onclick="document.querySelectorAll('img').forEach(i=>i.style.background='#151b1b')">深底</button><button onclick="document.querySelectorAll('img').forEach(i=>i.style.background='#eee')">浅底</button><span id="status"></span>
+<main><figure><figcaption>纸箱</figcaption><img data-id="cardboard_box"></figure><figure><figcaption>白色吊柜</figcaption><img data-id="kitchen_cabinet"></figure></main>
+<script>let paused=false,frame=0,t=0;const seq=[0,0,1,2,3,3,3];function show(n){frame=n;document.querySelectorAll('img').forEach(i=>i.src='../art/loot-points-v4/rigid-layers/'+i.dataset.id+'/frames/frame_0'+n+'.png?v=rigid1');document.getElementById('status').textContent='第 '+(n+1)+' 帧 / 4';}show(0);setInterval(()=>{if(!paused)show(seq[t++%seq.length]);},300);</script>

@@ -1,0 +1,46 @@
+{
+  "_$ver": 1,
+  "_$id": "a338a7dce95e",
+  "_$type": "Sprite",
+  "name": "可穿过_grass-tall",
+  "width": 192,
+  "height": 192,
+  "pivotX": 97,
+  "pivotY": 179,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 179
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "ea88c27e699e"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "ea88c27e699e",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "3d5fd6f6-4196-4e07-899d-4dcdd22cf502",
+        "_$type": "Texture"
+      },
+      "_$comp": [
+        {
+          "_$type": "b38c8c9f-4382-48a4-904d-29878f66a31b",
+          "scriptPath": "../../../src/systems/ForestDecorationShader.ts",
+          "effect": 0,
+          "amplitude": 2.2,
+          "phase": 1.5113
+        }
+      ]
+    }
+  ]
+}

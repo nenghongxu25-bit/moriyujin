@@ -1,0 +1,48 @@
+{
+  "generator": "built-in image_gen",
+  "items": [
+    {
+      "id": "filing_cabinet",
+      "name": "旧式文件柜",
+      "displaySize": 300,
+      "prompt": "Use case: stylized-concept. Production TRANSPARENT PNG game animation sprite sheet, square 1024x1024. True zero-alpha background, NO floor NO shadows NO gradient NO text NO borders. Exactly FOUR versions of ONE identical prop in equal 2x2 cells: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN in reading order. Fixed orthographic 2:1 isometric camera, visible front and right sides. Realistic hand-painted worn extraction-shooter materials, soft upper-left light. Stationary body, identical scale and body position in all cells, bottom at cell y450; whole moving object remains within each cell with 40px margin. Only specified opening part moves. A tall narrow olive-grey steel office filing cabinet with three drawers, label slots without text. ONLY the TOP drawer slides horizontally forward from fully shut to full extension; lower two drawers remain closed. The top drawer has visible paper folders inside. Cabinet body fixed.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-8e69ef7d-6bb9-4ead-a606-0f2e6b126e1a.png"
+    },
+    {
+      "id": "wardrobe",
+      "name": "旧木衣柜",
+      "displaySize": 360,
+      "prompt": "Use case: stylized-concept. Production TRANSPARENT PNG game animation sprite sheet, square 1024x1024. True zero-alpha background, NO floor NO shadows NO gradient NO text NO borders. Exactly FOUR versions of ONE identical prop in equal 2x2 cells: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN in reading order. Fixed orthographic 2:1 isometric camera, visible front and right sides. Realistic hand-painted worn extraction-shooter materials, soft upper-left light. Stationary body, identical scale and body position in all cells, bottom at cell y450; whole moving object remains within each cell with 40px margin. Only specified opening part moves. A tall narrow weathered brown wooden wardrobe with a SINGLE full-height front door, simple dark metal handle, short feet. Door opens outward on a left VERTICAL hinge progressively to 100 degrees; fixed tall body, empty shelf and hanging rail inside. Door is attached throughout, no top lid.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-162864e6-0155-4e97-946c-8953ee2e7b62.png"
+    },
+    {
+      "id": "refrigerator",
+      "name": "老式冰箱",
+      "displaySize": 340,
+      "prompt": "Use case: stylized-concept. Production TRANSPARENT PNG game animation sprite sheet, square 1024x1024. True zero-alpha background, NO floor NO shadows NO gradient NO text NO borders. Exactly FOUR versions of ONE identical prop in equal 2x2 cells: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN in reading order. Fixed orthographic 2:1 isometric camera, visible front and right sides. Realistic hand-painted worn extraction-shooter materials, soft upper-left light. Stationary body, identical scale and body position in all cells, bottom at cell y450; whole moving object remains within each cell with 40px margin. Only specified opening part moves. An old ivory enamel upright SINGLE DOOR refrigerator, rust at bottom, long chrome handle. One tall front door opens outward on LEFT vertical hinge from shut to 100 degrees. Interior shelves and empty door pockets visible as it opens. Body remains completely unchanged, no extra freezer door.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-8b33fab3-39b4-4dfb-a951-2dca23f8a7d6.png"
+    },
+    {
+      "id": "suitcase",
+      "name": "硬壳旅行箱",
+      "displaySize": 224,
+      "prompt": "Use case: stylized-concept. Production TRANSPARENT PNG game animation sprite sheet, square 1024x1024. True zero-alpha background, NO floor NO shadows NO gradient NO text NO borders. Exactly FOUR versions of ONE identical prop in equal 2x2 cells: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN in reading order. Fixed orthographic 2:1 isometric camera, visible front and right sides. Realistic hand-painted worn extraction-shooter materials, soft upper-left light. Stationary body, identical scale and body position in all cells, bottom at cell y450; whole moving object remains within each cell with 40px margin. Only specified opening part moves. A scuffed burgundy hard-shell suitcase lying flat on the ground, brass latches, short carrying handle on FRONT edge. REAR hinged lid lifts from fully closed to 100 degrees, progressively 0,30,65,100 degrees. Dark burgundy fabric lining inside, same rigid base in all four frames.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-181cf11a-335c-47aa-9df8-0c64127d0fa7.png"
+    },
+    {
+      "id": "cash_register",
+      "name": "旧式收银机",
+      "displaySize": 192,
+      "prompt": "Use case: stylized-concept. Production TRANSPARENT PNG game animation sprite sheet, square 1024x1024. True zero-alpha background, NO floor NO shadows NO gradient NO text NO borders. Exactly FOUR versions of ONE identical prop in equal 2x2 cells: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN in reading order. Fixed orthographic 2:1 isometric camera, visible front and right sides. Realistic hand-painted worn extraction-shooter materials, soft upper-left light. Stationary body, identical scale and body position in all cells, bottom at cell y450; whole moving object remains within each cell with 40px margin. Only specified opening part moves. An old beige electronic shop cash register with small dark display, key buttons without legible letters, square metal cash drawer in base. ONLY bottom cash drawer slides forward progressively 0%,33%,66%,100%. Screen and upper register NEVER move. Visible empty divided cash tray when open.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-8754be6e-ddd4-47c2-ae31-4b70915b22fc.png",
+      "revisionPrompt": "Correct this transparent 2x2 cash register animation sprite sheet. All four props must be FULLY visible with generous empty transparent margins including the bottom of extended cash drawer in lower right cell, which is currently cut off. Reframe each prop smaller at identical scale, occupying only central 75% of each cell. Keep four sequential closed to open drawer poses, same stationary upper machine, same camera and art, square 1024x1024 output, genuine transparent alpha background. No text or floor."
+    },
+    {
+      "id": "trash_bin",
+      "name": "翻盖垃圾桶",
+      "displaySize": 220,
+      "prompt": "Use case: stylized-concept. Production TRANSPARENT PNG game animation sprite sheet, square 1024x1024. True zero-alpha background, NO floor NO shadows NO gradient NO text NO borders. Exactly FOUR versions of ONE identical prop in equal 2x2 cells: CLOSED, one-third OPEN, two-thirds OPEN, fully OPEN in reading order. Fixed orthographic 2:1 isometric camera, visible front and right sides. Realistic hand-painted worn extraction-shooter materials, soft upper-left light. Stationary body, identical scale and body position in all cells, bottom at cell y450; whole moving object remains within each cell with 40px margin. Only specified opening part moves. A compact green plastic rectangular wheeled trash bin with black rear-hinged lid. Lid rotates progressively 0,30,65,100 degrees on fixed rear hinge. Body and two small black wheels stay stationary; dark interior opening. No litter outside, no logos, no letters.",
+      "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-e466ec6f-2e17-4216-ad2c-899d2f825829.png"
+    }
+  ]
+}

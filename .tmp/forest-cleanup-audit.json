@@ -1,0 +1,92 @@
+{
+  "candidates": [
+    "assets/forest-isometric-study",
+    "assets/tileset/forest",
+    "assets/tileset/forest-cliffs-v1",
+    "assets/tileset/forest-kit-v2",
+    "assets/tileset/forest-kit-v3",
+    "assets/tileset/forest-reusable",
+    "assets/tileset/forest-style-v2",
+    "assets/tileset/forest-style-v2-hd"
+  ],
+  "keep": [
+    {
+      "path": "assets/forest-isometric-study/forest-diamond.tres",
+      "refs": [
+        "assets/scenes/forest.ls"
+      ]
+    },
+    {
+      "path": "assets/forest-isometric-study/tiles/forest-diamond-atlas.png",
+      "refs": []
+    },
+    {
+      "path": "assets/tileset/forest-kit-v3/grass-dirt.png",
+      "refs": []
+    },
+    {
+      "path": "assets/tileset/forest-kit-v3/grass-water.png",
+      "refs": [
+        "assets/scenes/forest.ls"
+      ]
+    },
+    {
+      "path": "assets/tileset/forest-style-v2-hd/forest-diamond.tres",
+      "refs": [
+        "assets/tileset/buildings/roofs/slate/house-template.lh"
+      ]
+    },
+    {
+      "path": "assets/tileset/forest-style-v2-hd/tiles/forest-diamond-atlas.png",
+      "refs": []
+    },
+    {
+      "path": "assets/tileset/forest/water-flow.png",
+      "refs": [
+        "assets/scenes/forest.ls"
+      ]
+    }
+  ],
+  "counts": [
+    {
+      "dir": "assets/forest-isometric-study",
+      "files": 59,
+      "retained": 2
+    },
+    {
+      "dir": "assets/tileset/forest",
+      "files": 3,
+      "retained": 1
+    },
+    {
+      "dir": "assets/tileset/forest-cliffs-v1",
+      "files": 5,
+      "retained": 0
+    },
+    {
+      "dir": "assets/tileset/forest-kit-v2",
+      "files": 31,
+      "retained": 0
+    },
+    {
+      "dir": "assets/tileset/forest-kit-v3",
+      "files": 10,
+      "retained": 2
+    },
+    {
+      "dir": "assets/tileset/forest-reusable",
+      "files": 3,
+      "retained": 0
+    },
+    {
+      "dir": "assets/tileset/forest-style-v2",
+      "files": 59,
+      "retained": 0
+    },
+    {
+      "dir": "assets/tileset/forest-style-v2-hd",
+      "files": 58,
+      "retained": 2
+    }
+  ]
+}

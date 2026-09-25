@@ -1,0 +1,68 @@
+[
+  {
+    "action": "walk",
+    "cols": 4,
+    "rows": 2,
+    "count": 8,
+    "fps": 8,
+    "detail": "EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place walking gait cycle. Frames 1-8 are 8 DISTINCT successive phases at 0,45,90,135,180,225,270,315 degrees of the gait: alternating front and rear limb contact, weight transfer, passing and lift. Slow walking with grounded footfalls, small body bob, no jumping. Keep feet contact on exactly the same horizontal ground baseline within each cell. Frame8 naturally transitions back to frame1 without a duplicate endpoint.",
+    "animal": "young-boar",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-cad9b752-a240-46bb-95d4-f06770cb351b.png",
+    "prompt": "Use case: precise-object-edit. Input image is the character identity reference. Create ONE production-style animation sprite sheet of THIS EXACT animal, matching its species, age, fur markings, body proportions, semi-realistic painted forest game style, and left-facing three-quarter side view. Do not redesign it. True transparent RGBA background, including gaps between legs. No ground, no shadows detached from body, no scenery, no labels, no frame numbers, no visible grid, no text, no additional animals. Critical: uniform cell size, each cell contains precisely ONE full animal with 12 percent transparent safety margins, no overlap between cells, fixed camera and zoom, consistent animal size and lighting, root/pelvis stays centered horizontally in every cell. Every frame anatomically correct with four legs, no extra limbs. EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place walking gait cycle. Frames 1-8 are 8 DISTINCT successive phases at 0,45,90,135,180,225,270,315 degrees of the gait: alternating front and rear limb contact, weight transfer, passing and lift. Slow walking with grounded footfalls, small body bob, no jumping. Keep feet contact on exactly the same horizontal ground baseline within each cell. Frame8 naturally transitions back to frame1 without a duplicate endpoint."
+  },
+  {
+    "action": "run",
+    "cols": 4,
+    "rows": 2,
+    "count": 8,
+    "fps": 12,
+    "detail": "EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place running/galloping cycle, substantially different from walking: crouched gathering hindlegs, hindquarter push-off, airborne extended stride, forefoot landing, compression, rear legs swing through, gathered suspension, preparation for next push. Eight DISTINCT progressive poses, subtle body rise and fall; fixed pelvis horizontal center, ground-contact paws/hooves on common baseline. Frame8 naturally connects to frame1, no duplicate endpoint.",
+    "animal": "young-boar",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-7d242b84-56f8-4ef5-85fd-9d276d8b8cf4.png",
+    "prompt": "Use case: precise-object-edit. Input image is the character identity reference. Create ONE production-style animation sprite sheet of THIS EXACT animal, matching its species, age, fur markings, body proportions, semi-realistic painted forest game style, and left-facing three-quarter side view. Do not redesign it. True transparent RGBA background, including gaps between legs. No ground, no shadows detached from body, no scenery, no labels, no frame numbers, no visible grid, no text, no additional animals. Critical: uniform cell size, each cell contains precisely ONE full animal with 12 percent transparent safety margins, no overlap between cells, fixed camera and zoom, consistent animal size and lighting, root/pelvis stays centered horizontally in every cell. Every frame anatomically correct with four legs, no extra limbs. EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place running/galloping cycle, substantially different from walking: crouched gathering hindlegs, hindquarter push-off, airborne extended stride, forefoot landing, compression, rear legs swing through, gathered suspension, preparation for next push. Eight DISTINCT progressive poses, subtle body rise and fall; fixed pelvis horizontal center, ground-contact paws/hooves on common baseline. Frame8 naturally connects to frame1, no duplicate endpoint."
+  },
+  {
+    "action": "attack",
+    "cols": 3,
+    "rows": 2,
+    "count": 6,
+    "fps": 10,
+    "detail": "EXACTLY 6 frames in 3 columns by 2 rows, read left-to-right then top-to-bottom. One attack sequence with 6 DISTINCT progressive poses: neutral ready, anticipatory weight shift, wind-up, attack extension, recoil, return to ready. No opponent, no blood, no effects. ",
+    "animal": "young-boar",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-b525cecb-678e-4dd6-aed3-d0e430ec9b54.png",
+    "prompt": "Use case: precise-object-edit. Input image is the character identity reference. Create ONE production-style animation sprite sheet of THIS EXACT animal, matching its species, age, fur markings, body proportions, semi-realistic painted forest game style, and left-facing three-quarter side view. Do not redesign it. True transparent RGBA background, including gaps between legs. No ground, no shadows detached from body, no scenery, no labels, no frame numbers, no visible grid, no text, no additional animals. Critical: uniform cell size, each cell contains precisely ONE full animal with 12 percent transparent safety margins, no overlap between cells, fixed camera and zoom, consistent animal size and lighting, root/pelvis stays centered horizontally in every cell. Every frame anatomically correct with four legs, no extra limbs. EXACTLY 6 frames in 3 columns by 2 rows, read left-to-right then top-to-bottom. One attack sequence with 6 DISTINCT progressive poses: neutral ready, anticipatory weight shift, wind-up, attack extension, recoil, return to ready. No opponent, no blood, no effects. The small striped juvenile boar attacks with a lowered-head forward head-butt: lower snout, brace hindquarters, thrust head and shoulders forward, recoil, lift head back to ready. Do not grow adult tusks."
+  },
+  {
+    "action": "walk",
+    "cols": 4,
+    "rows": 2,
+    "count": 8,
+    "fps": 8,
+    "detail": "EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place walking gait cycle. Frames 1-8 are 8 DISTINCT successive phases at 0,45,90,135,180,225,270,315 degrees of the gait: alternating front and rear limb contact, weight transfer, passing and lift. Slow walking with grounded footfalls, small body bob, no jumping. Keep feet contact on exactly the same horizontal ground baseline within each cell. Frame8 naturally transitions back to frame1 without a duplicate endpoint.",
+    "animal": "wolf",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-7c87f71a-fd41-4f33-9c6d-62cd2fa960ce.png",
+    "prompt": "Use case: precise-object-edit. Input image is the character identity reference. Create ONE production-style animation sprite sheet of THIS EXACT animal, matching its species, age, fur markings, body proportions, semi-realistic painted forest game style, and left-facing three-quarter side view. Do not redesign it. True transparent RGBA background, including gaps between legs. No ground, no shadows detached from body, no scenery, no labels, no frame numbers, no visible grid, no text, no additional animals. Critical: uniform cell size, each cell contains precisely ONE full animal with 12 percent transparent safety margins, no overlap between cells, fixed camera and zoom, consistent animal size and lighting, root/pelvis stays centered horizontally in every cell. Every frame anatomically correct with four legs, no extra limbs. EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place walking gait cycle. Frames 1-8 are 8 DISTINCT successive phases at 0,45,90,135,180,225,270,315 degrees of the gait: alternating front and rear limb contact, weight transfer, passing and lift. Slow walking with grounded footfalls, small body bob, no jumping. Keep feet contact on exactly the same horizontal ground baseline within each cell. Frame8 naturally transitions back to frame1 without a duplicate endpoint."
+  },
+  {
+    "action": "run",
+    "cols": 4,
+    "rows": 2,
+    "count": 8,
+    "fps": 12,
+    "detail": "EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place running/galloping cycle, substantially different from walking: crouched gathering hindlegs, hindquarter push-off, airborne extended stride, forefoot landing, compression, rear legs swing through, gathered suspension, preparation for next push. Eight DISTINCT progressive poses, subtle body rise and fall; fixed pelvis horizontal center, ground-contact paws/hooves on common baseline. Frame8 naturally connects to frame1, no duplicate endpoint.",
+    "animal": "wolf",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-9e1b7542-5d5b-4978-b6ff-32ca55b1a8e5.png",
+    "prompt": "Use case: precise-object-edit. Input image is the character identity reference. Create ONE production-style animation sprite sheet of THIS EXACT animal, matching its species, age, fur markings, body proportions, semi-realistic painted forest game style, and left-facing three-quarter side view. Do not redesign it. True transparent RGBA background, including gaps between legs. No ground, no shadows detached from body, no scenery, no labels, no frame numbers, no visible grid, no text, no additional animals. Critical: uniform cell size, each cell contains precisely ONE full animal with 12 percent transparent safety margins, no overlap between cells, fixed camera and zoom, consistent animal size and lighting, root/pelvis stays centered horizontally in every cell. Every frame anatomically correct with four legs, no extra limbs. EXACTLY 8 frames in 4 columns by 2 rows, read left-to-right then top-to-bottom. One full smooth in-place running/galloping cycle, substantially different from walking: crouched gathering hindlegs, hindquarter push-off, airborne extended stride, forefoot landing, compression, rear legs swing through, gathered suspension, preparation for next push. Eight DISTINCT progressive poses, subtle body rise and fall; fixed pelvis horizontal center, ground-contact paws/hooves on common baseline. Frame8 naturally connects to frame1, no duplicate endpoint."
+  },
+  {
+    "action": "attack",
+    "cols": 3,
+    "rows": 2,
+    "count": 6,
+    "fps": 10,
+    "detail": "EXACTLY 6 frames in 3 columns by 2 rows, read left-to-right then top-to-bottom. One attack sequence with 6 DISTINCT progressive poses: neutral ready, anticipatory weight shift, wind-up, attack extension, recoil, return to ready. No opponent, no blood, no effects. ",
+    "animal": "wolf",
+    "source": "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0b791-2791-7312-8f25-b2e93db808be\\exec-9ea84aed-cfc1-499b-a952-f5f8af7cd393.png",
+    "prompt": "Use case: precise-object-edit. Input image is the character identity reference. Create ONE production-style animation sprite sheet of THIS EXACT animal, matching its species, age, fur markings, body proportions, semi-realistic painted forest game style, and left-facing three-quarter side view. Do not redesign it. True transparent RGBA background, including gaps between legs. No ground, no shadows detached from body, no scenery, no labels, no frame numbers, no visible grid, no text, no additional animals. Critical: uniform cell size, each cell contains precisely ONE full animal with 12 percent transparent safety margins, no overlap between cells, fixed camera and zoom, consistent animal size and lighting, root/pelvis stays centered horizontally in every cell. Every frame anatomically correct with four legs, no extra limbs. EXACTLY 6 frames in 3 columns by 2 rows, read left-to-right then top-to-bottom. One attack sequence with 6 DISTINCT progressive poses: neutral ready, anticipatory weight shift, wind-up, attack extension, recoil, return to ready. No opponent, no blood, no effects. This grey forest wolf attacks with a forward lunging bite: neutral, lower body and coil hind legs, open jaws and pull head back slightly, extend head and front body forward in snapping bite, jaws closing during recoil, return to neutral. Preserve normal wolf anatomy and the reference's facial appearance; no grotesque fangs."
+  }
+]

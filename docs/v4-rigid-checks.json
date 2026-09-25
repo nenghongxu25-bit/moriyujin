@@ -1,0 +1,16 @@
+﻿[
+    {
+        "fixedPixelComparisons":  11304,
+        "method":  "one complete body and independent hinged panels",
+        "frameSize":  512,
+        "frames":  4,
+        "id":  "cardboard_box"
+    },
+    {
+        "fixedPixelComparisons":  43695,
+        "method":  "one complete body and independent hinged panels",
+        "frameSize":  512,
+        "frames":  4,
+        "id":  "kitchen_cabinet"
+    }
+]

@@ -1,0 +1,482 @@
+{
+  "_$ver": 1,
+  "_$id": "battlepass_root",
+  "_$type": "GWidget",
+  "name": "battlepass_panel",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "81f56768-a9fa-49b5-a965-a5c7d2664a10",
+      "scriptPath": "../src/PlayUI/BattlePass/BattlePassPanel.ts",
+      "timeListNode": {
+        "_$ref": "nlzz5pbb"
+      },
+      "taskListNode": {
+        "_$ref": "a7oaawzk"
+      },
+      "gradeListNode": null,
+      "rewardListNode": {
+        "_$ref": "datwihsf"
+      },
+      "experienceText": {
+        "_$ref": "4809b8q6"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "78ixqw11",
+      "_$type": "GPanel",
+      "name": "panel",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "o1eqhd6s",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 0,
+          "y": 0,
+          "width": 1334,
+          "height": 750,
+          "anchorX": 0,
+          "anchorY": 0,
+          "rotation": 0,
+          "src": "res://21dfa076-f83c-449f-9605-f94c9fafe451",
+          "autoSize": false,
+          "color": "#ffffff",
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        {
+          "_$id": "bp_title",
+          "_$type": "Text",
+          "name": "title",
+          "x": 52,
+          "y": 31,
+          "width": 850,
+          "height": 48,
+          "text": "战令",
+          "fontSize": 32,
+          "color": "#eee9d9",
+          "align": "left",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0,
+          "bold": true
+        },
+        {
+          "_$id": "seasonTitle",
+          "_$type": "Text",
+          "name": "seasonTitle",
+          "x": 52,
+          "y": 119,
+          "width": 380,
+          "height": 32,
+          "text": "第一赛季",
+          "fontSize": 20,
+          "color": "#eee9d9",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "hac81pls",
+          "_$type": "GPanel",
+          "name": "task",
+          "x": 36,
+          "y": 165,
+          "width": 790,
+          "height": 465,
+          "_$child": [
+            {
+              "_$id": "nlzz5pbb",
+              "_$type": "GList",
+              "name": "timelist",
+              "x": 16,
+              "y": 8,
+              "width": 758,
+              "height": 50,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#293832"
+              },
+              "layout": {
+                "type": 2,
+                "columnGap": 8
+              },
+              "_templateNode": {
+                "_$ref": "ahsw9che",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 7,
+              "_$child": [
+                {
+                  "_$id": "ahsw9che",
+                  "_$prefab": "97f54c4d-3381-412c-a1c9-3171fdd92cc0",
+                  "name": "bt",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "_$id": "a7oaawzk",
+              "_$type": "GList",
+              "name": "tasklist",
+              "x": 16,
+              "y": 74,
+              "width": 758,
+              "height": 375,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#293832"
+              },
+              "layout": {
+                "type": 1,
+                "rowGap": 10
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1,
+                "vScrollBarRes": {
+                  "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+                  "_$type": "Prefab"
+                }
+              },
+              "_templateNode": {
+                "_$ref": "qxy28zlk",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 5,
+              "_$child": [
+                {
+                  "_$id": "qxy28zlk",
+                  "_$type": "GWidget",
+                  "name": "node",
+                  "width": 750,
+                  "height": 92,
+                  "background": {
+                    "_$type": "DrawRectCmd",
+                    "lineWidth": 1,
+                    "lineColor": "#647565",
+                    "fillColor": "#293832"
+                  },
+                  "_$child": [
+                    {
+                      "_$id": "bx9kyfsn",
+                      "_$type": "Text",
+                      "name": "Text",
+                      "width": 515,
+                      "height": 92,
+                      "text": "击杀20个敌人",
+                      "fontSize": 21,
+                      "color": "#eee9d9",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0,
+                      "x": 20
+                    },
+                    {
+                      "_$id": "taskprogress1",
+                      "_$type": "Text",
+                      "name": "progresstext",
+                      "x": 570,
+                      "width": 155,
+                      "height": 92,
+                      "text": "0/20",
+                      "fontSize": 21,
+                      "color": "#eee9d9",
+                      "align": "center",
+                      "valign": "middle",
+                      "leading": 2,
+                      "letterSpacing": 0
+                    },
+                    {
+                      "_$id": "j4m59zoo",
+                      "_$type": "Sprite",
+                      "name": "mask_1",
+                      "width": 750,
+                      "height": 92,
+                      "visible": false,
+                      "alpha": 0.6,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#344a3f"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "fgsw9pw1",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 700,
+                          "height": 92,
+                          "text": "已完成",
+                          "fontSize": 22,
+                          "color": "#eee9d9",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ],
+                      "x": 0,
+                      "y": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "d1lrl5p2",
+          "_$type": "GPanel",
+          "name": "reward",
+          "x": 842,
+          "y": 122,
+          "width": 440,
+          "height": 515,
+          "_$child": [
+            {
+              "_$id": "datwihsf",
+              "_$type": "GList",
+              "name": "reward",
+              "x": 40,
+              "y": 91,
+              "width": 335,
+              "height": 402,
+              "background": {
+                "_$type": "DrawRectCmd",
+                "fillColor": "#293832"
+              },
+              "layout": {
+                "type": 1,
+                "rowGap": 10,
+                "valign": 3
+              },
+              "scroller": {
+                "_$type": "Scroller",
+                "barDisplay": 1,
+                "vScrollBarRes": {
+                  "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+                  "_$type": "Prefab"
+                }
+              },
+              "_templateNode": {
+                "_$ref": "t5mwj9w0",
+                "_$tmpl": "itemTemplate"
+              },
+              "_initItemNum": 20,
+              "_$child": [
+                {
+                  "_$id": "t5mwj9w0",
+                  "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+                  "name": "boxmodule",
+                  "active": true,
+                  "x": 0,
+                  "y": 0,
+                  "width": 300,
+                  "visible": true,
+                  "_$child": [
+                    {
+                      "_$override": "zfgejdrd",
+                      "x": 134,
+                      "y": 54
+                    },
+                    {
+                      "_$override": "jdhjlgub",
+                      "anchorX": 0.5,
+                      "x": 134,
+                      "y": 54
+                    },
+                    {
+                      "_$override": "5zg64bdz",
+                      "x": 72,
+                      "y": 69
+                    },
+                    {
+                      "_$override": "gj3qvj55",
+                      "x": 153,
+                      "y": 66
+                    },
+                    {
+                      "_$id": "xu1xzcfz",
+                      "_$index": 4,
+                      "_$type": "Sprite",
+                      "name": "mask_1",
+                      "x": 94,
+                      "y": 14,
+                      "width": 80,
+                      "height": 80,
+                      "visible": false,
+                      "alpha": 0.4,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#344a3f"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "jq1367ln",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 80,
+                          "height": 80,
+                          "text": "已领取",
+                          "fontSize": 20,
+                          "color": "#eee9d9",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "dizqxair",
+                      "_$index": 5,
+                      "_$type": "Sprite",
+                      "name": "mask_0",
+                      "x": 94,
+                      "y": 14,
+                      "width": 80,
+                      "height": 80,
+                      "alpha": 0.5,
+                      "_gcmds": [
+                        {
+                          "_$type": "DrawRectCmd",
+                          "fillColor": "#14201c"
+                        }
+                      ],
+                      "_$child": [
+                        {
+                          "_$id": "lpzr007u",
+                          "_$type": "Text",
+                          "name": "Text",
+                          "width": 80,
+                          "height": 80,
+                          "alpha": 0.6,
+                          "text": "未解锁",
+                          "fontSize": 20,
+                          "color": "#eee9d9",
+                          "align": "center",
+                          "valign": "middle",
+                          "leading": 2,
+                          "letterSpacing": 0
+                        }
+                      ]
+                    },
+                    {
+                      "_$id": "fk6e385r",
+                      "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+                      "name": "bt",
+                      "active": true,
+                      "x": 8,
+                      "y": 13,
+                      "width": 100,
+                      "height": 100,
+                      "scaleX": 0.8,
+                      "scaleY": 0.8,
+                      "visible": true,
+                      "_$child": [
+                        {
+                          "_$override": "3oei1uz6",
+                          "height": 100
+                        },
+                        {
+                          "_$override": "qwk816k0",
+                          "height": 100
+                        }
+                      ]
+                    }
+                  ],
+                  "height": 108
+                }
+              ]
+            },
+            {
+              "_$id": "zh5l65le",
+              "_$prefab": "d0a3057e-b3be-4789-a0a6-a8dbe3ee3e0d",
+              "name": "reward",
+              "active": true,
+              "x": 68,
+              "y": 36,
+              "width": 250,
+              "visible": true,
+              "_$child": [
+                {
+                  "_$override": "3oei1uz6",
+                  "width": 250
+                },
+                {
+                  "_$override": "qwk816k0",
+                  "width": 250,
+                  "text": "奖励",
+                  "color": "#eee9d9"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_$id": "h3r2x1ju",
+          "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+          "name": "CloseSprite",
+          "active": true,
+          "x": 567,
+          "y": 646,
+          "visible": true,
+          "_$comp": [
+            {
+              "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+              "targetNode": {
+                "_$ref": "battlepass_root"
+              }
+            }
+          ],
+          "scaleX": 1,
+          "scaleY": 1,
+          "width": 200,
+          "height": 80
+        }
+      ]
+    },
+    {
+      "_$id": "4809b8q6",
+      "_$type": "Text",
+      "name": "experience",
+      "x": 778,
+      "y": 119,
+      "width": 140,
+      "height": 32,
+      "text": "0/200",
+      "fontSize": 21,
+      "color": "#eee9d9",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    },
+    {
+      "_$id": "evbx2bo5",
+      "_$type": "Text",
+      "name": "Text_1",
+      "x": 534,
+      "y": 119,
+      "width": 245,
+      "height": 32,
+      "text": "下一级所需经验：",
+      "fontSize": 18,
+      "color": "#eee9d9",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

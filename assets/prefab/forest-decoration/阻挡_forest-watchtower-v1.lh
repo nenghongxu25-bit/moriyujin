@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "39d432ae2ff2",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-watchtower-v1",
+  "width": 166,
+  "height": 256,
+  "pivotX": 83,
+  "pivotY": 249,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 249
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "7c59f29b322f"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 27,
+      "blockY": 219,
+      "blockWidth": 112,
+      "blockHeight": 30
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "7c59f29b322f",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 166,
+      "height": 256,
+      "texture": {
+        "_$uuid": "3dade8e4-0dfd-4a1e-84a8-7f2fc7a8e7c3",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

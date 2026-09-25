@@ -1,0 +1,10 @@
+const fs=require('fs'),crypto=require('crypto');
+const file='assets/decorate/forest/expansion-v1/forest-rock-cliff-v1.png';
+if(!fs.existsSync(file+'.meta'))fs.writeFileSync(file+'.meta',JSON.stringify({uuid:crypto.randomUUID(),importer:{textureType:2}},null,2));
+const uuid=JSON.parse(fs.readFileSync(file+'.meta','utf8')).uuid;
+const path='assets/forest-expansion-preview.ls',scene=JSON.parse(fs.readFileSync(path,'utf8'));
+if(!scene._$child.some(n=>n._$id==='expansion8'))scene._$child.push({_$id:'expansion8',_$type:'Sprite',name:'forest-rock-cliff-v1',width:360,height:180,texture:{_$uuid:uuid,_$type:'Texture'}});
+scene.name='ForestExpansionPreview9';
+scene._$child.forEach((n,i)=>{const scale=Math.min(360/n.width,(i<3?280:190)/n.height);n.width*=scale;n.height*=scale;n.x=42+(i%3)*432+(360-n.width)/2;n.y=[300,510,735][Math.floor(i/3)]-n.height;});
+fs.writeFileSync(path,JSON.stringify(scene,null,2));
+console.log(uuid);

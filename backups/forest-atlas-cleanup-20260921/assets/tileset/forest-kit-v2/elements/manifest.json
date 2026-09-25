@@ -1,0 +1,226 @@
+{
+    "source":  "forest-props.png",
+    "sourceSha256":  "02D5884C888CC5382EBC8E5A68D59028836E8D8982DDE673F6342F2BBD7C0CE4",
+    "columns":  6,
+    "rows":  4,
+    "cellSize":  256,
+    "checkedPixels":  1572864,
+    "sprites":  [
+                    {
+                        "file":  "grass-short.png",
+                        "column":  0,
+                        "row":  0,
+                        "sourceX":  0,
+                        "sourceY":  0,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "grass-tall.png",
+                        "column":  1,
+                        "row":  0,
+                        "sourceX":  256,
+                        "sourceY":  0,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "fern.png",
+                        "column":  2,
+                        "row":  0,
+                        "sourceX":  512,
+                        "sourceY":  0,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "bush-round.png",
+                        "column":  3,
+                        "row":  0,
+                        "sourceX":  768,
+                        "sourceY":  0,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "broadleaf.png",
+                        "column":  4,
+                        "row":  0,
+                        "sourceX":  1024,
+                        "sourceY":  0,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "flowers-white.png",
+                        "column":  5,
+                        "row":  0,
+                        "sourceX":  1280,
+                        "sourceY":  0,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "rock-moss-small.png",
+                        "column":  0,
+                        "row":  1,
+                        "sourceX":  0,
+                        "sourceY":  256,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "pebbles-three.png",
+                        "column":  1,
+                        "row":  1,
+                        "sourceX":  256,
+                        "sourceY":  256,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "boulder-moss.png",
+                        "column":  2,
+                        "row":  1,
+                        "sourceX":  512,
+                        "sourceY":  256,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "rocks-flat.png",
+                        "column":  3,
+                        "row":  1,
+                        "sourceX":  768,
+                        "sourceY":  256,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "rocks-round.png",
+                        "column":  4,
+                        "row":  1,
+                        "sourceX":  1024,
+                        "sourceY":  256,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "gravel-scatter.png",
+                        "column":  5,
+                        "row":  1,
+                        "sourceX":  1280,
+                        "sourceY":  256,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "stump.png",
+                        "column":  0,
+                        "row":  2,
+                        "sourceX":  0,
+                        "sourceY":  512,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "branch-fallen.png",
+                        "column":  1,
+                        "row":  2,
+                        "sourceX":  256,
+                        "sourceY":  512,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "roots.png",
+                        "column":  2,
+                        "row":  2,
+                        "sourceX":  512,
+                        "sourceY":  512,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "log-moss.png",
+                        "column":  3,
+                        "row":  2,
+                        "sourceX":  768,
+                        "sourceY":  512,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "leaves-dry.png",
+                        "column":  4,
+                        "row":  2,
+                        "sourceX":  1024,
+                        "sourceY":  512,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "mushrooms.png",
+                        "column":  5,
+                        "row":  2,
+                        "sourceX":  1280,
+                        "sourceY":  512,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "reeds.png",
+                        "column":  0,
+                        "row":  3,
+                        "sourceX":  0,
+                        "sourceY":  768,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "lily-pads.png",
+                        "column":  1,
+                        "row":  3,
+                        "sourceX":  256,
+                        "sourceY":  768,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "bush-berries.png",
+                        "column":  2,
+                        "row":  3,
+                        "sourceX":  512,
+                        "sourceY":  768,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "sapling-pine.png",
+                        "column":  3,
+                        "row":  3,
+                        "sourceX":  768,
+                        "sourceY":  768,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "tree-small.png",
+                        "column":  4,
+                        "row":  3,
+                        "sourceX":  1024,
+                        "sourceY":  768,
+                        "width":  256,
+                        "height":  256
+                    },
+                    {
+                        "file":  "sapling-dead.png",
+                        "column":  5,
+                        "row":  3,
+                        "sourceX":  1280,
+                        "sourceY":  768,
+                        "width":  256,
+                        "height":  256
+                    }
+                ]
+}

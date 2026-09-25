@@ -1,0 +1,22 @@
+{
+  "_$ver": 1,
+  "_$id": "da44da4c0912",
+  "_$type": "Sprite",
+  "name": "GableLayer",
+  "_$comp": [
+    {
+      "_$type": "TileMapLayer",
+      "tileSet": {
+        "_$uuid": "ba477789-9058-433a-931b-3c7f2d85cc03",
+        "_$type": "TileSet"
+      },
+      "chunkDatas": {
+        "_$type": "Record"
+      }
+    },
+    {
+      "_$type": "3591ef95-3f88-4957-88b2-bb349b43fcb1",
+      "displayOrder": 99999
+    }
+  ]
+}

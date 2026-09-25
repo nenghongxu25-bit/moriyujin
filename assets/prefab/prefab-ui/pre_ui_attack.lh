@@ -1,0 +1,78 @@
+{
+  "_$ver": 1,
+  "_$id": "attack_root_001",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 128,
+  "height": 128,
+  "controllers": {
+    "_$type": "Record",
+    "button": {
+      "_$type": "Controller",
+      "pages": [
+        "up",
+        "down",
+        "over",
+        "selectedOver"
+      ]
+    }
+  },
+  "_$comp": [
+    {
+      "_$type": "3db5f4f4-1d50-4b5c-a876-7bc6f7a7eb10",
+      "scriptPath": "../src/PlayUI/playerui/attack.ts",
+      "playerNode": null,
+      "attackBase": {
+        "_$ref": "t42e6rru"
+      },
+      "attackHandle": {
+        "_$ref": "jcp3rvp9"
+      },
+      "radius": 48,
+      "dragThreshold": 16,
+      "tapMaxDistance": 14,
+      "meleeAutoAttackEnabled": true
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "t42e6rru",
+      "_$type": "Sprite",
+      "name": "base",
+      "width": 128,
+      "height": 128,
+      "alpha": 1,
+      "texture": {
+        "_$uuid": "7c6039b1-405a-4b6e-9276-dc700886cbeb",
+        "_$type": "Texture"
+      }
+    },
+    {
+      "_$id": "jcp3rvp9",
+      "_$type": "Sprite",
+      "name": "handle",
+      "x": 14,
+      "y": 14,
+      "width": 100,
+      "height": 100,
+      "_$child": [
+        {
+          "_$id": "img_attack",
+          "_$type": "GImage",
+          "name": "img",
+          "x": 10,
+          "y": 15,
+          "width": 80,
+          "height": 80,
+          "src": "res://cbee195e-eed8-464a-8d9e-8d51e0946150",
+          "autoSize": false
+        }
+      ],
+      "texture": {
+        "_$uuid": "bf0e3069-00e9-4417-906a-dde27fe0092b",
+        "_$type": "Texture"
+      },
+      "alpha": 1
+    }
+  ]
+}

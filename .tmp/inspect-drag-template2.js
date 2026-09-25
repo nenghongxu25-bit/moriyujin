@@ -1,0 +1,1 @@
+﻿views.map(v=>({type:v.templateNode.constructor.name,keys:Object.keys(v.templateNode),children:v.templateNode.children?.map(n=>({name:n.name,type:n.constructor.name})),template:v.gridRoot._templateNode?.constructor.name}))

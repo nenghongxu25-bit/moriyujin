@@ -1,0 +1,387 @@
+{
+  "started": 1789620841480,
+  "records": [
+    {
+      "rawMessage": "[RoomPerf] START {\"rooms\":2,\"documentHidden\":false}",
+      "message": "[RoomPerf] START {\"rooms\":2,\"documentHidden\":false}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620842140,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/RewardedAdButton.ts",
+      "line": 176,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/RewardedAdButton.ts",
+      "sourceLabel": "RewardedAdButton.ts:176"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE day-outside",
+      "message": "[RoomPerf] CASE day-outside",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620844137,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"day-outside\",\"passed\":true,\"fps\":59.99400060007409,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[null,null],\"documentHidden\":false,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"day-outside\",\"passed\":true,\"fps\":59.99400060007409,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[null,null],\"documentHidden\":false,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620847153,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE day-inside",
+      "message": "[RoomPerf] CASE day-inside",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620849153,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"day-inside\",\"passed\":true,\"fps\":59.994000599850615,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[null,null],\"documentHidden\":false,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"day-inside\",\"passed\":true,\"fps\":59.994000599850615,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[null,null],\"documentHidden\":false,\"nightVisible\":false,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620852153,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE night-lights-off",
+      "message": "[RoomPerf] CASE night-lights-off",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620854153,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"night-lights-off\",\"passed\":true,\"fps\":60.00198353682319,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"night-lights-off\",\"passed\":true,\"fps\":60.00198353682319,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":false,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620857186,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE night-lights-on",
+      "message": "[RoomPerf] CASE night-lights-on",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620859154,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"night-lights-on\",\"passed\":true,\"fps\":60.0138875110709,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"night-lights-on\",\"passed\":true,\"fps\":60.0138875110709,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620862186,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE night-exit",
+      "message": "[RoomPerf] CASE night-exit",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620864170,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"night-exit\",\"passed\":true,\"fps\":59.997000150171296,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"night-exit\",\"passed\":true,\"fps\":59.997000150171296,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620867186,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE second-room",
+      "message": "[RoomPerf] CASE second-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620869170,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"second-room\",\"passed\":true,\"fps\":60.0019835366015,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"second-room\",\"passed\":true,\"fps\":60.0019835366015,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620872203,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE combined-room",
+      "message": "[RoomPerf] CASE combined-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620874186,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"combined-room\",\"passed\":true,\"fps\":59.9820053983358,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"combined-room\",\"passed\":true,\"fps\":59.9820053983358,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620877187,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE move-lit-room",
+      "message": "[RoomPerf] CASE move-lit-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620879186,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"move-lit-room\",\"passed\":true,\"fps\":60,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"move-lit-room\",\"passed\":true,\"fps\":60,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620882186,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE lit-room-edge",
+      "message": "[RoomPerf] CASE lit-room-edge",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620884187,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"lit-room-edge\",\"passed\":true,\"fps\":60.01984126984127,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"lit-room-edge\",\"passed\":true,\"fps\":60.01984126984127,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":true,\"revealed\":true,\"alpha\":0,\"cutout\":true,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":false,\"flashlightError\":0}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620887202,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE outside-flashlight",
+      "message": "[RoomPerf] CASE outside-flashlight",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620889203,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"outside-flashlight\",\"passed\":true,\"fps\":60.01091107482956,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.00008023957927974679},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.00008023957927974679}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"outside-flashlight\",\"passed\":true,\"fps\":60.01091107482956,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.00008023957927974679},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.00008023957927974679}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620892237,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] CASE scan-room",
+      "message": "[RoomPerf] CASE scan-room",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620894219,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/douyin/SubscribeButton.ts",
+      "line": 12,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/douyin/SubscribeButton.ts",
+      "sourceLabel": "SubscribeButton.ts:12"
+    },
+    {
+      "rawMessage": "[RoomPerf] RESULT {\"scenario\":\"scan-room\",\"passed\":true,\"fps\":59.9970001499478,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.00006268939795285544},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.0000626893931487314}]}",
+      "message": "[RoomPerf] RESULT {\"scenario\":\"scan-room\",\"passed\":true,\"fps\":59.9970001499478,\"rtChanges\":0,\"roomRTResizes\":0,\"roomRTWidths\":[2179,2179],\"roomRTHeights\":[891,1029],\"rtSize\":[3000,3000],\"documentHidden\":false,\"nightVisible\":true,\"rooms\":[{\"name\":\"Sprite\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.00006268939795285544},{\"name\":\"Sprite_1\",\"inside\":false,\"revealed\":false,\"alpha\":1,\"cutout\":false,\"alignmentError\":0,\"flashlight\":true,\"flashlightError\":0.0000626893931487314}]}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620897220,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/branches.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/branches.ts",
+      "sourceLabel": "branches.ts:24"
+    },
+    {
+      "rawMessage": "[RoomPerf] STOP {\"completed\":true,\"failures\":0}",
+      "message": "[RoomPerf] STOP {\"completed\":true,\"failures\":0}",
+      "level": 1,
+      "group": "Play",
+      "timestamp": 1789620899220,
+      "sourceResolved": true,
+      "sourceResolutionTimedOut": false,
+      "sourceId": "http://localhost:18090/js/bundles/bundle.js",
+      "source": "../../../src/harvestable/bush.ts",
+      "line": 24,
+      "sourceLink": "file:///D:/Desktop/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/src/harvestable/bush.ts",
+      "sourceLabel": "bush.ts:24"
+    }
+  ],
+  "screenshots": [
+    {
+      "scenario": "day-outside",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-day-outside.png"
+    },
+    {
+      "scenario": "day-inside",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-day-inside.png"
+    },
+    {
+      "scenario": "night-lights-off",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-night-lights-off.png"
+    },
+    {
+      "scenario": "night-lights-on",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-night-lights-on.png"
+    },
+    {
+      "scenario": "night-exit",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-night-exit.png"
+    },
+    {
+      "scenario": "second-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-second-room.png"
+    },
+    {
+      "scenario": "combined-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-combined-room.png"
+    },
+    {
+      "scenario": "move-lit-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-move-lit-room.png"
+    },
+    {
+      "scenario": "lit-room-edge",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-lit-room-edge.png"
+    },
+    {
+      "scenario": "outside-flashlight",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-outside-flashlight.png"
+    },
+    {
+      "scenario": "scan-room",
+      "path": "D:\\Desktop\\测试\\.tmp\\room-scan-room.png"
+    }
+  ]
+}

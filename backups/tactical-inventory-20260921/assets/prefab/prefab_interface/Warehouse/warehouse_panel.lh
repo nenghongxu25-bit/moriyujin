@@ -1,0 +1,206 @@
+{
+  "_$ver": 1,
+  "_$id": "warehouse_root",
+  "_$type": "GWidget",
+  "name": "warehouse_panel",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "2d7d1f64-9d2a-4b5c-a2ed-3e6a1e0f4cf0",
+      "scriptPath": "../src/PlayUI/Warehouse/WarehousePanel.ts",
+      "bagGlistNode": {
+        "_$ref": [
+          "v4x5csnr",
+          "7fpks0da"
+        ]
+      },
+      "warehouseGlistNode": {
+        "_$ref": [
+          "bxppbfbw",
+          "7fpks0da"
+        ]
+      },
+      "warehousePageButton1": null,
+      "warehousePageButton2": null,
+      "warehousePageButton3": null,
+      "warehousePageButton4": null,
+      "warehousePageButton5": null,
+      "warehousePageButton6": null,
+      "warehousePageButton7": null
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "4xlta50g",
+      "_$type": "GImage",
+      "name": "img",
+      "x": 0,
+      "y": 0,
+      "width": 1334,
+      "height": 750,
+      "anchorX": 0,
+      "anchorY": 0,
+      "rotation": 0,
+      "src": "res://21dfa076-f83c-449f-9605-f94c9fafe451",
+      "autoSize": false,
+      "color": "#ffffff",
+      "scaleX": 1,
+      "scaleY": 1
+    },
+    {
+      "_$id": "wh_title",
+      "_$type": "Text",
+      "name": "titleText",
+      "x": 52,
+      "y": 31,
+      "width": 850,
+      "height": 48,
+      "text": "仓库",
+      "fontSize": 32,
+      "color": "#eee9d9",
+      "align": "left",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0,
+      "bold": true
+    },
+    {
+      "_$id": "v4x5csnr",
+      "_$prefab": "c90a477a-edd9-4563-9260-209a89c08b2e",
+      "name": "bag_list",
+      "active": true,
+      "x": 112,
+      "y": 240,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "7fpks0da",
+          "_initItemNum": 20,
+          "name": "baglist"
+        }
+      ]
+    },
+    {
+      "_$id": "bxppbfbw",
+      "_$prefab": "941c861a-11d5-440c-90e1-57eac5414741",
+      "name": "warehouse_list",
+      "active": true,
+      "x": 609,
+      "y": 139,
+      "visible": true,
+      "_$child": [
+        {
+          "_$override": "7fpks0da",
+          "name": "warehouselist",
+          "_$comp": [
+            {
+              "_$type": "0f3d3c58-9d25-4a96-a2b5-4dcf1c5f3f71",
+              "scriptPath": "../src/PlayUI/CommonUI/glist.ts",
+              "listNode": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "7fpks0da"
+                ]
+              },
+              "templateNode": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "myzvhd4c"
+                ]
+              },
+              "slotCount": 0,
+              "selectionEnabled": true
+            }
+          ]
+        },
+        {
+          "_$override": "myzvhd4c",
+          "_$comp": [
+            {
+              "_$type": "2847192a-1f1b-4cc0-b66a-3325ac9107f7",
+              "scriptPath": "../src/PlayUI/CommonUI/listTemplate.ts",
+              "templateSlot": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "zfgejdrd"
+                ]
+              },
+              "gimg": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "jdhjlgub"
+                ]
+              },
+              "nameText": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "5zg64bdz"
+                ]
+              },
+              "countText": {
+                "_$ref": [
+                  "bxppbfbw",
+                  "gj3qvj55"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "tjve29jy",
+          "_$type": "Sprite",
+          "name": "detail",
+          "x": -409,
+          "y": -38,
+          "width": 300,
+          "height": 100,
+          "_gcmds": [
+            {
+              "_$type": "DrawRectCmd",
+              "lineColor": "#647565",
+              "fillColor": "#293832"
+            }
+          ],
+          "_$child": [
+            {
+              "_$id": "dh9w6jty",
+              "_$type": "Text",
+              "name": "Text",
+              "width": 300,
+              "height": 100,
+              "visible": false,
+              "text": "Text",
+              "fontSize": 15,
+              "color": "#eee9d9",
+              "align": "center",
+              "leading": 2,
+              "letterSpacing": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "4xfu3qll",
+      "_$prefab": "6f77c7a8-c0f0-492d-81b0-f10e0e52a6b4",
+      "name": "CloseSprite",
+      "active": true,
+      "x": 567,
+      "y": 646,
+      "visible": true,
+      "_$comp": [
+        {
+          "_$override": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+          "targetNode": {
+            "_$ref": "warehouse_root"
+          }
+        }
+      ],
+      "scaleX": 1,
+      "scaleY": 1,
+      "width": 200,
+      "height": 80
+    }
+  ]
+}

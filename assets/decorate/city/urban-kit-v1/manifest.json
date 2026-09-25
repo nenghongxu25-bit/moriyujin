@@ -1,0 +1,152 @@
+﻿[
+    {
+        "file":  "center-office-entry.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  545369,
+        "visiblePixels":  1007677,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              38,
+                              101,
+                              1221,
+                              1189
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "center-parking-entry.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  748728,
+        "visiblePixels":  810598,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              26,
+                              177,
+                              1227,
+                              1168
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "center-planter-bench.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  866301,
+        "visiblePixels":  645832,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              71,
+                              133,
+                              1180,
+                              1112
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "center-security-barrier.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  1158713,
+        "visiblePixels":  383128,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              38,
+                              290,
+                              1217,
+                              1061
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "center-utility-cabinet.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  739662,
+        "visiblePixels":  818887,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              130,
+                              75,
+                              1131,
+                              1175
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "streets-apartment.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  549725,
+        "visiblePixels":  996234,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              60,
+                              53,
+                              1218,
+                              1212
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "streets-bus-shelter.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  807199,
+        "visiblePixels":  729747,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              59,
+                              123,
+                              1204,
+                              1131
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "streets-corner-store.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  551133,
+        "visiblePixels":  1002908,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              40,
+                              49,
+                              1219,
+                              1207
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "streets-delivery-van.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  798091,
+        "visiblePixels":  765823,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              30,
+                              138,
+                              1238,
+                              1145
+                          ],
+        "valid":  true
+    },
+    {
+        "file":  "streets-dumpster.png",
+        "width":  1254,
+        "height":  1254,
+        "transparentPixels":  785565,
+        "visiblePixels":  774593,
+        "visibleEdgePixels":  0,
+        "visibleBounds":  [
+                              118,
+                              149,
+                              1195,
+                              1175
+                          ],
+        "valid":  true
+    }
+]

@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "712d4eafb8da",
+  "_$type": "Sprite",
+  "name": "阻挡_rock-moss-small",
+  "width": 192,
+  "height": 192,
+  "pivotX": 101,
+  "pivotY": 159,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 159
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "285646119306"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 68,
+      "blockY": 147,
+      "blockWidth": 66,
+      "blockHeight": 12
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "285646119306",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "d8b7ffc5-2af3-4a15-822f-f3548097f244",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

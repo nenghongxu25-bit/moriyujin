@@ -1,0 +1,38 @@
+{
+  "enabled": true,
+    "category": "medicines",
+    "items": [
+        {
+            "id": "bandage",
+            "displayName": "绷带",
+            "nameZh": "绷带",
+            "subCategory": "medicine",
+            "icon": "atlas/picture/items/extraction-loot-v1/medicines/first_aid_pouch.png",
+            "stackMax": 20,
+            "consumable": true,
+            "useEffect": {
+                "type": "healHp",
+                "amount": 25
+            },
+            "description": "恢复少量生命",
+            "gridWidth": 1,
+            "gridHeight": 1
+        },
+        {
+            "id": "kangfuyao",
+            "displayName": "康复药",
+            "nameZh": "康复药",
+            "subCategory": "medicine",
+            "icon": "atlas/picture/items/extraction-loot-v1/medicines/recovery_injector_strong.png",
+            "stackMax": 20,
+            "consumable": true,
+            "useEffect": {
+                "type": "healHp",
+                "amount": 50
+            },
+            "description": "恢复生命",
+            "gridWidth": 1,
+            "gridHeight": 1
+        }
+    ]
+}

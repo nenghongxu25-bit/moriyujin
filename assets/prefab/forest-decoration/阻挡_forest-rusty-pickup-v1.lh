@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "fe543041d73c",
+  "_$type": "Sprite",
+  "name": "阻挡_forest-rusty-pickup-v1",
+  "width": 288,
+  "height": 164,
+  "pivotX": 149,
+  "pivotY": 143,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 143
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "772c99ac5113"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 55,
+      "blockY": 126,
+      "blockWidth": 187,
+      "blockHeight": 17
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "772c99ac5113",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 288,
+      "height": 164,
+      "texture": {
+        "_$uuid": "70337db2-b636-4a67-880c-1fff100a86d6",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

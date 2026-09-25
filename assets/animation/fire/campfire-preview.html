@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>篝火动画预览</title>
+<style>
+body{margin:0;background:#151b22;color:#e5e7eb;font:16px system-ui;text-align:center}h1{font-size:20px;margin:20px 0 8px}p{color:#aeb8c5}canvas{display:block;margin:auto;width:min(75vh,95vw);height:auto}button{padding:8px 20px;cursor:pointer}label{margin:0 14px}
+</style>
+<h1>篝火 · 8 帧循环预览</h1>
+<p>木柴和石圈固定，火焰独立播放。原图保留。</p>
+<button id="toggle">暂停</button><label>速度 <input id="speed" type="range" min="6" max="20" value="8"> <span id="fps">8</span> 帧/秒</label>
+<canvas id="view" width="1280" height="1280"></canvas><p id="status">正在加载…</p>
+<script>
+const canvas=document.getElementById('view'),ctx=canvas.getContext('2d');
+const body=new Image(),sheet=new Image();let playing=true,phase=0,last=0,rate=8;
+function load(img,url){return new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=url})}
+document.getElementById('toggle').onclick=function(){playing=!playing;this.textContent=playing?'暂停':'播放'};
+document.getElementById('speed').oninput=function(){rate=Number(this.value);document.getElementById('fps').textContent=this.value};
+function render(now){
+ const dt=last?Math.min((now-last)/1000,.1):0;last=now;
+ if(playing)phase=(phase+dt*rate)%8;
+ const frame=Math.floor(phase);
+ ctx.clearRect(0,0,1280,1280);
+ ctx.drawImage(body,0,0,1280,1280);
+ ctx.drawImage(sheet,(frame%4)*384,Math.floor(frame/4)*512,384,512,315,240,650,650);
+ requestAnimationFrame(render);
+}
+Promise.all([load(body,'../../decorate/fire/campfire-base.png'),load(sheet,'torch-flame-sheet.png')]).then(()=>{
+ document.getElementById('status').textContent='透明火焰图集 · 4 列 × 2 行 · 每帧 384 × 512';requestAnimationFrame(render);
+}).catch(()=>{document.getElementById('status').textContent='图片加载失败，请将预览和两张 PNG 放在同一文件夹。'});
+</script></html>

@@ -1,0 +1,160 @@
+{
+  "_$id": "house01",
+  "_$type": "Sprite",
+  "name": "House",
+  "width": 0,
+  "height": 0,
+  "_$comp": [
+    {
+      "_$type": "4970ea9d-81c3-4897-b5a2-360a7281ca0d",
+      "scriptPath": "../src/systems/HouseRoofVisibility.ts",
+      "player": null,
+      "footOffsetY": 0,
+      "fadeSeconds": 0.2
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "roomregions",
+      "_$type": "Sprite",
+      "name": "RoomRegions",
+      "_$child": [
+        {
+          "_$id": "region01",
+          "_$type": "Sprite",
+          "name": "Room_01",
+          "x": -32,
+          "y": 112,
+          "width": 0,
+          "height": 0,
+          "scaleX": 0.25,
+          "scaleY": 0.25,
+          "_$comp": [
+            {
+              "_$type": "TileMapLayer",
+              "layer": 0,
+              "tileSet": {
+                "_$uuid": "d17f4bc4-50c6-4fa4-9b53-e999ad0e6cab",
+                "_$type": "TileSet"
+              },
+              "chunkDatas": {
+                "_$type": "Record"
+              }
+            },
+            {
+              "_$type": "f97a2854-4901-4ced-974c-e694db888b03"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_$id": "indoorfloor01",
+      "_$type": "Sprite",
+      "name": "IndoorFloorLayer",
+      "x": -32,
+      "y": 112,
+      "width": 0,
+      "height": 0,
+      "scaleX": 0.25,
+      "scaleY": 0.25,
+      "_$comp": [
+        {
+          "_$type": "TileMapLayer",
+          "layer": 0,
+          "tileSet": {
+            "_$uuid": "d8f9a0f4-e911-4d2a-8772-aaf9788eee8a",
+            "_$type": "TileSet"
+          },
+          "chunkDatas": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$type": "567e9b12-042a-4a56-88a1-a8e69f9fd745",
+          "scriptPath": "../src/systems/IndoorFloorLayer.ts"
+        }
+      ]
+    },
+    {
+      "_$id": "7a874a38f884",
+      "_$type": "Sprite",
+      "name": "BrickWallLayer",
+      "width": 0,
+      "height": 0,
+      "_$comp": [
+        {
+          "_$type": "TileMapLayer",
+          "layer": 0,
+          "tileSet": {
+            "_$uuid": "0f2619bf-b974-47a1-811c-81f504087223",
+            "_$type": "TileSet"
+          },
+          "chunkDatas": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$type": "818f8acf-a35f-42d4-b285-b2d8b67d5af8",
+          "scriptPath": "../src/systems/BrickWallTileLayer.ts",
+          "actorLayer": null,
+          "occludedAlpha": 0.28,
+          "occlusionFadeSeconds": 0.18
+        }
+      ]
+    },
+    {
+      "_$id": "slaterooflayer",
+      "_$type": "Sprite",
+      "name": "RoofLayer",
+      "width": 0,
+      "height": 0,
+      "_$comp": [
+        {
+          "_$type": "TileMapLayer",
+          "layer": 0,
+          "tileSet": {
+            "_$uuid": "597bee4f-2b51-4b22-b0ba-1dc144c22543",
+            "_$type": "TileSet"
+          },
+          "chunkDatas": {
+            "_$type": "Record"
+          }
+        },
+        {
+          "_$type": "3591ef95-3f88-4957-88b2-bb349b43fcb1",
+          "scriptPath": "../src/systems/RoofTileLayer.ts",
+          "displayOrder": 100000
+        }
+      ],
+      "_$child": [
+        {
+          "_$id": "independentgable01",
+          "_$type": "Sprite",
+          "name": "GableLayer",
+          "width": 0,
+          "height": 0,
+          "_$comp": [
+            {
+              "_$type": "TileMapLayer",
+              "layer": 0,
+              "tileSet": {
+                "_$uuid": "ba477789-9058-433a-931b-3c7f2d85cc03",
+                "_$type": "TileSet"
+              },
+              "chunkDatas": {
+                "_$type": "Record"
+              }
+            },
+            {
+              "_$type": "3591ef95-3f88-4957-88b2-bb349b43fcb1",
+              "scriptPath": "../src/systems/RoofTileLayer.ts",
+              "displayOrder": 99999
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "_$ver": 1
+}

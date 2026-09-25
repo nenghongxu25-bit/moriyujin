@@ -1,0 +1,37 @@
+{
+  "_$ver": 1,
+  "_$id": "a20eba13e522",
+  "_$type": "Sprite",
+  "name": "可穿过_forest-abandoned-backpack-v1",
+  "width": 127,
+  "height": 128,
+  "pivotX": 65,
+  "pivotY": 125,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 125
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "51c6b01cc865"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "51c6b01cc865",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 127,
+      "height": 128,
+      "texture": {
+        "_$uuid": "133fcf6e-fa79-4563-9c06-2d718e84561c",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

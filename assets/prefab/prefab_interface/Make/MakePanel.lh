@@ -1,0 +1,267 @@
+{
+  "_$ver": 1,
+  "_$id": "tu4jo9qo",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 1334,
+  "height": 750,
+  "_$comp": [
+    {
+      "_$type": "e7a82e0d-ec39-4ac1-9518-f70baf987b54",
+      "scriptPath": "../src/PlayUI/Make/MakePanel.ts",
+      "outputListNode": {
+        "_$ref": "c5jqkljb"
+      },
+      "outputTemplateNode": {
+        "_$ref": "ol9cz4g0"
+      },
+      "inputListNode": {
+        "_$ref": "1xd2h4dv"
+      },
+      "inputTemplateNode": {
+        "_$ref": "v1qyi4wh"
+      },
+      "makeButtonNode": {
+        "_$ref": "lk88rhmq"
+      },
+      "makeButtonMaskNode": {
+        "_$ref": [
+          "lk88rhmq",
+          "n392fqkh"
+        ]
+      },
+      "messageTextNode": {
+        "_$ref": "make_message_text"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "eg4yidej",
+      "_$type": "Area2D",
+      "name": "Area2D",
+      "width": 1334,
+      "height": 750,
+      "_$child": [
+        {
+          "_$id": "izxx1wz2",
+          "_$type": "Sprite",
+          "name": "Bg",
+          "x": 368,
+          "y": 58,
+          "width": 598,
+          "height": 630,
+          "texture": {
+            "_$uuid": "c47785c0-891f-4a1b-8094-fca1782e1865",
+            "_$type": "Texture"
+          }
+        },
+        {
+          "_$id": "c5jqkljb",
+          "_$type": "GList",
+          "name": "outputlist",
+          "x": 394,
+          "y": 145,
+          "width": 546,
+          "height": 325,
+          "layout": {
+            "type": 3,
+            "padding": [
+              10,
+              0,
+              0,
+              0
+            ],
+            "align": 1
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "barDisplay": 5,
+            "vScrollBarRes": {
+              "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+              "_$type": "Prefab"
+            }
+          },
+          "_templateNode": {
+            "_$ref": "ol9cz4g0",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 20,
+          "_$child": [
+            {
+              "_$id": "ol9cz4g0",
+              "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+              "name": "boxmodule",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "_$id": "g83gat7p",
+          "_$type": "Sprite",
+          "name": "border",
+          "x": 390,
+          "y": 140,
+          "width": 554,
+          "height": 335,
+          "_gcmds": [
+            {
+              "_$type": "DrawRoundRectCmd",
+              "lt": 6,
+              "rt": 6,
+              "lb": 6,
+              "rb": 6,
+              "lineWidth": 1,
+              "lineColor": "#647565"
+            }
+          ],
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "egkww6ze",
+          "_$type": "Text",
+          "name": "title",
+          "x": 402,
+          "y": 78,
+          "width": 410,
+          "height": 50,
+          "text": "快速制作",
+          "fontSize": 29,
+          "color": "#eee9d9",
+          "bold": true,
+          "align": "left",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        },
+        {
+          "_$id": "1xd2h4dv",
+          "_$type": "GList",
+          "name": "inputlist",
+          "x": 402,
+          "y": 549,
+          "width": 358,
+          "height": 100,
+          "layout": {
+            "type": 2,
+            "padding": [
+              0,
+              0,
+              0,
+              10
+            ]
+          },
+          "scroller": {
+            "_$type": "Scroller",
+            "direction": 1,
+            "barDisplay": 5,
+            "vScrollBarRes": {
+              "_$uuid": "eb7cd798-7a10-46c5-b85f-cdc935a78181",
+              "_$type": "Prefab"
+            }
+          },
+          "_templateNode": {
+            "_$ref": "v1qyi4wh",
+            "_$tmpl": "itemTemplate"
+          },
+          "_initItemNum": 1,
+          "_$child": [
+            {
+              "_$id": "v1qyi4wh",
+              "_$prefab": "a7a8c4f4-7ee8-4b25-ae02-f70166546db5",
+              "name": "boxmodule",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true
+            }
+          ]
+        },
+        {
+          "_$id": "9woufc8g",
+          "_$type": "Sprite",
+          "name": "Sprite",
+          "x": 396,
+          "y": 535,
+          "width": 370,
+          "height": 123,
+          "_gcmds": [
+            {
+              "_$type": "DrawRoundRectCmd",
+              "lt": 6,
+              "rt": 6,
+              "lb": 6,
+              "rb": 6,
+              "lineWidth": 1,
+              "lineColor": "#647565"
+            }
+          ],
+          "mouseEnabled": false
+        },
+        {
+          "_$id": "lk88rhmq",
+          "_$prefab": "7f94452e-acc7-43a7-8e9c-27fe070a2873",
+          "name": "makebutton",
+          "active": true,
+          "x": 802,
+          "y": 549,
+          "visible": true,
+          "_$child": [
+            {
+              "_$override": "tz6yo96j",
+              "text": "制作",
+              "color": "#eee9d9"
+            },
+            {
+              "_$override": "n392fqkh",
+              "visible": true
+            }
+          ],
+          "width": 100,
+          "height": 100
+        },
+        {
+          "_$id": "noekgw19",
+          "_$type": "Sprite",
+          "name": "close",
+          "x": 896,
+          "y": 76,
+          "width": 48,
+          "height": 48,
+          "texture": {
+            "_$uuid": "d05ecc88-ab80-480e-86be-5424cc2b0dd5",
+            "_$type": "Texture"
+          },
+          "_$comp": [
+            {
+              "_$type": "14d09e1b-aa6f-4bcf-afc1-cf0226a43024",
+              "scriptPath": "../src/CloseSprite.ts",
+              "targetNode": {
+                "_$ref": "tu4jo9qo"
+              }
+            }
+          ]
+        },
+        {
+          "_$id": "make_message_text",
+          "_$type": "Text",
+          "name": "messageText",
+          "x": 399,
+          "y": 480,
+          "width": 533,
+          "height": 34,
+          "visible": false,
+          "fontSize": 18,
+          "color": "#cab781",
+          "align": "center",
+          "valign": "middle",
+          "leading": 2,
+          "letterSpacing": 0
+        }
+      ]
+    }
+  ]
+}

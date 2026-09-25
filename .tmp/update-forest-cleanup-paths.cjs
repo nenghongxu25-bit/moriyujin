@@ -1,0 +1,5 @@
+const fs=require('fs');const plan=JSON.parse(fs.readFileSync('.tmp/forest-cleanup-plan.json','utf8'));
+const paths=['AGENTS.md','docs/terrain-transition-standard.md','docs/building-tiles-standard.md','tools/build-brick-wall-kit.cjs','tools/build-building-materials.cjs','tools/test-building-materials.cjs'];
+for(const p of paths){if(!fs.existsSync(p))continue;let s=fs.readFileSync(p,'utf8');for(const f of plan.files)s=s.split(f.from).join(f.to);fs.writeFileSync(p,s);}
+const p='src/systems/GroundRain.ts';let s=fs.readFileSync(p,'utf8');s=s.replace('forest-kit-v3/grass-water.png','tileset/forest/rain-water.png');fs.writeFileSync(p,s);
+const doc='docs/terrain-transition-standard.md';s=fs.readFileSync(doc,'utf8');s=s.replace('## 当前森林图集','## 当前使用资源（2026-09-21 整理）\n\n森林场景当前使用 `assets/tileset/forest/forest-diamond.tres`，图片为同目录的 `forest-diamond-atlas.png`，单块 128×64。积水采样为 `rain-water.png`，水流为 `water-flow.png`。下文方形素材制作过程是历史记录，原文件已移到 `backups/forest-atlas-cleanup-20260921/assets/`。\n\n## 历史方形森林图集');fs.writeFileSync(doc,s);

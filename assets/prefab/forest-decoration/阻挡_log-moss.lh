@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "b7a31538fb23",
+  "_$type": "Sprite",
+  "name": "阻挡_log-moss",
+  "width": 192,
+  "height": 192,
+  "pivotX": 99,
+  "pivotY": 159,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 159
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "4973ea193d2f"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 56,
+      "blockY": 147,
+      "blockWidth": 85,
+      "blockHeight": 12
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "4973ea193d2f",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "fe5e0e1c-e033-434c-b812-82c48e8f4418",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

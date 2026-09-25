@@ -1,0 +1,1051 @@
+{
+  "version": 1,
+  "status": "art assets configured; gameplay equipment integration pending",
+  "pixelsPerCell": 256,
+  "qualityColors": [
+    {
+      "id": "gray",
+      "border": "#727a80",
+      "background": "#30363b"
+    },
+    {
+      "id": "green",
+      "border": "#5f9d65",
+      "background": "#233c2a"
+    },
+    {
+      "id": "blue",
+      "border": "#538fcb",
+      "background": "#213950"
+    },
+    {
+      "id": "purple",
+      "border": "#a274ca",
+      "background": "#3b294d"
+    },
+    {
+      "id": "gold",
+      "border": "#d2ab4f",
+      "background": "#493b20"
+    },
+    {
+      "id": "red",
+      "border": "#c85b5b",
+      "background": "#492628"
+    }
+  ],
+  "notes": [
+    "防护等级为游戏设计值；六级护甲与头盔分别共用立绘，灰绿蓝紫金红底色区分等级。耳机用蓝紫金。",
+    "护甲耐久、重量和听力参数为首版调参基线，尚未接入伤害、负重或音频系统。",
+    "外部占格是空装备在仓库里的体积；内部格数只统计独立分区，不统计空白。",
+    "物品必须完整落在一个分区内；旋转后也不能跨区。",
+    "分区内装不下时拒绝放入；更换容器必须先验证全部物品可容纳，失败保留原容器与物资。",
+    "耳机沿用声源遮挡与衰减，不让玩家听到原本被完全阻隔的声音。"
+  ],
+  "items": [
+    {
+      "id": "armor_l1",
+      "name": "制式护甲 · 1级",
+      "category": "armor",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 3,
+      "pixelWidth": 768,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "protectionLevel": 1,
+      "maxDurability": 40,
+      "weightKg": 2.5,
+      "movementSpeedMultiplier": 1,
+      "coverage": [
+        "torso"
+      ],
+      "artBrief": "六级共用同一护甲立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/armor.png",
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "helmet_l1",
+      "name": "制式头盔 · 1级",
+      "category": "helmet",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "protectionLevel": 1,
+      "maxDurability": 25,
+      "weightKg": 0.8,
+      "coverage": [
+        "head"
+      ],
+      "artBrief": "六级共用同一头盔立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/helmet.png",
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "armor_l2",
+      "name": "制式护甲 · 2级",
+      "category": "armor",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 3,
+      "pixelWidth": 768,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "protectionLevel": 2,
+      "maxDurability": 50,
+      "weightKg": 3.5,
+      "movementSpeedMultiplier": 0.99,
+      "coverage": [
+        "torso"
+      ],
+      "artBrief": "六级共用同一护甲立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/armor.png",
+      "presentation": {
+        "quality": "green",
+        "backgroundColor": "#233c2a",
+        "borderColor": "#5f9d65",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "helmet_l2",
+      "name": "制式头盔 · 2级",
+      "category": "helmet",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "protectionLevel": 2,
+      "maxDurability": 30,
+      "weightKg": 1,
+      "coverage": [
+        "head"
+      ],
+      "artBrief": "六级共用同一头盔立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/helmet.png",
+      "presentation": {
+        "quality": "green",
+        "backgroundColor": "#233c2a",
+        "borderColor": "#5f9d65",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "armor_l3",
+      "name": "制式护甲 · 3级",
+      "category": "armor",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 3,
+      "pixelWidth": 768,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "protectionLevel": 3,
+      "maxDurability": 60,
+      "weightKg": 5,
+      "movementSpeedMultiplier": 0.97,
+      "coverage": [
+        "torso"
+      ],
+      "artBrief": "六级共用同一护甲立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/armor.png",
+      "presentation": {
+        "quality": "blue",
+        "backgroundColor": "#213950",
+        "borderColor": "#538fcb",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "helmet_l3",
+      "name": "制式头盔 · 3级",
+      "category": "helmet",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "protectionLevel": 3,
+      "maxDurability": 40,
+      "weightKg": 1.3,
+      "coverage": [
+        "head"
+      ],
+      "artBrief": "六级共用同一头盔立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/helmet.png",
+      "presentation": {
+        "quality": "blue",
+        "backgroundColor": "#213950",
+        "borderColor": "#538fcb",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "armor_l4",
+      "name": "制式护甲 · 4级",
+      "category": "armor",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 3,
+      "pixelWidth": 768,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "protectionLevel": 4,
+      "maxDurability": 70,
+      "weightKg": 6.5,
+      "movementSpeedMultiplier": 0.95,
+      "coverage": [
+        "torso"
+      ],
+      "artBrief": "六级共用同一护甲立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/armor.png",
+      "presentation": {
+        "quality": "purple",
+        "backgroundColor": "#3b294d",
+        "borderColor": "#a274ca",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "helmet_l4",
+      "name": "制式头盔 · 4级",
+      "category": "helmet",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "protectionLevel": 4,
+      "maxDurability": 50,
+      "weightKg": 1.6,
+      "coverage": [
+        "head"
+      ],
+      "artBrief": "六级共用同一头盔立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/helmet.png",
+      "presentation": {
+        "quality": "purple",
+        "backgroundColor": "#3b294d",
+        "borderColor": "#a274ca",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "armor_l5",
+      "name": "制式护甲 · 5级",
+      "category": "armor",
+      "enabled": false,
+      "gridWidth": 4,
+      "gridHeight": 3,
+      "pixelWidth": 1024,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "protectionLevel": 5,
+      "maxDurability": 80,
+      "weightKg": 8,
+      "movementSpeedMultiplier": 0.92,
+      "coverage": [
+        "torso"
+      ],
+      "artBrief": "六级共用同一护甲立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/armor_wide.png",
+      "presentation": {
+        "quality": "gold",
+        "backgroundColor": "#493b20",
+        "borderColor": "#d2ab4f",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "helmet_l5",
+      "name": "制式头盔 · 5级",
+      "category": "helmet",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "protectionLevel": 5,
+      "maxDurability": 60,
+      "weightKg": 2,
+      "coverage": [
+        "head"
+      ],
+      "artBrief": "六级共用同一头盔立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/helmet.png",
+      "presentation": {
+        "quality": "gold",
+        "backgroundColor": "#493b20",
+        "borderColor": "#d2ab4f",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "armor_l6",
+      "name": "制式护甲 · 6级",
+      "category": "armor",
+      "enabled": false,
+      "gridWidth": 4,
+      "gridHeight": 3,
+      "pixelWidth": 1024,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "protectionLevel": 6,
+      "maxDurability": 90,
+      "weightKg": 10,
+      "movementSpeedMultiplier": 0.88,
+      "coverage": [
+        "torso"
+      ],
+      "artBrief": "六级共用同一护甲立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/armor_wide.png",
+      "presentation": {
+        "quality": "red",
+        "backgroundColor": "#492628",
+        "borderColor": "#c85b5b",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "helmet_l6",
+      "name": "制式头盔 · 6级",
+      "category": "helmet",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "protectionLevel": 6,
+      "maxDurability": 70,
+      "weightKg": 2.5,
+      "coverage": [
+        "head"
+      ],
+      "artBrief": "六级共用同一头盔立绘，保持原色，由 UI 底色区分等级",
+      "icon": "atlas/picture/items/equipment-v1/helmet.png",
+      "presentation": {
+        "quality": "red",
+        "backgroundColor": "#492628",
+        "borderColor": "#c85b5b",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "headset_basic",
+      "name": "基础拾音耳机",
+      "category": "headset",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "weightKg": 0.4,
+      "hearing": {
+        "quietSoundRangeMultiplier": 1.15,
+        "ambientGain": 0.85,
+        "loudImpulseGain": 0.9,
+        "preservesOcclusion": true
+      },
+      "description": "基础：小幅扩大细微声响可听范围",
+      "artBrief": "棕色轻便耳罩，细头梁与裸露连接线",
+      "icon": "atlas/picture/items/equipment-v1/headset.png",
+      "presentation": {
+        "quality": "blue",
+        "backgroundColor": "#213950",
+        "borderColor": "#538fcb",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "headset_balanced",
+      "name": "战术降噪耳机",
+      "category": "headset",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "weightKg": 0.4,
+      "hearing": {
+        "quietSoundRangeMultiplier": 1.35,
+        "ambientGain": 0.65,
+        "loudImpulseGain": 0.75,
+        "preservesOcclusion": true
+      },
+      "description": "均衡：增强脚步与操作声，降低环境噪声",
+      "artBrief": "军绿电子耳罩，软垫头梁和单侧麦克风",
+      "icon": "atlas/picture/items/equipment-v1/headset.png",
+      "presentation": {
+        "quality": "purple",
+        "backgroundColor": "#3b294d",
+        "borderColor": "#a274ca",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "headset_advanced",
+      "name": "高灵敏侦察耳机",
+      "category": "headset",
+      "enabled": false,
+      "gridWidth": 2,
+      "gridHeight": 2,
+      "pixelWidth": 512,
+      "pixelHeight": 512,
+      "stackMax": 1,
+      "weightKg": 0.4,
+      "hearing": {
+        "quietSoundRangeMultiplier": 1.55,
+        "ambientGain": 0.45,
+        "loudImpulseGain": 0.6,
+        "preservesOcclusion": true
+      },
+      "description": "侦察：扩大细微声响可听范围，强化环境降噪",
+      "artBrief": "黑灰低轮廓电子耳罩，厚耳垫和双侧拾音模块",
+      "icon": "atlas/picture/items/equipment-v1/headset.png",
+      "presentation": {
+        "quality": "gold",
+        "backgroundColor": "#493b20",
+        "borderColor": "#d2ab4f",
+        "sharedArtwork": true,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "rig_light",
+      "name": "雨燕轻型弹挂",
+      "category": "rig",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 3,
+      "pixelWidth": 768,
+      "pixelHeight": 768,
+      "stackMax": 1,
+      "weightKg": 0.7,
+      "container": {
+        "columns": 4,
+        "capacity": 8,
+        "usableCells": 8,
+        "compartments": [
+          {
+            "id": "p1",
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p2",
+            "x": 1,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p3",
+            "x": 2,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p4",
+            "x": 3,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        ]
+      },
+      "artBrief": "沙色窄胸挂，四个独立竖向弹匣袋",
+      "icon": "atlas/picture/items/equipment-v1/states/rig_light_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 3,
+          "gridHeight": 3,
+          "pixelWidth": 768,
+          "pixelHeight": 768,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_light_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 2,
+          "gridHeight": 1,
+          "pixelWidth": 512,
+          "pixelHeight": 256,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_light_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": -1,
+      "nestingValuePremium": 0,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "rig_patrol",
+      "name": "游骑兵巡逻弹挂",
+      "category": "rig",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 4,
+      "pixelWidth": 768,
+      "pixelHeight": 1024,
+      "stackMax": 1,
+      "weightKg": 1.1,
+      "container": {
+        "columns": 4,
+        "capacity": 12,
+        "usableCells": 12,
+        "compartments": [
+          {
+            "id": "p1",
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p2",
+            "x": 1,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p3",
+            "x": 2,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p4",
+            "x": 3,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p5",
+            "x": 0,
+            "y": 2,
+            "width": 2,
+            "height": 1
+          },
+          {
+            "id": "p6",
+            "x": 2,
+            "y": 2,
+            "width": 2,
+            "height": 1
+          }
+        ]
+      },
+      "artBrief": "橄榄绿胸挂，四个竖袋和两个横向工具袋",
+      "icon": "atlas/picture/items/equipment-v1/states/rig_patrol_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 3,
+          "gridHeight": 4,
+          "pixelWidth": 768,
+          "pixelHeight": 1024,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_patrol_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 2,
+          "gridHeight": 1,
+          "pixelWidth": 512,
+          "pixelHeight": 256,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_patrol_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 0,
+      "nestingValuePremium": 0,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "rig_assault",
+      "name": "红隼突击弹挂",
+      "category": "rig",
+      "enabled": false,
+      "gridWidth": 4,
+      "gridHeight": 4,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "stackMax": 1,
+      "weightKg": 1.5,
+      "container": {
+        "columns": 4,
+        "capacity": 16,
+        "usableCells": 16,
+        "compartments": [
+          {
+            "id": "p1",
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          },
+          {
+            "id": "p2",
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          },
+          {
+            "id": "p3",
+            "x": 0,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p4",
+            "x": 1,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p5",
+            "x": 2,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "p6",
+            "x": 3,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          }
+        ]
+      },
+      "artBrief": "深绿胸挂，上方两个方形杂物袋，下方四个细长袋",
+      "icon": "atlas/picture/items/equipment-v1/states/rig_assault_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 4,
+          "gridHeight": 4,
+          "pixelWidth": 1024,
+          "pixelHeight": 1024,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_assault_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 2,
+          "gridHeight": 2,
+          "pixelWidth": 512,
+          "pixelHeight": 512,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_assault_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 0,
+      "nestingValuePremium": 0,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "rig_heavy",
+      "name": "磐石支援弹挂",
+      "category": "rig",
+      "enabled": false,
+      "gridWidth": 4,
+      "gridHeight": 4,
+      "pixelWidth": 1024,
+      "pixelHeight": 1024,
+      "stackMax": 1,
+      "weightKg": 2,
+      "container": {
+        "columns": 4,
+        "capacity": 20,
+        "usableCells": 20,
+        "compartments": [
+          {
+            "id": "p1",
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 3
+          },
+          {
+            "id": "p2",
+            "x": 2,
+            "y": 0,
+            "width": 2,
+            "height": 3
+          },
+          {
+            "id": "p3",
+            "x": 0,
+            "y": 3,
+            "width": 2,
+            "height": 2
+          },
+          {
+            "id": "p4",
+            "x": 2,
+            "y": 3,
+            "width": 2,
+            "height": 2
+          }
+        ]
+      },
+      "artBrief": "灰黑宽胸挂，两个大号纵向袋与两个方形袋",
+      "icon": "atlas/picture/items/equipment-v1/states/rig_heavy_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 4,
+          "gridHeight": 4,
+          "pixelWidth": 1024,
+          "pixelHeight": 1024,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_heavy_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 2,
+          "gridHeight": 2,
+          "pixelWidth": 512,
+          "pixelHeight": 512,
+          "icon": "atlas/picture/items/equipment-v1/states/rig_heavy_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 4,
+      "nestingValuePremium": 0.2,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "backpack_compact",
+      "name": "轻便搜集背包",
+      "category": "backpack",
+      "enabled": false,
+      "gridWidth": 3,
+      "gridHeight": 4,
+      "pixelWidth": 768,
+      "pixelHeight": 1024,
+      "stackMax": 1,
+      "weightKg": 0.8,
+      "container": {
+        "columns": 3,
+        "capacity": 12,
+        "usableCells": 12,
+        "compartments": [
+          {
+            "id": "main",
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 4
+          }
+        ]
+      },
+      "artBrief": "灰褐色小型帆布包，单一主仓",
+      "icon": "atlas/picture/items/equipment-v1/states/backpack_compact_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 3,
+          "gridHeight": 4,
+          "pixelWidth": 768,
+          "pixelHeight": 1024,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_compact_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 2,
+          "gridHeight": 1,
+          "pixelWidth": 512,
+          "pixelHeight": 256,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_compact_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 0,
+      "nestingValuePremium": 0,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "backpack_patrol",
+      "name": "巡逻分仓背包",
+      "category": "backpack",
+      "enabled": false,
+      "gridWidth": 4,
+      "gridHeight": 5,
+      "pixelWidth": 1024,
+      "pixelHeight": 1280,
+      "stackMax": 1,
+      "weightKg": 1.3,
+      "container": {
+        "columns": 5,
+        "capacity": 20,
+        "usableCells": 20,
+        "compartments": [
+          {
+            "id": "main",
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "height": 4
+          },
+          {
+            "id": "side1",
+            "x": 4,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          },
+          {
+            "id": "side2",
+            "x": 4,
+            "y": 2,
+            "width": 1,
+            "height": 2
+          }
+        ]
+      },
+      "artBrief": "橄榄绿中型巡逻包，主仓和两个窄侧袋",
+      "icon": "atlas/picture/items/equipment-v1/states/backpack_patrol_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 4,
+          "gridHeight": 5,
+          "pixelWidth": 1024,
+          "pixelHeight": 1280,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_patrol_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 2,
+          "gridHeight": 2,
+          "pixelWidth": 512,
+          "pixelHeight": 512,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_patrol_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 0,
+      "nestingValuePremium": 0,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "backpack_expedition",
+      "name": "远征搜刮背包",
+      "category": "backpack",
+      "enabled": false,
+      "gridWidth": 5,
+      "gridHeight": 5,
+      "pixelWidth": 1280,
+      "pixelHeight": 1280,
+      "stackMax": 1,
+      "weightKg": 2,
+      "container": {
+        "columns": 6,
+        "capacity": 30,
+        "usableCells": 28,
+        "compartments": [
+          {
+            "id": "main",
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "height": 5
+          },
+          {
+            "id": "side1",
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          },
+          {
+            "id": "side2",
+            "x": 4,
+            "y": 2,
+            "width": 2,
+            "height": 2
+          }
+        ]
+      },
+      "artBrief": "沙色宽体远征包，大主仓、两个独立方形外挂袋",
+      "icon": "atlas/picture/items/equipment-v1/states/backpack_expedition_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 5,
+          "gridHeight": 5,
+          "pixelWidth": 1280,
+          "pixelHeight": 1280,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_expedition_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 3,
+          "gridHeight": 2,
+          "pixelWidth": 768,
+          "pixelHeight": 512,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_expedition_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 3,
+      "nestingValuePremium": 0.15,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    },
+    {
+      "id": "backpack_cargo",
+      "name": "重型运输背包",
+      "category": "backpack",
+      "enabled": false,
+      "gridWidth": 5,
+      "gridHeight": 6,
+      "pixelWidth": 1280,
+      "pixelHeight": 1536,
+      "stackMax": 1,
+      "weightKg": 3,
+      "container": {
+        "columns": 6,
+        "capacity": 36,
+        "usableCells": 36,
+        "compartments": [
+          {
+            "id": "main",
+            "x": 0,
+            "y": 0,
+            "width": 4,
+            "height": 6
+          },
+          {
+            "id": "side1",
+            "x": 4,
+            "y": 0,
+            "width": 2,
+            "height": 3
+          },
+          {
+            "id": "side2",
+            "x": 4,
+            "y": 3,
+            "width": 2,
+            "height": 3
+          }
+        ]
+      },
+      "artBrief": "深灰大容量运输包，长主仓、两侧独立长袋与加宽肩带",
+      "icon": "atlas/picture/items/equipment-v1/states/backpack_cargo_expanded.png",
+      "storageStates": {
+        "expanded": {
+          "gridWidth": 5,
+          "gridHeight": 6,
+          "pixelWidth": 1280,
+          "pixelHeight": 1536,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_cargo_expanded.png"
+        },
+        "folded": {
+          "gridWidth": 3,
+          "gridHeight": 2,
+          "pixelWidth": 768,
+          "pixelHeight": 512,
+          "icon": "atlas/picture/items/equipment-v1/states/backpack_cargo_folded.png"
+        },
+        "defaultState": "expanded",
+        "foldRequiresEmpty": true,
+        "foldedStorageAllowed": false
+      },
+      "spaceBenefit": 6,
+      "nestingValuePremium": 0.3,
+      "presentation": {
+        "quality": "gray",
+        "backgroundColor": "#30363b",
+        "borderColor": "#727a80",
+        "sharedArtwork": false,
+        "backgroundInTexture": false
+      }
+    }
+  ]
+}

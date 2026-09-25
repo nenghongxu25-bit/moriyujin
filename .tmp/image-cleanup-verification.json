@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "checks": {
+    "movedFiles": 107,
+    "removedDuplicates": 22,
+    "legacyAliases": 106,
+    "protectedImages": 1531
+  },
+  "activeImages": 1704,
+  "activeBytes": 45724803,
+  "reserveImages": 48,
+  "reserveBytes": 45482307
+}

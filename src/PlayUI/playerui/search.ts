@@ -1,0 +1,136 @@
+const { regClass, property } = Laya;
+
+import { PlayerController } from "../../Player/PlayerController";
+import { HarvestableBase } from "../../harvestable/HarvestableBase";
+import { ContainerBase } from "../../container/ContainerBase";
+
+@regClass("8f0c1a2b-5d7e-4c6f-9a8b-1f2e3d4c5b6a")
+export class search extends Laya.Script {
+    @property(Laya.Node)
+    public playerNode: Laya.Node | null = null;
+
+    private boundOwner: Laya.Node | null = null;
+    private currentHarvestTarget: HarvestableBase | null = null;
+    private currentContainerTarget: ContainerBase | null = null;
+
+    onAwake(): void {
+        this.bindClickTarget();
+        this.refreshTarget();
+    }
+
+    onEnable(): void {
+        this.bindClickTarget();
+        this.refreshTarget();
+    }
+
+    onUpdate(): void {
+        this.refreshTarget();
+    }
+
+    onDisable(): void {
+        this.unbindClickTarget();
+        this.currentHarvestTarget = null;
+        this.currentContainerTarget = null;
+        this.setVisible(false);
+    }
+
+    onDestroy(): void {
+        this.unbindClickTarget();
+        this.currentHarvestTarget = null;
+        this.currentContainerTarget = null;
+    }
+
+    private bindClickTarget(): void {
+        this.unbindClickTarget();
+
+        const owner = this.owner as any;
+        if (!owner) {
+            return;
+        }
+
+        this.boundOwner = owner;
+        owner.mouseEnabled = true;
+        if ("mouseThrough" in owner) {
+            owner.mouseThrough = false;
+        }
+
+        if (typeof owner.onClick === "function") {
+            owner.onClick(this, this.onSearchClick);
+        } else {
+            owner.on(Laya.Event.CLICK, this, this.onSearchClick);
+        }
+    }
+
+    private unbindClickTarget(): void {
+        if (!this.boundOwner) {
+            return;
+        }
+
+        const owner = this.boundOwner as any;
+        if (typeof owner.offClick === "function") {
+            owner.offClick(this, this.onSearchClick);
+        } else {
+            this.boundOwner.off(Laya.Event.CLICK, this, this.onSearchClick);
+        }
+
+        this.boundOwner = null;
+    }
+
+    private onSearchClick(): void {
+        const controller = this.resolvePlayerController();
+        const container = this.currentContainerTarget || ContainerBase.getFocusedTarget();
+        if (controller && container) {
+            if (!container.open(controller)) {
+                this.refreshTarget();
+                return;
+            }
+
+            this.setVisible(false);
+            return;
+        }
+
+        const target = this.currentHarvestTarget || HarvestableBase.getFocusedTarget("search");
+        if (!controller || !target) {
+            return;
+        }
+
+        if (!target.harvest(controller)) {
+            this.refreshTarget();
+            return;
+        }
+
+        this.setVisible(false);
+    }
+
+    private refreshTarget(): void {
+        const container = ContainerBase.getFocusedTarget();
+        const target = HarvestableBase.getFocusedTarget("search");
+        this.currentContainerTarget = container && container.isAvailable() ? container : null;
+        this.currentHarvestTarget = target;
+
+        if (!this.currentContainerTarget && !this.currentHarvestTarget) {
+            this.setVisible(false);
+            return;
+        }
+
+        this.setVisible(true);
+    }
+
+    private resolvePlayerController(): PlayerController | null {
+        if (this.playerNode) {
+            const controller = this.playerNode.getComponent(PlayerController);
+            if (controller) {
+                return controller;
+            }
+        }
+
+        return PlayerController.activeInstance;
+    }
+
+    private setVisible(visible: boolean): void {
+        const owner = this.owner as Laya.Node;
+        if (owner) {
+            (owner as any).visible = visible;
+        }
+    }
+}

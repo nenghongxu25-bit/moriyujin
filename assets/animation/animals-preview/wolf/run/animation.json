@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "status": "generated-motion-study",
+  "animal": "wolf",
+  "action": "run",
+  "direction": "left",
+  "frameCount": 8,
+  "fps": 12,
+  "loop": true,
+  "frameWidth": 224,
+  "frameHeight": 224,
+  "pivot": {
+    "x": 112,
+    "y": 212
+  },
+  "frames": [
+    "frame_00.png",
+    "frame_01.png",
+    "frame_02.png",
+    "frame_03.png",
+    "frame_04.png",
+    "frame_05.png",
+    "frame_06.png",
+    "frame_07.png"
+  ],
+  "notes": "Preview only. No gameplay integration. Uniform scale per clip; silhouette center alignment. Gait/texture consistency requires art review."
+}

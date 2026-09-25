@@ -1,0 +1,75 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_weapon_locker",
+  "_$type": "Sprite",
+  "name": "钢制武器柜",
+  "width": 360,
+  "height": 360,
+  "_$comp": [
+    {
+      "_$id": "weapon_locker_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 36,
+          "y": 144,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 288,
+          "height": 216
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_weapon_locker",
+      "instanceId": "",
+      "displayName": "钢制武器柜",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "weapon_locker",
+      "visualFolder": "loot-points-v3"
+    },
+    {
+      "_$id": "weapon_locker_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 334.6875,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../../src/systems/DepthObstacle.ts",
+      "blockX": 92,
+      "blockY": 300,
+      "blockWidth": 176,
+      "blockHeight": 34
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "weapon_locker_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "weapon_locker_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 360,
+      "height": 360,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://202eda80-4730-4312-b32d-7164e25cab11",
+      "autoSize": false
+    }
+  ]
+}

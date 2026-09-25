@@ -1,0 +1,45 @@
+{
+  "_$ver": 1,
+  "_$id": "e186eb93716a",
+  "_$type": "Sprite",
+  "name": "阻挡_stump",
+  "width": 192,
+  "height": 192,
+  "pivotX": 102,
+  "pivotY": 165,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 165
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "18c4588cb7a6"
+      }
+    },
+    {
+      "_$type": "20c26d35-af30-488e-9ed0-20b58656a0cb",
+      "scriptPath": "../../../src/systems/DepthObstacle.ts",
+      "blockX": 82,
+      "blockY": 151,
+      "blockWidth": 39,
+      "blockHeight": 14
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "18c4588cb7a6",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 192,
+      "height": 192,
+      "texture": {
+        "_$uuid": "35ed0b62-e3a2-4828-939b-46d7ed9d03a7",
+        "_$type": "Texture"
+      }
+    }
+  ]
+}

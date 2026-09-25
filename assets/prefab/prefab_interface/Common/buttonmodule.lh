@@ -1,0 +1,34 @@
+{
+  "_$ver": 1,
+  "_$id": "tgt7hxx9",
+  "_$type": "GWidget",
+  "name": "Root",
+  "width": 100,
+  "height": 50,
+  "_$child": [
+    {
+      "_$id": "8ku2edy8",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 100,
+      "height": 50,
+      "src": "res://c950f9fd-7722-4454-b34d-f464de99412c",
+      "autoSize": false,
+      "color": "#ffffff"
+    },
+    {
+      "_$id": "fqr4xd66",
+      "_$type": "Text",
+      "name": "Text",
+      "width": 100,
+      "height": 50,
+      "text": "领取奖励",
+      "fontSize": 18,
+      "color": "#eee9d9",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2,
+      "letterSpacing": 0
+    }
+  ]
+}

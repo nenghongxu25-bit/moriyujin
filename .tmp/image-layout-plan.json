@@ -1,0 +1,643 @@
+{
+  "backup": ".tmp/image-layout-backup-20260919",
+  "moves": [
+    {
+      "from": "assets/atlas/picture/interacts/containers/old_safe_open/animation.json",
+      "to": "assets/animation/container/old_safe_open/animation.json",
+      "hash": "b0aa7448712ac554fc31c31e126358cf96e1174aab42555b19cd7b71856f02f1",
+      "uuid": "a54668ac-6e9f-47f0-9eae-b09ca68c4309"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/old_safe_open/frame_00_closed.png",
+      "to": "assets/animation/container/old_safe_open/frame_00_closed.png",
+      "hash": "358cde11708ecfb2dd8f99eac5fa819a7c988e7621e0dde124a2933ee8c9ca7e",
+      "uuid": "7e24668e-4053-4837-b545-99f670e9fec4"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/old_safe_open/frame_01_opening.png",
+      "to": "assets/animation/container/old_safe_open/frame_01_opening.png",
+      "hash": "6652d86349ee474d6112b28a68e8d3332cf01af9925a137cc1d373df272280d4",
+      "uuid": "fc6814a1-20ed-4ac3-af62-6a81b30e447e"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/old_safe_open/frame_02_half.png",
+      "to": "assets/animation/container/old_safe_open/frame_02_half.png",
+      "hash": "6b530ca3a23dddf3d28aae924c4ab03d3d38ad08a0aa53c1864da3cbb6ceb85f",
+      "uuid": "1025eea2-83d2-493d-9254-fb90f9fce01f"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/old_safe_open/frame_03_open.png",
+      "to": "assets/animation/container/old_safe_open/frame_03_open.png",
+      "hash": "8ae63145c91d44380f64d147e705c7cf387f2d09fc5809e45ffc9a6b8569494a",
+      "uuid": "669cae9f-7005-47f6-8300-c112d3f37a22"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/iron_box.png",
+      "to": "assets/container/iron_box.png",
+      "hash": "56febfe40d56e6f512920cb6ea768ec04d78c47dd8b28aa1e130a569e317b6de",
+      "uuid": "f284be9f-a1d5-4a7c-acde-252fb7bacc54"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/kongtou.png",
+      "to": "assets/container/kongtou.png",
+      "hash": "6e2ad39869f6c470daaba7f9674070cca88b55fa557e8d0e03daca9f3b9a6b6d",
+      "uuid": "b88ec950-bc7f-4803-8d67-57380aab99bf"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/lock_box.png",
+      "to": "assets/container/lock_box.png",
+      "hash": "64b7963b4a79dca4e68299f8d11027b51baf260511f651bed2ebfae83cd8cc6c",
+      "uuid": "e22a85dc-4156-4f65-bf9c-433c72edf441"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/old_safe.png",
+      "to": "assets/container/old_safe.png",
+      "hash": "1760d32f35b2c8c232e08c59dfc074770a86b0021956020de7d13b8d56da7b0c",
+      "uuid": "e01f692f-47a3-4dd1-893f-5959ee6d2279"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/pobudai.png",
+      "to": "assets/container/pobudai.png",
+      "hash": "e241c689904e0f0d10dc5394a4b3c28fa1ed2e9b9a11b38fcc33aee5664f59b3",
+      "uuid": "533a1022-533c-4c31-9aed-829777e43e9c"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/wood_box.png",
+      "to": "assets/container/wood_box.png",
+      "hash": "a927ea8e473786795757d9db07b78282474bb26451c450b1f916fc4282d4a03a",
+      "uuid": "fe0d72a6-0f55-43a1-b6c0-df5c50c9d230"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/containers/yiliu_box.png",
+      "to": "assets/container/yiliu_box.png",
+      "hash": "271b4348deb5415a82ce257ea1fc06400fba404bc9cfc860e57d721f8e9127e0",
+      "uuid": "6ac35640-7900-467a-ae39-06f48ad9cf05"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/branches.png",
+      "to": "assets/decorate/harvestables/branches.png",
+      "hash": "d2bf96673b929987014129f033007974e83c752fea87ff44b76f847f903df9ac",
+      "uuid": "9f05d03a-02aa-41b9-ba2b-ae2f12871a8a"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/bush.png",
+      "to": "assets/decorate/harvestables/bush.png",
+      "hash": "a40a0681e1253ce1dd9f092468bd1af05837b8732591161df47404e60d12d500",
+      "uuid": "6ff03e8e-7caa-4802-aebb-3d9a467cd5aa"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/l1_kuang.png",
+      "to": "assets/decorate/harvestables/l1_kuang.png",
+      "hash": "9eed00209948e1a52d692731c8860b63761d1114faa5f1ae7464b38a65748f53",
+      "uuid": "75515790-7f40-4be7-aa65-db565656ef71"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/l2-kuang.png",
+      "to": "assets/decorate/harvestables/l2-kuang.png",
+      "hash": "89734afef93a17be5697984334c834776e12ab96a450d295f0616fc87099e5c7",
+      "uuid": "1890f92c-aef9-4246-977f-467976ec20e8"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/l3-kaung.png",
+      "to": "assets/decorate/harvestables/l3-kaung.png",
+      "hash": "5b1927e5a9b7d7059e0fe130eba5eac2dfdaa1a189fc7064630c63b89e933ab8",
+      "uuid": "790e72a3-1187-4c46-b300-dd50ad9d0685"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/mounds.png",
+      "to": "assets/decorate/harvestables/mounds.png",
+      "hash": "ee02868ee26c05318ceaeae4ff2a6337e7d39719a6f701288bd24b83e9b7441e",
+      "uuid": "734ac2a1-a7ce-4c58-a17f-c47097bd5e19"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/oak.png",
+      "to": "assets/decorate/harvestables/oak.png",
+      "hash": "0611819e35c13dac579766ad8558123c34477ad8fd59bef8d64730c22b42cb7a",
+      "uuid": "787b5167-4f40-4def-83bb-2b55887fc824"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/pine.png",
+      "to": "assets/decorate/harvestables/pine.png",
+      "hash": "ca5775144a208ef341c651d6dd68292dd4f89848adeaf806e4c3abaa38a94518",
+      "uuid": "e79d6418-f895-40b9-903c-a6c1f6f7d52f"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/shuijin.png",
+      "to": "assets/decorate/harvestables/shuijin.png",
+      "hash": "f2ea2ccdb8c91dce413c1a7411353c7395530fb8ab4df13be28a4748e5e6b807",
+      "uuid": "e1ae9852-34be-4b17-ba8f-8e4ce2ddd731"
+    },
+    {
+      "from": "assets/atlas/picture/interacts/harvestables/stones.png",
+      "to": "assets/decorate/harvestables/stones.png",
+      "hash": "a2b88022e8b7c8dd2ebf2bcf49d2e7829931b0d6919ed91a627f5fe070807777",
+      "uuid": "2840a0f2-2e66-4df6-a473-95c22f89d3c8"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/dirtpit.png",
+      "to": "assets/decorate/ground/dirtpit.png",
+      "hash": "e221f88dedf348385b91d1ddc8466a22c273845651230661685c07fc2eabbfc8",
+      "uuid": "0a7041bf-1805-4e93-b005-1a0df8ca95c4"
+    },
+    {
+      "from": "assets/atlas/picture/decorate/lake.png",
+      "to": "assets/decorate/ground/lake.png",
+      "hash": "dbab253a459c7887614f26aff37b34563b74d4939e6714fef55000c982b811ad",
+      "uuid": "1bba2658-4866-4621-8e40-3553e218040c"
+    },
+    {
+      "from": "assets/atlas/picture/environment/city/abandoned_crashed_vehicle.png",
+      "to": "assets/decorate/city/abandoned_crashed_vehicle.png",
+      "hash": "e711e2cce46e65550ebdc22a6f1f25638b1556187f4b0fd66e44db3c0c9586a0",
+      "uuid": "18a5185a-1dc8-4cef-9853-8aa69e9d6ce7"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snow-particle-sheet.lmat",
+      "to": "assets/animation/weather/snow-particle-sheet.lmat",
+      "hash": "4ef302fdba24151f6061be5227f15ffebc33cf25b81aa6f4f0e6c6b11a1f65a8",
+      "uuid": "9e6cf127-512a-4e15-b7f6-02ef6e48ab93"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snow-particle-sheet.png",
+      "to": "assets/animation/weather/snow-particle-sheet.png",
+      "hash": "b6800097521408029a8b38fb7f84f2956faec49ea515ed8fa6c79d32d5a0f963",
+      "uuid": "c3598cd1-ca99-4b6a-b6f6-6c47e6bd3576"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snow-particle.lmat",
+      "to": "assets/animation/weather/snow-particle.lmat",
+      "hash": "fed206373d5d9963f60e2b0ef6caa6d7e2412f7ee667e1c1c113e701b5c885ca",
+      "uuid": "b1be4c4e-d7d6-43f8-b48e-807fb5d1b7d3"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-00.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-00.png",
+      "hash": "8b794e20e94728ffe021c016c24a747338a3a15e2580ac92da059b4c59581b99",
+      "uuid": "11afe3ea-e596-46b0-9f8f-4b8bd51d9b80"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-01.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-01.png",
+      "hash": "08d22ef247f7ca62c3c46c7a084b8781390ab0bf26f0e229a62ad9e9da3acbde",
+      "uuid": "a59167e0-aa4c-4f89-a2a5-28974882580c"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-02.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-02.png",
+      "hash": "b1452d8c0800e34293965269b9a8ffeab52f1322abcac3d9a90193ed82c0b0a0",
+      "uuid": "758eaf0f-6305-448e-9ddc-04d2f8666f47"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-04.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-04.png",
+      "hash": "335d451b1cb4ab250605041851f305bb23926268c55632abcd8c93ba672b8b78",
+      "uuid": "a0b8c92c-746c-4379-981f-3c3d32a259f7"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-05.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-05.png",
+      "hash": "3e30e6d843efe99fd6f60c7791102d4854c1bacd85f6ce41c624073c760fe797",
+      "uuid": "53f1c82d-8540-47c5-b618-c2e854ce43da"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-06.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-06.png",
+      "hash": "b93aa0295859acb0da49667a671b78ab4826ca28c52502050258d344f159fd06",
+      "uuid": "c872ab6d-d25d-49d7-8c75-b32b451f9a38"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-08.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-08.png",
+      "hash": "7b24027628ae6211e2b8f028ef1d3be7d92e8ef6033abf8833b343c73c0d4db2",
+      "uuid": "0c0b7ca4-c94c-4e3a-a9cf-3dae64f25791"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-09.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-09.png",
+      "hash": "b3300a7e0c714ef850e04213b808384f291a7cab31eb21204859dac59ef5713b",
+      "uuid": "8c7bda66-677b-4772-8d2f-c97b43e8f1fa"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes/snowflake-10.png",
+      "to": "assets/animation/weather/snowflakes/snowflake-10.png",
+      "hash": "bbe55fa432d7eaa8bf5b40fdf1693dfb04f0f059f79c850668efc83b2cef75a5",
+      "uuid": "4df116d6-ea61-4615-8d96-618c6c1fbc1e"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-00.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-00.png",
+      "hash": "2ba6312d4f5ba1ab564bcbd05ba74b25f1f789008dd61c4eb715a6cc303c3cbd",
+      "uuid": "4750178e-0fce-426d-91dd-784f5a630da4"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-01.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-01.png",
+      "hash": "d685eaed8bfa11d8ba8177084f7b2b4143a2928077ee13e0d3e7c0d4e7fae0a0",
+      "uuid": "f94bae99-3bb0-46a7-b34d-24898fab7d56"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-02.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-02.png",
+      "hash": "6ec080a17b06130c5722b6df7c51d9cb3cb81b55bd025e20a4a0e2adaee1fd51",
+      "uuid": "3bc42b08-6e07-4975-bc13-1cd1104e8025"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-03.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-03.png",
+      "hash": "66c441892ce26dd90908a8f4595d6688849b8421c8e4bb2cab2c4683bc32ec67",
+      "uuid": "9ae9da72-dbbb-47e1-a3bb-dd1da0ce3fcd"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-04.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-04.png",
+      "hash": "dc9c26b2f6398e87ed02a4a5a2e41dfba55041b5cfdc9eff70de470e3f90c3af",
+      "uuid": "151fa370-122c-4d98-baf4-3a6bce4a6681"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-05.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-05.png",
+      "hash": "f08f1338c5c0dbd9b886629080d1a38f69a08b38151f8b15859b5029db4cee09",
+      "uuid": "7b75665f-c830-4cd4-a0f6-b53048dc154c"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-06.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-06.png",
+      "hash": "07b603538abca286fb5abc5a298fa41f7e536436982b0ae8d9ec8df984abf950",
+      "uuid": "c53a6819-4774-4b39-b190-6cd112bbc142"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-07.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-07.png",
+      "hash": "e543a63465308d3f2a07ace9550485ad13cbeaf5b498d3b1fe78332fec28c37d",
+      "uuid": "e02ea31c-12ab-42fc-a166-c9ec8d62762a"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-08.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-08.png",
+      "hash": "24df66018ae9ffc4f62bfb1a04a1d6c788b71dab20e0f3919bc07b260155ab5b",
+      "uuid": "ec553184-ef86-4a80-96f6-832f93597afc"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-09.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-09.png",
+      "hash": "984060e64d595947690d25d402e3f6e86c2158c7340f46b59940fedc502cedcf",
+      "uuid": "517152d1-7eb5-4e57-a3d8-ac18564f4394"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-10.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-10.png",
+      "hash": "0c34e8da63715bbbf748b96f8a2a9ff52dab3295cb77076ab4e642b25b656879",
+      "uuid": "b61aae13-4b87-4e4e-8c08-c730231b9832"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-11.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-11.png",
+      "hash": "c5273293835b92b401c063c48a96ba4aaeb6d78897a13a829c25315cc99a7b67",
+      "uuid": "c11adec8-9854-460f-b764-d58c3e3676bb"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-12.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-12.png",
+      "hash": "2264aefca5fab0badf05db4d675c2d742704a08f2df1efdd0a59707f8f74ea2d",
+      "uuid": "20ed63b8-aa70-46eb-a8f7-ab77529d680b"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-13.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-13.png",
+      "hash": "c93c0477c2ca0044f2dfd6e1aa5e38deca600745f15d260d38e4e68b13d00e63",
+      "uuid": "35233dc3-0a3b-4a95-a7b3-c297188a0216"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-14.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-14.png",
+      "hash": "e05cdf200073c706913787db53ddfbda0b76b85e52cda05aae36fa30443fff50",
+      "uuid": "29dfbaa3-97d4-4111-800f-5bb5a548ff9f"
+    },
+    {
+      "from": "assets/atlas/picture/effects/weather/snowflakes-v2/snowflake-15.png",
+      "to": "assets/animation/weather/snowflakes-v2/snowflake-15.png",
+      "hash": "c8cf2c383b53e38bcf6e4c81e6614fe783ef284ccc4df3a0624a8d33b42c28ab",
+      "uuid": "72a4e01b-4841-4d47-bb8a-b995e4dd2092"
+    },
+    {
+      "from": "assets/xuliezhen/All.png",
+      "to": "assets/animation/ui/All.png",
+      "hash": "580576391893560e757c1de81bd3cf4dabc271fe3ce1da270a4e4b9f53a3dee6",
+      "uuid": "a8039140-2a15-4970-b459-eb584431337a"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/campfire-animation.json",
+      "to": "assets/animation/fire/campfire-animation.json",
+      "hash": "a16cffa75543c439fe4ee6ea91a70f9727271f4fb715d34127c51f060adf86af",
+      "uuid": "f92665f0-3c52-42da-8210-e69b4cf9874b"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/campfire-base.png",
+      "to": "assets/decorate/fire/campfire-base.png",
+      "hash": "202273292fbe968bf0dff0537d8a9e66db3485ae69c6e7205c77affee3db3c5f",
+      "uuid": "086d17c8-4c51-44c1-8196-ca07dcd32cea"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/campfire-preview.html",
+      "to": "assets/animation/fire/campfire-preview.html",
+      "hash": "66673b7f63e5ccae9d8b208d810b42e402c72c3b0b3d3888d1d3f33fbf86646e",
+      "uuid": "87bf1d11-228f-47bc-97a9-77f422cd297c"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/campfire-README.md",
+      "to": "assets/animation/fire/campfire-README.md",
+      "hash": "ed95a8de510bfdee23f626ae662cf986b9bef6c755a748cc16bbd6429d1dacf8",
+      "uuid": "5c327477-8d50-486f-aecc-bd72d900dc5f"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-animation-README.md",
+      "to": "assets/animation/fire/torch-animation-README.md",
+      "hash": "910c128c00fc3a8427fd3009d8a30a3f97ec5d8d687c1a87e0899c44e02ed9d9",
+      "uuid": "ebd71cd7-0a6a-4c9a-9589-096f6d4f9972"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-animation.json",
+      "to": "assets/animation/fire/torch-animation.json",
+      "hash": "de222b247aff5d5854910aaee350a6d23abd2576523c3c970ffb11a62d67d36e",
+      "uuid": "bd60776f-b97d-4fde-aae8-9a66950688a5"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-body.png",
+      "to": "assets/decorate/fire/torch-body.png",
+      "hash": "b352dc96b4e9336cdd81fdd41a2ddc6bdeebd748aad85f32f6a6a594c163feb2",
+      "uuid": "2d938dba-df29-4cd5-b3f1-65c880373b35"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-concept.png",
+      "to": "assets/decorate/fire/torch-concept.png",
+      "hash": "fa9f29e757cb127f664676a428593ed3cc5f25b1ddb23f77c5e8387066df6274",
+      "uuid": "c093b5d0-86b0-466a-b6b4-a795e06177c6"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-flame-sheet.png",
+      "to": "assets/animation/fire/torch-flame-sheet.png",
+      "hash": "3055543e866f307fa73249d25e2d4848451c9afa958a7c002a5392b4c9352c45",
+      "uuid": "2e1c271d-0739-42d8-a6cd-0dbd4ba06830"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-00.png",
+      "to": "assets/animation/fire/torch-frames/flame-00.png",
+      "hash": "481e6dad175555672f89d8f69f11d29e4848f5784d14ab71c6fc12e37184a259",
+      "uuid": "3304961e-3b44-4453-977d-c76fa8a2290f"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-01.png",
+      "to": "assets/animation/fire/torch-frames/flame-01.png",
+      "hash": "11cb0a4c364d29c55a99792214b7e9f12c51ae72fb06a9ac86dc44f5106b6c75",
+      "uuid": "8755a26e-4a60-4ab5-92d6-a95eb1d58359"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-02.png",
+      "to": "assets/animation/fire/torch-frames/flame-02.png",
+      "hash": "34df6f241d1913a91be8fb639663f278002d597ab84dfb00b26ae5b1f3ec020a",
+      "uuid": "061ef271-7ff0-4aff-ac89-182623718370"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-03.png",
+      "to": "assets/animation/fire/torch-frames/flame-03.png",
+      "hash": "4a24fa6cce2085dbdcb4ffd00115ee4702d13c1cde3842c7c306db8013557c8e",
+      "uuid": "972cf9a2-8c60-49c9-9db7-4044e5b5e51f"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-04.png",
+      "to": "assets/animation/fire/torch-frames/flame-04.png",
+      "hash": "37595420999c8c2c9e27dcd60206292c21c903359f628c40f96c3fbe94632e01",
+      "uuid": "608e06bb-b2a2-4f61-a224-690bc589d2e6"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-05.png",
+      "to": "assets/animation/fire/torch-frames/flame-05.png",
+      "hash": "e259374666ae0cc2884b1f732ceb36ad1eb1d14aa0ade50905035ad837f2c1ce",
+      "uuid": "b2083556-c468-4187-a6e6-220d4879f7f7"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-06.png",
+      "to": "assets/animation/fire/torch-frames/flame-06.png",
+      "hash": "05476a8a32596faf601d2efa5fc71e02002ea93d73e6ad608ae9d71b64cc6c43",
+      "uuid": "42e54c10-c2f5-4958-a102-546cb30dd5e0"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-frames/flame-07.png",
+      "to": "assets/animation/fire/torch-frames/flame-07.png",
+      "hash": "17f842ad5668e7503bc4451244bbf874e9bd2772e21dffde81ddd263882f4b78",
+      "uuid": "d92836a7-8309-4c89-9728-e47ff65a5bb3"
+    },
+    {
+      "from": "assets/atlas/picture/effects/fire/torch-preview.html",
+      "to": "assets/animation/fire/torch-preview.html",
+      "hash": "2dd6e0d7faae56744fd0d5a29adc4b30ea7ddba89f395276600c21f4991cbb71",
+      "uuid": "c957ae21-fe2a-4949-bd4c-9237429c3571"
+    },
+    {
+      "from": "art-library/images/environment/city/abandoned_park_bench.png",
+      "to": "art-library/images/decorate/city/abandoned_park_bench.png",
+      "hash": "828a5cdbcf62e49c67023146c9d801a5d367cf069586da4d2d037e6956324b13",
+      "uuid": "0047ee6e-d4e0-4cb7-b56c-d1fa8d803b2f"
+    },
+    {
+      "from": "art-library/images/environment/city/city_dumpster.png",
+      "to": "art-library/images/decorate/city/city_dumpster.png",
+      "hash": "44e55605ffb62f31bcfb109c5e7f0116137e636baeef16f578896b4c8638bbeb",
+      "uuid": "289c53e4-02e0-498b-b8b9-0228ad75a463"
+    },
+    {
+      "from": "art-library/images/environment/city/damaged_street_lamp.png",
+      "to": "art-library/images/decorate/city/damaged_street_lamp.png",
+      "hash": "7d15bc608f2f7e1087855b9fcb25b6dbcd443573cafb6342eea6c99376bc367b",
+      "uuid": "909ffb13-9575-4f41-a947-772a97f9cbd4"
+    },
+    {
+      "from": "art-library/images/environment/city/dumpster.png",
+      "to": "art-library/images/decorate/city/dumpster.png",
+      "hash": "c651d6c457177e21e70df35dc7268d6d28b8f492fd11c64dccd602baf09ade16",
+      "uuid": "0fcde733-5ba0-408b-86fc-1d53f0928689"
+    },
+    {
+      "from": "art-library/images/environment/city/fire_hydrant.png",
+      "to": "art-library/images/decorate/city/fire_hydrant.png",
+      "hash": "ed80914e1dbc6cbe6c01d917c7dd4c1c841660b8267bb2fd1b4903a9c4c5b0ed",
+      "uuid": "860f2340-e123-466d-9005-5fab2bff7f64"
+    },
+    {
+      "from": "art-library/images/environment/city/road_barrier.png",
+      "to": "art-library/images/decorate/city/road_barrier.png",
+      "hash": "4d432db81f353db656be895d7b012bbc19050cf5d1e5186bb98246aaeb575985",
+      "uuid": "cf9a7984-04d4-4e42-9525-091407ea30f1"
+    },
+    {
+      "from": "art-library/images/environment/city/road_construction_barricade.png",
+      "to": "art-library/images/decorate/city/road_construction_barricade.png",
+      "hash": "a1d2e06c038f323809d32f436acc4c2c4c2a2e6b9e83be176eb3c532eed97312",
+      "uuid": "1f8e1266-9f2a-4341-819a-ce17a8497af6"
+    },
+    {
+      "from": "art-library/images/environment/city/street_lamp.png",
+      "to": "art-library/images/decorate/city/street_lamp.png",
+      "hash": "e3cb0ea9894f5d3cef37b8aecc57155e315644144dd4642bd4bf2b711b248cd3",
+      "uuid": "cb755805-fe52-4efa-a4d2-92ff217f4427"
+    },
+    {
+      "from": "art-library/images/environment/city/utility_pole.png",
+      "to": "art-library/images/decorate/city/utility_pole.png",
+      "hash": "47c3ed08e3ebc22f5e7e7e9a151897e4e1c7521321280f3e49b7e8b6551f54bc",
+      "uuid": "11e707da-3243-4d5a-b3c1-0e4a46e4f975"
+    },
+    {
+      "from": "art-library/images/environment/city/vending_machine.png",
+      "to": "art-library/images/decorate/city/vending_machine.png",
+      "hash": "e5090cbb839db9509757e75fc04f25c8e3847743dacd0decfa88279d23bd07bf",
+      "uuid": "87ab7204-af0f-46a8-b83a-68c19b5ef757"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-abandoned-house-v1.png",
+      "to": "art-library/images/decorate/forest/forest-abandoned-house-v1.png",
+      "hash": "04193de61d1688a8c11154583d4935e9489513ea584f65b1ad62f5aa4b88bf39",
+      "uuid": "f07b19bd-b40d-4f4b-87ee-72044f0e64e6"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-bunker-entrance-v1.png",
+      "to": "art-library/images/decorate/forest/forest-bunker-entrance-v1.png",
+      "hash": "f92775fb4c4fa3add62b62ba128d7afbc589481343dbbc990f8d5a3c673eabde",
+      "uuid": "d3c70fa3-686a-4de0-90b7-c1f1c91bf59f"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-cabin-v1.png",
+      "to": "art-library/images/decorate/forest/forest-cabin-v1.png",
+      "hash": "63446fd2a88b750d49ff1f05fb06dd3e57bff4dde4b6d84f78131817a033a21f",
+      "uuid": "ec5dee07-f620-44b9-a867-b90aba709140"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-campfire-v1.png",
+      "to": "art-library/images/decorate/forest/forest-campfire-v1.png",
+      "hash": "92d11d5bfa3e633c3cf021cb6e83fe57507ef5167ea39916e949c89f77c5451b",
+      "uuid": "353d77e0-e9c8-4595-b828-aa1b82c02296"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-environment-kit-v1.png",
+      "to": "art-library/images/decorate/forest/forest-environment-kit-v1.png",
+      "hash": "222e32d2b4449b4f61be08330beb407f3fd2319dc1f622222a66e0ab4c116c7d",
+      "uuid": "849957d5-049d-4e93-ada0-d4c8051d2d15"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-fallen-log-v1.png",
+      "to": "art-library/images/decorate/forest/forest-fallen-log-v1.png",
+      "hash": "418007fcfac90b3bca2d0bab0902bbc457972b5a89272a6b98733ae96350df63",
+      "uuid": "32c98b15-5115-4cd2-b6b6-c53466d44492"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-fuel-barrel-v1.png",
+      "to": "art-library/images/decorate/forest/forest-fuel-barrel-v1.png",
+      "hash": "f9ee06fe88e90c510d9bbe833ba3497bc4ef69c70e7acf889e9c32215101e46f",
+      "uuid": "c189dc46-6429-4d68-ac17-9a42e4536338"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-generator-v1.png",
+      "to": "art-library/images/decorate/forest/forest-generator-v1.png",
+      "hash": "89a8db51a0b2a1803610879259a425939db6af348a39d3b24d6702cfc74a4c39",
+      "uuid": "559cf783-8461-4b81-9cc0-f6e29290f30a"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-log-pile-v1.png",
+      "to": "art-library/images/decorate/forest/forest-log-pile-v1.png",
+      "hash": "1e5f0ac957841f46cb54b11d56ad3f19549a1a43bd7e6e8b7d6d7093ec784317",
+      "uuid": "ead7abd9-3225-42fb-b270-912da03a4bd5"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-military-checkpoint-v1.png",
+      "to": "art-library/images/decorate/forest/forest-military-checkpoint-v1.png",
+      "hash": "3d2ee6ddae7acb67c8f8c305f823c1ae17a5c900cf6ead29b1c13df87e624984",
+      "uuid": "c8ec31c2-ac52-4ccf-8391-80684d2acdee"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-military-tent-v1.png",
+      "to": "art-library/images/decorate/forest/forest-military-tent-v1.png",
+      "hash": "39404b29b1bdddc3bc56dc623d83f8eb4c0021765c913c452ebb40b3abe8ec30",
+      "uuid": "b43507ae-0cbe-4313-97f1-fae6c9a2b921"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-outhouse-v1.png",
+      "to": "art-library/images/decorate/forest/forest-outhouse-v1.png",
+      "hash": "c439ac9943cb2ab71f93dca06be0135af330632b53d0b3d25340aa2b25ed26ff",
+      "uuid": "a79ba965-a9ae-4420-ad54-6ea33c96ef07"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-pine-tree-v1.png",
+      "to": "art-library/images/decorate/forest/forest-pine-tree-v1.png",
+      "hash": "1450d573deca280041422a4d6e0af75bf434dc8c40b467f302219f97e971f627",
+      "uuid": "fd40b293-e4cf-48bb-8dad-39153833012c"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-rocky-lookout-v1.png",
+      "to": "art-library/images/decorate/forest/forest-rocky-lookout-v1.png",
+      "hash": "056cf23f28db0785936b9f85bc694eac86a8fe2f4c195fa37cfc1c1d81dd3adc",
+      "uuid": "9abdb935-51a2-4c33-bde8-870a683a4e87"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-rusty-pickup-v1.png",
+      "to": "art-library/images/decorate/forest/forest-rusty-pickup-v1.png",
+      "hash": "6f6379f5a173d202de02bf109358915c8e795023b6d43433d956bebd2a3f1569",
+      "uuid": "70337db2-b636-4a67-880c-1fff100a86d6"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-sawmill-v1.png",
+      "to": "art-library/images/decorate/forest/forest-sawmill-v1.png",
+      "hash": "88b15cea593bcd1dee053dc5b23769154f7ae9c3ece5437fe07f418bb4d7a765",
+      "uuid": "0ce6f676-988d-453c-a081-ad6ebe8a19a0"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-shrub-v1.png",
+      "to": "art-library/images/decorate/forest/forest-shrub-v1.png",
+      "hash": "4c868d6b158a2bfd48873e220299367d76b8b56aa3bff2596f2f0eacb96012b9",
+      "uuid": "aead6b2d-9829-41ce-b711-20f80bbcda33"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-structures-kit-v1.png",
+      "to": "art-library/images/decorate/forest/forest-structures-kit-v1.png",
+      "hash": "5b62b48b346e33a9c478e188f7280926f1102f1542dffdb810b0c0e92c1789b2",
+      "uuid": "6cb7f723-e3d4-4539-b503-ed77abb1053d"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-watchtower-v1.png",
+      "to": "art-library/images/decorate/forest/forest-watchtower-v1.png",
+      "hash": "cc0e54347614885cf5cf802da26d8894af35fbe41a8486342a0c1751b21f434c",
+      "uuid": "3dade8e4-0dfd-4a1e-84a8-7f2fc7a8e7c3"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-wood-bridge-v1.png",
+      "to": "art-library/images/decorate/forest/forest-wood-bridge-v1.png",
+      "hash": "23e29564f0fb02784e442178e9e47334eaad0a73d2a80e52350f4fdeb837fadf",
+      "uuid": "c676fa6c-aab7-471b-8e4d-db738bddcc9b"
+    },
+    {
+      "from": "art-library/images/environment/forest/forest-wood-fence-v1.png",
+      "to": "art-library/images/decorate/forest/forest-wood-fence-v1.png",
+      "hash": "95f4726f72778df68a5aefeff517783de56f7ad1adcc55f612681eda368e212d",
+      "uuid": "0de7a0a9-45fa-4cc9-bf80-ca05f07eebf1"
+    },
+    {
+      "from": "art-library/images/containers/wood_box_remaster_preview_128.png",
+      "to": "art-library/images/container/wood_box_remaster_preview_128.png",
+      "hash": "db8d8d9a591749d6a5d0669da72de07e1ff96cc88e5683fb462d9eaaecd043d6",
+      "uuid": "73f96fd0-6f4f-4879-8cb1-21b2855593b4"
+    },
+    {
+      "from": "art-library/images/previews/forest-tileset-preview-v1.png",
+      "to": "art-library/images/tileset/previews/forest-tileset-preview-v1.png",
+      "hash": "25bb5d64222ee4ac868e51e96a2d9de104579469e192d8d75835b3003ee84a02",
+      "uuid": "764ebc3f-cdb3-4057-b6a9-c287b227d197"
+    }
+  ],
+  "changed": [
+    "assets/atlas/picture/effects/fire/campfire-animation.json",
+    "assets/atlas/picture/effects/fire/campfire-preview.html",
+    "assets/atlas/picture/effects/fire/torch-animation.json",
+    "assets/atlas/picture/effects/fire/torch-preview.html",
+    "src/container/ironbox.ts",
+    "tools/bake_ceshi_water_grass_preview.py"
+  ]
+}

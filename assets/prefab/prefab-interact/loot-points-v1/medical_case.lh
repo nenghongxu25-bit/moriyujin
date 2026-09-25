@@ -1,0 +1,66 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_medical_case",
+  "_$type": "Sprite",
+  "name": "急救医疗箱",
+  "width": 208,
+  "height": 208,
+  "_$comp": [
+    {
+      "_$id": "medical_case_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 20.8,
+          "y": 83.2,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 166.4,
+          "height": 124.8
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_medical_case",
+      "instanceId": "",
+      "displayName": "急救医疗箱",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "medical_case"
+    },
+    {
+      "_$id": "medical_case_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 193.375,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "medical_case_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "medical_case_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 208,
+      "height": 208,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://db4eca27-c71c-4fba-9e2c-2ad0af690595",
+      "autoSize": false
+    }
+  ]
+}

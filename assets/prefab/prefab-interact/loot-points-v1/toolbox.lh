@@ -1,0 +1,66 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_toolbox",
+  "_$type": "Sprite",
+  "name": "工业工具箱",
+  "width": 208,
+  "height": 208,
+  "_$comp": [
+    {
+      "_$id": "toolbox_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 20.8,
+          "y": 83.2,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 166.4,
+          "height": 124.8
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_toolbox",
+      "instanceId": "",
+      "displayName": "工业工具箱",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "toolbox"
+    },
+    {
+      "_$id": "toolbox_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 193.375,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "toolbox_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "toolbox_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 208,
+      "height": 208,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://337c20dc-9a5a-4cd6-870e-c997979147a4",
+      "autoSize": false
+    }
+  ]
+}

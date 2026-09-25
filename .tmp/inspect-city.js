@@ -1,0 +1,1 @@
+(()=>{const g=cityLayer.tileSet.getTileSetCellGroup(0);return {max:g._maxCellCount,ids:Array.from({length:30},(_,id)=>{const c=cityLayer.tileSet.getCellDataByGid(id);return {id,pos:c?.owner?.localPos}})};})()

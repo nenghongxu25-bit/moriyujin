@@ -1,0 +1,125 @@
+﻿{
+    "generatedWith":  "Built-in image_gen",
+    "items":  [
+                  {
+                      "id":  "helmet",
+                      "file":  "assets/atlas/picture/items/equipment-v1/helmet.png",
+                      "localSource":  "art/equipment-v1/source/helmet.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-b2d95775-3afd-4be1-a568-4416a8497694.png",
+                      "pixelWidth":  512,
+                      "pixelHeight":  512,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One charcoal olive modern ballistic helmet with side rails, a front mount, realistic padded interior and tidy chin straps. Recognizable clean rounded silhouette. This same neutral helmet icon is shared across six protection levels; do not add level-specific decorations.",
+                      "fitting":  "source=1254x1254; alphaBounds=1045x1088; uniformScale=0.441176"
+                  },
+                  {
+                      "id":  "armor",
+                      "file":  "assets/atlas/picture/items/equipment-v1/armor.png",
+                      "localSource":  "art/equipment-v1/source/armor.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-9cdc8e5d-f698-445d-959a-b478d80940cc.png",
+                      "pixelWidth":  768,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One neutral dark olive tactical armored vest, broad front ballistic plate panel, padded shoulder straps, side straps and subtle webbing. No magazine pouches (this is armor not a chest rig), no arms, no torso. Front almost straight on. Same silhouette shared by all six protection levels.",
+                      "fitting":  "source=1254x1254; alphaBounds=982x1149; uniformScale=0.640557"
+                  },
+                  {
+                      "id":  "headset",
+                      "file":  "assets/atlas/picture/items/equipment-v1/headset.png",
+                      "localSource":  "art/equipment-v1/source/headset.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-7510d6a4-6e4f-4d76-969b-265d427c206c.png",
+                      "pixelWidth":  512,
+                      "pixelHeight":  512,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One neutral charcoal tactical electronic hearing headset, padded curved headband, two olive low-profile earcups, a short boom microphone, neatly attached wiring. Both cups visible, one standalone object. Shared icon for three quality levels.",
+                      "fitting":  "source=1254x1254; alphaBounds=1091x1081; uniformScale=0.439963"
+                  },
+                  {
+                      "id":  "rig_light",
+                      "file":  "assets/atlas/picture/items/equipment-v1/rig_light.png",
+                      "localSource":  "art/equipment-v1/source/rig_light.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-41cf1ca7-ff37-49b8-90b3-a2b701ee77c4.png",
+                      "pixelWidth":  512,
+                      "pixelHeight":  512,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One compact sand-tan chest rig named Sparrow (do NOT write text). Narrow lightweight chest panel, exactly FOUR separately sewn slender vertical magazine pouches side by side, simple shoulder harness straps. NO armor plates, no magazines protruding, closed fabric pouches. Distinct slim lightweight silhouette.",
+                      "fitting":  "source=1254x1254; alphaBounds=988x1067; uniformScale=0.449859"
+                  },
+                  {
+                      "id":  "rig_patrol",
+                      "file":  "assets/atlas/picture/items/equipment-v1/rig_patrol.png",
+                      "localSource":  "art/equipment-v1/source/rig_patrol.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-4305af65-2cbd-4e95-9407-82d4639c25d0.png",
+                      "pixelWidth":  768,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One olive-green patrol chest rig named Ranger (do NOT write text). FOUR separate slender vertical closed magazine pouches in upper row, TWO separate horizontal utility pouches below, total six clearly readable pouches. Cross-back harness, no armor plates. Broad rectangular utility silhouette.",
+                      "fitting":  "source=1254x1254; alphaBounds=977x1215; uniformScale=0.605761"
+                  },
+                  {
+                      "id":  "rig_assault",
+                      "file":  "assets/atlas/picture/items/equipment-v1/rig_assault.png",
+                      "localSource":  "art/equipment-v1/source/rig_assault.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-d7ee135d-ac6d-4054-a707-0ae371272c78.png",
+                      "pixelWidth":  768,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One muted slate-blue and dark gray assault chest rig named Kestrel (do NOT write text). TWO square closed utility pouches across upper row and FOUR narrow vertical closed magazine pouches across lower row. Broad padded shoulder straps, no armor plates. Angular reinforced modern silhouette.",
+                      "fitting":  "source=1254x1254; alphaBounds=1049x1132; uniformScale=0.650177"
+                  },
+                  {
+                      "id":  "rig_heavy",
+                      "file":  "assets/atlas/picture/items/equipment-v1/rig_heavy.png",
+                      "localSource":  "art/equipment-v1/source/rig_heavy.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-1fed922b-21ce-4d2b-85b6-09afebea6409.png",
+                      "pixelWidth":  768,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One dark coyote-brown heavy support chest rig named Aegis (do NOT write text). TWO large tall rectangular closed cargo pouches across upper row, TWO square closed cargo pouches across lower row, exactly four compartments readable. Thick padded harness, wide heavy silhouette, no armor plates.",
+                      "fitting":  "source=1254x1254; alphaBounds=952x1192; uniformScale=0.617450"
+                  },
+                  {
+                      "id":  "backpack_compact",
+                      "file":  "assets/atlas/picture/items/equipment-v1/backpack_compact.png",
+                      "localSource":  "art/equipment-v1/source/backpack_compact.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-652a2df0-0c5a-4f59-8775-30bb3fa8e13c.png",
+                      "pixelWidth":  512,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One compact weathered gray-brown canvas scavenger backpack with a single simple main compartment, narrow vertical silhouette, shoulder straps tucked behind, front three-quarter view. Portrait object centered on transparent square canvas; no accessories.",
+                      "fitting":  "source=1245x1263; alphaBounds=664x1118; uniformScale=0.658318"
+                  },
+                  {
+                      "id":  "backpack_patrol",
+                      "file":  "assets/atlas/picture/items/equipment-v1/backpack_patrol.png",
+                      "localSource":  "art/equipment-v1/source/backpack_patrol.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-fa221fb5-634d-4d9a-a348-f9786c01ee96.png",
+                      "pixelWidth":  768,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One medium olive military patrol backpack, broad central main compartment and two narrow separate side pockets, utilitarian zippers and straps, front three-quarter view. Distinct medium rectangular silhouette.",
+                      "fitting":  "source=1254x1254; alphaBounds=956x1173; uniformScale=0.627451"
+                  },
+                  {
+                      "id":  "backpack_expedition",
+                      "file":  "assets/atlas/picture/items/equipment-v1/backpack_expedition.png",
+                      "localSource":  "art/equipment-v1/source/backpack_expedition.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-72ab614a-b79f-46ad-b26b-dab488a753d0.png",
+                      "pixelWidth":  1024,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One wide sand-tan expedition backpack, large central pack and two large square external utility pouches, rugged canvas and dark buckles, broad landscape silhouette, front three-quarter view.",
+                      "fitting":  "source=1254x1254; alphaBounds=1205x1069; uniformScale=0.688494"
+                  },
+                  {
+                      "id":  "backpack_cargo",
+                      "file":  "assets/atlas/picture/items/equipment-v1/backpack_cargo.png",
+                      "localSource":  "art/equipment-v1/source/backpack_cargo.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-08aa62b8-d2cd-4a01-8370-69821fd9b959.png",
+                      "pixelWidth":  1024,
+                      "pixelHeight":  1024,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One large charcoal-gray military cargo backpack, tall bulky main compartment and two long independent side bags, reinforced carry handle, broad padded straps tucked behind, front three-quarter view. Heavy rugged silhouette.",
+                      "fitting":  "source=1254x1254; alphaBounds=896x1215; uniformScale=0.816461"
+                  },
+                  {
+                      "id":  "armor_wide",
+                      "file":  "assets/atlas/picture/items/equipment-v1/armor_wide.png",
+                      "localSource":  "art/equipment-v1/source/armor.png",
+                      "generatedSource":  "C:\\Users\\xunenghong\\.codex\\generated_images\\01a0bc77-e8f9-7e83-8925-c5842f7edcee\\exec-9cdc8e5d-f698-445d-959a-b478d80940cc.png",
+                      "pixelWidth":  1024,
+                      "pixelHeight":  768,
+                      "prompt":  "Create ONE standalone production game inventory equipment icon for a realistic extraction shooter. Genuine transparent PNG background (alpha zero outside object), no backdrop, no checkerboard, no ground shadow, no frame, no text, no logos, no rarity colors. Square canvas, centered entire object with 6 percent transparent margin. Crisp detailed realistic painted game asset, worn nylon and believable metal, muted colors, soft upper-left lighting, elevated slight three-quarter frontal orthographic view. Do not include a person or mannequin. Must read clearly at small inventory scale. One neutral dark olive tactical armored vest, broad front ballistic plate panel, padded shoulder straps, side straps and subtle webbing. No magazine pouches (this is armor not a chest rig), no arms, no torso. Front almost straight on. Same silhouette shared by all six protection levels.",
+                      "fitting":  "source=1254x1254; alphaBounds=982x1149; uniformScale=0.640557"
+                  }
+              ]
+}

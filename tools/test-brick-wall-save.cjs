@@ -1,0 +1,25 @@
+const fs = require('fs'), vm = require('vm'), assert = require('assert'), ts = require('typescript');
+const cache = 'library/minifiedJsCache/';
+const engine = fs.readFileSync(cache + fs.readdirSync(cache).find(p => p.startsWith('laya.tilemap-')), 'utf8');
+const start = engine.indexOf('_setCell(i,a,r){');
+assert(start >= 0, 'Review regression fixture after engine upgrades');
+const method = engine.slice(start, engine.indexOf('_clearChunkCellInfo(e){', start));
+const setCell = Function('e', 't', 'return ({' + method + '})')({TileMapDirtyFlag:{CELL_CHANGE:1}}, {})._setCell;
+const old = {gid:3, _removeNoticeRenderTile(){}}, next = {gid:5,z_index:0,y_sort_origin:0,_addNoticeRenderTile(){}};
+const prototype = {get compressData(){const result={};this._refGids.forEach(gid=>{if(this._cellDataRefMap[gid])result[gid]=this._cellDataRefMap[gid]});return result;},set compressData(value){this._cellDataRefMap=value;}};
+const chunk = Object.assign(Object.create(prototype), {_refGids:[3,5],_cellDataRefMap:{3:[0],5:[1,2]},_cellDataMap:{0:{cell:old,chuckLocalindex:0,celly:0}},_breakBatch(){return false},_setDirtyFlag(){}});
+setCell.call(chunk,0,next,0);
+assert.deepStrictEqual(chunk.compressData, {}, 'Reproduce dropped wall group in shipped engine');
+const source = ts.transpileModule(fs.readFileSync('src/systems/BrickWallTileLayer.ts','utf8'), {compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2017,experimentalDecorators:true}}).outputText;
+const sandbox = {exports:{},require:()=>({}),Laya:{Script:class{},regClass:()=>()=>{},property:()=>()=>{},runInEditor:()=>{},LayaEnv:{isPlaying:false}},console};
+vm.runInNewContext(source,sandbox);
+const script = new sandbox.exports.BrickWallTileLayer();
+script.owner={getComponent:()=>({_chunkDatas:{0:{0:chunk}}})};
+script.protectPaintedCells();
+assert.deepStrictEqual(chunk.compressData, {5:[1,2,0]});
+// Saving immediately after painting must work without waiting for an editor frame.
+chunk._refGids.length=0;
+assert.deepStrictEqual(chunk.compressData, {5:[1,2,0]});
+script.protectPaintedCells();
+assert.strictEqual(chunk._refGids.length,1);
+console.log('PASS: overwritten wall cells survive serialization, including immediate save.');

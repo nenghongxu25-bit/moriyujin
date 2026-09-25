@@ -1,0 +1,46 @@
+{
+  "_$ver": 1,
+  "_$id": "25bcb30ff4c6",
+  "_$type": "Sprite",
+  "name": "可穿过_forest-bank-reeds-v1",
+  "width": 331,
+  "height": 297,
+  "pivotX": 182,
+  "pivotY": 293,
+  "_$comp": [
+    {
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../../../src/systems/DepthSortable.ts",
+      "groundY": 293
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../../../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "d818fd2e7da8"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "d818fd2e7da8",
+      "_$type": "Sprite",
+      "name": "图片_可替换",
+      "width": 331,
+      "height": 297,
+      "texture": {
+        "_$uuid": "98824960-e70c-4154-a969-d848423f7215",
+        "_$type": "Texture"
+      },
+      "_$comp": [
+        {
+          "_$type": "b38c8c9f-4382-48a4-904d-29878f66a31b",
+          "scriptPath": "../../../src/systems/ForestDecorationShader.ts",
+          "effect": 0,
+          "amplitude": 2,
+          "phase": 4.5132
+        }
+      ]
+    }
+  ]
+}

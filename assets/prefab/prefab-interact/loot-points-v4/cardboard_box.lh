@@ -1,0 +1,67 @@
+{
+  "_$ver": 1,
+  "_$id": "loot_cardboard_box",
+  "_$type": "Sprite",
+  "name": "旧纸箱",
+  "width": 268,
+  "height": 268,
+  "_$comp": [
+    {
+      "_$id": "cardboard_box_component_0",
+      "_$type": "StaticCollider",
+      "shapes": [
+        {
+          "_$type": "BoxShape2D",
+          "x": 26.8,
+          "y": 107.2,
+          "density": 10,
+          "restitution": 0,
+          "restitutionThreshold": 1,
+          "friction": 0.2,
+          "isSensor": true,
+          "width": 214.4,
+          "height": 160.79999999999998
+        }
+      ]
+    },
+    {
+      "_$type": "ed764396-9a64-4823-baa5-0206ff8f2dbf",
+      "scriptPath": "../src/container/LootPoint.ts",
+      "containerId": "loot_cardboard_box",
+      "instanceId": "",
+      "displayName": "旧纸箱",
+      "contentsJson": "",
+      "once": true,
+      "destroyAfterOpen": false,
+      "visualId": "cardboard_box",
+      "visualFolder": "loot-points-v4"
+    },
+    {
+      "_$id": "cardboard_box_component_2",
+      "_$type": "1806c38c-ebc3-45d1-a8a0-322ed94be4cb",
+      "scriptPath": "../src/systems/DepthSortable.ts",
+      "groundY": 249.15625,
+      "blendDistance": 0
+    },
+    {
+      "_$type": "ad602582-0a8d-4d34-8573-3cab8b47a2b0",
+      "scriptPath": "../src/systems/ImageDepthOccluder.ts",
+      "imageNode": {
+        "_$ref": "cardboard_box_image"
+      }
+    }
+  ],
+  "_$child": [
+    {
+      "_$id": "cardboard_box_image",
+      "_$type": "GImage",
+      "name": "img",
+      "width": 268,
+      "height": 268,
+      "scaleX": 1,
+      "scaleY": 1,
+      "src": "res://0e6c9714-d66a-40b3-94cd-6e3c7d3837c3",
+      "autoSize": false
+    }
+  ]
+}
